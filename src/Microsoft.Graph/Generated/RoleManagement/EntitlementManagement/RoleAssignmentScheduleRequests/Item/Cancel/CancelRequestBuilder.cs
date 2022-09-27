@@ -44,7 +44,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action cancel
+        /// Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<CancelRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action cancel
+        /// Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

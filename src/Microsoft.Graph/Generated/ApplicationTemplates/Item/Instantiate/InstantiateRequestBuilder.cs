@@ -45,7 +45,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action instantiate
+        /// Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action instantiate
+        /// Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

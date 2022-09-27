@@ -57,7 +57,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         public ExternalSponsorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -70,14 +70,14 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         public ExternalSponsorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get externalSponsors from identityGovernance
+        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ExternalSponsorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Get externalSponsors from identityGovernance
+        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get externalSponsors from identityGovernance</summary>
+        /// <summary>Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.</summary>
         public class ExternalSponsorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The last estimate operation associated with the eDiscovery search.
+        /// Get the last  ediscoveryEstimateOperation objects and their properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             return requestInfo;
         }
         /// <summary>
-        /// The last estimate operation associated with the eDiscovery search.
+        /// Get the last  ediscoveryEstimateOperation objects and their properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             };
             return await RequestAdapter.SendAsync<EdiscoveryEstimateOperation>(requestInfo, EdiscoveryEstimateOperation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The last estimate operation associated with the eDiscovery search.</summary>
+        /// <summary>Get the last  ediscoveryEstimateOperation objects and their properties.</summary>
         public class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

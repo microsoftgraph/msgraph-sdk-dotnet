@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action invite
+        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action invite
+        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

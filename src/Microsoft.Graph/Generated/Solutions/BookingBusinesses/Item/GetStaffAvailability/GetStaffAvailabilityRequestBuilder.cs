@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getStaffAvailability
+        /// Get the availability information of staff members of a Microsoft Bookings calendar.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getStaffAvailability
+        /// Get the availability information of staff members of a Microsoft Bookings calendar.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

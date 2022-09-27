@@ -116,6 +116,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<TeamSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+        /// <summary>The tags property</summary>
+        public List<TeamworkTag> Tags {
+            get { return BackingStore?.Get<List<TeamworkTag>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
         /// <summary>The template this team was created from. See available templates.</summary>
         public TeamsTemplate Template {
             get { return BackingStore?.Get<TeamsTemplate>("template"); }
@@ -177,6 +182,7 @@ namespace Microsoft.Graph.Models {
                 {"schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Models.Schedule>(Microsoft.Graph.Models.Schedule.CreateFromDiscriminatorValue); } },
                 {"specialization", n => { Specialization = n.GetEnumValue<TeamSpecialization>(); } },
                 {"summary", n => { Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
+                {"tags", n => { Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"template", n => { Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
@@ -212,6 +218,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<Microsoft.Graph.Models.Schedule>("schedule", Schedule);
             writer.WriteEnumValue<TeamSpecialization>("specialization", Specialization);
             writer.WriteObjectValue<TeamSummary>("summary", Summary);
+            writer.WriteCollectionOfObjectValues<TeamworkTag>("tags", Tags);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);

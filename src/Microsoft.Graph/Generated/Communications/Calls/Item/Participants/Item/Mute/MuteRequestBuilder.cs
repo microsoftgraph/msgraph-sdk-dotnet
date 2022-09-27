@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.Mute {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action mute
+        /// Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.Mute {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action mute
+        /// Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

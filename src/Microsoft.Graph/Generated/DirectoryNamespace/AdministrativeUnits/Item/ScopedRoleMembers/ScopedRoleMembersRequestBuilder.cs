@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         public ScopedRoleMembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         public ScopedRoleMembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Scoped-role members of this administrative unit.
+        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ScopedRoleMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to scopedRoleMembers for directory
+        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return requestInfo;
         }
         /// <summary>
-        /// Scoped-role members of this administrative unit.
+        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return await RequestAdapter.SendAsync<ScopedRoleMembershipCollectionResponse>(requestInfo, ScopedRoleMembershipCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to scopedRoleMembers for directory
+        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             };
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Scoped-role members of this administrative unit.</summary>
+        /// <summary>List Azure Active Directory (Azure AD) role assignments with administrative unit scope.</summary>
         public class ScopedRoleMembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

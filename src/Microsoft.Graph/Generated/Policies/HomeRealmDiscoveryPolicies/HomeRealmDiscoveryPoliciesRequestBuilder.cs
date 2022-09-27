@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         public HomeRealmDiscoveryPoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/homeRealmDiscoveryPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/policies/homeRealmDiscoveryPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         public HomeRealmDiscoveryPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/homeRealmDiscoveryPolicies{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/policies/homeRealmDiscoveryPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The policy to control Azure AD authentication behavior for federated users.
+        /// Get a list of homeRealmDiscoveryPolicy objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to homeRealmDiscoveryPolicies for policies
+        /// Create a new homeRealmDiscoveryPolicy object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// The policy to control Azure AD authentication behavior for federated users.
+        /// Get a list of homeRealmDiscoveryPolicy objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicyCollectionResponse>(requestInfo, HomeRealmDiscoveryPolicyCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to homeRealmDiscoveryPolicies for policies
+        /// Create a new homeRealmDiscoveryPolicy object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             };
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The policy to control Azure AD authentication behavior for federated users.</summary>
+        /// <summary>Get a list of homeRealmDiscoveryPolicy objects.</summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

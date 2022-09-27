@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action copy
+        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action copy
+        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

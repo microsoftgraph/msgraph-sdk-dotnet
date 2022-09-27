@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
         public ResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
         public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
+        /// Get all the educationAssignmentResource objects associated with an assignment.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ResourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to resources for education
+        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
+        /// Get all the educationAssignmentResource objects associated with an assignment.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to resources for education
+        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             };
             return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.</summary>
+        /// <summary>Get all the educationAssignmentResource objects associated with an assignment.</summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

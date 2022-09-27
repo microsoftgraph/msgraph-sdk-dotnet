@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
         public GetApplicableContentTypesForListWithListIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string listId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("listId", listId);
             PathParameters = urlTplParams;
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
         public GetApplicableContentTypesForListWithListIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}')";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/microsoft.graph.getApplicableContentTypesForList(listId='{listId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
             if (requestConfiguration != null) {
                 var requestConfig = new GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
@@ -78,12 +79,38 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
             };
             return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdResponse>(requestInfo, GetApplicableContentTypesForListWithListIdResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Invoke function getApplicableContentTypesForList</summary>
+        public class GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+            /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
+            public string[] Orderby { get; set; }
+            /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+            /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
+            public string[] Select { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
             public IDictionary<string, string> Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new getApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

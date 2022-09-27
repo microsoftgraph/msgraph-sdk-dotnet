@@ -50,24 +50,6 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property methods for me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
-        public RequestInformation CreateDeleteRequestInformation(Action<AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
         /// Represents all authentication methods registered to a user.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,6 +81,7 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AuthenticationMethodItemRequestBuilderPatchRequestConfiguration();
@@ -107,20 +90,6 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Delete navigation property methods for me
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
-        public async Task DeleteAsync(Action<AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Represents all authentication methods registered to a user.
@@ -143,28 +112,14 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(AuthenticationMethod body, Action<AuthenticationMethodItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethod> PatchAsync(AuthenticationMethod body, Action<AuthenticationMethodItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
-        public class AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
-            }
+            return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Represents all authentication methods registered to a user.</summary>
         public class AuthenticationMethodItemRequestBuilderGetQueryParameters {

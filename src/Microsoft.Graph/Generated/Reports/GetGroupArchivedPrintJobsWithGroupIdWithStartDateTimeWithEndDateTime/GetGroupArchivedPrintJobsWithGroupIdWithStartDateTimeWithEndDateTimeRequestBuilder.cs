@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, string groupId = default, DateTimeOffset? startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
+            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("endDateTime", endDateTime);
             urlTplParams.Add("groupId", groupId);
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}')";
+            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -63,6 +63,7 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
             if (requestConfiguration != null) {
                 var requestConfig = new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
@@ -82,12 +83,32 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
             };
             return await RequestAdapter.SendAsync<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse>(requestInfo, GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Invoke function getGroupArchivedPrintJobs</summary>
+        public class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+            /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
             public IDictionary<string, string> Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new getGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

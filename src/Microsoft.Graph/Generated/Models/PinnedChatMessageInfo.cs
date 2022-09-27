@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class PinnedChatMessageInfo : Entity, IParsable {
-        /// <summary>The message property</summary>
+        /// <summary>Represents details about the chat message that is pinned.</summary>
         public ChatMessage Message {
             get { return BackingStore?.Get<ChatMessage>("message"); }
             set { BackingStore?.Set("message", value); }

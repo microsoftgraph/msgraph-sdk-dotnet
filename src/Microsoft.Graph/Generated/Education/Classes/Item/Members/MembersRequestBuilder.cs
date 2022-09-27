@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
         public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -55,14 +55,14 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
         public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// All users in the class. Nullable.
+        /// Retrieves the educationUser members of an educationClass.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// All users in the class. Nullable.
+        /// Retrieves the educationUser members of an educationClass.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
             };
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>All users in the class. Nullable.</summary>
+        /// <summary>Retrieves the educationUser members of an educationClass.</summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

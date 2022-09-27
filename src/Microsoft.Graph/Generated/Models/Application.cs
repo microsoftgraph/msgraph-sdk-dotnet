@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("applicationTemplateId"); }
             set { BackingStore?.Set("applicationTemplateId", value); }
         }
-        /// <summary>The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
+        /// <summary>The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
         public List<AppRole> AppRoles {
             get { return BackingStore?.Get<List<AppRole>>("appRoles"); }
             set { BackingStore?.Set("appRoles", value); }

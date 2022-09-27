@@ -232,7 +232,6 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountsBlockAddingNonMicrosoftAccountEmail", AccountsBlockAddingNonMicrosoftAccountEmail);
-            writer.WriteBoolValue("applyOnlyToWindows81", ApplyOnlyToWindows81);
             writer.WriteBoolValue("browserBlockAutofill", BrowserBlockAutofill);
             writer.WriteBoolValue("browserBlockAutomaticDetectionOfIntranetSites", BrowserBlockAutomaticDetectionOfIntranetSites);
             writer.WriteBoolValue("browserBlockEnterpriseModeAccess", BrowserBlockEnterpriseModeAccess);

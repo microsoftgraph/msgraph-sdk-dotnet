@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
         public ContactsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -51,14 +51,14 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
         public ContactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The contacts in the folder. Navigation property. Read-only. Nullable.
+        /// Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContactsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to contacts for users
+        /// Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The contacts in the folder. Navigation property. Read-only. Nullable.
+        /// Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
             return await RequestAdapter.SendAsync<ContactCollectionResponse>(requestInfo, ContactCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to contacts for users
+        /// Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts {
             };
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The contacts in the folder. Navigation property. Read-only. Nullable.</summary>
+        /// <summary>Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.</summary>
         public class ContactsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

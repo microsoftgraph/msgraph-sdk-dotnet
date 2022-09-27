@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Shares.Item.DriveItem {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Used to access the underlying driveItem
+        /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DriveItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Shares.Item.DriveItem {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the underlying driveItem
+        /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Shares.Item.DriveItem {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Used to access the underlying driveItem</summary>
+        /// <summary>Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.</summary>
         public class DriveItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

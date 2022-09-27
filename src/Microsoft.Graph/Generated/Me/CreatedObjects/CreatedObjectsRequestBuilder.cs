@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
         public CreatedObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/createdObjects{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/createdObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -55,14 +55,14 @@ namespace Microsoft.Graph.Me.CreatedObjects {
         public CreatedObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/createdObjects{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/createdObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Directory objects that were created by the user. Read-only. Nullable.
+        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CreatedObjectsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             return requestInfo;
         }
         /// <summary>
-        /// Directory objects that were created by the user. Read-only. Nullable.
+        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Directory objects that were created by the user. Read-only. Nullable.</summary>
+        /// <summary>Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.</summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

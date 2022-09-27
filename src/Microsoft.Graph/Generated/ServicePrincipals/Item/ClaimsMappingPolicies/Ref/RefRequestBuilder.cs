@@ -25,7 +25,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
         public RefRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+            UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -38,14 +38,14 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby}";
+            UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The claimsMappingPolicies assigned to this service principal. Supports $expand.</summary>
+        /// <summary>List the claimsMappingPolicy objects that are assigned to a servicePrincipal.</summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

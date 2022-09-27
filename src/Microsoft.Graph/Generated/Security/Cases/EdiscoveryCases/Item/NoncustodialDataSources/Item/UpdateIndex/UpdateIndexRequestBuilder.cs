@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action updateIndex
+        /// Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<UpdateIndexRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action updateIndex
+        /// Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

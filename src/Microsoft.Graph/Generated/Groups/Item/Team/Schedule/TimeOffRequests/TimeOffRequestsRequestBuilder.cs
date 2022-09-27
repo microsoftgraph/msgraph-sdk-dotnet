@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeOffRequests {
         public TimeOffRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeOffRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeOffRequests {
         public TimeOffRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeOffRequests{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get timeOffRequests from groups
+        /// Retrieve a list of timeOffRequest objects in the team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TimeOffRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeOffRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Get timeOffRequests from groups
+        /// Retrieve a list of timeOffRequest objects in the team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeOffRequests {
             };
             return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get timeOffRequests from groups</summary>
+        /// <summary>Retrieve a list of timeOffRequest objects in the team.</summary>
         public class TimeOffRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

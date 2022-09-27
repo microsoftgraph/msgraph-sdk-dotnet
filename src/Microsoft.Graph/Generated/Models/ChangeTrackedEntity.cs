@@ -67,9 +67,6 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Copy {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a message to a folder within the user&apos;s mailbox.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Copy {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a message to a folder within the user&apos;s mailbox.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

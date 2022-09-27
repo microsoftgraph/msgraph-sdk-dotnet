@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateUploadSession {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action createUploadSession
+        /// Create an upload session to allow your app to upload files up to the maximum file size.An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateUploadSession {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action createUploadSession
+        /// Create an upload session to allow your app to upload files up to the maximum file size.An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

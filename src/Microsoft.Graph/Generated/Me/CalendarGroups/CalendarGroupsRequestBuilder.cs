@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
         public CalendarGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendarGroups{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/me/calendarGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Me.CalendarGroups {
         public CalendarGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/calendarGroups{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/me/calendarGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user&apos;s calendar groups. Read-only. Nullable.
+        /// Get the user&apos;s calendar groups.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CalendarGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to calendarGroups for me
+        /// Use this API to create a new CalendarGroup.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s calendar groups. Read-only. Nullable.
+        /// Get the user&apos;s calendar groups.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return await RequestAdapter.SendAsync<CalendarGroupCollectionResponse>(requestInfo, CalendarGroupCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to calendarGroups for me
+        /// Use this API to create a new CalendarGroup.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             };
             return await RequestAdapter.SendAsync<CalendarGroup>(requestInfo, CalendarGroup.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The user&apos;s calendar groups. Read-only. Nullable.</summary>
+        /// <summary>Get the user&apos;s calendar groups.</summary>
         public class CalendarGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

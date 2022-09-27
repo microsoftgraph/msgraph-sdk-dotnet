@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action uploadClientCertificate
+        /// Upload a PKCS 12 format key (.pfx) to an API connector&apos;s authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action uploadClientCertificate
+        /// Upload a PKCS 12 format key (.pfx) to an API connector&apos;s authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

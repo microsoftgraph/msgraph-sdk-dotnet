@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Messages
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action send
+        /// Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the **Sent Items** folder. Alternatively, send a new message in a single operation.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SendRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action send
+        /// Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the **Sent Items** folder. Alternatively, send a new message in a single operation.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods {
         public WindowsHelloForBusinessMethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods {
         public WindowsHelloForBusinessMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/authentication/windowsHelloForBusinessMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
+        /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<WindowsHelloForBusinessMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
+        /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods {
             };
             return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
+        /// <summary>Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.</summary>
         public class WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

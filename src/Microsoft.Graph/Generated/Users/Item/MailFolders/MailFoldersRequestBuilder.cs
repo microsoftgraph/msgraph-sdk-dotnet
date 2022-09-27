@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
         public MailFoldersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -51,14 +51,14 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
         public MailFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders{?%24top*,%24skip*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/mailFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MailFoldersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to mailFolders for users
+        /// Use this API to create a new mail folder in the root folder of the user&apos;s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to mailFolders for users
+        /// Use this API to create a new mail folder in the root folder of the user&apos;s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             };
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The user&apos;s mail folders. Read-only. Nullable.</summary>
+        /// <summary>Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.</summary>
         public class MailFoldersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Renew {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action renew
+        /// Renews a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RenewRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Renew {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action renew
+        /// Renews a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

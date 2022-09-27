@@ -44,7 +44,7 @@ namespace Microsoft.Graph.DirectoryRoles.GetAvailableExtensionProperties {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getAvailableExtensionProperties
+        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.DirectoryRoles.GetAvailableExtensionProperties {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getAvailableExtensionProperties
+        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

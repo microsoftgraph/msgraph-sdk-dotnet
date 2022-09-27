@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.ReprocessLicenseAssignment {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reprocessLicenseAssignment
+        /// Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Users.Item.ReprocessLicenseAssignment {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reprocessLicenseAssignment
+        /// Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

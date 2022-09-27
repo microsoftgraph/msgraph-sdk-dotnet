@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
         public UserAttributeAssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -56,14 +56,14 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
         public UserAttributeAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user attribute assignments included in the user flow.
+        /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserAttributeAssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to userAttributeAssignments for identity
+        /// Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// The user attribute assignments included in the user flow.
+        /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
             return new GetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Create new navigation property to userAttributeAssignments for identity
+        /// Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments {
             };
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignment>(requestInfo, IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The user attribute assignments included in the user flow.</summary>
+        /// <summary>Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.</summary>
         public class UserAttributeAssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

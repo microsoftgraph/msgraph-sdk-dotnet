@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action translateExchangeIds
+        /// Translate identifiers of Outlook-related resources between formats.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action translateExchangeIds
+        /// Translate identifiers of Outlook-related resources between formats.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

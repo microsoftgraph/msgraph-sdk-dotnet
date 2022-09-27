@@ -119,19 +119,9 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<EducationOutcome>("outcomes", Outcomes);
-            writer.WriteObjectValue<IdentitySet>("reassignedBy", ReassignedBy);
-            writer.WriteDateTimeOffsetValue("reassignedDateTime", ReassignedDateTime);
             writer.WriteObjectValue<EducationSubmissionRecipient>("recipient", Recipient);
             writer.WriteCollectionOfObjectValues<EducationSubmissionResource>("resources", Resources);
-            writer.WriteStringValue("resourcesFolderUrl", ResourcesFolderUrl);
-            writer.WriteObjectValue<IdentitySet>("returnedBy", ReturnedBy);
-            writer.WriteDateTimeOffsetValue("returnedDateTime", ReturnedDateTime);
-            writer.WriteEnumValue<EducationSubmissionStatus>("status", Status);
-            writer.WriteObjectValue<IdentitySet>("submittedBy", SubmittedBy);
-            writer.WriteDateTimeOffsetValue("submittedDateTime", SubmittedDateTime);
             writer.WriteCollectionOfObjectValues<EducationSubmissionResource>("submittedResources", SubmittedResources);
-            writer.WriteObjectValue<IdentitySet>("unsubmittedBy", UnsubmittedBy);
-            writer.WriteDateTimeOffsetValue("unsubmittedDateTime", UnsubmittedDateTime);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action clearUserPreferredPresence
+        /// Clear the preferred availability and activity status for a user.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action clearUserPreferredPresence
+        /// Clear the preferred availability and activity status for a user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

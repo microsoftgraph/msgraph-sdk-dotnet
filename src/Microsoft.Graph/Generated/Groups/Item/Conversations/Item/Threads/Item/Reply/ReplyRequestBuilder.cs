@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Reply {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reply
+        /// Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Reply {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reply
+        /// Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

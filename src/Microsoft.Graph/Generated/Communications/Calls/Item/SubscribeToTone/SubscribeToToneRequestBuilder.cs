@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SubscribeToTone {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action subscribeToTone
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SubscribeToTone {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action subscribeToTone
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

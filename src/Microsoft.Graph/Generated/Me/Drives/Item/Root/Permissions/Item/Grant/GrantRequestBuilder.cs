@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Drives.Item.Root.Permissions.Item.Grant {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action grant
+        /// Grant users access to a link represented by a [permission][].
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Me.Drives.Item.Root.Permissions.Item.Grant {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action grant
+        /// Grant users access to a link represented by a [permission][].
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

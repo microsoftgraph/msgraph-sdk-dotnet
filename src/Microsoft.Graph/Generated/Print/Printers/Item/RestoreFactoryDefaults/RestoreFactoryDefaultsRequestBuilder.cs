@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Print.Printers.Item.RestoreFactoryDefaults {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action restoreFactoryDefaults
+        /// Restore a printer&apos;s default settings to the values specified by the manufacturer.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RestoreFactoryDefaultsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Print.Printers.Item.RestoreFactoryDefaults {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action restoreFactoryDefaults
+        /// Restore a printer&apos;s default settings to the values specified by the manufacturer.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action favorite
+        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action favorite
+        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

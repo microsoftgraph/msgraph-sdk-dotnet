@@ -1,5 +1,5 @@
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.CompleteMigration;
-using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName;
+using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Messages;
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
             return requestInfo;
         }
         /// <summary>
-        /// The general channel for the team.
+        /// Get the default channel, **General**, of a team.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrimaryChannelRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -135,6 +135,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new PrimaryChannelRequestBuilderPatchRequestConfiguration();
@@ -161,11 +162,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
         /// <summary>
         /// Provides operations to call the doesUserHaveAccess method.
         /// </summary>
-        public DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName() {
-            return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName() {
+            return new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The general channel for the team.
+        /// Get the default channel, **General**, of a team.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -185,14 +186,14 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Channel body, Action<PrimaryChannelRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Channel> PatchAsync(Channel body, Action<PrimaryChannelRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class PrimaryChannelRequestBuilderDeleteRequestConfiguration {
@@ -208,7 +209,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The general channel for the team.</summary>
+        /// <summary>Get the default channel, **General**, of a team.</summary>
         public class PrimaryChannelRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

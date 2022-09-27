@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetUserPreferredPresence {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setUserPreferredPresence
+        /// Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user&apos;s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user&apos;s presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetUserPreferredPresence {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setUserPreferredPresence
+        /// Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user&apos;s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user&apos;s presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

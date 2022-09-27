@@ -1,7 +1,7 @@
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.CompleteMigration;
-using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName;
+using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.FilesFolder;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Members;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages;
@@ -135,6 +135,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ChannelItemRequestBuilderPatchRequestConfiguration();
@@ -161,8 +162,8 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
         /// <summary>
         /// Provides operations to call the doesUserHaveAccess method.
         /// </summary>
-        public DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName() {
-            return new DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName() {
+            return new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The collection of channels and messages associated with the team.
@@ -185,14 +186,14 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Channel body, Action<ChannelItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Channel> PatchAsync(Channel body, Action<ChannelItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ChannelItemRequestBuilderDeleteRequestConfiguration {

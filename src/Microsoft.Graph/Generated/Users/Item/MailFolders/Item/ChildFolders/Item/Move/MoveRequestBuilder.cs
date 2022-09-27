@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Move {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a mailfolder and its contents to another mailfolder.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Move {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a mailfolder and its contents to another mailfolder.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

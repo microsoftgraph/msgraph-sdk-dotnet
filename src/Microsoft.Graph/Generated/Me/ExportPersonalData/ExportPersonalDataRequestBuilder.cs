@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.ExportPersonalData {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action exportPersonalData
+        /// Submit a data policy operation request from a company administrator or an application to export an organizational user&apos;s data. This data includes the user&apos;s data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.ExportPersonalData {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action exportPersonalData
+        /// Submit a data policy operation request from a company administrator or an application to export an organizational user&apos;s data. This data includes the user&apos;s data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -174,9 +174,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
-            writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
-            writer.WriteIntValue("filledAttendeesCount", FilledAttendeesCount);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteIntValue("maximumAttendeesCount", MaximumAttendeesCount);

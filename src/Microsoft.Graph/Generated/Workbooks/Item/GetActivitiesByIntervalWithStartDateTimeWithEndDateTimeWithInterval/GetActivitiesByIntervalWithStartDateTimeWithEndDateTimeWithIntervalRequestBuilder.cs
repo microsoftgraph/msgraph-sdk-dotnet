@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Workbooks.Item.GetActivitiesByIntervalWithStartDateTim
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string endDateTime = default, string interval = default, string startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("endDateTime", endDateTime);
             urlTplParams.Add("interval", interval);
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Workbooks.Item.GetActivitiesByIntervalWithStartDateTim
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}')";
+            UrlTemplate = "{+baseurl}/workbooks/{driveItem%2Did}/microsoft.graph.getActivitiesByInterval(startDateTime='{startDateTime}',endDateTime='{endDateTime}',interval='{interval}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -63,6 +63,7 @@ namespace Microsoft.Graph.Workbooks.Item.GetActivitiesByIntervalWithStartDateTim
             if (requestConfiguration != null) {
                 var requestConfig = new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
@@ -82,12 +83,38 @@ namespace Microsoft.Graph.Workbooks.Item.GetActivitiesByIntervalWithStartDateTim
             };
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse>(requestInfo, GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Invoke function getActivitiesByInterval</summary>
+        public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+            /// <summary>Order items by property values</summary>
+            [QueryParameter("%24orderby")]
+            public string[] Orderby { get; set; }
+            /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+            /// <summary>Select properties to be returned</summary>
+            [QueryParameter("%24select")]
+            public string[] Select { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
             public IDictionary<string, string> Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

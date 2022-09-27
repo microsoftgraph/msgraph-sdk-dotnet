@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action removeHold
+        /// Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RemoveHoldRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action removeHold
+        /// Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

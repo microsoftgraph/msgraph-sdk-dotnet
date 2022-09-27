@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class MessagePinnedEventMessageDetail : EventMessageDetail, IParsable {
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>Date and time when the event occurred.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The initiator property</summary>
+        /// <summary>Initiator of the event.</summary>
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }

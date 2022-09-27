@@ -187,27 +187,18 @@ namespace Microsoft.Graph.Models {
             writer.WriteEnumValue<EducationAddToCalendarOptions>("addToCalendarAction", AddToCalendarAction);
             writer.WriteBoolValue("allowLateSubmissions", AllowLateSubmissions);
             writer.WriteBoolValue("allowStudentsToAddResourcesToSubmission", AllowStudentsToAddResourcesToSubmission);
-            writer.WriteDateTimeOffsetValue("assignDateTime", AssignDateTime);
-            writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
             writer.WriteObjectValue<EducationAssignmentRecipient>("assignTo", AssignTo);
             writer.WriteCollectionOfObjectValues<EducationCategory>("categories", Categories);
             writer.WriteStringValue("classId", ClassId);
             writer.WriteDateTimeOffsetValue("closeDateTime", CloseDateTime);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
             writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
             writer.WriteObjectValue<EducationItemBody>("instructions", Instructions);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
             writer.WriteCollectionOfObjectValues<EducationAssignmentResource>("resources", Resources);
-            writer.WriteStringValue("resourcesFolderUrl", ResourcesFolderUrl);
             writer.WriteObjectValue<EducationRubric>("rubric", Rubric);
-            writer.WriteEnumValue<EducationAssignmentStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<EducationSubmission>("submissions", Submissions);
-            writer.WriteStringValue("webUrl", WebUrl);
         }
     }
 }

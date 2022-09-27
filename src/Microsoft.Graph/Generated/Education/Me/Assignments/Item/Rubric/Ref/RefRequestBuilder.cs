@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// When set, the grading rubric attached to this assignment.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// When set, the grading rubric attached to this assignment.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

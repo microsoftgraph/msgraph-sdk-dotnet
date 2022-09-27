@@ -52,7 +52,6 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isActive", IsActive);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
         }
     }

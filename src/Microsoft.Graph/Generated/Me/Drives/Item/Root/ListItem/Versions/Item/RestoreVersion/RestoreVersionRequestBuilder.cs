@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Drives.Item.Root.ListItem.Versions.Item.RestoreVers
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action restoreVersion
+        /// Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RestoreVersionRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Drives.Item.Root.ListItem.Versions.Item.RestoreVers
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action restoreVersion
+        /// Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.AddFavorite {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action addFavorite
+        /// Add the group to the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<AddFavoriteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.AddFavorite {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action addFavorite
+        /// Add the group to the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

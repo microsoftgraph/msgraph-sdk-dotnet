@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setVerifiedPublisher
+        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setVerifiedPublisher
+        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

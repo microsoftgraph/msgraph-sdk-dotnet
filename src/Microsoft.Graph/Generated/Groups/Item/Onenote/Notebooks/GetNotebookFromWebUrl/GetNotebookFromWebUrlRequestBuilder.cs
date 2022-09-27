@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getNotebookFromWebUrl
+        /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getNotebookFromWebUrl
+        /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

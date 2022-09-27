@@ -90,12 +90,8 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ScheduleChangeRequestActor>("assignedTo", AssignedTo);
-            writer.WriteDateTimeOffsetValue("managerActionDateTime", ManagerActionDateTime);
             writer.WriteStringValue("managerActionMessage", ManagerActionMessage);
-            writer.WriteStringValue("managerUserId", ManagerUserId);
-            writer.WriteDateTimeOffsetValue("senderDateTime", SenderDateTime);
             writer.WriteStringValue("senderMessage", SenderMessage);
-            writer.WriteStringValue("senderUserId", SenderUserId);
             writer.WriteEnumValue<ScheduleChangeState>("state", State);
         }
     }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.ChangePassword {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action changePassword
+        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.ChangePassword {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action changePassword
+        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

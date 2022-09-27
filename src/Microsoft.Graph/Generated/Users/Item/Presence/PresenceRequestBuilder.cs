@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Get presence from users
+        /// Get a user&apos;s presence information.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PresenceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -114,6 +114,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new PresenceRequestBuilderPatchRequestConfiguration();
@@ -138,7 +139,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get presence from users
+        /// Get a user&apos;s presence information.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -158,14 +159,14 @@ namespace Microsoft.Graph.Users.Item.Presence {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Models.Presence body, Action<PresenceRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Presence> PatchAsync(Microsoft.Graph.Models.Presence body, Action<PresenceRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Presence>(requestInfo, Microsoft.Graph.Models.Presence.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class PresenceRequestBuilderDeleteRequestConfiguration {
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get presence from users</summary>
+        /// <summary>Get a user&apos;s presence information.</summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

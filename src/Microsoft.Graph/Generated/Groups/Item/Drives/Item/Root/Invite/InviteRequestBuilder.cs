@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Root.Invite {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action invite
+        /// Sends a sharing invitation for a **driveItem**.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Groups.Item.Drives.Item.Root.Invite {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action invite
+        /// Sends a sharing invitation for a **driveItem**.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

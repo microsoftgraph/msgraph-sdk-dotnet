@@ -89,7 +89,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.Schema>("schema", Schema);
-            writer.WriteEnumValue<ConnectionState>("state", State);
         }
     }
 }

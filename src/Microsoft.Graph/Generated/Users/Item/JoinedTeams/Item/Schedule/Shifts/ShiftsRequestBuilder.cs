@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
         public ShiftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
         public ShiftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/shifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The shifts in the schedule.
+        /// Get the list of shift instances in a schedule.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ShiftsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to shifts for users
+        /// Create a new shift instance in a schedule.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
             return requestInfo;
         }
         /// <summary>
-        /// The shifts in the schedule.
+        /// Get the list of shift instances in a schedule.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
             return await RequestAdapter.SendAsync<ShiftCollectionResponse>(requestInfo, ShiftCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to shifts for users
+        /// Create a new shift instance in a schedule.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts {
             };
             return await RequestAdapter.SendAsync<Shift>(requestInfo, Shift.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The shifts in the schedule.</summary>
+        /// <summary>Get the list of shift instances in a schedule.</summary>
         public class ShiftsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

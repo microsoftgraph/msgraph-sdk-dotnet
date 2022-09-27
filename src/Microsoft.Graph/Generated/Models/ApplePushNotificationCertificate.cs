@@ -71,7 +71,6 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteStringValue("appleIdentifier", AppleIdentifier);
             writer.WriteStringValue("certificate", Certificate);
-            writer.WriteStringValue("certificateSerialNumber", CertificateSerialNumber);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("topicIdentifier", TopicIdentifier);

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
         public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -55,14 +55,14 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
         public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/members{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of membership records associated with the channel.
+        /// Retrieve a list of conversationMembers from a channel.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to members for teams
+        /// Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of membership records associated with the channel.
+        /// Retrieve a list of conversationMembers from a channel.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             return await RequestAdapter.SendAsync<ConversationMemberCollectionResponse>(requestInfo, ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to members for teams
+        /// Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             };
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A collection of membership records associated with the channel.</summary>
+        /// <summary>Retrieve a list of conversationMembers from a channel.</summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
