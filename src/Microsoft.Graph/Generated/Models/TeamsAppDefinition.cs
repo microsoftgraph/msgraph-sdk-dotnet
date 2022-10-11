@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class TeamsAppDefinition : Entity, IParsable {
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
         public TeamworkBot Bot {

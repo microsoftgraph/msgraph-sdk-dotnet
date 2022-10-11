@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+        /// <summary>The anonymousJoinWebUrl property</summary>
+        public string AnonymousJoinWebUrl {
+            get { return BackingStore?.Get<string>("anonymousJoinWebUrl"); }
+            set { BackingStore?.Set("anonymousJoinWebUrl", value); }
+        }
         /// <summary>It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
         public List<BookingCustomerInformationBase> Customers {
             get { return BackingStore?.Get<List<BookingCustomerInformationBase>>("customers"); }
@@ -140,6 +145,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
+                {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
                 {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
@@ -172,6 +178,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
+            writer.WriteStringValue("anonymousJoinWebUrl", AnonymousJoinWebUrl);
             writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);

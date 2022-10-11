@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.CallRecords {
+    /// <summary>Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.</summary>
     public class SegmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Segment> Value {

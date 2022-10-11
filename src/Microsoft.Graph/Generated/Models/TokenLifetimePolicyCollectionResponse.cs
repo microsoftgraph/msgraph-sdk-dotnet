@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.</summary>
     public class TokenLifetimePolicyCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TokenLifetimePolicy> Value {

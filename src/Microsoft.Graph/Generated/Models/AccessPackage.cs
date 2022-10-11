@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class AccessPackage : Entity, IParsable {
-        /// <summary>The accessPackagesIncompatibleWith property</summary>
+        /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
         public List<AccessPackage> AccessPackagesIncompatibleWith {
             get { return BackingStore?.Get<List<AccessPackage>>("accessPackagesIncompatibleWith"); }
             set { BackingStore?.Set("accessPackagesIncompatibleWith", value); }
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The incompatibleAccessPackages property</summary>
+        /// <summary>The access packages whose assigned users are ineligible to be assigned this access package.</summary>
         public List<AccessPackage> IncompatibleAccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>>("incompatibleAccessPackages"); }
             set { BackingStore?.Set("incompatibleAccessPackages", value); }
         }
-        /// <summary>The incompatibleGroups property</summary>
+        /// <summary>The groups whose members are ineligible to be assigned this access package.</summary>
         public List<Group> IncompatibleGroups {
             get { return BackingStore?.Get<List<Group>>("incompatibleGroups"); }
             set { BackingStore?.Set("incompatibleGroups", value); }

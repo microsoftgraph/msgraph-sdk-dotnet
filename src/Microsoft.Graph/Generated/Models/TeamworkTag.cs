@@ -6,32 +6,32 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class TeamworkTag : Entity, IParsable {
-        /// <summary>The description property</summary>
+        /// <summary>The description of the tag as it will appear to the user in Microsoft Teams.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the tag as it will appear to the user in Microsoft Teams.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The memberCount property</summary>
+        /// <summary>The number of users assigned to the tag.</summary>
         public int? MemberCount {
             get { return BackingStore?.Get<int?>("memberCount"); }
             set { BackingStore?.Set("memberCount", value); }
         }
-        /// <summary>The members property</summary>
+        /// <summary>Users assigned to the tag.</summary>
         public List<TeamworkTagMember> Members {
             get { return BackingStore?.Get<List<TeamworkTagMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
-        /// <summary>The tagType property</summary>
+        /// <summary>The type of the tag. Default is standard.</summary>
         public TeamworkTagType? TagType {
             get { return BackingStore?.Get<TeamworkTagType?>("tagType"); }
             set { BackingStore?.Set("tagType", value); }
         }
-        /// <summary>The teamId property</summary>
+        /// <summary>ID of the team in which the tag is defined.</summary>
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }

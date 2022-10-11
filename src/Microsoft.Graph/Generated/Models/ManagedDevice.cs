@@ -181,6 +181,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
+        /// <summary>Reports device management certificate expiration date. This property is read-only.</summary>
+        public DateTimeOffset? ManagementCertificateExpirationDate {
+            get { return BackingStore?.Get<DateTimeOffset?>("managementCertificateExpirationDate"); }
+            set { BackingStore?.Set("managementCertificateExpirationDate", value); }
+        }
         /// <summary>Manufacturer of the device. This property is read-only.</summary>
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -236,6 +241,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("remoteAssistanceSessionUrl"); }
             set { BackingStore?.Set("remoteAssistanceSessionUrl", value); }
         }
+        /// <summary>Reports if the managed iOS device is user approval enrollment. This property is read-only.</summary>
+        public bool? RequireUserEnrollmentApproval {
+            get { return BackingStore?.Get<bool?>("requireUserEnrollmentApproval"); }
+            set { BackingStore?.Set("requireUserEnrollmentApproval", value); }
+        }
         /// <summary>SerialNumber. This property is read-only.</summary>
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
@@ -270,6 +280,11 @@ namespace Microsoft.Graph.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>The primary users associated with the managed device.</summary>
+        public List<User> Users {
+            get { return BackingStore?.Get<List<User>>("users"); }
+            set { BackingStore?.Set("users", value); }
         }
         /// <summary>Wi-Fi MAC. This property is read-only.</summary>
         public string WiFiMacAddress {
@@ -330,6 +345,7 @@ namespace Microsoft.Graph.Models {
                 {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 {"managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
                 {"managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                {"managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"meid", n => { Meid = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
@@ -341,6 +357,7 @@ namespace Microsoft.Graph.Models {
                 {"physicalMemoryInBytes", n => { PhysicalMemoryInBytes = n.GetLongValue(); } },
                 {"remoteAssistanceSessionErrorDetails", n => { RemoteAssistanceSessionErrorDetails = n.GetStringValue(); } },
                 {"remoteAssistanceSessionUrl", n => { RemoteAssistanceSessionUrl = n.GetStringValue(); } },
+                {"requireUserEnrollmentApproval", n => { RequireUserEnrollmentApproval = n.GetBoolValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
                 {"totalStorageSpaceInBytes", n => { TotalStorageSpaceInBytes = n.GetLongValue(); } },
@@ -348,6 +365,7 @@ namespace Microsoft.Graph.Models {
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"users", n => { Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"wiFiMacAddress", n => { WiFiMacAddress = n.GetStringValue(); } },
             };
         }
@@ -371,6 +389,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
             writer.WriteStringValue("notes", Notes);
             writer.WriteEnumValue<ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
+            writer.WriteCollectionOfObjectValues<User>("users", Users);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class ApprovalStage : Entity, IParsable {
         /// <summary>Indicates whether the stage is assigned to the calling user to review. Read-only.</summary>
         public bool? AssignedToMe {

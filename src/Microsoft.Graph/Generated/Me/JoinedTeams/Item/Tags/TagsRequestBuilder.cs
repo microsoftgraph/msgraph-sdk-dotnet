@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get tags from me
+        /// Get a list of the tag objects and their properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TagsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tags for me
+        /// Create a standard tag for members in a team.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Get tags from me
+        /// Get a list of the tag objects and their properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags {
             return await RequestAdapter.SendAsync<TeamworkTagCollectionResponse>(requestInfo, TeamworkTagCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to tags for me
+        /// Create a standard tag for members in a team.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags {
             };
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get tags from me</summary>
+        /// <summary>Get a list of the tag objects and their properties.</summary>
         public class TagsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

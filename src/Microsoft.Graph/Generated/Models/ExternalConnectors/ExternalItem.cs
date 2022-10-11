@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<Microsoft.Graph.Models.ExternalConnectors.Acl> Acl {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.Security {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class Case : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {

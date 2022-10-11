@@ -18,16 +18,16 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         /// </summary>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default, string userId = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
+            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("endDateTime", endDateTime);
             urlTplParams.Add("startDateTime", startDateTime);
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime='{startDateTime}',endDateTime='{endDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
+            UrlTemplate = "{+baseurl}/reports/microsoft.graph.getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

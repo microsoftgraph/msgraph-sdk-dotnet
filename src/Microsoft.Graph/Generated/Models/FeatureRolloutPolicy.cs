@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class FeatureRolloutPolicy : Entity, IParsable {
         /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
         public List<DirectoryObject> AppliesTo {

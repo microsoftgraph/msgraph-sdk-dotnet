@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
-        /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
+        /// <summary>Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens {
             get { return BackingStore?.Get<double?>("averageBlueScreens"); }
             set { BackingStore?.Set("averageBlueScreens", value); }
         }
-        /// <summary>Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999</summary>
+        /// <summary>Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999</summary>
         public double? AverageRestarts {
             get { return BackingStore?.Get<double?>("averageRestarts"); }
             set { BackingStore?.Set("averageRestarts", value); }
         }
-        /// <summary>Number of Blue Screens in the last 14 days. Valid values 0 to 9999999</summary>
+        /// <summary>Number of Blue Screens in the last 30 days. Valid values 0 to 9999999</summary>
         public int? BlueScreenCount {
             get { return BackingStore?.Get<int?>("blueScreenCount"); }
             set { BackingStore?.Set("blueScreenCount", value); }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }
             set { BackingStore?.Set("responsiveDesktopTimeInMs", value); }
         }
-        /// <summary>Number of Restarts in the last 14 days. Valid values 0 to 9999999</summary>
+        /// <summary>Number of Restarts in the last 30 days. Valid values 0 to 9999999</summary>
         public int? RestartCount {
             get { return BackingStore?.Get<int?>("restartCount"); }
             set { BackingStore?.Set("restartCount", value); }

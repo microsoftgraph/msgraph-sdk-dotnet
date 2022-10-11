@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
     public class ChatMessageHostedContentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ChatMessageHostedContent> Value {

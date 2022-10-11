@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public enum DeviceManagementExchangeAccessState {
         /// <summary>No access state discovered from Exchange</summary>
         None,

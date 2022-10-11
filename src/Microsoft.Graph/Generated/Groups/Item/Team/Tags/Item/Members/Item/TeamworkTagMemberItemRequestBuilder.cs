@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get members from groups
+        /// Users assigned to the tag.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TeamworkTagMemberItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get members from groups
+        /// Users assigned to the tag.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item.Members.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get members from groups</summary>
+        /// <summary>Users assigned to the tag.</summary>
         public class TeamworkTagMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

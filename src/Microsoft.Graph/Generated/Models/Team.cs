@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class Team : Entity, IParsable {
         /// <summary>List of channels either hosted in or shared with the team (incoming channels).</summary>
         public List<Channel> AllChannels {
@@ -115,7 +116,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<TeamSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>The tags associated with the team.</summary>
         public List<TeamworkTag> Tags {
             get { return BackingStore?.Get<List<TeamworkTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }

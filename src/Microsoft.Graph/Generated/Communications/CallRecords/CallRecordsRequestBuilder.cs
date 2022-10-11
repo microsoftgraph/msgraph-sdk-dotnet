@@ -116,8 +116,8 @@ namespace Microsoft.Graph.Communications.CallRecords {
         }
         /// <summary>
         /// Provides operations to call the getDirectRoutingCalls method.
-        /// <param name="fromDateTime">Usage: fromDateTime=&apos;{fromDateTime}&apos;</param>
-        /// <param name="toDateTime">Usage: toDateTime=&apos;{toDateTime}&apos;</param>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         /// </summary>
         public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder GetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
             _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
@@ -126,8 +126,8 @@ namespace Microsoft.Graph.Communications.CallRecords {
         }
         /// <summary>
         /// Provides operations to call the getPstnCalls method.
-        /// <param name="fromDateTime">Usage: fromDateTime=&apos;{fromDateTime}&apos;</param>
-        /// <param name="toDateTime">Usage: toDateTime=&apos;{toDateTime}&apos;</param>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         /// </summary>
         public GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder GetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
             _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));

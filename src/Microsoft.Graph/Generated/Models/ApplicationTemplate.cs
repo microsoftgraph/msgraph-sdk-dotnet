@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
     public class ApplicationTemplate : Entity, IParsable {
         /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
         public List<string> Categories {
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
         /// <summary>
-        /// Instantiates a new ApplicationTemplate and sets the default values.
+        /// Instantiates a new applicationTemplate and sets the default values.
         /// </summary>
         public ApplicationTemplate() : base() {
             OdataType = "#microsoft.graph.applicationTemplate";

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
         public string ActionType {

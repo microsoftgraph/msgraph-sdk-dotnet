@@ -70,28 +70,6 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property bitlocker in informationProtection
-        /// <param name="body"></param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
-        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Models.Bitlocker body, Action<BitlockerRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.PATCH,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            if (requestConfiguration != null) {
-                var requestConfig = new BitlockerRequestBuilderPatchRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
         /// Get bitlocker from informationProtection
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,22 +77,6 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
         /// </summary>
         public async Task<Microsoft.Graph.Models.Bitlocker> GetAsync(Action<BitlockerRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Bitlocker>(requestInfo, Microsoft.Graph.Models.Bitlocker.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Update the navigation property bitlocker in informationProtection
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
-        public async Task<Microsoft.Graph.Models.Bitlocker> PatchAsync(Microsoft.Graph.Models.Bitlocker body, Action<BitlockerRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -142,20 +104,6 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
             /// Instantiates a new bitlockerRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BitlockerRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
-            }
-        }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
-        public class BitlockerRequestBuilderPatchRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new bitlockerRequestBuilderPatchRequestConfiguration and sets the default values.
-            /// </summary>
-            public BitlockerRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
             }

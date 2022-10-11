@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {

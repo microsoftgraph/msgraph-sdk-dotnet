@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+        /// <summary>The isEmailNotificationEnabled property</summary>
+        public bool? IsEmailNotificationEnabled {
+            get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
+            set { BackingStore?.Set("isEmailNotificationEnabled", value); }
+        }
         /// <summary>The role property</summary>
         public BookingStaffRole? Role {
             get { return BackingStore?.Get<BookingStaffRole?>("role"); }
@@ -62,6 +67,7 @@ namespace Microsoft.Graph.Models {
                 {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
                 {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
                 {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteBoolValue("availabilityIsAffectedByPersonalCalendar", AvailabilityIsAffectedByPersonalCalendar);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteBoolValue("isEmailNotificationEnabled", IsEmailNotificationEnabled);
             writer.WriteEnumValue<BookingStaffRole>("role", Role);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteBoolValue("useBusinessHours", UseBusinessHours);

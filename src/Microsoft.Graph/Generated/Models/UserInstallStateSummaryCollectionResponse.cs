@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.</summary>
     public class UserInstallStateSummaryCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<UserInstallStateSummary> Value {

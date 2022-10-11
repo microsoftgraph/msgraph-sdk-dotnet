@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
         public string AdministrativeUnitId {

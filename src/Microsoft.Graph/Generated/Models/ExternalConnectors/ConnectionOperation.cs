@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
         public Microsoft.Graph.Models.PublicError Error {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new ConnectionOperation and sets the default values.
+        /// Instantiates a new connectionOperation and sets the default values.
         /// </summary>
         public ConnectionOperation() : base() {
             OdataType = "#microsoft.graph.externalConnectors.connectionOperation";

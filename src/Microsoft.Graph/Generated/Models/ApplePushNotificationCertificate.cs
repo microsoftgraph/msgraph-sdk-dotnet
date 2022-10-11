@@ -20,6 +20,16 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+        /// <summary>The reason the certificate upload failed.</summary>
+        public string CertificateUploadFailureReason {
+            get { return BackingStore?.Get<string>("certificateUploadFailureReason"); }
+            set { BackingStore?.Set("certificateUploadFailureReason", value); }
+        }
+        /// <summary>The certificate upload status.</summary>
+        public string CertificateUploadStatus {
+            get { return BackingStore?.Get<string>("certificateUploadStatus"); }
+            set { BackingStore?.Set("certificateUploadStatus", value); }
+        }
         /// <summary>The expiration date and time for Apple push notification certificate.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -57,6 +67,8 @@ namespace Microsoft.Graph.Models {
                 {"appleIdentifier", n => { AppleIdentifier = n.GetStringValue(); } },
                 {"certificate", n => { Certificate = n.GetStringValue(); } },
                 {"certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
+                {"certificateUploadFailureReason", n => { CertificateUploadFailureReason = n.GetStringValue(); } },
+                {"certificateUploadStatus", n => { CertificateUploadStatus = n.GetStringValue(); } },
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"topicIdentifier", n => { TopicIdentifier = n.GetStringValue(); } },
@@ -71,6 +83,8 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteStringValue("appleIdentifier", AppleIdentifier);
             writer.WriteStringValue("certificate", Certificate);
+            writer.WriteStringValue("certificateUploadFailureReason", CertificateUploadFailureReason);
+            writer.WriteStringValue("certificateUploadStatus", CertificateUploadStatus);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("topicIdentifier", TopicIdentifier);

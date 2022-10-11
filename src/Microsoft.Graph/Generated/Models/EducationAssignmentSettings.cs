@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("submissionAnimationDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new educationAssignmentSettings and sets the default values.
+        /// Instantiates a new EducationAssignmentSettings and sets the default values.
         /// </summary>
         public EducationAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.educationAssignmentSettings";

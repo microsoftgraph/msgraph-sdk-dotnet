@@ -14,6 +14,10 @@ using Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithDate;
 using Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithPeriod;
 using Microsoft.Graph.Reports.GetEmailAppUsageVersionsUserCountsWithPeriod;
 using Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Reports.GetM365AppPlatformUserCountsWithPeriod;
+using Microsoft.Graph.Reports.GetM365AppUserCountsWithPeriod;
+using Microsoft.Graph.Reports.GetM365AppUserDetailWithDate;
+using Microsoft.Graph.Reports.GetM365AppUserDetailWithPeriod;
 using Microsoft.Graph.Reports.GetMailboxUsageDetailWithPeriod;
 using Microsoft.Graph.Reports.GetMailboxUsageMailboxCountsWithPeriod;
 using Microsoft.Graph.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPeriod;
@@ -303,15 +307,47 @@ namespace Microsoft.Graph.Reports {
         }
         /// <summary>
         /// Provides operations to call the getGroupArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
             return new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, groupId, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getM365AppPlatformUserCounts method.
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        /// </summary>
+        public GetM365AppPlatformUserCountsWithPeriodRequestBuilder GetM365AppPlatformUserCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetM365AppPlatformUserCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getM365AppUserCounts method.
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        /// </summary>
+        public GetM365AppUserCountsWithPeriodRequestBuilder GetM365AppUserCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetM365AppUserCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
+        /// Provides operations to call the getM365AppUserDetail method.
+        /// <param name="date">Usage: date={date}</param>
+        /// </summary>
+        public GetM365AppUserDetailWithDateRequestBuilder GetM365AppUserDetailWithDate(Date? date) {
+            _ = date ?? throw new ArgumentNullException(nameof(date));
+            return new GetM365AppUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
+        }
+        /// <summary>
+        /// Provides operations to call the getM365AppUserDetail method.
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        /// </summary>
+        public GetM365AppUserDetailWithPeriodRequestBuilder GetM365AppUserDetailWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetM365AppUserDetailWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
         /// Provides operations to call the getMailboxUsageDetail method.
@@ -517,9 +553,9 @@ namespace Microsoft.Graph.Reports {
         }
         /// <summary>
         /// Provides operations to call the getPrinterArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="printerId">Usage: printerId=&apos;{printerId}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
         public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string printerId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -817,8 +853,8 @@ namespace Microsoft.Graph.Reports {
         }
         /// <summary>
         /// Provides operations to call the getUserArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         /// </summary>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId) {

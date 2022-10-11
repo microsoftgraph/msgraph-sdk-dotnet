@@ -12,13 +12,43 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>The count of Corporate work profile Android devices. Also known as Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647</summary>
+        public int? AndroidCorporateWorkProfileCount {
+            get { return BackingStore?.Get<int?>("androidCorporateWorkProfileCount"); }
+            set { BackingStore?.Set("androidCorporateWorkProfileCount", value); }
+        }
         /// <summary>Number of android device count.</summary>
         public int? AndroidCount {
             get { return BackingStore?.Get<int?>("androidCount"); }
             set { BackingStore?.Set("androidCount", value); }
         }
+        /// <summary>Number of dedicated Android devices.</summary>
+        public int? AndroidDedicatedCount {
+            get { return BackingStore?.Get<int?>("androidDedicatedCount"); }
+            set { BackingStore?.Set("androidDedicatedCount", value); }
+        }
+        /// <summary>Number of device admin Android devices.</summary>
+        public int? AndroidDeviceAdminCount {
+            get { return BackingStore?.Get<int?>("androidDeviceAdminCount"); }
+            set { BackingStore?.Set("androidDeviceAdminCount", value); }
+        }
+        /// <summary>Number of fully managed Android devices.</summary>
+        public int? AndroidFullyManagedCount {
+            get { return BackingStore?.Get<int?>("androidFullyManagedCount"); }
+            set { BackingStore?.Set("androidFullyManagedCount", value); }
+        }
+        /// <summary>Number of work profile Android devices.</summary>
+        public int? AndroidWorkProfileCount {
+            get { return BackingStore?.Get<int?>("androidWorkProfileCount"); }
+            set { BackingStore?.Set("androidWorkProfileCount", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Number of ConfigMgr managed devices.</summary>
+        public int? ConfigMgrDeviceCount {
+            get { return BackingStore?.Get<int?>("configMgrDeviceCount"); }
+            set { BackingStore?.Set("configMgrDeviceCount", value); }
+        }
         /// <summary>Number of iOS device count.</summary>
         public int? IosCount {
             get { return BackingStore?.Get<int?>("iosCount"); }
@@ -70,7 +100,13 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"androidCorporateWorkProfileCount", n => { AndroidCorporateWorkProfileCount = n.GetIntValue(); } },
                 {"androidCount", n => { AndroidCount = n.GetIntValue(); } },
+                {"androidDedicatedCount", n => { AndroidDedicatedCount = n.GetIntValue(); } },
+                {"androidDeviceAdminCount", n => { AndroidDeviceAdminCount = n.GetIntValue(); } },
+                {"androidFullyManagedCount", n => { AndroidFullyManagedCount = n.GetIntValue(); } },
+                {"androidWorkProfileCount", n => { AndroidWorkProfileCount = n.GetIntValue(); } },
+                {"configMgrDeviceCount", n => { ConfigMgrDeviceCount = n.GetIntValue(); } },
                 {"iosCount", n => { IosCount = n.GetIntValue(); } },
                 {"macOSCount", n => { MacOSCount = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -85,7 +121,13 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("androidCorporateWorkProfileCount", AndroidCorporateWorkProfileCount);
             writer.WriteIntValue("androidCount", AndroidCount);
+            writer.WriteIntValue("androidDedicatedCount", AndroidDedicatedCount);
+            writer.WriteIntValue("androidDeviceAdminCount", AndroidDeviceAdminCount);
+            writer.WriteIntValue("androidFullyManagedCount", AndroidFullyManagedCount);
+            writer.WriteIntValue("androidWorkProfileCount", AndroidWorkProfileCount);
+            writer.WriteIntValue("configMgrDeviceCount", ConfigMgrDeviceCount);
             writer.WriteIntValue("iosCount", IosCount);
             writer.WriteIntValue("macOSCount", MacOSCount);
             writer.WriteStringValue("@odata.type", OdataType);

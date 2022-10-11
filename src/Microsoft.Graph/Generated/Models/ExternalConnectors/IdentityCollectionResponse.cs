@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.</summary>
     public class IdentityCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Identity> Value {

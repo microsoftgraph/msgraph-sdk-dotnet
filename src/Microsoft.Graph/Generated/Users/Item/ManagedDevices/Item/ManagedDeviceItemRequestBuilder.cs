@@ -18,6 +18,7 @@ using Microsoft.Graph.Users.Item.ManagedDevices.Item.Retire;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.ShutDown;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.SyncDevice;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.UpdateWindowsDeviceAccount;
+using Microsoft.Graph.Users.Item.ManagedDevices.Item.Users;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.WindowsDefenderScan;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.WindowsDefenderUpdateSignatures;
 using Microsoft.Graph.Users.Item.ManagedDevices.Item.Wipe;
@@ -110,6 +111,10 @@ namespace Microsoft.Graph.Users.Item.ManagedDevices.Item {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The users property</summary>
+        public Microsoft.Graph.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder Users { get =>
+            new Microsoft.Graph.Users.Item.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The windowsDefenderScan property</summary>
         public WindowsDefenderScanRequestBuilder WindowsDefenderScan { get =>
             new WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);

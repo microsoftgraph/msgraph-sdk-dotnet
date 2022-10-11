@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new educationAssignmentDefaults and sets the default values.
+        /// Instantiates a new EducationAssignmentDefaults and sets the default values.
         /// </summary>
         public EducationAssignmentDefaults() : base() {
             OdataType = "#microsoft.graph.educationAssignmentDefaults";

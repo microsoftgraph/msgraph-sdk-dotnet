@@ -18,15 +18,15 @@ namespace Microsoft.Graph.Communications.CallRecords.GetDirectRoutingCallsWithFr
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder and sets the default values.
-        /// <param name="fromDateTime">Usage: fromDateTime=&apos;{fromDateTime}&apos;</param>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="toDateTime">Usage: toDateTime=&apos;{toDateTime}&apos;</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         /// </summary>
         public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? fromDateTime = default, DateTimeOffset? toDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime='{fromDateTime}',toDateTime='{toDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
+            UrlTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("fromDateTime", fromDateTime);
             urlTplParams.Add("toDateTime", toDateTime);
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Communications.CallRecords.GetDirectRoutingCallsWithFr
         public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime='{fromDateTime}',toDateTime='{toDateTime}'){?%24top,%24skip,%24search,%24filter,%24count}";
+            UrlTemplate = "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;

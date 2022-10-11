@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CommsOperation : Entity, IParsable {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
         public string ClientContext {

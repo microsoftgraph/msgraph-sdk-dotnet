@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
     public class AppCatalogs : Entity, IParsable {
         /// <summary>The teamsApps property</summary>
         public List<TeamsApp> TeamsApps {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("teamsApps", value); }
         }
         /// <summary>
-        /// Instantiates a new AppCatalogs and sets the default values.
+        /// Instantiates a new appCatalogs and sets the default values.
         /// </summary>
         public AppCatalogs() : base() {
             OdataType = "#microsoft.graph.appCatalogs";

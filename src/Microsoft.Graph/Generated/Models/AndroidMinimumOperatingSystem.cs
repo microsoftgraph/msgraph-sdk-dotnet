@@ -69,6 +69,36 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("v5_1"); }
             set { BackingStore?.Set("v5_1", value); }
         }
+        /// <summary>Version 6.0 or later.</summary>
+        public bool? V6_0 {
+            get { return BackingStore?.Get<bool?>("v6_0"); }
+            set { BackingStore?.Set("v6_0", value); }
+        }
+        /// <summary>Version 7.0 or later.</summary>
+        public bool? V7_0 {
+            get { return BackingStore?.Get<bool?>("v7_0"); }
+            set { BackingStore?.Set("v7_0", value); }
+        }
+        /// <summary>Version 7.1 or later.</summary>
+        public bool? V7_1 {
+            get { return BackingStore?.Get<bool?>("v7_1"); }
+            set { BackingStore?.Set("v7_1", value); }
+        }
+        /// <summary>Version 8.0 or later.</summary>
+        public bool? V8_0 {
+            get { return BackingStore?.Get<bool?>("v8_0"); }
+            set { BackingStore?.Set("v8_0", value); }
+        }
+        /// <summary>Version 8.1 or later.</summary>
+        public bool? V8_1 {
+            get { return BackingStore?.Get<bool?>("v8_1"); }
+            set { BackingStore?.Set("v8_1", value); }
+        }
+        /// <summary>Version 9.0 or later.</summary>
+        public bool? V9_0 {
+            get { return BackingStore?.Get<bool?>("v9_0"); }
+            set { BackingStore?.Set("v9_0", value); }
+        }
         /// <summary>
         /// Instantiates a new androidMinimumOperatingSystem and sets the default values.
         /// </summary>
@@ -101,6 +131,12 @@ namespace Microsoft.Graph.Models {
                 {"v4_4", n => { V4_4 = n.GetBoolValue(); } },
                 {"v5_0", n => { V5_0 = n.GetBoolValue(); } },
                 {"v5_1", n => { V5_1 = n.GetBoolValue(); } },
+                {"v6_0", n => { V6_0 = n.GetBoolValue(); } },
+                {"v7_0", n => { V7_0 = n.GetBoolValue(); } },
+                {"v7_1", n => { V7_1 = n.GetBoolValue(); } },
+                {"v8_0", n => { V8_0 = n.GetBoolValue(); } },
+                {"v8_1", n => { V8_1 = n.GetBoolValue(); } },
+                {"v9_0", n => { V9_0 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -120,6 +156,12 @@ namespace Microsoft.Graph.Models {
             writer.WriteBoolValue("v4_4", V4_4);
             writer.WriteBoolValue("v5_0", V5_0);
             writer.WriteBoolValue("v5_1", V5_1);
+            writer.WriteBoolValue("v6_0", V6_0);
+            writer.WriteBoolValue("v7_0", V7_0);
+            writer.WriteBoolValue("v7_1", V7_1);
+            writer.WriteBoolValue("v8_0", V8_0);
+            writer.WriteBoolValue("v8_1", V8_1);
+            writer.WriteBoolValue("v9_0", V9_0);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

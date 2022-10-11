@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
         public List<CertificateAuthority> CertificateAuthorities {

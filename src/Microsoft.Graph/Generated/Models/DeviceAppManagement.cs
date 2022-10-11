@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Singleton entity that acts as a container for all device app management functionality.</summary>
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections {
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("windowsInformationProtectionPolicies", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceAppManagement and sets the default values.
+        /// Instantiates a new deviceAppManagement and sets the default values.
         /// </summary>
         public DeviceAppManagement() : base() {
             OdataType = "#microsoft.graph.deviceAppManagement";

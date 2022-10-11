@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public enum DeviceManagementPartnerAppType {
         /// <summary>Partner App type is unknown.</summary>
         Unknown,

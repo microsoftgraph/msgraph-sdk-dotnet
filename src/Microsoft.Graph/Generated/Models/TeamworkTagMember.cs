@@ -6,17 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class TeamworkTagMember : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The member&apos;s display name.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The ID of the tenant that the tag member is a part of.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>The user ID of the member.</summary>
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }

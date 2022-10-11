@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of application entities.</summary>
     public class ExtensionProperty : DirectoryObject, IParsable {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
         public string AppDisplayName {

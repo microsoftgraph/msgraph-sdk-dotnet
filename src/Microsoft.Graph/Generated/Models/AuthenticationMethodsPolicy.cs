@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
     public class AuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
         public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthenticationMethodsPolicy and sets the default values.
+        /// Instantiates a new authenticationMethodsPolicy and sets the default values.
         /// </summary>
         public AuthenticationMethodsPolicy() : base() {
             OdataType = "#microsoft.graph.authenticationMethodsPolicy";
