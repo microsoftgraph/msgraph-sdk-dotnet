@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Attachments 
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a message.
+        /// Retrieve a list of attachment objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AttachmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Attachments 
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a message.
+        /// Retrieve a list of attachment objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Attachments 
             };
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of attachment objects attached to a message.</summary>
+        /// <summary>Retrieve a list of attachment objects.</summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

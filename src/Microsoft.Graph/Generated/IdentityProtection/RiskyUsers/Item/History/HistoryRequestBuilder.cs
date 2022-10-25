@@ -57,7 +57,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUserHistoryItem object.
+        /// Get the riskyUserHistoryItems from the history navigation property.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<HistoryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUserHistoryItem object.
+        /// Get the riskyUserHistoryItems from the history navigation property.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             };
             return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Read the properties and relationships of a riskyUserHistoryItem object.</summary>
+        /// <summary>Get the riskyUserHistoryItems from the history navigation property.</summary>
         public class HistoryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
