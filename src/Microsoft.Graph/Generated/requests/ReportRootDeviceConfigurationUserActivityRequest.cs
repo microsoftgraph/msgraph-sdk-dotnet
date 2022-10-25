@@ -35,12 +35,14 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Report> GetAsync(
-            CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsync<Report>(null, cancellationToken);
+            return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
         }
 
         /// <summary>
@@ -48,83 +50,65 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Report>> GetResponseAsync(CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<Report>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
 
         /// <summary>
         /// Issues the PATCH request.
         /// </summary>
-        /// <param name="report">The Report object set with the properties to update.</param>
+        /// <param name="stream">The Stream object set with the properties to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Report> PatchAsync(Report report,
-            CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<Stream> PatchAsync(Stream stream,
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
             this.Method = HttpMethods.PATCH;
-            return this.SendAsync<Report>(report, cancellationToken);
+            return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
         }
 
         /// <summary>
         /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="report">The Report object set with the properties to update.</param>
+        /// <param name="stream">The Stream object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Report>> PatchResponseAsync(Report report, CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse> PatchResponseAsync(Stream stream, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<Report>(report, cancellationToken);
+            return this.SendAsyncWithGraphResponse(stream, cancellationToken);
         }
 
         /// <summary>
         /// Issues the PUT request.
         /// </summary>
-        /// <param name="report">The Report object to update.</param>
+        /// <param name="stream">The Stream object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Report> PutAsync(Report report,
-            CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<Stream> PutAsync(Stream stream,
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
             this.Method = HttpMethods.PUT;
-            return this.SendAsync<Report>(report, cancellationToken);
+            return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
         }
 
         /// <summary>
         /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="report">The Report object set with the properties to update.</param>
+        /// <param name="stream">The Stream object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Report>> PutResponseAsync(Report report, CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(Stream stream, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<Report>(report, cancellationToken);
-        }
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootDeviceConfigurationUserActivityRequest Expand(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$expand", value));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootDeviceConfigurationUserActivityRequest Select(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$select", value));
-            return this;
+            return this.SendAsyncWithGraphResponse(stream, cancellationToken);
         }
     }
 }

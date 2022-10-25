@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// The content of the service issue post.
+        /// The content of the service issue post. The supported value for the contentType property is html.
         /// </summary>
         [JsonPropertyName("description")]
         public ItemBody Description { get; set; }

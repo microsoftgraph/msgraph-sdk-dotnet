@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets body.
-        /// The content type and content of the service message body.
+        /// The content type and content of the service message body. The supported value for the contentType property is html.
         /// </summary>
         [JsonPropertyName("body")]
         public ItemBody Body { get; set; }
