@@ -40,6 +40,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("inviteRedirectUrl"); }
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
+        /// <summary>The resetRedemption property</summary>
+        public bool? ResetRedemption {
+            get { return BackingStore?.Get<bool?>("resetRedemption"); }
+            set { BackingStore?.Set("resetRedemption", value); }
+        }
         /// <summary>Indicates whether an email should be sent to the user being invited. The default is false.</summary>
         public bool? SendInvitationMessage {
             get { return BackingStore?.Get<bool?>("sendInvitationMessage"); }
@@ -76,6 +81,7 @@ namespace Microsoft.Graph.Models {
                 {"invitedUserType", n => { InvitedUserType = n.GetStringValue(); } },
                 {"inviteRedeemUrl", n => { InviteRedeemUrl = n.GetStringValue(); } },
                 {"inviteRedirectUrl", n => { InviteRedirectUrl = n.GetStringValue(); } },
+                {"resetRedemption", n => { ResetRedemption = n.GetBoolValue(); } },
                 {"sendInvitationMessage", n => { SendInvitationMessage = n.GetBoolValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
             };
@@ -94,6 +100,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("invitedUserType", InvitedUserType);
             writer.WriteStringValue("inviteRedeemUrl", InviteRedeemUrl);
             writer.WriteStringValue("inviteRedirectUrl", InviteRedirectUrl);
+            writer.WriteBoolValue("resetRedemption", ResetRedemption);
             writer.WriteBoolValue("sendInvitationMessage", SendInvitationMessage);
             writer.WriteStringValue("status", Status);
         }

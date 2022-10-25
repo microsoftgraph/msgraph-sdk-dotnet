@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+        /// Add a conversationMember to a channel.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members {
             return await RequestAdapter.SendAsync<ConversationMemberCollectionResponse>(requestInfo, ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+        /// Add a conversationMember to a channel.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

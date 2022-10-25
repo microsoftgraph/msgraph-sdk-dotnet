@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+        /// Retrieve a list of plannerTask objects associated to a plannerBucket object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TasksRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+        /// Retrieve a list of plannerTask objects associated to a plannerBucket object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks {
             };
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of **plannerTask** objects associated to a plannerBucket object.</summary>
+        /// <summary>Retrieve a list of plannerTask objects associated to a plannerBucket object.</summary>
         public class TasksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

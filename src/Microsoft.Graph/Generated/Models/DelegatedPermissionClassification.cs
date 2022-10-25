@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to call the instantiate method.</summary>
+    /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public class DelegatedPermissionClassification : Entity, IParsable {
         /// <summary>The classification value being given. Possible value: low. Does not support $filter.</summary>
         public PermissionClassificationType? Classification {

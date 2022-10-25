@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The content of the service issue post.</summary>
+        /// <summary>The content of the service issue post. The supported value for the contentType property is html.</summary>
         public ItemBody Description {
             get { return BackingStore?.Get<ItemBody>("description"); }
             set { BackingStore?.Set("description", value); }

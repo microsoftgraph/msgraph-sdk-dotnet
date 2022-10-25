@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum PropertyType {
         String,
         Int64,

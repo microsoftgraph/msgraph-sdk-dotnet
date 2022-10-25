@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
     public class DeviceComplianceDeviceStatusCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceComplianceDeviceStatus> Value {

@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Create a new reply to a chatMessage in a specified channel.
+        /// Send a new reply to a chatMessage in a specified channel.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Ite
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new reply to a chatMessage in a specified channel.
+        /// Send a new reply to a chatMessage in a specified channel.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

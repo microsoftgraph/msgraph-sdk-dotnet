@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public enum ManagedAppAvailability {
         /// <summary>A globally available app to all tenants.</summary>
         Global,
