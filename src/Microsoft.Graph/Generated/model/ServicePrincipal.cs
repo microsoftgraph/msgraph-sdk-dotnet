@@ -343,7 +343,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated identity credentials.
-        /// Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+        /// Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("federatedIdentityCredentials")]
         public IServicePrincipalFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }
@@ -399,7 +399,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owned objects.
-        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
@@ -413,7 +413,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         [JsonPropertyName("owners")]
         public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }
