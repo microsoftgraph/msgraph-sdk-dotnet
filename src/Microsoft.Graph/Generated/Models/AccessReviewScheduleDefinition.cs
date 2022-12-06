@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public class AccessReviewScheduleDefinition : Entity, IParsable {
         /// <summary>Defines the list of additional users or group members to be notified of the access review progress.</summary>
         public List<AccessReviewNotificationRecipientItem> AdditionalNotificationRecipients {

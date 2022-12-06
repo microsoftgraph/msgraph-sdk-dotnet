@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("inviteRedirectUrl"); }
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
-        /// <summary>The resetRedemption property</summary>
+        /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.</summary>
         public bool? ResetRedemption {
             get { return BackingStore?.Get<bool?>("resetRedemption"); }
             set { BackingStore?.Set("resetRedemption", value); }

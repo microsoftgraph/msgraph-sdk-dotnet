@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
     public enum MicrosoftEdgeChannel {
         /// <summary>The Dev Channel is intended to help you plan and develop with the latest capabilities of Microsoft Edge.</summary>
         Dev,

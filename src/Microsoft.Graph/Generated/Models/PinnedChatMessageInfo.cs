@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of chat entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class PinnedChatMessageInfo : Entity, IParsable {
         /// <summary>Represents details about the chat message that is pinned.</summary>
         public ChatMessage Message {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class TeamworkTag : Entity, IParsable {
         /// <summary>The description of the tag as it will appear to the user in Microsoft Teams.</summary>
         public string Description {

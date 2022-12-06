@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<ConditionalAccessPlatforms>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
-        /// <summary>The servicePrincipalRiskLevels property</summary>
+        /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
         public List<RiskLevel?> ServicePrincipalRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<List<RiskLevel?>>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
-        /// <summary>Users, groups, and roles included in and excluded from the policy. Required.</summary>
+        /// <summary>Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.</summary>
         public ConditionalAccessUsers Users {
             get { return BackingStore?.Get<ConditionalAccessUsers>("users"); }
             set { BackingStore?.Set("users", value); }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>A class containing the properties for Audit Event.</summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
         public string Activity {
