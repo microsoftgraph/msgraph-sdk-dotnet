@@ -64,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reset redemption.
+        /// Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.
         /// </summary>
         [JsonPropertyName("resetRedemption")]
         public bool? ResetRedemption { get; set; }

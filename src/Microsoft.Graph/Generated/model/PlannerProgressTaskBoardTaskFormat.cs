@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets order hint.
-        /// Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+        /// Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
         /// </summary>
         [JsonPropertyName("orderHint")]
         public string OrderHint { get; set; }

@@ -65,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets servicePrincipalRiskLevels.
+        /// Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("servicePrincipalRiskLevels")]
         public IEnumerable<RiskLevel> ServicePrincipalRiskLevels { get; set; }
@@ -85,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets users.
-        /// Users, groups, and roles included in and excluded from the policy. Required.
+        /// Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
         /// </summary>
         [JsonPropertyName("users")]
         public ConditionalAccessUsers Users { get; set; }

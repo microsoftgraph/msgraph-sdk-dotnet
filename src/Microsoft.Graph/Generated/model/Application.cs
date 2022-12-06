@@ -224,7 +224,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in audience.
-        /// Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
+        /// Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }
@@ -266,14 +266,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created on behalf of.
-        /// Supports $filter (eq when counting empty collections). Read-only.
+        /// Supports $filter (/$count eq 0, /$count ne 0). Read-only.
         /// </summary>
         [JsonPropertyName("createdOnBehalfOf")]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
     
         /// <summary>
         /// Gets or sets extension properties.
-        /// Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("extensionProperties")]
         public IApplicationExtensionPropertiesCollectionPage ExtensionProperties { get; set; }
@@ -287,7 +287,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated identity credentials.
-        /// Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("federatedIdentityCredentials")]
         public IApplicationFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }
@@ -314,7 +314,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }

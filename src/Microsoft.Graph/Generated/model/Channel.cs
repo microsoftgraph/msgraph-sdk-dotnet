@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Channel name as it will appear to the user in Microsoft Teams.
+        /// Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets condition.
-        /// Optional constraints that must be met for the permission to be effective.
+        /// Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
         /// </summary>
         [JsonPropertyName("condition")]
         public string Condition { get; set; }
