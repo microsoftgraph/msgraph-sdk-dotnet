@@ -23,12 +23,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets accountName.
+        /// User account name of the logged-on user.
         /// </summary>
         [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
+        /// User account domain of the logged-on user.
         /// </summary>
         [JsonPropertyName("domainName")]
         public string DomainName { get; set; }

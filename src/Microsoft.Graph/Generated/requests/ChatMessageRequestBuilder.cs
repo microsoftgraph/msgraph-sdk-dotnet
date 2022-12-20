@@ -74,7 +74,27 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for ChatMessageSoftDelete.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
+        public IChatMessageSoftDeleteRequestBuilder SoftDelete()
+        {
+            return new ChatMessageSoftDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.softDelete"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChatMessageUndoSoftDelete.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUndoSoftDeleteRequestBuilder"/>.</returns>
+        public IChatMessageUndoSoftDeleteRequestBuilder UndoSoftDelete()
+        {
+            return new ChatMessageUndoSoftDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.undoSoftDelete"),
+                this.Client);
+        }
     
     }
 }

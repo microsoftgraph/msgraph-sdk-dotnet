@@ -23,168 +23,196 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets actor display name.
+        /// The adversary or activity group that is associated with this alert.
         /// </summary>
         [JsonPropertyName("actorDisplayName")]
         public string ActorDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets alert web url.
+        /// URL for the alert page in the Microsoft 365 Defender portal.
         /// </summary>
         [JsonPropertyName("alertWebUrl")]
         public string AlertWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets assigned to.
+        /// Owner of the alert, or null if no owner is assigned.
         /// </summary>
         [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.
         /// </summary>
         [JsonPropertyName("category")]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets classification.
+        /// Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("classification")]
         public AlertClassification? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
+        /// Array of comments created by the Security Operations (SecOps) team during the alert management process.
         /// </summary>
         [JsonPropertyName("comments")]
         public IEnumerable<AlertComment> Comments { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Time when Microsoft 365 Defender created the alert.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// String value describing each alert.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets detection source.
+        /// Detection technology or sensor that identified the notable component or activity.
         /// </summary>
         [JsonPropertyName("detectionSource")]
         public DetectionSource? DetectionSource { get; set; }
     
         /// <summary>
         /// Gets or sets detector id.
+        /// The ID of the detector that triggered the alert.
         /// </summary>
         [JsonPropertyName("detectorId")]
         public string DetectorId { get; set; }
     
         /// <summary>
         /// Gets or sets determination.
+        /// Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("determination")]
         public AlertDetermination? Determination { get; set; }
     
         /// <summary>
         /// Gets or sets evidence.
+        /// Collection of evidence related to the alert.
         /// </summary>
         [JsonPropertyName("evidence")]
         public IEnumerable<AlertEvidence> Evidence { get; set; }
     
         /// <summary>
         /// Gets or sets first activity date time.
+        /// The earliest activity associated with the alert.
         /// </summary>
         [JsonPropertyName("firstActivityDateTime")]
         public DateTimeOffset? FirstActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets incident id.
+        /// Unique identifier to represent the incident this alert resource is associated with.
         /// </summary>
         [JsonPropertyName("incidentId")]
         public string IncidentId { get; set; }
     
         /// <summary>
         /// Gets or sets incident web url.
+        /// URL for the incident page in the Microsoft 365 Defender portal.
         /// </summary>
         [JsonPropertyName("incidentWebUrl")]
         public string IncidentWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date time.
+        /// The oldest activity associated with the alert.
         /// </summary>
         [JsonPropertyName("lastActivityDateTime")]
         public DateTimeOffset? LastActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last update date time.
+        /// Time when the alert was last updated at Microsoft 365 Defender.
         /// </summary>
         [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mitre techniques.
+        /// The attack techniques, as aligned with the MITRE ATT&amp;CK framework.
         /// </summary>
         [JsonPropertyName("mitreTechniques")]
         public IEnumerable<string> MitreTechniques { get; set; }
     
         /// <summary>
         /// Gets or sets provider alert id.
+        /// The ID of the alert as it appears in the security provider product that generated the alert.
         /// </summary>
         [JsonPropertyName("providerAlertId")]
         public string ProviderAlertId { get; set; }
     
         /// <summary>
         /// Gets or sets recommended actions.
+        /// Recommended response and remediation actions to take in the event this alert was generated.
         /// </summary>
         [JsonPropertyName("recommendedActions")]
         public string RecommendedActions { get; set; }
     
         /// <summary>
         /// Gets or sets resolved date time.
+        /// Time when the alert was resolved.
         /// </summary>
         [JsonPropertyName("resolvedDateTime")]
         public DateTimeOffset? ResolvedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets service source.
+        /// The service or product that created this alert. Possible values are: microsoftDefenderForEndpoint, microsoftDefenderForIdentity, microsoftCloudAppSecurity, microsoftDefenderForOffice365, microsoft365Defender, aadIdentityProtection, appGovernance, dataLossPrevention.
         /// </summary>
         [JsonPropertyName("serviceSource")]
         public ServiceSource? ServiceSource { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// Indicates the possible impact on assets. The higher the severity the bigger the impact. Typically higher severity items require the most immediate attention. Possible values are: unknown, informational, low, medium, high, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public AlertSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the alert. Possible values are: new, inProgress, resolved, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public AlertStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant the alert was created in.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets threat display name.
+        /// The threat associated with this alert.
         /// </summary>
         [JsonPropertyName("threatDisplayName")]
         public string ThreatDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets threat family name.
+        /// Threat family associated with this alert.
         /// </summary>
         [JsonPropertyName("threatFamilyName")]
         public string ThreatFamilyName { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// Brief identifying string value describing the alert.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }

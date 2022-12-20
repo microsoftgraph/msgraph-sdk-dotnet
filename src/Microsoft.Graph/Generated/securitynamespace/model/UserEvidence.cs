@@ -29,6 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets userAccount.
+        /// The user account details.
         /// </summary>
         [JsonPropertyName("userAccount")]
         public UserAccount UserAccount { get; set; }

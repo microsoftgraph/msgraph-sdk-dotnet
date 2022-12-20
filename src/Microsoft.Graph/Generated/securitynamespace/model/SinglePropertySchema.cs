@@ -23,12 +23,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets name.
+        /// The name of the property.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of the property.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

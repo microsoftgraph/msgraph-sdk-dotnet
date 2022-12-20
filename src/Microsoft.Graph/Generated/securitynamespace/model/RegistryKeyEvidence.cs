@@ -29,12 +29,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets registryHive.
+        /// Registry hive of the key that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryHive")]
         public string RegistryHive { get; set; }
     
         /// <summary>
         /// Gets or sets registryKey.
+        /// Registry key that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryKey")]
         public string RegistryKey { get; set; }

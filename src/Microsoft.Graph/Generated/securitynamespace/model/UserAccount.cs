@@ -23,30 +23,35 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets accountName.
+        /// The user account's displayed name.
         /// </summary>
         [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets azureAdUserId.
+        /// The user object identifier in Azure AD.
         /// </summary>
         [JsonPropertyName("azureAdUserId")]
         public string AzureAdUserId { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
+        /// The name of the Active Directory domain of which the user is a member.
         /// </summary>
         [JsonPropertyName("domainName")]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
+        /// The user principal name of the account in Azure AD.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets userSid.
+        /// The local security identifier of the user account.
         /// </summary>
         [JsonPropertyName("userSid")]
         public string UserSid { get; set; }

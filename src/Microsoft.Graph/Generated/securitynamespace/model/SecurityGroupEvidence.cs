@@ -29,12 +29,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The name of the security group.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets securityGroupId.
+        /// Unique identifier of the security group.
         /// </summary>
         [JsonPropertyName("securityGroupId")]
         public string SecurityGroupId { get; set; }

@@ -23,24 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets cloudProvider.
+        /// The cloud provider hosting the virtual machine. The possible values are: unknown, azure, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("cloudProvider")]
         public VmCloudProvider? CloudProvider { get; set; }
     
         /// <summary>
         /// Gets or sets resourceId.
+        /// Unique identifier of the Azure resource.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionId.
+        /// Unique identifier of the Azure subscription the customer tenant belongs to.
         /// </summary>
         [JsonPropertyName("subscriptionId")]
         public string SubscriptionId { get; set; }
     
         /// <summary>
         /// Gets or sets vmId.
+        /// Unique identifier of the virtual machine instance.
         /// </summary>
         [JsonPropertyName("vmId")]
         public string VmId { get; set; }

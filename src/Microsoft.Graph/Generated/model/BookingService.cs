@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is anonymous join enabled.
+        /// True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
         /// </summary>
         [JsonPropertyName("isAnonymousJoinEnabled")]
         public bool? IsAnonymousJoinEnabled { get; set; }
@@ -106,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets language tag.
+        /// The language of the self-service booking page.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }

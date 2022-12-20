@@ -29,24 +29,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets appId.
+        /// Unique identifier of the application.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Name of the application.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets objectId.
+        /// The unique identifier of the application object in Azure AD.
         /// </summary>
         [JsonPropertyName("objectId")]
         public string ObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
+        /// The name of the application publisher.
         /// </summary>
         [JsonPropertyName("publisher")]
         public string Publisher { get; set; }

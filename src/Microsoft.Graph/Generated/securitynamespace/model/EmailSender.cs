@@ -23,18 +23,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The name of the sender.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets domainName.
+        /// Sender domain.
         /// </summary>
         [JsonPropertyName("domainName")]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets emailAddress.
+        /// Sender email address.
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }

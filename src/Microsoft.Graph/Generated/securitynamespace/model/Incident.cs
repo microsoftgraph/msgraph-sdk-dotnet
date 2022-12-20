@@ -23,84 +23,98 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets assigned to.
+        /// Owner of the incident, or null if no owner is assigned. Free editable text.
         /// </summary>
         [JsonPropertyName("assignedTo")]
         public string AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets classification.
+        /// The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("classification")]
         public AlertClassification? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
+        /// Array of comments created by the Security Operations (SecOps) team when the incident is managed.
         /// </summary>
         [JsonPropertyName("comments")]
         public IEnumerable<AlertComment> Comments { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Time when the incident was first created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets custom tags.
+        /// Array of custom tags associated with an incident.
         /// </summary>
         [JsonPropertyName("customTags")]
         public IEnumerable<string> CustomTags { get; set; }
     
         /// <summary>
         /// Gets or sets determination.
+        /// Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("determination")]
         public AlertDetermination? Determination { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The incident name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets incident web url.
+        /// The URL for the incident page in the Microsoft 365 Defender portal.
         /// </summary>
         [JsonPropertyName("incidentWebUrl")]
         public string IncidentWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last update date time.
+        /// Time when the incident was last updated.
         /// </summary>
         [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets redirect incident id.
+        /// Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
         /// </summary>
         [JsonPropertyName("redirectIncidentId")]
         public string RedirectIncidentId { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// Indicates the possible impact on assets. The higher the severity, the bigger the impact. Typically higher severity items require the most immediate attention. Possible values are: unknown, informational, low, medium, high, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public AlertSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the incident. Possible values are: active, resolved, redirected, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public IncidentStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant in which the alert was created.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets alerts.
+        /// The list of related alerts. Supports $expand.
         /// </summary>
         [JsonPropertyName("alerts")]
         public IIncidentAlertsCollectionWithReferencesPage Alerts { get; set; }

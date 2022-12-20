@@ -29,6 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets url.
+        /// The Unique Resource Locator (URL).
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

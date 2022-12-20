@@ -29,18 +29,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The name associated with the mailbox.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets primaryAddress.
+        /// The primary email address of the mailbox.
         /// </summary>
         [JsonPropertyName("primaryAddress")]
         public string PrimaryAddress { get; set; }
     
         /// <summary>
         /// Gets or sets userAccount.
+        /// The user account of the mailbox.
         /// </summary>
         [JsonPropertyName("userAccount")]
         public UserAccount UserAccount { get; set; }

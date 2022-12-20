@@ -52,13 +52,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is email notification enabled.
+        /// True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
         /// </summary>
         [JsonPropertyName("isEmailNotificationEnabled")]
         public bool? IsEmailNotificationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets role.
-        /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
+        /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler, teamMember. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: scheduler, teamMember. Required.
         /// </summary>
         [JsonPropertyName("role")]
         public BookingStaffRole? Role { get; set; }

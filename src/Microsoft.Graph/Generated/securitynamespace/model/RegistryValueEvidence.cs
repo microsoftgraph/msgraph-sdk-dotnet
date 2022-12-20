@@ -29,30 +29,35 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets registryHive.
+        /// Registry hive of the key that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryHive")]
         public string RegistryHive { get; set; }
     
         /// <summary>
         /// Gets or sets registryKey.
+        /// Registry key that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryKey")]
         public string RegistryKey { get; set; }
     
         /// <summary>
         /// Gets or sets registryValue.
+        /// Data of the registry value that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryValue")]
         public string RegistryValue { get; set; }
     
         /// <summary>
         /// Gets or sets registryValueName.
+        /// Name of the registry value that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryValueName")]
         public string RegistryValueName { get; set; }
     
         /// <summary>
         /// Gets or sets registryValueType.
+        /// Data type, such as binary or string, of the registry value that the recorded action was applied to.
         /// </summary>
         [JsonPropertyName("registryValueType")]
         public string RegistryValueType { get; set; }

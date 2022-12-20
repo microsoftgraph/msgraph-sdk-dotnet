@@ -23,36 +23,42 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// The time the evidence was created and added to the alert.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets remediationStatus.
+        /// Status of the remediation action taken. The possible values are: none, remediated, prevented, blocked, notFound, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("remediationStatus")]
         public EvidenceRemediationStatus? RemediationStatus { get; set; }
     
         /// <summary>
         /// Gets or sets remediationStatusDetails.
+        /// Details about the remediation status.
         /// </summary>
         [JsonPropertyName("remediationStatusDetails")]
         public string RemediationStatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets roles.
+        /// The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
         /// </summary>
         [JsonPropertyName("roles")]
         public IEnumerable<EvidenceRole> Roles { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets verdict.
+        /// The decision reached by automated investigation. The possible values are: unknown, suspicious, malicious, noThreatsFound, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("verdict")]
         public EvidenceVerdict? Verdict { get; set; }

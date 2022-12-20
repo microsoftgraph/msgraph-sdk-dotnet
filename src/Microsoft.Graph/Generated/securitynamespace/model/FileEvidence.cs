@@ -30,18 +30,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets detectionStatus.
+        /// The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("detectionStatus")]
         public DetectionStatus? DetectionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets fileDetails.
+        /// The file details.
         /// </summary>
         [JsonPropertyName("fileDetails")]
         public FileDetails FileDetails { get; set; }
     
         /// <summary>
         /// Gets or sets mdeDeviceId.
+        /// A unique identifier assigned to a device by Microsoft Defender for Endpoint.
         /// </summary>
         [JsonPropertyName("mdeDeviceId")]
         public string MdeDeviceId { get; set; }
