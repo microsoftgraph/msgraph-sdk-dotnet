@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<int?>("defaultLifetimeInMinutes"); }
             set { BackingStore?.Set("defaultLifetimeInMinutes", value); }
         }
-        /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
+        /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
         public List<AuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }

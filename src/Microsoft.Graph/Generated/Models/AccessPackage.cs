@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Provides operations to manage the appCatalogs singleton.
+    /// </summary>
     public class AccessPackage : Entity, IParsable {
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
         public List<AccessPackage> AccessPackagesIncompatibleWith {

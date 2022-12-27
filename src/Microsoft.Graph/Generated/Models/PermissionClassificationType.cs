@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Models {
-    /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
+    /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public enum PermissionClassificationType {
         Low,
         Medium,

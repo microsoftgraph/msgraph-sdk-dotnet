@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>
-    /// Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
-    /// </summary>
     public class TeamsAppDefinitionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TeamsAppDefinition> Value {

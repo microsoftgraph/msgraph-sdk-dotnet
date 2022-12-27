@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
+    /// </summary>
     public class PinnedChatMessageInfoCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PinnedChatMessageInfo> Value {

@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Resources {
             return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-post-resource?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>

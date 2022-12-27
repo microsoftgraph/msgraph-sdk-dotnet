@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("system", value); }
         }
         /// <summary>
-        /// Instantiates a new drive and sets the default values.
+        /// Instantiates a new Drive and sets the default values.
         /// </summary>
         public Drive() : base() {
             OdataType = "#microsoft.graph.drive";

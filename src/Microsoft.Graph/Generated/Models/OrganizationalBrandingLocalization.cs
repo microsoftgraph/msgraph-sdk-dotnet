@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     /// <summary>
-    /// Provides operations to manage the appCatalogs singleton.
+    /// Provides operations to manage the organizationalBranding singleton.
     /// </summary>
     public class OrganizationalBrandingLocalization : OrganizationalBrandingProperties, IParsable {
         /// <summary>

@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<string>("latestSupportedTlsVersion"); }
             set { BackingStore?.Set("latestSupportedTlsVersion", value); }
         }
-        /// <summary>Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.</summary>
+        /// <summary>Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.</summary>
         public string LifecycleNotificationUrl {
             get { return BackingStore?.Get<string>("lifecycleNotificationUrl"); }
             set { BackingStore?.Set("lifecycleNotificationUrl", value); }
         }
-        /// <summary>Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.</summary>
+        /// <summary>Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.</summary>
         public string NotificationQueryOptions {
             get { return BackingStore?.Get<string>("notificationQueryOptions"); }
             set { BackingStore?.Set("notificationQueryOptions", value); }

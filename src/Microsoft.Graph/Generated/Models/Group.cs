@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
-        /// Instantiates a new Group and sets the default values.
+        /// Instantiates a new group and sets the default values.
         /// </summary>
         public Group() : base() {
             OdataType = "#microsoft.graph.group";

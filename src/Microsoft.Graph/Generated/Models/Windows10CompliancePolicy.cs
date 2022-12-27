@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
-    /// <summary>
-    /// This class contains compliance settings for Windows 10.
-    /// </summary>
     public class Windows10CompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled</summary>
         public bool? BitLockerEnabled {
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new windows10CompliancePolicy and sets the default values.
+        /// Instantiates a new Windows10CompliancePolicy and sets the default values.
         /// </summary>
         public Windows10CompliancePolicy() : base() {
             OdataType = "#microsoft.graph.windows10CompliancePolicy";

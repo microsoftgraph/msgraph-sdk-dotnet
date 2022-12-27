@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("initiatorType", value); }
         }
         /// <summary>
-        /// Instantiates a new Initiator and sets the default values.
+        /// Instantiates a new initiator and sets the default values.
         /// </summary>
         public Initiator() : base() {
             OdataType = "#microsoft.graph.initiator";

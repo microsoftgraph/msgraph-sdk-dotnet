@@ -2,6 +2,8 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.HostedContents;
 using Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies;
+using Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.SoftDelete;
+using Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.UndoSoftDelete;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -27,6 +29,14 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the softDelete method.</summary>
+        public SoftDeleteRequestBuilder SoftDelete { get =>
+            new SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the undoSoftDelete method.</summary>
+        public UndoSoftDeleteRequestBuilder UndoSoftDelete { get =>
+            new UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

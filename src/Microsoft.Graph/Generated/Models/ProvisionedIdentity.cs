@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("identityType", value); }
         }
         /// <summary>
-        /// Instantiates a new ProvisionedIdentity and sets the default values.
+        /// Instantiates a new provisionedIdentity and sets the default values.
         /// </summary>
         public ProvisionedIdentity() : base() {
             OdataType = "#microsoft.graph.provisionedIdentity";
