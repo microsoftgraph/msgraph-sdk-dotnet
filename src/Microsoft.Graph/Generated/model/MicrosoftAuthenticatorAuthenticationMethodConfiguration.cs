@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets include targets.
-        /// A collection of users or groups who are enabled to use the authentication method. Expanded by default.
+        /// A collection of groups that are enabled to use the authentication method. Expanded by default.
         /// </summary>
         [JsonPropertyName("includeTargets")]
         public IMicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }

@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets container.
-        /// Identifies the container of the plan. After it is set, this property can’t be updated. Required.
+        /// Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
         /// </summary>
         [JsonPropertyName("container")]
         public PlannerPlanContainer Container { get; set; }

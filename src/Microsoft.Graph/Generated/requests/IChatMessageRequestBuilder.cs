@@ -43,7 +43,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
         IChatMessageRepliesCollectionRequestBuilder Replies { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for ChatMessageSoftDelete.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
+        IChatMessageSoftDeleteRequestBuilder SoftDelete();
+
+        /// <summary>
+        /// Gets the request builder for ChatMessageUndoSoftDelete.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUndoSoftDeleteRequestBuilder"/>.</returns>
+        IChatMessageUndoSoftDeleteRequestBuilder UndoSoftDelete();
     
     }
 }

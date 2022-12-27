@@ -30,60 +30,70 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets detectionStatus.
+        /// The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("detectionStatus")]
         public DetectionStatus? DetectionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets imageFile.
+        /// Image file details.
         /// </summary>
         [JsonPropertyName("imageFile")]
         public FileDetails ImageFile { get; set; }
     
         /// <summary>
         /// Gets or sets mdeDeviceId.
+        /// A unique identifier assigned to a device by Microsoft Defender for Endpoint.
         /// </summary>
         [JsonPropertyName("mdeDeviceId")]
         public string MdeDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessCreationDateTime.
+        /// Date and time when the parent of the process was created.
         /// </summary>
         [JsonPropertyName("parentProcessCreationDateTime")]
         public DateTimeOffset? ParentProcessCreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessId.
+        /// Process ID (PID) of the parent process that spawned the process.
         /// </summary>
         [JsonPropertyName("parentProcessId")]
         public Int64? ParentProcessId { get; set; }
     
         /// <summary>
         /// Gets or sets parentProcessImageFile.
+        /// Parent process image file details.
         /// </summary>
         [JsonPropertyName("parentProcessImageFile")]
         public FileDetails ParentProcessImageFile { get; set; }
     
         /// <summary>
         /// Gets or sets processCommandLine.
+        /// Command line used to create the new process.
         /// </summary>
         [JsonPropertyName("processCommandLine")]
         public string ProcessCommandLine { get; set; }
     
         /// <summary>
         /// Gets or sets processCreationDateTime.
+        /// Date and time the process was created.
         /// </summary>
         [JsonPropertyName("processCreationDateTime")]
         public DateTimeOffset? ProcessCreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets processId.
+        /// Process ID (PID) of the newly created process.
         /// </summary>
         [JsonPropertyName("processId")]
         public Int64? ProcessId { get; set; }
     
         /// <summary>
         /// Gets or sets userAccount.
+        /// User details of the user that ran the process.
         /// </summary>
         [JsonPropertyName("userAccount")]
         public UserAccount UserAccount { get; set; }

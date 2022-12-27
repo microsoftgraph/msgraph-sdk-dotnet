@@ -71,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets language tag.
+        /// The language of the self-service booking page.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }

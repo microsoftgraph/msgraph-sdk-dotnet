@@ -23,12 +23,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets results.
+        /// The results of the hunting query.
         /// </summary>
         [JsonPropertyName("results")]
         public IEnumerable<HuntingRowResult> Results { get; set; }
     
         /// <summary>
         /// Gets or sets schema.
+        /// The schema for the response.
         /// </summary>
         [JsonPropertyName("schema")]
         public IEnumerable<SinglePropertySchema> Schema { get; set; }

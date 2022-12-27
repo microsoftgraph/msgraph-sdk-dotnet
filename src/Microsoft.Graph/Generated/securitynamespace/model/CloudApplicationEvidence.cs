@@ -29,30 +29,35 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets appId.
+        /// Unique identifier of the application.
         /// </summary>
         [JsonPropertyName("appId")]
         public Int64? AppId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Name of the application.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets instanceId.
+        /// Identifier of the instance of the Software as a Service (SaaS) application.
         /// </summary>
         [JsonPropertyName("instanceId")]
         public Int64? InstanceId { get; set; }
     
         /// <summary>
         /// Gets or sets instanceName.
+        /// Name of the instance of the SaaS application.
         /// </summary>
         [JsonPropertyName("instanceName")]
         public string InstanceName { get; set; }
     
         /// <summary>
         /// Gets or sets saasAppId.
+        /// The identifier of the SaaS application.
         /// </summary>
         [JsonPropertyName("saasAppId")]
         public Int64? SaasAppId { get; set; }

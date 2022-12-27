@@ -23,48 +23,56 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets fileName.
+        /// The name of the file.
         /// </summary>
         [JsonPropertyName("fileName")]
         public string FileName { get; set; }
     
         /// <summary>
         /// Gets or sets filePath.
+        /// The file path (location) of the file instance.
         /// </summary>
         [JsonPropertyName("filePath")]
         public string FilePath { get; set; }
     
         /// <summary>
         /// Gets or sets filePublisher.
+        /// The publisher of the file.
         /// </summary>
         [JsonPropertyName("filePublisher")]
         public string FilePublisher { get; set; }
     
         /// <summary>
         /// Gets or sets fileSize.
+        /// The size of the file in bytes.
         /// </summary>
         [JsonPropertyName("fileSize")]
         public Int64? FileSize { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.
+        /// The certificate authority (CA) that issued the certificate.
         /// </summary>
         [JsonPropertyName("issuer")]
         public string Issuer { get; set; }
     
         /// <summary>
         /// Gets or sets sha1.
+        /// The Sha1 cryptographic hash of the file content.
         /// </summary>
         [JsonPropertyName("sha1")]
         public string Sha1 { get; set; }
     
         /// <summary>
         /// Gets or sets sha256.
+        /// The Sha256 cryptographic hash of the file content.
         /// </summary>
         [JsonPropertyName("sha256")]
         public string Sha256 { get; set; }
     
         /// <summary>
         /// Gets or sets signer.
+        /// The signer of the signed file.
         /// </summary>
         [JsonPropertyName("signer")]
         public string Signer { get; set; }
