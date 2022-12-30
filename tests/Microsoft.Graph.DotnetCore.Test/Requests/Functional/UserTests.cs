@@ -13,7 +13,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using Xunit;
     public class UserTests : GraphTestBase
     {
-        [Fact(Skip = "No CI set up for functional tests - add email addresses to run this test.")]
+        [Fact]
         public async Task UserGetMailtipsTestEnumFlags()
         {
             try

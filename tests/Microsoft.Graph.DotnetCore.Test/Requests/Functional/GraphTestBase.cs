@@ -33,9 +33,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public GraphTestBase()
         {
             // Setup for CI
-            clientId = System.Environment.GetEnvironmentVariable("test_client_id");
-            userName = System.Environment.GetEnvironmentVariable("test_user_name");
-            password = System.Environment.GetEnvironmentVariable("test_password");
+            //clientId = System.Environment.GetEnvironmentVariable("test_client_id");
+            //userName = System.Environment.GetEnvironmentVariable("test_user_name");
+            //password = System.Environment.GetEnvironmentVariable("test_password");
+
+            clientId = "d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90";
+            userName = "xpaynftnewsletter@microsoft.com";
+            password = "fKhFzN77~Pp5ra(1";
 
             GetAuthenticatedClient();
         }

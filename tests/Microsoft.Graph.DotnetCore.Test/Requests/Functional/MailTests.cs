@@ -11,17 +11,43 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.IO;
     using System.Threading.Tasks;
     using Xunit;
+    using Azure.Identity;
+    using Castle.Core.Logging;
 
     public class MailTests : GraphTestBase
     {
         public async System.Threading.Tasks.Task<Message> createEmail(string emailBody)
         {
-            // Get the test user.
+
+            ////UsernamePasswordCredential
+            //string[] scopes = { "api://d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90/User.Read" };
+            //UsernamePasswordCredential usernamePasswordCredential = new UsernamePasswordCredential("xpaynftnewsletter@microsoft.com", "fKhFzN77~Pp5ra(1", "72f988bf-86f1-41af-91ab-2d7cd011db47", "d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90");
+            //GraphServiceClient graphClient = new GraphServiceClient(usernamePasswordCredential, scopes); // you can pass the TokenCredential directly to the GraphServiceClient
+            //// Get the test user.
+            //var me = await graphClient.Me.Request().GetAsync();
+
+            //InteractiveBrowserCredential
+            string[] scopes = { "api://d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90/User.Read" };
+            InteractiveBrowserCredentialOptions interactiveBrowserCredentialOptions = new InteractiveBrowserCredentialOptions()
+            {
+                ClientId = "d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90"
+            };
+            InteractiveBrowserCredential interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveBrowserCredentialOptions);
+            GraphServiceClient graphClient = new GraphServiceClient(interactiveBrowserCredential, scopes);
             var me = await graphClient.Me.Request().GetAsync();
 
+            //ClientSecretCredential
+            //string[] scopes = { "https://graph.microsoft.com/.default" };
+            //ClientSecretCredential clientSecretCredential = new ClientSecretCredential("72f988bf-86f1-41af-91ab-2d7cd011db47", "d7ba15a9-00c1-4d06-9fc0-e2dbb7938b90", "q3K8Q~YxlTRcz5kewUVckzPrU-unWLEiZ1tDKcLH");
+            //GraphServiceClient graphClient = new GraphServiceClient(clientSecretCredential, scopes);
+            //User me = await graphClient.Users["xpaynftnewsletter@microsoft.com"].Request()
+            //                .GetAsync();
+
+            //var me = await graphClient.Me.Request().GetAsync();
             var subject = DateTime.Now.ToString();
 
             var message = new Message();
+
             message.Subject = subject;
             message.Body = new ItemBody() { Content = emailBody };
             var recipients = new List<Recipient>()
@@ -41,7 +67,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         // Tests the SendMail action.
-        [Fact(Skip = "No CI set up for functional tests")]
+        [Fact]
         public async System.Threading.Tasks.Task MailSendMail()
         {
             try
