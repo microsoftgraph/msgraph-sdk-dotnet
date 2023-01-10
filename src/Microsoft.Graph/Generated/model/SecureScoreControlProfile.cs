@@ -43,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets compliance information.
+        /// The collection of compliance information associated with secure score control
         /// </summary>
         [JsonPropertyName("complianceInformation")]
         public IEnumerable<ComplianceInformation> ComplianceInformation { get; set; }
@@ -56,6 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets control state updates.
+        /// Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
         /// </summary>
         [JsonPropertyName("controlStateUpdates")]
         public IEnumerable<SecureScoreControlStateUpdate> ControlStateUpdates { get; set; }
@@ -131,7 +133,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets title.
-        /// Title of the control.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }

@@ -44,7 +44,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sharepoint ids.
-        /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
         [JsonPropertyName("sharepointIds")]
         public SharepointIds SharepointIds { get; set; }

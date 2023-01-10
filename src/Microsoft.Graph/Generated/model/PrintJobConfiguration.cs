@@ -92,63 +92,55 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mediaSize.
-        /// The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
+        /// The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
         /// </summary>
         [JsonPropertyName("mediaSize")]
         public string MediaSize { get; set; }
     
         /// <summary>
         /// Gets or sets mediaType.
-        /// The default media (such as paper) type to print the document on.
         /// </summary>
         [JsonPropertyName("mediaType")]
         public string MediaType { get; set; }
     
         /// <summary>
         /// Gets or sets multipageLayout.
-        /// The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
         /// </summary>
         [JsonPropertyName("multipageLayout")]
         public PrintMultipageLayout? MultipageLayout { get; set; }
     
         /// <summary>
         /// Gets or sets orientation.
-        /// The orientation setting the printer should use when printing the job. Valid values are described in the following table.
         /// </summary>
         [JsonPropertyName("orientation")]
         public PrintOrientation? Orientation { get; set; }
     
         /// <summary>
         /// Gets or sets outputBin.
-        /// The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
         /// </summary>
         [JsonPropertyName("outputBin")]
         public string OutputBin { get; set; }
     
         /// <summary>
         /// Gets or sets pageRanges.
-        /// The page ranges to print. Read-only.
         /// </summary>
         [JsonPropertyName("pageRanges")]
         public IEnumerable<IntegerRange> PageRanges { get; set; }
     
         /// <summary>
         /// Gets or sets pagesPerSheet.
-        /// The number of document pages to print on each sheet.
         /// </summary>
         [JsonPropertyName("pagesPerSheet")]
         public Int32? PagesPerSheet { get; set; }
     
         /// <summary>
         /// Gets or sets quality.
-        /// The print quality to use when printing the job. Valid values are described in the table below. Read-only.
         /// </summary>
         [JsonPropertyName("quality")]
         public PrintQuality? Quality { get; set; }
     
         /// <summary>
         /// Gets or sets scaling.
-        /// Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
         /// </summary>
         [JsonPropertyName("scaling")]
         public PrintScaling? Scaling { get; set; }

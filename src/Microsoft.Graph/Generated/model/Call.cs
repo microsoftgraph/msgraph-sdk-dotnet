@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting info.
-        /// The meeting information that's required for joining a meeting.
+        /// The meeting information. Required information for meeting scenarios.
         /// </summary>
         [JsonPropertyName("meetingInfo")]
         public MeetingInfo MeetingInfo { get; set; }
