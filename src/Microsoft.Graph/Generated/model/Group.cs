@@ -528,7 +528,7 @@ namespace Microsoft.Graph
         /// The group's drives. Read-only.
         /// </summary>
         [JsonPropertyName("drives")]
-        public IGroupDrivesCollectionPage Drives { get; set; }
+        public IGroupDrivesCollectionWithReferencesPage Drives { get; set; }
 
         /// <summary>
         /// Gets or sets drivesNextLink.

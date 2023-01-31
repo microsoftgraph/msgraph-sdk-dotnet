@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teamsAppId.
+        /// The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
         /// </summary>
         [JsonPropertyName("teamsAppId")]
         public string TeamsAppId { get; set; }

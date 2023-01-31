@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Device.
         /// </summary>
-        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
-        public IDeviceRequestBuilder Device
+        /// <returns>The <see cref="IDeviceWithReferenceRequestBuilder"/>.</returns>
+        public IDeviceWithReferenceRequestBuilder Device
         {
             get
             {
-                return new DeviceRequestBuilder(this.AppendSegmentToRequestUrl("device"), this.Client);
+                return new DeviceWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("device"), this.Client);
             }
         }
     

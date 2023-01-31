@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets extension name.
-        /// A unique text identifier for an open type data extension. Required.
+        /// A unique text identifier for an open type data extension. Optional.
         /// </summary>
         [JsonPropertyName("extensionName")]
         public string ExtensionName { get; set; }

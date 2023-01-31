@@ -100,7 +100,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the incident. Possible values are: active, resolved, redirected, unknownFutureValue.
+        /// The status of the incident. Possible values are: active, resolved, inProgress, redirected, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public IncidentStatus? Status { get; set; }

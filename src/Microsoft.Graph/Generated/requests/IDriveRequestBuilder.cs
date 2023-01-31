@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Root.
         /// </summary>
-        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
-        IDriveItemRequestBuilder Root { get; }
+        /// <returns>The <see cref="IDriveItemWithReferenceRequestBuilder"/>.</returns>
+        IDriveItemWithReferenceRequestBuilder Root { get; }
 
         /// <summary>
         /// Gets the request builder for Special.

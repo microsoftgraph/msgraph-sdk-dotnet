@@ -52,8 +52,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ListItem.
         /// </summary>
-        /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
-        IListItemRequestBuilder ListItem { get; }
+        /// <returns>The <see cref="IListItemWithReferenceRequestBuilder"/>.</returns>
+        IListItemWithReferenceRequestBuilder ListItem { get; }
 
         /// <summary>
         /// Gets the request builder for Permission.

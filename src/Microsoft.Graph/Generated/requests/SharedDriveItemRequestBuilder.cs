@@ -89,12 +89,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ListItem.
         /// </summary>
-        /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
-        public IListItemRequestBuilder ListItem
+        /// <returns>The <see cref="IListItemWithReferenceRequestBuilder"/>.</returns>
+        public IListItemWithReferenceRequestBuilder ListItem
         {
             get
             {
-                return new ListItemRequestBuilder(this.AppendSegmentToRequestUrl("listItem"), this.Client);
+                return new ListItemWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("listItem"), this.Client);
             }
         }
 

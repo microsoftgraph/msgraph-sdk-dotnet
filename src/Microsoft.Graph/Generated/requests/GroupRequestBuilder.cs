@@ -269,12 +269,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Drives.
         /// </summary>
-        /// <returns>The <see cref="IGroupDrivesCollectionRequestBuilder"/>.</returns>
-        public IGroupDrivesCollectionRequestBuilder Drives
+        /// <returns>The <see cref="IGroupDrivesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IGroupDrivesCollectionWithReferencesRequestBuilder Drives
         {
             get
             {
-                return new GroupDrivesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("drives"), this.Client);
+                return new GroupDrivesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("drives"), this.Client);
             }
         }
 

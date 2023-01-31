@@ -89,12 +89,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Worksheet.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRequestBuilder"/>.</returns>
-        public IWorkbookWorksheetRequestBuilder Worksheet
+        /// <returns>The <see cref="IWorkbookWorksheetWithReferenceRequestBuilder"/>.</returns>
+        public IWorkbookWorksheetWithReferenceRequestBuilder Worksheet
         {
             get
             {
-                return new WorkbookWorksheetRequestBuilder(this.AppendSegmentToRequestUrl("worksheet"), this.Client);
+                return new WorkbookWorksheetWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("worksheet"), this.Client);
             }
         }
     

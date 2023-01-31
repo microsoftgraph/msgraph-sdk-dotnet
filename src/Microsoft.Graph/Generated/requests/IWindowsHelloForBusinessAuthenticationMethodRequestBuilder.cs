@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Device.
         /// </summary>
-        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
-        IDeviceRequestBuilder Device { get; }
+        /// <returns>The <see cref="IDeviceWithReferenceRequestBuilder"/>.</returns>
+        IDeviceWithReferenceRequestBuilder Device { get; }
     
     }
 }

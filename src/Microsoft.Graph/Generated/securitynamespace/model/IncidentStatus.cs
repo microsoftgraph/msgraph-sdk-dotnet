@@ -30,6 +30,11 @@ namespace Microsoft.Graph.SecurityNamespace
         Resolved = 2,
 	
         /// <summary>
+        /// In Progress
+        /// </summary>
+        InProgress = 4,
+	
+        /// <summary>
         /// Redirected
         /// </summary>
         Redirected = 64,

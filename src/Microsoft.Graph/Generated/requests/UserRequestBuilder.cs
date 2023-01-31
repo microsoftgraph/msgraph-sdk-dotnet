@@ -353,12 +353,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Drives.
         /// </summary>
-        /// <returns>The <see cref="IUserDrivesCollectionRequestBuilder"/>.</returns>
-        public IUserDrivesCollectionRequestBuilder Drives
+        /// <returns>The <see cref="IUserDrivesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserDrivesCollectionWithReferencesRequestBuilder Drives
         {
             get
             {
-                return new UserDrivesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("drives"), this.Client);
+                return new UserDrivesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("drives"), this.Client);
             }
         }
 

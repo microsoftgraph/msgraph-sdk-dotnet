@@ -108,6 +108,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner tenant type.
+        /// The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         /// </summary>
         [JsonPropertyName("partnerTenantType")]
         public PartnerTenantType? PartnerTenantType { get; set; }
@@ -175,6 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant type.
+        /// Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         /// </summary>
         [JsonPropertyName("tenantType")]
         public string TenantType { get; set; }

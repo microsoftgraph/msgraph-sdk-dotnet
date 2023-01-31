@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Worksheet.
         /// </summary>
-        /// <returns>The <see cref="IWorkbookWorksheetRequestBuilder"/>.</returns>
-        IWorkbookWorksheetRequestBuilder Worksheet { get; }
+        /// <returns>The <see cref="IWorkbookWorksheetWithReferenceRequestBuilder"/>.</returns>
+        IWorkbookWorksheetWithReferenceRequestBuilder Worksheet { get; }
     
         /// <summary>
         /// Gets the request builder for WorkbookNamedItemRange.

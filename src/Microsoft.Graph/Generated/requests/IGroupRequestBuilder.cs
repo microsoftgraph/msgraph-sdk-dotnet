@@ -142,8 +142,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Drives.
         /// </summary>
-        /// <returns>The <see cref="IGroupDrivesCollectionRequestBuilder"/>.</returns>
-        IGroupDrivesCollectionRequestBuilder Drives { get; }
+        /// <returns>The <see cref="IGroupDrivesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupDrivesCollectionWithReferencesRequestBuilder Drives { get; }
 
         /// <summary>
         /// Gets the request builder for Sites.

@@ -646,17 +646,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDrive request builder.
-        /// </summary>
-        public virtual IDriveRequestBuilder Drive
-        {
-            get
-            {
-                return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceCommunications request builder.
         /// </summary>
         public virtual ICloudCommunicationsRequestBuilder Communications
@@ -752,6 +741,17 @@ namespace Microsoft.Graph
             get
             {
                 return new PlannerRequestBuilder(this.BaseUrl + "/planner", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceTenantRelationships request builder.
+        /// </summary>
+        public virtual ITenantRelationshipRequestBuilder TenantRelationships
+        {
+            get
+            {
+                return new TenantRelationshipRequestBuilder(this.BaseUrl + "/tenantRelationships", this);
             }
         }
     

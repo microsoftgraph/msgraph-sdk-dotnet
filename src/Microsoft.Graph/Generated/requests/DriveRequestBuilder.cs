@@ -101,12 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Root.
         /// </summary>
-        /// <returns>The <see cref="IDriveItemRequestBuilder"/>.</returns>
-        public IDriveItemRequestBuilder Root
+        /// <returns>The <see cref="IDriveItemWithReferenceRequestBuilder"/>.</returns>
+        public IDriveItemWithReferenceRequestBuilder Root
         {
             get
             {
-                return new DriveItemRequestBuilder(this.AppendSegmentToRequestUrl("root"), this.Client);
+                return new DriveItemWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("root"), this.Client);
             }
         }
 

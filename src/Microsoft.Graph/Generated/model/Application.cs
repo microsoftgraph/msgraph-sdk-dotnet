@@ -202,6 +202,12 @@ namespace Microsoft.Graph
         public string PublisherDomain { get; set; }
     
         /// <summary>
+        /// Gets or sets request signature verification.
+        /// </summary>
+        [JsonPropertyName("requestSignatureVerification")]
+        public RequestSignatureVerification RequestSignatureVerification { get; set; }
+    
+        /// <summary>
         /// Gets or sets required resource access.
         /// Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
         /// </summary>

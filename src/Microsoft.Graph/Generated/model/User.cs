@@ -848,7 +848,7 @@ namespace Microsoft.Graph
         /// A collection of drives available for this user. Read-only.
         /// </summary>
         [JsonPropertyName("drives")]
-        public IUserDrivesCollectionPage Drives { get; set; }
+        public IUserDrivesCollectionWithReferencesPage Drives { get; set; }
 
         /// <summary>
         /// Gets or sets drivesNextLink.
