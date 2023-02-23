@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PasswordAuthenticationMethod and sets the default values.
+        /// Instantiates a new passwordAuthenticationMethod and sets the default values.
         /// </summary>
         public PasswordAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.passwordAuthenticationMethod";

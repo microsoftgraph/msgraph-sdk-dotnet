@@ -9,5 +9,6 @@ namespace Microsoft.Graph.Models {
         ListItem,
         Drive,
         UnknownFutureValue,
+        ChatMessage,
     }
 }

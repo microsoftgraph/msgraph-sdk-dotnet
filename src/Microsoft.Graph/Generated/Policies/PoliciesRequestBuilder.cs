@@ -2,12 +2,14 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies;
 using Microsoft.Graph.Policies.AdminConsentRequestPolicy;
+using Microsoft.Graph.Policies.AppManagementPolicies;
 using Microsoft.Graph.Policies.AuthenticationFlowsPolicy;
 using Microsoft.Graph.Policies.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Policies.AuthorizationPolicy;
 using Microsoft.Graph.Policies.ClaimsMappingPolicies;
 using Microsoft.Graph.Policies.ConditionalAccessPolicies;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy;
+using Microsoft.Graph.Policies.DefaultAppManagementPolicy;
 using Microsoft.Graph.Policies.FeatureRolloutPolicies;
 using Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy;
@@ -37,6 +39,10 @@ namespace Microsoft.Graph.Policies {
         public AdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy { get =>
             new AdminConsentRequestPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
+            new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public AuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy { get =>
             new AuthenticationFlowsPolicyRequestBuilder(PathParameters, RequestAdapter);
@@ -60,6 +66,10 @@ namespace Microsoft.Graph.Policies {
         /// <summary>Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get =>
             new CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get =>
+            new DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>

@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class Teamwork : Entity, IParsable {
+        /// <summary>The deletedTeams property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeletedTeam>? DeletedTeams {
+            get { return BackingStore?.Get<List<DeletedTeam>?>("deletedTeams"); }
+            set { BackingStore?.Set("deletedTeams", value); }
+        }
+#nullable restore
+#else
+        public List<DeletedTeam> DeletedTeams {
+            get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
+            set { BackingStore?.Set("deletedTeams", value); }
+        }
+#endif
         /// <summary>The workforceIntegrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +46,7 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -42,6 +57,7 @@ namespace Microsoft.Graph.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);
         }
     }

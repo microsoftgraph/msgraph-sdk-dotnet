@@ -48,6 +48,7 @@ namespace Microsoft.Graph.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
                 "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
                 "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
@@ -55,6 +56,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
                 "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
                 "#microsoft.graph.stsPolicy" => new StsPolicy(),
+                "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
                 "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
                 _ => new PolicyBase(),

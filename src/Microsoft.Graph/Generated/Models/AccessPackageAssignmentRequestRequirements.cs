@@ -84,6 +84,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
+        /// <summary>The questions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageQuestion>? Questions {
+            get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
+            set { BackingStore?.Set("questions", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageQuestion> Questions {
+            get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
+            set { BackingStore?.Set("questions", value); }
+        }
+#endif
         /// <summary>Schedule restrictions enforced, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +139,7 @@ namespace Microsoft.Graph.Models {
                 {"policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
                 {"policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
                 {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
             };
         }
@@ -141,6 +156,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("policyDescription", PolicyDescription);
             writer.WriteStringValue("policyDisplayName", PolicyDisplayName);
             writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
             writer.WriteObjectValue<EntitlementManagementSchedule>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);
         }

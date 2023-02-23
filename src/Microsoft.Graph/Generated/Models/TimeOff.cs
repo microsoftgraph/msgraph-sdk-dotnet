@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TimeOff and sets the default values.
+        /// Instantiates a new timeOff and sets the default values.
         /// </summary>
         public TimeOff() : base() {
             OdataType = "#microsoft.graph.timeOff";

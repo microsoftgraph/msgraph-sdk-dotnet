@@ -1,5 +1,6 @@
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.ServicePrincipals.Item.AppManagementPolicies;
 using Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo;
 using Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments;
 using Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies;
@@ -38,6 +39,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
     /// Provides operations to manage the collection of servicePrincipal entities.
     /// </summary>
     public class ServicePrincipalItemRequestBuilder {
+        /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
+        public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
+            new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.</summary>
         public AppRoleAssignedToRequestBuilder AppRoleAssignedTo { get =>
             new AppRoleAssignedToRequestBuilder(PathParameters, RequestAdapter);

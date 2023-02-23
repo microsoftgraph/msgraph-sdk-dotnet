@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new ScheduleChangeRequest and sets the default values.
+        /// Instantiates a new scheduleChangeRequest and sets the default values.
         /// </summary>
         public ScheduleChangeRequest() : base() {
             OdataType = "#microsoft.graph.scheduleChangeRequest";

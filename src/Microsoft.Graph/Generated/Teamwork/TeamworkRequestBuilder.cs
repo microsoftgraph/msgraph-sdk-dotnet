@@ -1,5 +1,6 @@
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Teamwork.DeletedTeams;
 using Microsoft.Graph.Teamwork.MicrosoftGraphSendActivityNotificationToRecipients;
 using Microsoft.Graph.Teamwork.WorkforceIntegrations;
 using Microsoft.Kiota.Abstractions;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Teamwork {
     /// Provides operations to manage the teamwork singleton.
     /// </summary>
     public class TeamworkRequestBuilder {
+        /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
+        public DeletedTeamsRequestBuilder DeletedTeams { get =>
+            new DeletedTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the sendActivityNotificationToRecipients method.</summary>
         public MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder MicrosoftGraphSendActivityNotificationToRecipients { get =>
             new MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder(PathParameters, RequestAdapter);

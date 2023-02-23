@@ -48,6 +48,7 @@ namespace Microsoft.Graph.Models {
             return mappingValue switch {
                 "#microsoft.graph.aadUserConversationMember" => new AadUserConversationMember(),
                 "#microsoft.graph.anonymousGuestConversationMember" => new AnonymousGuestConversationMember(),
+                "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new AzureCommunicationServicesUserConversationMember(),
                 "#microsoft.graph.microsoftAccountUserConversationMember" => new MicrosoftAccountUserConversationMember(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new SkypeForBusinessUserConversationMember(),
                 "#microsoft.graph.skypeUserConversationMember" => new SkypeUserConversationMember(),

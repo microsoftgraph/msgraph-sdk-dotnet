@@ -135,6 +135,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("queryAlterationOptions", value); }
         }
 #endif
+        /// <summary>The region property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region {
+            get { return BackingStore?.Get<string?>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#nullable restore
+#else
+        public string Region {
+            get { return BackingStore?.Get<string>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#endif
         /// <summary>The resultTemplateOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +161,20 @@ namespace Microsoft.Graph.Models {
         public ResultTemplateOption ResultTemplateOptions {
             get { return BackingStore?.Get<ResultTemplateOption>("resultTemplateOptions"); }
             set { BackingStore?.Set("resultTemplateOptions", value); }
+        }
+#endif
+        /// <summary>The sharePointOneDriveOptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.SharePointOneDriveOptions? SharePointOneDriveOptions {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointOneDriveOptions?>("sharePointOneDriveOptions"); }
+            set { BackingStore?.Set("sharePointOneDriveOptions", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.SharePointOneDriveOptions SharePointOneDriveOptions {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions"); }
+            set { BackingStore?.Set("sharePointOneDriveOptions", value); }
         }
 #endif
         /// <summary>The size property</summary>
@@ -198,7 +226,9 @@ namespace Microsoft.Graph.Models {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"query", n => { Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
                 {"queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
+                {"region", n => { Region = n.GetStringValue(); } },
                 {"resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
+                {"sharePointOneDriveOptions", n => { SharePointOneDriveOptions = n.GetObjectValue<Microsoft.Graph.Models.SharePointOneDriveOptions>(Microsoft.Graph.Models.SharePointOneDriveOptions.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -219,7 +249,9 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<SearchQuery>("query", Query);
             writer.WriteObjectValue<SearchAlterationOptions>("queryAlterationOptions", QueryAlterationOptions);
+            writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<ResultTemplateOption>("resultTemplateOptions", ResultTemplateOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions", SharePointOneDriveOptions);
             writer.WriteIntValue("size", Size);
             writer.WriteCollectionOfObjectValues<SortProperty>("sortProperties", SortProperties);
             writer.WriteAdditionalData(AdditionalData);

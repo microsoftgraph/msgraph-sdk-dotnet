@@ -1,6 +1,7 @@
 using Microsoft.Graph.DirectoryNamespace.AdministrativeUnits;
 using Microsoft.Graph.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations;
+using Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -27,6 +28,10 @@ namespace Microsoft.Graph.DirectoryNamespace {
         /// <summary>Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.</summary>
         public FederationConfigurationsRequestBuilder FederationConfigurations { get =>
             new FederationConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.</summary>
+        public OnPremisesSynchronizationRequestBuilder OnPremisesSynchronization { get =>
+            new OnPremisesSynchronizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

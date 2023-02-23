@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>
-        /// Instantiates a new appRoleAssignment and sets the default values.
+        /// Instantiates a new AppRoleAssignment and sets the default values.
         /// </summary>
         public AppRoleAssignment() : base() {
             OdataType = "#microsoft.graph.appRoleAssignment";

@@ -1,5 +1,6 @@
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.AccessPackage;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.Catalog;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.Questions;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -25,6 +26,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.</summary>
+        public QuestionsRequestBuilder Questions { get =>
+            new QuestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

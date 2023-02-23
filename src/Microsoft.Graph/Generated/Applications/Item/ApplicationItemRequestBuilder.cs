@@ -1,3 +1,4 @@
+using Microsoft.Graph.Applications.Item.AppManagementPolicies;
 using Microsoft.Graph.Applications.Item.CreatedOnBehalfOf;
 using Microsoft.Graph.Applications.Item.ExtensionProperties;
 using Microsoft.Graph.Applications.Item.FederatedIdentityCredentials;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Applications.Item {
     /// Provides operations to manage the collection of application entities.
     /// </summary>
     public class ApplicationItemRequestBuilder {
+        /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.</summary>
+        public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
+            new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.</summary>
         public CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf { get =>
             new CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class SkypeForBusinessUserConversationMember : ConversationMember, IParsable {
-        /// <summary>The tenantId property</summary>
+        /// <summary>ID of the tenant that the user belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>Azure Active Directory ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
