@@ -13,46 +13,31 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum LobbyBypassScope.
+    /// The enum OnPremisesDirectorySynchronizationDeletionPreventionType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum LobbyBypassScope
+    public enum OnPremisesDirectorySynchronizationDeletionPreventionType
     {
     
         /// <summary>
-        /// Organizer
+        /// Disabled
         /// </summary>
-        Organizer = 0,
+        Disabled = 0,
 	
         /// <summary>
-        /// Organization
+        /// Enabled For Count
         /// </summary>
-        Organization = 1,
+        EnabledForCount = 1,
 	
         /// <summary>
-        /// Organization And Federated
+        /// Enabled For Percentage
         /// </summary>
-        OrganizationAndFederated = 2,
-	
-        /// <summary>
-        /// Everyone
-        /// </summary>
-        Everyone = 3,
+        EnabledForPercentage = 2,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 4,
-	
-        /// <summary>
-        /// Invited
-        /// </summary>
-        Invited = 5,
-	
-        /// <summary>
-        /// Organization Excluding Guests
-        /// </summary>
-        OrganizationExcludingGuests = 6,
+        UnknownFutureValue = 3,
 	
     }
 }

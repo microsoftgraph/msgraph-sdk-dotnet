@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IServicePrincipalRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IServicePrincipalAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for AppRoleAssignedTo.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionRequestBuilder"/>.</returns>

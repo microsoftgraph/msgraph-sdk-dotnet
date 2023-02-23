@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (applicationToInitialize != null)
             {
+                if (applicationToInitialize.AppManagementPolicies != null && applicationToInitialize.AppManagementPolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.AppManagementPolicies.InitializeNextPageRequest(this.Client, applicationToInitialize.AppManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    applicationToInitialize.AppManagementPolicies.AdditionalData = applicationToInitialize.AdditionalData;
+                }
                 if (applicationToInitialize.ExtensionProperties != null && applicationToInitialize.ExtensionProperties.CurrentPage != null)
                 {
                     applicationToInitialize.ExtensionProperties.InitializeNextPageRequest(this.Client, applicationToInitialize.ExtensionPropertiesNextLink);

@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new TeamworkWorkforceIntegrationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("workforceIntegrations"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DeletedTeams.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDeletedTeamsCollectionRequestBuilder"/>.</returns>
+        public ITeamworkDeletedTeamsCollectionRequestBuilder DeletedTeams
+        {
+            get
+            {
+                return new TeamworkDeletedTeamsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deletedTeams"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for TeamworkSendActivityNotificationToRecipients.

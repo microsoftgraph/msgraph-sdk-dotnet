@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootAppManagementPoliciesCollectionRequestBuilder AppManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootAppManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuthorizationPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthorizationPolicyRequestBuilder"/>.</returns>
@@ -119,6 +131,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CrossTenantAccessPolicyRequestBuilder(this.AppendSegmentToRequestUrl("crossTenantAccessPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DefaultAppManagementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAppManagementPolicyRequestBuilder"/>.</returns>
+        public ITenantAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
+        {
+            get
+            {
+                return new TenantAppManagementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("defaultAppManagementPolicy"), this.Client);
             }
         }
 

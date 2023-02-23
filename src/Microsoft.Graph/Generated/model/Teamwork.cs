@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string WorkforceIntegrationsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets deleted teams.
+        /// </summary>
+        [JsonPropertyName("deletedTeams")]
+        public ITeamworkDeletedTeamsCollectionPage DeletedTeams { get; set; }
+
+        /// <summary>
+        /// Gets or sets deletedTeamsNextLink.
+        /// </summary>
+        [JsonPropertyName("deletedTeams@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DeletedTeamsNextLink { get; set; }
+    
     }
 }
 
