@@ -271,6 +271,19 @@ namespace Microsoft.Graph
         public WebApplication Web { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies")]
+        public IApplicationAppManagementPoliciesCollectionWithReferencesPage AppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets created on behalf of.
         /// Supports $filter (/$count eq 0, /$count ne 0). Read-only.
         /// </summary>

@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.FederationConfigurations.AdditionalData = directoryToInitialize.AdditionalData;
                 }
+                if (directoryToInitialize.OnPremisesSynchronization != null && directoryToInitialize.OnPremisesSynchronization.CurrentPage != null)
+                {
+                    directoryToInitialize.OnPremisesSynchronization.InitializeNextPageRequest(this.Client, directoryToInitialize.OnPremisesSynchronizationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.OnPremisesSynchronization.AdditionalData = directoryToInitialize.AdditionalData;
+                }
 
             }
 

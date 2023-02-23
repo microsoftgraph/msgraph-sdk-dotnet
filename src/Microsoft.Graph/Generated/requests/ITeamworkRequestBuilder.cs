@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamworkWorkforceIntegrationsCollectionRequestBuilder"/>.</returns>
         ITeamworkWorkforceIntegrationsCollectionRequestBuilder WorkforceIntegrations { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeletedTeams.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDeletedTeamsCollectionRequestBuilder"/>.</returns>
+        ITeamworkDeletedTeamsCollectionRequestBuilder DeletedTeams { get; }
     
         /// <summary>
         /// Gets the request builder for TeamworkSendActivityNotificationToRecipients.

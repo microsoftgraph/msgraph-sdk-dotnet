@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
