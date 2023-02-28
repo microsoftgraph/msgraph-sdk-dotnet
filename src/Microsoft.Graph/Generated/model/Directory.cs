@@ -62,6 +62,20 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string FederationConfigurationsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets on premises synchronization.
+        /// A container for on-premises directory synchronization functionalities that are available for the organization.
+        /// </summary>
+        [JsonPropertyName("onPremisesSynchronization")]
+        public IDirectoryOnPremisesSynchronizationCollectionPage OnPremisesSynchronization { get; set; }
+
+        /// <summary>
+        /// Gets or sets onPremisesSynchronizationNextLink.
+        /// </summary>
+        [JsonPropertyName("onPremisesSynchronization@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OnPremisesSynchronizationNextLink { get; set; }
+    
     }
 }
 

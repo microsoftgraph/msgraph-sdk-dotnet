@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IServicePrincipalAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies
+        {
+            get
+            {
+                return new ServicePrincipalAppManagementPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AppRoleAssignedTo.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalAppRoleAssignedToCollectionRequestBuilder"/>.</returns>

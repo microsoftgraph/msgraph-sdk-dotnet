@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder ActivityBasedTimeoutPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootAppManagementPoliciesCollectionRequestBuilder AppManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthorizationPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthorizationPolicyRequestBuilder"/>.</returns>
@@ -66,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICrossTenantAccessPolicyRequestBuilder"/>.</returns>
         ICrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for DefaultAppManagementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAppManagementPolicyRequestBuilder"/>.</returns>
+        ITenantAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get; }
 
         /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.

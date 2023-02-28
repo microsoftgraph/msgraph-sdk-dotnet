@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies
+        {
+            get
+            {
+                return new ApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>

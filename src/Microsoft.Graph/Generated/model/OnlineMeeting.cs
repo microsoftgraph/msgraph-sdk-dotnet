@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Online Meeting.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OnlineMeeting>))]
     public partial class OnlineMeeting : Entity
     {
     
@@ -34,20 +33,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("allowAttendeeToEnableMic")]
         public bool? AllowAttendeeToEnableMic { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allowed presenters.
-        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-        /// </summary>
-        [JsonPropertyName("allowedPresenters")]
-        public OnlineMeetingPresenters? AllowedPresenters { get; set; }
-    
-        /// <summary>
-        /// Gets or sets allow meeting chat.
-        /// Specifies the mode of meeting chat.
-        /// </summary>
-        [JsonPropertyName("allowMeetingChat")]
-        public MeetingChatMode? AllowMeetingChat { get; set; }
     
         /// <summary>
         /// Gets or sets allow teamwork reactions.

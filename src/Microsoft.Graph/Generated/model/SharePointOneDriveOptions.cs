@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets includeContent.
+        /// The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("includeContent")]
         public SearchContent? IncludeContent { get; set; }

@@ -260,6 +260,19 @@ namespace Microsoft.Graph
         public VerifiedPublisher VerifiedPublisher { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies")]
+        public IServicePrincipalAppManagementPoliciesCollectionWithReferencesPage AppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets app role assigned to.
         /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
         /// </summary>

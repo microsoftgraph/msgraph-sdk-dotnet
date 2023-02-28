@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDirectoryFederationConfigurationsCollectionRequestBuilder"/>.</returns>
         IDirectoryFederationConfigurationsCollectionRequestBuilder FederationConfigurations { get; }
+
+        /// <summary>
+        /// Gets the request builder for OnPremisesSynchronization.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryOnPremisesSynchronizationCollectionRequestBuilder"/>.</returns>
+        IDirectoryOnPremisesSynchronizationCollectionRequestBuilder OnPremisesSynchronization { get; }
     
     }
 }

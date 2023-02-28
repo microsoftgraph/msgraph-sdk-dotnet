@@ -29,13 +29,6 @@ namespace Microsoft.Graph
         public bool? IsDialInBypassEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets scope.
-        /// Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-        /// </summary>
-        [JsonPropertyName("scope")]
-        public LobbyBypassScope? Scope { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

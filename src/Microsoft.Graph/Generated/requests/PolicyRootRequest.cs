@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ActivityBasedTimeoutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
                 }
+                if (policyRootToInitialize.AppManagementPolicies != null && policyRootToInitialize.AppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.AppManagementPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.AppManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.AppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
                 if (policyRootToInitialize.ClaimsMappingPolicies != null && policyRootToInitialize.ClaimsMappingPolicies.CurrentPage != null)
                 {
                     policyRootToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ClaimsMappingPoliciesNextLink);

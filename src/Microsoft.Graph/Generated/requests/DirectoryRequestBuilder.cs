@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new DirectoryFederationConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("federationConfigurations"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for OnPremisesSynchronization.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryOnPremisesSynchronizationCollectionRequestBuilder"/>.</returns>
+        public IDirectoryOnPremisesSynchronizationCollectionRequestBuilder OnPremisesSynchronization
+        {
+            get
+            {
+                return new DirectoryOnPremisesSynchronizationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("onPremisesSynchronization"), this.Client);
+            }
+        }
     
     }
 }

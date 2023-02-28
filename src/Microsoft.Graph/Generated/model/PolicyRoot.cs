@@ -49,6 +49,19 @@ namespace Microsoft.Graph
         public string ActivityBasedTimeoutPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies")]
+        public IPolicyRootAppManagementPoliciesCollectionPage AppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets authorization policy.
         /// The policy that controls Azure AD authorization settings.
         /// </summary>
@@ -75,6 +88,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("crossTenantAccessPolicy")]
         public CrossTenantAccessPolicy CrossTenantAccessPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default app management policy.
+        /// </summary>
+        [JsonPropertyName("defaultAppManagementPolicy")]
+        public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
