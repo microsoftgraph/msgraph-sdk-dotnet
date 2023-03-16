@@ -1,5 +1,6 @@
-using Microsoft.Graph.Models;
+﻿using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Users.Item.MemberOf.Item.GraphAdministrativeUnit;
 using Microsoft.Graph.Users.Item.MemberOf.Item.GraphGroup;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Users.Item.MemberOf.Item {
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>
             new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to administrative unit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

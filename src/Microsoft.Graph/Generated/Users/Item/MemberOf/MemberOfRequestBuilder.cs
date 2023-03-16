@@ -1,6 +1,7 @@
-using Microsoft.Graph.Models;
+﻿using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Users.Item.MemberOf.Count;
+using Microsoft.Graph.Users.Item.MemberOf.GraphAdministrativeUnit;
 using Microsoft.Graph.Users.Item.MemberOf.GraphGroup;
 using Microsoft.Graph.Users.Item.MemberOf.Item;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,10 @@ namespace Microsoft.Graph.Users.Item.MemberOf {
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>
             new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to administrative unit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
