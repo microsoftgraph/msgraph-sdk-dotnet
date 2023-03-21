@@ -64,7 +64,8 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get deletedTeams from teamwork
+        /// Get a list of the deletedTeam objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +105,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams {
             return await RequestAdapter.SendAsync<DeletedTeam>(requestInfo, DeletedTeam.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get deletedTeams from teamwork
+        /// Get a list of the deletedTeam objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +159,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams {
             return requestInfo;
         }
         /// <summary>
-        /// Get deletedTeams from teamwork
+        /// Get a list of the deletedTeam objects and their properties.
         /// </summary>
         public class DeletedTeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

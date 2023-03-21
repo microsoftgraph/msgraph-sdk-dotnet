@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
         }
+        /// <summary>The allowUserConsentForRiskyApps property</summary>
+        public bool? AllowUserConsentForRiskyApps {
+            get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
+            set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
+        }
         /// <summary>To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
@@ -72,6 +77,7 @@ namespace Microsoft.Graph.Models {
                 {"allowedToUseSSPR", n => { AllowedToUseSSPR = n.GetBoolValue(); } },
                 {"allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
                 {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
+                {"allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
                 {"blockMsolPowerShell", n => { BlockMsolPowerShell = n.GetBoolValue(); } },
                 {"defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Models.DefaultUserRolePermissions>(Microsoft.Graph.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
                 {"guestUserRoleId", n => { GuestUserRoleId = n.GetGuidValue(); } },
@@ -88,6 +94,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteBoolValue("allowedToUseSSPR", AllowedToUseSSPR);
             writer.WriteBoolValue("allowEmailVerifiedUsersToJoinOrganization", AllowEmailVerifiedUsersToJoinOrganization);
             writer.WriteEnumValue<AllowInvitesFrom>("allowInvitesFrom", AllowInvitesFrom);
+            writer.WriteBoolValue("allowUserConsentForRiskyApps", AllowUserConsentForRiskyApps);
             writer.WriteBoolValue("blockMsolPowerShell", BlockMsolPowerShell);
             writer.WriteObjectValue<Microsoft.Graph.Models.DefaultUserRolePermissions>("defaultUserRolePermissions", DefaultUserRolePermissions);
             writer.WriteGuidValue("guestUserRoleId", GuestUserRoleId);

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Me.MemberOf.Item.GraphAdministrativeUnit;
 using Microsoft.Graph.Me.MemberOf.Item.GraphGroup;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Me.MemberOf.Item {
     /// Provides operations to manage the memberOf property of the microsoft.graph.user entity.
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>Casts the previous resource to administrativeUnit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>
             new GraphGroupRequestBuilder(PathParameters, RequestAdapter);

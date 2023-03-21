@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get channels from teamwork
+        /// The channels that are either shared with this deleted team or created in this deleted team.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get channels from teamwork
+        /// The channels that are either shared with this deleted team or created in this deleted team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
-        /// Get channels from teamwork
+        /// The channels that are either shared with this deleted team or created in this deleted team.
         /// </summary>
         public class ChannelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Models {
     public class Teamwork : Entity, IParsable {
-        /// <summary>The deletedTeams property</summary>
+        /// <summary>The deleted team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeletedTeam>? DeletedTeams {

@@ -1,4 +1,5 @@
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.Count;
+using Microsoft.Graph.Groups.Item.TransitiveMemberOf.GraphAdministrativeUnit;
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.GraphGroup;
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.Item;
 using Microsoft.Graph.Models;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to administrativeUnit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>
