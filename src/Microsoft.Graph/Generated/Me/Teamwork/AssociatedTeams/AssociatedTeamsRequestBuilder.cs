@@ -1,15 +1,15 @@
 using Microsoft.Graph.Me.Teamwork.AssociatedTeams.Count;
 using Microsoft.Graph.Me.Teamwork.AssociatedTeams.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Me.Teamwork.AssociatedTeams {
     /// <summary>
     /// Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.

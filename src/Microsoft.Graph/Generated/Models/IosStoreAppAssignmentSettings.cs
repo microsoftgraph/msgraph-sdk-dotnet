@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>The VPN Configuration Id to apply for this app.</summary>

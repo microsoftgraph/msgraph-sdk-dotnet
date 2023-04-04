@@ -1,5 +1,5 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Reports.DailyPrintUsageByPrinter;
 using Microsoft.Graph.Reports.DailyPrintUsageByUser;
 using Microsoft.Graph.Reports.DeviceConfigurationDeviceActivity;
@@ -101,14 +101,14 @@ using Microsoft.Graph.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Reports.Security;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Reports {
     /// <summary>
     /// Provides operations to manage the reportRoot singleton.

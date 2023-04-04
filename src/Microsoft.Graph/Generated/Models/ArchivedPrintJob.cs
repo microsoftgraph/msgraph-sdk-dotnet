@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class ArchivedPrintJob : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>True if the job was acquired by a printer; false otherwise. Read-only.</summary>

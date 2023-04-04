@@ -1,5 +1,5 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.Accept;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.Attachments;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.Calendar;
@@ -13,14 +13,14 @@ using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.MultiValueExtendedPr
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.SnoozeReminder;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.TentativelyAccept;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.Calendar.CalendarView.Item {
     /// <summary>
     /// Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.

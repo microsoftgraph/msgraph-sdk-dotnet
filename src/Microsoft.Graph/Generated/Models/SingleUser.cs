@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SingleUser : SubjectSet, IParsable {
         /// <summary>The name of the user in Azure AD. Read only.</summary>

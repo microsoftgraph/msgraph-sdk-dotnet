@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class MacOSMicrosoftEdgeApp : MobileApp, IParsable {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>

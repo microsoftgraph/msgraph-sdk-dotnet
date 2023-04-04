@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the channel whose members should receive the notification.</summary>

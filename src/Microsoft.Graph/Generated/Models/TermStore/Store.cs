@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models.TermStore {
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>

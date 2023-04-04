@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The endpoint where you can get details about the page. Read-only.</summary>

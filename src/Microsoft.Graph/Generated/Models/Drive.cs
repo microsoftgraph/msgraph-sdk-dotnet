@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class Drive : BaseItem, IParsable {
         /// <summary>Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Drive and sets the default values.
+        /// Instantiates a new drive and sets the default values.
         /// </summary>
         public Drive() : base() {
             OdataType = "#microsoft.graph.drive";

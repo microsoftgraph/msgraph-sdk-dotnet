@@ -13,16 +13,16 @@ using Microsoft.Graph.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
 using Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations;
 using Microsoft.Graph.DeviceAppManagement.VppTokens;
 using Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolicies;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.DeviceAppManagement {
     /// <summary>
     /// Provides operations to manage the deviceAppManagement singleton.

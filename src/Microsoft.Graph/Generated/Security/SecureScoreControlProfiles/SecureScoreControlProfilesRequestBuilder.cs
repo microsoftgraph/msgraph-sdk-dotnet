@@ -1,15 +1,15 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Security.SecureScoreControlProfiles.Count;
 using Microsoft.Graph.Security.SecureScoreControlProfiles.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
     /// <summary>
     /// Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.

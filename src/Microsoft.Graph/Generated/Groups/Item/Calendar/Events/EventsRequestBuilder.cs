@@ -1,16 +1,16 @@
 using Microsoft.Graph.Groups.Item.Calendar.Events.Count;
 using Microsoft.Graph.Groups.Item.Calendar.Events.Delta;
 using Microsoft.Graph.Groups.Item.Calendar.Events.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Groups.Item.Calendar.Events {
     /// <summary>
     /// Provides operations to manage the events property of the microsoft.graph.calendar entity.

@@ -1,15 +1,15 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Count;
 using Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
     /// <summary>
     /// Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.

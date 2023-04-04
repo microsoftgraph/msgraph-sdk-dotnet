@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.JoinedTeams.Count;
 using Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.JoinedTeams {
     /// <summary>
     /// Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.

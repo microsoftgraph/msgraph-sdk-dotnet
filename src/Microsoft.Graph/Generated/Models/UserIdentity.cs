@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class UserIdentity : Identity, IParsable {
         /// <summary>Indicates the client IP address used by user performing the activity (audit log only).</summary>

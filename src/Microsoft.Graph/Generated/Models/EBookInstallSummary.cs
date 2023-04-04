@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class EBookInstallSummary : Entity, IParsable {
         /// <summary>Number of Devices that have failed to install this book.</summary>

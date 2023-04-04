@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class ApiApplication : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>When true, allows an application to use claims mapping without specifying a custom signing key.</summary>

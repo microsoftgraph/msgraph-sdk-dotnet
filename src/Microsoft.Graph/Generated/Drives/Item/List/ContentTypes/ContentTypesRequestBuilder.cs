@@ -3,16 +3,16 @@ using Microsoft.Graph.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub;
 using Microsoft.Graph.Drives.Item.List.ContentTypes.Count;
 using Microsoft.Graph.Drives.Item.List.ContentTypes.GetCompatibleHubContentTypes;
 using Microsoft.Graph.Drives.Item.List.ContentTypes.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Drives.Item.List.ContentTypes {
     /// <summary>
     /// Provides operations to manage the contentTypes property of the microsoft.graph.list entity.

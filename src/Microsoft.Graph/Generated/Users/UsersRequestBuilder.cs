@@ -1,19 +1,19 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Count;
 using Microsoft.Graph.Users.Delta;
 using Microsoft.Graph.Users.GetAvailableExtensionProperties;
 using Microsoft.Graph.Users.GetByIds;
 using Microsoft.Graph.Users.Item;
 using Microsoft.Graph.Users.ValidateProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users {
     /// <summary>
     /// Provides operations to manage the collection of user entities.
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Users {
         public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users{?%24top,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of user objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of user object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Users {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of user objects.
+        /// Retrieve the properties and relationships of user object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Users {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of user objects.
+        /// Retrieve the properties and relationships of user object.
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

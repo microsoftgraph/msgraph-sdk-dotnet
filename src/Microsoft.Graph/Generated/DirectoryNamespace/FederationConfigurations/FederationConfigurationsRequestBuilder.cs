@@ -1,16 +1,16 @@
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations.AvailableProviderTypes;
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Count;
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations {
     /// <summary>
     /// Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.

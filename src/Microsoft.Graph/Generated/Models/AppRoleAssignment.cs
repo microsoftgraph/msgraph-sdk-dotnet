@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class AppRoleAssignment : DirectoryObject, IParsable {
         /// <summary>The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application&apos;s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</summary>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("resourceId", value); }
         }
         /// <summary>
-        /// Instantiates a new AppRoleAssignment and sets the default values.
+        /// Instantiates a new appRoleAssignment and sets the default values.
         /// </summary>
         public AppRoleAssignment() : base() {
             OdataType = "#microsoft.graph.appRoleAssignment";

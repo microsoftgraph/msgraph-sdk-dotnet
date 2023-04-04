@@ -1,16 +1,16 @@
 using Microsoft.Graph.Groups.Item.Team.Channels.Count;
 using Microsoft.Graph.Groups.Item.Team.Channels.GetAllMessages;
 using Microsoft.Graph.Groups.Item.Team.Channels.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Groups.Item.Team.Channels {
     /// <summary>
     /// Provides operations to manage the channels property of the microsoft.graph.team entity.

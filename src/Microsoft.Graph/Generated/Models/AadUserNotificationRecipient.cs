@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class AadUserNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>Azure AD user identifier. Use the List users method to get this ID.</summary>

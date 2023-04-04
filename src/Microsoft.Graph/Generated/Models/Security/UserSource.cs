@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models.Security {
     public class UserSource : DataSource, IParsable {
         /// <summary>Email address of the user&apos;s mailbox.</summary>

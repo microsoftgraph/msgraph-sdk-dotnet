@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Oauth2PermissionGrants.Count;
 using Microsoft.Graph.Oauth2PermissionGrants.Delta;
 using Microsoft.Graph.Oauth2PermissionGrants.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Oauth2PermissionGrants {
     /// <summary>
     /// Provides operations to manage the collection of oAuth2PermissionGrant entities.

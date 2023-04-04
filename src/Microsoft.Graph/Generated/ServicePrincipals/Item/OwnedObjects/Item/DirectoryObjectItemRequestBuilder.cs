@@ -1,18 +1,18 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphApplication;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphAppRoleAssignment;
+using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphApplication;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphEndpoint;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphGroup;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.GraphServicePrincipal;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item {
     /// <summary>
     /// Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.

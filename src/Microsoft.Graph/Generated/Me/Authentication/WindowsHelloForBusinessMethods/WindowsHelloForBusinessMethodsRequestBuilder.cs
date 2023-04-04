@@ -1,15 +1,15 @@
 using Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Count;
 using Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods {
     /// <summary>
     /// Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.

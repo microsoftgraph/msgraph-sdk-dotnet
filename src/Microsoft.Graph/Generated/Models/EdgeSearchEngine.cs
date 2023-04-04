@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable {
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>

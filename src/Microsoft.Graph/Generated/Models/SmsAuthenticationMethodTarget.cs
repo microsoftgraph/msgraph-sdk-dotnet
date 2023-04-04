@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable {
         /// <summary>Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.</summary>

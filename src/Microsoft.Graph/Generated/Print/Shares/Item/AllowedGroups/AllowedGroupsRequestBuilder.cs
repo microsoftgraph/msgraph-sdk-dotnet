@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Print.Shares.Item.AllowedGroups.Count;
 using Microsoft.Graph.Print.Shares.Item.AllowedGroups.Item;
 using Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups {
     /// <summary>
     /// Provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.

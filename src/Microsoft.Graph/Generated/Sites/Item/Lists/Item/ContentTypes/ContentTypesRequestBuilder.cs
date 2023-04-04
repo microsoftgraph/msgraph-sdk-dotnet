@@ -1,18 +1,18 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopy;
 using Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentTypeHub;
 using Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.Count;
 using Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes;
 using Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
     /// <summary>
     /// Provides operations to manage the contentTypes property of the microsoft.graph.list entity.

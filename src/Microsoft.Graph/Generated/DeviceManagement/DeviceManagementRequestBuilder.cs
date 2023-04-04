@@ -32,16 +32,16 @@ using Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithD
 using Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities;
 using Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries;
 using Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.DeviceManagement {
     /// <summary>
     /// Provides operations to manage the deviceManagement singleton.

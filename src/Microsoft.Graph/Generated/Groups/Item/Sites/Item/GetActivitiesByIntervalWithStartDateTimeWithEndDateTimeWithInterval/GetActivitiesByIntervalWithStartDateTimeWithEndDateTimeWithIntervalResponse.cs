@@ -1,9 +1,9 @@
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

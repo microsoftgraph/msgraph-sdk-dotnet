@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models.CallRecords {
     public class ClientUserAgent : UserAgent, IParsable {
         /// <summary>The unique identifier of the Azure AD application used by this endpoint.</summary>

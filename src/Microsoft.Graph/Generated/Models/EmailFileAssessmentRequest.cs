@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class EmailFileAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>Base64 encoded .eml email file content. The file content cannot fetch back because it isn&apos;t stored.</summary>

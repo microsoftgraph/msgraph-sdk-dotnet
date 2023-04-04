@@ -1,18 +1,18 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.OwnedDevices.Count;
 using Microsoft.Graph.Users.Item.OwnedDevices.GraphAppRoleAssignment;
 using Microsoft.Graph.Users.Item.OwnedDevices.GraphDevice;
 using Microsoft.Graph.Users.Item.OwnedDevices.GraphEndpoint;
 using Microsoft.Graph.Users.Item.OwnedDevices.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.OwnedDevices {
     /// <summary>
     /// Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.

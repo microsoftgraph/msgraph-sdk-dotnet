@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>

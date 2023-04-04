@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SamlOrWsFedExternalDomainFederation : SamlOrWsFedProvider, IParsable {
         /// <summary>Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).</summary>

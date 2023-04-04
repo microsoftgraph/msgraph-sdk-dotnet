@@ -1,19 +1,19 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.ServicePrincipals.Count;
 using Microsoft.Graph.ServicePrincipals.Delta;
 using Microsoft.Graph.ServicePrincipals.GetAvailableExtensionProperties;
 using Microsoft.Graph.ServicePrincipals.GetByIds;
 using Microsoft.Graph.ServicePrincipals.Item;
 using Microsoft.Graph.ServicePrincipals.ValidateProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.ServicePrincipals {
     /// <summary>
     /// Provides operations to manage the collection of servicePrincipal entities.

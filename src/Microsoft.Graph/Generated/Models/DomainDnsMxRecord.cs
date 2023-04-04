@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class DomainDnsMxRecord : DomainDnsRecord, IParsable {
         /// <summary>Value used when configuring the answer/destination/value of the MX record at the DNS host.</summary>

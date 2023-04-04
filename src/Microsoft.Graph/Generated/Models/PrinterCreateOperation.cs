@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class PrinterCreateOperation : PrintOperation, IParsable {
         /// <summary>The signed certificate created during the registration process. Read-only.</summary>

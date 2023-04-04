@@ -1,22 +1,22 @@
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignments;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries;
-using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatuses;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatusOverview;
+using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatuses;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule;
-using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserStatuses;
 using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserStatusOverview;
-using Microsoft.Graph.Models;
+using Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserStatuses;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
     /// <summary>
     /// Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
@@ -79,17 +79,17 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The device compliance policies.

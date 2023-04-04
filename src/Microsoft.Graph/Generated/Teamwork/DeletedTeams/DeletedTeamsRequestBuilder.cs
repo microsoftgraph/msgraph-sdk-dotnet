@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Teamwork.DeletedTeams.Count;
 using Microsoft.Graph.Teamwork.DeletedTeams.GetAllMessages;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Teamwork.DeletedTeams {
     /// <summary>
     /// Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.

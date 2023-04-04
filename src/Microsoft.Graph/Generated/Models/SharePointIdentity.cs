@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SharePointIdentity : Identity, IParsable {
         /// <summary>The sign in name of the SharePoint identity.</summary>

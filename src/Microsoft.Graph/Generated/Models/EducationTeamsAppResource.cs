@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class EducationTeamsAppResource : EducationResource, IParsable {
         /// <summary>URL that points to the icon of the app.</summary>

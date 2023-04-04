@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class WorkbookChartDataLabelFormat : Entity, IParsable {
         /// <summary>Represents the fill format of the current chart data label. Read-only.</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class Shift : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>

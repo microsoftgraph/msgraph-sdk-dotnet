@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules.Count;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules.FilterByCurrentUserWithOn;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules {
     /// <summary>
     /// Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.

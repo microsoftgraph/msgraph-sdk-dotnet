@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class PlannerUser : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>

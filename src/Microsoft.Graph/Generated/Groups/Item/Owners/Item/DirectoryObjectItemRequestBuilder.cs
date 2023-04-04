@@ -6,11 +6,11 @@ using Microsoft.Graph.Groups.Item.Owners.Item.GraphServicePrincipal;
 using Microsoft.Graph.Groups.Item.Owners.Item.GraphUser;
 using Microsoft.Graph.Groups.Item.Owners.Item.Ref;
 using Microsoft.Kiota.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 namespace Microsoft.Graph.Groups.Item.Owners.Item {
     /// <summary>
     /// Builds and executes requests for operations under \groups\{group-id}\owners\{directoryObject-id}

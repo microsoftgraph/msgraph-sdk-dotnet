@@ -1,9 +1,9 @@
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class IosUpdateConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>

@@ -3,16 +3,16 @@ using Microsoft.Graph.Me.OwnedDevices.GraphAppRoleAssignment;
 using Microsoft.Graph.Me.OwnedDevices.GraphDevice;
 using Microsoft.Graph.Me.OwnedDevices.GraphEndpoint;
 using Microsoft.Graph.Me.OwnedDevices.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Me.OwnedDevices {
     /// <summary>
     /// Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.

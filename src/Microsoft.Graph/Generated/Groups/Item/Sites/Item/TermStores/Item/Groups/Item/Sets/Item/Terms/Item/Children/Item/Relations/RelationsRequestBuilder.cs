@@ -2,14 +2,14 @@ using Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups.Item.Sets.It
 using Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms.Item.Children.Item.Relations.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.TermStore;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms.Item.Children.Item.Relations {
     /// <summary>
     /// Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.

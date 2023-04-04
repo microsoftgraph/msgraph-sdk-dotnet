@@ -2,16 +2,16 @@ using Microsoft.Graph.Education.Me.Assignments.Item.Categories.Count;
 using Microsoft.Graph.Education.Me.Assignments.Item.Categories.Delta;
 using Microsoft.Graph.Education.Me.Assignments.Item.Categories.Item;
 using Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories {
     /// <summary>
     /// Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.

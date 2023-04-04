@@ -1,15 +1,15 @@
 using Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses.Count;
 using Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses {
     /// <summary>
     /// Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.

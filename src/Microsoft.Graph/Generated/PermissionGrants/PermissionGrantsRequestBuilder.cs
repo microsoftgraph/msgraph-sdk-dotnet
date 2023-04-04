@@ -1,18 +1,18 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.PermissionGrants.Delta;
 using Microsoft.Graph.PermissionGrants.GetAvailableExtensionProperties;
 using Microsoft.Graph.PermissionGrants.GetByIds;
 using Microsoft.Graph.PermissionGrants.Item;
 using Microsoft.Graph.PermissionGrants.ValidateProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.PermissionGrants {
     /// <summary>
     /// Provides operations to manage the collection of resourceSpecificPermissionGrant entities.

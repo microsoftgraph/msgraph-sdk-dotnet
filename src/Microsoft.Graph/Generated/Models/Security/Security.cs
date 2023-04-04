@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models.Security {
     public class Security : Entity, IParsable {
         /// <summary>The alerts property</summary>
@@ -103,6 +103,34 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("secureScores", value); }
         }
 #endif
+        /// <summary>The triggers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public TriggersRoot? Triggers {
+            get { return BackingStore?.Get<TriggersRoot?>("triggers"); }
+            set { BackingStore?.Set("triggers", value); }
+        }
+#nullable restore
+#else
+        public TriggersRoot Triggers {
+            get { return BackingStore?.Get<TriggersRoot>("triggers"); }
+            set { BackingStore?.Set("triggers", value); }
+        }
+#endif
+        /// <summary>The triggerTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public TriggerTypesRoot? TriggerTypes {
+            get { return BackingStore?.Get<TriggerTypesRoot?>("triggerTypes"); }
+            set { BackingStore?.Set("triggerTypes", value); }
+        }
+#nullable restore
+#else
+        public TriggerTypesRoot TriggerTypes {
+            get { return BackingStore?.Get<TriggerTypesRoot>("triggerTypes"); }
+            set { BackingStore?.Set("triggerTypes", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -123,6 +151,8 @@ namespace Microsoft.Graph.Models.Security {
                 {"incidents", n => { Incidents = n.GetCollectionOfObjectValues<Incident>(Incident.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"secureScoreControlProfiles", n => { SecureScoreControlProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlProfile>(Microsoft.Graph.Models.SecureScoreControlProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"secureScores", n => { SecureScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScore>(Microsoft.Graph.Models.SecureScore.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"triggers", n => { Triggers = n.GetObjectValue<TriggersRoot>(TriggersRoot.CreateFromDiscriminatorValue); } },
+                {"triggerTypes", n => { TriggerTypes = n.GetObjectValue<TriggerTypesRoot>(TriggerTypesRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,6 +169,8 @@ namespace Microsoft.Graph.Models.Security {
             writer.WriteCollectionOfObjectValues<Incident>("incidents", Incidents);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlProfile>("secureScoreControlProfiles", SecureScoreControlProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SecureScore>("secureScores", SecureScores);
+            writer.WriteObjectValue<TriggersRoot>("triggers", Triggers);
+            writer.WriteObjectValue<TriggerTypesRoot>("triggerTypes", TriggerTypes);
         }
     }
 }

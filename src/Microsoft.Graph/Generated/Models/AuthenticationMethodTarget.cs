@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class AuthenticationMethodTarget : Entity, IParsable {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>

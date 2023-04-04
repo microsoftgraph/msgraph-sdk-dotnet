@@ -3,16 +3,16 @@ using Microsoft.Graph.Me.RegisteredDevices.GraphAppRoleAssignment;
 using Microsoft.Graph.Me.RegisteredDevices.GraphDevice;
 using Microsoft.Graph.Me.RegisteredDevices.GraphEndpoint;
 using Microsoft.Graph.Me.RegisteredDevices.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Me.RegisteredDevices {
     /// <summary>
     /// Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.

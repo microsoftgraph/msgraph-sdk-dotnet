@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class AccessReviewScheduleSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("applyActions", value); }
         }
 #endif
-        /// <summary>Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.</summary>
+        /// <summary>Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.</summary>
         public bool? AutoApplyDecisionsEnabled {
             get { return BackingStore?.Get<bool?>("autoApplyDecisionsEnabled"); }
             set { BackingStore?.Set("autoApplyDecisionsEnabled", value); }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("defaultDecision", value); }
         }
 #endif
-        /// <summary>Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.</summary>
+        /// <summary>Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.</summary>
         public bool? DefaultDecisionEnabled {
             get { return BackingStore?.Get<bool?>("defaultDecisionEnabled"); }
             set { BackingStore?.Set("defaultDecisionEnabled", value); }

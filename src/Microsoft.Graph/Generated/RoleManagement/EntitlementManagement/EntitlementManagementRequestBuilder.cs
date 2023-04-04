@@ -1,26 +1,31 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments;
+using Microsoft.Graph.Models;
+using Microsoft.Graph.RoleManagement.EntitlementManagement.ResourceNamespaces;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules;
+using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySchedules;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.RoleManagement.EntitlementManagement {
     /// <summary>
     /// Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
     /// </summary>
     public class EntitlementManagementRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
+        public ResourceNamespacesRequestBuilder ResourceNamespaces { get =>
+            new ResourceNamespacesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
         public RoleAssignmentsRequestBuilder RoleAssignments { get =>
             new RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -74,17 +79,17 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Container for roles and assignments for entitlement management resources.

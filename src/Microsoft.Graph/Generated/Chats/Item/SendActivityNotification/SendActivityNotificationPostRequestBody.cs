@@ -1,10 +1,10 @@
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Chats.Item.SendActivityNotification {
     public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>

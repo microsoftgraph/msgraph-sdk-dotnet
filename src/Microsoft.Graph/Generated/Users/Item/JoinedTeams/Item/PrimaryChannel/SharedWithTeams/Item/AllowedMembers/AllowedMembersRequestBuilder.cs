@@ -1,15 +1,15 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.AllowedMembers.Count;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.AllowedMembers.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.Item.AllowedMembers {
     /// <summary>
     /// Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.

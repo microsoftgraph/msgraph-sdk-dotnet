@@ -4,16 +4,16 @@ using Microsoft.Graph.Groups.Item.TransitiveMembers.Item.GraphGroup;
 using Microsoft.Graph.Groups.Item.TransitiveMembers.Item.GraphOrgContact;
 using Microsoft.Graph.Groups.Item.TransitiveMembers.Item.GraphServicePrincipal;
 using Microsoft.Graph.Groups.Item.TransitiveMembers.Item.GraphUser;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Groups.Item.TransitiveMembers.Item {
     /// <summary>
     /// Provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.

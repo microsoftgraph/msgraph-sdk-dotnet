@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>The maximum number of devices that a user can enroll</summary>

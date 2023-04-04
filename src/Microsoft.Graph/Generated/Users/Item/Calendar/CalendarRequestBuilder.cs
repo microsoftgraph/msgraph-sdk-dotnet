@@ -1,5 +1,5 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Calendar.AllowedCalendarSharingRolesWithUser;
 using Microsoft.Graph.Users.Item.Calendar.CalendarPermissions;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView;
@@ -7,14 +7,14 @@ using Microsoft.Graph.Users.Item.Calendar.Events;
 using Microsoft.Graph.Users.Item.Calendar.GetSchedule;
 using Microsoft.Graph.Users.Item.Calendar.MultiValueExtendedProperties;
 using Microsoft.Graph.Users.Item.Calendar.SingleValueExtendedProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.Calendar {
     /// <summary>
     /// Provides operations to manage the calendar property of the microsoft.graph.user entity.

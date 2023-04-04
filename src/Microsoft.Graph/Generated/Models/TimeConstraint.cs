@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class TimeConstraint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>

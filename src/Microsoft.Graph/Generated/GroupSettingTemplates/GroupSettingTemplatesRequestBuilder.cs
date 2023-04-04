@@ -4,16 +4,16 @@ using Microsoft.Graph.GroupSettingTemplates.GetAvailableExtensionProperties;
 using Microsoft.Graph.GroupSettingTemplates.GetByIds;
 using Microsoft.Graph.GroupSettingTemplates.Item;
 using Microsoft.Graph.GroupSettingTemplates.ValidateProperties;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.GroupSettingTemplates {
     /// <summary>
     /// Provides operations to manage the collection of groupSettingTemplate entities.

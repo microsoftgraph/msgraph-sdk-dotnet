@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class LearningContent : Entity, IParsable {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>

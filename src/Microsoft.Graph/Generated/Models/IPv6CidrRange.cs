@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class IPv6CidrRange : IpRange, IParsable {
         /// <summary>IPv6 address in CIDR notation. Not nullable.</summary>

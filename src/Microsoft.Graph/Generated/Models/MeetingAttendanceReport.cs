@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class MeetingAttendanceReport : Entity, IParsable {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>

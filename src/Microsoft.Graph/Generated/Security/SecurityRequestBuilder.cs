@@ -1,21 +1,23 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
-using Microsoft.Graph.Security.Alerts_v2;
 using Microsoft.Graph.Security.Alerts;
+using Microsoft.Graph.Security.Alerts_v2;
 using Microsoft.Graph.Security.AttackSimulation;
 using Microsoft.Graph.Security.Cases;
 using Microsoft.Graph.Security.Incidents;
 using Microsoft.Graph.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Security.SecureScores;
 using Microsoft.Graph.Security.SecurityRunHuntingQuery;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Security.TriggerTypes;
+using Microsoft.Graph.Security.Triggers;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Security {
     /// <summary>
     /// Provides operations to manage the security singleton.
@@ -52,6 +54,14 @@ namespace Microsoft.Graph.Security {
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public SecurityRunHuntingQueryRequestBuilder SecurityRunHuntingQuery { get =>
             new SecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the triggers property of the microsoft.graph.security entity.</summary>
+        public TriggersRequestBuilder Triggers { get =>
+            new TriggersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the triggerTypes property of the microsoft.graph.security entity.</summary>
+        public TriggerTypesRequestBuilder TriggerTypes { get =>
+            new TriggerTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new SecurityRequestBuilder and sets the default values.

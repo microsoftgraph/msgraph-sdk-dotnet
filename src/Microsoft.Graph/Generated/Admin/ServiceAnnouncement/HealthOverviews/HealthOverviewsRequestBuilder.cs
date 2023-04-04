@@ -1,15 +1,15 @@
 using Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews.Count;
 using Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews {
     /// <summary>
     /// Provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.

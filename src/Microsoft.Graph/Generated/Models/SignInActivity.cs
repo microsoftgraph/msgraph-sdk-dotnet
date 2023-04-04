@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SignInActivity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The lastNonInteractiveSignInDateTime property</summary>
+        /// <summary>The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: &apos;2014-01-01T00:00:00Z&apos;. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.</summary>
         public DateTimeOffset? LastNonInteractiveSignInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastNonInteractiveSignInDateTime"); }
             set { BackingStore?.Set("lastNonInteractiveSignInDateTime", value); }
         }
-        /// <summary>The lastNonInteractiveSignInRequestId property</summary>
+        /// <summary>Request identifier of the last non-interactive sign-in performed by this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastNonInteractiveSignInRequestId {
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastNonInteractiveSignInRequestId", value); }
         }
 #endif
-        /// <summary>The lastSignInDateTime property</summary>
+        /// <summary>The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: &apos;2014-01-01T00:00:00Z&apos;. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.</summary>
         public DateTimeOffset? LastSignInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
-        /// <summary>The lastSignInRequestId property</summary>
+        /// <summary>Request identifier of the last interactive sign-in performed by this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastSignInRequestId {

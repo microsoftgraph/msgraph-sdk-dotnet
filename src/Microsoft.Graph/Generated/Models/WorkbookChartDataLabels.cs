@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class WorkbookChartDataLabels : Entity, IParsable {
         /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>

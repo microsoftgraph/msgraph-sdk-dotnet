@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class EducationAssignmentPointsGrade : EducationAssignmentGrade, IParsable {
         /// <summary>Number of points a teacher is giving this submission object.</summary>

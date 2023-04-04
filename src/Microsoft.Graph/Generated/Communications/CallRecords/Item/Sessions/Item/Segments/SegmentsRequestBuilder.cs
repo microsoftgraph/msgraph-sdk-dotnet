@@ -2,14 +2,14 @@ using Microsoft.Graph.Communications.CallRecords.Item.Sessions.Item.Segments.Cou
 using Microsoft.Graph.Communications.CallRecords.Item.Sessions.Item.Segments.Item;
 using Microsoft.Graph.Models.CallRecords;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Communications.CallRecords.Item.Sessions.Item.Segments {
     /// <summary>
     /// Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.

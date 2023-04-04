@@ -4,10 +4,10 @@ using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Models.TermStore;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class Entity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -530,9 +530,13 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.security.ediscoverySearch" => new EdiscoverySearch(),
                 "#microsoft.graph.security.ediscoveryTagOperation" => new EdiscoveryTagOperation(),
                 "#microsoft.graph.security.incident" => new Incident(),
+                "#microsoft.graph.security.retentionEvent" => new RetentionEvent(),
+                "#microsoft.graph.security.retentionEventType" => new Microsoft.Graph.Models.Security.RetentionEventType(),
                 "#microsoft.graph.security.search" => new Microsoft.Graph.Models.Security.Search(),
                 "#microsoft.graph.security.siteSource" => new SiteSource(),
                 "#microsoft.graph.security.tag" => new Tag(),
+                "#microsoft.graph.security.triggersRoot" => new TriggersRoot(),
+                "#microsoft.graph.security.triggerTypesRoot" => new TriggerTypesRoot(),
                 "#microsoft.graph.security.unifiedGroupSource" => new UnifiedGroupSource(),
                 "#microsoft.graph.security.userSource" => new UserSource(),
                 "#microsoft.graph.securityReportsRoot" => new SecurityReportsRoot(),
@@ -615,6 +619,8 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
                 "#microsoft.graph.trending" => new Trending(),
+                "#microsoft.graph.unifiedRbacResourceAction" => new UnifiedRbacResourceAction(),
+                "#microsoft.graph.unifiedRbacResourceNamespace" => new UnifiedRbacResourceNamespace(),
                 "#microsoft.graph.unifiedRoleAssignment" => new UnifiedRoleAssignment(),
                 "#microsoft.graph.unifiedRoleAssignmentSchedule" => new UnifiedRoleAssignmentSchedule(),
                 "#microsoft.graph.unifiedRoleAssignmentScheduleInstance" => new UnifiedRoleAssignmentScheduleInstance(),
@@ -661,6 +667,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.windows10TeamGeneralConfiguration" => new Windows10TeamGeneralConfiguration(),
                 "#microsoft.graph.windows81CompliancePolicy" => new Windows81CompliancePolicy(),
                 "#microsoft.graph.windows81GeneralConfiguration" => new Windows81GeneralConfiguration(),
+                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsAutopilotDeviceIdentity" => new WindowsAutopilotDeviceIdentity(),
                 "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration" => new WindowsDefenderAdvancedThreatProtectionConfiguration(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new WindowsHelloForBusinessAuthenticationMethod(),

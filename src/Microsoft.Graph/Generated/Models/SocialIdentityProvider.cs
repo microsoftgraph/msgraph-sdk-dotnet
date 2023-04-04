@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class SocialIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The identifier for the client application obtained when registering the application with the identity provider. Required.</summary>

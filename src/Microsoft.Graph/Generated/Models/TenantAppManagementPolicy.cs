@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class TenantAppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>

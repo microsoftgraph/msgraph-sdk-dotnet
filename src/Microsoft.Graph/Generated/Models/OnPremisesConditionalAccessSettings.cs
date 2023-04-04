@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class OnPremisesConditionalAccessSettings : Entity, IParsable {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>

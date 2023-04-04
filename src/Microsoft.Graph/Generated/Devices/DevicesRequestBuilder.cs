@@ -4,16 +4,16 @@ using Microsoft.Graph.Devices.GetAvailableExtensionProperties;
 using Microsoft.Graph.Devices.GetByIds;
 using Microsoft.Graph.Devices.Item;
 using Microsoft.Graph.Devices.ValidateProperties;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Devices {
     /// <summary>
     /// Provides operations to manage the collection of device entities.

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models.CallRecords {
     public class ParticipantEndpoint : Endpoint, IParsable {
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>

@@ -1,9 +1,9 @@
 using Microsoft.Graph.Models.TermStore;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class Site : BaseItem, IParsable {
         /// <summary>Analytics about the view activities that took place in this site.</summary>
@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new site and sets the default values.
+        /// Instantiates a new Site and sets the default values.
         /// </summary>
         public Site() : base() {
             OdataType = "#microsoft.graph.site";

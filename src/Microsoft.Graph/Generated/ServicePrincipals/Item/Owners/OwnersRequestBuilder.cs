@@ -1,5 +1,5 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.Count;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.GraphAppRoleAssignment;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.GraphEndpoint;
@@ -7,14 +7,14 @@ using Microsoft.Graph.ServicePrincipals.Item.Owners.GraphServicePrincipal;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.GraphUser;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.Item;
 using Microsoft.Graph.ServicePrincipals.Item.Owners.Ref;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.ServicePrincipals.Item.Owners {
     /// <summary>
     /// Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.

@@ -2,16 +2,16 @@ using Microsoft.Graph.Contacts.Item.DirectReports.Count;
 using Microsoft.Graph.Contacts.Item.DirectReports.GraphOrgContact;
 using Microsoft.Graph.Contacts.Item.DirectReports.GraphUser;
 using Microsoft.Graph.Contacts.Item.DirectReports.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Contacts.Item.DirectReports {
     /// <summary>
     /// Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.

@@ -1,12 +1,12 @@
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.Item.Children.Item.Relations.Count {
     /// <summary>
     /// Provides operations to count the resources in the collection.

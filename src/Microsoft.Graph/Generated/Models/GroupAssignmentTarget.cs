@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The group Id that is the target of the assignment.</summary>

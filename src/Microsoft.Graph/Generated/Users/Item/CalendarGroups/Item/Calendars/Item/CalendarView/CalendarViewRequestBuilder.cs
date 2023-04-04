@@ -1,16 +1,16 @@
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Count;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Delta;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView {
     /// <summary>
     /// Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.

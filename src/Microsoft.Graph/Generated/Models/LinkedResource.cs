@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class LinkedResource : Entity, IParsable {
         /// <summary>The app name of the source that sends the linkedResource.</summary>

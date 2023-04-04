@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class MobileLobApp : MobileApp, IParsable {
         /// <summary>The internal committed content version.</summary>
@@ -70,6 +70,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.iosLobApp" => new IosLobApp(),
                 "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
+                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
                 "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
                 _ => new MobileLobApp(),

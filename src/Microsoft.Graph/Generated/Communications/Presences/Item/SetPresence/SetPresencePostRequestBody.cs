@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Communications.Presences.Item.SetPresence {
     public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>

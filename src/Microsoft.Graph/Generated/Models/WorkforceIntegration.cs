@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable {
         /// <summary>API version for the call back URL. Start with 1.</summary>

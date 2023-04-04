@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class WindowsAppXAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>Whether or not to use device execution context for Windows AppX mobile app.</summary>
+        /// <summary>When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.</summary>
         public bool? UseDeviceContext {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }
             set { BackingStore?.Set("useDeviceContext", value); }

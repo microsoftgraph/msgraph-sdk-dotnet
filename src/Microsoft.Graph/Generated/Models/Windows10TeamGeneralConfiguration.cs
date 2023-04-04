@@ -1,9 +1,9 @@
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class Windows10TeamGeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block Azure Operational Insights.</summary>

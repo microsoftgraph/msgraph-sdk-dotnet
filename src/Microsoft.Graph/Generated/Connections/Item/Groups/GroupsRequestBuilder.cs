@@ -2,14 +2,14 @@ using Microsoft.Graph.Connections.Item.Groups.Count;
 using Microsoft.Graph.Connections.Item.Groups.Item;
 using Microsoft.Graph.Models.ExternalConnectors;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Connections.Item.Groups {
     /// <summary>
     /// Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.

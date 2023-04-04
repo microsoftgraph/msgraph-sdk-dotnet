@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class PlannerPlanDetails : Entity, IParsable {
         /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.</summary>

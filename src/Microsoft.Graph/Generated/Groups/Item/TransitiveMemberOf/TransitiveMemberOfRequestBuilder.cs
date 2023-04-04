@@ -2,16 +2,16 @@ using Microsoft.Graph.Groups.Item.TransitiveMemberOf.Count;
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.GraphAdministrativeUnit;
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.GraphGroup;
 using Microsoft.Graph.Groups.Item.TransitiveMemberOf.Item;
-using Microsoft.Graph.Models;
 using Microsoft.Graph.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
     /// <summary>
     /// Provides operations to manage the transitiveMemberOf property of the microsoft.graph.group entity.

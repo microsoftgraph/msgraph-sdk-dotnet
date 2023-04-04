@@ -1,10 +1,10 @@
 using Microsoft.Graph.Education.Schools.Item.Users.Item.Ref;
 using Microsoft.Kiota.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 namespace Microsoft.Graph.Education.Schools.Item.Users.Item {
     /// <summary>
     /// Builds and executes requests for operations under \education\schools\{educationSchool-id}\users\{educationUser-id}

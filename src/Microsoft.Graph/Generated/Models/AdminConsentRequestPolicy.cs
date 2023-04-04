@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Models {
     public class AdminConsentRequestPolicy : Entity, IParsable {
         /// <summary>Specifies whether the admin consent request feature is enabled or disabled. Required.</summary>
