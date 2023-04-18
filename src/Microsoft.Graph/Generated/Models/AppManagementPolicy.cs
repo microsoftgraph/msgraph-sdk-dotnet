@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class AppManagementPolicy : PolicyBase, IParsable {
-        /// <summary>The appliesTo property</summary>
+        /// <summary>Collection of applications and service principals to which the policy is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? AppliesTo {
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("appliesTo", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Denotes whether the policy is enabled.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The restrictions property</summary>
+        /// <summary>Restrictions that apply to an application or service principal object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AppManagementConfiguration? Restrictions {

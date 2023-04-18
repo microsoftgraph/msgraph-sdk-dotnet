@@ -170,6 +170,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("mentions", value); }
         }
 #endif
+        /// <summary>The messageHistory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ChatMessageHistoryItem>? MessageHistory {
+            get { return BackingStore?.Get<List<ChatMessageHistoryItem>?>("messageHistory"); }
+            set { BackingStore?.Set("messageHistory", value); }
+        }
+#nullable restore
+#else
+        public List<ChatMessageHistoryItem> MessageHistory {
+            get { return BackingStore?.Get<List<ChatMessageHistoryItem>>("messageHistory"); }
+            set { BackingStore?.Set("messageHistory", value); }
+        }
+#endif
         /// <summary>The messageType property</summary>
         public ChatMessageType? MessageType {
             get { return BackingStore?.Get<ChatMessageType?>("messageType"); }
@@ -301,6 +315,7 @@ namespace Microsoft.Graph.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"locale", n => { Locale = n.GetStringValue(); } },
                 {"mentions", n => { Mentions = n.GetCollectionOfObjectValues<ChatMessageMention>(ChatMessageMention.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"messageHistory", n => { MessageHistory = n.GetCollectionOfObjectValues<ChatMessageHistoryItem>(ChatMessageHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
                 {"policyViolation", n => { PolicyViolation = n.GetObjectValue<ChatMessagePolicyViolation>(ChatMessagePolicyViolation.CreateFromDiscriminatorValue); } },
                 {"reactions", n => { Reactions = n.GetCollectionOfObjectValues<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -333,6 +348,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("locale", Locale);
             writer.WriteCollectionOfObjectValues<ChatMessageMention>("mentions", Mentions);
+            writer.WriteCollectionOfObjectValues<ChatMessageHistoryItem>("messageHistory", MessageHistory);
             writer.WriteEnumValue<ChatMessageType>("messageType", MessageType);
             writer.WriteObjectValue<ChatMessagePolicyViolation>("policyViolation", PolicyViolation);
             writer.WriteCollectionOfObjectValues<ChatMessageReaction>("reactions", Reactions);

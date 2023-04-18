@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.OpenShifts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get openShifts from groups
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.OpenShifts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get openShifts from groups
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.OpenShifts.Item {
             }
         }
         /// <summary>
-        /// Get openShifts from groups
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         public class OpenShiftItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

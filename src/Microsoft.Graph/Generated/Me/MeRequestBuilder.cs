@@ -36,6 +36,7 @@ using Microsoft.Graph.Me.Insights;
 using Microsoft.Graph.Me.JoinedTeams;
 using Microsoft.Graph.Me.LicenseDetails;
 using Microsoft.Graph.Me.MailFolders;
+using Microsoft.Graph.Me.MailboxSettings;
 using Microsoft.Graph.Me.ManagedAppRegistrations;
 using Microsoft.Graph.Me.ManagedDevices;
 using Microsoft.Graph.Me.Manager;
@@ -225,6 +226,10 @@ namespace Microsoft.Graph.Me {
         public LicenseDetailsRequestBuilder LicenseDetails { get =>
             new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
         public MailFoldersRequestBuilder MailFolders { get =>
             new MailFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -370,8 +375,8 @@ namespace Microsoft.Graph.Me {
             return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of user object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -422,7 +427,7 @@ namespace Microsoft.Graph.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -476,7 +481,7 @@ namespace Microsoft.Graph.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

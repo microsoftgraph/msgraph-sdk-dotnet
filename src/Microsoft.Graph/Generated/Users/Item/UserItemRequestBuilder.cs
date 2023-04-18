@@ -38,6 +38,7 @@ using Microsoft.Graph.Users.Item.Insights;
 using Microsoft.Graph.Users.Item.JoinedTeams;
 using Microsoft.Graph.Users.Item.LicenseDetails;
 using Microsoft.Graph.Users.Item.MailFolders;
+using Microsoft.Graph.Users.Item.MailboxSettings;
 using Microsoft.Graph.Users.Item.ManagedAppRegistrations;
 using Microsoft.Graph.Users.Item.ManagedDevices;
 using Microsoft.Graph.Users.Item.Manager;
@@ -224,6 +225,10 @@ namespace Microsoft.Graph.Users.Item {
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.</summary>
         public LicenseDetailsRequestBuilder LicenseDetails { get =>
             new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
         public MailFoldersRequestBuilder MailFolders { get =>

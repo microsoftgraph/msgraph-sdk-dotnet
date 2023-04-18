@@ -1,10 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class AgreementAcceptanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
+    public class AgreementAcceptanceCollectionResponse : BaseCollectionPaginationCountResponse, IBackedModel, IParsable {
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,6 +22,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("value", value); }
         }
 #endif
+        /// <summary>
+        /// Instantiates a new AgreementAcceptanceCollectionResponse and sets the default values.
+        /// </summary>
+        public AgreementAcceptanceCollectionResponse() : base() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

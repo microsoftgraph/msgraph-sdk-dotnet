@@ -5,6 +5,7 @@ using Microsoft.Graph.Policies.AdminConsentRequestPolicy;
 using Microsoft.Graph.Policies.AppManagementPolicies;
 using Microsoft.Graph.Policies.AuthenticationFlowsPolicy;
 using Microsoft.Graph.Policies.AuthenticationMethodsPolicy;
+using Microsoft.Graph.Policies.AuthenticationStrengthPolicies;
 using Microsoft.Graph.Policies.AuthorizationPolicy;
 using Microsoft.Graph.Policies.ClaimsMappingPolicies;
 using Microsoft.Graph.Policies.ConditionalAccessPolicies;
@@ -50,6 +51,10 @@ namespace Microsoft.Graph.Policies {
         /// <summary>Provides operations to manage the authenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get =>
             new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public AuthenticationStrengthPoliciesRequestBuilder AuthenticationStrengthPolicies { get =>
+            new AuthenticationStrengthPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.</summary>
         public AuthorizationPolicyRequestBuilder AuthorizationPolicy { get =>

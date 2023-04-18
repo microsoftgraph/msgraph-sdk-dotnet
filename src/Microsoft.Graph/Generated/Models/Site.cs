@@ -273,7 +273,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new site and sets the default values.
+        /// Instantiates a new Site and sets the default values.
         /// </summary>
         public Site() : base() {
             OdataType = "#microsoft.graph.site";

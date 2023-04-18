@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("offerShiftRequestsEnabled"); }
             set { BackingStore?.Set("offerShiftRequestsEnabled", value); }
         }
-        /// <summary>The openShiftChangeRequests property</summary>
+        /// <summary>The open shift requests in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OpenShiftChangeRequest>? OpenShiftChangeRequests {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("openShiftChangeRequests", value); }
         }
 #endif
-        /// <summary>The openShifts property</summary>
+        /// <summary>The set of open shifts in a scheduling group in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OpenShift>? OpenShifts {

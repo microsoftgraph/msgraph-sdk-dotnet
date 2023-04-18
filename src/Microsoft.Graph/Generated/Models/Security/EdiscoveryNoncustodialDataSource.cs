@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+        /// Instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
         /// </summary>
         public EdiscoveryNoncustodialDataSource() : base() {
             OdataType = "#microsoft.graph.security.ediscoveryNoncustodialDataSource";

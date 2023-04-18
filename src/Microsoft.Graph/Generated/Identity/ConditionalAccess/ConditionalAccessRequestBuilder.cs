@@ -1,4 +1,5 @@
 using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences;
+using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength;
 using Microsoft.Graph.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Identity.ConditionalAccess.Policies;
 using Microsoft.Graph.Identity.ConditionalAccess.Templates;
@@ -20,6 +21,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>
             new AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        public AuthenticationStrengthRequestBuilder AuthenticationStrength { get =>
+            new AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public NamedLocationsRequestBuilder NamedLocations { get =>

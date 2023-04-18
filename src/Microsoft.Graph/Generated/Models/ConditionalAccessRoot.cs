@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
+        /// <summary>The authenticationStrength property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AuthenticationStrengthRoot? AuthenticationStrength {
+            get { return BackingStore?.Get<AuthenticationStrengthRoot?>("authenticationStrength"); }
+            set { BackingStore?.Set("authenticationStrength", value); }
+        }
+#nullable restore
+#else
+        public AuthenticationStrengthRoot AuthenticationStrength {
+            get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrength"); }
+            set { BackingStore?.Set("authenticationStrength", value); }
+        }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +89,7 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
                 {"namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<NamedLocation>(NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"templates", n => { Templates = n.GetCollectionOfObjectValues<ConditionalAccessTemplate>(ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -88,6 +103,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
+            writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
             writer.WriteCollectionOfObjectValues<NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<ConditionalAccessTemplate>("templates", Templates);

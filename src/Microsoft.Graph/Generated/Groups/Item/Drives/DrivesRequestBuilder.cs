@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Groups.Item.Drives {
         public DrivesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0" />
+        /// The group&apos;s drives. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Groups.Item.Drives {
             return await RequestAdapter.SendAsync<DriveCollectionResponse>(requestInfo, DriveCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// The group&apos;s drives. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Groups.Item.Drives {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// The group&apos;s drives. Read-only.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

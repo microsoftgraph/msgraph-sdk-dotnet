@@ -1,3 +1,4 @@
+using Microsoft.Graph.Education.Users.Item.User.MailboxSettings;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Education.Users.Item.User {
     /// Provides operations to manage the user property of the microsoft.graph.educationUser entity.
     /// </summary>
     public class UserRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new UserRequestBuilder and sets the default values.
         /// </summary>

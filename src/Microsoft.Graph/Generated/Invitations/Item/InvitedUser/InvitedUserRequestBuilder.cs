@@ -1,3 +1,4 @@
+using Microsoft.Graph.Invitations.Item.InvitedUser.MailboxSettings;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
     /// Provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
     /// </summary>
     public class InvitedUserRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new InvitedUserRequestBuilder and sets the default values.
         /// </summary>
