@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>
-        /// Instantiates a new unifiedGroupSource and sets the default values.
+        /// Instantiates a new UnifiedGroupSource and sets the default values.
         /// </summary>
         public UnifiedGroupSource() : base() {
             OdataType = "#microsoft.graph.security.unifiedGroupSource";
