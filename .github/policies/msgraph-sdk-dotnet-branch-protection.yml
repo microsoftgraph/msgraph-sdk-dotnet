@@ -16,15 +16,13 @@ configuration:
     # Specifies whether forced pushes are allowed on this branch. boolean
     allowsForcePushes: false
     # Specifies whether new commits pushed to the matching branches dismiss pull request review approvals. boolean
-    dismissStaleReviews: false
+    dismissStaleReviews: true
     # Specifies whether admins can overwrite branch protection. boolean
     isAdminEnforced: false
-    # Specifies whether approving reviews are required to update matching branches. boolean
-    requiresApprovingReviews: true
     # Specifies the number of pull request reviews before merging. int (0-6)
     requiredApprovingReviewsCount: 1
     # Require review from Code Owners. Requires requiredApprovingReviewsCount. boolean
-    requireCodeOwnersReview: false
+    requireCodeOwnersReview: true
     # Are commits required to be signed. boolean
     requiresCommitSignatures: false
     # Are merge commits prohibited from being pushed to this branch. boolean
@@ -36,7 +34,7 @@ configuration:
     - build
     - license/cla
     # The docs conflict. Are branches required to be up to date before merging. Or Require status checks to pass before merging
-    requiresStrictStatusChecks: false
+    requiresStrictStatusChecks: true
     # Restrict who can push to matching branches
     restrictsPushes: false
     # Restrict who can dismiss pull request reviews
@@ -51,8 +49,6 @@ configuration:
     dismissStaleReviews: true
     # Specifies whether admins can overwrite branch protection. boolean
     isAdminEnforced: false
-    # Specifies whether approving reviews are required to update matching branches. boolean
-    requiresApprovingReviews: true
     # Specifies the number of pull request reviews before merging. int (0-6)
     requiredApprovingReviewsCount: 1
     # Require review from Code Owners. Requires requiredApprovingReviewsCount. boolean
@@ -79,15 +75,13 @@ configuration:
     # Specifies whether forced pushes are allowed on this branch. boolean
     allowsForcePushes: false
     # Specifies whether new commits pushed to the matching branches dismiss pull request review approvals. boolean
-    dismissStaleReviews: false
+    dismissStaleReviews: true
     # Specifies whether admins can overwrite branch protection. boolean
     isAdminEnforced: false
-    # Specifies whether approving reviews are required to update matching branches. boolean
-    requiresApprovingReviews: true
     # Specifies the number of pull request reviews before merging. int (0-6)
     requiredApprovingReviewsCount: 1
     # Require review from Code Owners. Requires requiredApprovingReviewsCount. boolean
-    requireCodeOwnersReview: false
+    requireCodeOwnersReview: true
     # Are commits required to be signed. boolean
     requiresCommitSignatures: false
     # Are merge commits prohibited from being pushed to this branch. boolean
@@ -98,7 +92,7 @@ configuration:
     requiredStatusCheckContexts:
     - build
     # The docs conflict. Are branches required to be up to date before merging. Or Require status checks to pass before merging
-    requiresStrictStatusChecks: false
+    requiresStrictStatusChecks: true
     # Restrict who can push to matching branches
     restrictsPushes: false
     # Restrict who can dismiss pull request reviews
