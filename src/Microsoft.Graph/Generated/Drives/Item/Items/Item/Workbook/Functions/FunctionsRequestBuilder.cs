@@ -77,7 +77,7 @@ using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csc;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Csch;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumIPmt;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.CumPrinc;
-using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Date;
+using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Datevalue;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Daverage;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Day;

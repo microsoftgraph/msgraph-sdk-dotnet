@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Date {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace {
     /// <summary>
     /// Provides operations to call the date method.
     /// </summary>

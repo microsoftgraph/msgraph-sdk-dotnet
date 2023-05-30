@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new contract and sets the default values.
+        /// Instantiates a new Contract and sets the default values.
         /// </summary>
         public Contract() : base() {
             OdataType = "#microsoft.graph.contract";
