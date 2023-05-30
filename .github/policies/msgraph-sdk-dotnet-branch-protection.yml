@@ -64,30 +64,3 @@ configuration:
     restrictsPushes: false
     # Restrict who can dismiss pull request reviews
     restrictsReviewDismissals: false
-
-  - branchNamePattern: feature/5.0
-    # Specifies whether this branch can be deleted. boolean
-    allowsDeletions: false
-    # Specifies whether forced pushes are allowed on this branch. boolean
-    allowsForcePushes: false
-    # Specifies whether new commits pushed to the matching branches dismiss pull request review approvals. boolean
-    dismissStaleReviews: true
-    # Specifies whether admins can overwrite branch protection. boolean
-    isAdminEnforced: false
-    # Specifies the number of pull request reviews before merging. int (0-6)
-    requiredApprovingReviewsCount: 1
-    # Require review from Code Owners. Requires requiredApprovingReviewsCount. boolean
-    requireCodeOwnersReview: true
-    # Are commits required to be signed. boolean
-    requiresCommitSignatures: false
-    # Are merge commits prohibited from being pushed to this branch. boolean
-    requiresLinearHistory: false
-    # Requires requiresStrictStatusChecks. Values can be any string, but if the value does not correspond to any existing status check, the status check will be stuck on pending for status since nothing exists to push an actual status
-    requiredStatusChecks:
-    - build
-    # The docs conflict. Are branches required to be up to date before merging. Or Require status checks to pass before merging
-    requiresStrictStatusChecks: true
-    # Restrict who can push to matching branches
-    restrictsPushes: false
-    # Restrict who can dismiss pull request reviews
-    restrictsReviewDismissals: false
