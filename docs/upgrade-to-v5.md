@@ -14,7 +14,7 @@ The following section lists out the breaking changes requiring code changes from
 The types in the sdk are now organized into namespaces reflecting their usage as compared to all types being present in the single `Microsoft.Graph` namespace and therefore makes it easier to consume multiple libraries(e.g v1.0 and beta) in the same application.
 
 This therefore comes with the following changes, 
-- The beta v1.0 service library uses `Microsoft.Graph` as its root namespace. 
+- The v1.0 service library uses `Microsoft.Graph` as its root namespace. 
 - The beta service library uses `Microsoft.Graph.Beta` as its root namespace.
 - Model types are now in the  `Microsoft.Graph.Models`/`Microsoft.Graph.Beta.Models` namespaces.
 - RequestBuilder and RequestBody types reside in namespaces relative to the path they are calling. e.g. The `SendMailPostRequestBody` type will reside in the `Microsoft.Graph.Beta.Me.SendMail/Microsoft.Graph.Me.SendMail` namespace if you are sending a mail via the `client.Me.SendMail.PostAsync(sendMailPostRequestBody)` path using the request builders
