@@ -110,6 +110,7 @@ namespace Microsoft.Graph.Applications.Item.Logo {
             };
             requestInfo.SetStreamContent(body);
             if (requestConfiguration != null) {
+                requestInfo.Headers.Remove("Content-Type", "application/octet-stream");
                 var requestConfig = new LogoRequestBuilderPutRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
