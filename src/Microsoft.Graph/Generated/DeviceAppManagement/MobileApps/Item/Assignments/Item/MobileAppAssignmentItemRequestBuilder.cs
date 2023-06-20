@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<MobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<MobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileAppAssignment?> GetAsync(Action<MobileAppAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileAppAssignment?> GetAsync(CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobileAppAssignment> GetAsync(Action<MobileAppAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileAppAssignment> GetAsync(CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileAppAssignment?> PatchAsync(MobileAppAssignment body, Action<MobileAppAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileAppAssignment?> PatchAsync(MobileAppAssignment body, CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobileAppAssignment> PatchAsync(MobileAppAssignment body, Action<MobileAppAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileAppAssignment> PatchAsync(MobileAppAssignment body, CancellationToken cancellationToken = default, Action<MobileAppAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

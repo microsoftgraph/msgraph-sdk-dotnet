@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingStaffMemberBaseCollectionResponse?> GetAsync(Action<StaffMembersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingStaffMemberBaseCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<StaffMembersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingStaffMemberBaseCollectionResponse> GetAsync(Action<StaffMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingStaffMemberBaseCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<StaffMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.StaffMembers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingStaffMemberBase?> PostAsync(BookingStaffMemberBase body, Action<StaffMembersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingStaffMemberBase?> PostAsync(BookingStaffMemberBase body, CancellationToken cancellationToken = default, Action<StaffMembersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingStaffMemberBase> PostAsync(BookingStaffMemberBase body, Action<StaffMembersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingStaffMemberBase> PostAsync(BookingStaffMemberBase body, CancellationToken cancellationToken = default, Action<StaffMembersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

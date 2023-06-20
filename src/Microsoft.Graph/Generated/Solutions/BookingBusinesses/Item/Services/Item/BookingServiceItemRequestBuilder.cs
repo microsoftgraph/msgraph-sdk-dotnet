@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<BookingServiceItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<BookingServiceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -55,10 +55,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingService?> GetAsync(Action<BookingServiceItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingService?> GetAsync(CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingService> GetAsync(Action<BookingServiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingService> GetAsync(CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -76,10 +76,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingService?> PatchAsync(BookingService body, Action<BookingServiceItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingService?> PatchAsync(BookingService body, CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingService> PatchAsync(BookingService body, Action<BookingServiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingService> PatchAsync(BookingService body, CancellationToken cancellationToken = default, Action<BookingServiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

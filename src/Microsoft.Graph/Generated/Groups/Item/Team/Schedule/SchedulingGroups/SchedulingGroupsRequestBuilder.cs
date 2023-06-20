@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.SchedulingGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SchedulingGroupCollectionResponse?> GetAsync(Action<SchedulingGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SchedulingGroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SchedulingGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SchedulingGroupCollectionResponse> GetAsync(Action<SchedulingGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SchedulingGroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SchedulingGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.SchedulingGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SchedulingGroup?> PostAsync(SchedulingGroup body, Action<SchedulingGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SchedulingGroup?> PostAsync(SchedulingGroup body, CancellationToken cancellationToken = default, Action<SchedulingGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SchedulingGroup> PostAsync(SchedulingGroup body, Action<SchedulingGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SchedulingGroup> PostAsync(SchedulingGroup body, CancellationToken cancellationToken = default, Action<SchedulingGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

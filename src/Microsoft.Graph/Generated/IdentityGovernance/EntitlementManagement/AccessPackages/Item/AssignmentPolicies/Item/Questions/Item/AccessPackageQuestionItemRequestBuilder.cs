@@ -34,10 +34,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AccessPackageQuestionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AccessPackageQuestionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessPackageQuestion?> GetAsync(Action<AccessPackageQuestionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessPackageQuestion?> GetAsync(CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AccessPackageQuestion> GetAsync(Action<AccessPackageQuestionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessPackageQuestion> GetAsync(CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessPackageQuestion?> PatchAsync(AccessPackageQuestion body, Action<AccessPackageQuestionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessPackageQuestion?> PatchAsync(AccessPackageQuestion body, CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AccessPackageQuestion> PatchAsync(AccessPackageQuestion body, Action<AccessPackageQuestionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessPackageQuestion> PatchAsync(AccessPackageQuestion body, CancellationToken cancellationToken = default, Action<AccessPackageQuestionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

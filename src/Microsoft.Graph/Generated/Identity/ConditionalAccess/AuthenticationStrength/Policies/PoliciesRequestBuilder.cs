@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationStrengthPolicyCollectionResponse?> GetAsync(Action<PoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationStrengthPolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationStrengthPolicyCollectionResponse> GetAsync(Action<PoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationStrengthPolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationStrengthPolicy?> PostAsync(AuthenticationStrengthPolicy body, Action<PoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationStrengthPolicy?> PostAsync(AuthenticationStrengthPolicy body, CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationStrengthPolicy> PostAsync(AuthenticationStrengthPolicy body, Action<PoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationStrengthPolicy> PostAsync(AuthenticationStrengthPolicy body, CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

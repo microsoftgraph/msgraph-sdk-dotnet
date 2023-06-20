@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new keyValuePair and sets the default values.
+        /// Instantiates a new KeyValuePair and sets the default values.
         /// </summary>
         public KeyValuePair() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new auditActivityInitiator and sets the default values.
+        /// Instantiates a new AuditActivityInitiator and sets the default values.
         /// </summary>
         public AuditActivityInitiator() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

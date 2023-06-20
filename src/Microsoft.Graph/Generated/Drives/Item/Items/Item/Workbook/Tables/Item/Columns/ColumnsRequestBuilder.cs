@@ -47,16 +47,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
         }
         /// <summary>
         /// Retrieve a list of tablecolumn objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableColumnCollectionResponse?> GetAsync(Action<ColumnsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookTableColumnCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WorkbookTableColumnCollectionResponse> GetAsync(Action<ColumnsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookTableColumnCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookTableColumn?> PostAsync(WorkbookTableColumn body, Action<ColumnsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookTableColumn?> PostAsync(WorkbookTableColumn body, CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WorkbookTableColumn> PostAsync(WorkbookTableColumn body, Action<ColumnsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookTableColumn> PostAsync(WorkbookTableColumn body, CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

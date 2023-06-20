@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ConversationMemberItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ConversationMemberItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -48,17 +48,17 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0" />
+        /// Retrieve a conversationMember from a chat or channel.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConversationMember?> GetAsync(Action<ConversationMemberItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConversationMember?> GetAsync(CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ConversationMember> GetAsync(Action<ConversationMemberItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConversationMember> GetAsync(CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConversationMember?> PatchAsync(ConversationMember body, Action<ConversationMemberItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConversationMember?> PatchAsync(ConversationMember body, CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ConversationMember> PatchAsync(ConversationMember body, Action<ConversationMemberItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConversationMember> PatchAsync(ConversationMember body, CancellationToken cancellationToken = default, Action<ConversationMemberItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
+        /// Retrieve a conversationMember from a chat or channel.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
             }
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
+        /// Retrieve a conversationMember from a chat or channel.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

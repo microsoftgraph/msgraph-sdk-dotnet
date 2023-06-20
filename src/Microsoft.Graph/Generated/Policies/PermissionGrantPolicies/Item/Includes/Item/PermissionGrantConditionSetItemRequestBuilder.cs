@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSet?> GetAsync(Action<PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet?> GetAsync(CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSet> GetAsync(Action<PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet> GetAsync(CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSet?> PatchAsync(PermissionGrantConditionSet body, Action<PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet?> PatchAsync(PermissionGrantConditionSet body, CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSet> PatchAsync(PermissionGrantConditionSet body, Action<PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet> PatchAsync(PermissionGrantConditionSet body, CancellationToken cancellationToken = default, Action<PermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

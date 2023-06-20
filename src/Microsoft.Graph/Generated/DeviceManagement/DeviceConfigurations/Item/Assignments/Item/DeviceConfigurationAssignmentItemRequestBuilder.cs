@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationAssignment?> GetAsync(Action<DeviceConfigurationAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationAssignment?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationAssignment> GetAsync(Action<DeviceConfigurationAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationAssignment?> PatchAsync(DeviceConfigurationAssignment body, Action<DeviceConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationAssignment?> PatchAsync(DeviceConfigurationAssignment body, CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationAssignment> PatchAsync(DeviceConfigurationAssignment body, Action<DeviceConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationAssignment> PatchAsync(DeviceConfigurationAssignment body, CancellationToken cancellationToken = default, Action<DeviceConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

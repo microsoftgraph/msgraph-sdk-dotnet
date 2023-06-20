@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new averageComparativeScore and sets the default values.
+        /// Instantiates a new AverageComparativeScore and sets the default values.
         /// </summary>
         public AverageComparativeScore() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

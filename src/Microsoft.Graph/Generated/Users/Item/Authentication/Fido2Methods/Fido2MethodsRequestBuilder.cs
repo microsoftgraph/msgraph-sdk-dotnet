@@ -40,16 +40,17 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
         public Fido2MethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/fido2Methods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(Action<Fido2MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<Fido2MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(Action<Fido2MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<Fido2MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethodCollectionResponse>(requestInfo, Fido2AuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
         /// </summary>
         public class Fido2MethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

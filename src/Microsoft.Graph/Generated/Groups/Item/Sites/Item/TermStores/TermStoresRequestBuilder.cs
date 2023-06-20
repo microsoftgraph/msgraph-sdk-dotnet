@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StoreCollectionResponse?> GetAsync(Action<TermStoresRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StoreCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TermStoresRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<StoreCollectionResponse> GetAsync(Action<TermStoresRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StoreCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TermStoresRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Store?> PostAsync(Store body, Action<TermStoresRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Store?> PostAsync(Store body, CancellationToken cancellationToken = default, Action<TermStoresRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Store> PostAsync(Store body, Action<TermStoresRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Store> PostAsync(Store body, CancellationToken cancellationToken = default, Action<TermStoresRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

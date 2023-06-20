@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityUserFlowAttributeCollectionResponse?> GetAsync(Action<UserFlowAttributesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityUserFlowAttributeCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<UserFlowAttributesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityUserFlowAttributeCollectionResponse> GetAsync(Action<UserFlowAttributesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityUserFlowAttributeCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<UserFlowAttributesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityUserFlowAttribute?> PostAsync(IdentityUserFlowAttribute body, Action<UserFlowAttributesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityUserFlowAttribute?> PostAsync(IdentityUserFlowAttribute body, CancellationToken cancellationToken = default, Action<UserFlowAttributesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityUserFlowAttribute> PostAsync(IdentityUserFlowAttribute body, Action<UserFlowAttributesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityUserFlowAttribute> PostAsync(IdentityUserFlowAttribute body, CancellationToken cancellationToken = default, Action<UserFlowAttributesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Communications.OnlineMeetings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeetingCollectionResponse?> GetAsync(Action<OnlineMeetingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeetingCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<OnlineMeetingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnlineMeetingCollectionResponse> GetAsync(Action<OnlineMeetingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeetingCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OnlineMeetingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -72,10 +72,10 @@ namespace Microsoft.Graph.Communications.OnlineMeetings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeeting?> PostAsync(OnlineMeeting body, Action<OnlineMeetingsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting?> PostAsync(OnlineMeeting body, CancellationToken cancellationToken = default, Action<OnlineMeetingsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnlineMeeting> PostAsync(OnlineMeeting body, Action<OnlineMeetingsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting> PostAsync(OnlineMeeting body, CancellationToken cancellationToken = default, Action<OnlineMeetingsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

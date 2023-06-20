@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isOfficePhoneAllowed", value); }
         }
         /// <summary>
-        /// Instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
+        /// Instantiates a new voiceAuthenticationMethodConfiguration and sets the default values.
         /// </summary>
         public VoiceAuthenticationMethodConfiguration() : base() {
             OdataType = "#microsoft.graph.voiceAuthenticationMethodConfiguration";

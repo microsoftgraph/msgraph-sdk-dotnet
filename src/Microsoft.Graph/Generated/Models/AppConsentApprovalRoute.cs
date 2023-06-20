@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class AppConsentApprovalRoute : Entity, IParsable {
-        /// <summary>A collection of userConsentRequest objects for a specific application.</summary>
+        /// <summary>A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AppConsentRequest>? AppConsentRequests {

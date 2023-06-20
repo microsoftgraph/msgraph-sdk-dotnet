@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceHealthCollectionResponse?> GetAsync(Action<HealthOverviewsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServiceHealthCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<HealthOverviewsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServiceHealthCollectionResponse> GetAsync(Action<HealthOverviewsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServiceHealthCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<HealthOverviewsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServiceHealth?> PostAsync(ServiceHealth body, Action<HealthOverviewsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServiceHealth?> PostAsync(ServiceHealth body, CancellationToken cancellationToken = default, Action<HealthOverviewsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServiceHealth> PostAsync(ServiceHealth body, Action<HealthOverviewsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServiceHealth> PostAsync(ServiceHealth body, CancellationToken cancellationToken = default, Action<HealthOverviewsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

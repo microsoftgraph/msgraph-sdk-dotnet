@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationOutcomeCollectionResponse?> GetAsync(Action<OutcomesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationOutcomeCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<OutcomesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationOutcomeCollectionResponse> GetAsync(Action<OutcomesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationOutcomeCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OutcomesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationOutcome?> PostAsync(EducationOutcome body, Action<OutcomesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationOutcome?> PostAsync(EducationOutcome body, CancellationToken cancellationToken = default, Action<OutcomesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationOutcome> PostAsync(EducationOutcome body, Action<OutcomesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationOutcome> PostAsync(EducationOutcome body, CancellationToken cancellationToken = default, Action<OutcomesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

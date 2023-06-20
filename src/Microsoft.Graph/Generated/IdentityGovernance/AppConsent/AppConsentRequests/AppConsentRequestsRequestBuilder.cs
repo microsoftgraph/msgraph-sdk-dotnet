@@ -56,10 +56,10 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppConsentRequestCollectionResponse?> GetAsync(Action<AppConsentRequestsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppConsentRequestCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AppConsentRequestsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppConsentRequestCollectionResponse> GetAsync(Action<AppConsentRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppConsentRequestCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AppConsentRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -76,10 +76,10 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppConsentRequest?> PostAsync(AppConsentRequest body, Action<AppConsentRequestsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppConsentRequest?> PostAsync(AppConsentRequest body, CancellationToken cancellationToken = default, Action<AppConsentRequestsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppConsentRequest> PostAsync(AppConsentRequest body, Action<AppConsentRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppConsentRequest> PostAsync(AppConsentRequest body, CancellationToken cancellationToken = default, Action<AppConsentRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

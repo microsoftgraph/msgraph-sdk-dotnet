@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new alteredQueryToken and sets the default values.
+        /// Instantiates a new AlteredQueryToken and sets the default values.
         /// </summary>
         public AlteredQueryToken() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

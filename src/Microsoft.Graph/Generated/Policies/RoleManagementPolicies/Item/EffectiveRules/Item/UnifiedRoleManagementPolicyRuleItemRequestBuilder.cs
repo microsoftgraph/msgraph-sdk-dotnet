@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item.EffectiveRules.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item.EffectiveRules.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleManagementPolicyRule?> GetAsync(Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule?> GetAsync(CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleManagementPolicyRule> GetAsync(Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule> GetAsync(CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item.EffectiveRules.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleManagementPolicyRule?> PatchAsync(UnifiedRoleManagementPolicyRule body, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule?> PatchAsync(UnifiedRoleManagementPolicyRule body, CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleManagementPolicyRule> PatchAsync(UnifiedRoleManagementPolicyRule body, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule> PatchAsync(UnifiedRoleManagementPolicyRule body, CancellationToken cancellationToken = default, Action<UnifiedRoleManagementPolicyRuleItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

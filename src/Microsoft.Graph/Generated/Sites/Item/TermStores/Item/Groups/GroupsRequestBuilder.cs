@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupCollectionResponse?> GetAsync(Action<GroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupCollectionResponse> GetAsync(Action<GroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -60,18 +60,17 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new group object in a term store.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0" />
+        /// Create new navigation property to groups for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.TermStore.Group?> PostAsync(Microsoft.Graph.Models.TermStore.Group body, Action<GroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.TermStore.Group?> PostAsync(Microsoft.Graph.Models.TermStore.Group body, CancellationToken cancellationToken = default, Action<GroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.TermStore.Group> PostAsync(Microsoft.Graph.Models.TermStore.Group body, Action<GroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.TermStore.Group> PostAsync(Microsoft.Graph.Models.TermStore.Group body, CancellationToken cancellationToken = default, Action<GroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new group object in a term store.
+        /// Create new navigation property to groups for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

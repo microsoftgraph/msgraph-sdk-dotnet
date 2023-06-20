@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("total", value); }
         }
         /// <summary>
-        /// Instantiates a new searchHitsContainer and sets the default values.
+        /// Instantiates a new SearchHitsContainer and sets the default values.
         /// </summary>
         public SearchHitsContainer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

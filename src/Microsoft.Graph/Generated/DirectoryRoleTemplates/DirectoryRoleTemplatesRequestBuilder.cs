@@ -67,10 +67,10 @@ namespace Microsoft.Graph.DirectoryRoleTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryRoleTemplateCollectionResponse?> GetAsync(Action<DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryRoleTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryRoleTemplateCollectionResponse> GetAsync(Action<DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryRoleTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.DirectoryRoleTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryRoleTemplate?> PostAsync(DirectoryRoleTemplate body, Action<DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryRoleTemplate?> PostAsync(DirectoryRoleTemplate body, CancellationToken cancellationToken = default, Action<DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryRoleTemplate> PostAsync(DirectoryRoleTemplate body, Action<DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryRoleTemplate> PostAsync(DirectoryRoleTemplate body, CancellationToken cancellationToken = default, Action<DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

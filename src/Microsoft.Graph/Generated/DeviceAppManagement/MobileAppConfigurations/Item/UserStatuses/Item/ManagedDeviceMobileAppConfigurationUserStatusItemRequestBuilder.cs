@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDeviceMobileAppConfigurationUserStatus?> GetAsync(Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceMobileAppConfigurationUserStatus?> GetAsync(CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedDeviceMobileAppConfigurationUserStatus> GetAsync(Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceMobileAppConfigurationUserStatus> GetAsync(CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDeviceMobileAppConfigurationUserStatus?> PatchAsync(ManagedDeviceMobileAppConfigurationUserStatus body, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceMobileAppConfigurationUserStatus?> PatchAsync(ManagedDeviceMobileAppConfigurationUserStatus body, CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedDeviceMobileAppConfigurationUserStatus> PatchAsync(ManagedDeviceMobileAppConfigurationUserStatus body, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDeviceMobileAppConfigurationUserStatus> PatchAsync(ManagedDeviceMobileAppConfigurationUserStatus body, CancellationToken cancellationToken = default, Action<ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

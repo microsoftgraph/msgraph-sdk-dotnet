@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new convertIdResult and sets the default values.
+        /// Instantiates a new ConvertIdResult and sets the default values.
         /// </summary>
         public ConvertIdResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

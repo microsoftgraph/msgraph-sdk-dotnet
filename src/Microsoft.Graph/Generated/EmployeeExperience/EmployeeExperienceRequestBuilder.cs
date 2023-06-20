@@ -39,10 +39,10 @@ namespace Microsoft.Graph.EmployeeExperience {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.EmployeeExperience?> GetAsync(Action<EmployeeExperienceRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.EmployeeExperience?> GetAsync(CancellationToken cancellationToken = default, Action<EmployeeExperienceRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.EmployeeExperience> GetAsync(Action<EmployeeExperienceRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.EmployeeExperience> GetAsync(CancellationToken cancellationToken = default, Action<EmployeeExperienceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -59,10 +59,10 @@ namespace Microsoft.Graph.EmployeeExperience {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.EmployeeExperience?> PatchAsync(Microsoft.Graph.Models.EmployeeExperience body, Action<EmployeeExperienceRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.EmployeeExperience?> PatchAsync(Microsoft.Graph.Models.EmployeeExperience body, CancellationToken cancellationToken = default, Action<EmployeeExperienceRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.EmployeeExperience> PatchAsync(Microsoft.Graph.Models.EmployeeExperience body, Action<EmployeeExperienceRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.EmployeeExperience> PatchAsync(Microsoft.Graph.Models.EmployeeExperience body, CancellationToken cancellationToken = default, Action<EmployeeExperienceRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

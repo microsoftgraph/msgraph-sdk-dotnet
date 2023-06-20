@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequestCollectionResponse?> GetAsync(Action<SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequestCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequestCollectionResponse> GetAsync(Action<SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequestCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequest?> PostAsync(SwapShiftsChangeRequest body, Action<SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest?> PostAsync(SwapShiftsChangeRequest body, CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequest> PostAsync(SwapShiftsChangeRequest body, Action<SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest> PostAsync(SwapShiftsChangeRequest body, CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

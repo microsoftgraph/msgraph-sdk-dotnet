@@ -33,16 +33,17 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
         public TeamsTabItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}/tabs/{teamsTab%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property tabs for me
+        /// Removes (unpins) a tab from the specified channel within a team. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<TeamsTabItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<TeamsTabItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -52,16 +53,17 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// Retrieve the properties and relationships of the specified tab in a channel within a team. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTab?> GetAsync(Action<TeamsTabItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTab?> GetAsync(CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamsTab> GetAsync(Action<TeamsTabItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTab> GetAsync(CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,17 +73,18 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property tabs in me
+        /// Update the properties of the specified tab.This can be used to configure the content of the tab.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTab?> PatchAsync(TeamsTab body, Action<TeamsTabItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTab?> PatchAsync(TeamsTab body, CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamsTab> PatchAsync(TeamsTab body, Action<TeamsTabItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTab> PatchAsync(TeamsTab body, CancellationToken cancellationToken = default, Action<TeamsTabItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property tabs for me
+        /// Removes (unpins) a tab from the specified channel within a team. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// Retrieve the properties and relationships of the specified tab in a channel within a team. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tabs in me
+        /// Update the properties of the specified tab.This can be used to configure the content of the tab.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs.Item {
             }
         }
         /// <summary>
-        /// A collection of all the tabs in the channel. A navigation property.
+        /// Retrieve the properties and relationships of the specified tab in a channel within a team. 
         /// </summary>
         public class TeamsTabItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -33,10 +33,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners.Item.Termina
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<TerminateRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(CancellationToken cancellationToken = default, Action<TerminateRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task PostAsync(Action<TerminateRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(CancellationToken cancellationToken = default, Action<TerminateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

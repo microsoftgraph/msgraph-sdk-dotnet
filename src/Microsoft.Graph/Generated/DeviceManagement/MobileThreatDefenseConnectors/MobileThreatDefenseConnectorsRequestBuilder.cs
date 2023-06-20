@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileThreatDefenseConnectorCollectionResponse?> GetAsync(Action<MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileThreatDefenseConnectorCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobileThreatDefenseConnectorCollectionResponse> GetAsync(Action<MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileThreatDefenseConnectorCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MobileThreatDefenseConnectorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobileThreatDefenseConnector?> PostAsync(MobileThreatDefenseConnector body, Action<MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileThreatDefenseConnector?> PostAsync(MobileThreatDefenseConnector body, CancellationToken cancellationToken = default, Action<MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobileThreatDefenseConnector> PostAsync(MobileThreatDefenseConnector body, Action<MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobileThreatDefenseConnector> PostAsync(MobileThreatDefenseConnector body, CancellationToken cancellationToken = default, Action<MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

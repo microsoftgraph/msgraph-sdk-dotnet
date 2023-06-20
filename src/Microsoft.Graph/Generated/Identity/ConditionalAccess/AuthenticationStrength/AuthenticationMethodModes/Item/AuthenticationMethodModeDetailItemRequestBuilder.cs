@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AuthenticationMethodModeDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AuthenticationMethodModeDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethodModeDetail?> GetAsync(Action<AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodModeDetail?> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationMethodModeDetail> GetAsync(Action<AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodModeDetail> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethodModeDetail?> PatchAsync(AuthenticationMethodModeDetail body, Action<AuthenticationMethodModeDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodModeDetail?> PatchAsync(AuthenticationMethodModeDetail body, CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationMethodModeDetail> PatchAsync(AuthenticationMethodModeDetail body, Action<AuthenticationMethodModeDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodModeDetail> PatchAsync(AuthenticationMethodModeDetail body, CancellationToken cancellationToken = default, Action<AuthenticationMethodModeDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

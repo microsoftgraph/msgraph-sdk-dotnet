@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new sortProperty and sets the default values.
+        /// Instantiates a new SortProperty and sets the default values.
         /// </summary>
         public SortProperty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

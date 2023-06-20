@@ -39,10 +39,10 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeConnector?> GetAsync(Action<DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeConnector?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeConnector> GetAsync(Action<DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeConnector> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeConnector?> PatchAsync(DeviceManagementExchangeConnector body, Action<DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeConnector?> PatchAsync(DeviceManagementExchangeConnector body, CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeConnector> PatchAsync(DeviceManagementExchangeConnector body, Action<DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeConnector> PatchAsync(DeviceManagementExchangeConnector body, CancellationToken cancellationToken = default, Action<DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.FilterOperators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorSchemaCollectionResponse?> GetAsync(Action<FilterOperatorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FilterOperatorSchemaCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<FilterOperatorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<FilterOperatorSchemaCollectionResponse> GetAsync(Action<FilterOperatorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FilterOperatorSchemaCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<FilterOperatorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.FilterOperators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FilterOperatorSchema?> PostAsync(FilterOperatorSchema body, Action<FilterOperatorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FilterOperatorSchema?> PostAsync(FilterOperatorSchema body, CancellationToken cancellationToken = default, Action<FilterOperatorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<FilterOperatorSchema> PostAsync(FilterOperatorSchema body, Action<FilterOperatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FilterOperatorSchema> PostAsync(FilterOperatorSchema body, CancellationToken cancellationToken = default, Action<FilterOperatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

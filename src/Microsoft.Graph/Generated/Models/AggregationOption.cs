@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new aggregationOption and sets the default values.
+        /// Instantiates a new AggregationOption and sets the default values.
         /// </summary>
         public AggregationOption() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

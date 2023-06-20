@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceEnrollmentConfigurationCollectionResponse?> GetAsync(Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceEnrollmentConfigurationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceEnrollmentConfigurationCollectionResponse> GetAsync(Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceEnrollmentConfigurationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceEnrollmentConfiguration?> PostAsync(DeviceEnrollmentConfiguration body, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceEnrollmentConfiguration?> PostAsync(DeviceEnrollmentConfiguration body, CancellationToken cancellationToken = default, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceEnrollmentConfiguration> PostAsync(DeviceEnrollmentConfiguration body, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceEnrollmentConfiguration> PostAsync(DeviceEnrollmentConfiguration body, CancellationToken cancellationToken = default, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

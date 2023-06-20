@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronizationCollectionResponse?> GetAsync(Action<OnPremisesSynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronizationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<OnPremisesSynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronizationCollectionResponse> GetAsync(Action<OnPremisesSynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronizationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OnPremisesSynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronization?> PostAsync(OnPremisesDirectorySynchronization body, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization?> PostAsync(OnPremisesDirectorySynchronization body, CancellationToken cancellationToken = default, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronization> PostAsync(OnPremisesDirectorySynchronization body, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization> PostAsync(OnPremisesDirectorySynchronization body, CancellationToken cancellationToken = default, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new settingValue and sets the default values.
+        /// Instantiates a new SettingValue and sets the default values.
         /// </summary>
         public SettingValue() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

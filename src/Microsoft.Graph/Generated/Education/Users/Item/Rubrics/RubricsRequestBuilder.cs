@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationRubricCollectionResponse?> GetAsync(Action<RubricsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationRubricCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RubricsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationRubricCollectionResponse> GetAsync(Action<RubricsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationRubricCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RubricsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationRubric?> PostAsync(EducationRubric body, Action<RubricsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationRubric?> PostAsync(EducationRubric body, CancellationToken cancellationToken = default, Action<RubricsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationRubric> PostAsync(EducationRubric body, Action<RubricsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationRubric> PostAsync(EducationRubric body, CancellationToken cancellationToken = default, Action<RubricsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

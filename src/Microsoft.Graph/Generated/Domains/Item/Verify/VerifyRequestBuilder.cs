@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Domains.Item.Verify {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Domain?> PostAsync(Action<VerifyRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Domain?> PostAsync(CancellationToken cancellationToken = default, Action<VerifyRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Domain> PostAsync(Action<VerifyRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Domain> PostAsync(CancellationToken cancellationToken = default, Action<VerifyRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

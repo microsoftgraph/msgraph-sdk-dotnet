@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AudioRoutingGroupCollectionResponse?> GetAsync(Action<AudioRoutingGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AudioRoutingGroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AudioRoutingGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AudioRoutingGroupCollectionResponse> GetAsync(Action<AudioRoutingGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AudioRoutingGroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AudioRoutingGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AudioRoutingGroup?> PostAsync(AudioRoutingGroup body, Action<AudioRoutingGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AudioRoutingGroup?> PostAsync(AudioRoutingGroup body, CancellationToken cancellationToken = default, Action<AudioRoutingGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AudioRoutingGroup> PostAsync(AudioRoutingGroup body, Action<AudioRoutingGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AudioRoutingGroup> PostAsync(AudioRoutingGroup body, CancellationToken cancellationToken = default, Action<AudioRoutingGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

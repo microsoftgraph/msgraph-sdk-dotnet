@@ -47,10 +47,10 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsAppCollectionResponse?> GetAsync(Action<TeamsAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsAppCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TeamsAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamsAppCollectionResponse> GetAsync(Action<TeamsAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsAppCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TeamsAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.TeamsApp?> PostAsync(Microsoft.Graph.Models.TeamsApp body, Action<TeamsAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.TeamsApp?> PostAsync(Microsoft.Graph.Models.TeamsApp body, CancellationToken cancellationToken = default, Action<TeamsAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.TeamsApp> PostAsync(Microsoft.Graph.Models.TeamsApp body, Action<TeamsAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.TeamsApp> PostAsync(Microsoft.Graph.Models.TeamsApp body, CancellationToken cancellationToken = default, Action<TeamsAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new physicalOfficeAddress and sets the default values.
+        /// Instantiates a new PhysicalOfficeAddress and sets the default values.
         /// </summary>
         public PhysicalOfficeAddress() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

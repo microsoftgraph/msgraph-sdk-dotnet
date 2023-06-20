@@ -47,10 +47,10 @@ namespace Microsoft.Graph.External.Connections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalConnectionCollectionResponse?> GetAsync(Action<ConnectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalConnectionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ConnectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ExternalConnectionCollectionResponse> GetAsync(Action<ConnectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalConnectionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ConnectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.External.Connections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalConnection?> PostAsync(ExternalConnection body, Action<ConnectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalConnection?> PostAsync(ExternalConnection body, CancellationToken cancellationToken = default, Action<ConnectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ExternalConnection> PostAsync(ExternalConnection body, Action<ConnectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalConnection> PostAsync(ExternalConnection body, CancellationToken cancellationToken = default, Action<ConnectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

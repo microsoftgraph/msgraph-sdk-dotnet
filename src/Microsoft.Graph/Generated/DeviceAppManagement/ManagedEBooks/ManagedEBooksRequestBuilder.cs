@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBookCollectionResponse?> GetAsync(Action<ManagedEBooksRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ManagedEBooksRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedEBookCollectionResponse> GetAsync(Action<ManagedEBooksRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ManagedEBooksRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBook?> PostAsync(ManagedEBook body, Action<ManagedEBooksRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBook?> PostAsync(ManagedEBook body, CancellationToken cancellationToken = default, Action<ManagedEBooksRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedEBook> PostAsync(ManagedEBook body, Action<ManagedEBooksRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBook> PostAsync(ManagedEBook body, CancellationToken cancellationToken = default, Action<ManagedEBooksRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

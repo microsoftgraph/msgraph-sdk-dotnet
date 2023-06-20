@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.RemoteAssistancePartners {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RemoteAssistancePartnerCollectionResponse?> GetAsync(Action<RemoteAssistancePartnersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteAssistancePartnerCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RemoteAssistancePartnersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RemoteAssistancePartnerCollectionResponse> GetAsync(Action<RemoteAssistancePartnersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteAssistancePartnerCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RemoteAssistancePartnersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.RemoteAssistancePartners {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RemoteAssistancePartner?> PostAsync(RemoteAssistancePartner body, Action<RemoteAssistancePartnersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteAssistancePartner?> PostAsync(RemoteAssistancePartner body, CancellationToken cancellationToken = default, Action<RemoteAssistancePartnersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RemoteAssistancePartner> PostAsync(RemoteAssistancePartner body, Action<RemoteAssistancePartnersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoteAssistancePartner> PostAsync(RemoteAssistancePartner body, CancellationToken cancellationToken = default, Action<RemoteAssistancePartnersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new property and sets the default values.
+        /// Instantiates a new Property and sets the default values.
         /// </summary>
         public Property() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

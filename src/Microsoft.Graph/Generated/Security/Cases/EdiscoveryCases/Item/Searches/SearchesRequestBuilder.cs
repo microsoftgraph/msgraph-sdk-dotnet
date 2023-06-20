@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoverySearchCollectionResponse?> GetAsync(Action<SearchesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoverySearchCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SearchesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoverySearchCollectionResponse> GetAsync(Action<SearchesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoverySearchCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SearchesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoverySearch?> PostAsync(EdiscoverySearch body, Action<SearchesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoverySearch?> PostAsync(EdiscoverySearch body, CancellationToken cancellationToken = default, Action<SearchesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoverySearch> PostAsync(EdiscoverySearch body, Action<SearchesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoverySearch> PostAsync(EdiscoverySearch body, CancellationToken cancellationToken = default, Action<SearchesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

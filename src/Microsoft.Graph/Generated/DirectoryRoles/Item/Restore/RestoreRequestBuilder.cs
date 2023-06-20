@@ -35,10 +35,10 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Restore {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject?> PostAsync(Action<RestoreRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject?> PostAsync(CancellationToken cancellationToken = default, Action<RestoreRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryObject> PostAsync(Action<RestoreRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject> PostAsync(CancellationToken cancellationToken = default, Action<RestoreRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

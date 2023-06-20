@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("v8_1", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsMinimumOperatingSystem and sets the default values.
+        /// Instantiates a new WindowsMinimumOperatingSystem and sets the default values.
         /// </summary>
         public WindowsMinimumOperatingSystem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

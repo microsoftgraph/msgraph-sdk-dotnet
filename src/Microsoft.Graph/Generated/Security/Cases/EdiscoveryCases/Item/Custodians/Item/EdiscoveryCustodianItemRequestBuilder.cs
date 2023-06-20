@@ -79,10 +79,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryCustodian?> GetAsync(Action<EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryCustodian?> GetAsync(CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoveryCustodian> GetAsync(Action<EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryCustodian> GetAsync(CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,10 +119,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryCustodian?> PatchAsync(EdiscoveryCustodian body, Action<EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryCustodian?> PatchAsync(EdiscoveryCustodian body, CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoveryCustodian> PatchAsync(EdiscoveryCustodian body, Action<EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryCustodian> PatchAsync(EdiscoveryCustodian body, CancellationToken cancellationToken = default, Action<EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

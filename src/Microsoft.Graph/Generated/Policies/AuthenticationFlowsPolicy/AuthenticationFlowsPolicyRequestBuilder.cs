@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy?> GetAsync(Action<AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy> GetAsync(Action<AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy?> PatchAsync(Microsoft.Graph.Models.AuthenticationFlowsPolicy body, Action<AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy?> PatchAsync(Microsoft.Graph.Models.AuthenticationFlowsPolicy body, CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy> PatchAsync(Microsoft.Graph.Models.AuthenticationFlowsPolicy body, Action<AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationFlowsPolicy> PatchAsync(Microsoft.Graph.Models.AuthenticationFlowsPolicy body, CancellationToken cancellationToken = default, Action<AuthenticationFlowsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

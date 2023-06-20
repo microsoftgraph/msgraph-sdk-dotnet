@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new iosNetworkUsageRule and sets the default values.
+        /// Instantiates a new IosNetworkUsageRule and sets the default values.
         /// </summary>
         public IosNetworkUsageRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

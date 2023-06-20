@@ -34,10 +34,10 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipalRiskDetection?> GetAsync(Action<ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalRiskDetection?> GetAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServicePrincipalRiskDetection> GetAsync(Action<ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalRiskDetection> GetAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipalRiskDetection?> PatchAsync(ServicePrincipalRiskDetection body, Action<ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalRiskDetection?> PatchAsync(ServicePrincipalRiskDetection body, CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServicePrincipalRiskDetection> PatchAsync(ServicePrincipalRiskDetection body, Action<ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalRiskDetection> PatchAsync(ServicePrincipalRiskDetection body, CancellationToken cancellationToken = default, Action<ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

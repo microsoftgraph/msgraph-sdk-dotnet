@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LocalizedNotificationMessageCollectionResponse?> GetAsync(Action<LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LocalizedNotificationMessageCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<LocalizedNotificationMessageCollectionResponse> GetAsync(Action<LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LocalizedNotificationMessageCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LocalizedNotificationMessage?> PostAsync(LocalizedNotificationMessage body, Action<LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LocalizedNotificationMessage?> PostAsync(LocalizedNotificationMessage body, CancellationToken cancellationToken = default, Action<LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<LocalizedNotificationMessage> PostAsync(LocalizedNotificationMessage body, Action<LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LocalizedNotificationMessage> PostAsync(LocalizedNotificationMessage body, CancellationToken cancellationToken = default, Action<LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

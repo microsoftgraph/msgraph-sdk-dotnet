@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Communications.Calls.Item.Reject {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(RejectPostRequestBody body, Action<RejectRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(RejectPostRequestBody body, CancellationToken cancellationToken = default, Action<RejectRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task PostAsync(RejectPostRequestBody body, Action<RejectRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(RejectPostRequestBody body, CancellationToken cancellationToken = default, Action<RejectRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

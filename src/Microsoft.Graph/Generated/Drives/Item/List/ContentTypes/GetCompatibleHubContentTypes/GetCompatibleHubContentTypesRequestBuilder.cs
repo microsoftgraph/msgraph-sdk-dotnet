@@ -33,10 +33,10 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.GetCompatibleHubContentT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCompatibleHubContentTypesResponse?> GetAsync(Action<GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCompatibleHubContentTypesResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetCompatibleHubContentTypesResponse> GetAsync(Action<GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCompatibleHubContentTypesResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

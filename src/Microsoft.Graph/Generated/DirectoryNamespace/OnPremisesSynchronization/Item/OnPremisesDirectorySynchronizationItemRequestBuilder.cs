@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<OnPremisesDirectorySynchronizationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<OnPremisesDirectorySynchronizationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronization?> GetAsync(Action<OnPremisesDirectorySynchronizationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization?> GetAsync(CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronization> GetAsync(Action<OnPremisesDirectorySynchronizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization> GetAsync(CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesDirectorySynchronization?> PatchAsync(OnPremisesDirectorySynchronization body, Action<OnPremisesDirectorySynchronizationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization?> PatchAsync(OnPremisesDirectorySynchronization body, CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesDirectorySynchronization> PatchAsync(OnPremisesDirectorySynchronization body, Action<OnPremisesDirectorySynchronizationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesDirectorySynchronization> PatchAsync(OnPremisesDirectorySynchronization body, CancellationToken cancellationToken = default, Action<OnPremisesDirectorySynchronizationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

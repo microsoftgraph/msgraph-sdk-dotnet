@@ -34,10 +34,10 @@ namespace Microsoft.Graph.CertificateBasedAuthConfiguration.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.CertificateBasedAuthConfiguration.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration?> GetAsync(Action<CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration?> GetAsync(CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration> GetAsync(Action<CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.CertificateBasedAuthConfiguration.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration?> PatchAsync(Microsoft.Graph.Models.CertificateBasedAuthConfiguration body, Action<CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration?> PatchAsync(Microsoft.Graph.Models.CertificateBasedAuthConfiguration body, CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration> PatchAsync(Microsoft.Graph.Models.CertificateBasedAuthConfiguration body, Action<CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.CertificateBasedAuthConfiguration> PatchAsync(Microsoft.Graph.Models.CertificateBasedAuthConfiguration body, CancellationToken cancellationToken = default, Action<CertificateBasedAuthConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

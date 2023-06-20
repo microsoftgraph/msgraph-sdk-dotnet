@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
-        /// Instantiates a new bookingReminder and sets the default values.
+        /// Instantiates a new BookingReminder and sets the default values.
         /// </summary>
         public BookingReminder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

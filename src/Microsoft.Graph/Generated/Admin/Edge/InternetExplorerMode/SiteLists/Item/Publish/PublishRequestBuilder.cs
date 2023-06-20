@@ -36,10 +36,10 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BrowserSiteList?> PostAsync(PublishPostRequestBody body, Action<PublishRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSiteList?> PostAsync(PublishPostRequestBody body, CancellationToken cancellationToken = default, Action<PublishRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BrowserSiteList> PostAsync(PublishPostRequestBody body, Action<PublishRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSiteList> PostAsync(PublishPostRequestBody body, CancellationToken cancellationToken = default, Action<PublishRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

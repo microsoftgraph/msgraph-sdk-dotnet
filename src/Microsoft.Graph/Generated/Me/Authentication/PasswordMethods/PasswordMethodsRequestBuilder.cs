@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PasswordAuthenticationMethodCollectionResponse?> GetAsync(Action<PasswordMethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PasswordAuthenticationMethodCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PasswordMethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PasswordAuthenticationMethodCollectionResponse> GetAsync(Action<PasswordMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PasswordAuthenticationMethodCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PasswordMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PasswordAuthenticationMethod?> PostAsync(PasswordAuthenticationMethod body, Action<PasswordMethodsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PasswordAuthenticationMethod?> PostAsync(PasswordAuthenticationMethod body, CancellationToken cancellationToken = default, Action<PasswordMethodsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PasswordAuthenticationMethod> PostAsync(PasswordAuthenticationMethod body, Action<PasswordMethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PasswordAuthenticationMethod> PostAsync(PasswordAuthenticationMethod body, CancellationToken cancellationToken = default, Action<PasswordMethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

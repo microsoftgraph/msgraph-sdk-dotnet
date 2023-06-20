@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NotificationMessageTemplateCollectionResponse?> GetAsync(Action<NotificationMessageTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationMessageTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<NotificationMessageTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<NotificationMessageTemplateCollectionResponse> GetAsync(Action<NotificationMessageTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationMessageTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<NotificationMessageTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NotificationMessageTemplate?> PostAsync(NotificationMessageTemplate body, Action<NotificationMessageTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationMessageTemplate?> PostAsync(NotificationMessageTemplate body, CancellationToken cancellationToken = default, Action<NotificationMessageTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<NotificationMessageTemplate> PostAsync(NotificationMessageTemplate body, Action<NotificationMessageTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationMessageTemplate> PostAsync(NotificationMessageTemplate body, CancellationToken cancellationToken = default, Action<NotificationMessageTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

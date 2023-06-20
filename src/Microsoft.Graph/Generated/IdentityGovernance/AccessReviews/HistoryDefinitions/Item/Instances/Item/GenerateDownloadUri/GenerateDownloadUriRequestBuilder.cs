@@ -35,10 +35,10 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewHistoryInstance?> PostAsync(Action<GenerateDownloadUriRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewHistoryInstance?> PostAsync(CancellationToken cancellationToken = default, Action<GenerateDownloadUriRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AccessReviewHistoryInstance> PostAsync(Action<GenerateDownloadUriRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewHistoryInstance> PostAsync(CancellationToken cancellationToken = default, Action<GenerateDownloadUriRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

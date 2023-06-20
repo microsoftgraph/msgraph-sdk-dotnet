@@ -46,10 +46,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EndpointCollectionResponse?> GetAsync(Action<EndpointsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EndpointCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<EndpointsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EndpointCollectionResponse> GetAsync(Action<EndpointsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EndpointCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<EndpointsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Endpoints {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Endpoint?> PostAsync(Endpoint body, Action<EndpointsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Endpoint?> PostAsync(Endpoint body, CancellationToken cancellationToken = default, Action<EndpointsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Endpoint> PostAsync(Endpoint body, Action<EndpointsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Endpoint> PostAsync(Endpoint body, CancellationToken cancellationToken = default, Action<EndpointsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

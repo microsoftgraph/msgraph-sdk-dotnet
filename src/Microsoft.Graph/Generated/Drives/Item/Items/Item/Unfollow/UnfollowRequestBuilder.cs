@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Unfollow {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<UnfollowRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(CancellationToken cancellationToken = default, Action<UnfollowRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task PostAsync(Action<UnfollowRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(CancellationToken cancellationToken = default, Action<UnfollowRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

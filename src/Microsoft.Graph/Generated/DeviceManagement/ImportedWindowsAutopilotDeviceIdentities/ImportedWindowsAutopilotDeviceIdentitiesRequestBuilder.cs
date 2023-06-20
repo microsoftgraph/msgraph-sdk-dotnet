@@ -51,10 +51,10 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportedWindowsAutopilotDeviceIdentityCollectionResponse?> GetAsync(Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportedWindowsAutopilotDeviceIdentityCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ImportedWindowsAutopilotDeviceIdentityCollectionResponse> GetAsync(Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportedWindowsAutopilotDeviceIdentityCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportedWindowsAutopilotDeviceIdentity?> PostAsync(ImportedWindowsAutopilotDeviceIdentity body, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportedWindowsAutopilotDeviceIdentity?> PostAsync(ImportedWindowsAutopilotDeviceIdentity body, CancellationToken cancellationToken = default, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ImportedWindowsAutopilotDeviceIdentity> PostAsync(ImportedWindowsAutopilotDeviceIdentity body, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportedWindowsAutopilotDeviceIdentity> PostAsync(ImportedWindowsAutopilotDeviceIdentity body, CancellationToken cancellationToken = default, Action<ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

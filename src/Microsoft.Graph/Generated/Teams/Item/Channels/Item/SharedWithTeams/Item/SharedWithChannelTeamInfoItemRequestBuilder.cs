@@ -45,10 +45,10 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -65,10 +65,10 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedWithChannelTeamInfo?> GetAsync(Action<SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedWithChannelTeamInfo?> GetAsync(CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SharedWithChannelTeamInfo> GetAsync(Action<SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedWithChannelTeamInfo> GetAsync(CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -85,10 +85,10 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedWithChannelTeamInfo?> PatchAsync(SharedWithChannelTeamInfo body, Action<SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedWithChannelTeamInfo?> PatchAsync(SharedWithChannelTeamInfo body, CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SharedWithChannelTeamInfo> PatchAsync(SharedWithChannelTeamInfo body, Action<SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedWithChannelTeamInfo> PatchAsync(SharedWithChannelTeamInfo body, CancellationToken cancellationToken = default, Action<SharedWithChannelTeamInfoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

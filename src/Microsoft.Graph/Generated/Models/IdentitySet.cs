@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new identitySet and sets the default values.
+        /// Instantiates a new IdentitySet and sets the default values.
         /// </summary>
         public IdentitySet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

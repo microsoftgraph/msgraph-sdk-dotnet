@@ -40,16 +40,17 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarPermissi
         public CalendarPermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarPermissions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
+        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CalendarPermissionCollectionResponse?> GetAsync(Action<CalendarPermissionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermissionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CalendarPermissionCollectionResponse> GetAsync(Action<CalendarPermissionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermissionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +68,10 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarPermissi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CalendarPermission?> PostAsync(CalendarPermission body, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermission?> PostAsync(CalendarPermission body, CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CalendarPermission> PostAsync(CalendarPermission body, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermission> PostAsync(CalendarPermission body, CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarPermissi
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
+        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarPermissi
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
+        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
         /// </summary>
         public class CalendarPermissionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

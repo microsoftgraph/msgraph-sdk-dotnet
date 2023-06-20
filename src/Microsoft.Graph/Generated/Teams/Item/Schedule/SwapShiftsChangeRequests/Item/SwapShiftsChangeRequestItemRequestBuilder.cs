@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequest?> GetAsync(Action<SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest?> GetAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequest> GetAsync(Action<SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest> GetAsync(CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SwapShiftsChangeRequest?> PatchAsync(SwapShiftsChangeRequest body, Action<SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest?> PatchAsync(SwapShiftsChangeRequest body, CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SwapShiftsChangeRequest> PatchAsync(SwapShiftsChangeRequest body, Action<SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SwapShiftsChangeRequest> PatchAsync(SwapShiftsChangeRequest body, CancellationToken cancellationToken = default, Action<SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

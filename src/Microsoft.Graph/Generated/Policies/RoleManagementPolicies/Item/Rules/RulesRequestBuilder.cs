@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item.Rules {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleManagementPolicyRuleCollectionResponse?> GetAsync(Action<RulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRuleCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleManagementPolicyRuleCollectionResponse> GetAsync(Action<RulesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRuleCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RulesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item.Rules {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleManagementPolicyRule?> PostAsync(UnifiedRoleManagementPolicyRule body, Action<RulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule?> PostAsync(UnifiedRoleManagementPolicyRule body, CancellationToken cancellationToken = default, Action<RulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleManagementPolicyRule> PostAsync(UnifiedRoleManagementPolicyRule body, Action<RulesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyRule> PostAsync(UnifiedRoleManagementPolicyRule body, CancellationToken cancellationToken = default, Action<RulesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

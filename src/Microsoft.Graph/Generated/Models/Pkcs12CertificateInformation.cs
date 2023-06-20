@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new pkcs12CertificateInformation and sets the default values.
+        /// Instantiates a new Pkcs12CertificateInformation and sets the default values.
         /// </summary>
         public Pkcs12CertificateInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

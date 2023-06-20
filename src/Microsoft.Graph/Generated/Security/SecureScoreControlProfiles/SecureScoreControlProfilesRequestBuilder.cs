@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecureScoreControlProfileCollectionResponse?> GetAsync(Action<SecureScoreControlProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecureScoreControlProfileCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SecureScoreControlProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SecureScoreControlProfileCollectionResponse> GetAsync(Action<SecureScoreControlProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecureScoreControlProfileCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SecureScoreControlProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecureScoreControlProfile?> PostAsync(SecureScoreControlProfile body, Action<SecureScoreControlProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecureScoreControlProfile?> PostAsync(SecureScoreControlProfile body, CancellationToken cancellationToken = default, Action<SecureScoreControlProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SecureScoreControlProfile> PostAsync(SecureScoreControlProfile body, Action<SecureScoreControlProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecureScoreControlProfile> PostAsync(SecureScoreControlProfile body, CancellationToken cancellationToken = default, Action<SecureScoreControlProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

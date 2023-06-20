@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BrowserSiteCollectionResponse?> GetAsync(Action<SitesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSiteCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SitesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BrowserSiteCollectionResponse> GetAsync(Action<SitesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSiteCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SitesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BrowserSite?> PostAsync(BrowserSite body, Action<SitesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSite?> PostAsync(BrowserSite body, CancellationToken cancellationToken = default, Action<SitesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BrowserSite> PostAsync(BrowserSite body, Action<SitesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BrowserSite> PostAsync(BrowserSite body, CancellationToken cancellationToken = default, Action<SitesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

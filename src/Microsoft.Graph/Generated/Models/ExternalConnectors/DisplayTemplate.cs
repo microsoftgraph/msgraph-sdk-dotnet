@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         }
 #endif
         /// <summary>
-        /// Instantiates a new displayTemplate and sets the default values.
+        /// Instantiates a new DisplayTemplate and sets the default values.
         /// </summary>
         public DisplayTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new synchronizationJobSubject and sets the default values.
+        /// Instantiates a new SynchronizationJobSubject and sets the default values.
         /// </summary>
         public SynchronizationJobSubject() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new reminder and sets the default values.
+        /// Instantiates a new Reminder and sets the default values.
         /// </summary>
         public Reminder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

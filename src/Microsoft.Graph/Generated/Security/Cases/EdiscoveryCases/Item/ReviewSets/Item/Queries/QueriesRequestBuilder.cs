@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryReviewSetQueryCollectionResponse?> GetAsync(Action<QueriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryReviewSetQueryCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<QueriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoveryReviewSetQueryCollectionResponse> GetAsync(Action<QueriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryReviewSetQueryCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<QueriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EdiscoveryReviewSetQuery?> PostAsync(EdiscoveryReviewSetQuery body, Action<QueriesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryReviewSetQuery?> PostAsync(EdiscoveryReviewSetQuery body, CancellationToken cancellationToken = default, Action<QueriesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EdiscoveryReviewSetQuery> PostAsync(EdiscoveryReviewSetQuery body, Action<QueriesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EdiscoveryReviewSetQuery> PostAsync(EdiscoveryReviewSetQuery body, CancellationToken cancellationToken = default, Action<QueriesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

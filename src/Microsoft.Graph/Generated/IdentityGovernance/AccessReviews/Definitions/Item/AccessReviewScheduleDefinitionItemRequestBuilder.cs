@@ -45,10 +45,10 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AccessReviewScheduleDefinitionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AccessReviewScheduleDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -65,10 +65,10 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewScheduleDefinition?> GetAsync(Action<AccessReviewScheduleDefinitionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewScheduleDefinition?> GetAsync(CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AccessReviewScheduleDefinition> GetAsync(Action<AccessReviewScheduleDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewScheduleDefinition> GetAsync(CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -86,10 +86,10 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewScheduleDefinition?> PatchAsync(AccessReviewScheduleDefinition body, Action<AccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewScheduleDefinition?> PatchAsync(AccessReviewScheduleDefinition body, CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AccessReviewScheduleDefinition> PatchAsync(AccessReviewScheduleDefinition body, Action<AccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessReviewScheduleDefinition> PatchAsync(AccessReviewScheduleDefinition body, CancellationToken cancellationToken = default, Action<AccessReviewScheduleDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

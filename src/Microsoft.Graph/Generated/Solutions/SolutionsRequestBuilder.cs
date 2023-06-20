@@ -44,10 +44,10 @@ namespace Microsoft.Graph.Solutions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> GetAsync(Action<SolutionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot?> GetAsync(CancellationToken cancellationToken = default, Action<SolutionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> GetAsync(Action<SolutionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot> GetAsync(CancellationToken cancellationToken = default, Action<SolutionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -64,10 +64,10 @@ namespace Microsoft.Graph.Solutions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> PatchAsync(SolutionsRoot body, Action<SolutionsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot?> PatchAsync(SolutionsRoot body, CancellationToken cancellationToken = default, Action<SolutionsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> PatchAsync(SolutionsRoot body, Action<SolutionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot> PatchAsync(SolutionsRoot body, CancellationToken cancellationToken = default, Action<SolutionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

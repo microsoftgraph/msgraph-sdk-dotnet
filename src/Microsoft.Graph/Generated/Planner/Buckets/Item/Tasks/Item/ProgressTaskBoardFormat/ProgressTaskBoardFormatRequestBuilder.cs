@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.ProgressTaskBoardForma
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.ProgressTaskBoardForma
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerProgressTaskBoardTaskFormat?> GetAsync(Action<ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerProgressTaskBoardTaskFormat?> GetAsync(CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PlannerProgressTaskBoardTaskFormat> GetAsync(Action<ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerProgressTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.ProgressTaskBoardForma
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerProgressTaskBoardTaskFormat?> PatchAsync(PlannerProgressTaskBoardTaskFormat body, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerProgressTaskBoardTaskFormat?> PatchAsync(PlannerProgressTaskBoardTaskFormat body, CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PlannerProgressTaskBoardTaskFormat> PatchAsync(PlannerProgressTaskBoardTaskFormat body, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerProgressTaskBoardTaskFormat> PatchAsync(PlannerProgressTaskBoardTaskFormat body, CancellationToken cancellationToken = default, Action<ProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

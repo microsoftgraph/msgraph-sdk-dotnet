@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new alternativeSecurityId and sets the default values.
+        /// Instantiates a new AlternativeSecurityId and sets the default values.
         /// </summary>
         public AlternativeSecurityId() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

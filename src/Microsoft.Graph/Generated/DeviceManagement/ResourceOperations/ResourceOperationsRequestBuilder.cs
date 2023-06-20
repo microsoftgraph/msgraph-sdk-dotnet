@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceOperationCollectionResponse?> GetAsync(Action<ResourceOperationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceOperationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ResourceOperationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ResourceOperationCollectionResponse> GetAsync(Action<ResourceOperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceOperationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ResourceOperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceOperation?> PostAsync(ResourceOperation body, Action<ResourceOperationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceOperation?> PostAsync(ResourceOperation body, CancellationToken cancellationToken = default, Action<ResourceOperationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ResourceOperation> PostAsync(ResourceOperation body, Action<ResourceOperationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceOperation> PostAsync(ResourceOperation body, CancellationToken cancellationToken = default, Action<ResourceOperationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

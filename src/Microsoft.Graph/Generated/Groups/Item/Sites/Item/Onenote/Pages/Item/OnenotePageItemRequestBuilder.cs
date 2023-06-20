@@ -65,10 +65,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<OnenotePageItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<OnenotePageItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,16 +78,17 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/page-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePage?> GetAsync(Action<OnenotePageItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage?> GetAsync(CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenotePage> GetAsync(Action<OnenotePageItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage> GetAsync(CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -104,10 +105,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePage?> PatchAsync(OnenotePage body, Action<OnenotePageItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage?> PatchAsync(OnenotePage body, CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenotePage> PatchAsync(OnenotePage body, Action<OnenotePageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage> PatchAsync(OnenotePage body, CancellationToken cancellationToken = default, Action<OnenotePageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -212,7 +213,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages.Item {
             }
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
         /// </summary>
         public class OnenotePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

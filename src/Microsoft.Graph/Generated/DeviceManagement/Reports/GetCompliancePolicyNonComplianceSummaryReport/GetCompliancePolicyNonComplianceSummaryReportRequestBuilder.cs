@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(GetCompliancePolicyNonComplianceSummaryReportPostRequestBody body, Action<GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PostAsync(GetCompliancePolicyNonComplianceSummaryReportPostRequestBody body, CancellationToken cancellationToken = default, Action<GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(GetCompliancePolicyNonComplianceSummaryReportPostRequestBody body, Action<GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetCompliancePolicyNonComplianceSummaryReportPostRequestBody body, CancellationToken cancellationToken = default, Action<GetCompliancePolicyNonComplianceSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

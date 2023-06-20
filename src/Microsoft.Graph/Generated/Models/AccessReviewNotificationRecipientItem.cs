@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new accessReviewNotificationRecipientItem and sets the default values.
+        /// Instantiates a new AccessReviewNotificationRecipientItem and sets the default values.
         /// </summary>
         public AccessReviewNotificationRecipientItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

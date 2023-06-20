@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sourceEnvironment", value); }
         }
         /// <summary>
-        /// Instantiates a new browserSharedCookieHistory and sets the default values.
+        /// Instantiates a new BrowserSharedCookieHistory and sets the default values.
         /// </summary>
         public BrowserSharedCookieHistory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

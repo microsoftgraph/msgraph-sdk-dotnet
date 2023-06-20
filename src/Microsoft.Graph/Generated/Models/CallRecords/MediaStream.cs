@@ -31,6 +31,11 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<long?>("averageBandwidthEstimate"); }
             set { BackingStore?.Set("averageBandwidthEstimate", value); }
         }
+        /// <summary>Average duration of the received freezing time in the video stream.</summary>
+        public TimeSpan? AverageFreezeDuration {
+            get { return BackingStore?.Get<TimeSpan?>("averageFreezeDuration"); }
+            set { BackingStore?.Set("averageFreezeDuration", value); }
+        }
         /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageJitter {
             get { return BackingStore?.Get<TimeSpan?>("averageJitter"); }
@@ -77,6 +82,11 @@ namespace Microsoft.Graph.Models.CallRecords {
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
+        }
+        /// <summary>Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.</summary>
+        public bool? IsAudioForwardErrorCorrectionUsed {
+            get { return BackingStore?.Get<bool?>("isAudioForwardErrorCorrectionUsed"); }
+            set { BackingStore?.Set("isAudioForwardErrorCorrectionUsed", value); }
         }
         /// <summary>Fraction of the call where frame rate is less than 7.5 frames per second.</summary>
         public float? LowFrameRateRatio {
@@ -137,6 +147,11 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("postForwardErrorCorrectionPacketLossRate"); }
             set { BackingStore?.Set("postForwardErrorCorrectionPacketLossRate", value); }
         }
+        /// <summary>Average duration of the received freezing time in the video stream represented in root mean square.</summary>
+        public TimeSpan? RmsFreezeDuration {
+            get { return BackingStore?.Get<TimeSpan?>("rmsFreezeDuration"); }
+            set { BackingStore?.Set("rmsFreezeDuration", value); }
+        }
         /// <summary>UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -195,6 +210,7 @@ namespace Microsoft.Graph.Models.CallRecords {
                 {"averageAudioDegradation", n => { AverageAudioDegradation = n.GetFloatValue(); } },
                 {"averageAudioNetworkJitter", n => { AverageAudioNetworkJitter = n.GetTimeSpanValue(); } },
                 {"averageBandwidthEstimate", n => { AverageBandwidthEstimate = n.GetLongValue(); } },
+                {"averageFreezeDuration", n => { AverageFreezeDuration = n.GetTimeSpanValue(); } },
                 {"averageJitter", n => { AverageJitter = n.GetTimeSpanValue(); } },
                 {"averagePacketLossRate", n => { AveragePacketLossRate = n.GetFloatValue(); } },
                 {"averageRatioOfConcealedSamples", n => { AverageRatioOfConcealedSamples = n.GetFloatValue(); } },
@@ -204,6 +220,7 @@ namespace Microsoft.Graph.Models.CallRecords {
                 {"averageVideoFrameRate", n => { AverageVideoFrameRate = n.GetFloatValue(); } },
                 {"averageVideoPacketLossRate", n => { AverageVideoPacketLossRate = n.GetFloatValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"isAudioForwardErrorCorrectionUsed", n => { IsAudioForwardErrorCorrectionUsed = n.GetBoolValue(); } },
                 {"lowFrameRateRatio", n => { LowFrameRateRatio = n.GetFloatValue(); } },
                 {"lowVideoProcessingCapabilityRatio", n => { LowVideoProcessingCapabilityRatio = n.GetFloatValue(); } },
                 {"maxAudioNetworkJitter", n => { MaxAudioNetworkJitter = n.GetTimeSpanValue(); } },
@@ -214,6 +231,7 @@ namespace Microsoft.Graph.Models.CallRecords {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"packetUtilization", n => { PacketUtilization = n.GetLongValue(); } },
                 {"postForwardErrorCorrectionPacketLossRate", n => { PostForwardErrorCorrectionPacketLossRate = n.GetFloatValue(); } },
+                {"rmsFreezeDuration", n => { RmsFreezeDuration = n.GetTimeSpanValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"streamDirection", n => { StreamDirection = n.GetEnumValue<MediaStreamDirection>(); } },
                 {"streamId", n => { StreamId = n.GetStringValue(); } },
@@ -231,6 +249,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             writer.WriteFloatValue("averageAudioDegradation", AverageAudioDegradation);
             writer.WriteTimeSpanValue("averageAudioNetworkJitter", AverageAudioNetworkJitter);
             writer.WriteLongValue("averageBandwidthEstimate", AverageBandwidthEstimate);
+            writer.WriteTimeSpanValue("averageFreezeDuration", AverageFreezeDuration);
             writer.WriteTimeSpanValue("averageJitter", AverageJitter);
             writer.WriteFloatValue("averagePacketLossRate", AveragePacketLossRate);
             writer.WriteFloatValue("averageRatioOfConcealedSamples", AverageRatioOfConcealedSamples);
@@ -240,6 +259,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             writer.WriteFloatValue("averageVideoFrameRate", AverageVideoFrameRate);
             writer.WriteFloatValue("averageVideoPacketLossRate", AverageVideoPacketLossRate);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteBoolValue("isAudioForwardErrorCorrectionUsed", IsAudioForwardErrorCorrectionUsed);
             writer.WriteFloatValue("lowFrameRateRatio", LowFrameRateRatio);
             writer.WriteFloatValue("lowVideoProcessingCapabilityRatio", LowVideoProcessingCapabilityRatio);
             writer.WriteTimeSpanValue("maxAudioNetworkJitter", MaxAudioNetworkJitter);
@@ -250,6 +270,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("packetUtilization", PacketUtilization);
             writer.WriteFloatValue("postForwardErrorCorrectionPacketLossRate", PostForwardErrorCorrectionPacketLossRate);
+            writer.WriteTimeSpanValue("rmsFreezeDuration", RmsFreezeDuration);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteEnumValue<MediaStreamDirection>("streamDirection", StreamDirection);
             writer.WriteStringValue("streamId", StreamId);

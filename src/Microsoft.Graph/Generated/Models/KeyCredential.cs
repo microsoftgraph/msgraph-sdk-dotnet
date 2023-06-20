@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new keyCredential and sets the default values.
+        /// Instantiates a new KeyCredential and sets the default values.
         /// </summary>
         public KeyCredential() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

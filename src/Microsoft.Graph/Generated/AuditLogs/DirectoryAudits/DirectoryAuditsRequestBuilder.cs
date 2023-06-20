@@ -47,10 +47,10 @@ namespace Microsoft.Graph.AuditLogs.DirectoryAudits {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryAuditCollectionResponse?> GetAsync(Action<DirectoryAuditsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryAuditCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryAuditsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryAuditCollectionResponse> GetAsync(Action<DirectoryAuditsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryAuditCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryAuditsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.AuditLogs.DirectoryAudits {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryAudit?> PostAsync(DirectoryAudit body, Action<DirectoryAuditsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryAudit?> PostAsync(DirectoryAudit body, CancellationToken cancellationToken = default, Action<DirectoryAuditsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryAudit> PostAsync(DirectoryAudit body, Action<DirectoryAuditsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryAudit> PostAsync(DirectoryAudit body, CancellationToken cancellationToken = default, Action<DirectoryAuditsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

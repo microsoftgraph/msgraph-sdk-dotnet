@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new displayNameLocalization and sets the default values.
+        /// Instantiates a new DisplayNameLocalization and sets the default values.
         /// </summary>
         public DisplayNameLocalization() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("updatedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new secureScoreControlStateUpdate and sets the default values.
+        /// Instantiates a new SecureScoreControlStateUpdate and sets the default values.
         /// </summary>
         public SecureScoreControlStateUpdate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

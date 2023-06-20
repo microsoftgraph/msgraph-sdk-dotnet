@@ -46,10 +46,10 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.Files {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AgreementFileLocalizationCollectionResponse?> GetAsync(Action<FilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AgreementFileLocalizationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<FilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AgreementFileLocalizationCollectionResponse> GetAsync(Action<FilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AgreementFileLocalizationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<FilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.Files {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AgreementFileLocalization?> PostAsync(AgreementFileLocalization body, Action<FilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AgreementFileLocalization?> PostAsync(AgreementFileLocalization body, CancellationToken cancellationToken = default, Action<FilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AgreementFileLocalization> PostAsync(AgreementFileLocalization body, Action<FilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AgreementFileLocalization> PostAsync(AgreementFileLocalization body, CancellationToken cancellationToken = default, Action<FilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new delegatedAdminAccessDetails and sets the default values.
+        /// Instantiates a new DelegatedAdminAccessDetails and sets the default values.
         /// </summary>
         public DelegatedAdminAccessDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

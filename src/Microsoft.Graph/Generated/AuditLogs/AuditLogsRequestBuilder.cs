@@ -49,10 +49,10 @@ namespace Microsoft.Graph.AuditLogs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogRoot?> GetAsync(Action<AuditLogsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot?> GetAsync(CancellationToken cancellationToken = default, Action<AuditLogsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuditLogRoot> GetAsync(Action<AuditLogsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot> GetAsync(CancellationToken cancellationToken = default, Action<AuditLogsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -69,10 +69,10 @@ namespace Microsoft.Graph.AuditLogs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogRoot?> PatchAsync(AuditLogRoot body, Action<AuditLogsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot?> PatchAsync(AuditLogRoot body, CancellationToken cancellationToken = default, Action<AuditLogsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuditLogRoot> PatchAsync(AuditLogRoot body, Action<AuditLogsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot> PatchAsync(AuditLogRoot body, CancellationToken cancellationToken = default, Action<AuditLogsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

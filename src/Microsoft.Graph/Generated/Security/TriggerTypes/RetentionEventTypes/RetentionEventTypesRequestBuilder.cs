@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RetentionEventTypeCollectionResponse?> GetAsync(Action<RetentionEventTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEventTypeCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RetentionEventTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RetentionEventTypeCollectionResponse> GetAsync(Action<RetentionEventTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEventTypeCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RetentionEventTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.RetentionEventType?> PostAsync(Microsoft.Graph.Models.Security.RetentionEventType body, Action<RetentionEventTypesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.RetentionEventType?> PostAsync(Microsoft.Graph.Models.Security.RetentionEventType body, CancellationToken cancellationToken = default, Action<RetentionEventTypesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.RetentionEventType> PostAsync(Microsoft.Graph.Models.Security.RetentionEventType body, Action<RetentionEventTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.RetentionEventType> PostAsync(Microsoft.Graph.Models.Security.RetentionEventType body, CancellationToken cancellationToken = default, Action<RetentionEventTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintTaskTriggerCollectionResponse?> GetAsync(Action<TaskTriggersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintTaskTriggerCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TaskTriggersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrintTaskTriggerCollectionResponse> GetAsync(Action<TaskTriggersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintTaskTriggerCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TaskTriggersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintTaskTrigger?> PostAsync(PrintTaskTrigger body, Action<TaskTriggersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintTaskTrigger?> PostAsync(PrintTaskTrigger body, CancellationToken cancellationToken = default, Action<TaskTriggersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrintTaskTrigger> PostAsync(PrintTaskTrigger body, Action<TaskTriggersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintTaskTrigger> PostAsync(PrintTaskTrigger body, CancellationToken cancellationToken = default, Action<TaskTriggersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

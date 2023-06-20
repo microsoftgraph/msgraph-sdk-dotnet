@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new collapseProperty and sets the default values.
+        /// Instantiates a new CollapseProperty and sets the default values.
         /// </summary>
         public CollapseProperty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

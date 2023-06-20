@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new meetingTimeSuggestion and sets the default values.
+        /// Instantiates a new MeetingTimeSuggestion and sets the default values.
         /// </summary>
         public MeetingTimeSuggestion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

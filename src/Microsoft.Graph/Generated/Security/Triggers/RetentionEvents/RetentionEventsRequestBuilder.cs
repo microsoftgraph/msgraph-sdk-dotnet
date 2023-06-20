@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RetentionEventCollectionResponse?> GetAsync(Action<RetentionEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEventCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RetentionEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RetentionEventCollectionResponse> GetAsync(Action<RetentionEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEventCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RetentionEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RetentionEvent?> PostAsync(RetentionEvent body, Action<RetentionEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEvent?> PostAsync(RetentionEvent body, CancellationToken cancellationToken = default, Action<RetentionEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RetentionEvent> PostAsync(RetentionEvent body, Action<RetentionEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetentionEvent> PostAsync(RetentionEvent body, CancellationToken cancellationToken = default, Action<RetentionEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

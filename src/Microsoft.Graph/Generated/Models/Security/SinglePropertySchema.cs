@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new singlePropertySchema and sets the default values.
+        /// Instantiates a new SinglePropertySchema and sets the default values.
         /// </summary>
         public SinglePropertySchema() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy?> GetAsync(Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy> GetAsync(Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy?> PatchAsync(Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy body, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy?> PatchAsync(Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy body, CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy> PatchAsync(Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy body, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy> PatchAsync(Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy body, CancellationToken cancellationToken = default, Action<IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

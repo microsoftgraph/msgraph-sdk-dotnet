@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Instances.Item.SnoozeR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(SnoozeReminderPostRequestBody body, Action<SnoozeReminderRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(SnoozeReminderPostRequestBody body, CancellationToken cancellationToken = default, Action<SnoozeReminderRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task PostAsync(SnoozeReminderPostRequestBody body, Action<SnoozeReminderRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(SnoozeReminderPostRequestBody body, CancellationToken cancellationToken = default, Action<SnoozeReminderRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

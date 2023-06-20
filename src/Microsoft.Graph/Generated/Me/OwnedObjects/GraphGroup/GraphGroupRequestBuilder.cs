@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Me.OwnedObjects.GraphGroup {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupCollectionResponse?> GetAsync(Action<GraphGroupRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GraphGroupRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupCollectionResponse> GetAsync(Action<GraphGroupRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GraphGroupRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

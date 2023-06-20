@@ -47,10 +47,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppRoleAssignmentCollectionResponse?> GetAsync(Action<AppRoleAssignedToRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppRoleAssignmentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AppRoleAssignedToRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppRoleAssignmentCollectionResponse> GetAsync(Action<AppRoleAssignedToRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppRoleAssignmentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AppRoleAssignedToRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppRoleAssignment?> PostAsync(AppRoleAssignment body, Action<AppRoleAssignedToRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppRoleAssignment?> PostAsync(AppRoleAssignment body, CancellationToken cancellationToken = default, Action<AppRoleAssignedToRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppRoleAssignment> PostAsync(AppRoleAssignment body, Action<AppRoleAssignedToRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppRoleAssignment> PostAsync(AppRoleAssignment body, CancellationToken cancellationToken = default, Action<AppRoleAssignedToRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

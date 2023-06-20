@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.ConvertToR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookRange?> PostAsync(Action<ConvertToRangeRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookRange?> PostAsync(CancellationToken cancellationToken = default, Action<ConvertToRangeRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WorkbookRange> PostAsync(Action<ConvertToRangeRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookRange> PostAsync(CancellationToken cancellationToken = default, Action<ConvertToRangeRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

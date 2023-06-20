@@ -46,10 +46,10 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item.Members {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityCollectionResponse?> GetAsync(Action<MembersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MembersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityCollectionResponse> GetAsync(Action<MembersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MembersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item.Members {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity?> PostAsync(Microsoft.Graph.Models.ExternalConnectors.Identity body, Action<MembersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity?> PostAsync(Microsoft.Graph.Models.ExternalConnectors.Identity body, CancellationToken cancellationToken = default, Action<MembersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity> PostAsync(Microsoft.Graph.Models.ExternalConnectors.Identity body, Action<MembersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.Identity> PostAsync(Microsoft.Graph.Models.ExternalConnectors.Identity body, CancellationToken cancellationToken = default, Action<MembersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

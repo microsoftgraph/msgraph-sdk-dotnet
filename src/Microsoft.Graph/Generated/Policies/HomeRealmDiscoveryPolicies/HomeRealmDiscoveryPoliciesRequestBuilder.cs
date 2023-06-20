@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HomeRealmDiscoveryPolicyCollectionResponse?> GetAsync(Action<HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<HomeRealmDiscoveryPolicyCollectionResponse> GetAsync(Action<HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HomeRealmDiscoveryPolicy?> PostAsync(HomeRealmDiscoveryPolicy body, Action<HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicy?> PostAsync(HomeRealmDiscoveryPolicy body, CancellationToken cancellationToken = default, Action<HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<HomeRealmDiscoveryPolicy> PostAsync(HomeRealmDiscoveryPolicy body, Action<HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicy> PostAsync(HomeRealmDiscoveryPolicy body, CancellationToken cancellationToken = default, Action<HomeRealmDiscoveryPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

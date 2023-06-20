@@ -47,10 +47,10 @@ namespace Microsoft.Graph.AuditLogs.Provisioning {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummaryCollectionResponse?> GetAsync(Action<ProvisioningRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProvisioningObjectSummaryCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ProvisioningRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummaryCollectionResponse> GetAsync(Action<ProvisioningRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProvisioningObjectSummaryCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ProvisioningRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.AuditLogs.Provisioning {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProvisioningObjectSummary?> PostAsync(ProvisioningObjectSummary body, Action<ProvisioningRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProvisioningObjectSummary?> PostAsync(ProvisioningObjectSummary body, CancellationToken cancellationToken = default, Action<ProvisioningRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProvisioningObjectSummary> PostAsync(ProvisioningObjectSummary body, Action<ProvisioningRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProvisioningObjectSummary> PostAsync(ProvisioningObjectSummary body, CancellationToken cancellationToken = default, Action<ProvisioningRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

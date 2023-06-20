@@ -67,10 +67,10 @@ namespace Microsoft.Graph.GroupSettingTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupSettingTemplateCollectionResponse?> GetAsync(Action<GroupSettingTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupSettingTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GroupSettingTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupSettingTemplateCollectionResponse> GetAsync(Action<GroupSettingTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupSettingTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GroupSettingTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.GroupSettingTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupSettingTemplate?> PostAsync(GroupSettingTemplate body, Action<GroupSettingTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupSettingTemplate?> PostAsync(GroupSettingTemplate body, CancellationToken cancellationToken = default, Action<GroupSettingTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupSettingTemplate> PostAsync(GroupSettingTemplate body, Action<GroupSettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupSettingTemplate> PostAsync(GroupSettingTemplate body, CancellationToken cancellationToken = default, Action<GroupSettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

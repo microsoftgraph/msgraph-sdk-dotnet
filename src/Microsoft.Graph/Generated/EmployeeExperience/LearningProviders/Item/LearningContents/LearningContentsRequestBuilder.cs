@@ -47,10 +47,10 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LearningContentCollectionResponse?> GetAsync(Action<LearningContentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningContentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<LearningContentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<LearningContentCollectionResponse> GetAsync(Action<LearningContentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningContentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<LearningContentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LearningContent?> PostAsync(LearningContent body, Action<LearningContentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningContent?> PostAsync(LearningContent body, CancellationToken cancellationToken = default, Action<LearningContentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<LearningContent> PostAsync(LearningContent body, Action<LearningContentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningContent> PostAsync(LearningContent body, CancellationToken cancellationToken = default, Action<LearningContentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

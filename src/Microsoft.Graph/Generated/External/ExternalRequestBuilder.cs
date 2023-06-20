@@ -39,10 +39,10 @@ namespace Microsoft.Graph.External {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.External?> GetAsync(Action<ExternalRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.External?> GetAsync(CancellationToken cancellationToken = default, Action<ExternalRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.External> GetAsync(Action<ExternalRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.External> GetAsync(CancellationToken cancellationToken = default, Action<ExternalRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -59,10 +59,10 @@ namespace Microsoft.Graph.External {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.External?> PatchAsync(Microsoft.Graph.Models.ExternalConnectors.External body, Action<ExternalRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.External?> PatchAsync(Microsoft.Graph.Models.ExternalConnectors.External body, CancellationToken cancellationToken = default, Action<ExternalRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ExternalConnectors.External> PatchAsync(Microsoft.Graph.Models.ExternalConnectors.External body, Action<ExternalRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.ExternalConnectors.External> PatchAsync(Microsoft.Graph.Models.ExternalConnectors.External body, CancellationToken cancellationToken = default, Action<ExternalRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new mediaInfo and sets the default values.
+        /// Instantiates a new MediaInfo and sets the default values.
         /// </summary>
         public MediaInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

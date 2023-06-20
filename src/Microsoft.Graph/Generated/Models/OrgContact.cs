@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OrgContact and sets the default values.
+        /// Instantiates a new orgContact and sets the default values.
         /// </summary>
         public OrgContact() : base() {
             OdataType = "#microsoft.graph.orgContact";

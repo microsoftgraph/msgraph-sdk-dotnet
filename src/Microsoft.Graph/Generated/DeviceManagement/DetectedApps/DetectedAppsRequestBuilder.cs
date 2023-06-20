@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DetectedAppCollectionResponse?> GetAsync(Action<DetectedAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedAppCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DetectedAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DetectedAppCollectionResponse> GetAsync(Action<DetectedAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedAppCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DetectedAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DetectedApp?> PostAsync(DetectedApp body, Action<DetectedAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedApp?> PostAsync(DetectedApp body, CancellationToken cancellationToken = default, Action<DetectedAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DetectedApp> PostAsync(DetectedApp body, Action<DetectedAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedApp> PostAsync(DetectedApp body, CancellationToken cancellationToken = default, Action<DetectedAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

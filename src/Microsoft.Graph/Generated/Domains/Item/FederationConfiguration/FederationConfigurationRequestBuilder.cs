@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InternalDomainFederationCollectionResponse?> GetAsync(Action<FederationConfigurationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InternalDomainFederationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<FederationConfigurationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<InternalDomainFederationCollectionResponse> GetAsync(Action<FederationConfigurationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InternalDomainFederationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<FederationConfigurationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InternalDomainFederation?> PostAsync(InternalDomainFederation body, Action<FederationConfigurationRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InternalDomainFederation?> PostAsync(InternalDomainFederation body, CancellationToken cancellationToken = default, Action<FederationConfigurationRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<InternalDomainFederation> PostAsync(InternalDomainFederation body, Action<FederationConfigurationRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InternalDomainFederation> PostAsync(InternalDomainFederation body, CancellationToken cancellationToken = default, Action<FederationConfigurationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

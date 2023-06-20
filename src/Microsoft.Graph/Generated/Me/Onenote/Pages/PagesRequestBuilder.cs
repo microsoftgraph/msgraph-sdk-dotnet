@@ -40,16 +40,16 @@ namespace Microsoft.Graph.Me.Onenote.Pages {
         public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePageCollectionResponse?> GetAsync(Action<PagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePageCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenotePageCollectionResponse> GetAsync(Action<PagesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePageCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Me.Onenote.Pages {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenotePage?> PostAsync(OnenotePage body, Action<PagesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage?> PostAsync(OnenotePage body, CancellationToken cancellationToken = default, Action<PagesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenotePage> PostAsync(OnenotePage body, Action<PagesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenotePage> PostAsync(OnenotePage body, CancellationToken cancellationToken = default, Action<PagesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+        /// Retrieve the properties and relationships of a page object. **Getting page information** Access a page&apos;s metadata by page identifier: **Getting page content** You can use the page&apos;s `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

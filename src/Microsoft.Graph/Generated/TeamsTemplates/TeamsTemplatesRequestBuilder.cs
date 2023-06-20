@@ -46,10 +46,10 @@ namespace Microsoft.Graph.TeamsTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTemplateCollectionResponse?> GetAsync(Action<TeamsTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TeamsTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamsTemplateCollectionResponse> GetAsync(Action<TeamsTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TeamsTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.TeamsTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamsTemplate?> PostAsync(TeamsTemplate body, Action<TeamsTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTemplate?> PostAsync(TeamsTemplate body, CancellationToken cancellationToken = default, Action<TeamsTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamsTemplate> PostAsync(TeamsTemplate body, Action<TeamsTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamsTemplate> PostAsync(TeamsTemplate body, CancellationToken cancellationToken = default, Action<TeamsTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

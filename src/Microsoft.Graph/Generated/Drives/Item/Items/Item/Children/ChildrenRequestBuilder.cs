@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Children {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DriveItemCollectionResponse?> GetAsync(Action<ChildrenRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DriveItemCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ChildrenRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DriveItemCollectionResponse> GetAsync(Action<ChildrenRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DriveItemCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ChildrenRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Children {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DriveItem?> PostAsync(Microsoft.Graph.Models.DriveItem body, Action<ChildrenRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem?> PostAsync(Microsoft.Graph.Models.DriveItem body, CancellationToken cancellationToken = default, Action<ChildrenRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DriveItem> PostAsync(Microsoft.Graph.Models.DriveItem body, Action<ChildrenRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem> PostAsync(Microsoft.Graph.Models.DriveItem body, CancellationToken cancellationToken = default, Action<ChildrenRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -51,10 +51,10 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProviderBaseCollectionResponse?> GetAsync(Action<FederationConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBaseCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<FederationConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityProviderBaseCollectionResponse> GetAsync(Action<FederationConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBaseCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<FederationConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProviderBase?> PostAsync(IdentityProviderBase body, Action<FederationConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBase?> PostAsync(IdentityProviderBase body, CancellationToken cancellationToken = default, Action<FederationConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityProviderBase> PostAsync(IdentityProviderBase body, Action<FederationConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderBase> PostAsync(IdentityProviderBase body, CancellationToken cancellationToken = default, Action<FederationConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

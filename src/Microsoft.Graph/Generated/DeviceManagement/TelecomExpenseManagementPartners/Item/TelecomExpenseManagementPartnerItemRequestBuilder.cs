@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TelecomExpenseManagementPartner?> GetAsync(Action<TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TelecomExpenseManagementPartner?> GetAsync(CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TelecomExpenseManagementPartner> GetAsync(Action<TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TelecomExpenseManagementPartner> GetAsync(CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TelecomExpenseManagementPartner?> PatchAsync(TelecomExpenseManagementPartner body, Action<TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TelecomExpenseManagementPartner?> PatchAsync(TelecomExpenseManagementPartner body, CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TelecomExpenseManagementPartner> PatchAsync(TelecomExpenseManagementPartner body, Action<TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TelecomExpenseManagementPartner> PatchAsync(TelecomExpenseManagementPartner body, CancellationToken cancellationToken = default, Action<TelecomExpenseManagementPartnerItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new participantInfo and sets the default values.
+        /// Instantiates a new ParticipantInfo and sets the default values.
         /// </summary>
         public ParticipantInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

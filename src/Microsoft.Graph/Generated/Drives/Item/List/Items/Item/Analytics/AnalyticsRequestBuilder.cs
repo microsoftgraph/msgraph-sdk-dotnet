@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Analytics {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ItemAnalytics?> GetAsync(Action<AnalyticsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemAnalytics?> GetAsync(CancellationToken cancellationToken = default, Action<AnalyticsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ItemAnalytics> GetAsync(Action<AnalyticsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemAnalytics> GetAsync(CancellationToken cancellationToken = default, Action<AnalyticsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

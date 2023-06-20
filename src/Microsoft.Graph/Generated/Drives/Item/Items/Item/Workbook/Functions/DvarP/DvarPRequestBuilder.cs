@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DvarP {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookFunctionResult?> PostAsync(DvarPPostRequestBody body, Action<DvarPRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctionResult?> PostAsync(DvarPPostRequestBody body, CancellationToken cancellationToken = default, Action<DvarPRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WorkbookFunctionResult> PostAsync(DvarPPostRequestBody body, Action<DvarPRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctionResult> PostAsync(DvarPPostRequestBody body, CancellationToken cancellationToken = default, Action<DvarPRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

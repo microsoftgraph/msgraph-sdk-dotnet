@@ -33,10 +33,10 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAuditCategoriesResponse?> GetAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetAuditCategoriesResponse> GetAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

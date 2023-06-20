@@ -41,18 +41,18 @@ namespace Microsoft.Graph.Models.ODataErrors {
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The innererror property</summary>
+        /// <summary>The innerError property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ODataErrors.InnerError? Innererror {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError?>("innererror"); }
-            set { BackingStore?.Set("innererror", value); }
+        public Microsoft.Graph.Models.ODataErrors.InnerError? InnerError {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError?>("innerError"); }
+            set { BackingStore?.Set("innerError", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ODataErrors.InnerError Innererror {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError>("innererror"); }
-            set { BackingStore?.Set("innererror", value); }
+        public Microsoft.Graph.Models.ODataErrors.InnerError InnerError {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ODataErrors.InnerError>("innerError"); }
+            set { BackingStore?.Set("innerError", value); }
         }
 #endif
         /// <summary>The message property</summary>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models.ODataErrors {
             return new Dictionary<string, Action<IParseNode>> {
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"details", n => { Details = n.GetCollectionOfObjectValues<ErrorDetails>(ErrorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"innererror", n => { Innererror = n.GetObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>(Microsoft.Graph.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
+                {"innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>(Microsoft.Graph.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"target", n => { Target = n.GetStringValue(); } },
             };
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Models.ODataErrors {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteCollectionOfObjectValues<ErrorDetails>("details", Details);
-            writer.WriteObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>("innererror", Innererror);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("target", Target);
             writer.WriteAdditionalData(AdditionalData);

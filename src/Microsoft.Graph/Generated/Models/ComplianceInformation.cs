@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new complianceInformation and sets the default values.
+        /// Instantiates a new ComplianceInformation and sets the default values.
         /// </summary>
         public ComplianceInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

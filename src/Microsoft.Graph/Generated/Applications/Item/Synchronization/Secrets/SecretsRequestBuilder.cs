@@ -40,10 +40,10 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Secrets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SynchronizationSecretKeyStringValuePair>?> PutAsync(List<SynchronizationSecretKeyStringValuePair> body, Action<SecretsRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SynchronizationSecretKeyStringValuePair>?> PutAsync(List<SynchronizationSecretKeyStringValuePair> body, CancellationToken cancellationToken = default, Action<SecretsRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<List<SynchronizationSecretKeyStringValuePair>> PutAsync(List<SynchronizationSecretKeyStringValuePair> body, Action<SecretsRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SynchronizationSecretKeyStringValuePair>> PutAsync(List<SynchronizationSecretKeyStringValuePair> body, CancellationToken cancellationToken = default, Action<SecretsRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);

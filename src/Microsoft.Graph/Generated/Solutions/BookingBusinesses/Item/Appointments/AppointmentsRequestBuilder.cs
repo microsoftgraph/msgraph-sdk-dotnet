@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingAppointmentCollectionResponse?> GetAsync(Action<AppointmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingAppointmentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AppointmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingAppointmentCollectionResponse> GetAsync(Action<AppointmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingAppointmentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AppointmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingAppointment?> PostAsync(BookingAppointment body, Action<AppointmentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingAppointment?> PostAsync(BookingAppointment body, CancellationToken cancellationToken = default, Action<AppointmentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<BookingAppointment> PostAsync(BookingAppointment body, Action<AppointmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingAppointment> PostAsync(BookingAppointment body, CancellationToken cancellationToken = default, Action<AppointmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

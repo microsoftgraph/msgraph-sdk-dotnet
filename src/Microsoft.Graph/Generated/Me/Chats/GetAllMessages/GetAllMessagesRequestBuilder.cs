@@ -33,10 +33,10 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAllMessagesResponse?> GetAsync(Action<GetAllMessagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAllMessagesResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetAllMessagesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetAllMessagesResponse> GetAsync(Action<GetAllMessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAllMessagesResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetAllMessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

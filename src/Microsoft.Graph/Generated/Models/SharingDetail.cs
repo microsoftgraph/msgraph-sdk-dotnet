@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new sharingDetail and sets the default values.
+        /// Instantiates a new SharingDetail and sets the default values.
         /// </summary>
         public SharingDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

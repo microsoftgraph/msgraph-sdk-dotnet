@@ -57,10 +57,10 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUserCollectionResponse?> GetAsync(Action<RiskyUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUserCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyUserCollectionResponse> GetAsync(Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUserCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -77,10 +77,10 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUser?> PostAsync(RiskyUser body, Action<RiskyUsersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUser?> PostAsync(RiskyUser body, CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyUser> PostAsync(RiskyUser body, Action<RiskyUsersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUser> PostAsync(RiskyUser body, CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

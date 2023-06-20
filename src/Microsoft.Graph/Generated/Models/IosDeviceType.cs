@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new iosDeviceType and sets the default values.
+        /// Instantiates a new IosDeviceType and sets the default values.
         /// </summary>
         public IosDeviceType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

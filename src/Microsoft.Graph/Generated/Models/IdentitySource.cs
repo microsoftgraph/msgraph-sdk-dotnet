@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new identitySource and sets the default values.
+        /// Instantiates a new IdentitySource and sets the default values.
         /// </summary>
         public IdentitySource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

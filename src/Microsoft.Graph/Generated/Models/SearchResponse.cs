@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new searchResponse and sets the default values.
+        /// Instantiates a new SearchResponse and sets the default values.
         /// </summary>
         public SearchResponse() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

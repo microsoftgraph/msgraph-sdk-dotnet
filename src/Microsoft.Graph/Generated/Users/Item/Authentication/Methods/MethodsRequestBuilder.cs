@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethodCollectionResponse?> GetAsync(Action<MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationMethodCollectionResponse> GetAsync(Action<MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethodCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Users.Item.Authentication.Methods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationMethod?> PostAsync(AuthenticationMethod body, Action<MethodsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethod?> PostAsync(AuthenticationMethod body, CancellationToken cancellationToken = default, Action<MethodsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthenticationMethod> PostAsync(AuthenticationMethod body, Action<MethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationMethod> PostAsync(AuthenticationMethod body, CancellationToken cancellationToken = default, Action<MethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

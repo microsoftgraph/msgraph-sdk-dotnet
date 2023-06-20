@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationDeviceStateSummary?> GetAsync(Action<DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationDeviceStateSummary?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationDeviceStateSummary> GetAsync(Action<DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationDeviceStateSummary> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceConfigurationDeviceStateSummary?> PatchAsync(DeviceConfigurationDeviceStateSummary body, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationDeviceStateSummary?> PatchAsync(DeviceConfigurationDeviceStateSummary body, CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceConfigurationDeviceStateSummary> PatchAsync(DeviceConfigurationDeviceStateSummary body, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceConfigurationDeviceStateSummary> PatchAsync(DeviceConfigurationDeviceStateSummary body, CancellationToken cancellationToken = default, Action<DeviceConfigurationDeviceStateSummariesRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

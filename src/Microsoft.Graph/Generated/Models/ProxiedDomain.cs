@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new proxiedDomain and sets the default values.
+        /// Instantiates a new ProxiedDomain and sets the default values.
         /// </summary>
         public ProxiedDomain() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

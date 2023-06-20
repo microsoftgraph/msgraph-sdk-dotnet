@@ -34,10 +34,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentials.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentials.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FederatedIdentityCredential?> GetAsync(Action<FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FederatedIdentityCredential?> GetAsync(CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<FederatedIdentityCredential> GetAsync(Action<FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FederatedIdentityCredential> GetAsync(CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentials.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FederatedIdentityCredential?> PatchAsync(FederatedIdentityCredential body, Action<FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FederatedIdentityCredential?> PatchAsync(FederatedIdentityCredential body, CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<FederatedIdentityCredential> PatchAsync(FederatedIdentityCredential body, Action<FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FederatedIdentityCredential> PatchAsync(FederatedIdentityCredential body, CancellationToken cancellationToken = default, Action<FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SearchWithQResponse?> GetAsync(Action<SearchWithQRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SearchWithQResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SearchWithQRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SearchWithQResponse> GetAsync(Action<SearchWithQRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SearchWithQResponse> GetAsync(CancellationToken cancellationToken = default, Action<SearchWithQRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

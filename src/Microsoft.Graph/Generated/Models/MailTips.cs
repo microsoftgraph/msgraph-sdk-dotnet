@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("totalMemberCount", value); }
         }
         /// <summary>
-        /// Instantiates a new mailTips and sets the default values.
+        /// Instantiates a new MailTips and sets the default values.
         /// </summary>
         public MailTips() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

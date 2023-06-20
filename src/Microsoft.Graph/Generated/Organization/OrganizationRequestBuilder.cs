@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Organization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationCollectionResponse?> GetAsync(Action<OrganizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<OrganizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OrganizationCollectionResponse> GetAsync(Action<OrganizationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OrganizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -87,10 +87,10 @@ namespace Microsoft.Graph.Organization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Organization?> PostAsync(Microsoft.Graph.Models.Organization body, Action<OrganizationRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Organization?> PostAsync(Microsoft.Graph.Models.Organization body, CancellationToken cancellationToken = default, Action<OrganizationRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Organization> PostAsync(Microsoft.Graph.Models.Organization body, Action<OrganizationRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Organization> PostAsync(Microsoft.Graph.Models.Organization body, CancellationToken cancellationToken = default, Action<OrganizationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

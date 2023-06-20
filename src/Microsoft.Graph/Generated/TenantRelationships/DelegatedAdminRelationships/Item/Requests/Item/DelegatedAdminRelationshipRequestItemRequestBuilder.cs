@@ -34,10 +34,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminRelationshipRequest?> GetAsync(Action<DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminRelationshipRequest?> GetAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DelegatedAdminRelationshipRequest> GetAsync(Action<DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminRelationshipRequest> GetAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminRelationshipRequest?> PatchAsync(DelegatedAdminRelationshipRequest body, Action<DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminRelationshipRequest?> PatchAsync(DelegatedAdminRelationshipRequest body, CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DelegatedAdminRelationshipRequest> PatchAsync(DelegatedAdminRelationshipRequest body, Action<DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminRelationshipRequest> PatchAsync(DelegatedAdminRelationshipRequest body, CancellationToken cancellationToken = default, Action<DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

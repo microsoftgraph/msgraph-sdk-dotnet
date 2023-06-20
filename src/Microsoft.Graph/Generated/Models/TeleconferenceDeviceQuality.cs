@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("participantId", value); }
         }
         /// <summary>
-        /// Instantiates a new teleconferenceDeviceQuality and sets the default values.
+        /// Instantiates a new TeleconferenceDeviceQuality and sets the default values.
         /// </summary>
         public TeleconferenceDeviceQuality() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

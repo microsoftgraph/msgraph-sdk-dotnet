@@ -62,10 +62,10 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentTypeCollectionResponse?> GetAsync(Action<ContentTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentTypeCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ContentTypesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ContentTypeCollectionResponse> GetAsync(Action<ContentTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentTypeCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ContentTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentType?> PostAsync(ContentType body, Action<ContentTypesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentType?> PostAsync(ContentType body, CancellationToken cancellationToken = default, Action<ContentTypesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ContentType> PostAsync(ContentType body, Action<ContentTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentType> PostAsync(ContentType body, CancellationToken cancellationToken = default, Action<ContentTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

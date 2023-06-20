@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new resourceSpecificPermission and sets the default values.
+        /// Instantiates a new ResourceSpecificPermission and sets the default values.
         /// </summary>
         public ResourceSpecificPermission() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

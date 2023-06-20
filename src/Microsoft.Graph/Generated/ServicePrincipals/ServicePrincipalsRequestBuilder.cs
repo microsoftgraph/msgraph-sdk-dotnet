@@ -67,10 +67,10 @@ namespace Microsoft.Graph.ServicePrincipals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipalCollectionResponse?> GetAsync(Action<ServicePrincipalsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServicePrincipalCollectionResponse> GetAsync(Action<ServicePrincipalsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ServicePrincipalsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -88,10 +88,10 @@ namespace Microsoft.Graph.ServicePrincipals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipal?> PostAsync(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipal?> PostAsync(ServicePrincipal body, CancellationToken cancellationToken = default, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ServicePrincipal> PostAsync(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipal> PostAsync(ServicePrincipal body, CancellationToken cancellationToken = default, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

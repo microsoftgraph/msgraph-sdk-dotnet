@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TimeOffCollectionResponse?> GetAsync(Action<TimesOffRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeOffCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TimesOffRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TimeOffCollectionResponse> GetAsync(Action<TimesOffRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeOffCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TimesOffRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TimeOff?> PostAsync(TimeOff body, Action<TimesOffRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeOff?> PostAsync(TimeOff body, CancellationToken cancellationToken = default, Action<TimesOffRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TimeOff> PostAsync(TimeOff body, Action<TimesOffRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeOff> PostAsync(TimeOff body, CancellationToken cancellationToken = default, Action<TimesOffRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

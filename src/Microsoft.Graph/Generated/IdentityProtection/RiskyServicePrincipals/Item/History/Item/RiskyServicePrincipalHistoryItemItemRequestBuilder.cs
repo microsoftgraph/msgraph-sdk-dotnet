@@ -34,10 +34,10 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Item.History
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Item.History
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyServicePrincipalHistoryItem?> GetAsync(Action<RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyServicePrincipalHistoryItem?> GetAsync(CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyServicePrincipalHistoryItem> GetAsync(Action<RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyServicePrincipalHistoryItem> GetAsync(CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals.Item.History
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyServicePrincipalHistoryItem?> PatchAsync(RiskyServicePrincipalHistoryItem body, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyServicePrincipalHistoryItem?> PatchAsync(RiskyServicePrincipalHistoryItem body, CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyServicePrincipalHistoryItem> PatchAsync(RiskyServicePrincipalHistoryItem body, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyServicePrincipalHistoryItem> PatchAsync(RiskyServicePrincipalHistoryItem body, CancellationToken cancellationToken = default, Action<RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

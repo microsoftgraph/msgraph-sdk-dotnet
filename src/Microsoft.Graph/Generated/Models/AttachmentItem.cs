@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new attachmentItem and sets the default values.
+        /// Instantiates a new AttachmentItem and sets the default values.
         /// </summary>
         public AttachmentItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

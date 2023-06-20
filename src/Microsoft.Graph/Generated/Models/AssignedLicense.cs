@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>
-        /// Instantiates a new assignedLicense and sets the default values.
+        /// Instantiates a new AssignedLicense and sets the default values.
         /// </summary>
         public AssignedLicense() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

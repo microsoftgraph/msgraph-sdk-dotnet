@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new mediaStream and sets the default values.
+        /// Instantiates a new MediaStream and sets the default values.
         /// </summary>
         public MediaStream() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

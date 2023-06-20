@@ -34,10 +34,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminServiceManagementDetail?> GetAsync(Action<DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminServiceManagementDetail?> GetAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DelegatedAdminServiceManagementDetail> GetAsync(Action<DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminServiceManagementDetail> GetAsync(CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DelegatedAdminServiceManagementDetail?> PatchAsync(DelegatedAdminServiceManagementDetail body, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminServiceManagementDetail?> PatchAsync(DelegatedAdminServiceManagementDetail body, CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DelegatedAdminServiceManagementDetail> PatchAsync(DelegatedAdminServiceManagementDetail body, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DelegatedAdminServiceManagementDetail> PatchAsync(DelegatedAdminServiceManagementDetail body, CancellationToken cancellationToken = default, Action<DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

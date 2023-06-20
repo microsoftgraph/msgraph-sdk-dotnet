@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.S
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenoteSectionCollectionResponse?> GetAsync(Action<SectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenoteSectionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenoteSectionCollectionResponse> GetAsync(Action<SectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenoteSectionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.S
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnenoteSection?> PostAsync(OnenoteSection body, Action<SectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenoteSection?> PostAsync(OnenoteSection body, CancellationToken cancellationToken = default, Action<SectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnenoteSection> PostAsync(OnenoteSection body, Action<SectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnenoteSection> PostAsync(OnenoteSection body, CancellationToken cancellationToken = default, Action<SectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

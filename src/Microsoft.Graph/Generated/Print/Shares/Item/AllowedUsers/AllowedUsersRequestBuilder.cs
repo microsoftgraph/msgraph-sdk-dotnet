@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserCollectionResponse?> GetAsync(Action<AllowedUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AllowedUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UserCollectionResponse> GetAsync(Action<AllowedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AllowedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

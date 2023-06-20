@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSetCollectionResponse?> GetAsync(Action<IncludesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSetCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<IncludesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSetCollectionResponse> GetAsync(Action<IncludesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSetCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<IncludesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PermissionGrantConditionSet?> PostAsync(PermissionGrantConditionSet body, Action<IncludesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet?> PostAsync(PermissionGrantConditionSet body, CancellationToken cancellationToken = default, Action<IncludesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PermissionGrantConditionSet> PostAsync(PermissionGrantConditionSet body, Action<IncludesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PermissionGrantConditionSet> PostAsync(PermissionGrantConditionSet body, CancellationToken cancellationToken = default, Action<IncludesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

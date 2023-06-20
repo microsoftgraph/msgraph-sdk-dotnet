@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new huntingRowResult and sets the default values.
+        /// Instantiates a new HuntingRowResult and sets the default values.
         /// </summary>
         public HuntingRowResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

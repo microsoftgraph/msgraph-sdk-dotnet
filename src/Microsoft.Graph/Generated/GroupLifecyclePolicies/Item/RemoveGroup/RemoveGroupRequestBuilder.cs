@@ -27,17 +27,18 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
         public RemoveGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/removeGroup", rawUrl) {
         }
         /// <summary>
-        /// Invoke action removeGroup
+        /// Removes a group from a lifecycle policy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RemoveGroupResponse?> PostAsync(RemoveGroupPostRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoveGroupResponse?> PostAsync(RemoveGroupPostRequestBody body, CancellationToken cancellationToken = default, Action<RemoveGroupRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupPostRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupPostRequestBody body, CancellationToken cancellationToken = default, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
             return await RequestAdapter.SendAsync<RemoveGroupResponse>(requestInfo, RemoveGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action removeGroup
+        /// Removes a group from a lifecycle policy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

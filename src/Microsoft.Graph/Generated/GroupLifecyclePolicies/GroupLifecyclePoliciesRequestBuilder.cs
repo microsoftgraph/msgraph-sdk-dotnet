@@ -47,10 +47,10 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupLifecyclePolicyCollectionResponse?> GetAsync(Action<GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupLifecyclePolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupLifecyclePolicyCollectionResponse> GetAsync(Action<GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupLifecyclePolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupLifecyclePolicy?> PostAsync(GroupLifecyclePolicy body, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupLifecyclePolicy?> PostAsync(GroupLifecyclePolicy body, CancellationToken cancellationToken = default, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupLifecyclePolicy> PostAsync(GroupLifecyclePolicy body, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupLifecyclePolicy> PostAsync(GroupLifecyclePolicy body, CancellationToken cancellationToken = default, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

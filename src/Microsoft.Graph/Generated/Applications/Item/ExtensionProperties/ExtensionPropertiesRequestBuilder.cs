@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExtensionPropertyCollectionResponse?> GetAsync(Action<ExtensionPropertiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExtensionPropertyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ExtensionPropertiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ExtensionPropertyCollectionResponse> GetAsync(Action<ExtensionPropertiesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExtensionPropertyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ExtensionPropertiesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExtensionProperty?> PostAsync(ExtensionProperty body, Action<ExtensionPropertiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExtensionProperty?> PostAsync(ExtensionProperty body, CancellationToken cancellationToken = default, Action<ExtensionPropertiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ExtensionProperty> PostAsync(ExtensionProperty body, Action<ExtensionPropertiesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExtensionProperty> PostAsync(ExtensionProperty body, CancellationToken cancellationToken = default, Action<ExtensionPropertiesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

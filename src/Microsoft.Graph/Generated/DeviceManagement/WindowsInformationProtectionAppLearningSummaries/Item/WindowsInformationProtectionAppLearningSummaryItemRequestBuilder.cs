@@ -34,10 +34,10 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionAppLearningSummary?> GetAsync(Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionAppLearningSummary?> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionAppLearningSummary> GetAsync(Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionAppLearningSummary> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionAppLearningSummary?> PatchAsync(WindowsInformationProtectionAppLearningSummary body, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionAppLearningSummary?> PatchAsync(WindowsInformationProtectionAppLearningSummary body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionAppLearningSummary> PatchAsync(WindowsInformationProtectionAppLearningSummary body, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionAppLearningSummary> PatchAsync(WindowsInformationProtectionAppLearningSummary body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionAppLearningSummaryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

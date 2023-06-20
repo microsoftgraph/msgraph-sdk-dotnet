@@ -52,10 +52,10 @@ namespace Microsoft.Graph.IdentityProviders {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProviderCollectionResponse?> GetAsync(Action<IdentityProvidersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<IdentityProvidersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityProviderCollectionResponse> GetAsync(Action<IdentityProvidersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProviderCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<IdentityProvidersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -65,17 +65,18 @@ namespace Microsoft.Graph.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add new entity to identityProviders
+        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IdentityProvider?> PostAsync(IdentityProvider body, Action<IdentityProvidersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProvider?> PostAsync(IdentityProvider body, CancellationToken cancellationToken = default, Action<IdentityProvidersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IdentityProvider> PostAsync(IdentityProvider body, Action<IdentityProvidersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IdentityProvider> PostAsync(IdentityProvider body, CancellationToken cancellationToken = default, Action<IdentityProvidersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -112,7 +113,7 @@ namespace Microsoft.Graph.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Add new entity to identityProviders
+        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

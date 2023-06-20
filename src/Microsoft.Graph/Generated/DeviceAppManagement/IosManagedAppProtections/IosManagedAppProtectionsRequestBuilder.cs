@@ -46,10 +46,10 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IosManagedAppProtectionCollectionResponse?> GetAsync(Action<IosManagedAppProtectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosManagedAppProtectionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<IosManagedAppProtectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IosManagedAppProtectionCollectionResponse> GetAsync(Action<IosManagedAppProtectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosManagedAppProtectionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<IosManagedAppProtectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IosManagedAppProtection?> PostAsync(IosManagedAppProtection body, Action<IosManagedAppProtectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosManagedAppProtection?> PostAsync(IosManagedAppProtection body, CancellationToken cancellationToken = default, Action<IosManagedAppProtectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IosManagedAppProtection> PostAsync(IosManagedAppProtection body, Action<IosManagedAppProtectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosManagedAppProtection> PostAsync(IosManagedAppProtection body, CancellationToken cancellationToken = default, Action<IosManagedAppProtectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

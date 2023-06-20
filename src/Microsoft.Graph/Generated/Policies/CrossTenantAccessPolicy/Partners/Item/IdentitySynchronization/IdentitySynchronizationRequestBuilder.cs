@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -55,10 +55,10 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CrossTenantIdentitySyncPolicyPartner?> GetAsync(Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CrossTenantIdentitySyncPolicyPartner?> GetAsync(CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CrossTenantIdentitySyncPolicyPartner> GetAsync(Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CrossTenantIdentitySyncPolicyPartner> GetAsync(CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,18 +68,18 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return await RequestAdapter.SendAsync<CrossTenantIdentitySyncPolicyPartner>(requestInfo, CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0" />
+        /// Update the user synchronization policy of a partner-specific configuration.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CrossTenantIdentitySyncPolicyPartner?> PatchAsync(CrossTenantIdentitySyncPolicyPartner body, Action<IdentitySynchronizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CrossTenantIdentitySyncPolicyPartner?> PatchAsync(CrossTenantIdentitySyncPolicyPartner body, CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CrossTenantIdentitySyncPolicyPartner> PatchAsync(CrossTenantIdentitySyncPolicyPartner body, Action<IdentitySynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CrossTenantIdentitySyncPolicyPartner> PatchAsync(CrossTenantIdentitySyncPolicyPartner body, CancellationToken cancellationToken = default, Action<IdentitySynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return requestInfo;
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Update the user synchronization policy of a partner-specific configuration.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

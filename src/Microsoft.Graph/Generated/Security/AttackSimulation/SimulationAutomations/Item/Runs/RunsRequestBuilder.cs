@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Security.AttackSimulation.SimulationAutomations.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SimulationAutomationRunCollectionResponse?> GetAsync(Action<RunsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SimulationAutomationRunCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RunsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SimulationAutomationRunCollectionResponse> GetAsync(Action<RunsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SimulationAutomationRunCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RunsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Security.AttackSimulation.SimulationAutomations.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SimulationAutomationRun?> PostAsync(SimulationAutomationRun body, Action<RunsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SimulationAutomationRun?> PostAsync(SimulationAutomationRun body, CancellationToken cancellationToken = default, Action<RunsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SimulationAutomationRun> PostAsync(SimulationAutomationRun body, Action<RunsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SimulationAutomationRun> PostAsync(SimulationAutomationRun body, CancellationToken cancellationToken = default, Action<RunsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

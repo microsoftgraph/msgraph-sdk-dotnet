@@ -39,10 +39,10 @@ namespace Microsoft.Graph.AuthenticationMethodsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy?> GetAsync(Action<AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy> GetAsync(Action<AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken = default, Action<AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -59,10 +59,10 @@ namespace Microsoft.Graph.AuthenticationMethodsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy?> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsPolicy body, Action<AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy?> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsPolicy body, CancellationToken cancellationToken = default, Action<AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsPolicy body, Action<AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AuthenticationMethodsPolicy> PatchAsync(Microsoft.Graph.Models.AuthenticationMethodsPolicy body, CancellationToken cancellationToken = default, Action<AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

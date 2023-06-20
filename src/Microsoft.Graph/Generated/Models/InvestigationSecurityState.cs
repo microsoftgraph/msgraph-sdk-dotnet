@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new investigationSecurityState and sets the default values.
+        /// Instantiates a new InvestigationSecurityState and sets the default values.
         /// </summary>
         public InvestigationSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

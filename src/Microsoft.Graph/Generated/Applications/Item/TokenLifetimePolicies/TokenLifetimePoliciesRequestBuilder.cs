@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TokenLifetimePolicyCollectionResponse?> GetAsync(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TokenLifetimePolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TokenLifetimePolicyCollectionResponse> GetAsync(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TokenLifetimePolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

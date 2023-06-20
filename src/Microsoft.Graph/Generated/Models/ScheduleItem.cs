@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new scheduleItem and sets the default values.
+        /// Instantiates a new ScheduleItem and sets the default values.
         /// </summary>
         public ScheduleItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

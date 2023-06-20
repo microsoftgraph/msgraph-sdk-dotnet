@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Users.Item.Insights.Shared.Item.LastSharedMethod {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Entity?> GetAsync(Action<LastSharedMethodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Entity?> GetAsync(CancellationToken cancellationToken = default, Action<LastSharedMethodRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Entity> GetAsync(Action<LastSharedMethodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Entity> GetAsync(CancellationToken cancellationToken = default, Action<LastSharedMethodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Applications.Item.GetMemberGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetMemberGroupsResponse?> PostAsync(GetMemberGroupsPostRequestBody body, Action<GetMemberGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetMemberGroupsResponse?> PostAsync(GetMemberGroupsPostRequestBody body, CancellationToken cancellationToken = default, Action<GetMemberGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetMemberGroupsResponse> PostAsync(GetMemberGroupsPostRequestBody body, Action<GetMemberGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetMemberGroupsResponse> PostAsync(GetMemberGroupsPostRequestBody body, CancellationToken cancellationToken = default, Action<GetMemberGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
