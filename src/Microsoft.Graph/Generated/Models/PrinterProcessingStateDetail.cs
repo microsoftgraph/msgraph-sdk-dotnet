@@ -2,76 +2,6 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum PrinterProcessingStateDetail {
-        [EnumMember(Value = "paused")]
-        Paused,
-        [EnumMember(Value = "mediaJam")]
-        MediaJam,
-        [EnumMember(Value = "mediaNeeded")]
-        MediaNeeded,
-        [EnumMember(Value = "mediaLow")]
-        MediaLow,
-        [EnumMember(Value = "mediaEmpty")]
-        MediaEmpty,
-        [EnumMember(Value = "coverOpen")]
-        CoverOpen,
-        [EnumMember(Value = "interlockOpen")]
-        InterlockOpen,
-        [EnumMember(Value = "outputTrayMissing")]
-        OutputTrayMissing,
-        [EnumMember(Value = "outputAreaFull")]
-        OutputAreaFull,
-        [EnumMember(Value = "markerSupplyLow")]
-        MarkerSupplyLow,
-        [EnumMember(Value = "markerSupplyEmpty")]
-        MarkerSupplyEmpty,
-        [EnumMember(Value = "inputTrayMissing")]
-        InputTrayMissing,
-        [EnumMember(Value = "outputAreaAlmostFull")]
-        OutputAreaAlmostFull,
-        [EnumMember(Value = "markerWasteAlmostFull")]
-        MarkerWasteAlmostFull,
-        [EnumMember(Value = "markerWasteFull")]
-        MarkerWasteFull,
-        [EnumMember(Value = "fuserOverTemp")]
-        FuserOverTemp,
-        [EnumMember(Value = "fuserUnderTemp")]
-        FuserUnderTemp,
-        [EnumMember(Value = "other")]
-        Other,
-        [EnumMember(Value = "none")]
-        None,
-        [EnumMember(Value = "movingToPaused")]
-        MovingToPaused,
-        [EnumMember(Value = "shutdown")]
-        Shutdown,
-        [EnumMember(Value = "connectingToDevice")]
-        ConnectingToDevice,
-        [EnumMember(Value = "timedOut")]
-        TimedOut,
-        [EnumMember(Value = "stopping")]
-        Stopping,
-        [EnumMember(Value = "stoppedPartially")]
-        StoppedPartially,
-        [EnumMember(Value = "tonerLow")]
-        TonerLow,
-        [EnumMember(Value = "tonerEmpty")]
-        TonerEmpty,
-        [EnumMember(Value = "spoolAreaFull")]
-        SpoolAreaFull,
-        [EnumMember(Value = "doorOpen")]
-        DoorOpen,
-        [EnumMember(Value = "opticalPhotoConductorNearEndOfLife")]
-        OpticalPhotoConductorNearEndOfLife,
-        [EnumMember(Value = "opticalPhotoConductorLifeOver")]
-        OpticalPhotoConductorLifeOver,
-        [EnumMember(Value = "developerLow")]
-        DeveloperLow,
-        [EnumMember(Value = "developerEmpty")]
-        DeveloperEmpty,
-        [EnumMember(Value = "interpreterResourceUnavailable")]
-        InterpreterResourceUnavailable,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "alertRemovalOfBinaryChangeEntry")]
         AlertRemovalOfBinaryChangeEntry,
         [EnumMember(Value = "banderAdded")]
@@ -236,10 +166,18 @@ namespace Microsoft.Graph.Models {
         CleanerLifeOver,
         [EnumMember(Value = "configurationChange")]
         ConfigurationChange,
+        [EnumMember(Value = "connectingToDevice")]
+        ConnectingToDevice,
+        [EnumMember(Value = "coverOpen")]
+        CoverOpen,
         [EnumMember(Value = "deactivated")]
         Deactivated,
         [EnumMember(Value = "deleted")]
         Deleted,
+        [EnumMember(Value = "developerEmpty")]
+        DeveloperEmpty,
+        [EnumMember(Value = "developerLow")]
+        DeveloperLow,
         [EnumMember(Value = "dieCutterAdded")]
         DieCutterAdded,
         [EnumMember(Value = "dieCutterAlmostEmpty")]
@@ -312,6 +250,8 @@ namespace Microsoft.Graph.Models {
         DieCutterUnrecoverableStorageError,
         [EnumMember(Value = "dieCutterWarmingUp")]
         DieCutterWarmingUp,
+        [EnumMember(Value = "doorOpen")]
+        DoorOpen,
         [EnumMember(Value = "extruderCooling")]
         ExtruderCooling,
         [EnumMember(Value = "extruderFailure")]
@@ -408,6 +348,10 @@ namespace Microsoft.Graph.Models {
         FolderUnrecoverableStorageError,
         [EnumMember(Value = "folderWarmingUp")]
         FolderWarmingUp,
+        [EnumMember(Value = "fuserOverTemp")]
+        FuserOverTemp,
+        [EnumMember(Value = "fuserUnderTemp")]
+        FuserUnderTemp,
         [EnumMember(Value = "hibernate")]
         Hibernate,
         [EnumMember(Value = "holdNewJobs")]
@@ -516,6 +460,8 @@ namespace Microsoft.Graph.Models {
         InputPickRollerMissing,
         [EnumMember(Value = "inputTrayElevationFailure")]
         InputTrayElevationFailure,
+        [EnumMember(Value = "inputTrayMissing")]
+        InputTrayMissing,
         [EnumMember(Value = "inputTrayPositionFailure")]
         InputTrayPositionFailure,
         [EnumMember(Value = "inserterAdded")]
@@ -592,6 +538,8 @@ namespace Microsoft.Graph.Models {
         InserterWarmingUp,
         [EnumMember(Value = "interlockClosed")]
         InterlockClosed,
+        [EnumMember(Value = "interlockOpen")]
+        InterlockOpen,
         [EnumMember(Value = "interpreterCartridgeAdded")]
         InterpreterCartridgeAdded,
         [EnumMember(Value = "interpreterCartridgeDeleted")]
@@ -606,6 +554,8 @@ namespace Microsoft.Graph.Models {
         InterpreterResourceAdded,
         [EnumMember(Value = "interpreterResourceDeleted")]
         InterpreterResourceDeleted,
+        [EnumMember(Value = "interpreterResourceUnavailable")]
+        InterpreterResourceUnavailable,
         [EnumMember(Value = "lampAtEol")]
         LampAtEol,
         [EnumMember(Value = "lampFailure")]
@@ -722,12 +672,20 @@ namespace Microsoft.Graph.Models {
         MarkerPrintRibbonMissing,
         [EnumMember(Value = "markerSupplyAlmostEmpty")]
         MarkerSupplyAlmostEmpty,
+        [EnumMember(Value = "markerSupplyEmpty")]
+        MarkerSupplyEmpty,
+        [EnumMember(Value = "markerSupplyLow")]
+        MarkerSupplyLow,
         [EnumMember(Value = "markerSupplyMissing")]
         MarkerSupplyMissing,
         [EnumMember(Value = "markerTonerCartridgeMissing")]
         MarkerTonerCartridgeMissing,
         [EnumMember(Value = "markerTonerMissing")]
         MarkerTonerMissing,
+        [EnumMember(Value = "markerWasteAlmostFull")]
+        MarkerWasteAlmostFull,
+        [EnumMember(Value = "markerWasteFull")]
+        MarkerWasteFull,
         [EnumMember(Value = "markerWasteInkReceptacleAlmostFull")]
         MarkerWasteInkReceptacleAlmostFull,
         [EnumMember(Value = "markerWasteInkReceptacleFull")]
@@ -750,6 +708,14 @@ namespace Microsoft.Graph.Models {
         MaterialNeeded,
         [EnumMember(Value = "mediaDrying")]
         MediaDrying,
+        [EnumMember(Value = "mediaEmpty")]
+        MediaEmpty,
+        [EnumMember(Value = "mediaJam")]
+        MediaJam,
+        [EnumMember(Value = "mediaLow")]
+        MediaLow,
+        [EnumMember(Value = "mediaNeeded")]
+        MediaNeeded,
         [EnumMember(Value = "mediaPathCannotDuplexMediaSelected")]
         MediaPathCannotDuplexMediaSelected,
         [EnumMember(Value = "mediaPathFailure")]
@@ -786,6 +752,20 @@ namespace Microsoft.Graph.Models {
         MediaPathPickRollerMissing,
         [EnumMember(Value = "motorFailure")]
         MotorFailure,
+        [EnumMember(Value = "movingToPaused")]
+        MovingToPaused,
+        [EnumMember(Value = "none")]
+        None,
+        [EnumMember(Value = "opticalPhotoConductorLifeOver")]
+        OpticalPhotoConductorLifeOver,
+        [EnumMember(Value = "opticalPhotoConductorNearEndOfLife")]
+        OpticalPhotoConductorNearEndOfLife,
+        [EnumMember(Value = "other")]
+        Other,
+        [EnumMember(Value = "outputAreaAlmostFull")]
+        OutputAreaAlmostFull,
+        [EnumMember(Value = "outputAreaFull")]
+        OutputAreaFull,
         [EnumMember(Value = "outputMailboxSelectFailure")]
         OutputMailboxSelectFailure,
         [EnumMember(Value = "outputMediaTrayFailure")]
@@ -794,6 +774,10 @@ namespace Microsoft.Graph.Models {
         OutputMediaTrayFeedError,
         [EnumMember(Value = "outputMediaTrayJam")]
         OutputMediaTrayJam,
+        [EnumMember(Value = "outputTrayMissing")]
+        OutputTrayMissing,
+        [EnumMember(Value = "paused")]
+        Paused,
         [EnumMember(Value = "perforaterAdded")]
         PerforaterAdded,
         [EnumMember(Value = "perforaterAlmostEmpty")]
@@ -1152,6 +1136,8 @@ namespace Microsoft.Graph.Models {
         SheetRotatorUnrecoverableStorageError,
         [EnumMember(Value = "sheetRotatorWarmingUp")]
         SheetRotatorWarmingUp,
+        [EnumMember(Value = "shutdown")]
+        Shutdown,
         [EnumMember(Value = "slitterAdded")]
         SlitterAdded,
         [EnumMember(Value = "slitterAlmostEmpty")]
@@ -1224,6 +1210,8 @@ namespace Microsoft.Graph.Models {
         SlitterUnrecoverableStorageError,
         [EnumMember(Value = "slitterWarmingUp")]
         SlitterWarmingUp,
+        [EnumMember(Value = "spoolAreaFull")]
+        SpoolAreaFull,
         [EnumMember(Value = "stackerAdded")]
         StackerAdded,
         [EnumMember(Value = "stackerAlmostEmpty")]
@@ -1442,6 +1430,10 @@ namespace Microsoft.Graph.Models {
         StitcherUnrecoverableStorageError,
         [EnumMember(Value = "stitcherWarmingUp")]
         StitcherWarmingUp,
+        [EnumMember(Value = "stoppedPartially")]
+        StoppedPartially,
+        [EnumMember(Value = "stopping")]
+        Stopping,
         [EnumMember(Value = "subunitAdded")]
         SubunitAdded,
         [EnumMember(Value = "subunitAlmostEmpty")]
@@ -1508,6 +1500,12 @@ namespace Microsoft.Graph.Models {
         Suspend,
         [EnumMember(Value = "testing")]
         Testing,
+        [EnumMember(Value = "timedOut")]
+        TimedOut,
+        [EnumMember(Value = "tonerEmpty")]
+        TonerEmpty,
+        [EnumMember(Value = "tonerLow")]
+        TonerLow,
         [EnumMember(Value = "trimmerAdded")]
         TrimmerAdded,
         [EnumMember(Value = "trimmerAlmostEmpty")]
@@ -1582,6 +1580,8 @@ namespace Microsoft.Graph.Models {
         TrimmerWarmingUp,
         [EnumMember(Value = "unknown")]
         Unknown,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
         [EnumMember(Value = "wrapperAdded")]
         WrapperAdded,
         [EnumMember(Value = "wrapperAlmostEmpty")]

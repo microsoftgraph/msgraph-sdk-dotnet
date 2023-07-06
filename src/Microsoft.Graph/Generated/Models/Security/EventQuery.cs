@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("queryType", value); }
         }
         /// <summary>
-        /// Instantiates a new eventQuery and sets the default values.
+        /// Instantiates a new EventQuery and sets the default values.
         /// </summary>
         public EventQuery() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

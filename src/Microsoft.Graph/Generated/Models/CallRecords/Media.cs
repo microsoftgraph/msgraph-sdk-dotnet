@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Media and sets the default values.
+        /// Instantiates a new media and sets the default values.
         /// </summary>
         public Media() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

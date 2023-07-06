@@ -6,12 +6,12 @@ namespace Microsoft.Graph.Models {
         AadApplication,
         [EnumMember(Value = "bot")]
         Bot,
-        [EnumMember(Value = "tenantBot")]
-        TenantBot,
         [EnumMember(Value = "office365Connector")]
         Office365Connector,
         [EnumMember(Value = "outgoingWebhook")]
         OutgoingWebhook,
+        [EnumMember(Value = "tenantBot")]
+        TenantBot,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

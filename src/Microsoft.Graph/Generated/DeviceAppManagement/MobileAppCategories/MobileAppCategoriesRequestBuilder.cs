@@ -40,8 +40,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
         public MobileAppCategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileAppCategories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0" />
+        /// The mobile app categories.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return await RequestAdapter.SendAsync<MobileAppCategoryCollectionResponse>(requestInfo, MobileAppCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new mobileAppCategory object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0" />
+        /// Create new navigation property to mobileAppCategories for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
+        /// The mobile app categories.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mobileAppCategory object.
+        /// Create new navigation property to mobileAppCategories for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
+        /// The mobile app categories.
         /// </summary>
         public class MobileAppCategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

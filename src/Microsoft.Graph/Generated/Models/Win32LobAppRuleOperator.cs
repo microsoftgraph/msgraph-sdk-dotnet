@@ -3,15 +3,9 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Contains properties for detection operator.</summary>
     public enum Win32LobAppRuleOperator {
-        /// <summary>Not configured.</summary>
-        [EnumMember(Value = "notConfigured")]
-        NotConfigured,
         /// <summary>Equal operator.</summary>
         [EnumMember(Value = "equal")]
         Equal,
-        /// <summary>Not equal operator.</summary>
-        [EnumMember(Value = "notEqual")]
-        NotEqual,
         /// <summary>Greater than operator.</summary>
         [EnumMember(Value = "greaterThan")]
         GreaterThan,
@@ -24,5 +18,11 @@ namespace Microsoft.Graph.Models {
         /// <summary>Less than or equal operator.</summary>
         [EnumMember(Value = "lessThanOrEqual")]
         LessThanOrEqual,
+        /// <summary>Not configured.</summary>
+        [EnumMember(Value = "notConfigured")]
+        NotConfigured,
+        /// <summary>Not equal operator.</summary>
+        [EnumMember(Value = "notEqual")]
+        NotEqual,
     }
 }

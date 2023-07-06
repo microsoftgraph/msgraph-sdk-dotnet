@@ -6,14 +6,14 @@ namespace Microsoft.Graph.Models {
         /// <summary>Sharing is allowed between all apps, managed or not</summary>
         [EnumMember(Value = "allApps")]
         AllApps,
-        /// <summary>Sharing is allowed between all managed apps with paste in enabled</summary>
-        [EnumMember(Value = "managedAppsWithPasteIn")]
-        ManagedAppsWithPasteIn,
-        /// <summary>Sharing is allowed between all managed apps</summary>
-        [EnumMember(Value = "managedApps")]
-        ManagedApps,
         /// <summary>Sharing between apps is disabled</summary>
         [EnumMember(Value = "blocked")]
         Blocked,
+        /// <summary>Sharing is allowed between all managed apps</summary>
+        [EnumMember(Value = "managedApps")]
+        ManagedApps,
+        /// <summary>Sharing is allowed between all managed apps with paste in enabled</summary>
+        [EnumMember(Value = "managedAppsWithPasteIn")]
+        ManagedAppsWithPasteIn,
     }
 }

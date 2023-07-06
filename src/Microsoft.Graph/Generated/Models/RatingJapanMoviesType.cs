@@ -3,6 +3,12 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Movies rating labels in Japan</summary>
     public enum RatingJapanMoviesType {
+        /// <summary>The R15+ classification is suitable for viewers of 15 or older</summary>
+        [EnumMember(Value = "agesAbove15")]
+        AgesAbove15,
+        /// <summary>The R18+ classification is suitable for viewers of 18 or older</summary>
+        [EnumMember(Value = "agesAbove18")]
+        AgesAbove18,
         /// <summary>Default value, allow all movies content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,
@@ -15,11 +21,5 @@ namespace Microsoft.Graph.Models {
         /// <summary>The PG-12 classification requests parental guidance for young people under 12</summary>
         [EnumMember(Value = "parentalGuidance")]
         ParentalGuidance,
-        /// <summary>The R15+ classification is suitable for viewers of 15 or older</summary>
-        [EnumMember(Value = "agesAbove15")]
-        AgesAbove15,
-        /// <summary>The R18+ classification is suitable for viewers of 18 or older</summary>
-        [EnumMember(Value = "agesAbove18")]
-        AgesAbove18,
     }
 }

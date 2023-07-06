@@ -6,10 +6,10 @@ namespace Microsoft.Graph.Models {
         Everyone,
         [EnumMember(Value = "organization")]
         Organization,
-        [EnumMember(Value = "roleIsPresenter")]
-        RoleIsPresenter,
         [EnumMember(Value = "organizer")]
         Organizer,
+        [EnumMember(Value = "roleIsPresenter")]
+        RoleIsPresenter,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

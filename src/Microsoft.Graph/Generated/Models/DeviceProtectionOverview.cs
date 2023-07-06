@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Clean device count.</summary>
+        /// <summary>Indicates number of devices reporting as clean</summary>
         public int? CleanDeviceCount {
             get { return BackingStore?.Get<int?>("cleanDeviceCount"); }
             set { BackingStore?.Set("cleanDeviceCount", value); }
         }
-        /// <summary>Critical failures device count.</summary>
+        /// <summary>Indicates number of devices with critical failures</summary>
         public int? CriticalFailuresDeviceCount {
             get { return BackingStore?.Get<int?>("criticalFailuresDeviceCount"); }
             set { BackingStore?.Set("criticalFailuresDeviceCount", value); }
         }
-        /// <summary>Device with inactive threat agent count</summary>
+        /// <summary>Indicates number of devices with inactive threat agent</summary>
         public int? InactiveThreatAgentDeviceCount {
             get { return BackingStore?.Get<int?>("inactiveThreatAgentDeviceCount"); }
             set { BackingStore?.Set("inactiveThreatAgentDeviceCount", value); }
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Pending full scan device count.</summary>
+        /// <summary>Indicates number of devices pending full scan</summary>
         public int? PendingFullScanDeviceCount {
             get { return BackingStore?.Get<int?>("pendingFullScanDeviceCount"); }
             set { BackingStore?.Set("pendingFullScanDeviceCount", value); }
         }
-        /// <summary>Pending manual steps device count.</summary>
+        /// <summary>Indicates number of devices with pending manual steps</summary>
         public int? PendingManualStepsDeviceCount {
             get { return BackingStore?.Get<int?>("pendingManualStepsDeviceCount"); }
             set { BackingStore?.Set("pendingManualStepsDeviceCount", value); }
         }
-        /// <summary>Pending offline scan device count.</summary>
+        /// <summary>Indicates number of pending offline scan devices</summary>
         public int? PendingOfflineScanDeviceCount {
             get { return BackingStore?.Get<int?>("pendingOfflineScanDeviceCount"); }
             set { BackingStore?.Set("pendingOfflineScanDeviceCount", value); }
         }
-        /// <summary>Pending quick scan device count. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647</summary>
         public int? PendingQuickScanDeviceCount {
             get { return BackingStore?.Get<int?>("pendingQuickScanDeviceCount"); }
             set { BackingStore?.Set("pendingQuickScanDeviceCount", value); }
         }
-        /// <summary>Pending restart device count.</summary>
+        /// <summary>Indicates number of devices pending restart</summary>
         public int? PendingRestartDeviceCount {
             get { return BackingStore?.Get<int?>("pendingRestartDeviceCount"); }
             set { BackingStore?.Set("pendingRestartDeviceCount", value); }
         }
-        /// <summary>Device with old signature count.</summary>
+        /// <summary>Indicates number of devices with an old signature</summary>
         public int? PendingSignatureUpdateDeviceCount {
             get { return BackingStore?.Get<int?>("pendingSignatureUpdateDeviceCount"); }
             set { BackingStore?.Set("pendingSignatureUpdateDeviceCount", value); }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<int?>("totalReportedDeviceCount"); }
             set { BackingStore?.Set("totalReportedDeviceCount", value); }
         }
-        /// <summary>Device with threat agent state as unknown count.</summary>
+        /// <summary>Indicates number of devices with threat agent state as unknown</summary>
         public int? UnknownStateThreatAgentDeviceCount {
             get { return BackingStore?.Get<int?>("unknownStateThreatAgentDeviceCount"); }
             set { BackingStore?.Set("unknownStateThreatAgentDeviceCount", value); }

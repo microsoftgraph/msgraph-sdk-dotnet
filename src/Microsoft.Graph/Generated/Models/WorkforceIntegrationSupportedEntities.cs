@@ -4,19 +4,19 @@ namespace Microsoft.Graph.Models {
     public enum WorkforceIntegrationSupportedEntities {
         [EnumMember(Value = "none")]
         None,
-        [EnumMember(Value = "shift")]
-        Shift,
-        [EnumMember(Value = "swapRequest")]
-        SwapRequest,
-        [EnumMember(Value = "userShiftPreferences")]
-        UserShiftPreferences,
+        [EnumMember(Value = "offerShiftRequest")]
+        OfferShiftRequest,
         [EnumMember(Value = "openShift")]
         OpenShift,
         [EnumMember(Value = "openShiftRequest")]
         OpenShiftRequest,
-        [EnumMember(Value = "offerShiftRequest")]
-        OfferShiftRequest,
+        [EnumMember(Value = "shift")]
+        Shift,
+        [EnumMember(Value = "swapRequest")]
+        SwapRequest,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "userShiftPreferences")]
+        UserShiftPreferences,
     }
 }

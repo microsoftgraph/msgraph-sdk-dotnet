@@ -8,9 +8,9 @@ namespace Microsoft.Graph.Models {
         StudentsAndPublisher,
         [EnumMember(Value = "studentsAndTeamOwners")]
         StudentsAndTeamOwners,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "studentsOnly")]
         StudentsOnly,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

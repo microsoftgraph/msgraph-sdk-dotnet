@@ -3,16 +3,16 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum AttributeType {
         [EnumMember(Value = "String")]
-        String,
-        [EnumMember(Value = "Integer")]
-        Integer,
-        [EnumMember(Value = "Reference")]
-        Reference,
+        @String,
         [EnumMember(Value = "Binary")]
         Binary,
         [EnumMember(Value = "Boolean")]
         Boolean,
         [EnumMember(Value = "DateTime")]
         DateTime,
+        [EnumMember(Value = "Integer")]
+        Integer,
+        [EnumMember(Value = "Reference")]
+        Reference,
     }
 }

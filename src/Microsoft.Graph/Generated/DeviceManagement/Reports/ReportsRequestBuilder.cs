@@ -142,8 +142,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementReports object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-get?view=graph-rest-1.0" />
+        /// Reports singleton
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,8 +161,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
             return await RequestAdapter.SendAsync<DeviceManagementReports>(requestInfo, DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceManagementReports object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-update?view=graph-rest-1.0" />
+        /// Update the navigation property reports in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -208,7 +206,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementReports object.
+        /// Reports singleton
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -234,7 +232,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceManagementReports object.
+        /// Update the navigation property reports in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -278,7 +276,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementReports object.
+        /// Reports singleton
         /// </summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

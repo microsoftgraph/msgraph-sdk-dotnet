@@ -4,12 +4,12 @@ namespace Microsoft.Graph.Models {
     public enum DelegatedAdminRelationshipRequestStatus {
         [EnumMember(Value = "created")]
         Created,
+        [EnumMember(Value = "failed")]
+        Failed,
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "succeeded")]
         Succeeded,
-        [EnumMember(Value = "failed")]
-        Failed,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

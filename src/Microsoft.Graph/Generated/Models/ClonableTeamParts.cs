@@ -4,13 +4,13 @@ namespace Microsoft.Graph.Models {
     public enum ClonableTeamParts {
         [EnumMember(Value = "apps")]
         Apps,
-        [EnumMember(Value = "tabs")]
-        Tabs,
-        [EnumMember(Value = "settings")]
-        Settings,
         [EnumMember(Value = "channels")]
         Channels,
         [EnumMember(Value = "members")]
         Members,
+        [EnumMember(Value = "settings")]
+        Settings,
+        [EnumMember(Value = "tabs")]
+        Tabs,
     }
 }

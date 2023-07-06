@@ -4,10 +4,10 @@ namespace Microsoft.Graph.Models {
     public enum MediaDirection {
         [EnumMember(Value = "inactive")]
         Inactive,
-        [EnumMember(Value = "sendOnly")]
-        SendOnly,
         [EnumMember(Value = "receiveOnly")]
         ReceiveOnly,
+        [EnumMember(Value = "sendOnly")]
+        SendOnly,
         [EnumMember(Value = "sendReceive")]
         SendReceive,
     }

@@ -2,6 +2,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum SynchronizationMetadata {
+        [EnumMember(Value = "ConfigurationFields")]
+        ConfigurationFields,
         [EnumMember(Value = "GalleryApplicationIdentifier")]
         GalleryApplicationIdentifier,
         [EnumMember(Value = "GalleryApplicationKey")]
@@ -18,7 +20,5 @@ namespace Microsoft.Graph.Models {
         OAuthSettings,
         [EnumMember(Value = "SynchronizationLearnMoreIbizaFwLink")]
         SynchronizationLearnMoreIbizaFwLink,
-        [EnumMember(Value = "ConfigurationFields")]
-        ConfigurationFields,
     }
 }

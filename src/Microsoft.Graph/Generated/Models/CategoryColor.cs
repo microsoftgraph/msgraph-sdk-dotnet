@@ -8,22 +8,6 @@ namespace Microsoft.Graph.Models {
         Preset0,
         [EnumMember(Value = "preset1")]
         Preset1,
-        [EnumMember(Value = "preset2")]
-        Preset2,
-        [EnumMember(Value = "preset3")]
-        Preset3,
-        [EnumMember(Value = "preset4")]
-        Preset4,
-        [EnumMember(Value = "preset5")]
-        Preset5,
-        [EnumMember(Value = "preset6")]
-        Preset6,
-        [EnumMember(Value = "preset7")]
-        Preset7,
-        [EnumMember(Value = "preset8")]
-        Preset8,
-        [EnumMember(Value = "preset9")]
-        Preset9,
         [EnumMember(Value = "preset10")]
         Preset10,
         [EnumMember(Value = "preset11")]
@@ -44,6 +28,8 @@ namespace Microsoft.Graph.Models {
         Preset18,
         [EnumMember(Value = "preset19")]
         Preset19,
+        [EnumMember(Value = "preset2")]
+        Preset2,
         [EnumMember(Value = "preset20")]
         Preset20,
         [EnumMember(Value = "preset21")]
@@ -54,5 +40,19 @@ namespace Microsoft.Graph.Models {
         Preset23,
         [EnumMember(Value = "preset24")]
         Preset24,
+        [EnumMember(Value = "preset3")]
+        Preset3,
+        [EnumMember(Value = "preset4")]
+        Preset4,
+        [EnumMember(Value = "preset5")]
+        Preset5,
+        [EnumMember(Value = "preset6")]
+        Preset6,
+        [EnumMember(Value = "preset7")]
+        Preset7,
+        [EnumMember(Value = "preset8")]
+        Preset8,
+        [EnumMember(Value = "preset9")]
+        Preset9,
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.AccessPackages;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.CustomWorkflowExtensions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         /// <summary>Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.</summary>
         public AccessPackagesRequestBuilder AccessPackages { get =>
             new AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public CustomWorkflowExtensionsRequestBuilder CustomWorkflowExtensions { get =>
+            new CustomWorkflowExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.

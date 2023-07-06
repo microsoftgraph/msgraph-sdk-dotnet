@@ -2,19 +2,19 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum ObjectDefinitionMetadata {
-        [EnumMember(Value = "PropertyNameAccountEnabled")]
-        PropertyNameAccountEnabled,
-        [EnumMember(Value = "PropertyNameSoftDeleted")]
-        PropertyNameSoftDeleted,
-        [EnumMember(Value = "IsSoftDeletionSupported")]
-        IsSoftDeletionSupported,
-        [EnumMember(Value = "IsSynchronizeAllSupported")]
-        IsSynchronizeAllSupported,
+        [EnumMember(Value = "BaseObjectName")]
+        BaseObjectName,
         [EnumMember(Value = "ConnectorDataStorageRequired")]
         ConnectorDataStorageRequired,
         [EnumMember(Value = "Extensions")]
         Extensions,
-        [EnumMember(Value = "BaseObjectName")]
-        BaseObjectName,
+        [EnumMember(Value = "IsSoftDeletionSupported")]
+        IsSoftDeletionSupported,
+        [EnumMember(Value = "IsSynchronizeAllSupported")]
+        IsSynchronizeAllSupported,
+        [EnumMember(Value = "PropertyNameAccountEnabled")]
+        PropertyNameAccountEnabled,
+        [EnumMember(Value = "PropertyNameSoftDeleted")]
+        PropertyNameSoftDeleted,
     }
 }

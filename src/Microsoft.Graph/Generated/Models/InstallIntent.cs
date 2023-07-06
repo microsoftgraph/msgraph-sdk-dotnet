@@ -6,14 +6,14 @@ namespace Microsoft.Graph.Models {
         /// <summary>Available install intent.</summary>
         [EnumMember(Value = "available")]
         Available,
+        /// <summary>Available without enrollment install intent.</summary>
+        [EnumMember(Value = "availableWithoutEnrollment")]
+        AvailableWithoutEnrollment,
         /// <summary>Required install intent.</summary>
         [EnumMember(Value = "required")]
         Required,
         /// <summary>Uninstall install intent.</summary>
         [EnumMember(Value = "uninstall")]
         Uninstall,
-        /// <summary>Available without enrollment install intent.</summary>
-        [EnumMember(Value = "availableWithoutEnrollment")]
-        AvailableWithoutEnrollment,
     }
 }

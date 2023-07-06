@@ -2,6 +2,20 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum Tone {
+        [EnumMember(Value = "a")]
+        A,
+        [EnumMember(Value = "b")]
+        B,
+        [EnumMember(Value = "c")]
+        C,
+        [EnumMember(Value = "d")]
+        D,
+        [EnumMember(Value = "flash")]
+        Flash,
+        [EnumMember(Value = "pound")]
+        Pound,
+        [EnumMember(Value = "star")]
+        Star,
         [EnumMember(Value = "tone0")]
         Tone0,
         [EnumMember(Value = "tone1")]
@@ -22,19 +36,5 @@ namespace Microsoft.Graph.Models {
         Tone8,
         [EnumMember(Value = "tone9")]
         Tone9,
-        [EnumMember(Value = "star")]
-        Star,
-        [EnumMember(Value = "pound")]
-        Pound,
-        [EnumMember(Value = "a")]
-        A,
-        [EnumMember(Value = "b")]
-        B,
-        [EnumMember(Value = "c")]
-        C,
-        [EnumMember(Value = "d")]
-        D,
-        [EnumMember(Value = "flash")]
-        Flash,
     }
 }

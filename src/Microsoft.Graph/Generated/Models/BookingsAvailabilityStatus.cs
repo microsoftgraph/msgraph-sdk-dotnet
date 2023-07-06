@@ -6,10 +6,10 @@ namespace Microsoft.Graph.Models {
         Available,
         [EnumMember(Value = "busy")]
         Busy,
-        [EnumMember(Value = "slotsAvailable")]
-        SlotsAvailable,
         [EnumMember(Value = "outOfOffice")]
         OutOfOffice,
+        [EnumMember(Value = "slotsAvailable")]
+        SlotsAvailable,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

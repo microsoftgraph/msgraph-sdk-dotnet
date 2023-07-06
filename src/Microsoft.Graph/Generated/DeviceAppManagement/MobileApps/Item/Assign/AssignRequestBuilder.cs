@@ -27,8 +27,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assign {
         public AssignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/assign", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-mobileapp-assign?view=graph-rest-1.0" />
+        /// Invoke action assign
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assign {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action assign
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

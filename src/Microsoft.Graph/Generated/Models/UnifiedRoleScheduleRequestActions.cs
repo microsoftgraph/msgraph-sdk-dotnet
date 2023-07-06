@@ -4,18 +4,18 @@ namespace Microsoft.Graph.Models {
     public enum UnifiedRoleScheduleRequestActions {
         [EnumMember(Value = "adminAssign")]
         AdminAssign,
-        [EnumMember(Value = "adminUpdate")]
-        AdminUpdate,
+        [EnumMember(Value = "adminExtend")]
+        AdminExtend,
         [EnumMember(Value = "adminRemove")]
         AdminRemove,
+        [EnumMember(Value = "adminRenew")]
+        AdminRenew,
+        [EnumMember(Value = "adminUpdate")]
+        AdminUpdate,
         [EnumMember(Value = "selfActivate")]
         SelfActivate,
         [EnumMember(Value = "selfDeactivate")]
         SelfDeactivate,
-        [EnumMember(Value = "adminExtend")]
-        AdminExtend,
-        [EnumMember(Value = "adminRenew")]
-        AdminRenew,
         [EnumMember(Value = "selfExtend")]
         SelfExtend,
         [EnumMember(Value = "selfRenew")]

@@ -6,17 +6,17 @@ namespace Microsoft.Graph.Models {
         /// <summary>Failed.</summary>
         [EnumMember(Value = "failed")]
         Failed,
-        /// <summary>Success.</summary>
-        [EnumMember(Value = "success")]
-        Success,
-        /// <summary>Soft-reboot is required.</summary>
-        [EnumMember(Value = "softReboot")]
-        SoftReboot,
         /// <summary>Hard-reboot is required.</summary>
         [EnumMember(Value = "hardReboot")]
         HardReboot,
         /// <summary>Retry.</summary>
         [EnumMember(Value = "retry")]
         Retry,
+        /// <summary>Soft-reboot is required.</summary>
+        [EnumMember(Value = "softReboot")]
+        SoftReboot,
+        /// <summary>Success.</summary>
+        [EnumMember(Value = "success")]
+        Success,
     }
 }

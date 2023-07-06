@@ -9,20 +9,20 @@ namespace Microsoft.Graph.Models {
         /// <summary>Do not allow any TV shows content</summary>
         [EnumMember(Value = "allBlocked")]
         AllBlocked,
-        /// <summary>The GA classification is suitable for all audiences</summary>
-        [EnumMember(Value = "general")]
-        General,
         /// <summary>The CH classification is suitable for children</summary>
         [EnumMember(Value = "children")]
         Children,
-        /// <summary>The YA classification is suitable for teenage audience</summary>
-        [EnumMember(Value = "youngAdults")]
-        YoungAdults,
-        /// <summary>The PS classification invites parents and guardians to consider restriction children’s access</summary>
-        [EnumMember(Value = "parentalSupervision")]
-        ParentalSupervision,
+        /// <summary>The GA classification is suitable for all audiences</summary>
+        [EnumMember(Value = "general")]
+        General,
         /// <summary>The MA classification is suitable for adults</summary>
         [EnumMember(Value = "mature")]
         Mature,
+        /// <summary>The PS classification invites parents and guardians to consider restriction children’s access</summary>
+        [EnumMember(Value = "parentalSupervision")]
+        ParentalSupervision,
+        /// <summary>The YA classification is suitable for teenage audience</summary>
+        [EnumMember(Value = "youngAdults")]
+        YoungAdults,
     }
 }

@@ -3,9 +3,6 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for applicationGuardBlockFileTransfer</summary>
     public enum ApplicationGuardBlockFileTransferType {
-        /// <summary>Not Configured</summary>
-        [EnumMember(Value = "notConfigured")]
-        NotConfigured,
         /// <summary>Block clipboard to transfer Image and Text file</summary>
         [EnumMember(Value = "blockImageAndTextFile")]
         BlockImageAndTextFile,
@@ -18,5 +15,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>Block clipboard to transfer Text file</summary>
         [EnumMember(Value = "blockTextFile")]
         BlockTextFile,
+        /// <summary>Not Configured</summary>
+        [EnumMember(Value = "notConfigured")]
+        NotConfigured,
     }
 }

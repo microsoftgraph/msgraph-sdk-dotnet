@@ -3,6 +3,18 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Movies rating labels in Ireland</summary>
     public enum RatingIrelandMoviesType {
+        /// <summary>The 18 classification, suitable only for adults</summary>
+        [EnumMember(Value = "adults")]
+        Adults,
+        /// <summary>The 12A classification is suitable for viewers of 12 or older</summary>
+        [EnumMember(Value = "agesAbove12")]
+        AgesAbove12,
+        /// <summary>The 15A classification is suitable for viewers of 15 or older</summary>
+        [EnumMember(Value = "agesAbove15")]
+        AgesAbove15,
+        /// <summary>The 16 classification is suitable for viewers of 16 or older</summary>
+        [EnumMember(Value = "agesAbove16")]
+        AgesAbove16,
         /// <summary>Default value, allow all movies content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,
@@ -15,17 +27,5 @@ namespace Microsoft.Graph.Models {
         /// <summary>The PG classification advises parental guidance</summary>
         [EnumMember(Value = "parentalGuidance")]
         ParentalGuidance,
-        /// <summary>The 12A classification is suitable for viewers of 12 or older</summary>
-        [EnumMember(Value = "agesAbove12")]
-        AgesAbove12,
-        /// <summary>The 15A classification is suitable for viewers of 15 or older</summary>
-        [EnumMember(Value = "agesAbove15")]
-        AgesAbove15,
-        /// <summary>The 16 classification is suitable for viewers of 16 or older</summary>
-        [EnumMember(Value = "agesAbove16")]
-        AgesAbove16,
-        /// <summary>The 18 classification, suitable only for adults</summary>
-        [EnumMember(Value = "adults")]
-        Adults,
     }
 }

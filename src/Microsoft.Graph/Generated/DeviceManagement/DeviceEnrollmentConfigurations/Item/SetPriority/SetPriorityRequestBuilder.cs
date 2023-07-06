@@ -27,8 +27,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.S
         public SetPriorityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}/setPriority", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-setpriority?view=graph-rest-1.0" />
+        /// Invoke action setPriority
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.S
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action setPriority
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

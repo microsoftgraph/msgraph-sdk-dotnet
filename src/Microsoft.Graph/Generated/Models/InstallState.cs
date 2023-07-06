@@ -3,15 +3,15 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for install state.</summary>
     public enum InstallState {
-        /// <summary>Not Applicable.</summary>
-        [EnumMember(Value = "notApplicable")]
-        NotApplicable,
-        /// <summary>Installed.</summary>
-        [EnumMember(Value = "installed")]
-        Installed,
         /// <summary>Failed.</summary>
         [EnumMember(Value = "failed")]
         Failed,
+        /// <summary>Installed.</summary>
+        [EnumMember(Value = "installed")]
+        Installed,
+        /// <summary>Not Applicable.</summary>
+        [EnumMember(Value = "notApplicable")]
+        NotApplicable,
         /// <summary>Not Installed.</summary>
         [EnumMember(Value = "notInstalled")]
         NotInstalled,

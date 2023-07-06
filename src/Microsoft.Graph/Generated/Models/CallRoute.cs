@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("routingType", value); }
         }
         /// <summary>
-        /// Instantiates a new CallRoute and sets the default values.
+        /// Instantiates a new callRoute and sets the default values.
         /// </summary>
         public CallRoute() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

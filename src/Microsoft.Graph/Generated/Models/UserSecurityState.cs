@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new userSecurityState and sets the default values.
+        /// Instantiates a new UserSecurityState and sets the default values.
         /// </summary>
         public UserSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

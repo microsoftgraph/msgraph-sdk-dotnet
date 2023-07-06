@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsInsight and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsInsight and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsInsight() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

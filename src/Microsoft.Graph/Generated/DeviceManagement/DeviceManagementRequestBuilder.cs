@@ -316,7 +316,7 @@ namespace Microsoft.Graph.DeviceManagement {
         }
         /// <summary>
         /// Read properties and relationships of the deviceManagement object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-devicemanagement-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-policyset-devicemanagement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
         public ManagedEBookAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a iosVppEBookAssignment.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property assignments for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,8 +47,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBookAssignment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0" />
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +66,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return await RequestAdapter.SendAsync<ManagedEBookAssignment>(requestInfo, ManagedEBookAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a iosVppEBookAssignment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-update?view=graph-rest-1.0" />
+        /// Update the navigation property assignments in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +87,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return await RequestAdapter.SendAsync<ManagedEBookAssignment>(requestInfo, ManagedEBookAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a iosVppEBookAssignment.
+        /// Delete navigation property assignments for deviceAppManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +111,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBookAssignment object.
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +137,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a iosVppEBookAssignment object.
+        /// Update the navigation property assignments in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +181,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             }
         }
         /// <summary>
-        /// Read properties and relationships of the iosVppEBookAssignment object.
+        /// The list of assignments for this eBook.
         /// </summary>
         public class ManagedEBookAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

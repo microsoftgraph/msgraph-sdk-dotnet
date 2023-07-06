@@ -6,9 +6,9 @@ namespace Microsoft.Graph.Models {
         Accept,
         [EnumMember(Value = "acceptAndViewCalendar")]
         AcceptAndViewCalendar,
-        [EnumMember(Value = "viewCalendar")]
-        ViewCalendar,
         [EnumMember(Value = "addThisCalendar")]
         AddThisCalendar,
+        [EnumMember(Value = "viewCalendar")]
+        ViewCalendar,
     }
 }

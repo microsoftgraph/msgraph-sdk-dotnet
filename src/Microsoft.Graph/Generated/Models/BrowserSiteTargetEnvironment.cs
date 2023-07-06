@@ -2,18 +2,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum BrowserSiteTargetEnvironment {
-        /// <summary>Open in Internet Explorer Mode</summary>
-        [EnumMember(Value = "internetExplorerMode")]
-        InternetExplorerMode,
-        /// <summary>Open in standalone Internet Explorer 11</summary>
-        [EnumMember(Value = "internetExplorer11")]
-        InternetExplorer11,
-        /// <summary>Open in Microsoft Edge</summary>
-        [EnumMember(Value = "microsoftEdge")]
-        MicrosoftEdge,
         /// <summary>Configurable type</summary>
         [EnumMember(Value = "configurable")]
         Configurable,
+        /// <summary>Open in standalone Internet Explorer 11</summary>
+        [EnumMember(Value = "internetExplorer11")]
+        InternetExplorer11,
+        /// <summary>Open in Internet Explorer Mode</summary>
+        [EnumMember(Value = "internetExplorerMode")]
+        InternetExplorerMode,
+        /// <summary>Open in Microsoft Edge</summary>
+        [EnumMember(Value = "microsoftEdge")]
+        MicrosoftEdge,
         /// <summary>Open in the browser the employee chooses.</summary>
         [EnumMember(Value = "none")]
         None,

@@ -27,8 +27,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderUp
         public WindowsDefenderUpdateSignaturesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/windowsDefenderUpdateSignatures", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0" />
+        /// Invoke action windowsDefenderUpdateSignatures
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsDefenderUp
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action windowsDefenderUpdateSignatures
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

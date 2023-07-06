@@ -2,16 +2,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum RegistryValueType {
-        [EnumMember(Value = "unknown")]
-        Unknown,
         [EnumMember(Value = "binary")]
         Binary,
         [EnumMember(Value = "dword")]
         Dword,
-        [EnumMember(Value = "dwordLittleEndian")]
-        DwordLittleEndian,
         [EnumMember(Value = "dwordBigEndian")]
         DwordBigEndian,
+        [EnumMember(Value = "dwordLittleEndian")]
+        DwordLittleEndian,
         [EnumMember(Value = "expandSz")]
         ExpandSz,
         [EnumMember(Value = "link")]
@@ -26,6 +24,8 @@ namespace Microsoft.Graph.Models {
         QwordlittleEndian,
         [EnumMember(Value = "sz")]
         Sz,
+        [EnumMember(Value = "unknown")]
+        Unknown,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

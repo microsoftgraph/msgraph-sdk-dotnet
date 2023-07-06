@@ -2,6 +2,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     public enum AppCredentialRestrictionType {
+        [EnumMember(Value = "customPasswordAddition")]
+        CustomPasswordAddition,
         [EnumMember(Value = "passwordAddition")]
         PasswordAddition,
         [EnumMember(Value = "passwordLifetime")]
@@ -10,8 +12,6 @@ namespace Microsoft.Graph.Models {
         SymmetricKeyAddition,
         [EnumMember(Value = "symmetricKeyLifetime")]
         SymmetricKeyLifetime,
-        [EnumMember(Value = "customPasswordAddition")]
-        CustomPasswordAddition,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

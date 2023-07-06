@@ -3,6 +3,12 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>TV content rating labels in Canada</summary>
     public enum RatingCanadaTelevisionType {
+        /// <summary>The 14+ classification is intended for viewers ages 14 and older</summary>
+        [EnumMember(Value = "agesAbove14")]
+        AgesAbove14,
+        /// <summary>The 18+ classification is intended for viewers ages 18 and older</summary>
+        [EnumMember(Value = "agesAbove18")]
+        AgesAbove18,
         /// <summary>Default value, allow all TV shows content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,
@@ -21,11 +27,5 @@ namespace Microsoft.Graph.Models {
         /// <summary>PG, Parental Guidance</summary>
         [EnumMember(Value = "parentalGuidance")]
         ParentalGuidance,
-        /// <summary>The 14+ classification is intended for viewers ages 14 and older</summary>
-        [EnumMember(Value = "agesAbove14")]
-        AgesAbove14,
-        /// <summary>The 18+ classification is intended for viewers ages 18 and older</summary>
-        [EnumMember(Value = "agesAbove18")]
-        AgesAbove18,
     }
 }

@@ -3,6 +3,9 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Movies rating labels in United States</summary>
     public enum RatingUnitedStatesMoviesType {
+        /// <summary>NC17, adults only</summary>
+        [EnumMember(Value = "adults")]
+        Adults,
         /// <summary>Default value, allow all movies content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,
@@ -21,8 +24,5 @@ namespace Microsoft.Graph.Models {
         /// <summary>R, viewers under 17 require accompanying parent or adult guardian</summary>
         [EnumMember(Value = "restricted")]
         Restricted,
-        /// <summary>NC17, adults only</summary>
-        [EnumMember(Value = "adults")]
-        Adults,
     }
 }

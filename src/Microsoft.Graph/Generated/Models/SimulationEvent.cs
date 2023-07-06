@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new simulationEvent and sets the default values.
+        /// Instantiates a new SimulationEvent and sets the default values.
         /// </summary>
         public SimulationEvent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -3,6 +3,9 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Supported platform types for policies.</summary>
     public enum PolicyPlatformType {
+        /// <summary>All platforms.</summary>
+        [EnumMember(Value = "all")]
+        All,
         /// <summary>Android.</summary>
         [EnumMember(Value = "android")]
         Android,
@@ -15,17 +18,14 @@ namespace Microsoft.Graph.Models {
         /// <summary>MacOS.</summary>
         [EnumMember(Value = "macOS")]
         MacOS,
-        /// <summary>WindowsPhone 8.1.</summary>
-        [EnumMember(Value = "windowsPhone81")]
-        WindowsPhone81,
-        /// <summary>Windows 8.1 and later</summary>
-        [EnumMember(Value = "windows81AndLater")]
-        Windows81AndLater,
         /// <summary>Windows 10 and later.</summary>
         [EnumMember(Value = "windows10AndLater")]
         Windows10AndLater,
-        /// <summary>All platforms.</summary>
-        [EnumMember(Value = "all")]
-        All,
+        /// <summary>Windows 8.1 and later</summary>
+        [EnumMember(Value = "windows81AndLater")]
+        Windows81AndLater,
+        /// <summary>WindowsPhone 8.1.</summary>
+        [EnumMember(Value = "windowsPhone81")]
+        WindowsPhone81,
     }
 }

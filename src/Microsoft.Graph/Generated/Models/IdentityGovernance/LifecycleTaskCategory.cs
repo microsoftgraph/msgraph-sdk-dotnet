@@ -6,9 +6,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         Joiner,
         [EnumMember(Value = "leaver")]
         Leaver,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "mover")]
         Mover,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

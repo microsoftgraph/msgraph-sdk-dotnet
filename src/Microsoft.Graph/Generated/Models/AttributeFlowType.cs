@@ -4,13 +4,13 @@ namespace Microsoft.Graph.Models {
     public enum AttributeFlowType {
         [EnumMember(Value = "Always")]
         Always,
-        [EnumMember(Value = "ObjectAddOnly")]
-        ObjectAddOnly,
-        [EnumMember(Value = "MultiValueAddOnly")]
-        MultiValueAddOnly,
-        [EnumMember(Value = "ValueAddOnly")]
-        ValueAddOnly,
         [EnumMember(Value = "AttributeAddOnly")]
         AttributeAddOnly,
+        [EnumMember(Value = "MultiValueAddOnly")]
+        MultiValueAddOnly,
+        [EnumMember(Value = "ObjectAddOnly")]
+        ObjectAddOnly,
+        [EnumMember(Value = "ValueAddOnly")]
+        ValueAddOnly,
     }
 }

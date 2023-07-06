@@ -1,5 +1,6 @@
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.AccessPackage;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.Catalog;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.CustomExtensionStageSettings;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPolicies.Item.Questions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -23,6 +24,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
         /// <summary>Provides operations to manage the catalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.</summary>
         public CatalogRequestBuilder Catalog { get =>
             new CatalogRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.</summary>
+        public CustomExtensionStageSettingsRequestBuilder CustomExtensionStageSettings { get =>
+            new CustomExtensionStageSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.</summary>
         public QuestionsRequestBuilder Questions { get =>

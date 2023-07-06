@@ -9,14 +9,14 @@ namespace Microsoft.Graph.Models {
         /// <summary>Disable packet queuing</summary>
         [EnumMember(Value = "disabled")]
         Disabled,
+        /// <summary>Queue both inbound and outbound packets</summary>
+        [EnumMember(Value = "queueBoth")]
+        QueueBoth,
         /// <summary>Queue inbound encrypted packets</summary>
         [EnumMember(Value = "queueInbound")]
         QueueInbound,
         /// <summary>Queue decrypted outbound packets for forwarding</summary>
         [EnumMember(Value = "queueOutbound")]
         QueueOutbound,
-        /// <summary>Queue both inbound and outbound packets</summary>
-        [EnumMember(Value = "queueBoth")]
-        QueueBoth,
     }
 }

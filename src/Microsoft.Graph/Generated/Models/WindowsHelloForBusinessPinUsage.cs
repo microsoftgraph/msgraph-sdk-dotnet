@@ -6,11 +6,11 @@ namespace Microsoft.Graph.Models {
         /// <summary>Allowed the usage of certain pin rule</summary>
         [EnumMember(Value = "allowed")]
         Allowed,
-        /// <summary>Enforce the usage of certain pin rule</summary>
-        [EnumMember(Value = "required")]
-        Required,
         /// <summary>Forbit the usage of certain pin rule</summary>
         [EnumMember(Value = "disallowed")]
         Disallowed,
+        /// <summary>Enforce the usage of certain pin rule</summary>
+        [EnumMember(Value = "required")]
+        Required,
     }
 }

@@ -3,15 +3,12 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Compliance state.</summary>
     public enum ComplianceState {
-        /// <summary>Unknown.</summary>
-        [EnumMember(Value = "unknown")]
-        Unknown,
         /// <summary>Compliant.</summary>
         [EnumMember(Value = "compliant")]
         Compliant,
-        /// <summary>Device is non-compliant and is blocked from corporate resources.</summary>
-        [EnumMember(Value = "noncompliant")]
-        Noncompliant,
+        /// <summary>Managed by Config Manager</summary>
+        [EnumMember(Value = "configManager")]
+        ConfigManager,
         /// <summary>Conflict with other rules.</summary>
         [EnumMember(Value = "conflict")]
         Conflict,
@@ -21,8 +18,11 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device is non-compliant but still has access to corporate resources</summary>
         [EnumMember(Value = "inGracePeriod")]
         InGracePeriod,
-        /// <summary>Managed by Config Manager</summary>
-        [EnumMember(Value = "configManager")]
-        ConfigManager,
+        /// <summary>Device is non-compliant and is blocked from corporate resources.</summary>
+        [EnumMember(Value = "noncompliant")]
+        Noncompliant,
+        /// <summary>Unknown.</summary>
+        [EnumMember(Value = "unknown")]
+        Unknown,
     }
 }

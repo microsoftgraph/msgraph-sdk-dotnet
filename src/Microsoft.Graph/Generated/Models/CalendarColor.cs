@@ -6,22 +6,22 @@ namespace Microsoft.Graph.Models {
         Auto,
         [EnumMember(Value = "lightBlue")]
         LightBlue,
+        [EnumMember(Value = "lightBrown")]
+        LightBrown,
+        [EnumMember(Value = "lightGray")]
+        LightGray,
         [EnumMember(Value = "lightGreen")]
         LightGreen,
         [EnumMember(Value = "lightOrange")]
         LightOrange,
-        [EnumMember(Value = "lightGray")]
-        LightGray,
-        [EnumMember(Value = "lightYellow")]
-        LightYellow,
-        [EnumMember(Value = "lightTeal")]
-        LightTeal,
         [EnumMember(Value = "lightPink")]
         LightPink,
-        [EnumMember(Value = "lightBrown")]
-        LightBrown,
         [EnumMember(Value = "lightRed")]
         LightRed,
+        [EnumMember(Value = "lightTeal")]
+        LightTeal,
+        [EnumMember(Value = "lightYellow")]
+        LightYellow,
         [EnumMember(Value = "maxColor")]
         MaxColor,
     }

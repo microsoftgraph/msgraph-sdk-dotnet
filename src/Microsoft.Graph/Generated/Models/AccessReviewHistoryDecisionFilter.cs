@@ -6,12 +6,12 @@ namespace Microsoft.Graph.Models {
         Approve,
         [EnumMember(Value = "deny")]
         Deny,
-        [EnumMember(Value = "notReviewed")]
-        NotReviewed,
         [EnumMember(Value = "dontKnow")]
         DontKnow,
         [EnumMember(Value = "notNotified")]
         NotNotified,
+        [EnumMember(Value = "notReviewed")]
+        NotReviewed,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

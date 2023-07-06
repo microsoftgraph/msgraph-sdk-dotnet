@@ -3,6 +3,9 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>TV content rating labels in New Zealand</summary>
     public enum RatingNewZealandTelevisionType {
+        /// <summary>The AO classification is not suitable for children</summary>
+        [EnumMember(Value = "adults")]
+        Adults,
         /// <summary>Default value, allow all TV shows content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,
@@ -15,8 +18,5 @@ namespace Microsoft.Graph.Models {
         /// <summary>The PGR classification encourages parents and guardians to supervise younger viewers</summary>
         [EnumMember(Value = "parentalGuidance")]
         ParentalGuidance,
-        /// <summary>The AO classification is not suitable for children</summary>
-        [EnumMember(Value = "adults")]
-        Adults,
     }
 }

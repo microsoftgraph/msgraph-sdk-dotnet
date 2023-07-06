@@ -3,9 +3,6 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for monitoring file activity.</summary>
     public enum DefenderMonitorFileActivity {
-        /// <summary>User Defined, default value, no intent.</summary>
-        [EnumMember(Value = "userDefined")]
-        UserDefined,
         /// <summary>Disable monitoring file activity.</summary>
         [EnumMember(Value = "disable")]
         Disable,
@@ -18,5 +15,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>Monitor outgoing files only.</summary>
         [EnumMember(Value = "monitorOutgoingFilesOnly")]
         MonitorOutgoingFilesOnly,
+        /// <summary>User Defined, default value, no intent.</summary>
+        [EnumMember(Value = "userDefined")]
+        UserDefined,
     }
 }

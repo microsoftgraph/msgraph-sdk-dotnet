@@ -4,10 +4,10 @@ namespace Microsoft.Graph.Models.Security {
     public enum DeviceHealthStatus {
         [EnumMember(Value = "active")]
         Active,
-        [EnumMember(Value = "inactive")]
-        Inactive,
         [EnumMember(Value = "impairedCommunication")]
         ImpairedCommunication,
+        [EnumMember(Value = "inactive")]
+        Inactive,
         [EnumMember(Value = "noSensorData")]
         NoSensorData,
         [EnumMember(Value = "noSensorDataImpairedCommunication")]

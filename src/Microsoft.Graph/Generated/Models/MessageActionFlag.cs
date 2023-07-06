@@ -10,10 +10,10 @@ namespace Microsoft.Graph.Models {
         DoNotForward,
         [EnumMember(Value = "followUp")]
         FollowUp,
-        [EnumMember(Value = "fyi")]
-        Fyi,
         [EnumMember(Value = "forward")]
         Forward,
+        [EnumMember(Value = "fyi")]
+        Fyi,
         [EnumMember(Value = "noResponseNecessary")]
         NoResponseNecessary,
         [EnumMember(Value = "read")]
