@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum EndpointType {
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         [EnumMember(Value = "voicemail")]
         Voicemail,
         [EnumMember(Value = "skypeForBusiness")]

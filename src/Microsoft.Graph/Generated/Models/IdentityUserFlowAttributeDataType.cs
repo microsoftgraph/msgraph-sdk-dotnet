@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum IdentityUserFlowAttributeDataType {
         [EnumMember(Value = "string")]
-        String,
+        @String,
         [EnumMember(Value = "boolean")]
         Boolean,
         [EnumMember(Value = "int64")]

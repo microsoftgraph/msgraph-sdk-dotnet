@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new searchAggregation and sets the default values.
+        /// Instantiates a new SearchAggregation and sets the default values.
         /// </summary>
         public SearchAggregation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

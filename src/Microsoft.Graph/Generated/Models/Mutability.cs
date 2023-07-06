@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "ReadWrite")]
         ReadWrite,
         [EnumMember(Value = "ReadOnly")]
-        ReadOnly,
+        @ReadOnly,
         [EnumMember(Value = "Immutable")]
         Immutable,
         [EnumMember(Value = "WriteOnly")]

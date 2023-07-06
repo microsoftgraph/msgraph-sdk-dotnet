@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models.TermStore {
     public enum TermGroupScope {
         [EnumMember(Value = "global")]
-        Global,
+        @Global,
         [EnumMember(Value = "system")]
         System,
         [EnumMember(Value = "siteCollection")]

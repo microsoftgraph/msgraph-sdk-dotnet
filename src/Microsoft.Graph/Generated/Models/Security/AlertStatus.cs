@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models.Security {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "new")]
-        New,
+        @New,
         [EnumMember(Value = "inProgress")]
         InProgress,
         [EnumMember(Value = "resolved")]

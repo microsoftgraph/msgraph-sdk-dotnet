@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new dateTimeTimeZone and sets the default values.
+        /// Instantiates a new DateTimeTimeZone and sets the default values.
         /// </summary>
         public DateTimeTimeZone() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

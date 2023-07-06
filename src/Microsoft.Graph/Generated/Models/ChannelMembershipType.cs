@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "standard")]
         Standard,
         [EnumMember(Value = "private")]
-        Private,
+        @Private,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         [EnumMember(Value = "shared")]

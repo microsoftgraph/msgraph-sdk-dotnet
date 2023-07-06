@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new documentSetContent and sets the default values.
+        /// Instantiates a new DocumentSetContent and sets the default values.
         /// </summary>
         public DocumentSetContent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

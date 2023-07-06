@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new appConfigurationSettingItem and sets the default values.
+        /// Instantiates a new AppConfigurationSettingItem and sets the default values.
         /// </summary>
         public AppConfigurationSettingItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

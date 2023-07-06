@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new Phone and sets the default values.
+        /// Instantiates a new phone and sets the default values.
         /// </summary>
         public Phone() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

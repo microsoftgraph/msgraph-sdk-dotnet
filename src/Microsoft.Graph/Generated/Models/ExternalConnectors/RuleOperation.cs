@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
     public enum RuleOperation {
         [EnumMember(Value = "equals")]
-        Equals,
+        @Equals,
         [EnumMember(Value = "notEquals")]
         NotEquals,
         [EnumMember(Value = "contains")]

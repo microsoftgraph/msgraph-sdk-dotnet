@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum ExternalEmailOtpState {
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

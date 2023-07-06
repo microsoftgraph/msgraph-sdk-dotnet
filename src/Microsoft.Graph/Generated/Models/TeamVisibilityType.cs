@@ -3,9 +3,9 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum TeamVisibilityType {
         [EnumMember(Value = "private")]
-        Private,
+        @Private,
         [EnumMember(Value = "public")]
-        Public,
+        @Public,
         [EnumMember(Value = "hiddenMembership")]
         HiddenMembership,
         [EnumMember(Value = "unknownFutureValue")]

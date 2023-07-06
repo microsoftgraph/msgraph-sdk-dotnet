@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "internal")]
-        Internal,
+        @Internal,
         [EnumMember(Value = "external")]
         External,
         [EnumMember(Value = "externalPartner")]

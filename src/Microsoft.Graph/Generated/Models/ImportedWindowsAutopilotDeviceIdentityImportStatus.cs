@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models {
         Pending,
         /// <summary>Partial status.</summary>
         [EnumMember(Value = "partial")]
-        Partial,
+        @Partial,
         /// <summary>Complete status.</summary>
         [EnumMember(Value = "complete")]
         Complete,

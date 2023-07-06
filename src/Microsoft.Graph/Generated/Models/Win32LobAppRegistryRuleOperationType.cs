@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         DoesNotExist,
         /// <summary>String value type.</summary>
         [EnumMember(Value = "string")]
-        String,
+        @String,
         /// <summary>Integer value type.</summary>
         [EnumMember(Value = "integer")]
         Integer,

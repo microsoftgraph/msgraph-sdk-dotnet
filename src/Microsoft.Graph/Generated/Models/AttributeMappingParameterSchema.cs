@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new AttributeMappingParameterSchema and sets the default values.
+        /// Instantiates a new attributeMappingParameterSchema and sets the default values.
         /// </summary>
         public AttributeMappingParameterSchema() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

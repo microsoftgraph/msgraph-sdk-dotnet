@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
         Collapse,
         /// <summary>Removes the app list entirely from the start menu.</summary>
         [EnumMember(Value = "remove")]
-        Remove,
+        @Remove,
         /// <summary>Disables the corresponding toggle (Collapse or Remove) in the Settings app.</summary>
         [EnumMember(Value = "disableSettingsApp")]
         DisableSettingsApp,

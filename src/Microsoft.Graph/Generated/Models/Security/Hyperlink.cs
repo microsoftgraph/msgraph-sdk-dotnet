@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new hyperlink and sets the default values.
+        /// Instantiates a new Hyperlink and sets the default values.
         /// </summary>
         public Hyperlink() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

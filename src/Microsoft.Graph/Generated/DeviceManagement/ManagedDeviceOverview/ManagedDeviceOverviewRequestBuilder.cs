@@ -28,8 +28,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
         public ManagedDeviceOverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDeviceOverview{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-devices-manageddeviceoverview-get?view=graph-rest-1.0" />
+        /// Device overview
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDeviceOverview>(requestInfo, Microsoft.Graph.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
+        /// Device overview
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +73,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
+        /// Device overview
         /// </summary>
         public class ManagedDeviceOverviewRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

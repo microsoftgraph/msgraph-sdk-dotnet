@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models.Security {
         [EnumMember(Value = "zonal")]
         Zonal,
         [EnumMember(Value = "global")]
-        Global,
+        @Global,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

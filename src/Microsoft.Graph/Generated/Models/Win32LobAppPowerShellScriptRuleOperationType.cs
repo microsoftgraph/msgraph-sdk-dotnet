@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Models {
         NotConfigured,
         /// <summary>Output data type is string.</summary>
         [EnumMember(Value = "string")]
-        String,
+        @String,
         /// <summary>Output data type is date time.</summary>
         [EnumMember(Value = "dateTime")]
         DateTime,
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models {
         Integer,
         /// <summary>Output data type is float.</summary>
         [EnumMember(Value = "float")]
-        Float,
+        @Float,
         /// <summary>Output data type is version.</summary>
         [EnumMember(Value = "version")]
         Version,

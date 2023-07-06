@@ -7,7 +7,7 @@ namespace Microsoft.Graph.Models.Security {
         [EnumMember(Value = "osint")]
         Osint,
         [EnumMember(Value = "public")]
-        Public,
+        @Public,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

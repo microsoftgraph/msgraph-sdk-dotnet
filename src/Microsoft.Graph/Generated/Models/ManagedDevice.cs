@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Models {
     /// Devices that are managed or pre-enrolled through Intune
     /// </summary>
     public class ManagedDevice : Entity, IParsable {
-        /// <summary>The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
+        /// <summary>The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivationLockBypassCode {
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("deviceCategory", value); }
         }
 #endif
-        /// <summary>Device category display name. This property is read-only.</summary>
+        /// <summary>Device category display name. Default is an empty string. Supports $filter operator &apos;eq&apos; and &apos;or&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceCategoryDisplayName {
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>Enrollment time of the device. This property is read-only.</summary>
+        /// <summary>Enrollment time of the device. Supports $filter operator &apos;lt&apos; and &apos;gt&apos;. This property is read-only.</summary>
         public DateTimeOffset? EnrolledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
             set { BackingStore?.Set("enrolledDateTime", value); }
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<long?>("freeStorageSpaceInBytes"); }
             set { BackingStore?.Set("freeStorageSpaceInBytes", value); }
         }
-        /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
+        /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Iccid {
@@ -302,7 +302,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isSupervised"); }
             set { BackingStore?.Set("isSupervised", value); }
         }
-        /// <summary>whether the device is jail broken or rooted. This property is read-only.</summary>
+        /// <summary>Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator &apos;eq&apos; and &apos;or&apos;. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JailBroken {
@@ -316,7 +316,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("jailBroken", value); }
         }
 #endif
-        /// <summary>The date and time that the device last completed a successful sync with Intune. This property is read-only.</summary>
+        /// <summary>The date and time that the device last completed a successful sync with Intune. Supports $filter operator &apos;lt&apos; and &apos;gt&apos;. This property is read-only.</summary>
         public DateTimeOffset? LastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
@@ -406,7 +406,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.</summary>
+        /// <summary>Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes {
@@ -467,7 +467,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
-        /// <summary>Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.</summary>
+        /// <summary>Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.</summary>
         public long? PhysicalMemoryInBytes {
             get { return BackingStore?.Get<long?>("physicalMemoryInBytes"); }
             set { BackingStore?.Set("physicalMemoryInBytes", value); }
@@ -486,7 +486,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("remoteAssistanceSessionErrorDetails", value); }
         }
 #endif
-        /// <summary>Url that allows a Remote Assistance session to be established with the device. This property is read-only.</summary>
+        /// <summary>Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RemoteAssistanceSessionUrl {
@@ -538,7 +538,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<long?>("totalStorageSpaceInBytes"); }
             set { BackingStore?.Set("totalStorageSpaceInBytes", value); }
         }
-        /// <summary>Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
+        /// <summary>Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Udid {

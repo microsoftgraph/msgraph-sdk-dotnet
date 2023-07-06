@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new stringKeyObjectValuePair and sets the default values.
+        /// Instantiates a new StringKeyObjectValuePair and sets the default values.
         /// </summary>
         public StringKeyObjectValuePair() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

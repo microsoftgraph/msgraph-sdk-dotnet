@@ -43,8 +43,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
         public WindowsAutopilotDeviceIdentityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a windowsAutopilotDeviceIdentity.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-delete?view=graph-rest-1.0" />
+        /// Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-get?view=graph-rest-1.0" />
+        /// The Windows autopilot device identities contained collection.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             return await RequestAdapter.SendAsync<WindowsAutopilotDeviceIdentity>(requestInfo, WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a windowsAutopilotDeviceIdentity.
+        /// Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +126,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
+        /// The Windows autopilot device identities contained collection.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,7 +196,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             }
         }
         /// <summary>
-        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
+        /// The Windows autopilot device identities contained collection.
         /// </summary>
         public class WindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum LocationType {
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         [EnumMember(Value = "conferenceRoom")]
         ConferenceRoom,
         [EnumMember(Value = "homeAddress")]

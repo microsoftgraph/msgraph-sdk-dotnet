@@ -3,11 +3,11 @@ using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
     public enum PropertyType {
         [EnumMember(Value = "string")]
-        String,
+        @String,
         [EnumMember(Value = "int64")]
         Int64,
         [EnumMember(Value = "double")]
-        Double,
+        @Double,
         [EnumMember(Value = "dateTime")]
         DateTime,
         [EnumMember(Value = "boolean")]

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models.Security {
         [EnumMember(Value = "removing")]
         Removing,
         [EnumMember(Value = "partial")]
-        Partial,
+        @Partial,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

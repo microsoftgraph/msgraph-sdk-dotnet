@@ -27,8 +27,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         public ImportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/importedWindowsAutopilotDeviceIdentities/import", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0" />
+        /// Invoke action import
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return await RequestAdapter.SendAsync<ImportResponse>(requestInfo, ImportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action import
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

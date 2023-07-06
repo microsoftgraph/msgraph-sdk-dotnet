@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum EntityType {
         [EnumMember(Value = "event")]
-        Event,
+        @Event,
         [EnumMember(Value = "message")]
         Message,
         [EnumMember(Value = "driveItem")]

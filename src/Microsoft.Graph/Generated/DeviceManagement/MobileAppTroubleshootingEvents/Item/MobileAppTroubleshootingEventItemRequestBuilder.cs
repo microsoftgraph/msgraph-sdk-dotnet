@@ -33,8 +33,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
         public MobileAppTroubleshootingEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a mobileAppTroubleshootingEvent.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-delete?view=graph-rest-1.0" />
+        /// Delete navigation property mobileAppTroubleshootingEvents for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,8 +52,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the mobileAppTroubleshootingEvent object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-get?view=graph-rest-1.0" />
+        /// The collection property of MobileAppTroubleshootingEvent.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +71,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             return await RequestAdapter.SendAsync<MobileAppTroubleshootingEvent>(requestInfo, MobileAppTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a mobileAppTroubleshootingEvent object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-devices-mobileapptroubleshootingevent-update?view=graph-rest-1.0" />
+        /// Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +92,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             return await RequestAdapter.SendAsync<MobileAppTroubleshootingEvent>(requestInfo, MobileAppTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a mobileAppTroubleshootingEvent.
+        /// Delete navigation property mobileAppTroubleshootingEvents for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +116,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the mobileAppTroubleshootingEvent object.
+        /// The collection property of MobileAppTroubleshootingEvent.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a mobileAppTroubleshootingEvent object.
+        /// Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +186,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the mobileAppTroubleshootingEvent object.
+        /// The collection property of MobileAppTroubleshootingEvent.
         /// </summary>
         public class MobileAppTroubleshootingEventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

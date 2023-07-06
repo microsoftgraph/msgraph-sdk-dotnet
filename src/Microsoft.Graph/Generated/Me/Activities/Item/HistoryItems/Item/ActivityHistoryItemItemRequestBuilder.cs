@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems.Item {
             return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0" />
+        /// Delete an existing history item for an existing user activity.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Me.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
+        /// Delete an existing history item for an existing user activity.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

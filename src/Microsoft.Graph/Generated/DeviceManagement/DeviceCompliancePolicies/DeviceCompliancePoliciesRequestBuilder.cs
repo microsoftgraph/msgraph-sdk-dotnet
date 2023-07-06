@@ -40,8 +40,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
         public DeviceCompliancePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-list?view=graph-rest-1.0" />
+        /// The device compliance policies.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicyCollectionResponse>(requestInfo, DeviceCompliancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new iosCompliancePolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-create?view=graph-rest-1.0" />
+        /// Create new navigation property to deviceCompliancePolicies for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
+        /// The device compliance policies.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosCompliancePolicy object.
+        /// Create new navigation property to deviceCompliancePolicies for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
+        /// The device compliance policies.
         /// </summary>
         public class DeviceCompliancePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

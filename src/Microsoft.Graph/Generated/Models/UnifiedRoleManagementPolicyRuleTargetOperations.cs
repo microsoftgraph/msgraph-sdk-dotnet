@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "update")]
         Update,
         [EnumMember(Value = "remove")]
-        Remove,
+        @Remove,
         [EnumMember(Value = "extend")]
         Extend,
         [EnumMember(Value = "renew")]

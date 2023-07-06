@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum AttributeType {
         [EnumMember(Value = "String")]
-        String,
+        @String,
         [EnumMember(Value = "Integer")]
         Integer,
         [EnumMember(Value = "Reference")]

@@ -3,13 +3,13 @@ using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
     public enum ValueTypeObject {
         [EnumMember(Value = "enum")]
-        EnumObject,
+        @Enum,
         [EnumMember(Value = "string")]
-        StringObject,
+        @String,
         [EnumMember(Value = "int")]
-        Int,
+        @Int,
         [EnumMember(Value = "bool")]
-        Bool,
+        @Bool,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

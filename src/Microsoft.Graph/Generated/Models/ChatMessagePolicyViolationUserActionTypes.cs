@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "override")]
-        Override,
+        @Override,
         [EnumMember(Value = "reportFalsePositive")]
         ReportFalsePositive,
     }

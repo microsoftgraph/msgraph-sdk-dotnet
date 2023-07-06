@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum AdvancedConfigState {
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

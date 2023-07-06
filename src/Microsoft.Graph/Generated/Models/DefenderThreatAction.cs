@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         Quarantine,
         /// <summary>Remove the detected threat.</summary>
         [EnumMember(Value = "remove")]
-        Remove,
+        @Remove,
         /// <summary>Allow the detected threat.</summary>
         [EnumMember(Value = "allow")]
         Allow,

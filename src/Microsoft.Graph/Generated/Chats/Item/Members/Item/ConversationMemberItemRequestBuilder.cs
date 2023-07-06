@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat or channel.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0" />
+        /// Retrieve a conversationMember from a chat.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat or channel.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             }
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat or channel.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

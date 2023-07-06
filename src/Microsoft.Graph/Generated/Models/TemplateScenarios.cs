@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum TemplateScenarios {
         [EnumMember(Value = "new")]
-        New,
+        @New,
         [EnumMember(Value = "secureFoundation")]
         SecureFoundation,
         [EnumMember(Value = "zeroTrust")]

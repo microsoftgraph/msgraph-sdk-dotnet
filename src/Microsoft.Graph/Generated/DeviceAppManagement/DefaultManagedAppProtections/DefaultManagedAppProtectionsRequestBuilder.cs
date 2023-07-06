@@ -40,8 +40,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
         public DefaultManagedAppProtectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/defaultManagedAppProtections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the defaultManagedAppProtection objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-list?view=graph-rest-1.0" />
+        /// Default managed app policies.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return await RequestAdapter.SendAsync<DefaultManagedAppProtectionCollectionResponse>(requestInfo, DefaultManagedAppProtectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new defaultManagedAppProtection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-create?view=graph-rest-1.0" />
+        /// Create new navigation property to defaultManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return await RequestAdapter.SendAsync<DefaultManagedAppProtection>(requestInfo, DefaultManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the defaultManagedAppProtection objects.
+        /// Default managed app policies.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new defaultManagedAppProtection object.
+        /// Create new navigation property to defaultManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the defaultManagedAppProtection objects.
+        /// Default managed app policies.
         /// </summary>
         public class DefaultManagedAppProtectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

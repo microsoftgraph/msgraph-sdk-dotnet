@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BucketAggregationRange and sets the default values.
+        /// Instantiates a new bucketAggregationRange and sets the default values.
         /// </summary>
         public BucketAggregationRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

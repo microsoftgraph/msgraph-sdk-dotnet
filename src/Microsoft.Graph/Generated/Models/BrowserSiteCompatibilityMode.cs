@@ -4,7 +4,7 @@ namespace Microsoft.Graph.Models {
     public enum BrowserSiteCompatibilityMode {
         /// <summary>Loads the site using default compatibility mode.</summary>
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         /// <summary>Loads the site in internetExplorer8 Enterprise Mode</summary>
         [EnumMember(Value = "internetExplorer8Enterprise")]
         InternetExplorer8Enterprise,

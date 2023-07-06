@@ -7,7 +7,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "personal")]
         Personal,
         [EnumMember(Value = "private")]
-        Private,
+        @Private,
         [EnumMember(Value = "confidential")]
         Confidential,
     }

@@ -3,8 +3,8 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum BinaryOperator {
         [EnumMember(Value = "or")]
-        Or,
+        @Or,
         [EnumMember(Value = "and")]
-        And,
+        @And,
     }
 }

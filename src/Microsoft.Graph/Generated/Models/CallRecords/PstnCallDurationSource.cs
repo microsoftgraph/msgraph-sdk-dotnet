@@ -5,6 +5,6 @@ namespace Microsoft.Graph.Models.CallRecords {
         [EnumMember(Value = "microsoft")]
         Microsoft,
         [EnumMember(Value = "operator")]
-        Operator,
+        @Operator,
     }
 }

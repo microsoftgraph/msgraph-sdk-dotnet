@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "directory")]
         Directory,
         [EnumMember(Value = "private")]
-        Private,
+        @Private,
         [EnumMember(Value = "bing")]
         Bing,
     }

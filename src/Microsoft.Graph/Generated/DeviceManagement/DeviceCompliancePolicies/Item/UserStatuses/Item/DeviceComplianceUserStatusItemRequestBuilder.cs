@@ -28,8 +28,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
         public DeviceComplianceUserStatusItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/userStatuses/{deviceComplianceUserStatus%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a deviceComplianceUserStatus.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property userStatuses for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,8 +47,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceComplianceUserStatus object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-get?view=graph-rest-1.0" />
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +66,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatus>(requestInfo, DeviceComplianceUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceComplianceUserStatus object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property userStatuses in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +87,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatus>(requestInfo, DeviceComplianceUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a deviceComplianceUserStatus.
+        /// Delete navigation property userStatuses for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceComplianceUserStatus object.
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +137,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceComplianceUserStatus object.
+        /// Update the navigation property userStatuses in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceComplianceUserStatus object.
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         public class DeviceComplianceUserStatusItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

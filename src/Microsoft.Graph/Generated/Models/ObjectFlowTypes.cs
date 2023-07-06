@@ -5,7 +5,7 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "None")]
         None,
         [EnumMember(Value = "Add")]
-        Add,
+        @Add,
         [EnumMember(Value = "Update")]
         Update,
         [EnumMember(Value = "Delete")]

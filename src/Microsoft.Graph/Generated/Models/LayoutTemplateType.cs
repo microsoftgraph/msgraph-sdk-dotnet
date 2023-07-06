@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public enum LayoutTemplateType {
         [EnumMember(Value = "default")]
-        Default,
+        @Default,
         [EnumMember(Value = "verticalSplit")]
         VerticalSplit,
         [EnumMember(Value = "unknownFutureValue")]
