@@ -84,6 +84,8 @@ namespace Microsoft.Graph.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension" => new AccessPackageAssignmentRequestWorkflowExtension(),
+                "#microsoft.graph.accessPackageAssignmentWorkflowExtension" => new AccessPackageAssignmentWorkflowExtension(),
                 "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
                 _ => new CustomCalloutExtension(),
             };

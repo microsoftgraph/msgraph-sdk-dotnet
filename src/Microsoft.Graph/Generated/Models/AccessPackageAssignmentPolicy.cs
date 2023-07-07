@@ -57,6 +57,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customExtensionStageSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionStageSetting>? CustomExtensionStageSettings {
+            get { return BackingStore?.Get<List<CustomExtensionStageSetting>?>("customExtensionStageSettings"); }
+            set { BackingStore?.Set("customExtensionStageSettings", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionStageSetting> CustomExtensionStageSettings {
+            get { return BackingStore?.Get<List<CustomExtensionStageSetting>>("customExtensionStageSettings"); }
+            set { BackingStore?.Set("customExtensionStageSettings", value); }
+        }
+#endif
         /// <summary>The description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +206,7 @@ namespace Microsoft.Graph.Models {
                 {"automaticRequestSettings", n => { AutomaticRequestSettings = n.GetObjectValue<AccessPackageAutomaticRequestSettings>(AccessPackageAutomaticRequestSettings.CreateFromDiscriminatorValue); } },
                 {"catalog", n => { Catalog = n.GetObjectValue<AccessPackageCatalog>(AccessPackageCatalog.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<CustomExtensionStageSetting>(CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"expiration", n => { Expiration = n.GetObjectValue<ExpirationPattern>(ExpirationPattern.CreateFromDiscriminatorValue); } },
@@ -215,6 +230,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<AccessPackageAutomaticRequestSettings>("automaticRequestSettings", AutomaticRequestSettings);
             writer.WriteObjectValue<AccessPackageCatalog>("catalog", Catalog);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<CustomExtensionStageSetting>("customExtensionStageSettings", CustomExtensionStageSettings);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<ExpirationPattern>("expiration", Expiration);

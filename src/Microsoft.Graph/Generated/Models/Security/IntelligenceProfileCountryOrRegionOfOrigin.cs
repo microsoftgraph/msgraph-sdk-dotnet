@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new intelligenceProfileCountryOrRegionOfOrigin and sets the default values.
+        /// Instantiates a new IntelligenceProfileCountryOrRegionOfOrigin and sets the default values.
         /// </summary>
         public IntelligenceProfileCountryOrRegionOfOrigin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

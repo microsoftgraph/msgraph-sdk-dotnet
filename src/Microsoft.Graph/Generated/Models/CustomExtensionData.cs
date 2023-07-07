@@ -43,7 +43,9 @@ namespace Microsoft.Graph.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.accessPackageAssignmentRequestCallbackData" => new AccessPackageAssignmentRequestCallbackData(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData" => new CustomTaskExtensionCallbackData(),
+                "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData" => new CustomTaskExtensionCalloutData(),
                 _ => new CustomExtensionData(),
             };
         }

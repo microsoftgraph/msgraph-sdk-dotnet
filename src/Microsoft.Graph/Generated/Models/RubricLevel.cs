@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new rubricLevel and sets the default values.
+        /// Instantiates a new RubricLevel and sets the default values.
         /// </summary>
         public RubricLevel() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

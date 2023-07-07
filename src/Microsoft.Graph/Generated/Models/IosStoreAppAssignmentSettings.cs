@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
-        /// <summary>The VPN Configuration Id to apply for this app.</summary>
+        /// <summary>This is the unique identifier (Id) of the VPN Configuration to apply to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VpnConfigurationId {

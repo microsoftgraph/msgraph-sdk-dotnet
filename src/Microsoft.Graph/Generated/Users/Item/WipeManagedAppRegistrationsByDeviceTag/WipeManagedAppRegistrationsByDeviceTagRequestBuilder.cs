@@ -28,7 +28,6 @@ namespace Microsoft.Graph.Users.Item.WipeManagedAppRegistrationsByDeviceTag {
         }
         /// <summary>
         /// Issues a wipe operation on an app registration with specified device tag.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-user-wipemanagedappregistrationsbydevicetag?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

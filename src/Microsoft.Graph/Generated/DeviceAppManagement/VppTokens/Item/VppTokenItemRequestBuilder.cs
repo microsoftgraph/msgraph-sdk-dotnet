@@ -33,8 +33,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
         public VppTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/{vppToken%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a vppToken.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0" />
+        /// Delete navigation property vppTokens for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,8 +52,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the vppToken object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0" />
+        /// List of Vpp tokens for this organization.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +71,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a vppToken object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0" />
+        /// Update the navigation property vppTokens in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +92,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a vppToken.
+        /// Delete navigation property vppTokens for deviceAppManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +116,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the vppToken object.
+        /// List of Vpp tokens for this organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a vppToken object.
+        /// Update the navigation property vppTokens in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +186,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the vppToken object.
+        /// List of Vpp tokens for this organization.
         /// </summary>
         public class VppTokenItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

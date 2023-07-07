@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         }
 #endif
         /// <summary>
-        /// Instantiates a new acl and sets the default values.
+        /// Instantiates a new Acl and sets the default values.
         /// </summary>
         public Acl() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

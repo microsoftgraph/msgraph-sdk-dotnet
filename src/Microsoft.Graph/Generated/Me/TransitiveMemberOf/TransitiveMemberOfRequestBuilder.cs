@@ -1,5 +1,6 @@
 using Microsoft.Graph.Me.TransitiveMemberOf.Count;
 using Microsoft.Graph.Me.TransitiveMemberOf.GraphAdministrativeUnit;
+using Microsoft.Graph.Me.TransitiveMemberOf.GraphDirectoryRole;
 using Microsoft.Graph.Me.TransitiveMemberOf.GraphGroup;
 using Microsoft.Graph.Me.TransitiveMemberOf.Item;
 using Microsoft.Graph.Models.ODataErrors;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Me.TransitiveMemberOf {
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
         public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
             new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to directoryRole.</summary>
+        public GraphDirectoryRoleRequestBuilder GraphDirectoryRole { get =>
+            new GraphDirectoryRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>

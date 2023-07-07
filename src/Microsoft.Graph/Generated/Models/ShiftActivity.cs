@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("theme", value); }
         }
         /// <summary>
-        /// Instantiates a new shiftActivity and sets the default values.
+        /// Instantiates a new ShiftActivity and sets the default values.
         /// </summary>
         public ShiftActivity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

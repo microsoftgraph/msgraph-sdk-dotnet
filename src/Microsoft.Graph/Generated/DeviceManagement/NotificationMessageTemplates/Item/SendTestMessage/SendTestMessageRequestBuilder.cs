@@ -28,7 +28,6 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Sen
         }
         /// <summary>
         /// Sends test message using the specified notificationMessageTemplate in the default locale
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-sendtestmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

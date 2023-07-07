@@ -29,6 +29,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customWorkflowExtensions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomCalloutExtension>? CustomWorkflowExtensions {
+            get { return BackingStore?.Get<List<CustomCalloutExtension>?>("customWorkflowExtensions"); }
+            set { BackingStore?.Set("customWorkflowExtensions", value); }
+        }
+#nullable restore
+#else
+        public List<CustomCalloutExtension> CustomWorkflowExtensions {
+            get { return BackingStore?.Get<List<CustomCalloutExtension>>("customWorkflowExtensions"); }
+            set { BackingStore?.Set("customWorkflowExtensions", value); }
+        }
+#endif
         /// <summary>The description of the access package catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,7 @@ namespace Microsoft.Graph.Models {
                 {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"catalogType", n => { CatalogType = n.GetEnumValue<AccessPackageCatalogType>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customWorkflowExtensions", n => { CustomWorkflowExtensions = n.GetCollectionOfObjectValues<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
@@ -105,6 +120,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
             writer.WriteEnumValue<AccessPackageCatalogType>("catalogType", CatalogType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<CustomCalloutExtension>("customWorkflowExtensions", CustomWorkflowExtensions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isExternallyVisible", IsExternallyVisible);

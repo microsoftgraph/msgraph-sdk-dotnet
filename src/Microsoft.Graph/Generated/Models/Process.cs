@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("processId", value); }
         }
         /// <summary>
-        /// Instantiates a new process and sets the default values.
+        /// Instantiates a new Process and sets the default values.
         /// </summary>
         public Process() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

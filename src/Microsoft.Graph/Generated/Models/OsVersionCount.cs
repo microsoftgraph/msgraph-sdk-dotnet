@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new osVersionCount and sets the default values.
+        /// Instantiates a new OsVersionCount and sets the default values.
         /// </summary>
         public OsVersionCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

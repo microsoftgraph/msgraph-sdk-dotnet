@@ -45,8 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         public ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/importedWindowsAutopilotDeviceIdentities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-list?view=graph-rest-1.0" />
+        /// Collection of imported Windows autopilot devices.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentityCollectionResponse>(requestInfo, ImportedWindowsAutopilotDeviceIdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new importedWindowsAutopilotDeviceIdentity object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-create?view=graph-rest-1.0" />
+        /// Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(requestInfo, ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
+        /// Collection of imported Windows autopilot devices.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return requestInfo;
         }
         /// <summary>
-        /// Create a new importedWindowsAutopilotDeviceIdentity object.
+        /// Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
+        /// Collection of imported Windows autopilot devices.
         /// </summary>
         public class ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

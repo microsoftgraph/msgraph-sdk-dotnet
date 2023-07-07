@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new uriClickSecurityState and sets the default values.
+        /// Instantiates a new UriClickSecurityState and sets the default values.
         /// </summary>
         public UriClickSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

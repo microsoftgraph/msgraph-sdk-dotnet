@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new searchHit and sets the default values.
+        /// Instantiates a new SearchHit and sets the default values.
         /// </summary>
         public SearchHit() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

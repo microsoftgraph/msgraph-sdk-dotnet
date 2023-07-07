@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("weight", value); }
         }
         /// <summary>
-        /// Instantiates a new rubricQuality and sets the default values.
+        /// Instantiates a new RubricQuality and sets the default values.
         /// </summary>
         public RubricQuality() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

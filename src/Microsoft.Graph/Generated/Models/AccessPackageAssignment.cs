@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("assignmentPolicy", value); }
         }
 #endif
+        /// <summary>The customExtensionCalloutInstances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ExpiredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expiredDateTime"); }
@@ -100,6 +114,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Models.AccessPackage>(Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue); } },
                 {"assignmentPolicy", n => { AssignmentPolicy = n.GetObjectValue<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                {"customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
                 {"state", n => { State = n.GetEnumValue<AccessPackageAssignmentState>(); } },
@@ -116,6 +131,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.AccessPackage>("accessPackage", AccessPackage);
             writer.WriteObjectValue<AccessPackageAssignmentPolicy>("assignmentPolicy", AssignmentPolicy);
+            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteDateTimeOffsetValue("expiredDateTime", ExpiredDateTime);
             writer.WriteObjectValue<EntitlementManagementSchedule>("schedule", Schedule);
             writer.WriteEnumValue<AccessPackageAssignmentState>("state", State);

@@ -50,8 +50,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
         public MobileAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the windowsMobileMSI objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-windowsmobilemsi-list?view=graph-rest-1.0" />
+        /// The mobile apps.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,8 +69,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileAppCollectionResponse>(requestInfo, MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new macOSMicrosoftEdgeApp object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-macosmicrosoftedgeapp-create?view=graph-rest-1.0" />
+        /// Create new navigation property to mobileApps for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +90,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the windowsMobileMSI objects.
+        /// The mobile apps.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +116,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new macOSMicrosoftEdgeApp object.
+        /// Create new navigation property to mobileApps for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +144,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the windowsMobileMSI objects.
+        /// The mobile apps.
         /// </summary>
         public class MobileAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

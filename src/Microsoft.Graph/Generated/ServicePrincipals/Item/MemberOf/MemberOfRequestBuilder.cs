@@ -2,6 +2,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.ServicePrincipals.Item.MemberOf.Count;
 using Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphAdministrativeUnit;
+using Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphDirectoryRole;
 using Microsoft.Graph.ServicePrincipals.Item.MemberOf.GraphGroup;
 using Microsoft.Graph.ServicePrincipals.Item.MemberOf.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf {
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
         public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
             new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to directoryRole.</summary>
+        public GraphDirectoryRoleRequestBuilder GraphDirectoryRole { get =>
+            new GraphDirectoryRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>

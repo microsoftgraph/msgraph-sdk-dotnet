@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new searchBucket and sets the default values.
+        /// Instantiates a new SearchBucket and sets the default values.
         /// </summary>
         public SearchBucket() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
