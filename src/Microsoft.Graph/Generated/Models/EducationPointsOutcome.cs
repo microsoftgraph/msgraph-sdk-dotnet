@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationPointsOutcome and sets the default values.
+        /// Instantiates a new educationPointsOutcome and sets the default values.
         /// </summary>
         public EducationPointsOutcome() : base() {
             OdataType = "#microsoft.graph.educationPointsOutcome";

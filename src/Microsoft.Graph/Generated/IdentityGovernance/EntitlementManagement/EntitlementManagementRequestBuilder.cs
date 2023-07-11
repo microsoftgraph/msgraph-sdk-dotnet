@@ -5,6 +5,10 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequest
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -48,6 +52,22 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement {
         /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
         public ConnectedOrganizationsRequestBuilder ConnectedOrganizations { get =>
             new ConnectedOrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceEnvironments property of the microsoft.graph.entitlementManagement entity.</summary>
+        public ResourceEnvironmentsRequestBuilder ResourceEnvironments { get =>
+            new ResourceEnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceRequests property of the microsoft.graph.entitlementManagement entity.</summary>
+        public ResourceRequestsRequestBuilder ResourceRequests { get =>
+            new ResourceRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceRoleScopes property of the microsoft.graph.entitlementManagement entity.</summary>
+        public ResourceRoleScopesRequestBuilder ResourceRoleScopes { get =>
+            new ResourceRoleScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resources property of the microsoft.graph.entitlementManagement entity.</summary>
+        public ResourcesRequestBuilder Resources { get =>
+            new ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.</summary>
         public SettingsRequestBuilder Settings { get =>

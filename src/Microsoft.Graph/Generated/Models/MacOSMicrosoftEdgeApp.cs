@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the macOS Microsoft Edge App.
+    /// </summary>
     public class MacOSMicrosoftEdgeApp : MobileApp, IParsable {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
         public MicrosoftEdgeChannel? Channel {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("channel", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSMicrosoftEdgeApp and sets the default values.
+        /// Instantiates a new macOSMicrosoftEdgeApp and sets the default values.
         /// </summary>
         public MacOSMicrosoftEdgeApp() : base() {
             OdataType = "#microsoft.graph.macOSMicrosoftEdgeApp";

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TenantRelationship and sets the default values.
+        /// Instantiates a new tenantRelationship and sets the default values.
         /// </summary>
         public TenantRelationship() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// A base complex type to store the detection or requirement rule data for a Win32 LOB app.
+    /// </summary>
     public class Win32LobAppProductCodeRule : Win32LobAppRule, IParsable {
         /// <summary>The product code of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("productVersionOperator", value); }
         }
         /// <summary>
-        /// Instantiates a new Win32LobAppProductCodeRule and sets the default values.
+        /// Instantiates a new win32LobAppProductCodeRule and sets the default values.
         /// </summary>
         public Win32LobAppProductCodeRule() : base() {
             OdataType = "#microsoft.graph.win32LobAppProductCodeRule";

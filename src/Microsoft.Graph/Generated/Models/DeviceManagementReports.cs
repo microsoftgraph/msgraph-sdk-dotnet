@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Singleton entity that acts as a container for all reports functionality.
+    /// </summary>
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing a job to export a report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

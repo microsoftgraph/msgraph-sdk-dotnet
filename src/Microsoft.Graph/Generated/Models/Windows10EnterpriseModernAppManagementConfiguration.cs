@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Windows10 Enterprise Modern App Management Configuration.
+    /// </summary>
     public class Windows10EnterpriseModernAppManagementConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to uninstall a fixed list of built-in Windows apps.</summary>
         public bool? UninstallBuiltInApps {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("uninstallBuiltInApps", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EnterpriseModernAppManagementConfiguration and sets the default values.
+        /// Instantiates a new windows10EnterpriseModernAppManagementConfiguration and sets the default values.
         /// </summary>
         public Windows10EnterpriseModernAppManagementConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration";

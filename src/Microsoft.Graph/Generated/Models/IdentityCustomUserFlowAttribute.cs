@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class IdentityCustomUserFlowAttribute : IdentityUserFlowAttribute, IParsable {
         /// <summary>
-        /// Instantiates a new IdentityCustomUserFlowAttribute and sets the default values.
+        /// Instantiates a new identityCustomUserFlowAttribute and sets the default values.
         /// </summary>
         public IdentityCustomUserFlowAttribute() : base() {
             OdataType = "#microsoft.graph.identityCustomUserFlowAttribute";

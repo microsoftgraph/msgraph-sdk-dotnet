@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("operationStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomTaskExtensionCallbackData and sets the default values.
+        /// Instantiates a new customTaskExtensionCallbackData and sets the default values.
         /// </summary>
         public CustomTaskExtensionCallbackData() : base() {
             OdataType = "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData";

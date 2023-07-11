@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the androidGeneralDeviceConfiguration resource.
+    /// </summary>
     public class AndroidGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to block clipboard sharing to copy and paste between applications.</summary>
         public bool? AppsBlockClipboardSharing {
@@ -291,7 +294,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("wiFiBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new androidGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public AndroidGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.androidGeneralDeviceConfiguration";

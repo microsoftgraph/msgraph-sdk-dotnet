@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BookingCustomerInformation and sets the default values.
+        /// Instantiates a new bookingCustomerInformation and sets the default values.
         /// </summary>
         public BookingCustomerInformation() : base() {
             OdataType = "#microsoft.graph.bookingCustomerInformation";

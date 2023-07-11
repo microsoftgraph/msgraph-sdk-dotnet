@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
+        /// Instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
         /// </summary>
         public X509CertificateAuthenticationMethodConfiguration() : base() {
             OdataType = "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration";

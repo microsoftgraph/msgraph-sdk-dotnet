@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PermissionScope and sets the default values.
+        /// Instantiates a new permissionScope and sets the default values.
         /// </summary>
         public PermissionScope() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

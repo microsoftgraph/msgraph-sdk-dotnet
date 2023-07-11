@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Windows AppX Line Of Business apps.
+    /// </summary>
     public class WindowsAppX : MobileLobApp, IParsable {
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
@@ -86,7 +89,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsAppX and sets the default values.
+        /// Instantiates a new windowsAppX and sets the default values.
         /// </summary>
         public WindowsAppX() : base() {
             OdataType = "#microsoft.graph.windowsAppX";

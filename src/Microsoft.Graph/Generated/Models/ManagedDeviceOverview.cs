@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Summary data for managed devices
+    /// </summary>
     public class ManagedDeviceOverview : Entity, IParsable {
         /// <summary>Distribution of Exchange Access State in Intune</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The expiration property</summary>
+        /// <summary>Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? Expiration {
             get { return BackingStore?.Get<DateTimeOffset?>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
-        /// <summary>The interval property</summary>
+        /// <summary>The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.</summary>
         public TimeSpan? Interval {
             get { return BackingStore?.Get<TimeSpan?>("interval"); }
             set { BackingStore?.Set("interval", value); }

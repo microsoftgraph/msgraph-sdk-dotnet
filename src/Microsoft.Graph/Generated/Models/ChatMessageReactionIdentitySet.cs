@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ChatMessageReactionIdentitySet : IdentitySet, IParsable {
         /// <summary>
-        /// Instantiates a new ChatMessageReactionIdentitySet and sets the default values.
+        /// Instantiates a new chatMessageReactionIdentitySet and sets the default values.
         /// </summary>
         public ChatMessageReactionIdentitySet() : base() {
             OdataType = "#microsoft.graph.chatMessageReactionIdentitySet";

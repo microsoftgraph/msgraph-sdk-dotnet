@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SmsAuthenticationMethodConfiguration and sets the default values.
+        /// Instantiates a new smsAuthenticationMethodConfiguration and sets the default values.
         /// </summary>
         public SmsAuthenticationMethodConfiguration() : base() {
             OdataType = "#microsoft.graph.smsAuthenticationMethodConfiguration";

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamCreatedEventMessageDetail and sets the default values.
+        /// Instantiates a new teamCreatedEventMessageDetail and sets the default values.
         /// </summary>
         public TeamCreatedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.teamCreatedEventMessageDetail";

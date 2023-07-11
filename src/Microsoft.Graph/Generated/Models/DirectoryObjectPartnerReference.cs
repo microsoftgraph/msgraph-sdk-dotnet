@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DirectoryObjectPartnerReference and sets the default values.
+        /// Instantiates a new directoryObjectPartnerReference and sets the default values.
         /// </summary>
         public DirectoryObjectPartnerReference() : base() {
             OdataType = "#microsoft.graph.directoryObjectPartnerReference";

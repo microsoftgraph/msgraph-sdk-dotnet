@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("roundTripTime", value); }
         }
         /// <summary>
-        /// Instantiates a new TraceRouteHop and sets the default values.
+        /// Instantiates a new traceRouteHop and sets the default values.
         /// </summary>
         public TraceRouteHop() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnclassifiedArtifact and sets the default values.
+        /// Instantiates a new unclassifiedArtifact and sets the default values.
         /// </summary>
         public UnclassifiedArtifact() : base() {
             OdataType = "#microsoft.graph.security.unclassifiedArtifact";

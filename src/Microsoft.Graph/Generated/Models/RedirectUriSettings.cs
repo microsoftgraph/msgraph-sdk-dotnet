@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RedirectUriSettings and sets the default values.
+        /// Instantiates a new redirectUriSettings and sets the default values.
         /// </summary>
         public RedirectUriSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

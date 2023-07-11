@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnenoteResource and sets the default values.
+        /// Instantiates a new onenoteResource and sets the default values.
         /// </summary>
         public OnenoteResource() : base() {
             OdataType = "#microsoft.graph.onenoteResource";

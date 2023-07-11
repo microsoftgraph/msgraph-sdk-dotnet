@@ -118,6 +118,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
+        /// <summary>The resourceRoleScopes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageResourceRoleScope>? ResourceRoleScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("resourceRoleScopes"); }
+            set { BackingStore?.Set("resourceRoleScopes", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageResourceRoleScope> ResourceRoleScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("resourceRoleScopes"); }
+            set { BackingStore?.Set("resourceRoleScopes", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -141,6 +155,7 @@ namespace Microsoft.Graph.Models {
                 {"incompatibleGroups", n => { IncompatibleGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isHidden", n => { IsHidden = n.GetBoolValue(); } },
                 {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>(AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -160,6 +175,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<Group>("incompatibleGroups", IncompatibleGroups);
             writer.WriteBoolValue("isHidden", IsHidden);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);
         }
     }
 }

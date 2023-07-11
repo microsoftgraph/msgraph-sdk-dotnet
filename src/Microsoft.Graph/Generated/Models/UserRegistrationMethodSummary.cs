@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The totalUserCount property</summary>
+        /// <summary>Total number of users in the tenant.</summary>
         public long? TotalUserCount {
             get { return BackingStore?.Get<long?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }
         }
-        /// <summary>The userRegistrationMethodCounts property</summary>
+        /// <summary>Number of users registered for each authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserRegistrationMethodCount>? UserRegistrationMethodCounts {
@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("userRegistrationMethodCounts", value); }
         }
 #endif
-        /// <summary>The userRoles property</summary>
+        /// <summary>The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
         public IncludedUserRoles? UserRoles {
             get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }
             set { BackingStore?.Set("userRoles", value); }
         }
-        /// <summary>The userTypes property</summary>
+        /// <summary>User type. Possible values are: all, member, guest, unknownFutureValue.</summary>
         public IncludedUserTypes? UserTypes {
             get { return BackingStore?.Get<IncludedUserTypes?>("userTypes"); }
             set { BackingStore?.Set("userTypes", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationMethodSummary and sets the default values.
+        /// Instantiates a new userRegistrationMethodSummary and sets the default values.
         /// </summary>
         public UserRegistrationMethodSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

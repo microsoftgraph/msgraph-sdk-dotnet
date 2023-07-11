@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnifiedRole and sets the default values.
+        /// Instantiates a new unifiedRole and sets the default values.
         /// </summary>
         public UnifiedRole() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

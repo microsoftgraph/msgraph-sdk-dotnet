@@ -5,17 +5,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class SynchronizationTemplate : Entity, IParsable {
-        /// <summary>The applicationId property</summary>
+        /// <summary>Identifier of the application this template belongs to.</summary>
         public Guid? ApplicationId {
             get { return BackingStore?.Get<Guid?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
-        /// <summary>The default property</summary>
+        /// <summary>true if this template is recommended to be the default for the application.</summary>
         public bool? Default {
             get { return BackingStore?.Get<bool?>("default"); }
             set { BackingStore?.Set("default", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The discoverable property</summary>
+        /// <summary>true if this template should appear in the collection of templates available for the application instance (service principal).</summary>
         public bool? Discoverable {
             get { return BackingStore?.Get<bool?>("discoverable"); }
             set { BackingStore?.Set("discoverable", value); }
         }
-        /// <summary>The factoryTag property</summary>
+        /// <summary>One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FactoryTag {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("factoryTag", value); }
         }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationMetadataEntry>? Metadata {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The schema property</summary>
+        /// <summary>Default synchronization schema for the jobs based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationSchema? Schema {

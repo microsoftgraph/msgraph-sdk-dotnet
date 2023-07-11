@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationWordResource and sets the default values.
+        /// Instantiates a new educationWordResource and sets the default values.
         /// </summary>
         public EducationWordResource() : base() {
             OdataType = "#microsoft.graph.educationWordResource";

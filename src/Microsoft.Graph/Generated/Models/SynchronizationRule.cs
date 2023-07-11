@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("containerFilter", value); }
         }
 #endif
-        /// <summary>The editable property</summary>
+        /// <summary>true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.</summary>
         public bool? Editable {
             get { return BackingStore?.Get<bool?>("editable"); }
             set { BackingStore?.Set("editable", value); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("groupFilter", value); }
         }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<StringKeyStringValuePair>? Metadata {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Human-readable name of the synchronization rule. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The objectMappings property</summary>
+        /// <summary>Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ObjectMapping>? ObjectMappings {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The priority property</summary>
+        /// <summary>Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The sourceDirectoryName property</summary>
+        /// <summary>Name of the source directory. Must match one of the directory definitions in synchronizationSchema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceDirectoryName {
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sourceDirectoryName", value); }
         }
 #endif
-        /// <summary>The targetDirectoryName property</summary>
+        /// <summary>Name of the target directory. Must match one of the directory definitions in synchronizationSchema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDirectoryName {

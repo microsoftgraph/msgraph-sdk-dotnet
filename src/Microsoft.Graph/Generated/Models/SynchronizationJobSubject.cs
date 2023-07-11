@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The links property</summary>
+        /// <summary>Principals that you would like to provision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationLinkedObjects? Links {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("links", value); }
         }
 #endif
-        /// <summary>The objectId property</summary>
+        /// <summary>The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("objectId", value); }
         }
 #endif
-        /// <summary>The objectTypeName property</summary>
+        /// <summary>The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeName {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SynchronizationJobSubject and sets the default values.
+        /// Instantiates a new synchronizationJobSubject and sets the default values.
         /// </summary>
         public SynchronizationJobSubject() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

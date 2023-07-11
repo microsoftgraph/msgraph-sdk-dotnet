@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    /// </summary>
     public class UserExperienceAnalyticsCategory : Entity, IParsable {
         /// <summary>The insights for the category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

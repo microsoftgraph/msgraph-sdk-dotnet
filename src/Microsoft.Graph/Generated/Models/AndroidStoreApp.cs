@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Android store apps.
+    /// </summary>
     public class AndroidStoreApp : MobileApp, IParsable {
         /// <summary>The Android app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidStoreApp and sets the default values.
+        /// Instantiates a new androidStoreApp and sets the default values.
         /// </summary>
         public AndroidStoreApp() : base() {
             OdataType = "#microsoft.graph.androidStoreApp";

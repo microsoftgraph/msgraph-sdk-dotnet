@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The permissionType property</summary>
+        /// <summary>The type of resource-specific permission.</summary>
         public TeamsAppResourceSpecificPermissionType? PermissionType {
             get { return BackingStore?.Get<TeamsAppResourceSpecificPermissionType?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
-        /// <summary>The permissionValue property</summary>
+        /// <summary>The name of the resource-specific permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionValue {

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ReferenceAttachment : Attachment, IParsable {
         /// <summary>
-        /// Instantiates a new ReferenceAttachment and sets the default values.
+        /// Instantiates a new referenceAttachment and sets the default values.
         /// </summary>
         public ReferenceAttachment() : base() {
             OdataType = "#microsoft.graph.referenceAttachment";

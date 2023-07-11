@@ -4,6 +4,7 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.It
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleGroups;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.ResourceRoleScopes;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -42,6 +43,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <summary>Provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.</summary>
         public IncompatibleGroupsRequestBuilder IncompatibleGroups { get =>
             new IncompatibleGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceRoleScopes property of the microsoft.graph.accessPackage entity.</summary>
+        public ResourceRoleScopesRequestBuilder ResourceRoleScopes { get =>
+            new ResourceRoleScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AccessPackageItemRequestBuilder and sets the default values.

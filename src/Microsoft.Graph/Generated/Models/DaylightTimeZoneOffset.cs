@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("daylightBias", value); }
         }
         /// <summary>
-        /// Instantiates a new DaylightTimeZoneOffset and sets the default values.
+        /// Instantiates a new daylightTimeZoneOffset and sets the default values.
         /// </summary>
         public DaylightTimeZoneOffset() : base() {
             OdataType = "#microsoft.graph.daylightTimeZoneOffset";

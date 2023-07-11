@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new InformationProtection and sets the default values.
+        /// Instantiates a new informationProtection and sets the default values.
         /// </summary>
         public InformationProtection() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Device Enrollment Configuration that restricts the number of devices a user can enroll
+    /// </summary>
     public class DeviceEnrollmentLimitConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>The maximum number of devices that a user can enroll</summary>
         public int? Limit {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("limit", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
+        /// Instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
         /// </summary>
         public DeviceEnrollmentLimitConfiguration() : base() {
             OdataType = "#microsoft.graph.deviceEnrollmentLimitConfiguration";

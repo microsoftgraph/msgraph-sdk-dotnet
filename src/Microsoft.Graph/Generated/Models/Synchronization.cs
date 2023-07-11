@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class Synchronization : Entity, IParsable {
-        /// <summary>The jobs property</summary>
+        /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationJob>? Jobs {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("jobs", value); }
         }
 #endif
-        /// <summary>The secrets property</summary>
+        /// <summary>Represents a collection of credentials to access provisioned cloud applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationSecretKeyStringValuePair>? Secrets {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("secrets", value); }
         }
 #endif
-        /// <summary>The templates property</summary>
+        /// <summary>Pre-configured synchronization settings for a particular application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationTemplate>? Templates {

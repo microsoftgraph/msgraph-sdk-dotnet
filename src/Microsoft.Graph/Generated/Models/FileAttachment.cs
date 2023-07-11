@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FileAttachment and sets the default values.
+        /// Instantiates a new fileAttachment and sets the default values.
         /// </summary>
         public FileAttachment() : base() {
             OdataType = "#microsoft.graph.fileAttachment";

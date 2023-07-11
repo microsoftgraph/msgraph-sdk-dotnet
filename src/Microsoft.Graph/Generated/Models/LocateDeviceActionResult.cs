@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Device action result
+    /// </summary>
     public class LocateDeviceActionResult : DeviceActionResult, IParsable {
         /// <summary>device location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

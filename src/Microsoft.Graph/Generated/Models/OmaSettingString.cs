@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// OMA Settings definition.
+    /// </summary>
     public class OmaSettingString : OmaSetting, IParsable {
         /// <summary>Value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OmaSettingString and sets the default values.
+        /// Instantiates a new omaSettingString and sets the default values.
         /// </summary>
         public OmaSettingString() : base() {
             OdataType = "#microsoft.graph.omaSettingString";

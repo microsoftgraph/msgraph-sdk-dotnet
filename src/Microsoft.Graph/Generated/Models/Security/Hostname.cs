@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Hostname and sets the default values.
+        /// Instantiates a new hostname and sets the default values.
         /// </summary>
         public Hostname() : base() {
             OdataType = "#microsoft.graph.security.hostname";

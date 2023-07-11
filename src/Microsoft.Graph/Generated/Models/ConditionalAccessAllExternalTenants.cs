@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ConditionalAccessAllExternalTenants : ConditionalAccessExternalTenants, IParsable {
         /// <summary>
-        /// Instantiates a new ConditionalAccessAllExternalTenants and sets the default values.
+        /// Instantiates a new conditionalAccessAllExternalTenants and sets the default values.
         /// </summary>
         public ConditionalAccessAllExternalTenants() : base() {
             OdataType = "#microsoft.graph.conditionalAccessAllExternalTenants";

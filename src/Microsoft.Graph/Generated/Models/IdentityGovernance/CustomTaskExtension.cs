@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomTaskExtension and sets the default values.
+        /// Instantiates a new customTaskExtension and sets the default values.
         /// </summary>
         public CustomTaskExtension() : base() {
             OdataType = "#microsoft.graph.identityGovernance.customTaskExtension";

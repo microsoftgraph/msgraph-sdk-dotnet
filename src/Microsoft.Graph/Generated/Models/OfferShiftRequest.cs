@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OfferShiftRequest and sets the default values.
+        /// Instantiates a new offerShiftRequest and sets the default values.
         /// </summary>
         public OfferShiftRequest() : base() {
             OdataType = "#microsoft.graph.offerShiftRequest";

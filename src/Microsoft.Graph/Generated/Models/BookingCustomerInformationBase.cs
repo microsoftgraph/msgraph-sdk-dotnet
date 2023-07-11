@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BookingCustomerInformationBase and sets the default values.
+        /// Instantiates a new bookingCustomerInformationBase and sets the default values.
         /// </summary>
         public BookingCustomerInformationBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

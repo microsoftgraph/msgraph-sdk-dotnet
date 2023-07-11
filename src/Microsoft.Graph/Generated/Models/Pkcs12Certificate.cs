@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Pkcs12Certificate and sets the default values.
+        /// Instantiates a new pkcs12Certificate and sets the default values.
         /// </summary>
         public Pkcs12Certificate() : base() {
             OdataType = "#microsoft.graph.pkcs12Certificate";

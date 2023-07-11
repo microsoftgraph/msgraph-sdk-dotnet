@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
+    /// </summary>
     public class Windows81GeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail {
@@ -198,7 +201,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows81GeneralConfiguration and sets the default values.
+        /// Instantiates a new windows81GeneralConfiguration and sets the default values.
         /// </summary>
         public Windows81GeneralConfiguration() : base() {
             OdataType = "#microsoft.graph.windows81GeneralConfiguration";

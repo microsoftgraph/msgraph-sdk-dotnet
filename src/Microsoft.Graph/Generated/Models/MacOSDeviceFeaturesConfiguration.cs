@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// MacOS device features configuration profile.
+    /// </summary>
     public class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable {
         /// <summary>
-        /// Instantiates a new MacOSDeviceFeaturesConfiguration and sets the default values.
+        /// Instantiates a new macOSDeviceFeaturesConfiguration and sets the default values.
         /// </summary>
         public MacOSDeviceFeaturesConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSDeviceFeaturesConfiguration";

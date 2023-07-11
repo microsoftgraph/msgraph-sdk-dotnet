@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Represents an un-typed status report about organizations app protection and configuration.
+    /// </summary>
     public class ManagedAppStatusRaw : ManagedAppStatus, IParsable {
         /// <summary>Status report content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ManagedAppStatusRaw and sets the default values.
+        /// Instantiates a new managedAppStatusRaw and sets the default values.
         /// </summary>
         public ManagedAppStatusRaw() : base() {
             OdataType = "#microsoft.graph.managedAppStatusRaw";

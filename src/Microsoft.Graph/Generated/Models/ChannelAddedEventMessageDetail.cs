@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChannelAddedEventMessageDetail and sets the default values.
+        /// Instantiates a new channelAddedEventMessageDetail and sets the default values.
         /// </summary>
         public ChannelAddedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.channelAddedEventMessageDetail";

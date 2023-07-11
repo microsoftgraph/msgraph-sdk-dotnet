@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TimeZoneInformation and sets the default values.
+        /// Instantiates a new timeZoneInformation and sets the default values.
         /// </summary>
         public TimeZoneInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

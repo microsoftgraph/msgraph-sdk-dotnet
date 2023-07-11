@@ -3,6 +3,7 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequest
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.Item.Cancel;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.Item.Reprocess;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.Item.Requestor;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.Item.Resume;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -37,6 +38,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
         /// <summary>Provides operations to manage the requestor property of the microsoft.graph.accessPackageAssignmentRequest entity.</summary>
         public RequestorRequestBuilder Requestor { get =>
             new RequestorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resume method.</summary>
+        public ResumeRequestBuilder Resume { get =>
+            new ResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AccessPackageAssignmentRequestItemRequestBuilder and sets the default values.

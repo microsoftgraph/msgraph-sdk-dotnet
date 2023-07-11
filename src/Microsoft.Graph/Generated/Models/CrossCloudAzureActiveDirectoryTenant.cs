@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+        /// Instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
         /// </summary>
         public CrossCloudAzureActiveDirectoryTenant() : base() {
             OdataType = "#microsoft.graph.crossCloudAzureActiveDirectoryTenant";

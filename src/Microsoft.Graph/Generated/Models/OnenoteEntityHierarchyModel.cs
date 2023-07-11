@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new OnenoteEntityHierarchyModel and sets the default values.
+        /// Instantiates a new onenoteEntityHierarchyModel and sets the default values.
         /// </summary>
         public OnenoteEntityHierarchyModel() : base() {
             OdataType = "#microsoft.graph.onenoteEntityHierarchyModel";

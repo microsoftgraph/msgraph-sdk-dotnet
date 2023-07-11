@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get monthlyPrintUsageByUser from reports
+        /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get monthlyPrintUsageByUser from reports
+        /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item {
             }
         }
         /// <summary>
-        /// Get monthlyPrintUsageByUser from reports
+        /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// </summary>
         public class PrintUsageByUserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

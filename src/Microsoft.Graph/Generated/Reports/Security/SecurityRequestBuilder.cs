@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Reports.Security {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get security from reports
+        /// Represents an abstract type that contains resources for attack simulation and training reports.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Reports.Security {
             return requestInfo;
         }
         /// <summary>
-        /// Get security from reports
+        /// Represents an abstract type that contains resources for attack simulation and training reports.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Reports.Security {
             }
         }
         /// <summary>
-        /// Get security from reports
+        /// Represents an abstract type that contains resources for attack simulation and training reports.
         /// </summary>
         public class SecurityRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

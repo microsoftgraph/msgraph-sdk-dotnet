@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// An abstract base class containing properties for all mobile line of business apps.
+    /// </summary>
     public class MobileLobApp : MobileApp, IParsable {
         /// <summary>The internal committed content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new MobileLobApp and sets the default values.
+        /// Instantiates a new mobileLobApp and sets the default values.
         /// </summary>
         public MobileLobApp() : base() {
             OdataType = "#microsoft.graph.mobileLobApp";

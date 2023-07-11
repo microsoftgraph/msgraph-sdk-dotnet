@@ -40,8 +40,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments {
         public AssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppAssignment objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-list?view=graph-rest-1.0" />
+        /// The list of group assignments for this mobile app.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments {
             return await RequestAdapter.SendAsync<MobileAppAssignmentCollectionResponse>(requestInfo, MobileAppAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new mobileAppAssignment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-create?view=graph-rest-1.0" />
+        /// Create new navigation property to assignments for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments {
             return await RequestAdapter.SendAsync<MobileAppAssignment>(requestInfo, MobileAppAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppAssignment objects.
+        /// The list of group assignments for this mobile app.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mobileAppAssignment object.
+        /// Create new navigation property to assignments for deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.Assignments {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppAssignment objects.
+        /// The list of group assignments for this mobile app.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

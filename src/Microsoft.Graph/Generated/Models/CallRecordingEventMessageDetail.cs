@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CallRecordingEventMessageDetail and sets the default values.
+        /// Instantiates a new callRecordingEventMessageDetail and sets the default values.
         /// </summary>
         public CallRecordingEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.callRecordingEventMessageDetail";

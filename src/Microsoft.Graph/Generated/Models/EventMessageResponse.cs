@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>
-        /// Instantiates a new EventMessageResponse and sets the default values.
+        /// Instantiates a new eventMessageResponse and sets the default values.
         /// </summary>
         public EventMessageResponse() : base() {
             OdataType = "#microsoft.graph.eventMessageResponse";

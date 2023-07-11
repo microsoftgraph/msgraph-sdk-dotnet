@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ResourceAccess and sets the default values.
+        /// Instantiates a new resourceAccess and sets the default values.
         /// </summary>
         public ResourceAccess() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

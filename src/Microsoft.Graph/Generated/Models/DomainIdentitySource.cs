@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DomainIdentitySource and sets the default values.
+        /// Instantiates a new domainIdentitySource and sets the default values.
         /// </summary>
         public DomainIdentitySource() : base() {
             OdataType = "#microsoft.graph.domainIdentitySource";

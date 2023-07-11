@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Win32 apps.
+    /// </summary>
     public class Win32LobApp : MobileLobApp, IParsable {
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobApp and sets the default values.
+        /// Instantiates a new win32LobApp and sets the default values.
         /// </summary>
         public Win32LobApp() : base() {
             OdataType = "#microsoft.graph.win32LobApp";

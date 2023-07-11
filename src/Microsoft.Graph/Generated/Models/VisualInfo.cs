@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VisualInfo and sets the default values.
+        /// Instantiates a new visualInfo and sets the default values.
         /// </summary>
         public VisualInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

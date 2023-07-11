@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
+    /// </summary>
     public class ManagedIOSStoreApp : ManagedApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +65,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ManagedIOSStoreApp and sets the default values.
+        /// Instantiates a new managedIOSStoreApp and sets the default values.
         /// </summary>
         public ManagedIOSStoreApp() : base() {
             OdataType = "#microsoft.graph.managedIOSStoreApp";

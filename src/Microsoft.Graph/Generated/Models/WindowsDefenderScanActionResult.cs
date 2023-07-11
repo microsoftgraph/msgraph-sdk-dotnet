@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Device action result
+    /// </summary>
     public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable {
         /// <summary>Scan type either full scan or quick scan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

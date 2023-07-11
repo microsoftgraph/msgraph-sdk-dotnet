@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ItemIdResolver and sets the default values.
+        /// Instantiates a new itemIdResolver and sets the default values.
         /// </summary>
         public ItemIdResolver() : base() {
             OdataType = "#microsoft.graph.externalConnectors.itemIdResolver";

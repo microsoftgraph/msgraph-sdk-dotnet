@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Prompt and sets the default values.
+        /// Instantiates a new prompt and sets the default values.
         /// </summary>
         public Prompt() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

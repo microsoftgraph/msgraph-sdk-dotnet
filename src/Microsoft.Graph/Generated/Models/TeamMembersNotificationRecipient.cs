@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamMembersNotificationRecipient and sets the default values.
+        /// Instantiates a new teamMembersNotificationRecipient and sets the default values.
         /// </summary>
         public TeamMembersNotificationRecipient() : base() {
             OdataType = "#microsoft.graph.teamMembersNotificationRecipient";

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class AuthenticationMethodsRoot : Entity, IParsable {
-        /// <summary>The userRegistrationDetails property</summary>
+        /// <summary>Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Models.UserRegistrationDetails>? UserRegistrationDetails {

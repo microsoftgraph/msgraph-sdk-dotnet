@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not to use device execution context for Microsoft Store for Business mobile app.</summary>
         public bool? UseDeviceContext {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
+        /// Instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
         /// </summary>
         public MicrosoftStoreForBusinessAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings";

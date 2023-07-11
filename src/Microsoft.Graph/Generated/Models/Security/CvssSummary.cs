@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CvssSummary and sets the default values.
+        /// Instantiates a new cvssSummary and sets the default values.
         /// </summary>
         public CvssSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("timeBasedAttribute", value); }
         }
         /// <summary>
-        /// Instantiates a new TimeBasedAttributeTrigger and sets the default values.
+        /// Instantiates a new timeBasedAttributeTrigger and sets the default values.
         /// </summary>
         public TimeBasedAttributeTrigger() : base() {
             OdataType = "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger";

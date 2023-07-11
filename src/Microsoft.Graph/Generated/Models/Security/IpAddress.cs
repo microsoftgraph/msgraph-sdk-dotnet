@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IpAddress and sets the default values.
+        /// Instantiates a new ipAddress and sets the default values.
         /// </summary>
         public IpAddress() : base() {
             OdataType = "#microsoft.graph.security.ipAddress";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The attributes property</summary>
+        /// <summary>Defines attributes of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AttributeDefinition>? Attributes {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The metadata property</summary>
+        /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ObjectDefinitionMetadataEntry>? Metadata {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the object. Must be unique within a directory definition. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The supportedApis property</summary>
+        /// <summary>The API that the provisioning service queries to retrieve data for synchronization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedApis {

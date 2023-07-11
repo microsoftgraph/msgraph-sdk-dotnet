@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Android Work Profile general device configuration.
+    /// </summary>
     public class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to block fingerprint unlock.</summary>
         public bool? PasswordBlockFingerprintUnlock {
@@ -176,7 +179,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("workProfileRequirePassword", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidWorkProfileGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new androidWorkProfileGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public AndroidWorkProfileGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration";

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TenantAppManagementPolicy and sets the default values.
+        /// Instantiates a new tenantAppManagementPolicy and sets the default values.
         /// </summary>
         public TenantAppManagementPolicy() : base() {
             OdataType = "#microsoft.graph.tenantAppManagementPolicy";

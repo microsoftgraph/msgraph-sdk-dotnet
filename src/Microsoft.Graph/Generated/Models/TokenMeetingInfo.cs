@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TokenMeetingInfo and sets the default values.
+        /// Instantiates a new tokenMeetingInfo and sets the default values.
         /// </summary>
         public TokenMeetingInfo() : base() {
             OdataType = "#microsoft.graph.tokenMeetingInfo";

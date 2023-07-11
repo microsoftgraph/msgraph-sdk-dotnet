@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("productFamily", value); }
         }
         /// <summary>
-        /// Instantiates a new ClientUserAgent and sets the default values.
+        /// Instantiates a new clientUserAgent and sets the default values.
         /// </summary>
         public ClientUserAgent() : base() {
             OdataType = "#microsoft.graph.callRecords.clientUserAgent";

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamsAppUpgradedEventMessageDetail and sets the default values.
+        /// Instantiates a new teamsAppUpgradedEventMessageDetail and sets the default values.
         /// </summary>
         public TeamsAppUpgradedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.teamsAppUpgradedEventMessageDetail";

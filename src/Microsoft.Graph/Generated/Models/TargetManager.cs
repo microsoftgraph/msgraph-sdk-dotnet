@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("managerLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new TargetManager and sets the default values.
+        /// Instantiates a new targetManager and sets the default values.
         /// </summary>
         public TargetManager() : base() {
             OdataType = "#microsoft.graph.targetManager";

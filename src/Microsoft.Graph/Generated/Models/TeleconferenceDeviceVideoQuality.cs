@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("averageOutboundFrameRate", value); }
         }
         /// <summary>
-        /// Instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
+        /// Instantiates a new teleconferenceDeviceVideoQuality and sets the default values.
         /// </summary>
         public TeleconferenceDeviceVideoQuality() : base() {
             OdataType = "#microsoft.graph.teleconferenceDeviceVideoQuality";

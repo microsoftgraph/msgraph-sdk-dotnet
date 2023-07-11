@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties, inherited properties and actions for iOS mobile app configurations.
+    /// </summary>
     public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>mdm app configuration Base64 binary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosMobileAppConfiguration and sets the default values.
+        /// Instantiates a new iosMobileAppConfiguration and sets the default values.
         /// </summary>
         public IosMobileAppConfiguration() : base() {
             OdataType = "#microsoft.graph.iosMobileAppConfiguration";

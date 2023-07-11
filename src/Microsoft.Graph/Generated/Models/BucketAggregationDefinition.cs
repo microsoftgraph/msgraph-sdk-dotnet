@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sortBy", value); }
         }
         /// <summary>
-        /// Instantiates a new BucketAggregationDefinition and sets the default values.
+        /// Instantiates a new bucketAggregationDefinition and sets the default values.
         /// </summary>
         public BucketAggregationDefinition() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

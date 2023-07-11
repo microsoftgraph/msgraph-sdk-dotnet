@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamUnarchivedEventMessageDetail and sets the default values.
+        /// Instantiates a new teamUnarchivedEventMessageDetail and sets the default values.
         /// </summary>
         public TeamUnarchivedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.teamUnarchivedEventMessageDetail";

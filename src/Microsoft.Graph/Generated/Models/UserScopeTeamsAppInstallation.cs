@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserScopeTeamsAppInstallation and sets the default values.
+        /// Instantiates a new userScopeTeamsAppInstallation and sets the default values.
         /// </summary>
         public UserScopeTeamsAppInstallation() : base() {
             OdataType = "#microsoft.graph.userScopeTeamsAppInstallation";

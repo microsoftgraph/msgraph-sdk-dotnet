@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81CustomConfiguration resource.
+    /// </summary>
     public class WindowsPhone81CustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81CustomConfiguration and sets the default values.
+        /// Instantiates a new windowsPhone81CustomConfiguration and sets the default values.
         /// </summary>
         public WindowsPhone81CustomConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsPhone81CustomConfiguration";

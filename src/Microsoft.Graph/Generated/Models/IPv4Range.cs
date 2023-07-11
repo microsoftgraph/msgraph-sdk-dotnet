@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// IPv4 Range definition.
+    /// </summary>
     public class IPv4Range : IpRange, IParsable {
         /// <summary>Lower address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IPv4Range and sets the default values.
+        /// Instantiates a new iPv4Range and sets the default values.
         /// </summary>
         public IPv4Range() : base() {
             OdataType = "#microsoft.graph.iPv4Range";

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("visibleHistoryStartDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new MembersAddedEventMessageDetail and sets the default values.
+        /// Instantiates a new membersAddedEventMessageDetail and sets the default values.
         /// </summary>
         public MembersAddedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.membersAddedEventMessageDetail";

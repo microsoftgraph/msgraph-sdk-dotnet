@@ -28,8 +28,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
         public DeviceConfigurationUserStatusItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/userStatuses/{deviceConfigurationUserStatus%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a deviceConfigurationUserStatus.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property userStatuses for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,8 +47,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationUserStatus object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-get?view=graph-rest-1.0" />
+        /// Device configuration installation status by user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +66,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             return await RequestAdapter.SendAsync<DeviceConfigurationUserStatus>(requestInfo, DeviceConfigurationUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationUserStatus object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationuserstatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property userStatuses in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +87,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             return await RequestAdapter.SendAsync<DeviceConfigurationUserStatus>(requestInfo, DeviceConfigurationUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a deviceConfigurationUserStatus.
+        /// Delete navigation property userStatuses for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationUserStatus object.
+        /// Device configuration installation status by user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +137,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationUserStatus object.
+        /// Update the navigation property userStatuses in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatuse
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationUserStatus object.
+        /// Device configuration installation status by user.
         /// </summary>
         public class DeviceConfigurationUserStatusItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

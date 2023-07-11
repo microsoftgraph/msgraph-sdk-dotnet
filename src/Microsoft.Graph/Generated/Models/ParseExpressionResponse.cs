@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The error property</summary>
+        /// <summary>Error details, if expression evaluation resulted in an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PublicError? Error {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The evaluationResult property</summary>
+        /// <summary>A collection of values produced by the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EvaluationResult {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("evaluationResult", value); }
         }
 #endif
-        /// <summary>The evaluationSucceeded property</summary>
+        /// <summary>true if the evaluation was successful.</summary>
         public bool? EvaluationSucceeded {
             get { return BackingStore?.Get<bool?>("evaluationSucceeded"); }
             set { BackingStore?.Set("evaluationSucceeded", value); }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The parsedExpression property</summary>
+        /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AttributeMappingSource? ParsedExpression {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("parsedExpression", value); }
         }
 #endif
-        /// <summary>The parsingSucceeded property</summary>
+        /// <summary>true if the expression was parsed successfully.</summary>
         public bool? ParsingSucceeded {
             get { return BackingStore?.Get<bool?>("parsingSucceeded"); }
             set { BackingStore?.Set("parsingSucceeded", value); }

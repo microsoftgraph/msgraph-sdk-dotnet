@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServiceHostedMediaConfig and sets the default values.
+        /// Instantiates a new serviceHostedMediaConfig and sets the default values.
         /// </summary>
         public ServiceHostedMediaConfig() : base() {
             OdataType = "#microsoft.graph.serviceHostedMediaConfig";

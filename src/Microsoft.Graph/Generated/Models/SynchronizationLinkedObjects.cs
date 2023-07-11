@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("manager", value); }
         }
 #endif
-        /// <summary>The members property</summary>
+        /// <summary>All group members that you would like to provision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationJobSubject>? Members {

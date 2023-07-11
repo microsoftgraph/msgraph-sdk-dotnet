@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("userWritebackEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new OnPremisesDirectorySynchronizationFeature and sets the default values.
+        /// Instantiates a new onPremisesDirectorySynchronizationFeature and sets the default values.
         /// </summary>
         public OnPremisesDirectorySynchronizationFeature() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

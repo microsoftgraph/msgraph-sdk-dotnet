@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class SynchronizationTaskExecution : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The activityIdentifier property</summary>
+        /// <summary>Identifier of the job run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivityIdentifier {
@@ -27,52 +27,52 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The countEntitled property</summary>
+        /// <summary>Count of processed entries that were assigned for this application.</summary>
         public long? CountEntitled {
             get { return BackingStore?.Get<long?>("countEntitled"); }
             set { BackingStore?.Set("countEntitled", value); }
         }
-        /// <summary>The countEntitledForProvisioning property</summary>
+        /// <summary>Count of processed entries that were assigned for provisioning.</summary>
         public long? CountEntitledForProvisioning {
             get { return BackingStore?.Get<long?>("countEntitledForProvisioning"); }
             set { BackingStore?.Set("countEntitledForProvisioning", value); }
         }
-        /// <summary>The countEscrowed property</summary>
+        /// <summary>Count of entries that were escrowed (errors).</summary>
         public long? CountEscrowed {
             get { return BackingStore?.Get<long?>("countEscrowed"); }
             set { BackingStore?.Set("countEscrowed", value); }
         }
-        /// <summary>The countEscrowedRaw property</summary>
+        /// <summary>Count of entries that were escrowed, including system-generated escrows.</summary>
         public long? CountEscrowedRaw {
             get { return BackingStore?.Get<long?>("countEscrowedRaw"); }
             set { BackingStore?.Set("countEscrowedRaw", value); }
         }
-        /// <summary>The countExported property</summary>
+        /// <summary>Count of exported entries.</summary>
         public long? CountExported {
             get { return BackingStore?.Get<long?>("countExported"); }
             set { BackingStore?.Set("countExported", value); }
         }
-        /// <summary>The countExports property</summary>
+        /// <summary>Count of entries that were expected to be exported.</summary>
         public long? CountExports {
             get { return BackingStore?.Get<long?>("countExports"); }
             set { BackingStore?.Set("countExports", value); }
         }
-        /// <summary>The countImported property</summary>
+        /// <summary>Count of imported entries.</summary>
         public long? CountImported {
             get { return BackingStore?.Get<long?>("countImported"); }
             set { BackingStore?.Set("countImported", value); }
         }
-        /// <summary>The countImportedDeltas property</summary>
+        /// <summary>Count of imported delta-changes.</summary>
         public long? CountImportedDeltas {
             get { return BackingStore?.Get<long?>("countImportedDeltas"); }
             set { BackingStore?.Set("countImportedDeltas", value); }
         }
-        /// <summary>The countImportedReferenceDeltas property</summary>
+        /// <summary>Count of imported delta-changes pertaining to reference changes.</summary>
         public long? CountImportedReferenceDeltas {
             get { return BackingStore?.Get<long?>("countImportedReferenceDeltas"); }
             set { BackingStore?.Set("countImportedReferenceDeltas", value); }
         }
-        /// <summary>The error property</summary>
+        /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationError? Error {
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The timeBegan property</summary>
+        /// <summary>Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? TimeBegan {
             get { return BackingStore?.Get<DateTimeOffset?>("timeBegan"); }
             set { BackingStore?.Set("timeBegan", value); }
         }
-        /// <summary>The timeEnded property</summary>
+        /// <summary>Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? TimeEnded {
             get { return BackingStore?.Get<DateTimeOffset?>("timeEnded"); }
             set { BackingStore?.Set("timeEnded", value); }

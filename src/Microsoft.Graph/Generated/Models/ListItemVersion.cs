@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ListItemVersion and sets the default values.
+        /// Instantiates a new listItemVersion and sets the default values.
         /// </summary>
         public ListItemVersion() : base() {
             OdataType = "#microsoft.graph.listItemVersion";

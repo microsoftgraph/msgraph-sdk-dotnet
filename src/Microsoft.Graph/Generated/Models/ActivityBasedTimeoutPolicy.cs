@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ActivityBasedTimeoutPolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new ActivityBasedTimeoutPolicy and sets the default values.
+        /// Instantiates a new activityBasedTimeoutPolicy and sets the default values.
         /// </summary>
         public ActivityBasedTimeoutPolicy() : base() {
             OdataType = "#microsoft.graph.activityBasedTimeoutPolicy";

@@ -10,12 +10,12 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DirectoryDefinitionDiscoverabilities?>("discoverabilities"); }
             set { BackingStore?.Set("discoverabilities", value); }
         }
-        /// <summary>The discoveryDateTime property</summary>
+        /// <summary>Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DiscoveryDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("discoveryDateTime"); }
             set { BackingStore?.Set("discoveryDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the directory. Must be unique within the synchronization schema. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The objects property</summary>
+        /// <summary>Collection of objects supported by the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ObjectDefinition>? Objects {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("objects", value); }
         }
 #endif
-        /// <summary>The readOnly property</summary>
+        /// <summary>Whether this object is read-only.</summary>
         public bool? ReadOnly {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

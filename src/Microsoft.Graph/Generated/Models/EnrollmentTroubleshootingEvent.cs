@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Event representing an enrollment failure.
+    /// </summary>
     public class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Azure AD device identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

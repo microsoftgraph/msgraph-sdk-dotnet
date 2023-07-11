@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TaskFileAttachment and sets the default values.
+        /// Instantiates a new taskFileAttachment and sets the default values.
         /// </summary>
         public TaskFileAttachment() : base() {
             OdataType = "#microsoft.graph.taskFileAttachment";

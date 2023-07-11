@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("resolveAvailability", value); }
         }
         /// <summary>
-        /// Instantiates a new LocationConstraintItem and sets the default values.
+        /// Instantiates a new locationConstraintItem and sets the default values.
         /// </summary>
         public LocationConstraintItem() : base() {
             OdataType = "#microsoft.graph.locationConstraintItem";

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SharePointIdentitySet and sets the default values.
+        /// Instantiates a new sharePointIdentitySet and sets the default values.
         /// </summary>
         public SharePointIdentitySet() : base() {
             OdataType = "#microsoft.graph.sharePointIdentitySet";

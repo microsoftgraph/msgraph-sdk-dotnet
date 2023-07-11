@@ -487,7 +487,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("spa", value); }
         }
 #endif
-        /// <summary>The synchronization property</summary>
+        /// <summary>Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.Synchronization? Synchronization {
@@ -577,7 +577,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Application and sets the default values.
+        /// Instantiates a new application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";

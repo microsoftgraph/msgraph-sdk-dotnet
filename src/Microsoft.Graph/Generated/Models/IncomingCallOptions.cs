@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class IncomingCallOptions : CallOptions, IParsable {
         /// <summary>
-        /// Instantiates a new IncomingCallOptions and sets the default values.
+        /// Instantiates a new incomingCallOptions and sets the default values.
         /// </summary>
         public IncomingCallOptions() : base() {
             OdataType = "#microsoft.graph.incomingCallOptions";

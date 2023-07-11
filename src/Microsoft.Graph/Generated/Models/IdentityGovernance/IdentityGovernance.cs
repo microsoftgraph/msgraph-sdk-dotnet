@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IdentityGovernance and sets the default values.
+        /// Instantiates a new identityGovernance and sets the default values.
         /// </summary>
         public IdentityGovernance() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

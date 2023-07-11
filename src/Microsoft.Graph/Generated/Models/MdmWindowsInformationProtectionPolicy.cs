@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Policy for Windows information protection with MDM
+    /// </summary>
     public class MdmWindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable {
         /// <summary>
-        /// Instantiates a new MdmWindowsInformationProtectionPolicy and sets the default values.
+        /// Instantiates a new mdmWindowsInformationProtectionPolicy and sets the default values.
         /// </summary>
         public MdmWindowsInformationProtectionPolicy() : base() {
             OdataType = "#microsoft.graph.mdmWindowsInformationProtectionPolicy";

@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CertificateAuthority and sets the default values.
+        /// Instantiates a new certificateAuthority and sets the default values.
         /// </summary>
         public CertificateAuthority() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

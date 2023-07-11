@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("applicationIdentityType", value); }
         }
         /// <summary>
-        /// Instantiates a new TeamworkApplicationIdentity and sets the default values.
+        /// Instantiates a new teamworkApplicationIdentity and sets the default values.
         /// </summary>
         public TeamworkApplicationIdentity() : base() {
             OdataType = "#microsoft.graph.teamworkApplicationIdentity";

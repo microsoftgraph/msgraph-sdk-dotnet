@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamsAppRemovedEventMessageDetail and sets the default values.
+        /// Instantiates a new teamsAppRemovedEventMessageDetail and sets the default values.
         /// </summary>
         public TeamsAppRemovedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.teamsAppRemovedEventMessageDetail";

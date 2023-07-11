@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WorkforceIntegration and sets the default values.
+        /// Instantiates a new workforceIntegration and sets the default values.
         /// </summary>
         public WorkforceIntegration() : base() {
             OdataType = "#microsoft.graph.workforceIntegration";

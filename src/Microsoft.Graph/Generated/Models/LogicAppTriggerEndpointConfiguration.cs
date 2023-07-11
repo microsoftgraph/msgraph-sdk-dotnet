@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new LogicAppTriggerEndpointConfiguration and sets the default values.
+        /// Instantiates a new logicAppTriggerEndpointConfiguration and sets the default values.
         /// </summary>
         public LogicAppTriggerEndpointConfiguration() : base() {
             OdataType = "#microsoft.graph.logicAppTriggerEndpointConfiguration";

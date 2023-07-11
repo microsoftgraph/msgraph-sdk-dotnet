@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChatRenamedEventMessageDetail and sets the default values.
+        /// Instantiates a new chatRenamedEventMessageDetail and sets the default values.
         /// </summary>
         public ChatRenamedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.chatRenamedEventMessageDetail";

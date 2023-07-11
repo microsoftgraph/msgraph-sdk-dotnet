@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MailSearchFolder and sets the default values.
+        /// Instantiates a new mailSearchFolder and sets the default values.
         /// </summary>
         public MailSearchFolder() : base() {
             OdataType = "#microsoft.graph.mailSearchFolder";

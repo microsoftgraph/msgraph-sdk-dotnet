@@ -52,7 +52,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// Pre-configured synchronization settings for a particular application.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item 
             return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property templates in servicePrincipals
+        /// Update (override) the synchronization template associated with a given application.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// Pre-configured synchronization settings for a particular application.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property templates in servicePrincipals
+        /// Update (override) the synchronization template associated with a given application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item 
             }
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// Pre-configured synchronization settings for a particular application.
         /// </summary>
         public class SynchronizationTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

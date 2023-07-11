@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EdiscoverySearch and sets the default values.
+        /// Instantiates a new ediscoverySearch and sets the default values.
         /// </summary>
         public EdiscoverySearch() : base() {
             OdataType = "#microsoft.graph.security.ediscoverySearch";

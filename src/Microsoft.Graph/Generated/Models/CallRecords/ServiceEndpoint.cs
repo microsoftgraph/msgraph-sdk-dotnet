@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models.CallRecords {
     public class ServiceEndpoint : Endpoint, IParsable {
         /// <summary>
-        /// Instantiates a new ServiceEndpoint and sets the default values.
+        /// Instantiates a new serviceEndpoint and sets the default values.
         /// </summary>
         public ServiceEndpoint() : base() {
             OdataType = "#microsoft.graph.callRecords.serviceEndpoint";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Represents an item on the iOS Home Screen
+    /// </summary>
     public class IosHomeScreenFolder : IosHomeScreenItem, IParsable {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosHomeScreenFolder and sets the default values.
+        /// Instantiates a new iosHomeScreenFolder and sets the default values.
         /// </summary>
         public IosHomeScreenFolder() : base() {
             OdataType = "#microsoft.graph.iosHomeScreenFolder";

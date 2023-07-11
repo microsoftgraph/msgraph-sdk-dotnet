@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("signInScope", value); }
         }
         /// <summary>
-        /// Instantiates a new UserLastSignInRecommendationInsightSetting and sets the default values.
+        /// Instantiates a new userLastSignInRecommendationInsightSetting and sets the default values.
         /// </summary>
         public UserLastSignInRecommendationInsightSetting() : base() {
             OdataType = "#microsoft.graph.userLastSignInRecommendationInsightSetting";

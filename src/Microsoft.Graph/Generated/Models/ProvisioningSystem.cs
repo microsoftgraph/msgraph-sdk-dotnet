@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProvisioningSystem and sets the default values.
+        /// Instantiates a new provisioningSystem and sets the default values.
         /// </summary>
         public ProvisioningSystem() : base() {
             OdataType = "#microsoft.graph.provisioningSystem";

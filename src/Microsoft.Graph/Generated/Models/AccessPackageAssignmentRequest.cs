@@ -57,6 +57,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customExtensionCalloutInstances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +141,7 @@ namespace Microsoft.Graph.Models {
                 {"assignment", n => { Assignment = n.GetObjectValue<AccessPackageAssignment>(AccessPackageAssignment.CreateFromDiscriminatorValue); } },
                 {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 {"requestType", n => { RequestType = n.GetEnumValue<AccessPackageRequestType>(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<EntitlementManagementSchedule>(EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
@@ -146,6 +161,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<AccessPackageAssignment>("assignment", Assignment);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteObjectValue<AccessPackageSubject>("requestor", Requestor);
             writer.WriteEnumValue<AccessPackageRequestType>("requestType", RequestType);
             writer.WriteObjectValue<EntitlementManagementSchedule>("schedule", Schedule);

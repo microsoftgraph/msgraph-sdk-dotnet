@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EdiscoveryCase and sets the default values.
+        /// Instantiates a new ediscoveryCase and sets the default values.
         /// </summary>
         public EdiscoveryCase() : base() {
             OdataType = "#microsoft.graph.security.ediscoveryCase";

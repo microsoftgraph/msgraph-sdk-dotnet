@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class DisableAndDeleteUserApplyAction : AccessReviewApplyAction, IParsable {
         /// <summary>
-        /// Instantiates a new DisableAndDeleteUserApplyAction and sets the default values.
+        /// Instantiates a new disableAndDeleteUserApplyAction and sets the default values.
         /// </summary>
         public DisableAndDeleteUserApplyAction() : base() {
             OdataType = "#microsoft.graph.disableAndDeleteUserApplyAction";

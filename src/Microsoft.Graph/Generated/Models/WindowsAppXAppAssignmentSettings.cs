@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class WindowsAppXAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.</summary>
         public bool? UseDeviceContext {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsAppXAppAssignmentSettings and sets the default values.
+        /// Instantiates a new windowsAppXAppAssignmentSettings and sets the default values.
         /// </summary>
         public WindowsAppXAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.windowsAppXAppAssignmentSettings";

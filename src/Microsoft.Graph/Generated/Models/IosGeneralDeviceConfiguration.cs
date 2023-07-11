@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
+    /// </summary>
     public class IosGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to allow account modification when the device is in supervised mode.</summary>
         public bool? AccountBlockModification {
@@ -832,7 +835,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("wiFiConnectOnlyToConfiguredNetworks", value); }
         }
         /// <summary>
-        /// Instantiates a new IosGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new iosGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public IosGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.iosGeneralDeviceConfiguration";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class GroupPeerOutlierRecommendationInsightSettings : AccessReviewRecommendationInsightSetting, IParsable {
         /// <summary>
-        /// Instantiates a new GroupPeerOutlierRecommendationInsightSettings and sets the default values.
+        /// Instantiates a new groupPeerOutlierRecommendationInsightSettings and sets the default values.
         /// </summary>
         public GroupPeerOutlierRecommendationInsightSettings() : base() {
             OdataType = "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings";

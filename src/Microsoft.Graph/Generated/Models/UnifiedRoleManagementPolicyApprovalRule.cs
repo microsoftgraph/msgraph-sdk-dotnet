@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnifiedRoleManagementPolicyApprovalRule and sets the default values.
+        /// Instantiates a new unifiedRoleManagementPolicyApprovalRule and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyApprovalRule() : base() {
             OdataType = "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule";

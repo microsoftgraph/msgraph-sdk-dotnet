@@ -18,17 +18,17 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<SynchronizationStatusCode?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
-        /// <summary>The countSuccessiveCompleteFailures property</summary>
+        /// <summary>Number of consecutive times this job failed.</summary>
         public long? CountSuccessiveCompleteFailures {
             get { return BackingStore?.Get<long?>("countSuccessiveCompleteFailures"); }
             set { BackingStore?.Set("countSuccessiveCompleteFailures", value); }
         }
-        /// <summary>The escrowsPruned property</summary>
+        /// <summary>true if the job&apos;s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job&apos;s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.</summary>
         public bool? EscrowsPruned {
             get { return BackingStore?.Get<bool?>("escrowsPruned"); }
             set { BackingStore?.Set("escrowsPruned", value); }
         }
-        /// <summary>The lastExecution property</summary>
+        /// <summary>Details of the last execution of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationTaskExecution? LastExecution {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastExecution", value); }
         }
 #endif
-        /// <summary>The lastSuccessfulExecution property</summary>
+        /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationTaskExecution? LastSuccessfulExecution {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
 #endif
-        /// <summary>The lastSuccessfulExecutionWithExports property</summary>
+        /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The progress property</summary>
+        /// <summary>Details of the progress of a job toward completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationProgress>? Progress {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("progress", value); }
         }
 #endif
-        /// <summary>The quarantine property</summary>
+        /// <summary>If job is in quarantine, quarantine details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationQuarantine? Quarantine {
@@ -112,17 +112,17 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("quarantine", value); }
         }
 #endif
-        /// <summary>The steadyStateFirstAchievedTime property</summary>
+        /// <summary>The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SteadyStateFirstAchievedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("steadyStateFirstAchievedTime"); }
             set { BackingStore?.Set("steadyStateFirstAchievedTime", value); }
         }
-        /// <summary>The steadyStateLastAchievedTime property</summary>
+        /// <summary>The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SteadyStateLastAchievedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("steadyStateLastAchievedTime"); }
             set { BackingStore?.Set("steadyStateLastAchievedTime", value); }
         }
-        /// <summary>The synchronizedEntryCountByType property</summary>
+        /// <summary>Count of synchronized objects, listed by object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<StringKeyLongValuePair>? SynchronizedEntryCountByType {
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
 #endif
-        /// <summary>The troubleshootingUrl property</summary>
+        /// <summary>In the event of an error, the URL with the troubleshooting steps for the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TroubleshootingUrl {

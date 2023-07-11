@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RoomList and sets the default values.
+        /// Instantiates a new roomList and sets the default values.
         /// </summary>
         public RoomList() : base() {
             OdataType = "#microsoft.graph.roomList";

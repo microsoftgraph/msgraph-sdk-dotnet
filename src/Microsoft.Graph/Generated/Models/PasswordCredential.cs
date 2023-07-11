@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new PasswordCredential and sets the default values.
+        /// Instantiates a new passwordCredential and sets the default values.
         /// </summary>
         public PasswordCredential() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

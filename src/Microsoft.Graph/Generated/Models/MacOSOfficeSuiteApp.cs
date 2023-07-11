@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the MacOS Office Suite App.
+    /// </summary>
     public class MacOSOfficeSuiteApp : MobileApp, IParsable {
         /// <summary>
-        /// Instantiates a new MacOSOfficeSuiteApp and sets the default values.
+        /// Instantiates a new macOSOfficeSuiteApp and sets the default values.
         /// </summary>
         public MacOSOfficeSuiteApp() : base() {
             OdataType = "#microsoft.graph.macOSOfficeSuiteApp";

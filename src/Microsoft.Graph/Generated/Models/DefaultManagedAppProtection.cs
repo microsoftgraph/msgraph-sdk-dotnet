@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+    /// </summary>
     public class DefaultManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
         public ManagedAppDataEncryptionType? AppDataEncryptionType {
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new DefaultManagedAppProtection and sets the default values.
+        /// Instantiates a new defaultManagedAppProtection and sets the default values.
         /// </summary>
         public DefaultManagedAppProtection() : base() {
             OdataType = "#microsoft.graph.defaultManagedAppProtection";

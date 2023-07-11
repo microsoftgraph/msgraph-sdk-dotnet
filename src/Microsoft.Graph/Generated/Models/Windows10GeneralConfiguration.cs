@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
+    /// </summary>
     public class Windows10GeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail {
@@ -1192,7 +1195,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("wirelessDisplayRequirePinForPairing", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10GeneralConfiguration and sets the default values.
+        /// Instantiates a new windows10GeneralConfiguration and sets the default values.
         /// </summary>
         public Windows10GeneralConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10GeneralConfiguration";

@@ -27,7 +27,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause
         public PauseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/pause", rawUrl) {
         }
         /// <summary>
-        /// Invoke action pause
+        /// Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action pause
+        /// Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

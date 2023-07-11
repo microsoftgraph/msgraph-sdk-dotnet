@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new PrintOperationStatus and sets the default values.
+        /// Instantiates a new printOperationStatus and sets the default values.
         /// </summary>
         public PrintOperationStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

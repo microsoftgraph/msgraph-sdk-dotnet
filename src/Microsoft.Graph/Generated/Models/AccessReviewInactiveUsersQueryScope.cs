@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("inactiveDuration", value); }
         }
         /// <summary>
-        /// Instantiates a new AccessReviewInactiveUsersQueryScope and sets the default values.
+        /// Instantiates a new accessReviewInactiveUsersQueryScope and sets the default values.
         /// </summary>
         public AccessReviewInactiveUsersQueryScope() : base() {
             OdataType = "#microsoft.graph.accessReviewInactiveUsersQueryScope";

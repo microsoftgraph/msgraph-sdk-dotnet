@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not to use device licensing.</summary>
         public bool? UseDeviceLicensing {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosVppAppAssignmentSettings and sets the default values.
+        /// Instantiates a new iosVppAppAssignmentSettings and sets the default values.
         /// </summary>
         public IosVppAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.iosVppAppAssignmentSettings";

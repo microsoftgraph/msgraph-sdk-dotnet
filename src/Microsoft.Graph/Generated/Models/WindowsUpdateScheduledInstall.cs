@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("scheduledInstallTime", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsUpdateScheduledInstall and sets the default values.
+        /// Instantiates a new windowsUpdateScheduledInstall and sets the default values.
         /// </summary>
         public WindowsUpdateScheduledInstall() : base() {
             OdataType = "#microsoft.graph.windowsUpdateScheduledInstall";

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CallStartedEventMessageDetail and sets the default values.
+        /// Instantiates a new callStartedEventMessageDetail and sets the default values.
         /// </summary>
         public CallStartedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.callStartedEventMessageDetail";

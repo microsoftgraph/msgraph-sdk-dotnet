@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AzureCommunicationServicesUserConversationMember and sets the default values.
+        /// Instantiates a new azureCommunicationServicesUserConversationMember and sets the default values.
         /// </summary>
         public AzureCommunicationServicesUserConversationMember() : base() {
             OdataType = "#microsoft.graph.azureCommunicationServicesUserConversationMember";

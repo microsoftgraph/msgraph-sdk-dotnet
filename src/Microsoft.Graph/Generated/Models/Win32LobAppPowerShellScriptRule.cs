@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// A base complex type to store the detection or requirement rule data for a Win32 LOB app.
+    /// </summary>
     public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +76,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
+        /// Instantiates a new win32LobAppPowerShellScriptRule and sets the default values.
         /// </summary>
         public Win32LobAppPowerShellScriptRule() : base() {
             OdataType = "#microsoft.graph.win32LobAppPowerShellScriptRule";

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationMediaResource and sets the default values.
+        /// Instantiates a new educationMediaResource and sets the default values.
         /// </summary>
         public EducationMediaResource() : base() {
             OdataType = "#microsoft.graph.educationMediaResource";

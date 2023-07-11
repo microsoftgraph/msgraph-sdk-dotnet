@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+    /// </summary>
     public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +113,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidManagedAppProtection and sets the default values.
+        /// Instantiates a new androidManagedAppProtection and sets the default values.
         /// </summary>
         public AndroidManagedAppProtection() : base() {
             OdataType = "#microsoft.graph.androidManagedAppProtection";

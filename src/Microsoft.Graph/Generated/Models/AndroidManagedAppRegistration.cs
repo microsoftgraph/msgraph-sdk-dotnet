@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Represents the synchronization details of an android app, with management capabilities, for a specific user.
+    /// </summary>
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>
-        /// Instantiates a new AndroidManagedAppRegistration and sets the default values.
+        /// Instantiates a new androidManagedAppRegistration and sets the default values.
         /// </summary>
         public AndroidManagedAppRegistration() : base() {
             OdataType = "#microsoft.graph.androidManagedAppRegistration";

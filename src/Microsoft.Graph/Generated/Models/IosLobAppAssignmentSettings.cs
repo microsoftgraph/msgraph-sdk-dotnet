@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class IosLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosLobAppAssignmentSettings and sets the default values.
+        /// Instantiates a new iosLobAppAssignmentSettings and sets the default values.
         /// </summary>
         public IosLobAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.iosLobAppAssignmentSettings";

@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return await RequestAdapter.SendAsync<CrossTenantIdentitySyncPolicyPartner>(requestInfo, CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0" />
+        /// Update the user synchronization policy of a partner-specific configuration.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return requestInfo;
         }
         /// <summary>
-        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Update the user synchronization policy of a partner-specific configuration.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

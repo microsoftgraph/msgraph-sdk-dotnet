@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Managed Android Line Of Business apps.
+    /// </summary>
     public class ManagedAndroidLobApp : ManagedMobileLobApp, IParsable {
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +65,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ManagedAndroidLobApp and sets the default values.
+        /// Instantiates a new managedAndroidLobApp and sets the default values.
         /// </summary>
         public ManagedAndroidLobApp() : base() {
             OdataType = "#microsoft.graph.managedAndroidLobApp";

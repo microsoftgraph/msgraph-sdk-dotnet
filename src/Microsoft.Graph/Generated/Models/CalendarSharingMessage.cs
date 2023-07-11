@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CalendarSharingMessage and sets the default values.
+        /// Instantiates a new calendarSharingMessage and sets the default values.
         /// </summary>
         public CalendarSharingMessage() : base() {
             OdataType = "#microsoft.graph.calendarSharingMessage";

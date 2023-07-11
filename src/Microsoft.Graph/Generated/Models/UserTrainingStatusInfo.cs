@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("trainingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new UserTrainingStatusInfo and sets the default values.
+        /// Instantiates a new userTrainingStatusInfo and sets the default values.
         /// </summary>
         public UserTrainingStatusInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

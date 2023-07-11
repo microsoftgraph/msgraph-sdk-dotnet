@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models.Security {
     public class ArticleIndicator : Indicator, IParsable {
         /// <summary>
-        /// Instantiates a new ArticleIndicator and sets the default values.
+        /// Instantiates a new articleIndicator and sets the default values.
         /// </summary>
         public ArticleIndicator() : base() {
             OdataType = "#microsoft.graph.security.articleIndicator";

@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get authenticationMethods from reports
+        /// Container for navigation properties for Azure AD authentication methods resources.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Get authenticationMethods from reports
+        /// Container for navigation properties for Azure AD authentication methods resources.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods {
             }
         }
         /// <summary>
-        /// Get authenticationMethods from reports
+        /// Container for navigation properties for Azure AD authentication methods resources.
         /// </summary>
         public class AuthenticationMethodsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

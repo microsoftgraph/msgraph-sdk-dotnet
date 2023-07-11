@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VerifiedDomain and sets the default values.
+        /// Instantiates a new verifiedDomain and sets the default values.
         /// </summary>
         public VerifiedDomain() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

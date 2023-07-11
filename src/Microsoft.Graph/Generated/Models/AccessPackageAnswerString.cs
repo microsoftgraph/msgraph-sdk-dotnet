@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessPackageAnswerString and sets the default values.
+        /// Instantiates a new accessPackageAnswerString and sets the default values.
         /// </summary>
         public AccessPackageAnswerString() : base() {
             OdataType = "#microsoft.graph.accessPackageAnswerString";

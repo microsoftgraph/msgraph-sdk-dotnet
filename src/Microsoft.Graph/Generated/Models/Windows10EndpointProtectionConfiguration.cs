@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
+    /// </summary>
     public class Windows10EndpointProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)</summary>
         public bool? ApplicationGuardAllowPersistence {
@@ -267,7 +270,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("smartScreenEnableInShell", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
+        /// Instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
         /// </summary>
         public Windows10EndpointProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10EndpointProtectionConfiguration";

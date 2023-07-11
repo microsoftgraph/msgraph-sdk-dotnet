@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AssignedTrainingInfo and sets the default values.
+        /// Instantiates a new assignedTrainingInfo and sets the default values.
         /// </summary>
         public AssignedTrainingInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

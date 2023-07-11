@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SingleServicePrincipal and sets the default values.
+        /// Instantiates a new singleServicePrincipal and sets the default values.
         /// </summary>
         public SingleServicePrincipal() : base() {
             OdataType = "#microsoft.graph.singleServicePrincipal";

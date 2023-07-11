@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for iOS web apps.
+    /// </summary>
     public class IosiPadOSWebClip : MobileApp, IParsable {
         /// <summary>Indicates iOS/iPadOS web clip app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("useManagedBrowser", value); }
         }
         /// <summary>
-        /// Instantiates a new IosiPadOSWebClip and sets the default values.
+        /// Instantiates a new iosiPadOSWebClip and sets the default values.
         /// </summary>
         public IosiPadOSWebClip() : base() {
             OdataType = "#microsoft.graph.iosiPadOSWebClip";

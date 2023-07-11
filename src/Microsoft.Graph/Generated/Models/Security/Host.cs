@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Host and sets the default values.
+        /// Instantiates a new host and sets the default values.
         /// </summary>
         public Host() : base() {
             OdataType = "#microsoft.graph.security.host";

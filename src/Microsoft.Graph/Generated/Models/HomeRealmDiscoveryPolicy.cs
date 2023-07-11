@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class HomeRealmDiscoveryPolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new HomeRealmDiscoveryPolicy and sets the default values.
+        /// Instantiates a new homeRealmDiscoveryPolicy and sets the default values.
         /// </summary>
         public HomeRealmDiscoveryPolicy() : base() {
             OdataType = "#microsoft.graph.homeRealmDiscoveryPolicy";

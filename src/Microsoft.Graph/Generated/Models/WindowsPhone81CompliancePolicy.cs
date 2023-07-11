@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This class contains compliance settings for Windows 8.1 Mobile.
+    /// </summary>
     public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +82,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
+        /// Instantiates a new windowsPhone81CompliancePolicy and sets the default values.
         /// </summary>
         public WindowsPhone81CompliancePolicy() : base() {
             OdataType = "#microsoft.graph.windowsPhone81CompliancePolicy";

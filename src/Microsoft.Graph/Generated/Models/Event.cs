@@ -441,7 +441,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Event and sets the default values.
+        /// Instantiates a new event and sets the default values.
         /// </summary>
         public Event() : base() {
             OdataType = "#microsoft.graph.event";

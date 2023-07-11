@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
     public class OnDemandExecutionOnly : WorkflowExecutionConditions, IParsable {
         /// <summary>
-        /// Instantiates a new OnDemandExecutionOnly and sets the default values.
+        /// Instantiates a new onDemandExecutionOnly and sets the default values.
         /// </summary>
         public OnDemandExecutionOnly() : base() {
             OdataType = "#microsoft.graph.identityGovernance.onDemandExecutionOnly";

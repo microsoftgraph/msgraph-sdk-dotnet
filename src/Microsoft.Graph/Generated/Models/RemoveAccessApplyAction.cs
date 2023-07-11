@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class RemoveAccessApplyAction : AccessReviewApplyAction, IParsable {
         /// <summary>
-        /// Instantiates a new RemoveAccessApplyAction and sets the default values.
+        /// Instantiates a new removeAccessApplyAction and sets the default values.
         /// </summary>
         public RemoveAccessApplyAction() : base() {
             OdataType = "#microsoft.graph.removeAccessApplyAction";

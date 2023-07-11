@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SearchQuery and sets the default values.
+        /// Instantiates a new searchQuery and sets the default values.
         /// </summary>
         public SearchQuery() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -1,4 +1,8 @@
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.AccessPackages;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.CustomWorkflowExtensions;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.ResourceRoles;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.ResourceScopes;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item.Resources;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +21,22 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         /// <summary>Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.</summary>
         public AccessPackagesRequestBuilder AccessPackages { get =>
             new AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public CustomWorkflowExtensionsRequestBuilder CustomWorkflowExtensions { get =>
+            new CustomWorkflowExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceRoles property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public ResourceRolesRequestBuilder ResourceRoles { get =>
+            new ResourceRolesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resources property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public ResourcesRequestBuilder Resources { get =>
+            new ResourcesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public ResourceScopesRequestBuilder ResourceScopes { get =>
+            new ResourceScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.

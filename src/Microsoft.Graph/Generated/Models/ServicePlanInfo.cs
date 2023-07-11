@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServicePlanInfo and sets the default values.
+        /// Instantiates a new servicePlanInfo and sets the default values.
         /// </summary>
         public ServicePlanInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

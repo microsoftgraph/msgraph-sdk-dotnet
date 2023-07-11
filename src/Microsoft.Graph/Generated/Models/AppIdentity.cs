@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AppIdentity and sets the default values.
+        /// Instantiates a new appIdentity and sets the default values.
         /// </summary>
         public AppIdentity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

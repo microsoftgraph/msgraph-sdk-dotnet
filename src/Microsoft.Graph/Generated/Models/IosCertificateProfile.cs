@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Device Configuration.
+    /// </summary>
     public class IosCertificateProfile : DeviceConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new IosCertificateProfile and sets the default values.
+        /// Instantiates a new iosCertificateProfile and sets the default values.
         /// </summary>
         public IosCertificateProfile() : base() {
             OdataType = "#microsoft.graph.iosCertificateProfile";

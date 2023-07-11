@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("useCompanyBranding", value); }
         }
         /// <summary>
-        /// Instantiates a new EmailSettings and sets the default values.
+        /// Instantiates a new emailSettings and sets the default values.
         /// </summary>
         public EmailSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

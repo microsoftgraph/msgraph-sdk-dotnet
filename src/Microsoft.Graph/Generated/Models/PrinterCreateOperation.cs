@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PrinterCreateOperation and sets the default values.
+        /// Instantiates a new printerCreateOperation and sets the default values.
         /// </summary>
         public PrinterCreateOperation() : base() {
             OdataType = "#microsoft.graph.printerCreateOperation";

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChannelMembersNotificationRecipient and sets the default values.
+        /// Instantiates a new channelMembersNotificationRecipient and sets the default values.
         /// </summary>
         public ChannelMembersNotificationRecipient() : base() {
             OdataType = "#microsoft.graph.channelMembersNotificationRecipient";

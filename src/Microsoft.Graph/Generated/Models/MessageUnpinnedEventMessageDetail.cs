@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MessageUnpinnedEventMessageDetail and sets the default values.
+        /// Instantiates a new messageUnpinnedEventMessageDetail and sets the default values.
         /// </summary>
         public MessageUnpinnedEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.messageUnpinnedEventMessageDetail";

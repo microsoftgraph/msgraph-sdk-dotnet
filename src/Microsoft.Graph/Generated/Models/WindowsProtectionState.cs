@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Device protection status entity.
+    /// </summary>
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>Current anti malware version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,7 +36,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
 #endif
-        /// <summary>Computer&apos;s state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
+        /// <summary>Indicates device&apos;s health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
         public WindowsDeviceHealthState? DeviceState {
             get { return BackingStore?.Get<WindowsDeviceHealthState?>("deviceState"); }
             set { BackingStore?.Set("deviceState", value); }
@@ -52,17 +55,17 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("engineVersion", value); }
         }
 #endif
-        /// <summary>Full scan overdue or not?</summary>
+        /// <summary>When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.</summary>
         public bool? FullScanOverdue {
             get { return BackingStore?.Get<bool?>("fullScanOverdue"); }
             set { BackingStore?.Set("fullScanOverdue", value); }
         }
-        /// <summary>Full scan required or not?</summary>
+        /// <summary>When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.</summary>
         public bool? FullScanRequired {
             get { return BackingStore?.Get<bool?>("fullScanRequired"); }
             set { BackingStore?.Set("fullScanRequired", value); }
         }
-        /// <summary>Indicates whether the device is a virtual machine.</summary>
+        /// <summary>When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.</summary>
         public bool? IsVirtualMachine {
             get { return BackingStore?.Get<bool?>("isVirtualMachine"); }
             set { BackingStore?.Set("isVirtualMachine", value); }
@@ -110,37 +113,37 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
-        /// <summary>Anti malware is enabled or not</summary>
+        /// <summary>When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.</summary>
         public bool? MalwareProtectionEnabled {
             get { return BackingStore?.Get<bool?>("malwareProtectionEnabled"); }
             set { BackingStore?.Set("malwareProtectionEnabled", value); }
         }
-        /// <summary>Network inspection system enabled or not?</summary>
+        /// <summary>When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.</summary>
         public bool? NetworkInspectionSystemEnabled {
             get { return BackingStore?.Get<bool?>("networkInspectionSystemEnabled"); }
             set { BackingStore?.Set("networkInspectionSystemEnabled", value); }
         }
-        /// <summary>Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.</summary>
+        /// <summary>Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.</summary>
         public WindowsDefenderProductStatus? ProductStatus {
             get { return BackingStore?.Get<WindowsDefenderProductStatus?>("productStatus"); }
             set { BackingStore?.Set("productStatus", value); }
         }
-        /// <summary>Quick scan overdue or not?</summary>
+        /// <summary>When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.</summary>
         public bool? QuickScanOverdue {
             get { return BackingStore?.Get<bool?>("quickScanOverdue"); }
             set { BackingStore?.Set("quickScanOverdue", value); }
         }
-        /// <summary>Real time protection is enabled or not?</summary>
+        /// <summary>When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.</summary>
         public bool? RealTimeProtectionEnabled {
             get { return BackingStore?.Get<bool?>("realTimeProtectionEnabled"); }
             set { BackingStore?.Set("realTimeProtectionEnabled", value); }
         }
-        /// <summary>Reboot required or not?</summary>
+        /// <summary>When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.</summary>
         public bool? RebootRequired {
             get { return BackingStore?.Get<bool?>("rebootRequired"); }
             set { BackingStore?.Set("rebootRequired", value); }
         }
-        /// <summary>Signature out of date or not?</summary>
+        /// <summary>When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.</summary>
         public bool? SignatureUpdateOverdue {
             get { return BackingStore?.Get<bool?>("signatureUpdateOverdue"); }
             set { BackingStore?.Set("signatureUpdateOverdue", value); }
@@ -159,7 +162,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("signatureVersion", value); }
         }
 #endif
-        /// <summary>Indicates whether the Windows Defender tamper protection feature is enabled.</summary>
+        /// <summary>When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.</summary>
         public bool? TamperProtectionEnabled {
             get { return BackingStore?.Get<bool?>("tamperProtectionEnabled"); }
             set { BackingStore?.Set("tamperProtectionEnabled", value); }

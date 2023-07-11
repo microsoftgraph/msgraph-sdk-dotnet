@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TriggerAndScopeBasedConditions and sets the default values.
+        /// Instantiates a new triggerAndScopeBasedConditions and sets the default values.
         /// </summary>
         public TriggerAndScopeBasedConditions() : base() {
             OdataType = "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions";

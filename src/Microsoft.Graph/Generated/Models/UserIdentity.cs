@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserIdentity and sets the default values.
+        /// Instantiates a new userIdentity and sets the default values.
         /// </summary>
         public UserIdentity() : base() {
             OdataType = "#microsoft.graph.userIdentity";

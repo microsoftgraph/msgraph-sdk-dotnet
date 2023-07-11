@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The currentBegan property</summary>
+        /// <summary>Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CurrentBegan {
             get { return BackingStore?.Get<DateTimeOffset?>("currentBegan"); }
             set { BackingStore?.Set("currentBegan", value); }
         }
-        /// <summary>The error property</summary>
+        /// <summary>Describes the error(s) that occurred when putting the synchronization job into quarantine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SynchronizationError? Error {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The nextAttempt property</summary>
+        /// <summary>Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? NextAttempt {
             get { return BackingStore?.Get<DateTimeOffset?>("nextAttempt"); }
             set { BackingStore?.Set("nextAttempt", value); }
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<QuarantineReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
-        /// <summary>The seriesBegan property</summary>
+        /// <summary>Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SeriesBegan {
             get { return BackingStore?.Get<DateTimeOffset?>("seriesBegan"); }
             set { BackingStore?.Set("seriesBegan", value); }
         }
-        /// <summary>The seriesCount property</summary>
+        /// <summary>Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).</summary>
         public long? SeriesCount {
             get { return BackingStore?.Get<long?>("seriesCount"); }
             set { BackingStore?.Set("seriesCount", value); }

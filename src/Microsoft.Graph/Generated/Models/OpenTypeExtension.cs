@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OpenTypeExtension and sets the default values.
+        /// Instantiates a new openTypeExtension and sets the default values.
         /// </summary>
         public OpenTypeExtension() : base() {
             OdataType = "#microsoft.graph.openTypeExtension";

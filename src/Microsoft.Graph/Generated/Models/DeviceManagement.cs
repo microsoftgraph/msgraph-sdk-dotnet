@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Singleton entity that acts as a container for all device management functionality.
+    /// </summary>
     public class DeviceManagement : Entity, IParsable {
         /// <summary>Apple push notification certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

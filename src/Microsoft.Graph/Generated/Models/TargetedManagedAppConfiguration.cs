@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
+    /// </summary>
     public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable {
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>
-        /// Instantiates a new TargetedManagedAppConfiguration and sets the default values.
+        /// Instantiates a new targetedManagedAppConfiguration and sets the default values.
         /// </summary>
         public TargetedManagedAppConfiguration() : base() {
             OdataType = "#microsoft.graph.targetedManagedAppConfiguration";

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MembersLeftEventMessageDetail and sets the default values.
+        /// Instantiates a new membersLeftEventMessageDetail and sets the default values.
         /// </summary>
         public MembersLeftEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.membersLeftEventMessageDetail";

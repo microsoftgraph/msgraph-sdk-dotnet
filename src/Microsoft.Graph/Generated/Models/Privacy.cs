@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Privacy and sets the default values.
+        /// Instantiates a new privacy and sets the default values.
         /// </summary>
         public Privacy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

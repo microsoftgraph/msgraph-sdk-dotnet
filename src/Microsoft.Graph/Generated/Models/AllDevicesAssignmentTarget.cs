@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Base type for assignment targets.
+    /// </summary>
     public class AllDevicesAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>
-        /// Instantiates a new AllDevicesAssignmentTarget and sets the default values.
+        /// Instantiates a new allDevicesAssignmentTarget and sets the default values.
         /// </summary>
         public AllDevicesAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.allDevicesAssignmentTarget";

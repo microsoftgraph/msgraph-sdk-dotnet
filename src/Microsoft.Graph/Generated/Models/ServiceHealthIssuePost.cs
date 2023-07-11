@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("postType", value); }
         }
         /// <summary>
-        /// Instantiates a new ServiceHealthIssuePost and sets the default values.
+        /// Instantiates a new serviceHealthIssuePost and sets the default values.
         /// </summary>
         public ServiceHealthIssuePost() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

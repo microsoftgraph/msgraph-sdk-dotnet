@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ClaimsMappingPolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new ClaimsMappingPolicy and sets the default values.
+        /// Instantiates a new claimsMappingPolicy and sets the default values.
         /// </summary>
         public ClaimsMappingPolicy() : base() {
             OdataType = "#microsoft.graph.claimsMappingPolicy";

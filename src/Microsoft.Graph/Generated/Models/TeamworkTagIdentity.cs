@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class TeamworkTagIdentity : Identity, IParsable {
         /// <summary>
-        /// Instantiates a new TeamworkTagIdentity and sets the default values.
+        /// Instantiates a new teamworkTagIdentity and sets the default values.
         /// </summary>
         public TeamworkTagIdentity() : base() {
             OdataType = "#microsoft.graph.teamworkTagIdentity";

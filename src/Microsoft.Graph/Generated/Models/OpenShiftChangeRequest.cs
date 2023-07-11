@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OpenShiftChangeRequest and sets the default values.
+        /// Instantiates a new openShiftChangeRequest and sets the default values.
         /// </summary>
         public OpenShiftChangeRequest() : base() {
             OdataType = "#microsoft.graph.openShiftChangeRequest";

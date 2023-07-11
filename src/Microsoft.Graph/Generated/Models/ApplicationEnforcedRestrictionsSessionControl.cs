@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ApplicationEnforcedRestrictionsSessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>
-        /// Instantiates a new ApplicationEnforcedRestrictionsSessionControl and sets the default values.
+        /// Instantiates a new applicationEnforcedRestrictionsSessionControl and sets the default values.
         /// </summary>
         public ApplicationEnforcedRestrictionsSessionControl() : base() {
             OdataType = "#microsoft.graph.applicationEnforcedRestrictionsSessionControl";

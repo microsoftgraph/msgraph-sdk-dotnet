@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class TokenLifetimePolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new TokenLifetimePolicy and sets the default values.
+        /// Instantiates a new tokenLifetimePolicy and sets the default values.
         /// </summary>
         public TokenLifetimePolicy() : base() {
             OdataType = "#microsoft.graph.tokenLifetimePolicy";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class AzureAdPopTokenAuthentication : CustomExtensionAuthenticationConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new AzureAdPopTokenAuthentication and sets the default values.
+        /// Instantiates a new azureAdPopTokenAuthentication and sets the default values.
         /// </summary>
         public AzureAdPopTokenAuthentication() : base() {
             OdataType = "#microsoft.graph.azureAdPopTokenAuthentication";

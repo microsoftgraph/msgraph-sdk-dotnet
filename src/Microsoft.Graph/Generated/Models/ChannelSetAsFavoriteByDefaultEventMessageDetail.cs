@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChannelSetAsFavoriteByDefaultEventMessageDetail and sets the default values.
+        /// Instantiates a new channelSetAsFavoriteByDefaultEventMessageDetail and sets the default values.
         /// </summary>
         public ChannelSetAsFavoriteByDefaultEventMessageDetail() : base() {
             OdataType = "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail";

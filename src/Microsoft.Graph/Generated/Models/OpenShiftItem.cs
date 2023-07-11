@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("openSlotCount", value); }
         }
         /// <summary>
-        /// Instantiates a new OpenShiftItem and sets the default values.
+        /// Instantiates a new openShiftItem and sets the default values.
         /// </summary>
         public OpenShiftItem() : base() {
             OdataType = "#microsoft.graph.openShiftItem";

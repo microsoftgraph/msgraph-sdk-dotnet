@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Room and sets the default values.
+        /// Instantiates a new room and sets the default values.
         /// </summary>
         public Room() : base() {
             OdataType = "#microsoft.graph.room";

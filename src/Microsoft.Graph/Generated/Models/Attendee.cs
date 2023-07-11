@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Attendee and sets the default values.
+        /// Instantiates a new attendee and sets the default values.
         /// </summary>
         public Attendee() : base() {
             OdataType = "#microsoft.graph.attendee";

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
         public TemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// List the synchronization templates associated with a given application or service principal.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
             return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// List the synchronization templates associated with a given application or service principal.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
             return requestInfo;
         }
         /// <summary>
-        /// Get templates from servicePrincipals
+        /// List the synchronization templates associated with a given application or service principal.
         /// </summary>
         public class TemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

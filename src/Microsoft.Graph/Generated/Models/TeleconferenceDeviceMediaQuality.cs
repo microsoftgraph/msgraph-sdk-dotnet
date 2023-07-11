@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("remotePort", value); }
         }
         /// <summary>
-        /// Instantiates a new TeleconferenceDeviceMediaQuality and sets the default values.
+        /// Instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
         /// </summary>
         public TeleconferenceDeviceMediaQuality() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

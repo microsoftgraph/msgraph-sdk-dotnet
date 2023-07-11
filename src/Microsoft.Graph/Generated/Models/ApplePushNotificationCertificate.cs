@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Apple push notification certificate.
+    /// </summary>
     public class ApplePushNotificationCertificate : Entity, IParsable {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

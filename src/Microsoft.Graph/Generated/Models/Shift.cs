@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Shift and sets the default values.
+        /// Instantiates a new shift and sets the default values.
         /// </summary>
         public Shift() : base() {
             OdataType = "#microsoft.graph.shift";

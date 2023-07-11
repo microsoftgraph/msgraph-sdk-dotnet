@@ -28,7 +28,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
         public DiscoverRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/directories/{directoryDefinition%2Did}/discover", rawUrl) {
         }
         /// <summary>
-        /// Invoke action discover
+        /// Discover the latest schema definition for provisioning to an application. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return await RequestAdapter.SendAsync<DirectoryDefinition>(requestInfo, DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action discover
+        /// Discover the latest schema definition for provisioning to an application. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Contains value for delivery optimization priority.</summary>
         public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority {
@@ -44,7 +47,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
+        /// Instantiates a new win32LobAppAssignmentSettings and sets the default values.
         /// </summary>
         public Win32LobAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.win32LobAppAssignmentSettings";

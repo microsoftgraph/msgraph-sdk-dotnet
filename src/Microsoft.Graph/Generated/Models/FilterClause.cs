@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The operatorName property</summary>
+        /// <summary>Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatorName {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("operatorName", value); }
         }
 #endif
-        /// <summary>The sourceOperandName property</summary>
+        /// <summary>Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceOperandName {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sourceOperandName", value); }
         }
 #endif
-        /// <summary>The targetOperand property</summary>
+        /// <summary>Values that the source operand will be tested against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public FilterOperand? TargetOperand {

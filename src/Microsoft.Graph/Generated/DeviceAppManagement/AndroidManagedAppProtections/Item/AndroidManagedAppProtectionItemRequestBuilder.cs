@@ -43,8 +43,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
         public AndroidManagedAppProtectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a androidManagedAppProtection.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-delete?view=graph-rest-1.0" />
+        /// Delete navigation property androidManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the androidManagedAppProtection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-get?view=graph-rest-1.0" />
+        /// Android managed app policies.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,8 +81,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a androidManagedAppProtection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-update?view=graph-rest-1.0" />
+        /// Update the navigation property androidManagedAppProtections in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a androidManagedAppProtection.
+        /// Delete navigation property androidManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +126,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the androidManagedAppProtection object.
+        /// Android managed app policies.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a androidManagedAppProtection object.
+        /// Update the navigation property androidManagedAppProtections in deviceAppManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.DeviceAppManagement.AndroidManagedAppProtections.Item 
             }
         }
         /// <summary>
-        /// Read properties and relationships of the androidManagedAppProtection object.
+        /// Android managed app policies.
         /// </summary>
         public class AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

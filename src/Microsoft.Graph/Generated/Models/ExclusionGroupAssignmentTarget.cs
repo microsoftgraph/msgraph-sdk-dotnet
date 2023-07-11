@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Represents a group that should be excluded from an assignment.
+    /// </summary>
     public class ExclusionGroupAssignmentTarget : GroupAssignmentTarget, IParsable {
         /// <summary>
-        /// Instantiates a new ExclusionGroupAssignmentTarget and sets the default values.
+        /// Instantiates a new exclusionGroupAssignmentTarget and sets the default values.
         /// </summary>
         public ExclusionGroupAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.exclusionGroupAssignmentTarget";

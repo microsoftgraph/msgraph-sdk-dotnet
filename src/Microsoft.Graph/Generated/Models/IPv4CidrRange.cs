@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IPv4CidrRange and sets the default values.
+        /// Instantiates a new iPv4CidrRange and sets the default values.
         /// </summary>
         public IPv4CidrRange() : base() {
             OdataType = "#microsoft.graph.iPv4CidrRange";

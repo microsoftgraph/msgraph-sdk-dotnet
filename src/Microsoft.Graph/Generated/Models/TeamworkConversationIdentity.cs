@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("conversationIdentityType", value); }
         }
         /// <summary>
-        /// Instantiates a new TeamworkConversationIdentity and sets the default values.
+        /// Instantiates a new teamworkConversationIdentity and sets the default values.
         /// </summary>
         public TeamworkConversationIdentity() : base() {
             OdataType = "#microsoft.graph.teamworkConversationIdentity";

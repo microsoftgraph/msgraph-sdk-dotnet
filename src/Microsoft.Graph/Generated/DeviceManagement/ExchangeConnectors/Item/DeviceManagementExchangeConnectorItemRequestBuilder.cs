@@ -33,8 +33,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
         public DeviceManagementExchangeConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a deviceManagementExchangeConnector.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-delete?view=graph-rest-1.0" />
+        /// Delete navigation property exchangeConnectors for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,8 +52,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementExchangeConnector object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-get?view=graph-rest-1.0" />
+        /// The list of Exchange Connectors configured by the tenant.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +71,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             return await RequestAdapter.SendAsync<DeviceManagementExchangeConnector>(requestInfo, DeviceManagementExchangeConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceManagementExchangeConnector object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-update?view=graph-rest-1.0" />
+        /// Update the navigation property exchangeConnectors in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +92,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             return await RequestAdapter.SendAsync<DeviceManagementExchangeConnector>(requestInfo, DeviceManagementExchangeConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a deviceManagementExchangeConnector.
+        /// Delete navigation property exchangeConnectors for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +116,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementExchangeConnector object.
+        /// The list of Exchange Connectors configured by the tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceManagementExchangeConnector object.
+        /// Update the navigation property exchangeConnectors in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +186,7 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagementExchangeConnector object.
+        /// The list of Exchange Connectors configured by the tenant.
         /// </summary>
         public class DeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

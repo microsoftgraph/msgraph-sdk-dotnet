@@ -33,8 +33,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
         public DeviceAndAppManagementRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a deviceAndAppManagementRoleAssignment.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property roleAssignments for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,8 +52,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-get?view=graph-rest-1.0" />
+        /// The Role Assignments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +71,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceAndAppManagementRoleAssignment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-update?view=graph-rest-1.0" />
+        /// Update the navigation property roleAssignments in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +92,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a deviceAndAppManagementRoleAssignment.
+        /// Delete navigation property roleAssignments for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +116,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+        /// The Role Assignments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceAndAppManagementRoleAssignment object.
+        /// Update the navigation property roleAssignments in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +186,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+        /// The Role Assignments.
         /// </summary>
         public class DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>
-        /// Instantiates a new TimeOffReason and sets the default values.
+        /// Instantiates a new timeOffReason and sets the default values.
         /// </summary>
         public TimeOffReason() : base() {
             OdataType = "#microsoft.graph.timeOffReason";

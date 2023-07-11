@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationTeamsAppResource and sets the default values.
+        /// Instantiates a new educationTeamsAppResource and sets the default values.
         /// </summary>
         public EducationTeamsAppResource() : base() {
             OdataType = "#microsoft.graph.educationTeamsAppResource";

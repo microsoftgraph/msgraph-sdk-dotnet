@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
-        /// Instantiates a new PrintJobConfiguration and sets the default values.
+        /// Instantiates a new printJobConfiguration and sets the default values.
         /// </summary>
         public PrintJobConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new AvailabilityItem and sets the default values.
+        /// Instantiates a new availabilityItem and sets the default values.
         /// </summary>
         public AvailabilityItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -43,8 +43,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
         public DeviceEnrollmentConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceEnrollmentConfigurations for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-get?view=graph-rest-1.0" />
+        /// The list of device enrollment configurations
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,8 +81,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceEnrollmentConfigurations in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+        /// Delete navigation property deviceEnrollmentConfigurations for deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +126,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
+        /// The list of device enrollment configurations
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Update the navigation property deviceEnrollmentConfigurations in deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
+        /// The list of device enrollment configurations
         /// </summary>
         public class DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

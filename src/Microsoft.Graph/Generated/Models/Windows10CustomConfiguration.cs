@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10CustomConfiguration resource.
+    /// </summary>
     public class Windows10CustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10CustomConfiguration and sets the default values.
+        /// Instantiates a new windows10CustomConfiguration and sets the default values.
         /// </summary>
         public Windows10CustomConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10CustomConfiguration";

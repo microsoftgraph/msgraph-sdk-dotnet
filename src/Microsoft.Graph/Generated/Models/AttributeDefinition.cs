@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The anchor property</summary>
+        /// <summary>true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object&apos;s attributes must be designated as the anchor to support synchronization.</summary>
         public bool? Anchor {
             get { return BackingStore?.Get<bool?>("anchor"); }
             set { BackingStore?.Set("anchor", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The caseExact property</summary>
+        /// <summary>true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.</summary>
         public bool? CaseExact {
             get { return BackingStore?.Get<bool?>("caseExact"); }
             set { BackingStore?.Set("caseExact", value); }
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>The flowNullValues property</summary>
+        /// <summary>&apos;true&apos; to allow null values for attributes.</summary>
         public bool? FlowNullValues {
             get { return BackingStore?.Get<bool?>("flowNullValues"); }
             set { BackingStore?.Set("flowNullValues", value); }
         }
-        /// <summary>The metadata property</summary>
+        /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AttributeDefinitionMetadataEntry>? Metadata {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The multivalued property</summary>
+        /// <summary>true if an attribute can have multiple values. Default is false.</summary>
         public bool? Multivalued {
             get { return BackingStore?.Get<bool?>("multivalued"); }
             set { BackingStore?.Set("multivalued", value); }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Mutability?>("mutability"); }
             set { BackingStore?.Set("mutability", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The referencedObjects property</summary>
+        /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ReferencedObject>? ReferencedObjects {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("referencedObjects", value); }
         }
 #endif
-        /// <summary>The required property</summary>
+        /// <summary>true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }

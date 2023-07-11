@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationLinkResource and sets the default values.
+        /// Instantiates a new educationLinkResource and sets the default values.
         /// </summary>
         public EducationLinkResource() : base() {
             OdataType = "#microsoft.graph.educationLinkResource";

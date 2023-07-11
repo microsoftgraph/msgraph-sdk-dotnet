@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SocialIdentityProvider and sets the default values.
+        /// Instantiates a new socialIdentityProvider and sets the default values.
         /// </summary>
         public SocialIdentityProvider() : base() {
             OdataType = "#microsoft.graph.socialIdentityProvider";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
+    /// </summary>
     public class MacOSCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSCustomConfiguration and sets the default values.
+        /// Instantiates a new macOSCustomConfiguration and sets the default values.
         /// </summary>
         public MacOSCustomConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSCustomConfiguration";

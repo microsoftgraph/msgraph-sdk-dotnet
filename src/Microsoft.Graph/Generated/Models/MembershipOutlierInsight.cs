@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("outlierMemberType", value); }
         }
         /// <summary>
-        /// Instantiates a new MembershipOutlierInsight and sets the default values.
+        /// Instantiates a new membershipOutlierInsight and sets the default values.
         /// </summary>
         public MembershipOutlierInsight() : base() {
             OdataType = "#microsoft.graph.membershipOutlierInsight";

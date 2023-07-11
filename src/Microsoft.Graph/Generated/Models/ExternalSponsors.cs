@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class ExternalSponsors : SubjectSet, IParsable {
         /// <summary>
-        /// Instantiates a new ExternalSponsors and sets the default values.
+        /// Instantiates a new externalSponsors and sets the default values.
         /// </summary>
         public ExternalSponsors() : base() {
             OdataType = "#microsoft.graph.externalSponsors";

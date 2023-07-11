@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("guestUserRoleId", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthorizationPolicy and sets the default values.
+        /// Instantiates a new authorizationPolicy and sets the default values.
         /// </summary>
         public AuthorizationPolicy() : base() {
             OdataType = "#microsoft.graph.authorizationPolicy";

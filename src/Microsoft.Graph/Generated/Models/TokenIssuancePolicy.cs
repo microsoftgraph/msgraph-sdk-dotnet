@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class TokenIssuancePolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new TokenIssuancePolicy and sets the default values.
+        /// Instantiates a new tokenIssuancePolicy and sets the default values.
         /// </summary>
         public TokenIssuancePolicy() : base() {
             OdataType = "#microsoft.graph.tokenIssuancePolicy";

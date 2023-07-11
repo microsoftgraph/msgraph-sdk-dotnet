@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class EducationAssignmentGroupRecipient : EducationAssignmentRecipient, IParsable {
         /// <summary>
-        /// Instantiates a new EducationAssignmentGroupRecipient and sets the default values.
+        /// Instantiates a new educationAssignmentGroupRecipient and sets the default values.
         /// </summary>
         public EducationAssignmentGroupRecipient() : base() {
             OdataType = "#microsoft.graph.educationAssignmentGroupRecipient";

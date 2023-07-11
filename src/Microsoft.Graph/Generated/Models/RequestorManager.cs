@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("managerLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new RequestorManager and sets the default values.
+        /// Instantiates a new requestorManager and sets the default values.
         /// </summary>
         public RequestorManager() : base() {
             OdataType = "#microsoft.graph.requestorManager";

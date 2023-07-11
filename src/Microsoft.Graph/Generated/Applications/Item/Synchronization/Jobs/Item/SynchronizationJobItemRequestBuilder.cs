@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item {
         public SynchronizationJobItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property jobs for applications
+        /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get jobs from applications
+        /// Retrieve the existing synchronization job and its properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +119,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item {
             return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property jobs for applications
+        /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get jobs from applications
+        /// Retrieve the existing synchronization job and its properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +213,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item {
             }
         }
         /// <summary>
-        /// Get jobs from applications
+        /// Retrieve the existing synchronization job and its properties.
         /// </summary>
         public class SynchronizationJobItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

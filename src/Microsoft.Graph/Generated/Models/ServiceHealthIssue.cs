@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new ServiceHealthIssue and sets the default values.
+        /// Instantiates a new serviceHealthIssue and sets the default values.
         /// </summary>
         public ServiceHealthIssue() : base() {
             OdataType = "#microsoft.graph.serviceHealthIssue";

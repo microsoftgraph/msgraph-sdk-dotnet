@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProvisionedPlan and sets the default values.
+        /// Instantiates a new provisionedPlan and sets the default values.
         /// </summary>
         public ProvisionedPlan() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

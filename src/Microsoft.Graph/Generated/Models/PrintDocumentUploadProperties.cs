@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new PrintDocumentUploadProperties and sets the default values.
+        /// Instantiates a new printDocumentUploadProperties and sets the default values.
         /// </summary>
         public PrintDocumentUploadProperties() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

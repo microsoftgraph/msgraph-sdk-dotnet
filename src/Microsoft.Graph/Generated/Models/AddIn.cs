@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AddIn and sets the default values.
+        /// Instantiates a new addIn and sets the default values.
         /// </summary>
         public AddIn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

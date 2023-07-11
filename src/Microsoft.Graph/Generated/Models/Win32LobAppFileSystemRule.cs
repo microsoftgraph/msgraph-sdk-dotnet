@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// A base complex type to store the detection or requirement rule data for a Win32 LOB app.
+    /// </summary>
     public class Win32LobAppFileSystemRule : Win32LobAppRule, IParsable {
         /// <summary>A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.</summary>
         public bool? Check32BitOn64System {
@@ -63,7 +66,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobAppFileSystemRule and sets the default values.
+        /// Instantiates a new win32LobAppFileSystemRule and sets the default values.
         /// </summary>
         public Win32LobAppFileSystemRule() : base() {
             OdataType = "#microsoft.graph.win32LobAppFileSystemRule";

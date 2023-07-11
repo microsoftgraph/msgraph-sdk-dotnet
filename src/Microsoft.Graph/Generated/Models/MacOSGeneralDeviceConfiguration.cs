@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
+    /// </summary>
     public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? CompliantAppListType {
@@ -84,7 +87,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSGeneralDeviceConfiguration";

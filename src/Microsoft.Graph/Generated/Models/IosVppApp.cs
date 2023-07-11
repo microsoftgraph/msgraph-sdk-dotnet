@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
+    /// </summary>
     public class IosVppApp : MobileApp, IParsable {
         /// <summary>The applicable iOS Device Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +113,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosVppApp and sets the default values.
+        /// Instantiates a new iosVppApp and sets the default values.
         /// </summary>
         public IosVppApp() : base() {
             OdataType = "#microsoft.graph.iosVppApp";

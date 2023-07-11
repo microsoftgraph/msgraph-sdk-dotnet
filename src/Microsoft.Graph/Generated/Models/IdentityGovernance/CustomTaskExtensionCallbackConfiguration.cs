@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomTaskExtensionCallbackConfiguration and sets the default values.
+        /// Instantiates a new customTaskExtensionCallbackConfiguration and sets the default values.
         /// </summary>
         public CustomTaskExtensionCallbackConfiguration() : base() {
             OdataType = "#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration";

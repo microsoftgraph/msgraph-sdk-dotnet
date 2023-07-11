@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The defaultValue property</summary>
+        /// <summary>Default value to be used in case the source property was evaluated to null. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>The exportMissingReferences property</summary>
+        /// <summary>For internal use only.</summary>
         public bool? ExportMissingReferences {
             get { return BackingStore?.Get<bool?>("exportMissingReferences"); }
             set { BackingStore?.Set("exportMissingReferences", value); }
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<AttributeFlowType?>("flowType"); }
             set { BackingStore?.Set("flowType", value); }
         }
-        /// <summary>The matchingPriority property</summary>
+        /// <summary>If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.</summary>
         public int? MatchingPriority {
             get { return BackingStore?.Get<int?>("matchingPriority"); }
             set { BackingStore?.Set("matchingPriority", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>Defines how a value should be extracted (or transformed) from the source object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AttributeMappingSource? Source {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The targetAttributeName property</summary>
+        /// <summary>Name of the attribute on the target object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetAttributeName {

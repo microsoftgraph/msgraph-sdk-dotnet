@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
+        /// Instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
         /// </summary>
         public AuthenticationMethodsRegistrationCampaignIncludeTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

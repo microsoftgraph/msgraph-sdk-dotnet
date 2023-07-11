@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class TeamsAppDefinition : Entity, IParsable {
-        /// <summary>The authorization property</summary>
+        /// <summary>Authorization requirements specified in the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamsAppAuthorization? Authorization {

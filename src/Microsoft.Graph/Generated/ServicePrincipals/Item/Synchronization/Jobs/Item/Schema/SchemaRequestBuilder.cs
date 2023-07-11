@@ -67,7 +67,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get schema from servicePrincipals
+        /// Retrieve the schema for a given synchronization job or template.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property schema in servicePrincipals
+        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,7 +133,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return requestInfo;
         }
         /// <summary>
-        /// Get schema from servicePrincipals
+        /// Retrieve the schema for a given synchronization job or template.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +159,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property schema in servicePrincipals
+        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -201,7 +203,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             }
         }
         /// <summary>
-        /// Get schema from servicePrincipals
+        /// Retrieve the schema for a given synchronization job or template.
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isSoftwareOathEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+        /// Instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
         /// </summary>
         public MicrosoftAuthenticatorAuthenticationMethodConfiguration() : base() {
             OdataType = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration";

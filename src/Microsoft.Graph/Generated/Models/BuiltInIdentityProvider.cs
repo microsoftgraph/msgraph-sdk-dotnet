@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BuiltInIdentityProvider and sets the default values.
+        /// Instantiates a new builtInIdentityProvider and sets the default values.
         /// </summary>
         public BuiltInIdentityProvider() : base() {
             OdataType = "#microsoft.graph.builtInIdentityProvider";

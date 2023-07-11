@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new EventMessage and sets the default values.
+        /// Instantiates a new eventMessage and sets the default values.
         /// </summary>
         public EventMessage() : base() {
             OdataType = "#microsoft.graph.eventMessage";

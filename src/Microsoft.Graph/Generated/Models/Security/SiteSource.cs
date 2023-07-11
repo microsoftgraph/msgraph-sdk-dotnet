@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SiteSource and sets the default values.
+        /// Instantiates a new siteSource and sets the default values.
         /// </summary>
         public SiteSource() : base() {
             OdataType = "#microsoft.graph.security.siteSource";

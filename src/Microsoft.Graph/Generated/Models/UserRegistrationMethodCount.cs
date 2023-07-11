@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The authenticationMethod property</summary>
+        /// <summary>Name of the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationMethod {
@@ -41,13 +41,13 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The userCount property</summary>
+        /// <summary>Number of users registered.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationMethodCount and sets the default values.
+        /// Instantiates a new userRegistrationMethodCount and sets the default values.
         /// </summary>
         public UserRegistrationMethodCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

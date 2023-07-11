@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("points", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationAssignmentPointsGrade and sets the default values.
+        /// Instantiates a new educationAssignmentPointsGrade and sets the default values.
         /// </summary>
         public EducationAssignmentPointsGrade() : base() {
             OdataType = "#microsoft.graph.educationAssignmentPointsGrade";

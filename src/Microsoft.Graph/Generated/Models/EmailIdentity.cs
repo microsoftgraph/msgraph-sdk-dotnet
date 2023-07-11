@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EmailIdentity and sets the default values.
+        /// Instantiates a new emailIdentity and sets the default values.
         /// </summary>
         public EmailIdentity() : base() {
             OdataType = "#microsoft.graph.emailIdentity";

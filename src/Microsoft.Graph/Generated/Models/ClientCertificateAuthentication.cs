@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ClientCertificateAuthentication and sets the default values.
+        /// Instantiates a new clientCertificateAuthentication and sets the default values.
         /// </summary>
         public ClientCertificateAuthentication() : base() {
             OdataType = "#microsoft.graph.clientCertificateAuthentication";

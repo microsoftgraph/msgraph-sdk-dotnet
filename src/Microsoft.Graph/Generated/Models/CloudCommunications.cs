@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CloudCommunications and sets the default values.
+        /// Instantiates a new cloudCommunications and sets the default values.
         /// </summary>
         public CloudCommunications() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

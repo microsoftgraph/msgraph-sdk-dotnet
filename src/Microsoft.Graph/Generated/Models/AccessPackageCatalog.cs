@@ -29,6 +29,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customWorkflowExtensions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomCalloutExtension>? CustomWorkflowExtensions {
+            get { return BackingStore?.Get<List<CustomCalloutExtension>?>("customWorkflowExtensions"); }
+            set { BackingStore?.Set("customWorkflowExtensions", value); }
+        }
+#nullable restore
+#else
+        public List<CustomCalloutExtension> CustomWorkflowExtensions {
+            get { return BackingStore?.Get<List<CustomCalloutExtension>>("customWorkflowExtensions"); }
+            set { BackingStore?.Set("customWorkflowExtensions", value); }
+        }
+#endif
         /// <summary>The description of the access package catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +81,48 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
+        /// <summary>The resourceRoles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageResourceRole>? ResourceRoles {
+            get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("resourceRoles"); }
+            set { BackingStore?.Set("resourceRoles", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageResourceRole> ResourceRoles {
+            get { return BackingStore?.Get<List<AccessPackageResourceRole>>("resourceRoles"); }
+            set { BackingStore?.Set("resourceRoles", value); }
+        }
+#endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageResource>? Resources {
+            get { return BackingStore?.Get<List<AccessPackageResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageResource> Resources {
+            get { return BackingStore?.Get<List<AccessPackageResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#endif
+        /// <summary>The resourceScopes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageResourceScope>? ResourceScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("resourceScopes"); }
+            set { BackingStore?.Set("resourceScopes", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageResourceScope> ResourceScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceScope>>("resourceScopes"); }
+            set { BackingStore?.Set("resourceScopes", value); }
+        }
+#endif
         /// <summary>Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.</summary>
         public AccessPackageCatalogState? State {
             get { return BackingStore?.Get<AccessPackageCatalogState?>("state"); }
@@ -88,10 +144,14 @@ namespace Microsoft.Graph.Models {
                 {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"catalogType", n => { CatalogType = n.GetEnumValue<AccessPackageCatalogType>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customWorkflowExtensions", n => { CustomWorkflowExtensions = n.GetCollectionOfObjectValues<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
                 {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"resourceRoles", n => { ResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<AccessPackageCatalogState>(); } },
             };
         }
@@ -105,10 +165,14 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
             writer.WriteEnumValue<AccessPackageCatalogType>("catalogType", CatalogType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<CustomCalloutExtension>("customWorkflowExtensions", CustomWorkflowExtensions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isExternallyVisible", IsExternallyVisible);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("resourceRoles", ResourceRoles);
+            writer.WriteCollectionOfObjectValues<AccessPackageResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("resourceScopes", ResourceScopes);
             writer.WriteEnumValue<AccessPackageCatalogState>("state", State);
         }
     }

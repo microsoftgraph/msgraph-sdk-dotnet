@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationFeedbackOutcome and sets the default values.
+        /// Instantiates a new educationFeedbackOutcome and sets the default values.
         /// </summary>
         public EducationFeedbackOutcome() : base() {
             OdataType = "#microsoft.graph.educationFeedbackOutcome";

@@ -580,7 +580,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("signInAudience", value); }
         }
 #endif
-        /// <summary>The synchronization property</summary>
+        /// <summary>Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.Synchronization? Synchronization {
@@ -670,7 +670,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServicePrincipal and sets the default values.
+        /// Instantiates a new servicePrincipal and sets the default values.
         /// </summary>
         public ServicePrincipal() : base() {
             OdataType = "#microsoft.graph.servicePrincipal";

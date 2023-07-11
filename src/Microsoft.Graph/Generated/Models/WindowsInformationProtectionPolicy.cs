@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Policy for Windows information protection without MDM
+    /// </summary>
     public class WindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable {
         /// <summary>Offline interval before app data is wiped (days)</summary>
         public int? DaysWithoutContactBeforeUnenroll {
@@ -75,7 +78,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("windowsHelloForBusinessBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsInformationProtectionPolicy and sets the default values.
+        /// Instantiates a new windowsInformationProtectionPolicy and sets the default values.
         /// </summary>
         public WindowsInformationProtectionPolicy() : base() {
             OdataType = "#microsoft.graph.windowsInformationProtectionPolicy";

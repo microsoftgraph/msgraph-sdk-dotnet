@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new SignInFrequencySessionControl and sets the default values.
+        /// Instantiates a new signInFrequencySessionControl and sets the default values.
         /// </summary>
         public SignInFrequencySessionControl() : base() {
             OdataType = "#microsoft.graph.signInFrequencySessionControl";

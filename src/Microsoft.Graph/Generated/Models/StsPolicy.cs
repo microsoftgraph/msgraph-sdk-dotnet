@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isOrganizationDefault", value); }
         }
         /// <summary>
-        /// Instantiates a new StsPolicy and sets the default values.
+        /// Instantiates a new stsPolicy and sets the default values.
         /// </summary>
         public StsPolicy() : base() {
             OdataType = "#microsoft.graph.stsPolicy";

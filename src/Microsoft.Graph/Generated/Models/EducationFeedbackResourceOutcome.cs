@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("resourceStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationFeedbackResourceOutcome and sets the default values.
+        /// Instantiates a new educationFeedbackResourceOutcome and sets the default values.
         /// </summary>
         public EducationFeedbackResourceOutcome() : base() {
             OdataType = "#microsoft.graph.educationFeedbackResourceOutcome";

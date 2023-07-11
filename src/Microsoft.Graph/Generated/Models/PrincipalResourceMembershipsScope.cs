@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PrincipalResourceMembershipsScope and sets the default values.
+        /// Instantiates a new principalResourceMembershipsScope and sets the default values.
         /// </summary>
         public PrincipalResourceMembershipsScope() : base() {
             OdataType = "#microsoft.graph.principalResourceMembershipsScope";

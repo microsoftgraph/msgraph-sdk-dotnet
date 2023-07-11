@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Admin and sets the default values.
+        /// Instantiates a new admin and sets the default values.
         /// </summary>
         public Admin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

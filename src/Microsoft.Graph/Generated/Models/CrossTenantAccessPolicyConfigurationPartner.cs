@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CrossTenantAccessPolicyConfigurationPartner and sets the default values.
+        /// Instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
         /// </summary>
         public CrossTenantAccessPolicyConfigurationPartner() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

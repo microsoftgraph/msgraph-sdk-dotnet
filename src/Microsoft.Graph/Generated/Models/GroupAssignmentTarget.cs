@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Base type for assignment targets.
+    /// </summary>
     public class GroupAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The group Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new GroupAssignmentTarget and sets the default values.
+        /// Instantiates a new groupAssignmentTarget and sets the default values.
         /// </summary>
         public GroupAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.groupAssignmentTarget";

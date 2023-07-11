@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("userRole", value); }
         }
         /// <summary>
-        /// Instantiates a new Notebook and sets the default values.
+        /// Instantiates a new notebook and sets the default values.
         /// </summary>
         public Notebook() : base() {
             OdataType = "#microsoft.graph.notebook";

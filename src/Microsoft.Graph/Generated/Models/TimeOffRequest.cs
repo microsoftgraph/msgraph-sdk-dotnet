@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TimeOffRequest and sets the default values.
+        /// Instantiates a new timeOffRequest and sets the default values.
         /// </summary>
         public TimeOffRequest() : base() {
             OdataType = "#microsoft.graph.timeOffRequest";

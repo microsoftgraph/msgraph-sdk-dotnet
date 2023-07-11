@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the Microsoft Edge app on Windows.
+    /// </summary>
     public class WindowsMicrosoftEdgeApp : MobileApp, IParsable {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
         public MicrosoftEdgeChannel? Channel {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsMicrosoftEdgeApp and sets the default values.
+        /// Instantiates a new windowsMicrosoftEdgeApp and sets the default values.
         /// </summary>
         public WindowsMicrosoftEdgeApp() : base() {
             OdataType = "#microsoft.graph.windowsMicrosoftEdgeApp";

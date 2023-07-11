@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isMultipleSelectionAllowed", value); }
         }
         /// <summary>
-        /// Instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+        /// Instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
         /// </summary>
         public AccessPackageMultipleChoiceQuestion() : base() {
             OdataType = "#microsoft.graph.accessPackageMultipleChoiceQuestion";

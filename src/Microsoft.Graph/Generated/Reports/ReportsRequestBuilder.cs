@@ -187,8 +187,7 @@ namespace Microsoft.Graph.Reports {
         public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-reportroot-get?view=graph-rest-1.0" />
+        /// Get reports
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -977,8 +976,7 @@ namespace Microsoft.Graph.Reports {
             return new ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
-        /// Update the properties of a reportRoot object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/intune-deviceconfig-reportroot-update?view=graph-rest-1.0" />
+        /// Update reports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -999,7 +997,7 @@ namespace Microsoft.Graph.Reports {
             return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
+        /// Get reports
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1025,7 +1023,7 @@ namespace Microsoft.Graph.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a reportRoot object.
+        /// Update reports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -1053,7 +1051,7 @@ namespace Microsoft.Graph.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
+        /// Get reports
         /// </summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -32,13 +32,13 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The userCount property</summary>
+        /// <summary>Number of users.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationFeatureCount and sets the default values.
+        /// Instantiates a new userRegistrationFeatureCount and sets the default values.
         /// </summary>
         public UserRegistrationFeatureCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

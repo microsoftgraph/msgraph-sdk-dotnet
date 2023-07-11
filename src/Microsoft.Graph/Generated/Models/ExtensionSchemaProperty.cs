@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ExtensionSchemaProperty and sets the default values.
+        /// Instantiates a new extensionSchemaProperty and sets the default values.
         /// </summary>
         public ExtensionSchemaProperty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

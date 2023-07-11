@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IdentityProtectionRoot and sets the default values.
+        /// Instantiates a new identityProtectionRoot and sets the default values.
         /// </summary>
         public IdentityProtectionRoot() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ItemAttachment and sets the default values.
+        /// Instantiates a new itemAttachment and sets the default values.
         /// </summary>
         public ItemAttachment() : base() {
             OdataType = "#microsoft.graph.itemAttachment";

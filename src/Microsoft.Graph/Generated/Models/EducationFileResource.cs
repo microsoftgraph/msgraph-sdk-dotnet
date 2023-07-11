@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationFileResource and sets the default values.
+        /// Instantiates a new educationFileResource and sets the default values.
         /// </summary>
         public EducationFileResource() : base() {
             OdataType = "#microsoft.graph.educationFileResource";

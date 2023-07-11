@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ConditionalAccessPolicyDetail and sets the default values.
+        /// Instantiates a new conditionalAccessPolicyDetail and sets the default values.
         /// </summary>
         public ConditionalAccessPolicyDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

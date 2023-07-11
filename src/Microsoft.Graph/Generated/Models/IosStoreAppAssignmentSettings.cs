@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
@@ -15,7 +18,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
-        /// <summary>The VPN Configuration Id to apply for this app.</summary>
+        /// <summary>This is the unique identifier (Id) of the VPN Configuration to apply to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VpnConfigurationId {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosStoreAppAssignmentSettings and sets the default values.
+        /// Instantiates a new iosStoreAppAssignmentSettings and sets the default values.
         /// </summary>
         public IosStoreAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.iosStoreAppAssignmentSettings";

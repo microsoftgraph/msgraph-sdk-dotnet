@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the macOS Microsoft Defender App.
+    /// </summary>
     public class MacOSMicrosoftDefenderApp : MobileApp, IParsable {
         /// <summary>
-        /// Instantiates a new MacOSMicrosoftDefenderApp and sets the default values.
+        /// Instantiates a new macOSMicrosoftDefenderApp and sets the default values.
         /// </summary>
         public MacOSMicrosoftDefenderApp() : base() {
             OdataType = "#microsoft.graph.macOSMicrosoftDefenderApp";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new IdentitySecurityDefaultsEnforcementPolicy and sets the default values.
+        /// Instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
         /// </summary>
         public IdentitySecurityDefaultsEnforcementPolicy() : base() {
             OdataType = "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy";

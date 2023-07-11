@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
-        /// Instantiates a new ServiceUserAgent and sets the default values.
+        /// Instantiates a new serviceUserAgent and sets the default values.
         /// </summary>
         public ServiceUserAgent() : base() {
             OdataType = "#microsoft.graph.callRecords.serviceUserAgent";

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class AttributeMappingFunctionSchema : Entity, IParsable {
-        /// <summary>The parameters property</summary>
+        /// <summary>Collection of function parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AttributeMappingParameterSchema>? Parameters {

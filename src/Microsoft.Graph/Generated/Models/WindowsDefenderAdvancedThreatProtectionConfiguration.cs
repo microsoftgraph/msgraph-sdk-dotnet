@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Windows Defender AdvancedThreatProtection Configuration.
+    /// </summary>
     public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Defender AdvancedThreatProtection &apos;Allow Sample Sharing&apos; Rule</summary>
         public bool? AllowSampleSharing {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+        /// Instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
         /// </summary>
         public WindowsDefenderAdvancedThreatProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";

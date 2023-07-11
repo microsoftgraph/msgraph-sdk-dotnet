@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("targetEnvironment", value); }
         }
         /// <summary>
-        /// Instantiates a new BrowserSiteHistory and sets the default values.
+        /// Instantiates a new browserSiteHistory and sets the default values.
         /// </summary>
         public BrowserSiteHistory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

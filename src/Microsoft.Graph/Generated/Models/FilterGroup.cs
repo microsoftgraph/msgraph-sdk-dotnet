@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clauses property</summary>
+        /// <summary>Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<FilterClause>? Clauses {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("clauses", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Human-readable name of the filter group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {

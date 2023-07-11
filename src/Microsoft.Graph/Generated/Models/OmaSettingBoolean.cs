@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// OMA Settings definition.
+    /// </summary>
     public class OmaSettingBoolean : OmaSetting, IParsable {
         /// <summary>Value.</summary>
         public bool? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new OmaSettingBoolean and sets the default values.
+        /// Instantiates a new omaSettingBoolean and sets the default values.
         /// </summary>
         public OmaSettingBoolean() : base() {
             OdataType = "#microsoft.graph.omaSettingBoolean";

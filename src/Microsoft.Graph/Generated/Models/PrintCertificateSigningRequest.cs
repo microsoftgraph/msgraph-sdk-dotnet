@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PrintCertificateSigningRequest and sets the default values.
+        /// Instantiates a new printCertificateSigningRequest and sets the default values.
         /// </summary>
         public PrintCertificateSigningRequest() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

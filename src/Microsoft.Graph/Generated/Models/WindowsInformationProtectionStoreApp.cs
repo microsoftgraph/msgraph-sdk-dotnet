@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// App for Windows information protection
+    /// </summary>
     public class WindowsInformationProtectionStoreApp : WindowsInformationProtectionApp, IParsable {
         /// <summary>
-        /// Instantiates a new WindowsInformationProtectionStoreApp and sets the default values.
+        /// Instantiates a new windowsInformationProtectionStoreApp and sets the default values.
         /// </summary>
         public WindowsInformationProtectionStoreApp() : base() {
             OdataType = "#microsoft.graph.windowsInformationProtectionStoreApp";

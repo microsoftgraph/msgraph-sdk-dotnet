@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The authenticationMethods property</summary>
+        /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodsRoot? AuthenticationMethods {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The dailyPrintUsageByPrinter property</summary>
+        /// <summary>Retrieve a list of daily print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
 #endif
-        /// <summary>The dailyPrintUsageByUser property</summary>
+        /// <summary>Retrieve a list of daily print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByUser>? DailyPrintUsageByUser {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
 #endif
-        /// <summary>The monthlyPrintUsageByPrinter property</summary>
+        /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter {
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
 #endif
-        /// <summary>The monthlyPrintUsageByUser property</summary>
+        /// <summary>Retrieve a list of monthly print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByUser>? MonthlyPrintUsageByUser {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The security property</summary>
+        /// <summary>Represents an abstract type that contains resources for attack simulation and training reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityReportsRoot? Security {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ReportRoot and sets the default values.
+        /// Instantiates a new reportRoot and sets the default values.
         /// </summary>
         public ReportRoot() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

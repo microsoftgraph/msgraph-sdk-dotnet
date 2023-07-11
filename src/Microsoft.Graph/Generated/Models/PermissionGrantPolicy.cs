@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PermissionGrantPolicy and sets the default values.
+        /// Instantiates a new permissionGrantPolicy and sets the default values.
         /// </summary>
         public PermissionGrantPolicy() : base() {
             OdataType = "#microsoft.graph.permissionGrantPolicy";

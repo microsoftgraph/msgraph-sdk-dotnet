@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resourceSpecificPermissions property</summary>
+        /// <summary>A collection of resource-specific permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TeamsAppResourceSpecificPermission>? ResourceSpecificPermissions {

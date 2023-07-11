@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The completedUnits property</summary>
+        /// <summary>The numerator of a progress ratio; the number of units of changes already processed.</summary>
         public long? CompletedUnits {
             get { return BackingStore?.Get<long?>("completedUnits"); }
             set { BackingStore?.Set("completedUnits", value); }
@@ -32,17 +32,17 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The progressObservationDateTime property</summary>
+        /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
         public DateTimeOffset? ProgressObservationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("progressObservationDateTime"); }
             set { BackingStore?.Set("progressObservationDateTime", value); }
         }
-        /// <summary>The totalUnits property</summary>
+        /// <summary>The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.</summary>
         public long? TotalUnits {
             get { return BackingStore?.Get<long?>("totalUnits"); }
             set { BackingStore?.Set("totalUnits", value); }
         }
-        /// <summary>The units property</summary>
+        /// <summary>An optional description of the units.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Units {

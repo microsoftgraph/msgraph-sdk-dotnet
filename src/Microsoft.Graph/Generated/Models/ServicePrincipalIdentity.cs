@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServicePrincipalIdentity and sets the default values.
+        /// Instantiates a new servicePrincipalIdentity and sets the default values.
         /// </summary>
         public ServicePrincipalIdentity() : base() {
             OdataType = "#microsoft.graph.servicePrincipalIdentity";

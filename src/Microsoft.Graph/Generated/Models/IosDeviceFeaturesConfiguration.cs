@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// iOS Device Features Configuration Profile.
+    /// </summary>
     public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +79,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
+        /// Instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
         /// </summary>
         public IosDeviceFeaturesConfiguration() : base() {
             OdataType = "#microsoft.graph.iosDeviceFeaturesConfiguration";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new AttendeeBase and sets the default values.
+        /// Instantiates a new attendeeBase and sets the default values.
         /// </summary>
         public AttendeeBase() : base() {
             OdataType = "#microsoft.graph.attendeeBase";

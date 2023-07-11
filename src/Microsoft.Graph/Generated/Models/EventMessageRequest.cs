@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("responseRequested", value); }
         }
         /// <summary>
-        /// Instantiates a new EventMessageRequest and sets the default values.
+        /// Instantiates a new eventMessageRequest and sets the default values.
         /// </summary>
         public EventMessageRequest() : base() {
             OdataType = "#microsoft.graph.eventMessageRequest";

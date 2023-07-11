@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EmailAuthenticationMethod and sets the default values.
+        /// Instantiates a new emailAuthenticationMethod and sets the default values.
         /// </summary>
         public EmailAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.emailAuthenticationMethod";

@@ -1,6 +1,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityAddToReviewSet;
+using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,10 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item {
         /// <summary>Provides operations to call the addToReviewSet method.</summary>
         public MicrosoftGraphSecurityAddToReviewSetRequestBuilder MicrosoftGraphSecurityAddToReviewSet { get =>
             new MicrosoftGraphSecurityAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the export method.</summary>
+        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
+            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.</summary>
         public QueriesRequestBuilder Queries { get =>

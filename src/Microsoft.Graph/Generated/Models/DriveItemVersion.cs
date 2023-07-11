@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>
-        /// Instantiates a new DriveItemVersion and sets the default values.
+        /// Instantiates a new driveItemVersion and sets the default values.
         /// </summary>
         public DriveItemVersion() : base() {
             OdataType = "#microsoft.graph.driveItemVersion";

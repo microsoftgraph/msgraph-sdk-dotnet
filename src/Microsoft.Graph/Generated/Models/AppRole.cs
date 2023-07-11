@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AppRole and sets the default values.
+        /// Instantiates a new appRole and sets the default values.
         /// </summary>
         public AppRole() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

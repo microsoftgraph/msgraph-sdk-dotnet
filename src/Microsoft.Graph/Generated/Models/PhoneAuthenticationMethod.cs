@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("smsSignInState", value); }
         }
         /// <summary>
-        /// Instantiates a new PhoneAuthenticationMethod and sets the default values.
+        /// Instantiates a new phoneAuthenticationMethod and sets the default values.
         /// </summary>
         public PhoneAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.phoneAuthenticationMethod";

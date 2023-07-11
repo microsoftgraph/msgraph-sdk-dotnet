@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// Import windows autopilot devices using upload.
+    /// </summary>
     public class ImportedWindowsAutopilotDeviceIdentityUpload : Entity, IParsable {
         /// <summary>DateTime when the entity is created.</summary>
         public DateTimeOffset? CreatedDateTimeUtc {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// The value in an user experience analytics insight.
+    /// </summary>
     public class InsightValueDouble : UserExperienceAnalyticsInsightValue, IParsable {
         /// <summary>The double value of the user experience analytics insight.</summary>
         public double? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new InsightValueDouble and sets the default values.
+        /// Instantiates a new insightValueDouble and sets the default values.
         /// </summary>
         public InsightValueDouble() : base() {
             OdataType = "#microsoft.graph.insightValueDouble";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This class contains compliance settings for IOS.
+    /// </summary>
     public class IosCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require that devices have enabled device threat protection .</summary>
         public bool? DeviceThreatProtectionEnabled {
@@ -94,7 +97,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
         /// <summary>
-        /// Instantiates a new IosCompliancePolicy and sets the default values.
+        /// Instantiates a new iosCompliancePolicy and sets the default values.
         /// </summary>
         public IosCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.iosCompliancePolicy";

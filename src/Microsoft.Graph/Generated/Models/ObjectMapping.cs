@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The attributeMappings property</summary>
+        /// <summary>Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AttributeMapping>? AttributeMappings {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The enabled property</summary>
+        /// <summary>When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<ObjectFlowTypes?>("flowTypes"); }
             set { BackingStore?.Set("flowTypes", value); }
         }
-        /// <summary>The metadata property</summary>
+        /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ObjectMappingMetadataEntry>? Metadata {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Human-friendly name of the object mapping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Filter? Scope {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("scope", value); }
         }
 #endif
-        /// <summary>The sourceObjectName property</summary>
+        /// <summary>Name of the object in the source directory. Must match the object name from the source directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceObjectName {
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sourceObjectName", value); }
         }
 #endif
-        /// <summary>The targetObjectName property</summary>
+        /// <summary>Name of the object in target directory. Must match the object name from the target directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetObjectName {

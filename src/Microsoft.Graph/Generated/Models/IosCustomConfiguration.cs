@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
+    /// </summary>
     public class IosCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosCustomConfiguration and sets the default values.
+        /// Instantiates a new iosCustomConfiguration and sets the default values.
         /// </summary>
         public IosCustomConfiguration() : base() {
             OdataType = "#microsoft.graph.iosCustomConfiguration";

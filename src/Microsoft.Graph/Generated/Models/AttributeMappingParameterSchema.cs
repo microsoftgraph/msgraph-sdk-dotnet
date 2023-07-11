@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The allowMultipleOccurrences property</summary>
+        /// <summary>The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).</summary>
         public bool? AllowMultipleOccurrences {
             get { return BackingStore?.Get<bool?>("allowMultipleOccurrences"); }
             set { BackingStore?.Set("allowMultipleOccurrences", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name property</summary>
+        /// <summary>Parameter name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The required property</summary>
+        /// <summary>true if the parameter is required; otherwise false.</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new AttributeMappingParameterSchema and sets the default values.
+        /// Instantiates a new attributeMappingParameterSchema and sets the default values.
         /// </summary>
         public AttributeMappingParameterSchema() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

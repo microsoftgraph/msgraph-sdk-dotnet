@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ruleId property</summary>
+        /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RuleId {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("ruleId", value); }
         }
 #endif
-        /// <summary>The subjects property</summary>
+        /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationJobSubject>? Subjects {

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class TargetApplicationOwners : SubjectSet, IParsable {
         /// <summary>
-        /// Instantiates a new TargetApplicationOwners and sets the default values.
+        /// Instantiates a new targetApplicationOwners and sets the default values.
         /// </summary>
         public TargetApplicationOwners() : base() {
             OdataType = "#microsoft.graph.targetApplicationOwners";
