@@ -17,6 +17,7 @@ using Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByIntervalWithStartDat
 using Microsoft.Graph.Drives.Item.Items.Item.Invite;
 using Microsoft.Graph.Drives.Item.Items.Item.LastModifiedByUser;
 using Microsoft.Graph.Drives.Item.Items.Item.ListItem;
+using Microsoft.Graph.Drives.Item.Items.Item.PermanentDelete;
 using Microsoft.Graph.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Drives.Item.Items.Item.Preview;
 using Microsoft.Graph.Drives.Item.Items.Item.Restore;
@@ -109,6 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
         /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
         public ListItemRequestBuilder ListItem { get =>
             new ListItemRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public PermanentDeleteRequestBuilder PermanentDelete { get =>
+            new PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.driveItem entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>
@@ -220,8 +225,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0" />
+        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s **parentReference** property.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -300,7 +305,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s **parentReference** property.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

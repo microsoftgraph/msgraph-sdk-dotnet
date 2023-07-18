@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method {
+        public string? MethodEscaped {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public string Method {
+        public string MethodEscaped {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
             return new Dictionary<string, Action<IParseNode>> {
                 {"fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"matchCase", n => { MatchCase = n.GetBoolValue(); } },
-                {"method", n => { Method = n.GetStringValue(); } },
+                {"method", n => { MethodEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<WorkbookSortField>("fields", Fields);
             writer.WriteBoolValue("matchCase", MatchCase);
-            writer.WriteStringValue("method", Method);
+            writer.WriteStringValue("method", MethodEscaped);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

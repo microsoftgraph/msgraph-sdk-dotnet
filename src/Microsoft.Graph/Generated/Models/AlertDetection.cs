@@ -30,13 +30,13 @@ namespace Microsoft.Graph.Models {
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method {
+        public string? MethodEscaped {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public string Method {
+        public string MethodEscaped {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detectionType", n => { DetectionType = n.GetStringValue(); } },
-                {"method", n => { Method = n.GetStringValue(); } },
+                {"method", n => { MethodEscaped = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detectionType", DetectionType);
-            writer.WriteStringValue("method", Method);
+            writer.WriteStringValue("method", MethodEscaped);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

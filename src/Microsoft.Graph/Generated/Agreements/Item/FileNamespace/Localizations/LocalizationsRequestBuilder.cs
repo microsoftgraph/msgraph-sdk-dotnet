@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
         public LocalizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agreements/{agreement%2Did}/file/localizations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return await RequestAdapter.SendAsync<AgreementFileLocalization>(requestInfo, AgreementFileLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return requestInfo;
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

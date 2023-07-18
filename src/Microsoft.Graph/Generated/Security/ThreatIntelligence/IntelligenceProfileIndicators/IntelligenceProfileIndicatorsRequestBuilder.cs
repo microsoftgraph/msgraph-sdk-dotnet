@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
         public IntelligenceProfileIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/intelligenceProfileIndicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get intelligenceProfileIndicators from security
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
             return await RequestAdapter.SendAsync<IntelligenceProfileIndicator>(requestInfo, IntelligenceProfileIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get intelligenceProfileIndicators from security
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
             return requestInfo;
         }
         /// <summary>
-        /// Get intelligenceProfileIndicators from security
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// </summary>
         public class IntelligenceProfileIndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

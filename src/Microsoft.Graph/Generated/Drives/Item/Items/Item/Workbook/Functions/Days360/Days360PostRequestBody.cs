@@ -31,13 +31,13 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Method {
+        public Json? MethodEscaped {
             get { return BackingStore?.Get<Json?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public Json Method {
+        public Json MethodEscaped {
             get { return BackingStore?.Get<Json>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endDate", n => { EndDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"method", n => { Method = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"method", n => { MethodEscaped = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"startDate", n => { StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("endDate", EndDate);
-            writer.WriteObjectValue<Json>("method", Method);
+            writer.WriteObjectValue<Json>("method", MethodEscaped);
             writer.WriteObjectValue<Json>("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }

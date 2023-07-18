@@ -4,6 +4,7 @@ using Microsoft.Graph.Agreements;
 using Microsoft.Graph.AppCatalogs;
 using Microsoft.Graph.ApplicationTemplates;
 using Microsoft.Graph.Applications;
+using Microsoft.Graph.ApplicationsWithAppId;
 using Microsoft.Graph.AuditLogs;
 using Microsoft.Graph.AuthenticationMethodConfigurations;
 using Microsoft.Graph.AuthenticationMethodsPolicy;
@@ -18,10 +19,12 @@ using Microsoft.Graph.DataPolicyOperations;
 using Microsoft.Graph.DeviceAppManagement;
 using Microsoft.Graph.DeviceManagement;
 using Microsoft.Graph.Devices;
+using Microsoft.Graph.DevicesWithDeviceId;
 using Microsoft.Graph.DirectoryNamespace;
 using Microsoft.Graph.DirectoryObjects;
 using Microsoft.Graph.DirectoryRoleTemplates;
 using Microsoft.Graph.DirectoryRoles;
+using Microsoft.Graph.DirectoryRolesWithRoleTemplateId;
 using Microsoft.Graph.DomainDnsRecords;
 using Microsoft.Graph.Domains;
 using Microsoft.Graph.Drives;
@@ -57,6 +60,7 @@ using Microsoft.Graph.ScopedRoleMemberships;
 using Microsoft.Graph.Search;
 using Microsoft.Graph.Security;
 using Microsoft.Graph.ServicePrincipals;
+using Microsoft.Graph.ServicePrincipalsWithAppId;
 using Microsoft.Graph.Shares;
 using Microsoft.Graph.Sites;
 using Microsoft.Graph.Solutions;
@@ -360,6 +364,14 @@ namespace Microsoft.Graph {
             new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Provides operations to manage the collection of application entities.
+        /// </summary>
+        /// <param name="appId">Alternate key of application</param>
+        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
         /// Instantiates a new BaseGraphServiceClient and sets the default values.
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
@@ -376,6 +388,30 @@ namespace Microsoft.Graph {
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
             RequestAdapter.EnableBackingStore(backingStore);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of device entities.
+        /// </summary>
+        /// <param name="deviceId">Alternate key of device</param>
+        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
+            if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
+            return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of directoryRole entities.
+        /// </summary>
+        /// <param name="roleTemplateId">Alternate key of directoryRole</param>
+        public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId) {
+            if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
+            return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of servicePrincipal entities.
+        /// </summary>
+        /// <param name="appId">Alternate key of servicePrincipal</param>
+        public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
     }
 }

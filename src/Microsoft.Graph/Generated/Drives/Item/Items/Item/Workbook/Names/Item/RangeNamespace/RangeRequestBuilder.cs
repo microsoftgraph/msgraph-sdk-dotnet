@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item.RangeNamesp
         public RangeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}/range()", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of range object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/range-get?view=graph-rest-1.0" />
+        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/nameditem-range?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item.RangeNamesp
             return await RequestAdapter.SendAsync<WorkbookRange>(requestInfo, WorkbookRange.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of range object.
+        /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

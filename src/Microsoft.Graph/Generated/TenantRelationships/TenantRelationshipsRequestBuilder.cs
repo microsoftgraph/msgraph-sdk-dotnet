@@ -2,6 +2,8 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships;
+using Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName;
+using Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWithTenantId;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -36,6 +38,22 @@ namespace Microsoft.Graph.TenantRelationships {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TenantRelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships{?%24select,%24expand}", rawUrl) {
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByDomainName method.
+        /// </summary>
+        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
+        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName) {
+            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
+            return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByTenantId method.
+        /// </summary>
+        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId) {
+            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
+            return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Get tenantRelationships

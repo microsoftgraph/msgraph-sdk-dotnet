@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method {
+        public string? MethodEscaped {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public string Method {
+        public string MethodEscaped {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"matchCase", n => { MatchCase = n.GetBoolValue(); } },
-                {"method", n => { Method = n.GetStringValue(); } },
+                {"method", n => { MethodEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<WorkbookSortField>("fields", Fields);
             writer.WriteBoolValue("matchCase", MatchCase);
-            writer.WriteStringValue("method", Method);
+            writer.WriteStringValue("method", MethodEscaped);
         }
     }
 }

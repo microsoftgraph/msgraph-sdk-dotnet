@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to an application.
+        /// List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Assign a tokenLifetimePolicy to an application.
+        /// Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to an application.
+        /// List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Assign a tokenLifetimePolicy to an application.
+        /// Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to an application.
+        /// List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
