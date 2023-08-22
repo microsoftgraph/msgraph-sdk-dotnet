@@ -140,7 +140,6 @@ namespace Microsoft.Graph.Models.Security {
                 "#microsoft.graph.security.processEvidence" => new ProcessEvidence(),
                 "#microsoft.graph.security.registryKeyEvidence" => new RegistryKeyEvidence(),
                 "#microsoft.graph.security.registryValueEvidence" => new RegistryValueEvidence(),
-                "#microsoft.graph.security.securityGroupEvidence" => new SecurityGroupEvidence(),
                 "#microsoft.graph.security.urlEvidence" => new UrlEvidence(),
                 "#microsoft.graph.security.userEvidence" => new UserEvidence(),
                 _ => new AlertEvidence(),

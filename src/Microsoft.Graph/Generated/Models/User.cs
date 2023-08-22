@@ -343,7 +343,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("creationType", value); }
         }
 #endif
-        /// <summary>The customSecurityAttributes property</summary>
+        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CustomSecurityAttributeValue? CustomSecurityAttributes {
@@ -1130,7 +1130,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("ownedDevices", value); }
         }
 #endif
-        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? OwnedObjects {
@@ -1422,6 +1422,20 @@ namespace Microsoft.Graph.Models {
         public string SecurityIdentifier {
             get { return BackingStore?.Get<string>("securityIdentifier"); }
             set { BackingStore?.Set("securityIdentifier", value); }
+        }
+#endif
+        /// <summary>The serviceProvisioningErrors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ServiceProvisioningError>? ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
+        }
+#nullable restore
+#else
+        public List<ServiceProvisioningError> ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
         }
 #endif
         /// <summary>The settings property</summary>
@@ -1730,6 +1744,7 @@ namespace Microsoft.Graph.Models {
                 {"schools", n => { Schools = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"scopedRoleMemberOf", n => { ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
+                {"serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<UserSettings>(UserSettings.CreateFromDiscriminatorValue); } },
                 {"showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
                 {"signInActivity", n => { SignInActivity = n.GetObjectValue<Microsoft.Graph.Models.SignInActivity>(Microsoft.Graph.Models.SignInActivity.CreateFromDiscriminatorValue); } },
@@ -1862,6 +1877,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("schools", Schools);
             writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMemberOf", ScopedRoleMemberOf);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
+            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
             writer.WriteObjectValue<UserSettings>("settings", Settings);
             writer.WriteBoolValue("showInAddressList", ShowInAddressList);
             writer.WriteObjectValue<Microsoft.Graph.Models.SignInActivity>("signInActivity", SignInActivity);

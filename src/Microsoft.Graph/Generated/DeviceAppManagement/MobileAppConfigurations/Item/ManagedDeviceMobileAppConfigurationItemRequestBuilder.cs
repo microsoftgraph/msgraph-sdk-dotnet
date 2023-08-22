@@ -79,8 +79,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the iosMobileAppConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the iosMobileAppConfiguration object.
+        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the iosMobileAppConfiguration object.
+        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
         /// </summary>
         public class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

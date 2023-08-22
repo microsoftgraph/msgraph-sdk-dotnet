@@ -7,6 +7,7 @@ using Microsoft.Graph.Contacts.Item.GetMemberObjects;
 using Microsoft.Graph.Contacts.Item.Manager;
 using Microsoft.Graph.Contacts.Item.MemberOf;
 using Microsoft.Graph.Contacts.Item.Restore;
+using Microsoft.Graph.Contacts.Item.RetryServiceProvisioning;
 using Microsoft.Graph.Contacts.Item.TransitiveMemberOf;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -54,6 +55,10 @@ namespace Microsoft.Graph.Contacts.Item {
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
+        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
+            new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>

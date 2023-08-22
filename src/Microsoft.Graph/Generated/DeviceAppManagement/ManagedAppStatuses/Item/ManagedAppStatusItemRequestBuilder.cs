@@ -48,8 +48,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedAppStatusRaw object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatus object.
+        /// Read properties and relationships of the managedAppStatusRaw object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatus object.
+        /// Read properties and relationships of the managedAppStatusRaw object.
         /// </summary>
         public class ManagedAppStatusItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

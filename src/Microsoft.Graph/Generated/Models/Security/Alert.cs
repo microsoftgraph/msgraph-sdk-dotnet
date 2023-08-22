@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("category", value); }
         }
 #endif
-        /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.</summary>
+        /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
         public AlertClassification? Classification {
             get { return BackingStore?.Get<AlertClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }

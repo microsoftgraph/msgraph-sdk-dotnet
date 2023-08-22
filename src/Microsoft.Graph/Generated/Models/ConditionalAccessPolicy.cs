@@ -91,6 +91,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<ConditionalAccessPolicyState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+        /// <summary>The templateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#nullable restore
+#else
+        public string TemplateId {
+            get { return BackingStore?.Get<string>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -112,6 +126,7 @@ namespace Microsoft.Graph.Models {
                 {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
                 {"state", n => { State = n.GetEnumValue<ConditionalAccessPolicyState>(); } },
+                {"templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -129,6 +144,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteObjectValue<ConditionalAccessSessionControls>("sessionControls", SessionControls);
             writer.WriteEnumValue<ConditionalAccessPolicyState>("state", State);
+            writer.WriteStringValue("templateId", TemplateId);
         }
     }
 }

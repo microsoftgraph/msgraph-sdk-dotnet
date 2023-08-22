@@ -31,6 +31,7 @@ using Microsoft.Graph.Groups.Item.RemoveFavorite;
 using Microsoft.Graph.Groups.Item.Renew;
 using Microsoft.Graph.Groups.Item.ResetUnseenCount;
 using Microsoft.Graph.Groups.Item.Restore;
+using Microsoft.Graph.Groups.Item.RetryServiceProvisioning;
 using Microsoft.Graph.Groups.Item.Settings;
 using Microsoft.Graph.Groups.Item.Sites;
 using Microsoft.Graph.Groups.Item.SubscribeByMail;
@@ -182,6 +183,10 @@ namespace Microsoft.Graph.Groups.Item {
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
+        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
+            new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.group entity.</summary>
         public SettingsRequestBuilder Settings { get =>

@@ -655,6 +655,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("securityIdentifier", value); }
         }
 #endif
+        /// <summary>The serviceProvisioningErrors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ServiceProvisioningError>? ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
+        }
+#nullable restore
+#else
+        public List<ServiceProvisioningError> ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
+        }
+#endif
         /// <summary>Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -758,7 +772,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<int?>("unseenCount"); }
             set { BackingStore?.Set("unseenCount", value); }
         }
-        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.</summary>
+        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility {
@@ -847,6 +861,7 @@ namespace Microsoft.Graph.Models {
                 {"renewedDateTime", n => { RenewedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"securityEnabled", n => { SecurityEnabled = n.GetBoolValue(); } },
                 {"securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
+                {"serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetCollectionOfObjectValues<GroupSetting>(GroupSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sites", n => { Sites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Models.Team>(Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue); } },
@@ -921,6 +936,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("renewedDateTime", RenewedDateTime);
             writer.WriteBoolValue("securityEnabled", SecurityEnabled);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
+            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
             writer.WriteCollectionOfObjectValues<GroupSetting>("settings", Settings);
             writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
             writer.WriteObjectValue<Microsoft.Graph.Models.Team>("team", Team);

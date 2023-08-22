@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         }
 #endif
         /// <summary>The valueType property</summary>
-        public Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject? ValueTypeObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.ValueTypeObject?>("valueType"); }
+        public ValueTypeObject? ValueType {
+            get { return BackingStore?.Get<ValueTypeObject?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"valueType", n => { ValueTypeObject = n.GetEnumValue<ValueTypeObject>(); } },
+                {"valueType", n => { ValueType = n.GetEnumValue<ValueTypeObject>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
-            writer.WriteEnumValue<ValueTypeObject>("valueType", ValueTypeObject);
+            writer.WriteEnumValue<ValueTypeObject>("valueType", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

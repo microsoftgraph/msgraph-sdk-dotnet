@@ -42,8 +42,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
         public DeviceCompliancePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the macOSCompliancePolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the windows81CompliancePolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List properties and relationships of the macOSCompliancePolicy objects.
+        /// List properties and relationships of the windows81CompliancePolicy objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// List properties and relationships of the macOSCompliancePolicy objects.
+        /// List properties and relationships of the windows81CompliancePolicy objects.
         /// </summary>
         public class DeviceCompliancePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

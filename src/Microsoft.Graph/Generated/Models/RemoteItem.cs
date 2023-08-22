@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates that the remote item is a file. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileObject? File {
-            get { return BackingStore?.Get<FileObject?>("file"); }
+        public Microsoft.Graph.Models.FileObject? FileObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public FileObject File {
-            get { return BackingStore?.Get<FileObject>("file"); }
+        public Microsoft.Graph.Models.FileObject FileObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.FileObject>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
@@ -289,7 +289,7 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
+                {"file", n => { FileObject = n.GetObjectValue<Microsoft.Graph.Models.FileObject>(Microsoft.Graph.Models.FileObject.CreateFromDiscriminatorValue); } },
                 {"fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Models.FileSystemInfo>(Microsoft.Graph.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 {"folder", n => { Folder = n.GetObjectValue<Microsoft.Graph.Models.Folder>(Microsoft.Graph.Models.Folder.CreateFromDiscriminatorValue); } },
                 {"id", n => { Id = n.GetStringValue(); } },
@@ -317,7 +317,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<FileObject>("file", File);
+            writer.WriteObjectValue<Microsoft.Graph.Models.FileObject>("file", FileObject);
             writer.WriteObjectValue<Microsoft.Graph.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Microsoft.Graph.Models.Folder>("folder", Folder);
             writer.WriteStringValue("id", Id);
