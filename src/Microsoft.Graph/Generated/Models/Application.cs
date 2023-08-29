@@ -460,6 +460,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("serviceManagementReference", value); }
         }
 #endif
+        /// <summary>Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.ServicePrincipalLockConfiguration? ServicePrincipalLockConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipalLockConfiguration?>("servicePrincipalLockConfiguration"); }
+            set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration"); }
+            set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
+        }
+#endif
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -631,6 +645,7 @@ namespace Microsoft.Graph.Models {
                 {"requiredResourceAccess", n => { RequiredResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.RequiredResourceAccess>(Microsoft.Graph.Models.RequiredResourceAccess.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"samlMetadataUrl", n => { SamlMetadataUrl = n.GetStringValue(); } },
                 {"serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
+                {"servicePrincipalLockConfiguration", n => { ServicePrincipalLockConfiguration = n.GetObjectValue<Microsoft.Graph.Models.ServicePrincipalLockConfiguration>(Microsoft.Graph.Models.ServicePrincipalLockConfiguration.CreateFromDiscriminatorValue); } },
                 {"signInAudience", n => { SignInAudience = n.GetStringValue(); } },
                 {"spa", n => { Spa = n.GetObjectValue<SpaApplication>(SpaApplication.CreateFromDiscriminatorValue); } },
                 {"synchronization", n => { Synchronization = n.GetObjectValue<Microsoft.Graph.Models.Synchronization>(Microsoft.Graph.Models.Synchronization.CreateFromDiscriminatorValue); } },
@@ -684,6 +699,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
             writer.WriteStringValue("samlMetadataUrl", SamlMetadataUrl);
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration", ServicePrincipalLockConfiguration);
             writer.WriteStringValue("signInAudience", SignInAudience);
             writer.WriteObjectValue<SpaApplication>("spa", Spa);
             writer.WriteObjectValue<Microsoft.Graph.Models.Synchronization>("synchronization", Synchronization);

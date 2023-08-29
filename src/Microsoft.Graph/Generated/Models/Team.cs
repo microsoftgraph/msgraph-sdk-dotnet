@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The permissionGrants property</summary>
+        /// <summary>A collection of permissions granted to apps to access the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResourceSpecificPermissionGrant>? PermissionGrants {

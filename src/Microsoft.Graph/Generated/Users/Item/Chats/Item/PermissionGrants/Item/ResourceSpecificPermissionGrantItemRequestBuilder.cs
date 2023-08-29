@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// A collection of permissions granted to apps for the chat.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// A collection of permissions granted to apps for the chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants.Item {
             }
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// A collection of permissions granted to apps for the chat.
         /// </summary>
         public class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class BaseItem : Entity, IParsable {
-        /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
+        /// <summary>Identity of the user, device, or application that created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? CreatedBy {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("eTag", value); }
         }
 #endif
-        /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
+        /// <summary>Identity of the user, device, and application that last modified the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("parentReference", value); }
         }
 #endif
-        /// <summary>URL that displays the resource in the browser. Read-only.</summary>
+        /// <summary>URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl {

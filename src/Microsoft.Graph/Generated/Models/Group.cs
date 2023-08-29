@@ -519,7 +519,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>The permission that has been granted for a group to a specific application. Supports $expand.</summary>
+        /// <summary>The permissionGrants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResourceSpecificPermissionGrant>? PermissionGrants {
