@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Refers to the Application Name displayed in the Azure Portal.</summary>
+        /// <summary>Refers to the application name displayed in the Microsoft Entra admin center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

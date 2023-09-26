@@ -317,10 +317,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"callDurationSource", n => { CallDurationSource = n.GetEnumValue<PstnCallDurationSource>(); } },
-                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
-                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
                 {"callId", n => { CallId = n.GetStringValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
+                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
+                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
                 {"charge", n => { Charge = n.GetDecimalValue(); } },
                 {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
                 {"connectionCharge", n => { ConnectionCharge = n.GetDecimalValue(); } },

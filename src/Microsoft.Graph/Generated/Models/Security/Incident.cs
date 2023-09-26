@@ -72,6 +72,20 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("customTags", value); }
         }
 #endif
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
         /// <summary>Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public AlertDetermination? Determination {
             get { return BackingStore?.Get<AlertDetermination?>("determination"); }
@@ -148,6 +162,20 @@ namespace Microsoft.Graph.Models.Security {
             get { return BackingStore?.Get<IncidentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The systemTags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SystemTags {
+            get { return BackingStore?.Get<List<string>?>("systemTags"); }
+            set { BackingStore?.Set("systemTags", value); }
+        }
+#nullable restore
+#else
+        public List<string> SystemTags {
+            get { return BackingStore?.Get<List<string>>("systemTags"); }
+            set { BackingStore?.Set("systemTags", value); }
+        }
+#endif
         /// <summary>The Azure Active Directory tenant in which the alert was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,6 +209,7 @@ namespace Microsoft.Graph.Models.Security {
                 {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customTags", n => { CustomTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
                 {"determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
@@ -189,6 +218,7 @@ namespace Microsoft.Graph.Models.Security {
                 {"redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
                 {"status", n => { Status = n.GetEnumValue<IncidentStatus>(); } },
+                {"systemTags", n => { SystemTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -205,6 +235,7 @@ namespace Microsoft.Graph.Models.Security {
             writer.WriteCollectionOfObjectValues<AlertComment>("comments", Comments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("customTags", CustomTags);
+            writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<AlertDetermination>("determination", Determination);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
@@ -213,6 +244,7 @@ namespace Microsoft.Graph.Models.Security {
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);
             writer.WriteEnumValue<AlertSeverity>("severity", Severity);
             writer.WriteEnumValue<IncidentStatus>("status", Status);
+            writer.WriteCollectionOfPrimitiveValues<string>("systemTags", SystemTags);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

@@ -32,6 +32,7 @@ using Microsoft.Graph.Groups.Item.Renew;
 using Microsoft.Graph.Groups.Item.ResetUnseenCount;
 using Microsoft.Graph.Groups.Item.Restore;
 using Microsoft.Graph.Groups.Item.RetryServiceProvisioning;
+using Microsoft.Graph.Groups.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Groups.Item.Settings;
 using Microsoft.Graph.Groups.Item.Sites;
 using Microsoft.Graph.Groups.Item.SubscribeByMail;
@@ -188,6 +189,10 @@ namespace Microsoft.Graph.Groups.Item {
         public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
             new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.group entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -279,8 +284,8 @@ namespace Microsoft.Graph.Groups.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Group>(requestInfo, Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a group object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0" />
+        /// Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -351,7 +356,7 @@ namespace Microsoft.Graph.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a group object.
+        /// Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"targetedAuthenticationMethod", n => { TargetedAuthenticationMethod = n.GetStringValue(); } },
                 {"targetType", n => { TargetType = n.GetEnumValue<AuthenticationMethodTargetType>(); } },
+                {"targetedAuthenticationMethod", n => { TargetedAuthenticationMethod = n.GetStringValue(); } },
             };
         }
         /// <summary>

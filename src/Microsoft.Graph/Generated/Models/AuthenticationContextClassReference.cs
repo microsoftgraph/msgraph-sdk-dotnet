@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it&apos;s set to false, it shouldn&apos;t be shown in authentication context selection UX, or used to protect app resources. It&apos;s shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).</summary>
         public bool? IsAvailable {
             get { return BackingStore?.Get<bool?>("isAvailable"); }
             set { BackingStore?.Set("isAvailable", value); }

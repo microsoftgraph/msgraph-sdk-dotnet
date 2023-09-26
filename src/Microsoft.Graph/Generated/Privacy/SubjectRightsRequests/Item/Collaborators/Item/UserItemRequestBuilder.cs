@@ -2,6 +2,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.MailboxSettings;
+using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.ServiceProvisioningErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item 
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public MailboxSettingsRequestBuilder MailboxSettings { get =>
             new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new UserItemRequestBuilder and sets the default values.

@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Models {
                 {"lastDeliveredDateTime", n => { LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"posts", n => { Posts = n.GetCollectionOfObjectValues<Post>(Post.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"preview", n => { Preview = n.GetStringValue(); } },
-                {"topic", n => { Topic = n.GetStringValue(); } },
                 {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"topic", n => { Topic = n.GetStringValue(); } },
                 {"uniqueSenders", n => { UniqueSenders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }

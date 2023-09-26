@@ -182,8 +182,8 @@ namespace Microsoft.Graph.Models.Security {
                 {"secureScores", n => { SecureScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScore>(Microsoft.Graph.Models.SecureScore.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subjectRightsRequests", n => { SubjectRightsRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectRightsRequest>(Microsoft.Graph.Models.SubjectRightsRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"threatIntelligence", n => { ThreatIntelligence = n.GetObjectValue<Microsoft.Graph.Models.Security.ThreatIntelligence>(Microsoft.Graph.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue); } },
-                {"triggers", n => { Triggers = n.GetObjectValue<TriggersRoot>(TriggersRoot.CreateFromDiscriminatorValue); } },
                 {"triggerTypes", n => { TriggerTypes = n.GetObjectValue<TriggerTypesRoot>(TriggerTypesRoot.CreateFromDiscriminatorValue); } },
+                {"triggers", n => { Triggers = n.GetObjectValue<TriggersRoot>(TriggersRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

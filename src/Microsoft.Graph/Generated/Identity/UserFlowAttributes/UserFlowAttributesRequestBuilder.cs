@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeCollectionResponse>(requestInfo, IdentityUserFlowAttributeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new identityUserFlowAttribute object.
+        /// Create a new custom identityUserFlowAttribute object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new identityUserFlowAttribute object.
+        /// Create a new custom identityUserFlowAttribute object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

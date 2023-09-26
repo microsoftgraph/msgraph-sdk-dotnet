@@ -117,8 +117,8 @@ namespace Microsoft.Graph.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accountManagerPolicy", n => { AccountManagerPolicy = n.GetObjectValue<SharedPCAccountManagerPolicy>(SharedPCAccountManagerPolicy.CreateFromDiscriminatorValue); } },
-                {"allowedAccounts", n => { AllowedAccounts = n.GetEnumValue<SharedPCAllowedAccountType>(); } },
                 {"allowLocalStorage", n => { AllowLocalStorage = n.GetBoolValue(); } },
+                {"allowedAccounts", n => { AllowedAccounts = n.GetEnumValue<SharedPCAllowedAccountType>(); } },
                 {"disableAccountManager", n => { DisableAccountManager = n.GetBoolValue(); } },
                 {"disableEduPolicies", n => { DisableEduPolicies = n.GetBoolValue(); } },
                 {"disablePowerPolicies", n => { DisablePowerPolicies = n.GetBoolValue(); } },

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Whether the printer/printerShare is currently accepting new print jobs.</summary>
+        /// <summary>Specifies whether the printer/printerShare is currently accepting new print jobs.</summary>
         public bool? IsAcceptingJobs {
             get { return BackingStore?.Get<bool?>("isAcceptingJobs"); }
             set { BackingStore?.Set("isAcceptingJobs", value); }
