@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies {
         public AuthenticationStrengthPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new custom authenticationStrengthPolicy object.
+        /// Create a new custom authenticationStrengthPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custom authenticationStrengthPolicy object.
+        /// Create a new custom authenticationStrengthPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies {
             return new AuthenticationStrengthPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

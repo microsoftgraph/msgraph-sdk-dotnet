@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
         public TodoTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a todoTask object.
+        /// Deletes a todoTask object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
+        /// Read the properties and relationships of a todoTask object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a todoTask object.
+        /// Update the properties of a todoTask object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a todoTask object.
+        /// Deletes a todoTask object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
+        /// Read the properties and relationships of a todoTask object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a todoTask object.
+        /// Update the properties of a todoTask object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -217,7 +217,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
+        /// Read the properties and relationships of a todoTask object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TodoTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
         public TeamworkTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/tags/{teamworkTag%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a tag object permanently.
+        /// Delete a tag object permanently. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
+        /// Read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a tag object.
+        /// Update the properties of a tag object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a tag object permanently.
+        /// Delete a tag object permanently. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
+        /// Read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a tag object.
+        /// Update the properties of a tag object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Tags.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
+        /// Read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TeamworkTagItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

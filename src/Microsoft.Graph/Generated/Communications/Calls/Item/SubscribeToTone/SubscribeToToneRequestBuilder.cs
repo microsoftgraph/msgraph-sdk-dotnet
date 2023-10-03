@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SubscribeToTone {
         public SubscribeToToneRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/subscribeToTone", rawUrl) {
         }
         /// <summary>
-        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;.
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.SubscribeToTone {
             return await RequestAdapter.SendAsync<SubscribeToToneOperation>(requestInfo, SubscribeToToneOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;.
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;dialpad&apos;. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

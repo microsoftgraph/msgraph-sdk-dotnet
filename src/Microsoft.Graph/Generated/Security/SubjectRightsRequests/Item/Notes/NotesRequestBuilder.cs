@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
         public NotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/subjectRightsRequests/{subjectRightsRequest%2Did}/notes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
+        /// Get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNoteCollectionResponse>(requestInfo, AuthoredNoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authoredNote object.
+        /// Create a new authoredNote object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, AuthoredNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
+        /// Get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authoredNote object.
+        /// Create a new authoredNote object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return new NotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
+        /// Get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
         /// </summary>
         public class NotesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

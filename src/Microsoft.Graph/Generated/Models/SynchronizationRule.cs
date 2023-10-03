@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("containerFilter", value); }
         }
 #endif
-        /// <summary>true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.</summary>
+        /// <summary>true if the synchronization rule can be customized; false if this rule is read-only and shouldn&apos;t be changed.</summary>
         public bool? Editable {
             get { return BackingStore?.Get<bool?>("editable"); }
             set { BackingStore?.Set("editable", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.</summary>
+        /// <summary>Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn&apos;t be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<StringKeyStringValuePair>? Metadata {

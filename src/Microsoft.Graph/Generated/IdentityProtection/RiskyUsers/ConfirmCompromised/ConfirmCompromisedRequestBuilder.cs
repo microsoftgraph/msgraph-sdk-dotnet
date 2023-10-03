@@ -28,7 +28,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised {
         public ConfirmCompromisedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyUsers/confirmCompromised", rawUrl) {
         }
         /// <summary>
-        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high.
+        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high.
+        /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

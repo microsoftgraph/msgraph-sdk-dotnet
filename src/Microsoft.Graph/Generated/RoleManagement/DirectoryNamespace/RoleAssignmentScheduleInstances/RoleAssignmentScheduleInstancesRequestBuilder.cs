@@ -51,7 +51,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return new RoleAssignmentScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

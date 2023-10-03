@@ -49,7 +49,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignments.Item
         public UnifiedRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignments/{unifiedRoleAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a unifiedRoleAssignment object.
+        /// Delete a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a unifiedRoleAssignment object.
+        /// Retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignments.Item
             return await RequestAdapter.SendAsync<UnifiedRoleAssignment>(requestInfo, UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a unifiedRoleAssignment object.
+        /// Delete a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a unifiedRoleAssignment object.
+        /// Retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignments.Item
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a unifiedRoleAssignment object.
+        /// Retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

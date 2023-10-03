@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
         public WorkforceIntegrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/workforceIntegrations/{workforceIntegration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an instance of a workforceIntegration.
+        /// Delete an instance of a workforceIntegration. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workforceIntegration object.
+        /// Retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a workforceIntegration object.
+        /// Update the properties of a workforceIntegration object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an instance of a workforceIntegration.
+        /// Delete an instance of a workforceIntegration. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workforceIntegration object.
+        /// Retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a workforceIntegration object.
+        /// Update the properties of a workforceIntegration object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workforceIntegration object.
+        /// Retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class WorkforceIntegrationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

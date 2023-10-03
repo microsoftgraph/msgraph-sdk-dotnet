@@ -59,7 +59,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
         public AccessPackageAssignmentRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
+        /// Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
             return await RequestAdapter.SendAsync<AccessPackageAssignmentRequest>(requestInfo, AccessPackageAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
+        /// Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
             return requestInfo;
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
             }
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+        /// In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

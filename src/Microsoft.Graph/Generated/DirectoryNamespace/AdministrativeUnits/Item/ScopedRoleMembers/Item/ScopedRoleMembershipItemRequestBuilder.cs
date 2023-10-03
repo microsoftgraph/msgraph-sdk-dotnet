@@ -29,7 +29,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         public ScopedRoleMembershipItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return requestInfo;
         }
         /// <summary>
-        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             }
         }
         /// <summary>
-        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ScopedRoleMembershipItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

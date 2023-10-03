@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
-        /// <summary>The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.</summary>
+        /// <summary>The display name of the attachment. This can be a descriptive string and doesn&apos;t have to be the actual file name. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {

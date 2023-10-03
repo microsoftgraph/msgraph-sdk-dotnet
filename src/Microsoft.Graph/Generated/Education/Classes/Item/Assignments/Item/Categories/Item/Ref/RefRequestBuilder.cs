@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ite
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories/{educationCategory%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ite
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Messages
         public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/move", rawUrl) {
         }
         /// <summary>
-        /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message.
+        /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Messages
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message.
+        /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants {
         public PermissionGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/permissionGrants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants {
             return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants {
             return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+        /// List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

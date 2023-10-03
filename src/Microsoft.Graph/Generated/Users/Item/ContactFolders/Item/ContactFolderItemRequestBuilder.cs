@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
         public ContactFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete contactFolder other than the default contactFolder.
+        /// Delete contactFolder other than the default contactFolder. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
+        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of contactfolder object.
+        /// Update the properties of contactfolder object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete contactFolder other than the default contactFolder.
+        /// Delete contactFolder other than the default contactFolder. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
+        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of contactfolder object.
+        /// Update the properties of contactfolder object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item {
             }
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
+        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// </summary>
         public class ContactFolderItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

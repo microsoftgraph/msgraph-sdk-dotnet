@@ -29,7 +29,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/externalSponsors/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-list-externalsponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Retrieve a list of a connectedOrganization&apos;s external sponsors.  The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

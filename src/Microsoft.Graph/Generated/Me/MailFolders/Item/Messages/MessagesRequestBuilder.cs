@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
         public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return await RequestAdapter.SendAsync<MessageCollectionResponse>(requestInfo, MessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new Message in a mailfolder.
+        /// Use this API to create a new Message in a mailfolder. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new Message in a mailfolder.
+        /// Use this API to create a new Message in a mailfolder. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return new MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

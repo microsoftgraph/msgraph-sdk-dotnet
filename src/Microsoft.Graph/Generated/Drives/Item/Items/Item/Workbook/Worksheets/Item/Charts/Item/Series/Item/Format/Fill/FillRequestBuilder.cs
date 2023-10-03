@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the fill format of a chart series, which includes background formating information. Read-only.
+        /// Represents the fill format of a chart series, which includes background formatting information. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Represents the fill format of a chart series, which includes background formating information. Read-only.
+        /// Represents the fill format of a chart series, which includes background formatting information. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             }
         }
         /// <summary>
-        /// Represents the fill format of a chart series, which includes background formating information. Read-only.
+        /// Represents the fill format of a chart series, which includes background formatting information. Read-only.
         /// </summary>
         public class FillRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

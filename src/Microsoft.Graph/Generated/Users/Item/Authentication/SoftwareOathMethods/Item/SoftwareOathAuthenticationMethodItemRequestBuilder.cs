@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
         public SoftwareOathAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/softwareOathMethods/{softwareOathAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a user&apos;s Software OATH token authentication method object.
+        /// Delete a user&apos;s Software OATH token authentication method object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethod>(requestInfo, SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user&apos;s Software OATH token authentication method object.
+        /// Delete a user&apos;s Software OATH token authentication method object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
             }
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

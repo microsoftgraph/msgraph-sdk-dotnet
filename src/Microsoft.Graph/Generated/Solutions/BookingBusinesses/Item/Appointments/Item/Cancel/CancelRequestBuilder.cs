@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item.Can
         public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/appointments/{bookingAppointment%2Did}/cancel", rawUrl) {
         }
         /// <summary>
-        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item.Can
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+        /// Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

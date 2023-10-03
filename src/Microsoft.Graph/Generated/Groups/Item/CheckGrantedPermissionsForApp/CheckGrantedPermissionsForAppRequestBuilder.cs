@@ -34,6 +34,26 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<CheckGrantedPermissionsForAppPostResponse?> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<CheckGrantedPermissionsForAppPostResponse> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppPostResponse>(requestInfo, CheckGrantedPermissionsForAppPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke action checkGrantedPermissionsForApp
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsCheckGrantedPermissionsForAppPostResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<CheckGrantedPermissionsForAppResponse?> PostAsync(Action<CheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

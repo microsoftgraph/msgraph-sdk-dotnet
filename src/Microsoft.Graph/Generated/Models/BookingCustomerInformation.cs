@@ -137,8 +137,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"customerId", n => { CustomerId = n.GetStringValue(); } },
                 {"customQuestionAnswers", n => { CustomQuestionAnswers = n.GetCollectionOfObjectValues<BookingQuestionAnswer>(BookingQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"customerId", n => { CustomerId = n.GetStringValue(); } },
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 {"location", n => { Location = n.GetObjectValue<Microsoft.Graph.Models.Location>(Microsoft.Graph.Models.Location.CreateFromDiscriminatorValue); } },
                 {"name", n => { Name = n.GetStringValue(); } },

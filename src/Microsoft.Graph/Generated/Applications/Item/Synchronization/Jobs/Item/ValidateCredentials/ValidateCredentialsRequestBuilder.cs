@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ValidateCr
         public ValidateCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/validateCredentials", rawUrl) {
         }
         /// <summary>
-        /// Validate that the credentials are valid in the tenant.
+        /// Validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ValidateCr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate that the credentials are valid in the tenant.
+        /// Validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

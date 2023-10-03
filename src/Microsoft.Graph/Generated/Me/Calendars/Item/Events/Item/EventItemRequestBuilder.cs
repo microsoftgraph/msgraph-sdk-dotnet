@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an event object.
+        /// Update an event object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an event object.
+        /// Update an event object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

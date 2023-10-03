@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The CID or Content-Id of the attachment for referencing in case of in-line attachments using &lt;img src=&apos;cid:contentId&apos;&gt; tag in HTML messages. Optional.</summary>
+        /// <summary>The CID or Content-Id of the attachment for referencing for the in-line attachments using the &lt;img src=&apos;cid:contentId&apos;&gt; tag in HTML messages. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentId {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isInline"); }
             set { BackingStore?.Set("isInline", value); }
         }
-        /// <summary>The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.</summary>
+        /// <summary>The display name of the attachment. This can be a descriptive string and doesn&apos;t have to be the actual file name. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {

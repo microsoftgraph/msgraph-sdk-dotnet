@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.SoftDelete {
         public SoftDeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/softDelete", rawUrl) {
         }
         /// <summary>
-        /// Delete a single chatMessage or a chat message reply in a channel or a chat.
+        /// Delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.SoftDelete {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a single chatMessage or a chat message reply in a channel or a chat.
+        /// Delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a claimsMappingPolicy to a servicePrincipal.
+        /// Assign a claimsMappingPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Assign a claimsMappingPolicy to a servicePrincipal.
+        /// Assign a claimsMappingPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

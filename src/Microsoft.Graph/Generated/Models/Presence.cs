@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("availability", value); }
         }
 #endif
-        /// <summary>The statusMessage property</summary>
+        /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PresenceStatusMessage? StatusMessage {

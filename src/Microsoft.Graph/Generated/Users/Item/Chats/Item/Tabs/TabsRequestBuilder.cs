@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs {
         public TabsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/tabs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified chat.
+        /// Retrieve the list of tabs in the specified chat. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs {
             return await RequestAdapter.SendAsync<TeamsTabCollectionResponse>(requestInfo, TeamsTabCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
+        /// Add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified chat.
+        /// Retrieve the list of tabs in the specified chat. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs {
             return requestInfo;
         }
         /// <summary>
-        /// Add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
+        /// Add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs {
             return new TabsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified chat.
+        /// Retrieve the list of tabs in the specified chat. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TabsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

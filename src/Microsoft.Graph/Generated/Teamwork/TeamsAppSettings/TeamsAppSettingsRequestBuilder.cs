@@ -48,7 +48,8 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get teamsAppSettings from teamwork
+        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +68,8 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsAppSettings>(requestInfo, Microsoft.Graph.Models.TeamsAppSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property teamsAppSettings in teamwork
+        /// Update the tenant-wide teamsAppSettings for all Teams apps in the tenant. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappsettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get teamsAppSettings from teamwork
+        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +140,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property teamsAppSettings in teamwork
+        /// Update the tenant-wide teamsAppSettings for all Teams apps in the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +191,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             }
         }
         /// <summary>
-        /// Get teamsAppSettings from teamwork
+        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TeamsAppSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

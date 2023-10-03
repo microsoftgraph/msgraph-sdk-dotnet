@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("rows", value); }
         }
 #endif
-        /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
+        /// <summary>Text values of the specified range. The Text value won&apos;t depend on the cell width. The # sign substitution that happens in Excel UI won&apos;t affect the text value returned by the API. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? Text {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("text", value); }
         }
 #endif
-        /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
+        /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? Values {
@@ -170,8 +170,8 @@ namespace Microsoft.Graph.Models {
                 {"rowCount", n => { RowCount = n.GetIntValue(); } },
                 {"rows", n => { Rows = n.GetCollectionOfObjectValues<WorkbookRangeView>(WorkbookRangeView.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"valueTypes", n => { ValueTypes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -84,6 +84,20 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The privilegedAccess property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.PrivilegedAccessRoot? PrivilegedAccess {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessRoot?>("privilegedAccess"); }
+            set { BackingStore?.Set("privilegedAccess", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.PrivilegedAccessRoot PrivilegedAccess {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessRoot>("privilegedAccess"); }
+            set { BackingStore?.Set("privilegedAccess", value); }
+        }
+#endif
         /// <summary>The termsOfUse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +137,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagement>(Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Models.PrivilegedAccessRoot>(Microsoft.Graph.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
                 {"termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Models.TermsOfUseContainer>(Microsoft.Graph.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
             };
         }
@@ -137,6 +152,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             writer.WriteObjectValue<Microsoft.Graph.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<Microsoft.Graph.Models.PrivilegedAccessRoot>("privilegedAccess", PrivilegedAccess);
             writer.WriteObjectValue<Microsoft.Graph.Models.TermsOfUseContainer>("termsOfUse", TermsOfUse);
             writer.WriteAdditionalData(AdditionalData);
         }

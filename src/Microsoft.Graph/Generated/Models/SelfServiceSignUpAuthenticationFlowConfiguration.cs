@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.</summary>
+        /// <summary>Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn&apos;t a key. Required.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }

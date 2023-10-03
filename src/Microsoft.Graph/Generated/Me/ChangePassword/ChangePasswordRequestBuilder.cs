@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Me.ChangePassword {
         public ChangePasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/changePassword", rawUrl) {
         }
         /// <summary>
-        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
+        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Me.ChangePassword {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
+        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

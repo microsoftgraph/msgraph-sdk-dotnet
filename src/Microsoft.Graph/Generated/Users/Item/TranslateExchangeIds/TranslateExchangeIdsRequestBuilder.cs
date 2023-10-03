@@ -28,12 +28,35 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
         public TranslateExchangeIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", rawUrl) {
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats.
+        /// Translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<TranslateExchangeIdsPostResponse?> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<TranslateExchangeIdsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<TranslateExchangeIdsPostResponse> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<TranslateExchangeIdsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<TranslateExchangeIdsPostResponse>(requestInfo, TranslateExchangeIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsTranslateExchangeIdsPostResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<TranslateExchangeIdsResponse?> PostAsync(TranslateExchangeIdsPostRequestBody body, Action<TranslateExchangeIdsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,7 +73,7 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
             return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats.
+        /// Translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

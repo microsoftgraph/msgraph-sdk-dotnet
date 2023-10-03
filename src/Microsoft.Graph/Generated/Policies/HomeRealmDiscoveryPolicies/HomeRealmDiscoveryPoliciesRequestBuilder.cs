@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         public HomeRealmDiscoveryPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/homeRealmDiscoveryPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
+        /// Get a list of homeRealmDiscoveryPolicy objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicyCollectionResponse>(requestInfo, HomeRealmDiscoveryPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new homeRealmDiscoveryPolicy object.
+        /// Create a new homeRealmDiscoveryPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
+        /// Get a list of homeRealmDiscoveryPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new homeRealmDiscoveryPolicy object.
+        /// Create a new homeRealmDiscoveryPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return new HomeRealmDiscoveryPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
+        /// Get a list of homeRealmDiscoveryPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

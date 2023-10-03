@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Inst
         public AttachmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances/{event%2Did1}/attachments/{attachment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, mail message, or group post.
+        /// Delete an attachment from a user calendar event, mail message, or group post. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Inst
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, mail message, or group post.
+        /// Delete an attachment from a user calendar event, mail message, or group post. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

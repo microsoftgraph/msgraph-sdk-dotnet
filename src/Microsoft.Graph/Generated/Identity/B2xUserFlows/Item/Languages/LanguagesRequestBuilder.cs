@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
         public LanguagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
+        /// Retrieve a list of languages supported for customization in a B2X user flow. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
             return await RequestAdapter.SendAsync<UserFlowLanguageConfiguration>(requestInfo, UserFlowLanguageConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
+        /// Retrieve a list of languages supported for customization in a B2X user flow. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
             return new LanguagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
+        /// Retrieve a list of languages supported for customization in a B2X user flow. This API is supported in the following national cloud deployments.
         /// </summary>
         public class LanguagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

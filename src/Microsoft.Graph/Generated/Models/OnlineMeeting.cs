@@ -239,6 +239,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
+        /// <summary>The transcripts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CallTranscript>? Transcripts {
+            get { return BackingStore?.Get<List<CallTranscript>?>("transcripts"); }
+            set { BackingStore?.Set("transcripts", value); }
+        }
+#nullable restore
+#else
+        public List<CallTranscript> Transcripts {
+            get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
+            set { BackingStore?.Set("transcripts", value); }
+        }
+#endif
         /// <summary>The video teleconferencing ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -282,10 +296,10 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
+                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<MeetingAttendanceReport>(MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Models.AudioConferencing>(Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
@@ -305,6 +319,7 @@ namespace Microsoft.Graph.Models {
                 {"shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
+                {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
                 {"watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
             };
@@ -341,6 +356,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteEnumValue<MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("subject", Subject);
+            writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);
             writer.WriteObjectValue<WatermarkProtectionValues>("watermarkProtection", WatermarkProtection);
         }

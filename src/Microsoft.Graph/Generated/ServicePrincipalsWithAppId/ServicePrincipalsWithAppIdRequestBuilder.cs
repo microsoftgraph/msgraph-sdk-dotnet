@@ -31,7 +31,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
         public ServicePrincipalsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
             return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ServicePrincipalsWithAppIdRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

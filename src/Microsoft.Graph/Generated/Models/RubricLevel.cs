@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.</summary>
+        /// <summary>Null if this is a no-points rubric; educationAssignmentPointsGradeType if it&apos;s a points rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationAssignmentGradeType? Grading {

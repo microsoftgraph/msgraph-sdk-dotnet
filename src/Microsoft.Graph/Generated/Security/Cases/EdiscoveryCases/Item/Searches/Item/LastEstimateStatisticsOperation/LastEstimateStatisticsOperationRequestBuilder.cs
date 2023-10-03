@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
         public LastEstimateStatisticsOperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/lastEstimateStatisticsOperation{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
+        /// Get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             return await RequestAdapter.SendAsync<EdiscoveryEstimateOperation>(requestInfo, EdiscoveryEstimateOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
+        /// Get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             return new LastEstimateStatisticsOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
+        /// Get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

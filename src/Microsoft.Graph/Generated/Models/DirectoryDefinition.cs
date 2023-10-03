@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }
         }
-        /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
+        /// <summary>Read only value that indicates version discovered. null if discovery hasn&apos;t yet occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

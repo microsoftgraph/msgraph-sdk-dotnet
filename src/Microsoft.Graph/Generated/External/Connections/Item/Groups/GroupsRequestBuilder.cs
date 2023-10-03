@@ -42,7 +42,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
         public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/groups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get an externalGroup object.
+        /// Get an externalGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroupCollectionResponse>(requestInfo, ExternalGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new externalGroup object.
+        /// Create a new externalGroup object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an externalGroup object.
+        /// Get an externalGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new externalGroup object.
+        /// Create a new externalGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get an externalGroup object.
+        /// Get an externalGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

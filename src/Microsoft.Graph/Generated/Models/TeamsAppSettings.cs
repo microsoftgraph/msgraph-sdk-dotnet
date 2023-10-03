@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class TeamsAppSettings : Entity, IParsable {
-        /// <summary>The allowUserRequestsForAppAccess property</summary>
+        /// <summary>Indicates whether users are allowed to request access to the unavailable Teams apps.</summary>
         public bool? AllowUserRequestsForAppAccess {
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }

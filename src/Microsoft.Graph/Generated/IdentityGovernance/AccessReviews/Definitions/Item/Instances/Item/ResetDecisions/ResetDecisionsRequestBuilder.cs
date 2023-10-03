@@ -28,7 +28,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         public ResetDecisionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/resetDecisions", rawUrl) {
         }
         /// <summary>
-        /// Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+        /// Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-resetdecisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+        /// Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

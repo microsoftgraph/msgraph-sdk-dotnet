@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Models {
                 {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 {"passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                {"passwordRequireToUnlockFromIdle", n => { PasswordRequireToUnlockFromIdle = n.GetBoolValue(); } },
                 {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
                 {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"passwordRequireToUnlockFromIdle", n => { PasswordRequireToUnlockFromIdle = n.GetBoolValue(); } },
                 {"secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };

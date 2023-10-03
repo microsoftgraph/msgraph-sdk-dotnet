@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.RegisteredDevices {
         public RegisteredDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/registeredDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Users.Item.RegisteredDevices {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Users.Item.RegisteredDevices {
             return new RegisteredDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
         /// </summary>
         public class RegisteredDevicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

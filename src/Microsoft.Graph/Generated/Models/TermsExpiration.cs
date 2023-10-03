@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of 1 month.</summary>
+        /// <summary>Represents the frequency at which the terms will expire, after its first expiration as set in startDateTime. The value is represented in ISO 8601 format for durations. For example, PT1M represents a time period of one month.</summary>
         public TimeSpan? Frequency {
             get { return BackingStore?.Get<TimeSpan?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports.Item.Attendan
         public AttendanceRecordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/attendanceReports/{meetingAttendanceReport%2Did}/attendanceRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
+        /// Get a list of attendanceRecord objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports.Item.Attendan
             return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
+        /// Get a list of attendanceRecord objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports.Item.Attendan
             return new AttendanceRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
+        /// Get a list of attendanceRecord objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AttendanceRecordsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
-        /// <summary>The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
+        /// <summary>The date and time that this app was registered. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
+        /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.Device? Device {

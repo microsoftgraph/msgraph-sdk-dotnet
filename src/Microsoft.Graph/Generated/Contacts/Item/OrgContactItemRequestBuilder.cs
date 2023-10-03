@@ -8,6 +8,7 @@ using Microsoft.Graph.Contacts.Item.Manager;
 using Microsoft.Graph.Contacts.Item.MemberOf;
 using Microsoft.Graph.Contacts.Item.Restore;
 using Microsoft.Graph.Contacts.Item.RetryServiceProvisioning;
+using Microsoft.Graph.Contacts.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Contacts.Item.TransitiveMemberOf;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -60,6 +61,10 @@ namespace Microsoft.Graph.Contacts.Item {
         public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
             new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
             new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
@@ -98,7 +103,7 @@ namespace Microsoft.Graph.Contacts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an organizational contact.
+        /// Get the properties and relationships of an organizational contact. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -163,7 +168,7 @@ namespace Microsoft.Graph.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an organizational contact.
+        /// Get the properties and relationships of an organizational contact. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,7 +245,7 @@ namespace Microsoft.Graph.Contacts.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of an organizational contact.
+        /// Get the properties and relationships of an organizational contact. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OrgContactItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

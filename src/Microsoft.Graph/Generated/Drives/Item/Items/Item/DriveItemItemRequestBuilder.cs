@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
         public DriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+        /// Delete a DriveItem by using its ID or path.Deleting items using this method moves the items to the recycle bin instead of permanently deleting the item. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -226,8 +226,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0" />
+        /// To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
         }
         /// <summary>
-        /// Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+        /// Delete a DriveItem by using its ID or path.Deleting items using this method moves the items to the recycle bin instead of permanently deleting the item. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -306,7 +306,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
+        /// To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

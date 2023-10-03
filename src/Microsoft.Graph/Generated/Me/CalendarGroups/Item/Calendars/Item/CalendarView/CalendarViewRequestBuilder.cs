@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView {
         public CalendarViewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView {
             return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView {
             return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CalendarViewRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

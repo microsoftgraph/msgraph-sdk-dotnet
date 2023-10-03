@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Teams {
         public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all teams in an organization.
+        /// List all teams in an organization. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Teams {
             return await RequestAdapter.SendAsync<TeamCollectionResponse>(requestInfo, TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new team.
+        /// Create a new team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Teams {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all teams in an organization.
+        /// List all teams in an organization. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Teams {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new team.
+        /// Create a new team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Teams {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all teams in an organization.
+        /// List all teams in an organization. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

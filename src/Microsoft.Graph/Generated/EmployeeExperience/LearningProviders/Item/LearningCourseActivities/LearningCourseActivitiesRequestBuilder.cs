@@ -61,7 +61,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return await RequestAdapter.SendAsync<LearningCourseActivityCollectionResponse>(requestInfo, LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity.
+        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperienceuser-post-learningcourseactivities?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return requestInfo;
         }
         /// <summary>
-        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity.
+        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

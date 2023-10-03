@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Users.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Users.Item.Settings {
             return await RequestAdapter.SendAsync<UserSettings>(requestInfo, UserSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings. 
+        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings.  This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Users.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings. 
+        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings.  This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Users.Item.Settings {
             }
         }
         /// <summary>
-        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

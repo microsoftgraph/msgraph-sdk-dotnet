@@ -4,6 +4,7 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.AttendanceReports;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.AttendeeReport;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl;
+using Microsoft.Graph.Users.Item.OnlineMeetings.Item.Transcripts;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
         public GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl { get =>
             new GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
+        public TranscriptsRequestBuilder Transcripts { get =>
+            new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
         /// </summary>
@@ -44,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
         public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an onlineMeeting object.
+        /// Delete an onlineMeeting object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +89,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +111,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an onlineMeeting object.
+        /// Delete an onlineMeeting object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +135,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +161,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -207,7 +212,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OnlineMeetingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

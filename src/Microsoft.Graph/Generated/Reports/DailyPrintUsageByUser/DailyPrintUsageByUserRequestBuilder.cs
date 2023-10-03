@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByUser {
         public DailyPrintUsageByUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/dailyPrintUsageByUser{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a list of daily print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyuser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByUser {
             return await RequestAdapter.SendAsync<PrintUsageByUser>(requestInfo, PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a list of daily print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByUser {
             return new DailyPrintUsageByUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a list of daily print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DailyPrintUsageByUserRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

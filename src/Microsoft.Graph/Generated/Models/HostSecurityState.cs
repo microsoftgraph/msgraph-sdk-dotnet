@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).</summary>
+        /// <summary>Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {

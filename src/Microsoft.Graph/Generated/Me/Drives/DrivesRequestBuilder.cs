@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Drives {
         public DrivesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Drives {
             return await RequestAdapter.SendAsync<DriveCollectionResponse>(requestInfo, DriveCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Me.Drives {
             return new DrivesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

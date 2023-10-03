@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
         public FeatureRolloutPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/featureRolloutPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of featureRolloutPolicy objects.
+        /// Retrieve a list of featureRolloutPolicy objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicyCollectionResponse>(requestInfo, FeatureRolloutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new featureRolloutPolicy object.
+        /// Create a new featureRolloutPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of featureRolloutPolicy objects.
+        /// Retrieve a list of featureRolloutPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new featureRolloutPolicy object.
+        /// Create a new featureRolloutPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return new FeatureRolloutPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of featureRolloutPolicy objects.
+        /// Retrieve a list of featureRolloutPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class FeatureRolloutPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

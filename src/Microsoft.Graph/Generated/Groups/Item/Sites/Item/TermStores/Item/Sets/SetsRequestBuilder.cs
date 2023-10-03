@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets {
         public SetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets {
             return await RequestAdapter.SendAsync<SetCollectionResponse>(requestInfo, SetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new set object.
+        /// Create a new set object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new set object.
+        /// Create a new set object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Sets {
             return new SetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Read the properties and relationships of a set object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

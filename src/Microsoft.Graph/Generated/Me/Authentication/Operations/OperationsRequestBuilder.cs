@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Authentication.Operations {
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
+        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Me.Authentication.Operations {
             return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
+        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Me.Authentication.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
+        /// Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user&apos;s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

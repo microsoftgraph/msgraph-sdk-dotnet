@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format &apos;start-end&apos; (e.g. &apos;0-26&apos; to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value &apos;{start}&apos;, the location in the file where the next upload should begin.</summary>
+        /// <summary>A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format &apos;start-end&apos; (for example &apos;0-26&apos; to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value &apos;{start}&apos;, the location in the file where the next upload should begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? NextExpectedRanges {

@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
     public class Host : Artifact, IParsable {
+        /// <summary>The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPair>? ChildHostPairs {
+            get { return BackingStore?.Get<List<HostPair>?>("childHostPairs"); }
+            set { BackingStore?.Set("childHostPairs", value); }
+        }
+#nullable restore
+#else
+        public List<HostPair> ChildHostPairs {
+            get { return BackingStore?.Get<List<HostPair>>("childHostPairs"); }
+            set { BackingStore?.Set("childHostPairs", value); }
+        }
+#endif
         /// <summary>The hostComponents that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,16 +48,44 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("cookies", value); }
         }
 #endif
-        /// <summary>The first date and time this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The hostPairs that are associated with this host, where this host is either the parentHost or childHost.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPair>? HostPairs {
+            get { return BackingStore?.Get<List<HostPair>?>("hostPairs"); }
+            set { BackingStore?.Set("hostPairs", value); }
+        }
+#nullable restore
+#else
+        public List<HostPair> HostPairs {
+            get { return BackingStore?.Get<List<HostPair>>("hostPairs"); }
+            set { BackingStore?.Set("hostPairs", value); }
+        }
+#endif
+        /// <summary>The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
+        /// <summary>The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPair>? ParentHostPairs {
+            get { return BackingStore?.Get<List<HostPair>?>("parentHostPairs"); }
+            set { BackingStore?.Set("parentHostPairs", value); }
+        }
+#nullable restore
+#else
+        public List<HostPair> ParentHostPairs {
+            get { return BackingStore?.Get<List<HostPair>>("parentHostPairs"); }
+            set { BackingStore?.Set("parentHostPairs", value); }
+        }
+#endif
         /// <summary>Passive DNS retrieval about this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +128,34 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("reputation", value); }
         }
 #endif
+        /// <summary>The hostSslCertificates that are associated with this host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostSslCertificate>? SslCertificates {
+            get { return BackingStore?.Get<List<HostSslCertificate>?>("sslCertificates"); }
+            set { BackingStore?.Set("sslCertificates", value); }
+        }
+#nullable restore
+#else
+        public List<HostSslCertificate> SslCertificates {
+            get { return BackingStore?.Get<List<HostSslCertificate>>("sslCertificates"); }
+            set { BackingStore?.Set("sslCertificates", value); }
+        }
+#endif
+        /// <summary>The subdomains that are associated with this host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Subdomain>? Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>?>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#nullable restore
+#else
+        public List<Subdomain> Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#endif
         /// <summary>The hostTrackers that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +168,20 @@ namespace Microsoft.Graph.Models.Security {
         public List<HostTracker> Trackers {
             get { return BackingStore?.Get<List<HostTracker>>("trackers"); }
             set { BackingStore?.Set("trackers", value); }
+        }
+#endif
+        /// <summary>The most recent whoisRecord for this host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public WhoisRecord? Whois {
+            get { return BackingStore?.Get<WhoisRecord?>("whois"); }
+            set { BackingStore?.Set("whois", value); }
+        }
+#nullable restore
+#else
+        public WhoisRecord Whois {
+            get { return BackingStore?.Get<WhoisRecord>("whois"); }
+            set { BackingStore?.Set("whois", value); }
         }
 #endif
         /// <summary>
@@ -124,14 +208,20 @@ namespace Microsoft.Graph.Models.Security {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"childHostPairs", n => { ChildHostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"components", n => { Components = n.GetCollectionOfObjectValues<HostComponent>(HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cookies", n => { Cookies = n.GetCollectionOfObjectValues<HostCookie>(HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"parentHostPairs", n => { ParentHostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDns", n => { PassiveDns = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDnsReverse", n => { PassiveDnsReverse = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reputation", n => { Reputation = n.GetObjectValue<HostReputation>(HostReputation.CreateFromDiscriminatorValue); } },
+                {"sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"trackers", n => { Trackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"whois", n => { Whois = n.GetObjectValue<WhoisRecord>(WhoisRecord.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -141,14 +231,20 @@ namespace Microsoft.Graph.Models.Security {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<HostPair>("childHostPairs", ChildHostPairs);
             writer.WriteCollectionOfObjectValues<HostComponent>("components", Components);
             writer.WriteCollectionOfObjectValues<HostCookie>("cookies", Cookies);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
+            writer.WriteCollectionOfObjectValues<HostPair>("hostPairs", HostPairs);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
+            writer.WriteCollectionOfObjectValues<HostPair>("parentHostPairs", ParentHostPairs);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDns", PassiveDns);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsReverse", PassiveDnsReverse);
             writer.WriteObjectValue<HostReputation>("reputation", Reputation);
+            writer.WriteCollectionOfObjectValues<HostSslCertificate>("sslCertificates", SslCertificates);
+            writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
             writer.WriteCollectionOfObjectValues<HostTracker>("trackers", Trackers);
+            writer.WriteObjectValue<WhoisRecord>("whois", Whois);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// Retrieves the educationUser members of an educationClass. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an educationUser member to an educationClass.
+        /// Add an educationUser member to an educationClass. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// Retrieves the educationUser members of an educationClass. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add an educationUser member to an educationClass.
+        /// Add an educationUser member to an educationClass. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// Retrieves the educationUser members of an educationClass. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

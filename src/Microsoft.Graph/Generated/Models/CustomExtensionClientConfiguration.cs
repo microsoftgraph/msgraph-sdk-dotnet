@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.</summary>
+        /// <summary>The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.</summary>
         public int? TimeoutInMilliseconds {
             get { return BackingStore?.Get<int?>("timeoutInMilliseconds"); }
             set { BackingStore?.Set("timeoutInMilliseconds", value); }

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             }
         }
         /// <summary>
-        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content. This API is supported in the following national cloud deployments.
         /// </summary>
         public class LearningContentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

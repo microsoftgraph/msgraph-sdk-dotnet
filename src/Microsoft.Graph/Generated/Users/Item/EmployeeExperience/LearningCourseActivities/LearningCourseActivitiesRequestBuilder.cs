@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
         public LearningCourseActivitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
             return await RequestAdapter.SendAsync<LearningCourseActivityCollectionResponse>(requestInfo, LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
             return new LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
         /// </summary>
         public class LearningCourseActivitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

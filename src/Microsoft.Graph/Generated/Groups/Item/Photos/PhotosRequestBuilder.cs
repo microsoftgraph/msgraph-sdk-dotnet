@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
+        /// Retrieve a list of profilePhoto objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
+        /// Retrieve a list of profilePhoto objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return new PhotosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
+        /// Retrieve a list of profilePhoto objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PhotosRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
         public IncludesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/includes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSetCollectionResponse>(requestInfo, PermissionGrantConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
+        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return requestInfo;
         }
         /// <summary>
-        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
+        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return new IncludesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy. This API is supported in the following national cloud deployments.
         /// </summary>
         public class IncludesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

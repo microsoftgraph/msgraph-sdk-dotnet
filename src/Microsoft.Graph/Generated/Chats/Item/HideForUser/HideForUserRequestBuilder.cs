@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Chats.Item.HideForUser {
         public HideForUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}/hideForUser", rawUrl) {
         }
         /// <summary>
-        /// Hide a chat for a user.
+        /// Hide a chat for a user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Chats.Item.HideForUser {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Hide a chat for a user.
+        /// Hide a chat for a user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

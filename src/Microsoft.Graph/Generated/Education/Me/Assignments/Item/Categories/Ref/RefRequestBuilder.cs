@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

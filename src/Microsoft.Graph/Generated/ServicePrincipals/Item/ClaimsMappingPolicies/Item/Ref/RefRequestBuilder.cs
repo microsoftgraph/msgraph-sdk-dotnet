@@ -28,7 +28,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/{claimsMappingPolicy%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Remove a claimsMappingPolicy from a servicePrincipal.
+        /// Remove a claimsMappingPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a claimsMappingPolicy from a servicePrincipal.
+        /// Remove a claimsMappingPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item.Ref 
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a claimsMappingPolicy from a servicePrincipal.
+        /// Remove a claimsMappingPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

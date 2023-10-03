@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Sno
         public SnoozeReminderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/snoozeReminder", rawUrl) {
         }
         /// <summary>
-        /// Postpone a reminder for an event in a user calendar until a new time.
+        /// Postpone a reminder for an event in a user calendar until a new time. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Sno
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Postpone a reminder for an event in a user calendar until a new time.
+        /// Postpone a reminder for an event in a user calendar until a new time. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class SignIn : Entity, IParsable {
-        /// <summary>App name displayed in the Azure portal.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName {

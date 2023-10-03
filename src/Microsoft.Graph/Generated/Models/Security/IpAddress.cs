@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("autonomousSystem", value); }
         }
 #endif
-        /// <summary>The country or region for this IP address.</summary>
+        /// <summary>The country/region for this IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryOrRegion {

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Item {
         public IdentityProviderBaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/federationConfigurations/{identityProviderBase%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a samlOrWsFedExternalDomainFederation object.
+        /// Delete a samlOrWsFedExternalDomainFederation object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Item {
             return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, IdentityProviderBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a samlOrWsFedExternalDomainFederation object.
+        /// Delete a samlOrWsFedExternalDomainFederation object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
         public GroupLifecyclePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a groupLifecyclePolicy.
+        /// Delete a groupLifecyclePolicy. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
+        /// Retrieve the properties and relationships of a groupLifecyclePolicies object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
+        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a groupLifecyclePolicy.
+        /// Delete a groupLifecyclePolicy. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
+        /// Retrieve the properties and relationships of a groupLifecyclePolicies object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
+        /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
+        /// Retrieve the properties and relationships of a groupLifecyclePolicies object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class GroupLifecyclePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

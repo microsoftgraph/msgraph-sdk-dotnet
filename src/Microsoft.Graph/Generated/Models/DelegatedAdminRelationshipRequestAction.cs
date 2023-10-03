@@ -11,5 +11,7 @@ namespace Microsoft.Graph.Models {
         Terminate,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "reject")]
+        Reject,
     }
 }

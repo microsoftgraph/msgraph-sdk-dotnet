@@ -5,12 +5,18 @@ using Microsoft.Graph.Security.ThreatIntelligence.ArticleIndicators;
 using Microsoft.Graph.Security.ThreatIntelligence.Articles;
 using Microsoft.Graph.Security.ThreatIntelligence.HostComponents;
 using Microsoft.Graph.Security.ThreatIntelligence.HostCookies;
+using Microsoft.Graph.Security.ThreatIntelligence.HostPairs;
+using Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates;
 using Microsoft.Graph.Security.ThreatIntelligence.HostTrackers;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles;
 using Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicators;
 using Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords;
+using Microsoft.Graph.Security.ThreatIntelligence.SslCertificates;
+using Microsoft.Graph.Security.ThreatIntelligence.Subdomains;
 using Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities;
+using Microsoft.Graph.Security.ThreatIntelligence.WhoisHistoryRecords;
+using Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -40,9 +46,17 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         public HostCookiesRequestBuilder HostCookies { get =>
             new HostCookiesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public HostPairsRequestBuilder HostPairs { get =>
+            new HostPairsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostsRequestBuilder Hosts { get =>
             new HostsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hostSslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public HostSslCertificatesRequestBuilder HostSslCertificates { get =>
+            new HostSslCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostTrackersRequestBuilder HostTrackers { get =>
@@ -60,9 +74,25 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         public PassiveDnsRecordsRequestBuilder PassiveDnsRecords { get =>
             new PassiveDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public SslCertificatesRequestBuilder SslCertificates { get =>
+            new SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public SubdomainsRequestBuilder Subdomains { get =>
+            new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public VulnerabilitiesRequestBuilder Vulnerabilities { get =>
             new VulnerabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public WhoisHistoryRecordsRequestBuilder WhoisHistoryRecords { get =>
+            new WhoisHistoryRecordsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public WhoisRecordsRequestBuilder WhoisRecords { get =>
+            new WhoisRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ThreatIntelligenceRequestBuilder and sets the default values.

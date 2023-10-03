@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Start {
         public StartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/start", rawUrl) {
         }
         /// <summary>
-        /// Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
+        /// Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Start {
             return await RequestAdapter.SendAsync<PrintJobStatus>(requestInfo, PrintJobStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
+        /// Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

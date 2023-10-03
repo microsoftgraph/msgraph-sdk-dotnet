@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item {
         public PasswordAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/passwordMethods/{passwordAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item {
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PasswordMethods.Item {
             return new PasswordAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a password that&apos;s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

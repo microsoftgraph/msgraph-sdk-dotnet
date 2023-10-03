@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.AddCopy {
         public AddCopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/addCopy", rawUrl) {
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+        /// Add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.AddCopy {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+        /// Add a copy of a content type][contentType] from a [site][site] to a [list][list]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         public AccessPackageCatalogItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an accessPackageCatalog.
+        /// Delete an accessPackageCatalog. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessPackageCatalog object.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<AccessPackageCatalog>(requestInfo, AccessPackageCatalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<AccessPackageCatalog>(requestInfo, AccessPackageCatalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an accessPackageCatalog.
+        /// Delete an accessPackageCatalog. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessPackageCatalog object.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -217,7 +217,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessPackageCatalog object.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AccessPackageCatalogItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

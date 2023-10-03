@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Onenote.Resources {
         public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+        /// The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Me.Onenote.Resources {
             return await RequestAdapter.SendAsync<OnenoteResource>(requestInfo, OnenoteResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+        /// The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Me.Onenote.Resources {
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+        /// The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item.EnableSmsSignIn {
         public EnableSmsSignInRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}/enableSmsSignIn", rawUrl) {
         }
         /// <summary>
-        /// Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:
+        /// Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item.EnableSmsSignIn {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled:
+        /// Enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

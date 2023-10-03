@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The expiryDateTime property</summary>
+        /// <summary>Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when you request the presence of another user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? ExpiryDateTime {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("expiryDateTime", value); }
         }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>Status message item. The only supported format currently is message.contentType = &apos;text&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? Message {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The publishedDateTime property</summary>
+        /// <summary>Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.</summary>
         public DateTimeOffset? PublishedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
             set { BackingStore?.Set("publishedDateTime", value); }

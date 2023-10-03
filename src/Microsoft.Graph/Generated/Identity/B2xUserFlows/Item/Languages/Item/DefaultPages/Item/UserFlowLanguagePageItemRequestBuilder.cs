@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages
             return requestInfo;
         }
         /// <summary>
-        /// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages
             }
         }
         /// <summary>
-        /// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         public class UserFlowLanguagePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

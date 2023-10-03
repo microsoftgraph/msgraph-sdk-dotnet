@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("participantId", value); }
         }
 #endif
-        /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant&apos;s current physical location. Read-only.</summary>
+        /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn&apos;t change based on the participant&apos;s current physical location. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region {

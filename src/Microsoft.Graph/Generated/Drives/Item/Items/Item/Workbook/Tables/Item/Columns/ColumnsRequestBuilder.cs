@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
         public ColumnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0" />
+        /// Retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
-        /// Use this API to create a new TableColumn.
+        /// Use this API to create a new TableColumn. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-post-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
+        /// Retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new TableColumn.
+        /// Use this API to create a new TableColumn. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
+        /// Retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

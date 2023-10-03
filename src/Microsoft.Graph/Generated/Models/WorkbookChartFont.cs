@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("bold"); }
             set { BackingStore?.Set("bold", value); }
         }
-        /// <summary>HTML color code representation of the text color. E.g. #FF0000 represents Red.</summary>
+        /// <summary>HTML color code representation of the text color. for example #FF0000 represents Red.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("italic"); }
             set { BackingStore?.Set("italic", value); }
         }
-        /// <summary>Font name (e.g. &apos;Calibri&apos;)</summary>
+        /// <summary>Font name (for example &apos;Calibri&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Size of the font (e.g. 11)</summary>
+        /// <summary>Size of the font (for example 11)</summary>
         public double? Size {
             get { return BackingStore?.Get<double?>("size"); }
             set { BackingStore?.Set("size", value); }

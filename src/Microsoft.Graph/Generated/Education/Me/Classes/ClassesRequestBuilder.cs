@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Education.Me.Classes {
         public ClassesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/classes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the educationClass resources an educationUser is a member of.
+        /// Get the educationClass resources an educationUser is a member of. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Education.Me.Classes {
             return await RequestAdapter.SendAsync<EducationClassCollectionResponse>(requestInfo, EducationClassCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the educationClass resources an educationUser is a member of.
+        /// Get the educationClass resources an educationUser is a member of. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Education.Me.Classes {
             return new ClassesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the educationClass resources an educationUser is a member of.
+        /// Get the educationClass resources an educationUser is a member of. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ClassesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

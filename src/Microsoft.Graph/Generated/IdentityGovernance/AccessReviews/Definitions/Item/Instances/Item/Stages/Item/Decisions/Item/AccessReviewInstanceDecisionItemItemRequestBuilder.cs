@@ -53,7 +53,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
+        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
+        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.ConvertToR
         public ConvertToRangeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/convertToRange", rawUrl) {
         }
         /// <summary>
-        /// Converts the table into a normal range of cells. All data is preserved.
+        /// Converts the table into a normal range of cells. All data is preserved. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-converttorange?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.ConvertToR
             return await RequestAdapter.SendAsync<WorkbookRange>(requestInfo, WorkbookRange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Converts the table into a normal range of cells. All data is preserved.
+        /// Converts the table into a normal range of cells. All data is preserved. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

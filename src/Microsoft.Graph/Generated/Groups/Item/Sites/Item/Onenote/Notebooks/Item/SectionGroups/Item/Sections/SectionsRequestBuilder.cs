@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         public SectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sectionGroups/{sectionGroup%2Did}/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// Retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
             return await RequestAdapter.SendAsync<OnenoteSectionCollectionResponse>(requestInfo, OnenoteSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new onenoteSection in the specified section group.
+        /// Create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// Retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
             return requestInfo;
         }
         /// <summary>
-        /// Create a new onenoteSection in the specified section group.
+        /// Create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
             return new SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// Retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

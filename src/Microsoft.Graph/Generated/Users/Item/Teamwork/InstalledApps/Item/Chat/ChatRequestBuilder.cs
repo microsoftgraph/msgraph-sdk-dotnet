@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat {
         public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/chat{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the chat of the specified user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Chat>(requestInfo, Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the chat of the specified user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat {
             return new ChatRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the chat of the specified user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ChatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

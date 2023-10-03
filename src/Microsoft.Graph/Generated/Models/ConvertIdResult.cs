@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
+        /// <summary>An error object indicating the reason for the conversion failure. This value isn&apos;t present if the conversion succeeded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GenericError? ErrorDetails {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sourceId", value); }
         }
 #endif
-        /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
+        /// <summary>The converted identifier. This value isn&apos;t present if the conversion failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetId {

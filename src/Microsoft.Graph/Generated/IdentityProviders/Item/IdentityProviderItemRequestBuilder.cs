@@ -29,7 +29,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
         public IdentityProviderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProviders/{identityProvider%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an existing identityProvider.
+        /// Delete an existing identityProvider. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an existing identityProvider.
+        /// Retrieve the properties of an existing identityProvider. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update properties in an existing identityProvider.
+        /// Update properties in an existing identityProvider. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing identityProvider.
+        /// Delete an existing identityProvider. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an existing identityProvider.
+        /// Retrieve the properties of an existing identityProvider. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update properties in an existing identityProvider.
+        /// Update properties in an existing identityProvider. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.IdentityProviders.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties of an existing identityProvider.
+        /// Retrieve the properties of an existing identityProvider. This API is supported in the following national cloud deployments.
         /// </summary>
         public class IdentityProviderItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

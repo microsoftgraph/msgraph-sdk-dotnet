@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("text", value); }
         }
 #endif
-        /// <summary>A boolean value the represents the visibility of a chart title object.</summary>
+        /// <summary>A boolean value that represents the visibility of a chart title object.</summary>
         public bool? Visible {
             get { return BackingStore?.Get<bool?>("visible"); }
             set { BackingStore?.Set("visible", value); }

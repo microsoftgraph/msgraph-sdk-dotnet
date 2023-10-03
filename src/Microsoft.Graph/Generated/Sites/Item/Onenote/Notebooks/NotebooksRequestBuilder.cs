@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
         public NotebooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/notebooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
+        /// Retrieve a list of notebook objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
-        /// Create a new OneNote notebook.
+        /// Create a new OneNote notebook. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
+        /// Retrieve a list of notebook objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new OneNote notebook.
+        /// Create a new OneNote notebook. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return new NotebooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
+        /// Retrieve a list of notebook objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class NotebooksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

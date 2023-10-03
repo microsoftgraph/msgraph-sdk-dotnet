@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members.Item {
         public TeamworkTagMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/tags/{teamworkTag%2Did}/members/{teamworkTagMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a member from a standard tag in a team.
+        /// Delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team.
+        /// Get the properties and relationships of a member of a standard tag in a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members.Item {
             return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a member from a standard tag in a team.
+        /// Delete a member from a standard tag in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team.
+        /// Get the properties and relationships of a member of a standard tag in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team.
+        /// Get the properties and relationships of a member of a standard tag in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TeamworkTagMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

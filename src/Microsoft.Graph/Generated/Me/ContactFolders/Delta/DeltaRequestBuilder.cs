@@ -28,11 +28,32 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta {
         public DeltaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/contactFolders/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<DeltaRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<DeltaRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeltaResponse?> GetAsync(Action<DeltaRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,7 +69,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +102,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+        /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

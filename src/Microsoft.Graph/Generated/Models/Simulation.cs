@@ -82,11 +82,72 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The durationInDays property</summary>
+        public int? DurationInDays {
+            get { return BackingStore?.Get<int?>("durationInDays"); }
+            set { BackingStore?.Set("durationInDays", value); }
+        }
+        /// <summary>The endUserNotificationSetting property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.EndUserNotificationSetting? EndUserNotificationSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EndUserNotificationSetting?>("endUserNotificationSetting"); }
+            set { BackingStore?.Set("endUserNotificationSetting", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.EndUserNotificationSetting EndUserNotificationSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.EndUserNotificationSetting>("endUserNotificationSetting"); }
+            set { BackingStore?.Set("endUserNotificationSetting", value); }
+        }
+#endif
+        /// <summary>The excludedAccountTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AccountTargetContent? ExcludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent?>("excludedAccountTarget"); }
+            set { BackingStore?.Set("excludedAccountTarget", value); }
+        }
+#nullable restore
+#else
+        public AccountTargetContent ExcludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
+            set { BackingStore?.Set("excludedAccountTarget", value); }
+        }
+#endif
+        /// <summary>The includedAccountTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AccountTargetContent? IncludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent?>("includedAccountTarget"); }
+            set { BackingStore?.Set("includedAccountTarget", value); }
+        }
+#nullable restore
+#else
+        public AccountTargetContent IncludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
+            set { BackingStore?.Set("includedAccountTarget", value); }
+        }
+#endif
         /// <summary>Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.</summary>
         public bool? IsAutomated {
             get { return BackingStore?.Get<bool?>("isAutomated"); }
             set { BackingStore?.Set("isAutomated", value); }
         }
+        /// <summary>The landingPage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.LandingPage? LandingPage {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LandingPage?>("landingPage"); }
+            set { BackingStore?.Set("landingPage", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.LandingPage LandingPage {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LandingPage>("landingPage"); }
+            set { BackingStore?.Set("landingPage", value); }
+        }
+#endif
         /// <summary>Identity of the user who most recently modified the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +172,48 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("launchDateTime"); }
             set { BackingStore?.Set("launchDateTime", value); }
         }
+        /// <summary>The loginPage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.LoginPage? LoginPage {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LoginPage?>("loginPage"); }
+            set { BackingStore?.Set("loginPage", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.LoginPage LoginPage {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.LoginPage>("loginPage"); }
+            set { BackingStore?.Set("loginPage", value); }
+        }
+#endif
+        /// <summary>The oAuthConsentAppDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.OAuthConsentAppDetail? OAuthConsentAppDetail {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OAuthConsentAppDetail?>("oAuthConsentAppDetail"); }
+            set { BackingStore?.Set("oAuthConsentAppDetail", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.OAuthConsentAppDetail OAuthConsentAppDetail {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.OAuthConsentAppDetail>("oAuthConsentAppDetail"); }
+            set { BackingStore?.Set("oAuthConsentAppDetail", value); }
+        }
+#endif
+        /// <summary>The payload property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.Payload? Payload {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Payload?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.Payload Payload {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.Payload>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#endif
         /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.PayloadDeliveryPlatform? PayloadDeliveryPlatform {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PayloadDeliveryPlatform?>("payloadDeliveryPlatform"); }
@@ -135,6 +238,20 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<SimulationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The trainingSetting property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.TrainingSetting? TrainingSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingSetting?>("trainingSetting"); }
+            set { BackingStore?.Set("trainingSetting", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.TrainingSetting TrainingSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.TrainingSetting>("trainingSetting"); }
+            set { BackingStore?.Set("trainingSetting", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -156,13 +273,22 @@ namespace Microsoft.Graph.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"endUserNotificationSetting", n => { EndUserNotificationSetting = n.GetObjectValue<Microsoft.Graph.Models.EndUserNotificationSetting>(Microsoft.Graph.Models.EndUserNotificationSetting.CreateFromDiscriminatorValue); } },
+                {"excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
+                {"includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
                 {"isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
+                {"landingPage", n => { LandingPage = n.GetObjectValue<Microsoft.Graph.Models.LandingPage>(Microsoft.Graph.Models.LandingPage.CreateFromDiscriminatorValue); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
+                {"loginPage", n => { LoginPage = n.GetObjectValue<Microsoft.Graph.Models.LoginPage>(Microsoft.Graph.Models.LoginPage.CreateFromDiscriminatorValue); } },
+                {"oAuthConsentAppDetail", n => { OAuthConsentAppDetail = n.GetObjectValue<Microsoft.Graph.Models.OAuthConsentAppDetail>(Microsoft.Graph.Models.OAuthConsentAppDetail.CreateFromDiscriminatorValue); } },
+                {"payload", n => { Payload = n.GetObjectValue<Microsoft.Graph.Models.Payload>(Microsoft.Graph.Models.Payload.CreateFromDiscriminatorValue); } },
                 {"payloadDeliveryPlatform", n => { PayloadDeliveryPlatform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
                 {"report", n => { Report = n.GetObjectValue<SimulationReport>(SimulationReport.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<SimulationStatus>(); } },
+                {"trainingSetting", n => { TrainingSetting = n.GetObjectValue<Microsoft.Graph.Models.TrainingSetting>(Microsoft.Graph.Models.TrainingSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -180,13 +306,22 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteIntValue("durationInDays", DurationInDays);
+            writer.WriteObjectValue<Microsoft.Graph.Models.EndUserNotificationSetting>("endUserNotificationSetting", EndUserNotificationSetting);
+            writer.WriteObjectValue<AccountTargetContent>("excludedAccountTarget", ExcludedAccountTarget);
+            writer.WriteObjectValue<AccountTargetContent>("includedAccountTarget", IncludedAccountTarget);
             writer.WriteBoolValue("isAutomated", IsAutomated);
+            writer.WriteObjectValue<Microsoft.Graph.Models.LandingPage>("landingPage", LandingPage);
             writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("launchDateTime", LaunchDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Models.LoginPage>("loginPage", LoginPage);
+            writer.WriteObjectValue<Microsoft.Graph.Models.OAuthConsentAppDetail>("oAuthConsentAppDetail", OAuthConsentAppDetail);
+            writer.WriteObjectValue<Microsoft.Graph.Models.Payload>("payload", Payload);
             writer.WriteEnumValue<PayloadDeliveryPlatform>("payloadDeliveryPlatform", PayloadDeliveryPlatform);
             writer.WriteObjectValue<SimulationReport>("report", Report);
             writer.WriteEnumValue<SimulationStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Models.TrainingSetting>("trainingSetting", TrainingSetting);
         }
     }
 }

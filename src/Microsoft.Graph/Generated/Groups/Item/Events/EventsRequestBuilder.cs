@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Groups.Item.Events {
         public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of event objects.
+        /// Retrieve a list of event objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Groups.Item.Events {
             return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new event.
+        /// Use this API to create a new event. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-events?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Groups.Item.Events {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of event objects.
+        /// Retrieve a list of event objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Groups.Item.Events {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new event.
+        /// Use this API to create a new event. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Groups.Item.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of event objects.
+        /// Retrieve a list of event objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

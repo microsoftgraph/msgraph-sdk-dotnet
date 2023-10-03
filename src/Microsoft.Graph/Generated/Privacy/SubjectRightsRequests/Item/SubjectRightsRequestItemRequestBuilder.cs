@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a subjectRightsRequest object.
+        /// Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item {
             return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a subjectRightsRequest object.
+        /// Update the properties of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a subjectRightsRequest object.
+        /// Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a subjectRightsRequest object.
+        /// Update the properties of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -234,7 +234,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a subjectRightsRequest object.
+        /// Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SubjectRightsRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

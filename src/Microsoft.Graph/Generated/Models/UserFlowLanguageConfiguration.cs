@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class UserFlowLanguageConfiguration : Entity, IParsable {
-        /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.</summary>
+        /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserFlowLanguagePage>? DefaultPages {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).</summary>
+        /// <summary>Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn&apos;t allowed (creation or deletion of pages).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserFlowLanguagePage>? OverridesPages {

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         public UserProcessingResultItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults/{userProcessingResult%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get the user processing result of a user processing result of a run. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return await RequestAdapter.SendAsync<UserProcessingResult>(requestInfo, UserProcessingResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get the user processing result of a user processing result of a run. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new UserProcessingResultItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the user processing result of a user processing result of a run.
+        /// Get the user processing result of a user processing result of a run. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UserProcessingResultItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

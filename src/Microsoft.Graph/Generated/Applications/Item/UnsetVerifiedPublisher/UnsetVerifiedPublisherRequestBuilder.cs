@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher {
         public UnsetVerifiedPublisherRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/unsetVerifiedPublisher", rawUrl) {
         }
         /// <summary>
-        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

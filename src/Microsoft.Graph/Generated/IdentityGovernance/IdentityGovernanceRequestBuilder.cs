@@ -3,6 +3,7 @@ using Microsoft.Graph.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.IdentityGovernance.AppConsent;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows;
+using Microsoft.Graph.IdentityGovernance.PrivilegedAccess;
 using Microsoft.Graph.IdentityGovernance.TermsOfUse;
 using Microsoft.Graph.Models.IdentityGovernance;
 using Microsoft.Graph.Models.ODataErrors;
@@ -34,6 +35,10 @@ namespace Microsoft.Graph.IdentityGovernance {
         /// <summary>Provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.</summary>
         public LifecycleWorkflowsRequestBuilder LifecycleWorkflows { get =>
             new LifecycleWorkflowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.</summary>
+        public PrivilegedAccessRequestBuilder PrivilegedAccess { get =>
+            new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>
         public TermsOfUseRequestBuilder TermsOfUse { get =>

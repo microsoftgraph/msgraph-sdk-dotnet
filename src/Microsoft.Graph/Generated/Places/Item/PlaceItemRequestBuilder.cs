@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Places.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Places.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

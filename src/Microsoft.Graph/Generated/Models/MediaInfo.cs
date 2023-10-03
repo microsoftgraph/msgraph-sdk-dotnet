@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Optional. Used to uniquely identity the resource. If passed in, the prompt uri will be cached against this resourceId as a key.</summary>
+        /// <summary>Optional. Used to uniquely identity the resource. If passed in, the prompt uri is against this resourceId as a key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
-        /// <summary>Path to the prompt that will be played. Currently supports only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate.</summary>
+        /// <summary>Path to the prompt that will be played. Currently supports only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz) sampling rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uri {

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.Shifts.Item {
         public ShiftItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/shifts/{shift%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete a shift from the schedule.
+        /// Delete a shift from the schedule. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.Shifts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shift object by ID.
+        /// Retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.Shifts.Item {
             return await RequestAdapter.SendAsync<Shift>(requestInfo, Shift.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a shift from the schedule.
+        /// Delete a shift from the schedule. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.Shifts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shift object by ID.
+        /// Retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.Shifts.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shift object by ID.
+        /// Retrieve the properties and relationships of a shift object by ID. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ShiftItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

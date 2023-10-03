@@ -23,5 +23,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         FileExtension,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "iconUrl")]
+        IconUrl,
     }
 }

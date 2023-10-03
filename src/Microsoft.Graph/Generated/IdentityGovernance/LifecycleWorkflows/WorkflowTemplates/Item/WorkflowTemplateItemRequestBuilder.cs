@@ -34,7 +34,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         public WorkflowTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflowTemplates/{workflowTemplate%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowTemplate object.
+        /// Read the properties and relationships of a workflowTemplate object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
             return await RequestAdapter.SendAsync<WorkflowTemplate>(requestInfo, WorkflowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowTemplate object.
+        /// Read the properties and relationships of a workflowTemplate object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
             return new WorkflowTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowTemplate object.
+        /// Read the properties and relationships of a workflowTemplate object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class WorkflowTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

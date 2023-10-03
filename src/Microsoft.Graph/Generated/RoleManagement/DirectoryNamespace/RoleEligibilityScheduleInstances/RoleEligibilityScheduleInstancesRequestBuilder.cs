@@ -51,7 +51,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the instances of role eligibilities.
+        /// Get the instances of role eligibilities. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleInstance>(requestInfo, UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the instances of role eligibilities.
+        /// Get the instances of role eligibilities. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new RoleEligibilityScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the instances of role eligibilities.
+        /// Get the instances of role eligibilities. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

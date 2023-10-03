@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("customExtensionStageInstanceId", value); }
         }
 #endif
-        /// <summary>Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
+        /// <summary>Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }

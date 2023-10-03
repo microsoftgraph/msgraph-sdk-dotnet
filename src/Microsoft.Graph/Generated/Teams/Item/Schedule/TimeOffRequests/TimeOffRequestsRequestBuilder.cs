@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
         public TimeOffRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of timeOffRequest objects in the team.
+        /// Retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
             return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of timeOffRequest objects in the team.
+        /// Retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
             return new TimeOffRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of timeOffRequest objects in the team.
+        /// Retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TimeOffRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.OverridesPag
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn&apos;t allowed (creation or deletion of pages).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.OverridesPag
             return requestInfo;
         }
         /// <summary>
-        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn&apos;t allowed (creation or deletion of pages).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.OverridesPag
             }
         }
         /// <summary>
-        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+        /// Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn&apos;t allowed (creation or deletion of pages).
         /// </summary>
         public class UserFlowLanguagePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

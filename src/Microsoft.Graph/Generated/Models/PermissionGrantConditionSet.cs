@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("clientApplicationPublisherIds", value); }
         }
 #endif
-        /// <summary>Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.</summary>
+        /// <summary>Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it doesn&apos;t have a verified publisher. Default is false.</summary>
         public bool? ClientApplicationsFromVerifiedPublisherOnly {
             get { return BackingStore?.Get<bool?>("clientApplicationsFromVerifiedPublisherOnly"); }
             set { BackingStore?.Set("clientApplicationsFromVerifiedPublisherOnly", value); }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("clientApplicationTenantIds", value); }
         }
 #endif
-        /// <summary>The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.</summary>
+        /// <summary>The permission classification for the permission being granted, or all to match with any permission classification (including permissions that aren&apos;t classified). Default is all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionClassification {
@@ -81,12 +81,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
-        /// <summary>The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.</summary>
+        /// <summary>The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven&apos;t been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can&apos;t be used in custom permission grant policies. Required.</summary>
         public Microsoft.Graph.Models.PermissionType? PermissionType {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PermissionType?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
-        /// <summary>The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.</summary>
+        /// <summary>The appId of the resource application (for example the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceApplication {
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 {"permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
+                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };
         }

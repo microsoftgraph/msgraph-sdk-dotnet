@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
         public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
+        /// Get a list of the todoTaskList objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return await RequestAdapter.SendAsync<TodoTaskListCollectionResponse>(requestInfo, TodoTaskListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new lists object.
+        /// Create a new lists object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return await RequestAdapter.SendAsync<TodoTaskList>(requestInfo, TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
+        /// Get a list of the todoTaskList objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new lists object.
+        /// Create a new lists object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return new ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
+        /// Get a list of the todoTaskList objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ListsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

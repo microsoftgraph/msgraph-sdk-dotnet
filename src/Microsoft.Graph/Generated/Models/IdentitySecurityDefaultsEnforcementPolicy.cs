@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable {
-        /// <summary>If set to true, Azure Active Directory security defaults is enabled for the tenant.</summary>
+        /// <summary>If set to true, Azure Active Directory security defaults are enabled for the tenant.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }

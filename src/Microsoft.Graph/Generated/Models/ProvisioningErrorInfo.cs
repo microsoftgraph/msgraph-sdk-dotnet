@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Additional details in case of error.</summary>
+        /// <summary>Additional details if there&apos;s error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdditionalDetails {

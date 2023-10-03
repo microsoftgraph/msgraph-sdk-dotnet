@@ -53,7 +53,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
+        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
+        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.It
             }
         }
         /// <summary>
-        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned.
+        /// Retrieve an accessReviewHistoryDefinition object by its identifier. All the properties of the access review history definition object are returned. If the definition is 30 days or older, a 404 Not Found error is returned. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AccessReviewHistoryDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

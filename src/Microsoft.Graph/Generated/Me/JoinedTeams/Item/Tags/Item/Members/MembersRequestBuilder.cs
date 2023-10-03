@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item.Members {
         public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}/tags/{teamworkTag%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
+        /// Get a list of the members of a standard tag in a team and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item.Members {
             return await RequestAdapter.SendAsync<TeamworkTagMemberCollectionResponse>(requestInfo, TeamworkTagMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new teamworkTagMember object in a team.
+        /// Create a new teamworkTagMember object in a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item.Members {
             return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
+        /// Get a list of the members of a standard tag in a team and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new teamworkTagMember object in a team.
+        /// Create a new teamworkTagMember object in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
+        /// Get a list of the members of a standard tag in a team and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

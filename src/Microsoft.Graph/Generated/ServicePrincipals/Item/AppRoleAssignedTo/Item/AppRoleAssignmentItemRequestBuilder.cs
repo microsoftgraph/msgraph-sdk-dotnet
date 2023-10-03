@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
         public AppRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignedTo/{appRoleAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

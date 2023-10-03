@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
         public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/members/{conversationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a conversationMember from a team.
+        /// Remove a conversationMember from a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a conversationMember from a team.
+        /// Get a conversationMember from a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.
+        /// Update the role of a conversationMember in a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a conversationMember from a team.
+        /// Remove a conversationMember from a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a conversationMember from a team.
+        /// Get a conversationMember from a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.
+        /// Update the role of a conversationMember in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Teams.Item.Members.Item {
             }
         }
         /// <summary>
-        /// Get a conversationMember from a team.
+        /// Get a conversationMember from a team. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

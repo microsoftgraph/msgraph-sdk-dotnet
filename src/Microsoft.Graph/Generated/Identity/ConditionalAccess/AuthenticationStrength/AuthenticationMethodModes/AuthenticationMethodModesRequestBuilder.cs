@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
         public AuthenticationMethodModesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrength/authenticationMethodModes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
             return await RequestAdapter.SendAsync<AuthenticationMethodModeDetail>(requestInfo, AuthenticationMethodModeDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
             return new AuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AuthenticationMethodModesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

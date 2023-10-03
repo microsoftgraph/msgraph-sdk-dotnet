@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/acceptedSenders/$ref{?%24top,%24skip,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error.
+        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error.
+        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

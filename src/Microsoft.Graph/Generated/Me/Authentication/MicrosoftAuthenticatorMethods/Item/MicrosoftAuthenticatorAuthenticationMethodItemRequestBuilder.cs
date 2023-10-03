@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item {
         public MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a microsoftAuthenticatorAuthenticationMethod object.
+        /// Deletes a microsoftAuthenticatorAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
+        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item {
             return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethod>(requestInfo, MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a microsoftAuthenticatorAuthenticationMethod object.
+        /// Deletes a microsoftAuthenticatorAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
+        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
+        /// Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

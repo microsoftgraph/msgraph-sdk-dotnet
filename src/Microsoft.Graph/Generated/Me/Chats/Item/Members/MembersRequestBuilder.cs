@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
         public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/chats/{chat%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all conversation members in a chat or channel.
+        /// List all conversation members in a chat or channel. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMemberCollectionResponse>(requestInfo, ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a conversationMember to a chat.
+        /// Add a conversationMember to a chat. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all conversation members in a chat or channel.
+        /// List all conversation members in a chat or channel. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Add a conversationMember to a chat.
+        /// Add a conversationMember to a chat. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all conversation members in a chat or channel.
+        /// List all conversation members in a chat or channel. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

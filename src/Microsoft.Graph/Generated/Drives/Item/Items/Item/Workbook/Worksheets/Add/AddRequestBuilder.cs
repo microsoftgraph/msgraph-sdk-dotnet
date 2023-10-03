@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add {
         public AddRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/add", rawUrl) {
         }
         /// <summary>
-        /// Adds a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you wish to activate the newly added worksheet, call.activate() on it.
+        /// Adds a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you wish to activate the newly added worksheet, call .activate() on it. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetcollection-add?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you wish to activate the newly added worksheet, call.activate() on it.
+        /// Adds a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you wish to activate the newly added worksheet, call .activate() on it. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

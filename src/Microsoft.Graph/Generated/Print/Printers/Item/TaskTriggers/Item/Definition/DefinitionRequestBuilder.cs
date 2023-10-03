@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item.Definition {
         public DefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/taskTriggers/{printTaskTrigger%2Did}/definition{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+        /// An abstract definition that is used to create a printTask when triggered by a print event. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item.Definition {
             return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, PrintTaskDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+        /// An abstract definition that is used to create a printTask when triggered by a print event. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item.Definition {
             return new DefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+        /// An abstract definition that is used to create a printTask when triggered by a print event. Read-only.
         /// </summary>
         public class DefinitionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

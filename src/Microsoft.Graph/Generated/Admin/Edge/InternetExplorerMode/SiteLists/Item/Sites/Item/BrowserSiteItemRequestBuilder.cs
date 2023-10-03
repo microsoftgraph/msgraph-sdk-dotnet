@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
         public BrowserSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}/sites/{browserSite%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a browserSite from a browserSiteList.
+        /// Delete a browserSite from a browserSiteList. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a browserSite that resides on a browserSiteList.
+        /// Get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             return await RequestAdapter.SendAsync<BrowserSite>(requestInfo, BrowserSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a browserSite object.
+        /// Update the properties of a browserSite object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             return await RequestAdapter.SendAsync<BrowserSite>(requestInfo, BrowserSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a browserSite from a browserSiteList.
+        /// Delete a browserSite from a browserSiteList. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             return requestInfo;
         }
         /// <summary>
-        /// Get a browserSite that resides on a browserSiteList.
+        /// Get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a browserSite object.
+        /// Update the properties of a browserSite object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites.I
             }
         }
         /// <summary>
-        /// Get a browserSite that resides on a browserSiteList.
+        /// Get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
         /// </summary>
         public class BrowserSiteItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
         public CalendarsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.  This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return await RequestAdapter.SendAsync<CalendarCollectionResponse>(requestInfo, CalendarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new calendar for a user.
+        /// Create a new calendar for a user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Calendar>(requestInfo, Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.  This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new calendar for a user.
+        /// Create a new calendar for a user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return new CalendarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.  This API is supported in the following national cloud deployments.
         /// </summary>
         public class CalendarsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

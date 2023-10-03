@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
         public DiscoverRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema/directories/{directoryDefinition%2Did}/discover", rawUrl) {
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
             return await RequestAdapter.SendAsync<DirectoryDefinition>(requestInfo, DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

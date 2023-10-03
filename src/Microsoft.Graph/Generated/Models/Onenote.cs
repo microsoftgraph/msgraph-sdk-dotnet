@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("notebooks", value); }
         }
 #endif
-        /// <summary>The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
+        /// <summary>The status of OneNote operations. Getting an operations collection isn&apos;t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnenoteOperation>? Operations {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("pages", value); }
         }
 #endif
-        /// <summary>The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
+        /// <summary>The image and other file resources in OneNote pages. Getting a resources collection isn&apos;t supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnenoteResource>? Resources {

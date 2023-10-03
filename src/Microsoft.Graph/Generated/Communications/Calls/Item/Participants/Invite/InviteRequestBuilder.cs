@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
         public InviteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/participants/invite", rawUrl) {
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
+        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
             return await RequestAdapter.SendAsync<InviteParticipantsOperation>(requestInfo, InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
+        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

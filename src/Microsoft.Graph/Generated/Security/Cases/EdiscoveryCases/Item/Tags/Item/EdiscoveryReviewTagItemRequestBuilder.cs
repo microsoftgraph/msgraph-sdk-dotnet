@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
         public EdiscoveryReviewTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/tags/{ediscoveryReviewTag%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove an ediscoveryReviewTag object.
+        /// Remove an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
+        /// Read the properties and relationships of an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewTag object.
+        /// Update the properties of an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an ediscoveryReviewTag object.
+        /// Remove an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
+        /// Read the properties and relationships of an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewTag object.
+        /// Update the properties of an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
+        /// Read the properties and relationships of an ediscoveryReviewTag object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class EdiscoveryReviewTagItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

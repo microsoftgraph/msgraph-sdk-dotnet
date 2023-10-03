@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.</summary>
+        /// <summary>The number of searchBucket resources to be returned. This isn&apos;t required when the range is provided manually in the search request. Optional.</summary>
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }

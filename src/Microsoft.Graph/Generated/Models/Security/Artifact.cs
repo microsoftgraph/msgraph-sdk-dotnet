@@ -18,9 +18,11 @@ namespace Microsoft.Graph.Models.Security {
                 "#microsoft.graph.security.hostComponent" => new HostComponent(),
                 "#microsoft.graph.security.hostCookie" => new HostCookie(),
                 "#microsoft.graph.security.hostname" => new Hostname(),
+                "#microsoft.graph.security.hostSslCertificate" => new HostSslCertificate(),
                 "#microsoft.graph.security.hostTracker" => new HostTracker(),
                 "#microsoft.graph.security.ipAddress" => new IpAddress(),
                 "#microsoft.graph.security.passiveDnsRecord" => new PassiveDnsRecord(),
+                "#microsoft.graph.security.sslCertificate" => new SslCertificate(),
                 "#microsoft.graph.security.unclassifiedArtifact" => new UnclassifiedArtifact(),
                 _ => new Artifact(),
             };

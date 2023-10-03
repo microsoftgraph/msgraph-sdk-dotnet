@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
         public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.
+        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationClass object.
+        /// Update the properties of an educationClass object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.
+        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationClass object.
+        /// Update the properties of an educationClass object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Education.Classes.Item {
             }
         }
         /// <summary>
-        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members. This API is supported in the following national cloud deployments.
         /// </summary>
         public class EducationClassItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

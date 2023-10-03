@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("anonymousJoinWebUrl", value); }
         }
 #endif
-        /// <summary>A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
+        /// <summary>A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BookingCustomerInformationBase>? Customers {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<int?>("maximumAttendeesCount"); }
             set { BackingStore?.Set("maximumAttendeesCount", value); }
         }
-        /// <summary>If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.</summary>
+        /// <summary>If true indicates that the bookingCustomer for this appointment doesn&apos;t wish to receive a confirmation for this appointment.</summary>
         public bool? OptOutOfCustomerEmail {
             get { return BackingStore?.Get<bool?>("optOutOfCustomerEmail"); }
             set { BackingStore?.Set("optOutOfCustomerEmail", value); }
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("serviceLocation", value); }
         }
 #endif
-        /// <summary>The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.</summary>
+        /// <summary>The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it&apos;s computed from the service associated with the appointment by the serviceId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceName {
@@ -270,8 +270,8 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
-                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
+                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"filledAttendeesCount", n => { FilledAttendeesCount = n.GetIntValue(); } },

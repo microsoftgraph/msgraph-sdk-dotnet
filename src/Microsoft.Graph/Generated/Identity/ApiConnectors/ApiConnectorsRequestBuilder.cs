@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
         public ApiConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/apiConnectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
+        /// Read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return await RequestAdapter.SendAsync<IdentityApiConnectorCollectionResponse>(requestInfo, IdentityApiConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new identityApiConnector object.
+        /// Create a new identityApiConnector object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
+        /// Read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new identityApiConnector object.
+        /// Create a new identityApiConnector object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return new ApiConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
+        /// Read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ApiConnectorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

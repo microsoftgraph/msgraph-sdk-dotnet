@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
         public BookingAppointmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/appointments/{bookingAppointment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a bookingAppointment in the specified bookingBusiness.
+        /// Delete a bookingAppointment in the specified bookingBusiness. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingAppointment object in the specified bookingBusiness.
+        /// Update the properties of a bookingAppointment object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a bookingAppointment in the specified bookingBusiness.
+        /// Delete a bookingAppointment in the specified bookingBusiness. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingAppointment object in the specified bookingBusiness.
+        /// Update the properties of a bookingAppointment object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC. This API is supported in the following national cloud deployments.
         /// </summary>
         public class BookingAppointmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

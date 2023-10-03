@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
         public BookingCustomQuestionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/{bookingCustomQuestion%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a bookingCustomQuestion object.
+        /// Delete a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a bookingCustomQuestion object.
+        /// Read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingCustomQuestion object.
+        /// Update the properties of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a bookingCustomQuestion object.
+        /// Delete a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a bookingCustomQuestion object.
+        /// Read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingCustomQuestion object.
+        /// Update the properties of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a bookingCustomQuestion object.
+        /// Read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class BookingCustomQuestionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

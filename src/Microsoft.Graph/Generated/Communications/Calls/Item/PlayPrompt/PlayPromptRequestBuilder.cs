@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.PlayPrompt {
         public PlayPromptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/playPrompt", rawUrl) {
         }
         /// <summary>
-        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
+        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.PlayPrompt {
             return await RequestAdapter.SendAsync<PlayPromptOperation>(requestInfo, PlayPromptOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
+        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

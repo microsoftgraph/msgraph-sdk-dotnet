@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher {
         public SetVerifiedPublisherRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/setVerifiedPublisher", rawUrl) {
         }
         /// <summary>
-        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Applications.Item.SetVerifiedPublisher {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+        /// Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

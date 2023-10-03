@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Print.Services {
         public ServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/services{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
+        /// Retrieve a list of printService objects that represent the services available to your tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Print.Services {
             return await RequestAdapter.SendAsync<PrintService>(requestInfo, PrintService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
+        /// Retrieve a list of printService objects that represent the services available to your tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Print.Services {
             return new ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
+        /// Retrieve a list of printService objects that represent the services available to your tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ServicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

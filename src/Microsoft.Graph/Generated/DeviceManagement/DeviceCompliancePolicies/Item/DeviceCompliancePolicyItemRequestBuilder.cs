@@ -74,8 +74,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         public DeviceCompliancePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-delete?view=graph-rest-1.0" />
+        /// Deletes a macOSCompliancePolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a windows81CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-update?view=graph-rest-1.0" />
+        /// Update the properties of a androidWorkProfileCompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
+        /// Deletes a macOSCompliancePolicy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a windows81CompliancePolicy object.
+        /// Update the properties of a androidWorkProfileCompliancePolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

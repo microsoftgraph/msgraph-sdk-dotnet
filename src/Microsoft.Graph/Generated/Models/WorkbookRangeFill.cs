@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class WorkbookRangeFill : Entity, IParsable {
-        /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (e.g. &apos;FFA500&apos;) or as a named HTML color (e.g. &apos;orange&apos;)</summary>
+        /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (for example &apos;FFA500&apos;) or as a named HTML color (for example &apos;orange&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color {

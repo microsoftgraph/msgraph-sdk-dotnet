@@ -28,12 +28,35 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
         public MarkUnreadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/markUnread", rawUrl) {
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as unread for the signed in user.
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<MarkUnreadPostResponse?> PostAsMarkUnreadPostResponseAsync(MarkUnreadPostRequestBody body, Action<MarkUnreadRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<MarkUnreadPostResponse> PostAsMarkUnreadPostResponseAsync(MarkUnreadPostRequestBody body, Action<MarkUnreadRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<MarkUnreadPostResponse>(requestInfo, MarkUnreadPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsMarkUnreadPostResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<MarkUnreadResponse?> PostAsync(MarkUnreadPostRequestBody body, Action<MarkUnreadRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,7 +73,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
             return await RequestAdapter.SendAsync<MarkUnreadResponse>(requestInfo, MarkUnreadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as unread for the signed in user.
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

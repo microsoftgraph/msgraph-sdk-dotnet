@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
         public ColumnDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+        /// Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+        /// Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+        /// Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+        /// Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+        /// Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+        /// Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             }
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+        /// Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

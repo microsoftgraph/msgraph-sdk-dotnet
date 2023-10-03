@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Analytics.AllTime {
         public AllTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/analytics/allTime{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the [getActivitiesByInterval][] API.
+        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the getActivitiesByInterval][] API. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Analytics.AllTime {
             return await RequestAdapter.SendAsync<ItemActivityStat>(requestInfo, ItemActivityStat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the [getActivitiesByInterval][] API.
+        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the getActivitiesByInterval][] API. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Analytics.AllTime {
             return new AllTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the [getActivitiesByInterval][] API.
+        /// Get [itemAnalytics][] about the views that took place under this resource.The itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.For a custom time range or interval, use the getActivitiesByInterval][] API. This API is supported in the following [national cloud deployments.
         /// </summary>
         public class AllTimeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

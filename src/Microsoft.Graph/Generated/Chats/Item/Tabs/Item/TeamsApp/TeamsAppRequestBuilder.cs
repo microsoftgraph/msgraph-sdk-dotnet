@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Chats.Item.Tabs.Item.TeamsApp {
         public TeamsAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}/tabs/{teamsTab%2Did}/teamsApp{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The application that is linked to the tab. This cannot be changed after tab creation.
+        /// The application that is linked to the tab. This can&apos;t be changed after tab creation.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Chats.Item.Tabs.Item.TeamsApp {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsApp>(requestInfo, Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The application that is linked to the tab. This cannot be changed after tab creation.
+        /// The application that is linked to the tab. This can&apos;t be changed after tab creation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Chats.Item.Tabs.Item.TeamsApp {
             return new TeamsAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The application that is linked to the tab. This cannot be changed after tab creation.
+        /// The application that is linked to the tab. This can&apos;t be changed after tab creation.
         /// </summary>
         public class TeamsAppRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

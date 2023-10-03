@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
         public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/connectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
+        /// Retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
             return await RequestAdapter.SendAsync<PrintConnectorCollectionResponse>(requestInfo, PrintConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
+        /// Retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
             return new ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
+        /// Retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ConnectorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -78,7 +78,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return requestInfo;
         }
         /// <summary>
-        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             }
         }
         /// <summary>
-        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

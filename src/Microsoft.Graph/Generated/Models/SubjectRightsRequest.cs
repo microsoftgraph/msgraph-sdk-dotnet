@@ -209,18 +209,18 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The mailboxlocations property</summary>
+        /// <summary>The mailboxLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestMailboxLocation? Mailboxlocations {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxlocations"); }
-            set { BackingStore?.Set("mailboxlocations", value); }
+        public SubjectRightsRequestMailboxLocation? MailboxLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxLocations"); }
+            set { BackingStore?.Set("mailboxLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestMailboxLocation Mailboxlocations {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxlocations"); }
-            set { BackingStore?.Set("mailboxlocations", value); }
+        public SubjectRightsRequestMailboxLocation MailboxLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxLocations"); }
+            set { BackingStore?.Set("mailboxLocations", value); }
         }
 #endif
         /// <summary>List of notes associated with the request.</summary>
@@ -256,18 +256,18 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("regulations", value); }
         }
 #endif
-        /// <summary>The sitelocations property</summary>
+        /// <summary>The siteLocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestSiteLocation? Sitelocations {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("sitelocations"); }
-            set { BackingStore?.Set("sitelocations", value); }
+        public SubjectRightsRequestSiteLocation? SiteLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("siteLocations"); }
+            set { BackingStore?.Set("siteLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestSiteLocation Sitelocations {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("sitelocations"); }
-            set { BackingStore?.Set("sitelocations", value); }
+        public SubjectRightsRequestSiteLocation SiteLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("siteLocations"); }
+            set { BackingStore?.Set("siteLocations", value); }
         }
 #endif
         /// <summary>Information about the different stages for the request.</summary>
@@ -340,11 +340,11 @@ namespace Microsoft.Graph.Models {
                 {"internalDueDateTime", n => { InternalDueDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mailboxlocations", n => { Mailboxlocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
+                {"mailboxLocations", n => { MailboxLocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
                 {"notes", n => { Notes = n.GetCollectionOfObjectValues<AuthoredNote>(AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"pauseAfterEstimate", n => { PauseAfterEstimate = n.GetBoolValue(); } },
                 {"regulations", n => { Regulations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sitelocations", n => { Sitelocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
+                {"siteLocations", n => { SiteLocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
                 {"stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Models.Team>(Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue); } },
@@ -377,11 +377,11 @@ namespace Microsoft.Graph.Models {
             writer.WriteDateTimeOffsetValue("internalDueDateTime", InternalDueDateTime);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<SubjectRightsRequestMailboxLocation>("mailboxlocations", Mailboxlocations);
+            writer.WriteObjectValue<SubjectRightsRequestMailboxLocation>("mailboxLocations", MailboxLocations);
             writer.WriteCollectionOfObjectValues<AuthoredNote>("notes", Notes);
             writer.WriteBoolValue("pauseAfterEstimate", PauseAfterEstimate);
             writer.WriteCollectionOfPrimitiveValues<string>("regulations", Regulations);
-            writer.WriteObjectValue<SubjectRightsRequestSiteLocation>("sitelocations", Sitelocations);
+            writer.WriteObjectValue<SubjectRightsRequestSiteLocation>("siteLocations", SiteLocations);
             writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
             writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Models.Team>("team", Team);

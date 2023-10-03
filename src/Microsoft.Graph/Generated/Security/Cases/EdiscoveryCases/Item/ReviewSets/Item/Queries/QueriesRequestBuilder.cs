@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         public QueriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
+        /// Get the list of queries associated with an eDiscovery review set. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQueryCollectionResponse>(requestInfo, EdiscoveryReviewSetQueryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryReviewSetQuery object.
+        /// Create a new ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQuery>(requestInfo, EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
+        /// Get the list of queries associated with an eDiscovery review set. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryReviewSetQuery object.
+        /// Create a new ediscoveryReviewSetQuery object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return new QueriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
+        /// Get the list of queries associated with an eDiscovery review set. This API is supported in the following national cloud deployments.
         /// </summary>
         public class QueriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
         public TemporaryAccessPassAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
+        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
+        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             }
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

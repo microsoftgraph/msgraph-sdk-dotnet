@@ -42,7 +42,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         public AccessPackagesIncompatibleWithRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackagesIncompatibleWith{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new AccessPackagesIncompatibleWithRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

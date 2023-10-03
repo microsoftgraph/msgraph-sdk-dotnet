@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablesort object.
+        /// Retrieve the properties and relationships of tablesort object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablesort-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablesort object.
+        /// Retrieve the properties and relationships of tablesort object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablesort object.
+        /// Retrieve the properties and relationships of tablesort object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SortRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

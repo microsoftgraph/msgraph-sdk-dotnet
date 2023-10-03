@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
         public ContentTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a [content type][contentType] from a [list][] or a [site][].
+        /// Remove a content type][contentType] from a [list][] or a [site][]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+        /// Retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a [content type][contentType].
+        /// Update a content type][contentType]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a [content type][contentType] from a [list][] or a [site][].
+        /// Remove a content type][contentType] from a [list][] or a [site][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+        /// Retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update a [content type][contentType].
+        /// Update a content type][contentType]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item {
             }
         }
         /// <summary>
-        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+        /// Retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         public class ContentTypeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

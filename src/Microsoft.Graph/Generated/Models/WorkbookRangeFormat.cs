@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("borders", value); }
         }
 #endif
-        /// <summary>Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.</summary>
+        /// <summary>Gets or sets the width of all columns within the range. If the column widths aren&apos;t uniform, null will be returned.</summary>
         public double? ColumnWidth {
             get { return BackingStore?.Get<double?>("columnWidth"); }
             set { BackingStore?.Set("columnWidth", value); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("protection", value); }
         }
 #endif
-        /// <summary>Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.</summary>
+        /// <summary>Gets or sets the height of all rows in the range. If the row heights aren&apos;t uniform null will be returned.</summary>
         public double? RowHeight {
             get { return BackingStore?.Get<double?>("rowHeight"); }
             set { BackingStore?.Set("rowHeight", value); }

@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user cannot complete sign-up without providing a value.</summary>
+        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user can&apos;t complete sign-up without providing a value.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
-        /// <summary>Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user&apos;s phone number or email address.</summary>
+        /// <summary>Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user&apos;s phone number or email address.</summary>
         public bool? RequiresVerification {
             get { return BackingStore?.Get<bool?>("requiresVerification"); }
             set { BackingStore?.Set("requiresVerification", value); }

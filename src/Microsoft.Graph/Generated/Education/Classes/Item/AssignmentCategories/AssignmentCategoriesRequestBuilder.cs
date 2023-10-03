@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
         public AssignmentCategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignmentCategories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return await RequestAdapter.SendAsync<EducationCategoryCollectionResponse>(requestInfo, EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new educationCategory on an educationClass. Only teachers can perform this operation.
+        /// Create a new educationCategory on an educationClass. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new educationCategory on an educationClass. Only teachers can perform this operation.
+        /// Create a new educationCategory on an educationClass. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return new AssignmentCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AssignmentCategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Domains.Item {
         public DomainItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a domain from a tenant.
+        /// Deletes a domain from a tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Domains.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of domain object.
+        /// Retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Domains.Item {
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of domain object.
+        /// Update the properties of domain object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Domains.Item {
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a domain from a tenant.
+        /// Deletes a domain from a tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Domains.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of domain object.
+        /// Retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Domains.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of domain object.
+        /// Update the properties of domain object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Domains.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of domain object.
+        /// Retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DomainItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

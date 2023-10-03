@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+        /// Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+        /// Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             }
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ChatMessageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

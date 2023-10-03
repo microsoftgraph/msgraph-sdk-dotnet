@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("deletedTeams", value); }
         }
 #endif
-        /// <summary>The teamsAppSettings property</summary>
+        /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.TeamsAppSettings? TeamsAppSettings {

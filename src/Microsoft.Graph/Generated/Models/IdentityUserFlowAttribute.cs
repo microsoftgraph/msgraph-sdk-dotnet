@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The display name of the user flow attribute.</summary>
+        /// <summary>The display name of the user flow attribute.  Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

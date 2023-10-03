@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
 #endif
-        /// <summary>The timestamp when the current certification for the application will expire.</summary>
+        /// <summary>The timestamp when the current certification for the application expires.</summary>
         public DateTimeOffset? CertificationExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("certificationExpirationDateTime"); }
             set { BackingStore?.Set("certificationExpirationDateTime", value); }

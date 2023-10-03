@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
         public ContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/contacts/{contact%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a contact.
+        /// Delete a contact. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a contact object.
+        /// Update the properties of a contact object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a contact.
+        /// Delete a contact. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a contact object.
+        /// Update the properties of a contact object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder: This API is supported in the following national cloud deployments.
         /// </summary>
         public class ContactItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

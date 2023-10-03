@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.RoundUp {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"numDigits", n => { NumDigits = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

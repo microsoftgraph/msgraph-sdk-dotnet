@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 {"callOptions", n => { CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
+                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 {"mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Models.MediaConfig>(Microsoft.Graph.Models.MediaConfig.CreateFromDiscriminatorValue); } },
                 {"participantCapacity", n => { ParticipantCapacity = n.GetIntValue(); } },
             };

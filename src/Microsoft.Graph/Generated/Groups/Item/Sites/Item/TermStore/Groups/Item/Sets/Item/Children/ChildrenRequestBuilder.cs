@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item
         public ChildrenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}/sets/{set%2Did}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// Get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item
             return await RequestAdapter.SendAsync<TermCollectionResponse>(requestInfo, TermCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new term object.
+        /// Create a new term object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// Get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a new term object.
+        /// Create a new term object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets.Item
             return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// Get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups.Item {
         public SchedulingGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}/schedule/schedulingGroups/{schedulingGroup%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
+        /// Retrieve the properties and relationships of a schedulingGroup by ID. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups.Item {
             return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
+        /// Retrieve the properties and relationships of a schedulingGroup by ID. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
+        /// Retrieve the properties and relationships of a schedulingGroup by ID. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SchedulingGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>If false, then approval is not required for new requests in this policy.</summary>
+        /// <summary>If false, then approval isn&apos;t required for new requests in this policy.</summary>
         public bool? IsApprovalRequiredForAdd {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForAdd"); }
             set { BackingStore?.Set("isApprovalRequiredForAdd", value); }
         }
-        /// <summary>If false, then approval is not required for updates to requests in this policy.</summary>
+        /// <summary>If false, then approval isn&apos;t required for updates to requests in this policy.</summary>
         public bool? IsApprovalRequiredForUpdate {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
             set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }

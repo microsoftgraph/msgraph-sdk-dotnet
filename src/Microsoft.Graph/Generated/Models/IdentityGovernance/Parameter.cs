@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             return new Dictionary<string, Action<IParseNode>> {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"valueType", n => { ValueType = n.GetEnumValue<ValueTypeObject>(); } },
+                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

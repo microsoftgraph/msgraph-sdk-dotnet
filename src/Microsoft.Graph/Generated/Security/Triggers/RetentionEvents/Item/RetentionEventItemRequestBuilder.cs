@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
         public RetentionEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggers/retentionEvents/{retentionEvent%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a retentionEvent object.
+        /// Delete a retentionEvent object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
+        /// Read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             return await RequestAdapter.SendAsync<RetentionEvent>(requestInfo, RetentionEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a retentionEvent object.
+        /// Delete a retentionEvent object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
+        /// Read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
+        /// Read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RetentionEventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments.Item {
             }
         }
         /// <summary>
-        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

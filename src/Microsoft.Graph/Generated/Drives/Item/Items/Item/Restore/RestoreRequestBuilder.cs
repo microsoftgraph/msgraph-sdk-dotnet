@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore {
         public RestoreRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/restore", rawUrl) {
         }
         /// <summary>
-        /// Restore a driveItem that has been deleted and is currently in the recycle bin. NOTE: This functionality is currently only available for OneDrive Personal.
+        /// Restore a driveItem that has been deleted and is currently in the recycle bin. NOTE: This functionality is currently only available for OneDrive Personal. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a driveItem that has been deleted and is currently in the recycle bin. NOTE: This functionality is currently only available for OneDrive Personal.
+        /// Restore a driveItem that has been deleted and is currently in the recycle bin. NOTE: This functionality is currently only available for OneDrive Personal. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

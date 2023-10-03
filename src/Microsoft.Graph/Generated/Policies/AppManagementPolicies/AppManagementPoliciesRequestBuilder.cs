@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies {
         public AppManagementPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/appManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of appManagementPolicy objects.
+        /// Retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies {
             return await RequestAdapter.SendAsync<AppManagementPolicyCollectionResponse>(requestInfo, AppManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an appManagementPolicy object.
+        /// Create an appManagementPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies {
             return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of appManagementPolicy objects.
+        /// Retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create an appManagementPolicy object.
+        /// Create an appManagementPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies {
             return new AppManagementPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of appManagementPolicy objects.
+        /// Retrieve a list of appManagementPolicy objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AppManagementPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

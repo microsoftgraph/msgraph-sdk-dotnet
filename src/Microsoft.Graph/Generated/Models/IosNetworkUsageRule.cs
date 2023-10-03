@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
                 {"cellularDataBlockWhenRoaming", n => { CellularDataBlockWhenRoaming = n.GetBoolValue(); } },
+                {"cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
                 {"managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };

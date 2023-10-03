@@ -42,7 +42,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
         public HistoryDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/historyDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return await RequestAdapter.SendAsync<AccessReviewHistoryDefinitionCollectionResponse>(requestInfo, AccessReviewHistoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new accessReviewHistoryDefinition object.
+        /// Create a new accessReviewHistoryDefinition object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return await RequestAdapter.SendAsync<AccessReviewHistoryDefinition>(requestInfo, AccessReviewHistoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new accessReviewHistoryDefinition object.
+        /// Create a new accessReviewHistoryDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return new HistoryDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class HistoryDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

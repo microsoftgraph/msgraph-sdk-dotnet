@@ -261,10 +261,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
                 {"callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
-                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
+                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
+                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
                 {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 {"duration", n => { Duration = n.GetIntValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },

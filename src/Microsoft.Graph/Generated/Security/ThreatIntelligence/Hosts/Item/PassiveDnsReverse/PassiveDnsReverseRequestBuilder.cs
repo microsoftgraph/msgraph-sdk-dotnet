@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
         public PassiveDnsReverseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDnsReverse{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
             return await RequestAdapter.SendAsync<PassiveDnsRecordCollectionResponse>(requestInfo, PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
             return new PassiveDnsReverseRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PassiveDnsReverseRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

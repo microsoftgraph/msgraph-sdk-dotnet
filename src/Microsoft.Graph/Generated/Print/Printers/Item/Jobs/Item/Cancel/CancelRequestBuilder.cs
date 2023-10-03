@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Cancel {
         public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/cancel", rawUrl) {
         }
         /// <summary>
-        /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
+        /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Cancel {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
+        /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

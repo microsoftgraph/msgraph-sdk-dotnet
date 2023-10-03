@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class OnenoteEntityHierarchyModel : OnenoteEntitySchemaObjectModel, IParsable {
-        /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
+        /// <summary>Identity of the user, device, and application that created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? CreatedBy {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
+        /// <summary>Identity of the user, device, and application that created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {

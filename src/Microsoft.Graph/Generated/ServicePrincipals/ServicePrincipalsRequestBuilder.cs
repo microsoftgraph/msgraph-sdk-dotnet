@@ -62,7 +62,7 @@ namespace Microsoft.Graph.ServicePrincipals {
         public ServicePrincipalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.ServicePrincipals {
             return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.ServicePrincipals {
             return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.ServicePrincipals {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.ServicePrincipals {
             return new ServicePrincipalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ServicePrincipalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

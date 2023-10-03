@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
         public IdentityUserFlowAttributeAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/{identityUserFlowAttributeAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an identityUserFlowAttributeAssignment object.
+        /// Delete an identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object.
+        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignment>(requestInfo, IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a identityUserFlowAttributeAssignment object.
+        /// Update the properties of a identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignment>(requestInfo, IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an identityUserFlowAttributeAssignment object.
+        /// Delete an identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object.
+        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a identityUserFlowAttributeAssignment object.
+        /// Update the properties of a identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.It
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object.
+        /// Read the properties and relationships of an identityUserFlowAttributeAssignment object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class IdentityUserFlowAttributeAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

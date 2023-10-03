@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class FileAssessmentRequest : ThreatAssessmentRequest, IParsable {
-        /// <summary>Base64 encoded file content. The file content cannot fetch back because it isn&apos;t stored.</summary>
+        /// <summary>Base64 encoded file content. The file content can&apos;t fetch back because it isn&apos;t stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentData {

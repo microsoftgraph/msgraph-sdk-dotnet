@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Sites {
         public SitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/sites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
+        /// Get a collection of subsites defined for a site][]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Sites {
             return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
+        /// Get a collection of subsites defined for a site][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Sites {
             return new SitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
+        /// Get a collection of subsites defined for a site][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         public class SitesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

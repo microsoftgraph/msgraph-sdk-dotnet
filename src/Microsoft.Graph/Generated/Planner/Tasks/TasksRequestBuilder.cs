@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Planner.Tasks {
         public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
+        /// Retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Planner.Tasks {
             return await RequestAdapter.SendAsync<PlannerTaskCollectionResponse>(requestInfo, PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerTask.
+        /// Create a new plannerTask. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Planner.Tasks {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
+        /// Retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Planner.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerTask.
+        /// Create a new plannerTask. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Planner.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
+        /// Retrieve a list of plannertask objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.Terms {
         public TermsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/terms{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// Read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.Terms {
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// Read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.Terms {
             return new TermsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// Read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TermsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

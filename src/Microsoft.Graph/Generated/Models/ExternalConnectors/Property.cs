@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
+        /// <summary>A set of aliases or a friendly name for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Aliases {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             get { return BackingStore?.Get<bool?>("isRetrievable"); }
             set { BackingStore?.Set("isRetrievable", value); }
         }
-        /// <summary>Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.</summary>
+        /// <summary>Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Nonsearchable properties aren&apos;t added to the search index. Optional.</summary>
         public bool? IsSearchable {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, iconUrl, unknownFutureValue. Optional.</summary>
+        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, iconUrl, unknownFutureValue. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Label?>? Labels {

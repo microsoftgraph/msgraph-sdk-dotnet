@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("contentTypesEnabled"); }
             set { BackingStore?.Set("contentTypesEnabled", value); }
         }
-        /// <summary>If true, indicates that the list is not normally visible in the SharePoint user experience.</summary>
+        /// <summary>If true, indicates that the list isn&apos;t normally visible in the SharePoint user experience.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }

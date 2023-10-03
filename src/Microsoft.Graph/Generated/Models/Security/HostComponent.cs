@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.</summary>
+        /// <summary>The component version running on the artifact, for example, v8.5. This shouldn&apos;t be assumed to be strictly numerical.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/rubric/$ref", rawUrl) {
         }
         /// <summary>
-        /// Remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
+        /// Remove an educationRubric from an educationAssignment. This method doesn&apos;t delete the rubric itself and can only be performed by teachers. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
+        /// Remove an educationRubric from an educationAssignment. This method doesn&apos;t delete the rubric itself and can only be performed by teachers. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Rubric.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

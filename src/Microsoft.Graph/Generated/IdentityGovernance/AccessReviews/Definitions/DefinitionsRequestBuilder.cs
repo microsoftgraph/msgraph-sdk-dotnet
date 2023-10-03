@@ -51,7 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions {
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the accessReviewScheduleDefinition objects and their properties.
+        /// Get a list of the accessReviewScheduleDefinition objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions {
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinitionCollectionResponse>(requestInfo, AccessReviewScheduleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new accessReviewScheduleDefinition object.
+        /// Create a new accessReviewScheduleDefinition object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions {
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinition>(requestInfo, AccessReviewScheduleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the accessReviewScheduleDefinition objects and their properties.
+        /// Get a list of the accessReviewScheduleDefinition objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new accessReviewScheduleDefinition object.
+        /// Create a new accessReviewScheduleDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions {
             return new DefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the accessReviewScheduleDefinition objects and their properties.
+        /// Get a list of the accessReviewScheduleDefinition objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

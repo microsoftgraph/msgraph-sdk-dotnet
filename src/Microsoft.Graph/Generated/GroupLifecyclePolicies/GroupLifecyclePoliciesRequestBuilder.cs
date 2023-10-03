@@ -42,7 +42,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
         public GroupLifecyclePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all the groupLifecyclePolicies.
+        /// List all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicyCollectionResponse>(requestInfo, GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new groupLifecyclePolicy.
+        /// Creates a new groupLifecyclePolicy. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the groupLifecyclePolicies.
+        /// List all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new groupLifecyclePolicy.
+        /// Creates a new groupLifecyclePolicy. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies {
             return new GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the groupLifecyclePolicies.
+        /// List all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
         /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

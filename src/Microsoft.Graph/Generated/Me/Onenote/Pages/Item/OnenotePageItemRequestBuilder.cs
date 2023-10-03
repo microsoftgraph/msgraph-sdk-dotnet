@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
         public OnenotePageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/pages/{onenotePage%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a OneNote page.
+        /// Delete a OneNote page. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a OneNote page.
+        /// Delete a OneNote page. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OnenotePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

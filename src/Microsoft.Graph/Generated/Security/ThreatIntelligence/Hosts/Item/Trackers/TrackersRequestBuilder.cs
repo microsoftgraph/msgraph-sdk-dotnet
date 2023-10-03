@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
         public TrackersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/trackers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of hostTracker resources.
+        /// Get a list of hostTracker resources. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
             return await RequestAdapter.SendAsync<HostTrackerCollectionResponse>(requestInfo, HostTrackerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of hostTracker resources.
+        /// Get a list of hostTracker resources. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
             return new TrackersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of hostTracker resources.
+        /// Get a list of hostTracker resources. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TrackersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

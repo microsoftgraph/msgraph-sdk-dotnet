@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Pre-configured synchronization settings for a particular application.
+        /// Preconfigured synchronization settings for a particular application.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update (override) the synchronization template associated with a given application.
+        /// Update (override) the synchronization template associated with a given application. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Pre-configured synchronization settings for a particular application.
+        /// Preconfigured synchronization settings for a particular application.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update (override) the synchronization template associated with a given application.
+        /// Update (override) the synchronization template associated with a given application. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             }
         }
         /// <summary>
-        /// Pre-configured synchronization settings for a particular application.
+        /// Preconfigured synchronization settings for a particular application.
         /// </summary>
         public class SynchronizationTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

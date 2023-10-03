@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
         public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete the channel.
+        /// Delete the channel. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified channel.
+        /// Update the properties of the specified channel. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the channel.
+        /// Delete the channel. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified channel.
+        /// Update the properties of the specified channel. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ChannelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

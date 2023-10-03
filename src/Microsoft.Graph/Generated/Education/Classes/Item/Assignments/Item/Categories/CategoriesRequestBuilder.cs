@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
         public CategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return await RequestAdapter.SendAsync<EducationCategoryCollectionResponse>(requestInfo, EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return requestInfo;
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return new CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

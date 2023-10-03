@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
+        /// Retrieve a list of attachment objects attached to a post. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
+        /// Retrieve a list of attachment objects attached to a post. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
+        /// Retrieve a list of attachment objects attached to a post. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

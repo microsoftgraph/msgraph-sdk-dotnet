@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.FollowedSites {
         public FollowedSitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/followedSites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
+        /// List the sites that have been followed by the signed in user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.FollowedSites {
             return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
+        /// List the sites that have been followed by the signed in user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Me.FollowedSites {
             return new FollowedSitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
+        /// List the sites that have been followed by the signed in user. This API is supported in the following national cloud deployments.
         /// </summary>
         public class FollowedSitesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -2,6 +2,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Sites.Item.Lists.Item.CreatedByUser.MailboxSettings;
+using Microsoft.Graph.Sites.Item.Lists.Item.CreatedByUser.ServiceProvisioningErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.CreatedByUser {
         /// <summary>The mailboxSettings property</summary>
         public MailboxSettingsRequestBuilder MailboxSettings { get =>
             new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new CreatedByUserRequestBuilder and sets the default values.

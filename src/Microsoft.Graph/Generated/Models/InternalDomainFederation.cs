@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Models {
                 {"isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 {"nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
                 {"promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
-                {"signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
                 {"signOutUri", n => { SignOutUri = n.GetStringValue(); } },
+                {"signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

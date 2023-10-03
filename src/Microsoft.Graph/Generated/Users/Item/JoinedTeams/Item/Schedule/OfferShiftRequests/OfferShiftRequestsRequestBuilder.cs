@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequest
         public OfferShiftRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/offerShiftRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequest
             return await RequestAdapter.SendAsync<OfferShiftRequestCollectionResponse>(requestInfo, OfferShiftRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an instance of an offerShiftRequest.
+        /// Create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequest
             return await RequestAdapter.SendAsync<OfferShiftRequest>(requestInfo, OfferShiftRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequest
             return requestInfo;
         }
         /// <summary>
-        /// Create an instance of an offerShiftRequest.
+        /// Create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequest
             return new OfferShiftRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OfferShiftRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

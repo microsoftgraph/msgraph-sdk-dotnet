@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
-        /// <summary>The regular expression pattern which any answer to this question must match.</summary>
+        /// <summary>The regular expression pattern that any answer to this question must match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegexPattern {

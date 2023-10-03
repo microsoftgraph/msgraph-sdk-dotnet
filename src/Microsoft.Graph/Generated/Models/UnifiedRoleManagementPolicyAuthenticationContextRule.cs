@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("claimValue", value); }
         }
 #endif
-        /// <summary>Whether this rule is enabled.</summary>
+        /// <summary>Determines whether this rule is enabled.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }

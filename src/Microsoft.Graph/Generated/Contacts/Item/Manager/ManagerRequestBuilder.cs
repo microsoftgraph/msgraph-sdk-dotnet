@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
         public ManagerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/contacts/{orgContact%2Did}/manager{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get this organizational contact&apos;s manager.
+        /// Get this organizational contact&apos;s manager. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get this organizational contact&apos;s manager.
+        /// Get this organizational contact&apos;s manager. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             return new ManagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get this organizational contact&apos;s manager.
+        /// Get this organizational contact&apos;s manager. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ManagerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

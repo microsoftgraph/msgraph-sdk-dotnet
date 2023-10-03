@@ -61,7 +61,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions {
             return await RequestAdapter.SendAsync<TeamsAppDefinitionCollectionResponse>(requestInfo, TeamsAppDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog).
+        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog). This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog).
+        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog). This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -66,6 +66,7 @@ using Microsoft.Graph.Users.Item.RetryServiceProvisioning;
 using Microsoft.Graph.Users.Item.RevokeSignInSessions;
 using Microsoft.Graph.Users.Item.ScopedRoleMemberOf;
 using Microsoft.Graph.Users.Item.SendMail;
+using Microsoft.Graph.Users.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Users.Item.Settings;
 using Microsoft.Graph.Users.Item.Teamwork;
 using Microsoft.Graph.Users.Item.Todo;
@@ -337,6 +338,10 @@ namespace Microsoft.Graph.Users.Item {
         public SendMailRequestBuilder SendMail { get =>
             new SendMailRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -376,8 +381,8 @@ namespace Microsoft.Graph.Users.Item {
         public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0" />
+        /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -406,8 +411,8 @@ namespace Microsoft.Graph.Users.Item {
             return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -426,8 +431,8 @@ namespace Microsoft.Graph.Users.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-update?view=graph-rest-1.0" />
+        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -458,7 +463,7 @@ namespace Microsoft.Graph.Users.Item {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Deletes a user.
+        /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -482,7 +487,7 @@ namespace Microsoft.Graph.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
+        /// Read properties and relationships of the user object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -508,7 +513,7 @@ namespace Microsoft.Graph.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user object.
+        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -559,7 +564,7 @@ namespace Microsoft.Graph.Users.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
+        /// Read properties and relationships of the user object.
         /// </summary>
         public class UserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

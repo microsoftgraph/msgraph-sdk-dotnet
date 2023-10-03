@@ -34,6 +34,26 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GetUserIdsWithFlaggedAppRegistrationGetResponse?> GetAsGetUserIdsWithFlaggedAppRegistrationGetResponseAsync(Action<GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetUserIdsWithFlaggedAppRegistrationGetResponse> GetAsGetUserIdsWithFlaggedAppRegistrationGetResponseAsync(Action<GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetUserIdsWithFlaggedAppRegistrationGetResponse>(requestInfo, GetUserIdsWithFlaggedAppRegistrationGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke function getUserIdsWithFlaggedAppRegistration
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetUserIdsWithFlaggedAppRegistrationGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetUserIdsWithFlaggedAppRegistrationResponse?> GetAsync(Action<GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

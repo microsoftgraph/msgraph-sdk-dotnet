@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
         public MasterCategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/masterCategories{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for the user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategoryCollectionResponse>(requestInfo, OutlookCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// Create an outlookCategory object in the user&apos;s master list of categories. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for the user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// Create an outlookCategory object in the user&apos;s master list of categories. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return new MasterCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for the user. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MasterCategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

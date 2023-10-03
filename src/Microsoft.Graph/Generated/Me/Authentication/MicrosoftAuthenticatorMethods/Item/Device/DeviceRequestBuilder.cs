@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.D
         public DeviceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod%2Did}/device{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+        /// The registered device on which Microsoft Authenticator resides. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.D
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Device>(requestInfo, Microsoft.Graph.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+        /// The registered device on which Microsoft Authenticator resides. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.D
             return new DeviceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+        /// The registered device on which Microsoft Authenticator resides. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.
         /// </summary>
         public class DeviceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

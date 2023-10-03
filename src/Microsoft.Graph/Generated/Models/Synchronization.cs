@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("secrets", value); }
         }
 #endif
-        /// <summary>Pre-configured synchronization settings for a particular application.</summary>
+        /// <summary>Preconfigured synchronization settings for a particular application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationTemplate>? Templates {

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams {
         public SharedWithTeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/sharedWithTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams {
             return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams {
             return new SharedWithTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SharedWithTeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

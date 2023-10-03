@@ -208,8 +208,8 @@ namespace Microsoft.Graph.Models {
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
                 {"webBrowserBlocked", n => { WebBrowserBlocked = n.GetBoolValue(); } },
                 {"wifiBlockAutomaticConnectHotspots", n => { WifiBlockAutomaticConnectHotspots = n.GetBoolValue(); } },
-                {"wifiBlocked", n => { WifiBlocked = n.GetBoolValue(); } },
                 {"wifiBlockHotspotReporting", n => { WifiBlockHotspotReporting = n.GetBoolValue(); } },
+                {"wifiBlocked", n => { WifiBlocked = n.GetBoolValue(); } },
                 {"windowsStoreBlocked", n => { WindowsStoreBlocked = n.GetBoolValue(); } },
             };
         }

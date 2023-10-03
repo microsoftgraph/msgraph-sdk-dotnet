@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Fields {
             return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties on a [listItem][].
+        /// Update the properties on a listItem][]. This API is supported in the following [national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Fields {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties on a [listItem][].
+        /// Update the properties on a listItem][]. This API is supported in the following [national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

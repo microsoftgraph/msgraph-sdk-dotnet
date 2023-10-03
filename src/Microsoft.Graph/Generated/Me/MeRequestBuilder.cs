@@ -64,6 +64,7 @@ using Microsoft.Graph.Me.RetryServiceProvisioning;
 using Microsoft.Graph.Me.RevokeSignInSessions;
 using Microsoft.Graph.Me.ScopedRoleMemberOf;
 using Microsoft.Graph.Me.SendMail;
+using Microsoft.Graph.Me.ServiceProvisioningErrors;
 using Microsoft.Graph.Me.Settings;
 using Microsoft.Graph.Me.Teamwork;
 using Microsoft.Graph.Me.Todo;
@@ -337,6 +338,10 @@ namespace Microsoft.Graph.Me {
         public SendMailRequestBuilder SendMail { get =>
             new SendMailRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -386,7 +391,7 @@ namespace Microsoft.Graph.Me {
             return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -406,7 +411,7 @@ namespace Microsoft.Graph.Me {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -438,7 +443,7 @@ namespace Microsoft.Graph.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -464,7 +469,7 @@ namespace Microsoft.Graph.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -499,7 +504,7 @@ namespace Microsoft.Graph.Me {
             return new MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
         public HostCookiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostCookies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object.
+        /// Read the properties and relationships of a hostCookie object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
             return await RequestAdapter.SendAsync<HostCookie>(requestInfo, HostCookie.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object.
+        /// Read the properties and relationships of a hostCookie object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
             return new HostCookiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object.
+        /// Read the properties and relationships of a hostCookie object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class HostCookiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

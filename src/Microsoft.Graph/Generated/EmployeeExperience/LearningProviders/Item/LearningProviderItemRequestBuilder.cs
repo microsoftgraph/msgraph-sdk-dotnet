@@ -59,7 +59,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a learningProvider object.
+        /// Read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a learningProvider object.
+        /// Update the properties of a learningProvider object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a learningProvider object.
+        /// Read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a learningProvider object.
+        /// Update the properties of a learningProvider object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a learningProvider object.
+        /// Read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class LearningProviderItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

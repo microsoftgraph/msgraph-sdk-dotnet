@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
         public PrinterShareItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a printer share (unshare the associated printer). This action can&apos;t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.
+        /// Delete a printer share (unshare the associated printer). This action can&apos;t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printer share.
+        /// Retrieve the properties and relationships of a printer share. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.
+        /// Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a printer share (unshare the associated printer). This action can&apos;t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it.
+        /// Delete a printer share (unshare the associated printer). This action can&apos;t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printer share.
+        /// Retrieve the properties and relationships of a printer share. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.
+        /// Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Print.Shares.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printer share.
+        /// Retrieve the properties and relationships of a printer share. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PrinterShareItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

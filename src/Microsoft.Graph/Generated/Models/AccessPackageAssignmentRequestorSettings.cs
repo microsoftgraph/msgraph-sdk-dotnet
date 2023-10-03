@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>False indicates that the requestor is not permitted to include a schedule in their request.</summary>
+        /// <summary>False indicates that the requestor isn&apos;t permitted to include a schedule in their request.</summary>
         public bool? AllowCustomAssignmentSchedule {
             get { return BackingStore?.Get<bool?>("allowCustomAssignmentSchedule"); }
             set { BackingStore?.Set("allowCustomAssignmentSchedule", value); }

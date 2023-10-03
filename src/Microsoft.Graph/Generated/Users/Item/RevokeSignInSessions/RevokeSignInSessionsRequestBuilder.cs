@@ -28,11 +28,32 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions {
         public RevokeSignInSessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/revokeSignInSessions", rawUrl) {
         }
         /// <summary>
-        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<RevokeSignInSessionsPostResponse?> PostAsRevokeSignInSessionsPostResponseAsync(Action<RevokeSignInSessionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<RevokeSignInSessionsPostResponse> PostAsRevokeSignInSessionsPostResponseAsync(Action<RevokeSignInSessionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RevokeSignInSessionsPostResponse>(requestInfo, RevokeSignInSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsRevokeSignInSessionsPostResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RevokeSignInSessionsResponse?> PostAsync(Action<RevokeSignInSessionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.RevokeSignInSessions {
             return await RequestAdapter.SendAsync<RevokeSignInSessionsResponse>(requestInfo, RevokeSignInSessionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The application that is linked to the tab. This cannot be changed after tab creation.</summary>
+        /// <summary>The application that is linked to the tab. This can&apos;t be changed after tab creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.TeamsApp? TeamsApp {

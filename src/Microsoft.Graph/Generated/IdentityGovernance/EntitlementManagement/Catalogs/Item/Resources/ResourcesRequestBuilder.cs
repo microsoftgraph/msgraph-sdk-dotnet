@@ -42,7 +42,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
+        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<AccessPackageResource>(requestInfo, AccessPackageResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
+        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.  
+        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
