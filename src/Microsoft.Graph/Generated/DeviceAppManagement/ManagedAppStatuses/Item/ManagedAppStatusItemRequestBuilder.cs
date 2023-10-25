@@ -48,8 +48,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatusRaw object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedAppStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatus-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,10 +110,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatusRaw object.
+        /// Read properties and relationships of the managedAppStatus object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +129,6 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ManagedAppStatusItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -136,6 +136,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -156,14 +157,14 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ManagedAppStatusItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -190,7 +191,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses.Item {
             }
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppStatusRaw object.
+        /// Read properties and relationships of the managedAppStatus object.
         /// </summary>
         public class ManagedAppStatusItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Messages.Item.Replie
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

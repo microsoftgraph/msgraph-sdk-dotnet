@@ -21,6 +21,7 @@ using Microsoft.Graph.ServicePrincipals.Item.MemberOf;
 using Microsoft.Graph.ServicePrincipals.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects;
 using Microsoft.Graph.ServicePrincipals.Item.Owners;
+using Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration;
 using Microsoft.Graph.ServicePrincipals.Item.RemoveKey;
 using Microsoft.Graph.ServicePrincipals.Item.RemovePassword;
 using Microsoft.Graph.ServicePrincipals.Item.Restore;
@@ -120,6 +121,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.</summary>
         public OwnersRequestBuilder Owners { get =>
             new OwnersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.</summary>
+        public RemoteDesktopSecurityConfigurationRequestBuilder RemoteDesktopSecurityConfiguration { get =>
+            new RemoteDesktopSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeKey method.</summary>
         public RemoveKeyRequestBuilder RemoveKey { get =>
@@ -246,6 +251,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -264,7 +270,6 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ServicePrincipalItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -272,6 +277,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -292,14 +298,14 @@ namespace Microsoft.Graph.ServicePrincipals.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ServicePrincipalItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

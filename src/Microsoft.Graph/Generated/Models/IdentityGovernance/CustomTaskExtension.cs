@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
 #endif
-        /// <summary>The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.</summary>
+        /// <summary>The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.User? CreatedBy {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.</summary>
+        /// <summary>The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.User? LastModifiedBy {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration>(Microsoft.Graph.Models.CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration", CallbackConfiguration);

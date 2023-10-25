@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             get { return BackingStore?.Get<AclType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup</summary>
+        /// <summary>The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AccessType>("accessType", AccessType);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -77,7 +77,6 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedM
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AllowedMembersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -85,6 +84,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedM
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

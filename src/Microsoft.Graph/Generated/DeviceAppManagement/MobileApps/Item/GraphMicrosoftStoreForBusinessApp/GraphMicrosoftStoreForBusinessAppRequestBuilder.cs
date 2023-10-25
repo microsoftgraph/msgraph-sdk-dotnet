@@ -73,7 +73,6 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStor
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -81,6 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStor
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

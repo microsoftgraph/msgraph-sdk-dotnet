@@ -3,6 +3,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Sites.Add;
 using Microsoft.Graph.Sites.Count;
+using Microsoft.Graph.Sites.Delta;
 using Microsoft.Graph.Sites.GetAllSites;
 using Microsoft.Graph.Sites.Item;
 using Microsoft.Graph.Sites.Remove;
@@ -26,6 +27,10 @@ namespace Microsoft.Graph.Sites {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllSites method.</summary>
         public GetAllSitesRequestBuilder GetAllSites { get =>
@@ -92,7 +97,6 @@ namespace Microsoft.Graph.Sites {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new SitesRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -100,6 +104,7 @@ namespace Microsoft.Graph.Sites {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

@@ -62,7 +62,6 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "text/plain");
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -70,6 +69,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
             return requestInfo;
         }
         /// <summary>

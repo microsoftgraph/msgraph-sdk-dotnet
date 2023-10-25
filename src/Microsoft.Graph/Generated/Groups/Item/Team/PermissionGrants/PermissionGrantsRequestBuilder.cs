@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
         public PermissionGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/permissionGrants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
+        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
             return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
+        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,6 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PermissionGrantsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -106,6 +105,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -126,14 +126,14 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new PermissionGrantsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PermissionGrants {
             return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
+        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access. This API is available in the following national cloud deployments.
         /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

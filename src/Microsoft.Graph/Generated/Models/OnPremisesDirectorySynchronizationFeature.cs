@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("blockSoftMatchEnabled"); }
             set { BackingStore?.Set("blockSoftMatchEnabled", value); }
         }
-        /// <summary>When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.</summary>
+        /// <summary>When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.</summary>
         public bool? BypassDirSyncOverridesEnabled {
             get { return BackingStore?.Get<bool?>("bypassDirSyncOverridesEnabled"); }
             set { BackingStore?.Set("bypassDirSyncOverridesEnabled", value); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("deviceWritebackEnabled"); }
             set { BackingStore?.Set("deviceWritebackEnabled", value); }
         }
-        /// <summary>Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.</summary>
+        /// <summary>Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.</summary>
         public bool? DirectoryExtensionsEnabled {
             get { return BackingStore?.Get<bool?>("directoryExtensionsEnabled"); }
             set { BackingStore?.Set("directoryExtensionsEnabled", value); }
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("passwordSyncEnabled"); }
             set { BackingStore?.Set("passwordSyncEnabled", value); }
         }
-        /// <summary>Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.</summary>
+        /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.</summary>
         public bool? PasswordWritebackEnabled {
             get { return BackingStore?.Get<bool?>("passwordWritebackEnabled"); }
             set { BackingStore?.Set("passwordWritebackEnabled", value); }
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"blockCloudObjectTakeoverThroughHardMatchEnabled", n => { BlockCloudObjectTakeoverThroughHardMatchEnabled = n.GetBoolValue(); } },
                 {"blockSoftMatchEnabled", n => { BlockSoftMatchEnabled = n.GetBoolValue(); } },
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("blockCloudObjectTakeoverThroughHardMatchEnabled", BlockCloudObjectTakeoverThroughHardMatchEnabled);
             writer.WriteBoolValue("blockSoftMatchEnabled", BlockSoftMatchEnabled);

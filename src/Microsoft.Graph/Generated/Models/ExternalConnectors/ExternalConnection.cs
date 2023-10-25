@@ -34,6 +34,20 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
+        /// <summary>The Teams app ID. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConnectorId {
+            get { return BackingStore?.Get<string?>("connectorId"); }
+            set { BackingStore?.Set("connectorId", value); }
+        }
+#nullable restore
+#else
+        public string ConnectorId {
+            get { return BackingStore?.Get<string>("connectorId"); }
+            set { BackingStore?.Set("connectorId", value); }
+        }
+#endif
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,10 +162,11 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
                 {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
+                {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -166,11 +181,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>("activitySettings", ActivitySettings);
             writer.WriteObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>("configuration", Configuration);
+            writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
             writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);

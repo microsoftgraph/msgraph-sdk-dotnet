@@ -42,8 +42,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
         public DeviceEnrollmentConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,6 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -107,6 +106,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -127,14 +127,14 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return new DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentLimitConfiguration objects.
         /// </summary>
         public class DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

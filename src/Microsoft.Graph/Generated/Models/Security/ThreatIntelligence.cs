@@ -76,6 +76,20 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("hostPairs", value); }
         }
 #endif
+        /// <summary>Retrieve details about hostPort objects.Note: List retrieval is not yet supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPort>? HostPorts {
+            get { return BackingStore?.Get<List<HostPort>?>("hostPorts"); }
+            set { BackingStore?.Set("hostPorts", value); }
+        }
+#nullable restore
+#else
+        public List<HostPort> HostPorts {
+            get { return BackingStore?.Get<List<HostPort>>("hostPorts"); }
+            set { BackingStore?.Set("hostPorts", value); }
+        }
+#endif
         /// <summary>Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -241,13 +255,14 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"articleIndicators", n => { ArticleIndicators = n.GetCollectionOfObjectValues<ArticleIndicator>(ArticleIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"articles", n => { Articles = n.GetCollectionOfObjectValues<Article>(Article.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostComponents", n => { HostComponents = n.GetCollectionOfObjectValues<HostComponent>(HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostCookies", n => { HostCookies = n.GetCollectionOfObjectValues<HostCookie>(HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hostPorts", n => { HostPorts = n.GetCollectionOfObjectValues<HostPort>(HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostSslCertificates", n => { HostSslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostTrackers", n => { HostTrackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hosts", n => { Hosts = n.GetCollectionOfObjectValues<Host>(Host.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -265,7 +280,7 @@ namespace Microsoft.Graph.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<ArticleIndicator>("articleIndicators", ArticleIndicators);
@@ -273,6 +288,7 @@ namespace Microsoft.Graph.Models.Security {
             writer.WriteCollectionOfObjectValues<HostComponent>("hostComponents", HostComponents);
             writer.WriteCollectionOfObjectValues<HostCookie>("hostCookies", HostCookies);
             writer.WriteCollectionOfObjectValues<HostPair>("hostPairs", HostPairs);
+            writer.WriteCollectionOfObjectValues<HostPort>("hostPorts", HostPorts);
             writer.WriteCollectionOfObjectValues<Host>("hosts", Hosts);
             writer.WriteCollectionOfObjectValues<HostSslCertificate>("hostSslCertificates", HostSslCertificates);
             writer.WriteCollectionOfObjectValues<HostTracker>("hostTrackers", HostTrackers);

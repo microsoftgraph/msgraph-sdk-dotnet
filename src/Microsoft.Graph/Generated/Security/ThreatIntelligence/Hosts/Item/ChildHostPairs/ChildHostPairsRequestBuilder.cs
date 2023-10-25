@@ -77,7 +77,6 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ChildHostPairsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -85,6 +84,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

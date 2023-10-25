@@ -90,6 +90,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.DriveItem
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -110,14 +111,14 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.DriveItem
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetStreamContent(body);
             if (requestConfiguration != null) {
                 var requestConfig = new ContentRequestBuilderPutRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetStreamContent(body, "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

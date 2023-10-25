@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Favicon {
         public FaviconRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/favicon", rawUrl) {
         }
         /// <summary>
-        /// A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+        /// A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Favicon {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+        /// A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Favicon {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+        /// A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,10 +90,11 @@ namespace Microsoft.Graph.Organization.Item.Branding.Favicon {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+        /// A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,13 +111,14 @@ namespace Microsoft.Graph.Organization.Item.Branding.Favicon {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.SetStreamContent(body);
             if (requestConfiguration != null) {
                 var requestConfig = new FaviconRequestBuilderPutRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.SetStreamContent(body, "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

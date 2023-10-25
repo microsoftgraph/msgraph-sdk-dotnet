@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("metadataExchangeUri", value); }
         }
 #endif
-        /// <summary>URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.</summary>
+        /// <summary>URI that web-based clients are directed to when signing in to Microsoft Entra services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PassiveSignInUri {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<AuthenticationProtocol?>("preferredAuthenticationProtocol"); }
             set { BackingStore?.Set("preferredAuthenticationProtocol", value); }
         }
-        /// <summary>Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP&apos;s token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn&apos;t present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn&apos;t available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.</summary>
+        /// <summary>Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP&apos;s token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn&apos;t present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn&apos;t available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SigningCertificate {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"issuerUri", n => { IssuerUri = n.GetStringValue(); } },
                 {"metadataExchangeUri", n => { MetadataExchangeUri = n.GetStringValue(); } },
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("issuerUri", IssuerUri);

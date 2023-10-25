@@ -76,7 +76,6 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies.Item.AppliesTo {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AppliesToRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -84,6 +83,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies.Item.AppliesTo {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

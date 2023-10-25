@@ -42,7 +42,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
         public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/file/localizations/{agreementFileLocalization%2Did}/versions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
             return await RequestAdapter.SendAsync<AgreementFileVersion>(requestInfo, AgreementFileVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,6 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new VersionsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -105,6 +104,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -125,14 +125,14 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new VersionsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
             return new VersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

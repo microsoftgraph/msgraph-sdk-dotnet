@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Risk detection in Azure AD Identity Protection and the associated information about the detection.</summary>
+        /// <summary>Risk detection in Microsoft Entra ID Protection and the associated information about the detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RiskDetection>? RiskDetections {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("riskDetections", value); }
         }
 #endif
-        /// <summary>Azure AD service principals that are at risk.</summary>
+        /// <summary>Microsoft Entra service principals that are at risk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RiskyServicePrincipal>? RiskyServicePrincipals {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("riskyServicePrincipals", value); }
         }
 #endif
-        /// <summary>Users that are flagged as at-risk by Azure AD Identity Protection.</summary>
+        /// <summary>Users that are flagged as at-risk by Microsoft Entra ID Protection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RiskyUser>? RiskyUsers {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("riskyUsers", value); }
         }
 #endif
-        /// <summary>Represents information about detected at-risk service principals in an Azure AD tenant.</summary>
+        /// <summary>Represents information about detected at-risk service principals in a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServicePrincipalRiskDetection>? ServicePrincipalRiskDetections {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"riskDetections", n => { RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<RiskDetection>("riskDetections", RiskDetections);

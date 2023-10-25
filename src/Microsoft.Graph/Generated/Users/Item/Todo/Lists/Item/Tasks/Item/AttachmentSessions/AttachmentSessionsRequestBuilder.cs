@@ -76,7 +76,6 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentSessio
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AttachmentSessionsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -84,6 +83,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.AttachmentSessio
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

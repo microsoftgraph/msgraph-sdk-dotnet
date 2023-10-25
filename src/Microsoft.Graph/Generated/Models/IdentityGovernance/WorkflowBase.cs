@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<bool?>("isSchedulingEnabled"); }
             set { BackingStore?.Set("isSchedulingEnabled", value); }
         }
-        /// <summary>The unique identifier of the Azure Active Directory identity that last modified the workflow.</summary>
+        /// <summary>The unique identifier of the Microsoft Entra identity that last modified the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.User? LastModifiedBy {
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"category", n => { Category = n.GetEnumValue<LifecycleWorkflowCategory>(); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<LifecycleWorkflowCategory>("category", Category);
             writer.WriteObjectValue<Microsoft.Graph.Models.User>("createdBy", CreatedBy);

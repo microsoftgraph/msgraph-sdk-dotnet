@@ -89,6 +89,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -109,13 +110,14 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.SetStreamContent(body);
             if (requestConfiguration != null) {
                 var requestConfig = new ContentRequestBuilderPutRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.SetStreamContent(body, "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

@@ -68,6 +68,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
             return requestInfo;
         }
         /// <summary>

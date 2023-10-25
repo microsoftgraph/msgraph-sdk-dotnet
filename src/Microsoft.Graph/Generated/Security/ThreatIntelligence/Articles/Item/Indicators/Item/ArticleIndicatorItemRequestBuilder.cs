@@ -63,7 +63,6 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.Indicators.I
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ArticleIndicatorItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -71,6 +70,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.Indicators.I
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

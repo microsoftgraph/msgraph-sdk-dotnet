@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object.</summary>
+        /// <summary>The unique identifier of the Microsoft Entra identity that last modified the workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserProcessingResult>? ExecutionScope {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);

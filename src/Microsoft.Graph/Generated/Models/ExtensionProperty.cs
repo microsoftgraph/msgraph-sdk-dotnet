@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("dataType", value); }
         }
 #endif
-        /// <summary>Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.</summary>
+        /// <summary>Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.</summary>
         public bool? IsSyncedFromOnPremises {
             get { return BackingStore?.Get<bool?>("isSyncedFromOnPremises"); }
             set { BackingStore?.Set("isSyncedFromOnPremises", value); }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"dataType", n => { DataType = n.GetStringValue(); } },
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appDisplayName", AppDisplayName);

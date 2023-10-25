@@ -8,6 +8,7 @@ using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse;
+using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
         /// <summary>Provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.</summary>
         public PassiveDnsReverseRequestBuilder PassiveDnsReverse { get =>
             new PassiveDnsReverseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the ports property of the microsoft.graph.security.host entity.</summary>
+        public PortsRequestBuilder Ports { get =>
+            new PortsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reputation property of the microsoft.graph.security.host entity.</summary>
         public ReputationRequestBuilder Reputation { get =>
@@ -170,6 +175,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -188,7 +194,6 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new HostItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -196,6 +201,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -216,14 +222,14 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new HostItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

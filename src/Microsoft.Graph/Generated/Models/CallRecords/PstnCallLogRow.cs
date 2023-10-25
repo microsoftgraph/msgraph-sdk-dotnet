@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.</summary>
+        /// <summary>The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.</summary>
         public PstnCallDurationSource? CallDurationSource {
             get { return BackingStore?.Get<PstnCallDurationSource?>("callDurationSource"); }
             set { BackingStore?.Set("callDurationSource", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("callId", value); }
         }
 #endif
-        /// <summary>Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.</summary>
+        /// <summary>Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallType {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("currency", value); }
         }
 #endif
-        /// <summary>Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user&apos;s location.</summary>
+        /// <summary>Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationContext {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.</summary>
+        /// <summary>The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator {
@@ -268,7 +268,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>Calling user&apos;s ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).</summary>
+        /// <summary>Calling user&apos;s ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -282,7 +282,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
+        /// <summary>The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP address, and can be the same as the user&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -314,7 +314,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"callDurationSource", n => { CallDurationSource = n.GetEnumValue<PstnCallDurationSource>(); } },
                 {"callId", n => { CallId = n.GetStringValue(); } },
@@ -346,7 +346,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<PstnCallDurationSource>("callDurationSource", CallDurationSource);
             writer.WriteStringValue("calleeNumber", CalleeNumber);

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,10 +116,11 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,6 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -142,6 +142,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -162,14 +163,14 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new TokenIssuancePolicyItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies.Item {
             }
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         public class TokenIssuancePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

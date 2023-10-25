@@ -88,6 +88,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.chatMessageFromIdentitySet" => new ChatMessageFromIdentitySet(),
                 "#microsoft.graph.chatMessageMentionedIdentitySet" => new ChatMessageMentionedIdentitySet(),
                 "#microsoft.graph.chatMessageReactionIdentitySet" => new ChatMessageReactionIdentitySet(),
+                "#microsoft.graph.communicationsIdentitySet" => new CommunicationsIdentitySet(),
                 "#microsoft.graph.sharePointIdentitySet" => new SharePointIdentitySet(),
                 _ => new IdentitySet(),
             };
@@ -95,7 +96,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Identity>("application", Application);
             writer.WriteObjectValue<Identity>("device", Device);

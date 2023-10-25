@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.RemoveEmail {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

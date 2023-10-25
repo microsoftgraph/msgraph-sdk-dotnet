@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item.ResetPassword {
         public ResetPasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/methods/{authenticationMethod%2Did}/resetPassword", rawUrl) {
         }
         /// <summary>
-        /// Reset a user&apos;s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and cannot be performed on a user&apos;s own account. This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.
+        /// Reset a user&apos;s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can&apos;t be performed on a user&apos;s own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item.ResetPassword {
             return await RequestAdapter.SendAsync<PasswordResetResponse>(requestInfo, PasswordResetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reset a user&apos;s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and cannot be performed on a user&apos;s own account. This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.
+        /// Reset a user&apos;s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can&apos;t be performed on a user&apos;s own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,14 +68,14 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item.ResetPassword {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ResetPasswordRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

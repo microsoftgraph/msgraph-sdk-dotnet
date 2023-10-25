@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("authenticationFlowsPolicy", value); }
         }
 #endif
-        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
+        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.AuthenticationMethodsPolicy? AuthenticationMethodsPolicy {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("authenticationMethodsPolicy", value); }
         }
 #endif
-        /// <summary>The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.</summary>
+        /// <summary>The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationStrengthPolicy>? AuthenticationStrengthPolicies {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }
         }
 #endif
-        /// <summary>The policy that controls Azure AD authorization settings.</summary>
+        /// <summary>The policy that controls Microsoft Entra authorization settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.AuthorizationPolicy? AuthorizationPolicy {
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #endif
-        /// <summary>The custom rules that define an access scenario when interacting with external Azure AD tenants.</summary>
+        /// <summary>The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.CrossTenantAccessPolicy? CrossTenantAccessPolicy {
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #endif
-        /// <summary>The policy to control Azure AD authentication behavior for federated users.</summary>
+        /// <summary>The policy to control Microsoft Entra authentication behavior for federated users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies {
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("roleManagementPolicyAssignments", value); }
         }
 #endif
-        /// <summary>The policy that specifies the characteristics of SAML tokens issued by Azure AD.</summary>
+        /// <summary>The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TokenIssuancePolicy>? TokenIssuancePolicies {
@@ -258,7 +258,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #endif
-        /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.</summary>
+        /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TokenLifetimePolicy>? TokenLifetimePolicies {
@@ -283,7 +283,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activityBasedTimeoutPolicies", n => { ActivityBasedTimeoutPolicies = n.GetCollectionOfObjectValues<ActivityBasedTimeoutPolicy>(ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"adminConsentRequestPolicy", n => { AdminConsentRequestPolicy = n.GetObjectValue<Microsoft.Graph.Models.AdminConsentRequestPolicy>(Microsoft.Graph.Models.AdminConsentRequestPolicy.CreateFromDiscriminatorValue); } },
@@ -310,7 +310,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<ActivityBasedTimeoutPolicy>("activityBasedTimeoutPolicies", ActivityBasedTimeoutPolicies);

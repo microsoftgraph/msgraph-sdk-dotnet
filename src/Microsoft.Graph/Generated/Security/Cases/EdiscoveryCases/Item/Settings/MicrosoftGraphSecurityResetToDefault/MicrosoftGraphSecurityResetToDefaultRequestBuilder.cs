@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings.Microsoft
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.</summary>
+        /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.</summary>
         public AdvancedConfigState? State {
             get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"excludeTarget", n => { ExcludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
                 {"includeTarget", n => { IncludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<FeatureTarget>("excludeTarget", ExcludeTarget);
             writer.WriteObjectValue<FeatureTarget>("includeTarget", IncludeTarget);

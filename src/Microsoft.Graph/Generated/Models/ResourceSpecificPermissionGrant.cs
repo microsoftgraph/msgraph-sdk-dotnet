@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
-        /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
+        /// <summary>ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientAppId {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("clientAppId", value); }
         }
 #endif
-        /// <summary>ID of the Azure AD app that has been granted access. Read-only.</summary>
+        /// <summary>ID of the Microsoft Entra app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("permissionType", value); }
         }
 #endif
-        /// <summary>ID of the Azure AD app that is hosting the resource. Read-only.</summary>
+        /// <summary>ID of the Microsoft Entra app that is hosting the resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceAppId {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"clientAppId", n => { ClientAppId = n.GetStringValue(); } },
                 {"clientId", n => { ClientId = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("clientAppId", ClientAppId);

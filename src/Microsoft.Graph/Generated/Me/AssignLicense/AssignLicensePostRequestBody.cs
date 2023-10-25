@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Me.AssignLicense {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Me.AssignLicense {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<AssignedLicense>("addLicenses", AddLicenses);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("removeLicenses", RemoveLicenses);

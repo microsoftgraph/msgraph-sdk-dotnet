@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
     public class Identity : Entity, IParsable {
-        /// <summary>The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.</summary>
+        /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
         public IdentityType? Type {
             get { return BackingStore?.Get<IdentityType?>("type"); }
             set { BackingStore?.Set("type", value); }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"type", n => { Type = n.GetEnumValue<IdentityType>(); } },
             };
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<IdentityType>("type", Type);

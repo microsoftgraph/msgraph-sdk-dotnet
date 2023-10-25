@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Crea
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attachmentInfo", n => { AttachmentInfo = n.GetObjectValue<Microsoft.Graph.Models.AttachmentInfo>(Microsoft.Graph.Models.AttachmentInfo.CreateFromDiscriminatorValue); } },
             };
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Crea
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Models.AttachmentInfo>("attachmentInfo", AttachmentInfo);
             writer.WriteAdditionalData(AdditionalData);

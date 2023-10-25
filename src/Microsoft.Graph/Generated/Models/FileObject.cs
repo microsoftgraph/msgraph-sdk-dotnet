@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hashes", n => { Hashes = n.GetObjectValue<Microsoft.Graph.Models.Hashes>(Microsoft.Graph.Models.Hashes.CreateFromDiscriminatorValue); } },
                 {"mimeType", n => { MimeType = n.GetStringValue(); } },
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Models.Hashes>("hashes", Hashes);
             writer.WriteStringValue("mimeType", MimeType);

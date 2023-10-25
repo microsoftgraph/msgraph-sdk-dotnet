@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("automaticUserConsentSettings", value); }
         }
 #endif
-        /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
+        /// <summary>Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bCollaborationInbound {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
 #endif
-        /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</summary>
+        /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bCollaborationOutbound {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
 #endif
-        /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.</summary>
+        /// <summary>Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectInbound {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
 #endif
-        /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</summary>
+        /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectOutbound {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
 #endif
-        /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.</summary>
+        /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyInboundTrust? InboundTrust {
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"automaticUserConsentSettings", n => { AutomaticUserConsentSettings = n.GetObjectValue<InboundOutboundPolicyConfiguration>(InboundOutboundPolicyConfiguration.CreateFromDiscriminatorValue); } },
                 {"b2bCollaborationInbound", n => { B2bCollaborationInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<InboundOutboundPolicyConfiguration>("automaticUserConsentSettings", AutomaticUserConsentSettings);

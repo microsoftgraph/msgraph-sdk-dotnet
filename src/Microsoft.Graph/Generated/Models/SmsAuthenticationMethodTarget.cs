@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable {
-        /// <summary>Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.</summary>
+        /// <summary>Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.</summary>
         public bool? IsUsableForSignIn {
             get { return BackingStore?.Get<bool?>("isUsableForSignIn"); }
             set { BackingStore?.Set("isUsableForSignIn", value); }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"isUsableForSignIn", n => { IsUsableForSignIn = n.GetBoolValue(); } },
             };
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isUsableForSignIn", IsUsableForSignIn);

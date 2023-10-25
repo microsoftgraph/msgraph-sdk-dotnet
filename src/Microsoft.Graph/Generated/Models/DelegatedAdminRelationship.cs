@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("activatedDateTime"); }
             set { BackingStore?.Set("activatedDateTime", value); }
         }
+        /// <summary>The autoExtendDuration property</summary>
+        public TimeSpan? AutoExtendDuration {
+            get { return BackingStore?.Get<TimeSpan?>("autoExtendDuration"); }
+            set { BackingStore?.Set("autoExtendDuration", value); }
+        }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -135,11 +140,12 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
                 {"activatedDateTime", n => { ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"autoExtendDuration", n => { AutoExtendDuration = n.GetTimeSpanValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customer", n => { Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -155,12 +161,13 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DelegatedAdminAccessAssignment>("accessAssignments", AccessAssignments);
             writer.WriteObjectValue<DelegatedAdminAccessDetails>("accessDetails", AccessDetails);
             writer.WriteDateTimeOffsetValue("activatedDateTime", ActivatedDateTime);
+            writer.WriteTimeSpanValue("autoExtendDuration", AutoExtendDuration);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<DelegatedAdminRelationshipCustomerParticipant>("customer", Customer);
             writer.WriteStringValue("displayName", DisplayName);

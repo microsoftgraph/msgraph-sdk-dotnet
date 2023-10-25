@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,10 +109,11 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +128,6 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AgreementFileVersionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -135,6 +135,7 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -155,14 +156,14 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AgreementFileVersionItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -189,7 +190,7 @@ namespace Microsoft.Graph.Agreements.Item.Files.Item.Versions.Item {
             }
         }
         /// <summary>
-        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+        /// Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
         /// </summary>
         public class AgreementFileVersionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

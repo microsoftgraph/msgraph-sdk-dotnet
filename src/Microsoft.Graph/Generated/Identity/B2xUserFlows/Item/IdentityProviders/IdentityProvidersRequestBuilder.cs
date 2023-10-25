@@ -81,7 +81,6 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.IdentityProviders {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IdentityProvidersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -89,6 +88,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.IdentityProviders {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

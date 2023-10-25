@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exact {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"text1", n => { Text1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"text2", n => { Text2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Exact {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("text1", Text1);
             writer.WriteObjectValue<Json>("text2", Text2);

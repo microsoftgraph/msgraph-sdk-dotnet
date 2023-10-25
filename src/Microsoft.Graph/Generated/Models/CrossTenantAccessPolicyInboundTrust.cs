@@ -14,17 +14,17 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies whether compliant devices from external Azure AD organizations are trusted.</summary>
+        /// <summary>Specifies whether compliant devices from external Microsoft Entra organizations are trusted.</summary>
         public bool? IsCompliantDeviceAccepted {
             get { return BackingStore?.Get<bool?>("isCompliantDeviceAccepted"); }
             set { BackingStore?.Set("isCompliantDeviceAccepted", value); }
         }
-        /// <summary>Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.</summary>
+        /// <summary>Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.</summary>
         public bool? IsHybridAzureADJoinedDeviceAccepted {
             get { return BackingStore?.Get<bool?>("isHybridAzureADJoinedDeviceAccepted"); }
             set { BackingStore?.Set("isHybridAzureADJoinedDeviceAccepted", value); }
         }
-        /// <summary>Specifies whether MFA from external Azure AD organizations is trusted.</summary>
+        /// <summary>Specifies whether MFA from external Microsoft Entra organizations is trusted.</summary>
         public bool? IsMfaAccepted {
             get { return BackingStore?.Get<bool?>("isMfaAccepted"); }
             set { BackingStore?.Set("isMfaAccepted", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isCompliantDeviceAccepted", n => { IsCompliantDeviceAccepted = n.GetBoolValue(); } },
                 {"isHybridAzureADJoinedDeviceAccepted", n => { IsHybridAzureADJoinedDeviceAccepted = n.GetBoolValue(); } },
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isCompliantDeviceAccepted", IsCompliantDeviceAccepted);
             writer.WriteBoolValue("isHybridAzureADJoinedDeviceAccepted", IsHybridAzureADJoinedDeviceAccepted);

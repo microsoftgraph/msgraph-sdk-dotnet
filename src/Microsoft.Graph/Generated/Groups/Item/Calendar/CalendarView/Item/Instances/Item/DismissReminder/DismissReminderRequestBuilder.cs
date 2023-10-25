@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item.
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

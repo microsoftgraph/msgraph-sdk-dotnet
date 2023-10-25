@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Number of the user or bot who received the call. E.164 format, but may include other data.</summary>
+        /// <summary>Number of the user or bot who received the call. E.164 format, but might include other data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalleeNumber {
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("calleeNumber", value); }
         }
 #endif
-        /// <summary>In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.</summary>
+        /// <summary>In addition to the SIP codes, Microsoft has subcodes that indicate the specific issue.</summary>
         public int? CallEndSubReason {
             get { return BackingStore?.Get<int?>("callEndSubReason"); }
             set { BackingStore?.Set("callEndSubReason", value); }
         }
-        /// <summary>Number of the user or bot who made the call. E.164 format, but may include other data.</summary>
+        /// <summary>Number of the user or bot who made the call. E.164 format, but might include other data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallerNumber {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
             set { BackingStore?.Set("failureDateTime", value); }
         }
-        /// <summary>The code with which the call ended, see RFC 3261.</summary>
+        /// <summary>The code with which the call ended. For more information, see RFC 3261.</summary>
         public int? FinalSipCode {
             get { return BackingStore?.Get<int?>("finalSipCode"); }
             set { BackingStore?.Set("finalSipCode", value); }
@@ -128,12 +128,12 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("inviteDateTime"); }
             set { BackingStore?.Set("inviteDateTime", value); }
         }
-        /// <summary>Indicates if the trunk was enabled for media bypass or not.</summary>
+        /// <summary>Indicates whether the trunk was enabled for media bypass.</summary>
         public bool? MediaBypassEnabled {
             get { return BackingStore?.Get<bool?>("mediaBypassEnabled"); }
             set { BackingStore?.Set("mediaBypassEnabled", value); }
         }
-        /// <summary>The datacenter used for media path in nonbypass call.</summary>
+        /// <summary>The datacenter used for media path in a nonbypass call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaPathLocation {
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("signalingLocation", value); }
         }
 #endif
-        /// <summary>Call start time.For failed and unanswered calls, this can be equal to invite or failure time.</summary>
+        /// <summary>Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>Calling user&apos;s ID in Graph. This and other user info will be null/empty for bot call types. GUID.</summary>
+        /// <summary>Calling user&apos;s ID in Microsoft Graph. This and other user information is null/empty for bot call types. GUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user&apos;s SIP Address, and can be same as user&apos;s e-mail address.</summary>
+        /// <summary>UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP Address, and can be the same as the user&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -259,7 +259,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
@@ -289,7 +289,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calleeNumber", CalleeNumber);
             writer.WriteIntValue("callEndSubReason", CallEndSubReason);

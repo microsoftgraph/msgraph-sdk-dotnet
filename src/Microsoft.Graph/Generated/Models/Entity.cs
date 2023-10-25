@@ -557,6 +557,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.recordOperation" => new RecordOperation(),
                 "#microsoft.graph.referenceAttachment" => new ReferenceAttachment(),
                 "#microsoft.graph.remoteAssistancePartner" => new RemoteAssistancePartner(),
+                "#microsoft.graph.remoteDesktopSecurityConfiguration" => new RemoteDesktopSecurityConfiguration(),
                 "#microsoft.graph.request" => new Request(),
                 "#microsoft.graph.resellerDelegatedAdminRelationship" => new ResellerDelegatedAdminRelationship(),
                 "#microsoft.graph.resourceOperation" => new ResourceOperation(),
@@ -613,6 +614,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.security.hostCookie" => new HostCookie(),
                 "#microsoft.graph.security.hostname" => new Hostname(),
                 "#microsoft.graph.security.hostPair" => new HostPair(),
+                "#microsoft.graph.security.hostPort" => new HostPort(),
                 "#microsoft.graph.security.hostReputation" => new HostReputation(),
                 "#microsoft.graph.security.hostSslCertificate" => new HostSslCertificate(),
                 "#microsoft.graph.security.hostTracker" => new HostTracker(),
@@ -684,6 +686,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.synchronizationJob" => new SynchronizationJob(),
                 "#microsoft.graph.synchronizationSchema" => new SynchronizationSchema(),
                 "#microsoft.graph.synchronizationTemplate" => new SynchronizationTemplate(),
+                "#microsoft.graph.targetDeviceGroup" => new TargetDeviceGroup(),
                 "#microsoft.graph.targetedManagedAppConfiguration" => new TargetedManagedAppConfiguration(),
                 "#microsoft.graph.targetedManagedAppPolicyAssignment" => new TargetedManagedAppPolicyAssignment(),
                 "#microsoft.graph.targetedManagedAppProtection" => new TargetedManagedAppProtection(),
@@ -877,7 +880,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -887,7 +890,7 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
