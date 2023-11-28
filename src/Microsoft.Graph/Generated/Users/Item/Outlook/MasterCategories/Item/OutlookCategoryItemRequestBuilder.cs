@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
         public OutlookCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories/{outlookCategory%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete the specified outlookCategory object. This API is available in the following national cloud deployments.
+        /// Delete the specified outlookCategory object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of the specified outlookCategory object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName propertyonce you have created the category. This API is available in the following national cloud deployments.
+        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName propertyonce you have created the category.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified outlookCategory object. This API is available in the following national cloud deployments.
+        /// Delete the specified outlookCategory object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the specified outlookCategory object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName propertyonce you have created the category. This API is available in the following national cloud deployments.
+        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName propertyonce you have created the category.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories.Item {
         public class OutlookCategoryItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of the specified outlookCategory object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         public class OutlookCategoryItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

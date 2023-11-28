@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         public CallItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is available in the following national cloud deployments.
+        /// Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Communications.Calls.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Communications.Calls.Item {
             return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is available in the following national cloud deployments.
+        /// Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Communications.Calls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         public class CallItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         public class CallItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

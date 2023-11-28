@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
         public PassiveDnsRecordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/passiveDnsRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
             return await RequestAdapter.SendAsync<PassiveDnsRecord>(requestInfo, PassiveDnsRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
             return new PassiveDnsRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         public class PassiveDnsRecordsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.Details {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerTaskDetails object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.Details {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerTaskDetails object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item.Tasks.Item.Details {
         public class DetailsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerTaskDetails object.
         /// </summary>
         public class DetailsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

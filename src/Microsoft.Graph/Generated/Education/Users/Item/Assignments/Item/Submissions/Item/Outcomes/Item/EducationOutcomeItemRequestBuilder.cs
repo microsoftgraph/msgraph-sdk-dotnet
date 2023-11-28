@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
         public EducationOutcomeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/outcomes/{educationOutcome%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a feedback resource from a submission. This can only be done by a teacher. This API is available in the following national cloud deployments.
+        /// Delete a feedback resource from a submission. This can only be done by a teacher.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationfeedbackresourceoutcome-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
             return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, EducationOutcome.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationOutcome object. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationOutcome object. Only teachers can perform this operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationoutcome-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
             return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, EducationOutcome.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a feedback resource from a submission. This can only be done by a teacher. This API is available in the following national cloud deployments.
+        /// Delete a feedback resource from a submission. This can only be done by a teacher.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Submissions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationOutcome object. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationOutcome object. Only teachers can perform this operation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

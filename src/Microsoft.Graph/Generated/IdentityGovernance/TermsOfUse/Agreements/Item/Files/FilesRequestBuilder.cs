@@ -61,7 +61,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.Files {
             return await RequestAdapter.SendAsync<AgreementFileLocalizationCollectionResponse>(requestInfo, AgreementFileLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new localized agreement file. This API is available in the following national cloud deployments.
+        /// Create a new localized agreement file.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.Files {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new localized agreement file. This API is available in the following national cloud deployments.
+        /// Create a new localized agreement file.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

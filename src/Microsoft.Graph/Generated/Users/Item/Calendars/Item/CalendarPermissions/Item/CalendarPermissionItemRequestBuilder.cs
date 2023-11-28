@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
         public CalendarPermissionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarPermissions/{calendarPermission%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete calendarPermission. This API is available in the following national cloud deployments.
+        /// Delete calendarPermission.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar. This API is available in the following national cloud deployments.
+        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete calendarPermission. This API is available in the following national cloud deployments.
+        /// Delete calendarPermission.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar. This API is available in the following national cloud deployments.
+        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.CalendarPermissions.Item {
         public class CalendarPermissionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared.
         /// </summary>
         public class CalendarPermissionItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

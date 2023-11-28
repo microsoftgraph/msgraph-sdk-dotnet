@@ -51,7 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return requestInfo;
         }
         /// <summary>
-        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new EligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
         /// </summary>
         public class EligibilityScheduleRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

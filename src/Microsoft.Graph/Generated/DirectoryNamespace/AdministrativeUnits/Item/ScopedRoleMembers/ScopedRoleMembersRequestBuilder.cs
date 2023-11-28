@@ -42,7 +42,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         public ScopedRoleMembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List Microsoft Entra role assignments with administrative unit scope. This API is available in the following national cloud deployments.
+        /// List Microsoft Entra role assignments with administrative unit scope.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return await RequestAdapter.SendAsync<ScopedRoleMembershipCollectionResponse>(requestInfo, ScopedRoleMembershipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope. This API is available in the following national cloud deployments.
+        /// Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Microsoft Entra role assignments with administrative unit scope. This API is available in the following national cloud deployments.
+        /// List Microsoft Entra role assignments with administrative unit scope.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return requestInfo;
         }
         /// <summary>
-        /// Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope. This API is available in the following national cloud deployments.
+        /// Assign a Microsoft Entra role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return new ScopedRoleMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List Microsoft Entra role assignments with administrative unit scope. This API is available in the following national cloud deployments.
+        /// List Microsoft Entra role assignments with administrative unit scope.
         /// </summary>
         public class ScopedRoleMembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

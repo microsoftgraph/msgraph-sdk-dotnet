@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0" />
+        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox. This API is available in the following national cloud deployments.
+        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

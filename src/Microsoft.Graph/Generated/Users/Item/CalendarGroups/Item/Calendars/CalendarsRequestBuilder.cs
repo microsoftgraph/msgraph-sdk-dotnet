@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars {
         public CalendarsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
+        /// Retrieve a list of calendars belonging to a calendar group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars {
             return await RequestAdapter.SendAsync<CalendarCollectionResponse>(requestInfo, CalendarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new calendar in a calendar group for a user. This API is available in the following national cloud deployments.
+        /// Use this API to create a new calendar in a calendar group for a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Calendar>(requestInfo, Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
+        /// Retrieve a list of calendars belonging to a calendar group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new calendar in a calendar group for a user. This API is available in the following national cloud deployments.
+        /// Use this API to create a new calendar in a calendar group for a user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars {
             return new CalendarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
+        /// Retrieve a list of calendars belonging to a calendar group.
         /// </summary>
         public class CalendarsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

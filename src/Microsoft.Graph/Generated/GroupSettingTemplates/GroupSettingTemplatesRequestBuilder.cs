@@ -62,7 +62,7 @@ namespace Microsoft.Graph.GroupSettingTemplates {
         public GroupSettingTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettingTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects. This API is available in the following national cloud deployments.
+        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsettingtemplate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.GroupSettingTemplates {
             return await RequestAdapter.SendAsync<GroupSettingTemplate>(requestInfo, GroupSettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects. This API is available in the following national cloud deployments.
+        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.GroupSettingTemplates {
             return new GroupSettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects. This API is available in the following national cloud deployments.
+        /// Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects.
         /// </summary>
         public class GroupSettingTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

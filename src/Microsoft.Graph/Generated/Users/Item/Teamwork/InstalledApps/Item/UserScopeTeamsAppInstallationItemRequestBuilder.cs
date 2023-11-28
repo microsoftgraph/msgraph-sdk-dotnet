@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
         public UserScopeTeamsAppInstallationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Uninstall an app from the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Uninstall an app from the personal scope of the specified user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the app installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the app installed in the personal scope of the specified user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uninstall an app from the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Uninstall an app from the personal scope of the specified user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the app installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the app installed in the personal scope of the specified user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
         public class UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the app installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the app installed in the personal scope of the specified user.
         /// </summary>
         public class UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

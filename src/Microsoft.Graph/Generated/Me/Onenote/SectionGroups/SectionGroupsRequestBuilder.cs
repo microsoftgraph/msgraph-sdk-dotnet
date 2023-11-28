@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups {
         public SectionGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/sectionGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of sectionGroup objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups {
             return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of sectionGroup objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Me.Onenote.SectionGroups {
             return new SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of sectionGroup objects.
         /// </summary>
         public class SectionGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

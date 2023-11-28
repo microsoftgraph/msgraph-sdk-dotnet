@@ -28,7 +28,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/{accessPackage%2Did1}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is available in the following national cloud deployments.
+        /// Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

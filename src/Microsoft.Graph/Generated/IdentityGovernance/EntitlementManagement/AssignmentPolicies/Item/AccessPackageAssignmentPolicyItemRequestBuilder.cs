@@ -49,7 +49,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
         public AccessPackageAssignmentPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy. This API is available in the following national cloud deployments.
+        /// In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
             return await RequestAdapter.SendAsync<AccessPackageAssignmentPolicy>(requestInfo, AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy. This API is available in the following national cloud deployments.
+        /// In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
             return requestInfo;
         }
         /// <summary>
-        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentPol
         public class AccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
         /// </summary>
         public class AccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

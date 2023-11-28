@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration.It
         public CertificateBasedAuthConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+        /// Delete a certificateBasedAuthConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration.It
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CertificateBasedAuthConfiguration>(requestInfo, Microsoft.Graph.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+        /// Delete a certificateBasedAuthConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration.It
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration.It
         public class CertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
         /// </summary>
         public class CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

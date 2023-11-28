@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivities.Item {
         public LearningCourseActivityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/employeeExperience/learningCourseActivities/{learningCourseActivity%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user. This API is available in the following national cloud deployments.
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivities.Item {
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user. This API is available in the following national cloud deployments.
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivities.Item {
             return new LearningCourseActivityItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user. This API is available in the following national cloud deployments.
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// </summary>
         public class LearningCourseActivityItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

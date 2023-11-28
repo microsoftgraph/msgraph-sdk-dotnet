@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return await RequestAdapter.SendAsync<EdiscoveryCaseSettings>(requestInfo, EdiscoveryCaseSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+        /// Update the properties of an ediscoveryCaseSettings object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+        /// Update the properties of an ediscoveryCaseSettings object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
         public class SettingsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCaseSettings object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

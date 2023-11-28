@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
         public ApplicationTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an applicationTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
             return await RequestAdapter.SendAsync<ApplicationTemplate>(requestInfo, ApplicationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an applicationTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
             return new ApplicationTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an applicationTemplate object.
         /// </summary>
         public class ApplicationTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

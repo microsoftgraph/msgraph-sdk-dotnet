@@ -43,8 +43,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public SeriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/series{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-list-series?view=graph-rest-1.0" />
+        /// Retrieve a list of chartseries objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseries-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
-        /// Use this API to create a new ChartSeries. This API is available in the following national cloud deployments.
+        /// Use this API to create a new ChartSeries.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-post-series?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartSeries>(requestInfo, WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of chartseries objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new ChartSeries. This API is available in the following national cloud deployments.
+        /// Use this API to create a new ChartSeries.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new SeriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of chartseries objects.
         /// </summary>
         public class SeriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

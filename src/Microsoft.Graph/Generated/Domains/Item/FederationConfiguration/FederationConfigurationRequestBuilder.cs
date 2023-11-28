@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
         public FederationConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}/federationConfiguration{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return await RequestAdapter.SendAsync<InternalDomainFederationCollectionResponse>(requestInfo, InternalDomainFederationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Create a new internalDomainFederation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Create a new internalDomainFederation object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return new FederationConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// </summary>
         public class FederationConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

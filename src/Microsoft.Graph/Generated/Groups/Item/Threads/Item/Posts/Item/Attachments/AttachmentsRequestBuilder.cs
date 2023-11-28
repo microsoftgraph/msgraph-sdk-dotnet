@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Attachments {
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post. This API is available in the following national cloud deployments.
+        /// Retrieve a list of attachment objects attached to a post.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Attachments {
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post. This API is available in the following national cloud deployments.
+        /// Retrieve a list of attachment objects attached to a post.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Attachments {
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post. This API is available in the following national cloud deployments.
+        /// Retrieve a list of attachment objects attached to a post.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

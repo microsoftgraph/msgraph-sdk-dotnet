@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartdatalabels object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartdatalabels-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartDataLabels>(requestInfo, WorkbookChartDataLabels.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartdatalabels object. This API is available in the following national cloud deployments.
+        /// Update the properties of chartdatalabels object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartdatalabels-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartdatalabels object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartdatalabels object. This API is available in the following national cloud deployments.
+        /// Update the properties of chartdatalabels object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public class DataLabelsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartdatalabels object.
         /// </summary>
         public class DataLabelsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

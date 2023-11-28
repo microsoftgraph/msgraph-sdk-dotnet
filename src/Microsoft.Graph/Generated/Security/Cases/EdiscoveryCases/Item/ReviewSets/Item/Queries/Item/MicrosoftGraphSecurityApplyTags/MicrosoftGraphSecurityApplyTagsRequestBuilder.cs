@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         public MicrosoftGraphSecurityApplyTagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}/microsoft.graph.security.applyTags", rawUrl) {
         }
         /// <summary>
-        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery. This API is available in the following national cloud deployments.
+        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery. This API is available in the following national cloud deployments.
+        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecu
         public MicrosoftGraphSecurityReopenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/microsoft.graph.security.reopen", rawUrl) {
         }
         /// <summary>
-        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is available in the following national cloud deployments.
+        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is available in the following national cloud deployments.
+        /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
         public CopyToDefaultContentLocationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/copyToDefaultContentLocation", rawUrl) {
         }
         /// <summary>
-        /// Copy a file to a default content location in a content type][contentType]. The file can then be added as a default file or template via a POST operation. This API is available in the following [national cloud deployments.
+        /// Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.CopyToDefaultConten
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Copy a file to a default content location in a content type][contentType]. The file can then be added as a default file or template via a POST operation. This API is available in the following [national cloud deployments.
+        /// Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

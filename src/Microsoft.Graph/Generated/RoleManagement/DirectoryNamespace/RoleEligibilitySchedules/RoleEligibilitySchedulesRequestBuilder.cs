@@ -51,7 +51,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property. This API is available in the following national cloud deployments.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilitySchedule>(requestInfo, UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property. This API is available in the following national cloud deployments.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new RoleEligibilitySchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property. This API is available in the following national cloud deployments.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
         /// </summary>
         public class RoleEligibilitySchedulesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
         public LocalizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/agreements/{agreement%2Did}/file/localizations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
+        /// Get a list of the default and localized agreement files.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return await RequestAdapter.SendAsync<AgreementFileLocalization>(requestInfo, AgreementFileLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

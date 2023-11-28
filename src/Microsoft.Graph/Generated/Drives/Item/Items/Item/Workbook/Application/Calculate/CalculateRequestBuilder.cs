@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Application.Calculate 
         public CalculateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/application/calculate", rawUrl) {
         }
         /// <summary>
-        /// Recalculate all currently opened workbooks in Excel. This API is available in the following national cloud deployments.
+        /// Recalculate all currently opened workbooks in Excel.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbookapplication-calculate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Application.Calculate 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Recalculate all currently opened workbooks in Excel. This API is available in the following national cloud deployments.
+        /// Recalculate all currently opened workbooks in Excel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

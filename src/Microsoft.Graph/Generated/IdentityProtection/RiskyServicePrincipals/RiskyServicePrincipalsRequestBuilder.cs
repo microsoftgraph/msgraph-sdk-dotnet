@@ -52,7 +52,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
         public RiskyServicePrincipalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyServicePrincipals{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of riskyServicePrincipal objects. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
             return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of riskyServicePrincipal objects. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
             return new RiskyServicePrincipalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of riskyServicePrincipal objects. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
         /// </summary>
         public class RiskyServicePrincipalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

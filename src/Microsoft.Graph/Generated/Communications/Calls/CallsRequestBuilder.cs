@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Communications.Calls {
         public CallsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Communications.Calls {
             return await RequestAdapter.SendAsync<CallCollectionResponse>(requestInfo, CallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API is available in the following national cloud deployments.
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Communications.Calls {
             return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Communications.Calls {
             return requestInfo;
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API is available in the following national cloud deployments.
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Communications.Calls {
             return new CallsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         public class CallsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

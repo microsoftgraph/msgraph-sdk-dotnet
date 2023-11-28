@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
         public UserSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/userSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return await RequestAdapter.SendAsync<UserSourceCollectionResponse>(requestInfo, UserSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new userSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
+        /// Create a new userSource object associated with an eDiscovery custodian.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return await RequestAdapter.SendAsync<UserSource>(requestInfo, UserSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return requestInfo;
         }
         /// <summary>
-        /// Create a new userSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
+        /// Create a new userSource object associated with an eDiscovery custodian.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return new UserSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
         /// </summary>
         public class UserSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

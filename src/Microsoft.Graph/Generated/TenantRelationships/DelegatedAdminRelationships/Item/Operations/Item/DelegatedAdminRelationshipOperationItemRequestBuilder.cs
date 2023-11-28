@@ -48,7 +48,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationshipOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationshipOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
         public class DelegatedAdminRelationshipOperationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationshipOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
         /// </summary>
         public class DelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

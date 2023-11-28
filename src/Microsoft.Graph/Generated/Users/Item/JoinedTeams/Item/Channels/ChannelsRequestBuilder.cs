@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels {
         public ChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of channels in this team. This API is available in the following national cloud deployments.
+        /// Retrieve the list of channels in this team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels {
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. If you&apos;re creating a private channel, you can add a maximum of 200 members. This API is available in the following national cloud deployments.
+        /// Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. If you&apos;re creating a private channel, you can add a maximum of 200 members.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of channels in this team. This API is available in the following national cloud deployments.
+        /// Retrieve the list of channels in this team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. If you&apos;re creating a private channel, you can add a maximum of 200 members. This API is available in the following national cloud deployments.
+        /// Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. If you&apos;re creating a private channel, you can add a maximum of 200 members.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels {
             return new ChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of channels in this team. This API is available in the following national cloud deployments.
+        /// Retrieve the list of channels in this team.
         /// </summary>
         public class ChannelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

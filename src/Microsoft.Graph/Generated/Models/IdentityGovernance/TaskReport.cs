@@ -50,20 +50,6 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
-        /// <summary>The task property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public TaskObject? Task {
-            get { return BackingStore?.Get<TaskObject?>("task"); }
-            set { BackingStore?.Set("task", value); }
-        }
-#nullable restore
-#else
-        public TaskObject Task {
-            get { return BackingStore?.Get<TaskObject>("task"); }
-            set { BackingStore?.Set("task", value); }
-        }
-#endif
         /// <summary>The taskDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +62,20 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         public Microsoft.Graph.Models.IdentityGovernance.TaskDefinition TaskDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>("taskDefinition"); }
             set { BackingStore?.Set("taskDefinition", value); }
+        }
+#endif
+        /// <summary>The task property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.IdentityGovernance.TaskObject? TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskObject?>("task"); }
+            set { BackingStore?.Set("task", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.IdentityGovernance.TaskObject TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task"); }
+            set { BackingStore?.Set("task", value); }
         }
 #endif
         /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
@@ -122,8 +122,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
                 {"runId", n => { RunId = n.GetStringValue(); } },
                 {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
-                {"task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
                 {"taskDefinition", n => { TaskDefinition = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue); } },
+                {"task", n => { TaskObject = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
                 {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
                 {"unprocessedUsersCount", n => { UnprocessedUsersCount = n.GetIntValue(); } },
@@ -143,8 +143,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             writer.WriteStringValue("runId", RunId);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteIntValue("successfulUsersCount", SuccessfulUsersCount);
-            writer.WriteObjectValue<TaskObject>("task", Task);
             writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>("taskDefinition", TaskDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task", TaskObject);
             writer.WriteCollectionOfObjectValues<TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
             writer.WriteIntValue("totalUsersCount", TotalUsersCount);
             writer.WriteIntValue("unprocessedUsersCount", UnprocessedUsersCount);

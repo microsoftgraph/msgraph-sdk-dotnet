@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         public AddRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/columns/add", rawUrl) {
         }
         /// <summary>
-        /// Adds a new column to the table. This API is available in the following national cloud deployments.
+        /// Adds a new column to the table.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumncollection-add?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
             return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a new column to the table. This API is available in the following national cloud deployments.
+        /// Adds a new column to the table.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

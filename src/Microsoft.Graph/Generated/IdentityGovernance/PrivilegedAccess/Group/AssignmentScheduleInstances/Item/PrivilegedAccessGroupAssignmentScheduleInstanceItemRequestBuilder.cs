@@ -63,7 +63,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         public class PrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         public class PrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

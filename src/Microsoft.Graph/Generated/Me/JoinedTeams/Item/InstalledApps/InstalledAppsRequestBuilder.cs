@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps {
         public InstalledAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}/installedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of apps installed in the specified team. This API is available in the following national cloud deployments.
+        /// Retrieve a list of apps installed in the specified team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps {
             return await RequestAdapter.SendAsync<TeamsAppInstallationCollectionResponse>(requestInfo, TeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Install an app to the specified team. This API is available in the following national cloud deployments.
+        /// Install an app to the specified team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of apps installed in the specified team. This API is available in the following national cloud deployments.
+        /// Retrieve a list of apps installed in the specified team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps {
             return requestInfo;
         }
         /// <summary>
-        /// Install an app to the specified team. This API is available in the following national cloud deployments.
+        /// Install an app to the specified team.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps {
             return new InstalledAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of apps installed in the specified team. This API is available in the following national cloud deployments.
+        /// Retrieve a list of apps installed in the specified team.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

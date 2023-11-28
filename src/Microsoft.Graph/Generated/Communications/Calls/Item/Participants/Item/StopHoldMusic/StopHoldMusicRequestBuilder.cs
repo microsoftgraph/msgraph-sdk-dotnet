@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMu
         public StopHoldMusicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}/stopHoldMusic", rawUrl) {
         }
         /// <summary>
-        /// Reincorporate a participant previously put on hold to the call. This API is available in the following national cloud deployments.
+        /// Reincorporate a participant previously put on hold to the call.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StopHoldMu
             return await RequestAdapter.SendAsync<StopHoldMusicOperation>(requestInfo, StopHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reincorporate a participant previously put on hold to the call. This API is available in the following national cloud deployments.
+        /// Reincorporate a participant previously put on hold to the call.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
         public CalendarGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
+        /// Delete a calendar group other than the default calendar group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a calendar group object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
             return await RequestAdapter.SendAsync<CalendarGroup>(requestInfo, CalendarGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of calendargroup object. This API is available in the following national cloud deployments.
+        /// Update the properties of calendargroup object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
             return await RequestAdapter.SendAsync<CalendarGroup>(requestInfo, CalendarGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
+        /// Delete a calendar group other than the default calendar group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a calendar group object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of calendargroup object. This API is available in the following national cloud deployments.
+        /// Update the properties of calendargroup object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item {
         public class CalendarGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a calendar group object.
         /// </summary>
         public class CalendarGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.HostedContents.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chatMessageHostedContent object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.HostedContents.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chatMessageHostedContent object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item.HostedContents.Ite
         public class ChatMessageHostedContentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chatMessageHostedContent object.
         /// </summary>
         public class ChatMessageHostedContentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

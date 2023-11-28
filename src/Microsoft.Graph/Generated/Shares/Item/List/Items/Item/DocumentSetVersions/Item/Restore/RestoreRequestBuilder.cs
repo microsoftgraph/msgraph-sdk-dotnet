@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item.R
         public RestoreRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}/restore", rawUrl) {
         }
         /// <summary>
-        /// Restore a document set version. This API is available in the following national cloud deployments.
+        /// Restore a document set version.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item.R
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a document set version. This API is available in the following national cloud deployments.
+        /// Restore a document set version.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

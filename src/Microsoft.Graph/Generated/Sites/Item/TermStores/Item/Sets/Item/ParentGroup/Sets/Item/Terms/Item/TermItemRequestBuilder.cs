@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
         public TermItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/terms/{term%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a term object. This API is available in the following national cloud deployments.
+        /// Delete a term object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a term object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a term object. This API is available in the following national cloud deployments.
+        /// Update the properties of a term object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a term object. This API is available in the following national cloud deployments.
+        /// Delete a term object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a term object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a term object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a term object. This API is available in the following national cloud deployments.
+        /// Update the properties of a term object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.ParentGroup.Sets.
         public class TermItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a term object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a term object.
         /// </summary>
         public class TermItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

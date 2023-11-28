@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
         public HostPairsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/hostPairs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*. This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
             return await RequestAdapter.SendAsync<HostPairCollectionResponse>(requestInfo, HostPairCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*. This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
             return new HostPairsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*. This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
         /// </summary>
         public class HostPairsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

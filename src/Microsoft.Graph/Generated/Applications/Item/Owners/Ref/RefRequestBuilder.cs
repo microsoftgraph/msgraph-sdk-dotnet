@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an owner to an application by posting to the owners collection. This API is available in the following national cloud deployments.
+        /// Add an owner to an application by posting to the owners collection.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add an owner to an application by posting to the owners collection. This API is available in the following national cloud deployments.
+        /// Add an owner to an application by posting to the owners collection.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

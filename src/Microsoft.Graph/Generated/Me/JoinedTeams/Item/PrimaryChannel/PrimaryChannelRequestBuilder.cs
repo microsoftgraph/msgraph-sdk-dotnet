@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the default channel, General, of a team. This API is available in the following national cloud deployments.
+        /// Get the default channel, General, of a team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
             return requestInfo;
         }
         /// <summary>
-        /// Get the default channel, General, of a team. This API is available in the following national cloud deployments.
+        /// Get the default channel, General, of a team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel {
         public class PrimaryChannelRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the default channel, General, of a team. This API is available in the following national cloud deployments.
+        /// Get the default channel, General, of a team.
         /// </summary>
         public class PrimaryChannelRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
         public ContentTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/contentTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [contentType][contentType] resources in a [list][].
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [contentType][contentType] resources in a [list][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
             return new ContentTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [contentType][contentType] resources in a [list][].
         /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

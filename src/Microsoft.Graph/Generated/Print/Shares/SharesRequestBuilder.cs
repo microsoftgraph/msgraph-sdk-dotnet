@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Print.Shares {
         public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of printerShares. This API is available in the following national cloud deployments.
+        /// Retrieve a list of printerShares.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Print.Shares {
             return await RequestAdapter.SendAsync<PrinterShareCollectionResponse>(requestInfo, PrinterShareCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new printerShare for the specified printer. This API is available in the following national cloud deployments.
+        /// Create a new printerShare for the specified printer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Print.Shares {
             return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of printerShares. This API is available in the following national cloud deployments.
+        /// Retrieve a list of printerShares.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Print.Shares {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new printerShare for the specified printer. This API is available in the following national cloud deployments.
+        /// Create a new printerShare for the specified printer.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Print.Shares {
             return new SharesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of printerShares. This API is available in the following national cloud deployments.
+        /// Retrieve a list of printerShares.
         /// </summary>
         public class SharesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

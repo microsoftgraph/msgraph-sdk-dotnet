@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Groups.GetByIds {
         public GetByIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/getByIds", rawUrl) {
         }
         /// <summary>
-        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is available in the following national cloud deployments.
+        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Groups.GetByIds {
             return await RequestAdapter.SendAsync<GetByIdsPostResponse>(requestInfo, GetByIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is available in the following national cloud deployments.
+        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Groups.GetByIds {
             return await RequestAdapter.SendAsync<GetByIdsResponse>(requestInfo, GetByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is available in the following national cloud deployments.
+        /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

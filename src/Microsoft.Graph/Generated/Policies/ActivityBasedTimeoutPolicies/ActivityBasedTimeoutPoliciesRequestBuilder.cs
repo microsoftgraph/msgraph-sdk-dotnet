@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
         public ActivityBasedTimeoutPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/activityBasedTimeoutPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of activityBasedTimeoutPolicy objects. This API is available in the following national cloud deployments.
+        /// Get a list of activityBasedTimeoutPolicy objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicyCollectionResponse>(requestInfo, ActivityBasedTimeoutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+        /// Create a new activityBasedTimeoutPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-post-activitybasedtimeoutpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of activityBasedTimeoutPolicy objects. This API is available in the following national cloud deployments.
+        /// Get a list of activityBasedTimeoutPolicy objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+        /// Create a new activityBasedTimeoutPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return new ActivityBasedTimeoutPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of activityBasedTimeoutPolicy objects. This API is available in the following national cloud deployments.
+        /// Get a list of activityBasedTimeoutPolicy objects.
         /// </summary>
         public class ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

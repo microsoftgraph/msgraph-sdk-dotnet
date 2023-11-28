@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole {
         public ChangeScreenSharingRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/changeScreenSharingRole", rawUrl) {
         }
         /// <summary>
-        /// Allow applications to share screen content with the participants of a group call. This API is available in the following national cloud deployments.
+        /// Allow applications to share screen content with the participants of a group call.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ChangeScreenSharingRole {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Allow applications to share screen content with the participants of a group call. This API is available in the following national cloud deployments.
+        /// Allow applications to share screen content with the participants of a group call.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

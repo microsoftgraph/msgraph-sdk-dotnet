@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Contacts {
         public ContactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/contacts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
+        /// Get the list of organizational contacts for this organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Contacts {
             return await RequestAdapter.SendAsync<OrgContact>(requestInfo, OrgContact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
+        /// Get the list of organizational contacts for this organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Contacts {
             return new ContactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of organizational contacts for this organization. This API is available in the following national cloud deployments.
+        /// Get the list of organizational contacts for this organization.
         /// </summary>
         public class ContactsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

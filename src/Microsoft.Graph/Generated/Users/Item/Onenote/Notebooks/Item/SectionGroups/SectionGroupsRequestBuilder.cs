@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.Onenote.Notebooks.Item.SectionGroups {
         public SectionGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onenote/notebooks/{notebook%2Did}/sectionGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+        /// Retrieve a list of section groups from the specified notebook.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Onenote.Notebooks.Item.SectionGroups {
             return await RequestAdapter.SendAsync<SectionGroupCollectionResponse>(requestInfo, SectionGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new section group in the specified notebook. This API is available in the following national cloud deployments.
+        /// Create a new section group in the specified notebook.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.Onenote.Notebooks.Item.SectionGroups {
             return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+        /// Retrieve a list of section groups from the specified notebook.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users.Item.Onenote.Notebooks.Item.SectionGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new section group in the specified notebook. This API is available in the following national cloud deployments.
+        /// Create a new section group in the specified notebook.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.Onenote.Notebooks.Item.SectionGroups {
             return new SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+        /// Retrieve a list of section groups from the specified notebook.
         /// </summary>
         public class SectionGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
         public InstalledAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/installedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the list of apps installed in the personal scope of the specified user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallationCollectionResponse>(requestInfo, UserScopeTeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Install an app in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Install an app in the personal scope of the specified user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the list of apps installed in the personal scope of the specified user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return requestInfo;
         }
         /// <summary>
-        /// Install an app in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Install an app in the personal scope of the specified user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return new InstalledAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user. This API is available in the following national cloud deployments.
+        /// Retrieve the list of apps installed in the personal scope of the specified user.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

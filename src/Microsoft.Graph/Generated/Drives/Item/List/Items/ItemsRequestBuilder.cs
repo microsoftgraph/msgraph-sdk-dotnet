@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items {
         public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items{?%24top,%24skip,%24search,%24filter,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [items][item] in a [list][].
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items {
             return await RequestAdapter.SendAsync<ListItemCollectionResponse>(requestInfo, ListItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new listItem][] in a [list][]. This API is available in the following [national cloud deployments.
+        /// Create a new [listItem][] in a [list][].
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItem>(requestInfo, Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [items][item] in a [list][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new listItem][] in a [list][]. This API is available in the following [national cloud deployments.
+        /// Create a new [listItem][] in a [list][].
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
+        /// Get the collection of [items][item] in a [list][].
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

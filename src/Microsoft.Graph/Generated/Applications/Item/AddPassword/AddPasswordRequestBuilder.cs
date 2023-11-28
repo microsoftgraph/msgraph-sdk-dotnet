@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Applications.Item.AddPassword {
         public AddPasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/addPassword", rawUrl) {
         }
         /// <summary>
-        /// Adds a strong password or secret to an application. This API is available in the following national cloud deployments.
+        /// Adds a strong password or secret to an application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Applications.Item.AddPassword {
             return await RequestAdapter.SendAsync<PasswordCredential>(requestInfo, PasswordCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a strong password or secret to an application. This API is available in the following national cloud deployments.
+        /// Adds a strong password or secret to an application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

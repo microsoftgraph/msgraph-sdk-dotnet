@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Accept {
         public AcceptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/accept", rawUrl) {
         }
         /// <summary>
-        /// Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
+        /// Accept the specified event in a user calendar.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Accept {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
+        /// Accept the specified event in a user calendar.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

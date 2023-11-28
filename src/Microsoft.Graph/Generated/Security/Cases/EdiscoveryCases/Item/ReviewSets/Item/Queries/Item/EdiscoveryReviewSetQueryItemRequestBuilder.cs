@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         public EdiscoveryReviewSetQueryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Delete an ediscoveryReviewSetQuery object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryReviewSetQuery object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQuery>(requestInfo, EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Update the properties of an ediscoveryReviewSetQuery object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQuery>(requestInfo, EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Delete an ediscoveryReviewSetQuery object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryReviewSetQuery object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Update the properties of an ediscoveryReviewSetQuery object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         public class EdiscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSetQuery object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an ediscoveryReviewSetQuery object.
         /// </summary>
         public class EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

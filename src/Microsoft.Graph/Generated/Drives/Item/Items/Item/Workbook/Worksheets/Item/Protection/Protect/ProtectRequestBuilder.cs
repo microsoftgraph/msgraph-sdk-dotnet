@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protec
         public ProtectRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/protection/protect", rawUrl) {
         }
         /// <summary>
-        /// Protect a worksheet. It throws if the worksheet has been protected. This API is available in the following national cloud deployments.
+        /// Protect a worksheet. It throws if the worksheet has been protected.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetprotection-protect?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protec
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Protect a worksheet. It throws if the worksheet has been protected. This API is available in the following national cloud deployments.
+        /// Protect a worksheet. It throws if the worksheet has been protected.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

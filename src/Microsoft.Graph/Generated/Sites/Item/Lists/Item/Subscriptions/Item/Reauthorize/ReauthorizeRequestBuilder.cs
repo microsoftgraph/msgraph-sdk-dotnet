@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Subscriptions.Item.Reauthorize {
         public ReauthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}/reauthorize", rawUrl) {
         }
         /// <summary>
-        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge. This API is available in the following national cloud deployments.
+        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Subscriptions.Item.Reauthorize {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge. This API is available in the following national cloud deployments.
+        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

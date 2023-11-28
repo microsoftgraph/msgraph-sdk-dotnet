@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
         public PhoneAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a user&apos;s phone authentication method. This removes the phone number from the user and they&apos;ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can&apos;t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user&apos;s default Azure multi-factor authentication (MFA) authentication method, it can&apos;t be deleted. Have the user change their default authentication method, and then delete the number. This API is available in the following national cloud deployments.
+        /// Delete a user&apos;s phone authentication method. This removes the phone number from the user and they&apos;ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can&apos;t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user&apos;s default Azure multi-factor authentication (MFA) authentication method, it can&apos;t be deleted. Have the user change their default authentication method, and then delete the number.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users. This API is available in the following national cloud deployments.
+        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
             return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a user&apos;s phone number associated with a phone authentication method object. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system. This API is available in the following national cloud deployments.
+        /// Update a user&apos;s phone number associated with a phone authentication method object. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
             return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user&apos;s phone authentication method. This removes the phone number from the user and they&apos;ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can&apos;t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user&apos;s default Azure multi-factor authentication (MFA) authentication method, it can&apos;t be deleted. Have the user change their default authentication method, and then delete the number. This API is available in the following national cloud deployments.
+        /// Delete a user&apos;s phone authentication method. This removes the phone number from the user and they&apos;ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can&apos;t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user&apos;s default Azure multi-factor authentication (MFA) authentication method, it can&apos;t be deleted. Have the user change their default authentication method, and then delete the number.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users. This API is available in the following national cloud deployments.
+        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update a user&apos;s phone number associated with a phone authentication method object. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system. This API is available in the following national cloud deployments.
+        /// Update a user&apos;s phone number associated with a phone authentication method object. You can&apos;t change a phone&apos;s type. To change a phone&apos;s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item {
         public class PhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users. This API is available in the following national cloud deployments.
+        /// Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
         /// </summary>
         public class PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

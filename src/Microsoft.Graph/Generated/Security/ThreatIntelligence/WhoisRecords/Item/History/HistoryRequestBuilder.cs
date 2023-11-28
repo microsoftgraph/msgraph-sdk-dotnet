@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
         public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/whoisRecords/{whoisRecord%2Did}/history{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources. This API is available in the following national cloud deployments.
+        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
             return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources. This API is available in the following national cloud deployments.
+        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
             return new HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources. This API is available in the following national cloud deployments.
+        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

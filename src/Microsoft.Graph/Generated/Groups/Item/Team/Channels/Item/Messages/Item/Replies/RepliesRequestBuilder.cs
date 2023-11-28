@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies {
         public RepliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message. This API is available in the following national cloud deployments.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
+        /// Create a new reply to a chatMessage in a specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies {
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message. This API is available in the following national cloud deployments.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies {
             return requestInfo;
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+        /// Create a new reply to a chatMessage in a specified channel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies {
             return new RepliesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message. This API is available in the following national cloud deployments.
+        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
         /// </summary>
         public class RepliesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

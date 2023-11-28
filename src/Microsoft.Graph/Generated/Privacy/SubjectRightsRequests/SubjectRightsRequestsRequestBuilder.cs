@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
         public SubjectRightsRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of subjectRightsRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of subjectRightsRequest objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return await RequestAdapter.SendAsync<SubjectRightsRequestCollectionResponse>(requestInfo, SubjectRightsRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new subjectRightsRequest object. This API is available in the following national cloud deployments.
+        /// Create a new subjectRightsRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of subjectRightsRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of subjectRightsRequest objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new subjectRightsRequest object. This API is available in the following national cloud deployments.
+        /// Create a new subjectRightsRequest object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return new SubjectRightsRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of subjectRightsRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of subjectRightsRequest objects and their properties.
         /// </summary>
         public class SubjectRightsRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

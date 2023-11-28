@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Me.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Me.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Me.Presence {
         public class PresenceRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

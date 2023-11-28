@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Applications {
         public ApplicationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of applications in this organization. This API is available in the following national cloud deployments.
+        /// Get the list of applications in this organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Applications {
             return await RequestAdapter.SendAsync<ApplicationCollectionResponse>(requestInfo, ApplicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new application object. This API is available in the following national cloud deployments.
+        /// Create a new application object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Applications {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Application>(requestInfo, Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of applications in this organization. This API is available in the following national cloud deployments.
+        /// Get the list of applications in this organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Applications {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new application object. This API is available in the following national cloud deployments.
+        /// Create a new application object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Applications {
             return new ApplicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of applications in this organization. This API is available in the following national cloud deployments.
+        /// Get the list of applications in this organization.
         /// </summary>
         public class ApplicationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

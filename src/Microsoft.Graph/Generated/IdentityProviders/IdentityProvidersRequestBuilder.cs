@@ -50,7 +50,7 @@ namespace Microsoft.Graph.IdentityProviders {
         public IdentityProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve all identityProviders in the directory. This API is available in the following national cloud deployments.
+        /// Retrieve all identityProviders in the directory.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret. This API is available in the following national cloud deployments.
+        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all identityProviders in the directory. This API is available in the following national cloud deployments.
+        /// Retrieve all identityProviders in the directory.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret. This API is available in the following national cloud deployments.
+        /// Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.IdentityProviders {
             return new IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all identityProviders in the directory. This API is available in the following national cloud deployments.
+        /// Retrieve all identityProviders in the directory.
         /// </summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties {
         public GetAvailableExtensionPropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/getAvailableExtensionProperties", rawUrl) {
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties: This API is available in the following national cloud deployments.
+        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties {
             return await RequestAdapter.SendAsync<GetAvailableExtensionPropertiesPostResponse>(requestInfo, GetAvailableExtensionPropertiesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties: This API is available in the following national cloud deployments.
+        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties {
             return await RequestAdapter.SendAsync<GetAvailableExtensionPropertiesResponse>(requestInfo, GetAvailableExtensionPropertiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties: This API is available in the following national cloud deployments.
+        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

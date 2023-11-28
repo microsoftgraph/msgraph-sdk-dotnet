@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Domains.Item.Promote {
         public PromoteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}/promote", rawUrl) {
         }
         /// <summary>
-        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
+        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Domains.Item.Promote {
             return await RequestAdapter.SendAsync<PromotePostResponse>(requestInfo, PromotePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
+        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Domains.Item.Promote {
             return await RequestAdapter.SendAsync<PromoteResponse>(requestInfo, PromoteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
+        /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

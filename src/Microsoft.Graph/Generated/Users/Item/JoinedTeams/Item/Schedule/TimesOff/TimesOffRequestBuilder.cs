@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff {
         public TimesOffRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timesOff{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOff instances in a schedule.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff {
             return await RequestAdapter.SendAsync<TimeOffCollectionResponse>(requestInfo, TimeOffCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
+        /// Create a new timeOff instance in a schedule.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff {
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOff instances in a schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
+        /// Create a new timeOff instance in a schedule.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff {
             return new TimesOffRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOff instances in a schedule.
         /// </summary>
         public class TimesOffRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

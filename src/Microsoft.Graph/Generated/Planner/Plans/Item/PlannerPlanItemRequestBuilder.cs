@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
         public PlannerPlanItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a plannerPlan object. This API is available in the following national cloud deployments.
+        /// Delete a plannerPlan object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerplan object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a plannerPlan object. This API is available in the following national cloud deployments.
+        /// Update the properties of a plannerPlan object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerPlan object. This API is available in the following national cloud deployments.
+        /// Delete a plannerPlan object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerplan object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a plannerPlan object. This API is available in the following national cloud deployments.
+        /// Update the properties of a plannerPlan object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Planner.Plans.Item {
         public class PlannerPlanItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerplan object.
         /// </summary>
         public class PlannerPlanItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

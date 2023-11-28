@@ -87,7 +87,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
         public DeletedItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/deletedItems{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
             return new DeletedItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
         /// </summary>
         public class DeletedItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

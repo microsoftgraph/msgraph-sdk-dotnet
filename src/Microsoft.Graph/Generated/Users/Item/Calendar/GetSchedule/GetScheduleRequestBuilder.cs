@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Users.Item.Calendar.GetSchedule {
         public GetScheduleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendar/getSchedule", rawUrl) {
         }
         /// <summary>
-        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is available in the following national cloud deployments.
+        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Users.Item.Calendar.GetSchedule {
             return await RequestAdapter.SendAsync<GetSchedulePostResponse>(requestInfo, GetSchedulePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is available in the following national cloud deployments.
+        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Users.Item.Calendar.GetSchedule {
             return await RequestAdapter.SendAsync<GetScheduleResponse>(requestInfo, GetScheduleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is available in the following national cloud deployments.
+        /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

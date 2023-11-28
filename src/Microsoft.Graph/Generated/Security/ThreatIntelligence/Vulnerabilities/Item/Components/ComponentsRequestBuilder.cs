@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
         public ComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/vulnerabilities/{vulnerability%2Did}/components{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability. This API is available in the following national cloud deployments.
+        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
             return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability. This API is available in the following national cloud deployments.
+        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities.Item.Compo
             return new ComponentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability. This API is available in the following national cloud deployments.
+        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
         /// </summary>
         public class ComponentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

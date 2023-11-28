@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
         public LinkedResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/linkedResources/{linkedResource%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a linkedResource object. This API is available in the following national cloud deployments.
+        /// Deletes a linkedResource object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a linkedResource object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
             return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a linkedResource object. This API is available in the following national cloud deployments.
+        /// Update the properties of a linkedResource object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
             return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a linkedResource object. This API is available in the following national cloud deployments.
+        /// Deletes a linkedResource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a linkedResource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a linkedResource object. This API is available in the following national cloud deployments.
+        /// Update the properties of a linkedResource object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.
         public class LinkedResourceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a linkedResource object.
         /// </summary>
         public class LinkedResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

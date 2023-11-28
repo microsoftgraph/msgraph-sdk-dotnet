@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a hostSslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-hostsslcertificate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a hostSslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates.Item {
         public class HostSslCertificateItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of a hostSslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         public class HostSslCertificateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

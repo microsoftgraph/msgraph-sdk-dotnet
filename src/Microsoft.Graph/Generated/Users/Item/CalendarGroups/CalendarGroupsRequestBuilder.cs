@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups {
         public CalendarGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups. This API is available in the following national cloud deployments.
+        /// Get the user&apos;s calendar groups.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups {
             return await RequestAdapter.SendAsync<CalendarGroupCollectionResponse>(requestInfo, CalendarGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new CalendarGroup. This API is available in the following national cloud deployments.
+        /// Use this API to create a new CalendarGroup.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups {
             return await RequestAdapter.SendAsync<CalendarGroup>(requestInfo, CalendarGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups. This API is available in the following national cloud deployments.
+        /// Get the user&apos;s calendar groups.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new CalendarGroup. This API is available in the following national cloud deployments.
+        /// Use this API to create a new CalendarGroup.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups {
             return new CalendarGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups. This API is available in the following national cloud deployments.
+        /// Get the user&apos;s calendar groups.
         /// </summary>
         public class CalendarGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

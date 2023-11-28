@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
         public SubdomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/subdomains{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of subdomain resources associated with a host. This API is available in the following national cloud deployments.
+        /// Get the list of subdomain resources associated with a host.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
             return await RequestAdapter.SendAsync<SubdomainCollectionResponse>(requestInfo, SubdomainCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of subdomain resources associated with a host. This API is available in the following national cloud deployments.
+        /// Get the list of subdomain resources associated with a host.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
             return new SubdomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of subdomain resources associated with a host. This API is available in the following national cloud deployments.
+        /// Get the list of subdomain resources associated with a host.
         /// </summary>
         public class SubdomainsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

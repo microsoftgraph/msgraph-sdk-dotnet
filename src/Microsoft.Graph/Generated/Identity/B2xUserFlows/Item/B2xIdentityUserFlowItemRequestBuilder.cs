@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
         public B2xIdentityUserFlowItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Delete a b2xIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, B2xIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Delete a b2xIdentityUserFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
         public class B2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         public class B2xIdentityUserFlowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
         public TeamsAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appCatalogs/teamsApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request. This API is available in the following national cloud deployments.
+        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
             return await RequestAdapter.SendAsync<TeamsAppCollectionResponse>(requestInfo, TeamsAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Publish an app to the Microsoft Teams app catalog.Specifically, this API publishes the app to your organization&apos;s catalog (the tenant app catalog);the created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center. This API is available in the following national cloud deployments.
+        /// Publish an app to the Microsoft Teams app catalog.Specifically, this API publishes the app to your organization&apos;s catalog (the tenant app catalog);the created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsApp>(requestInfo, Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request. This API is available in the following national cloud deployments.
+        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
             return requestInfo;
         }
         /// <summary>
-        /// Publish an app to the Microsoft Teams app catalog.Specifically, this API publishes the app to your organization&apos;s catalog (the tenant app catalog);the created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center. This API is available in the following national cloud deployments.
+        /// Publish an app to the Microsoft Teams app catalog.Specifically, this API publishes the app to your organization&apos;s catalog (the tenant app catalog);the created resource has a distributionMethod property value of organization. The requiresReview property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps {
             return new TeamsAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request. This API is available in the following national cloud deployments.
+        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         public class TeamsAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

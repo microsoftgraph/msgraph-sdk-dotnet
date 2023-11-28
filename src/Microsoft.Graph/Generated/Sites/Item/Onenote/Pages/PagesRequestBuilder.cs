@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages {
         public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of page objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages {
             return await RequestAdapter.SendAsync<OnenotePageCollectionResponse>(requestInfo, OnenotePageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.   This API is available in the following national cloud deployments.
+        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.  
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of page objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.   This API is available in the following national cloud deployments.
+        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.  
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages {
             return new PagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of page objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

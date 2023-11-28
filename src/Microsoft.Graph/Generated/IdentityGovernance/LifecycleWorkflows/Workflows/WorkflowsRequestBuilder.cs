@@ -42,7 +42,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
         public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows. This API is available in the following national cloud deployments.
+        /// Get a list of workflow resources that are associated with lifecycle workflows.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return await RequestAdapter.SendAsync<WorkflowCollectionResponse>(requestInfo, WorkflowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new workflow object. You can create up to 50 workflows in a tenant. This API is available in the following national cloud deployments.
+        /// Create a new workflow object. You can create up to 50 workflows in a tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return await RequestAdapter.SendAsync<Workflow>(requestInfo, Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows. This API is available in the following national cloud deployments.
+        /// Get a list of workflow resources that are associated with lifecycle workflows.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new workflow object. You can create up to 50 workflows in a tenant. This API is available in the following national cloud deployments.
+        /// Create a new workflow object. You can create up to 50 workflows in a tenant.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return new WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows. This API is available in the following national cloud deployments.
+        /// Get a list of workflow resources that are associated with lifecycle workflows.
         /// </summary>
         public class WorkflowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

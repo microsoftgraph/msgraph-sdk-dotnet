@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
+        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal. This API is available in the following national cloud deployments.
+        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
+        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal. This API is available in the following national cloud deployments.
+        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
+        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

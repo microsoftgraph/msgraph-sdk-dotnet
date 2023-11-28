@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ShiftPreferences>(requestInfo, Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties and relationships of a shiftPreferences object. This API is available in the following national cloud deployments.
+        /// Update the properties and relationships of a shiftPreferences object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties and relationships of a shiftPreferences object. This API is available in the following national cloud deployments.
+        /// Update the properties and relationships of a shiftPreferences object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
         public class ShiftPreferencesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
         /// </summary>
         public class ShiftPreferencesRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

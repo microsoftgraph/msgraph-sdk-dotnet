@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
         public MessageRuleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messageRules/{messageRule%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete the specified messageRule object. This API is available in the following national cloud deployments.
+        /// Delete the specified messageRule object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a messageRule object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
             return await RequestAdapter.SendAsync<MessageRule>(requestInfo, MessageRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change writable properties on a messageRule object and save the changes. This API is available in the following national cloud deployments.
+        /// Change writable properties on a messageRule object and save the changes.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
             return await RequestAdapter.SendAsync<MessageRule>(requestInfo, MessageRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified messageRule object. This API is available in the following national cloud deployments.
+        /// Delete the specified messageRule object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a messageRule object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
             return requestInfo;
         }
         /// <summary>
-        /// Change writable properties on a messageRule object and save the changes. This API is available in the following national cloud deployments.
+        /// Change writable properties on a messageRule object and save the changes.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.MessageR
         public class MessageRuleItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of a messageRule object.
         /// </summary>
         public class MessageRuleItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

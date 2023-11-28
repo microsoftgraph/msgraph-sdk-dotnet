@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
         public ExternalGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an externalGroup object. This API is available in the following national cloud deployments.
+        /// Delete an externalGroup object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an externalGroup object. This API is available in the following national cloud deployments.
+        /// Get an externalGroup object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an externalGroup object. This API is available in the following national cloud deployments.
+        /// Update the properties of an externalGroup object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an externalGroup object. This API is available in the following national cloud deployments.
+        /// Delete an externalGroup object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get an externalGroup object. This API is available in the following national cloud deployments.
+        /// Get an externalGroup object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an externalGroup object. This API is available in the following national cloud deployments.
+        /// Update the properties of an externalGroup object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Connections.Item.Groups.Item {
         public class ExternalGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get an externalGroup object. This API is available in the following national cloud deployments.
+        /// Get an externalGroup object.
         /// </summary>
         public class ExternalGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

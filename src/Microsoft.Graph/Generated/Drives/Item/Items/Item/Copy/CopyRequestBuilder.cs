@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy {
         public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/copy", rawUrl) {
         }
         /// <summary>
-        /// Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name. This API is available in the following [national cloud deployments.
+        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name. This API is available in the following [national cloud deployments.
+        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
         public AllowedValuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition%2Did}/allowedValues{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the allowedValue objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the allowedValue objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return await RequestAdapter.SendAsync<AllowedValueCollectionResponse>(requestInfo, AllowedValueCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new allowedValue object. This API is available in the following national cloud deployments.
+        /// Create a new allowedValue object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, AllowedValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the allowedValue objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the allowedValue objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return requestInfo;
         }
         /// <summary>
-        /// Create a new allowedValue object. This API is available in the following national cloud deployments.
+        /// Create a new allowedValue object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return new AllowedValuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the allowedValue objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the allowedValue objects and their properties.
         /// </summary>
         public class AllowedValuesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

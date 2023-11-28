@@ -83,7 +83,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return requestInfo;
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         public class UnifiedRoleAssignmentScheduleRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
         /// </summary>
         public class UnifiedRoleAssignmentScheduleRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Move {
         public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/move", rawUrl) {
         }
         /// <summary>
-        /// Move a mailfolder and its contents to another mailfolder. This API is available in the following national cloud deployments.
+        /// Move a mailfolder and its contents to another mailfolder.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Move {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Move a mailfolder and its contents to another mailfolder. This API is available in the following national cloud deployments.
+        /// Move a mailfolder and its contents to another mailfolder.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

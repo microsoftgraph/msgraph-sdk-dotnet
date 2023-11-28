@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
         public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}/members/{conversationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a conversationMember from a chat. This API is available in the following national cloud deployments.
+        /// Remove a conversationMember from a chat.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat. This API is available in the following national cloud deployments.
+        /// Retrieve a conversationMember from a chat.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a conversationMember from a chat. This API is available in the following national cloud deployments.
+        /// Remove a conversationMember from a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat. This API is available in the following national cloud deployments.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Chats.Item.Members.Item {
         public class ConversationMemberItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat. This API is available in the following national cloud deployments.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

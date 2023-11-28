@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Provi
         public ProvisionOnDemandRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/provisionOnDemand", rawUrl) {
         }
         /// <summary>
-        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.  This API is available in the following national cloud deployments.
+        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Provi
             return await RequestAdapter.SendAsync<StringKeyStringValuePair>(requestInfo, StringKeyStringValuePair.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.  This API is available in the following national cloud deployments.
+        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

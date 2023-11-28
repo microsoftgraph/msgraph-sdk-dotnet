@@ -42,7 +42,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
         public DelegatedPermissionClassificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/delegatedPermissionClassifications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API. This API is available in the following national cloud deployments.
+        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return await RequestAdapter.SendAsync<DelegatedPermissionClassificationCollectionResponse>(requestInfo, DelegatedPermissionClassificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API. This API is available in the following national cloud deployments.
+        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API. This API is available in the following national cloud deployments.
+        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return requestInfo;
         }
         /// <summary>
-        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API. This API is available in the following national cloud deployments.
+        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return new DelegatedPermissionClassificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API. This API is available in the following national cloud deployments.
+        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
         /// </summary>
         public class DelegatedPermissionClassificationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

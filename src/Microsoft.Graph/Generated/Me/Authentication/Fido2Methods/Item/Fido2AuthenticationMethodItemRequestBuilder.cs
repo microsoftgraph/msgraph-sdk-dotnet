@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item {
         public Fido2AuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods/{fido2AuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item {
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, Fido2AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item {
         public class Fido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
         /// </summary>
         public class Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

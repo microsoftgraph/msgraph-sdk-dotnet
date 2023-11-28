@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
         public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/sections/{onenoteSection%2Did}/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects from the specified section.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return await RequestAdapter.SendAsync<OnenotePageCollectionResponse>(requestInfo, OnenotePageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new page in the specified section. This API is available in the following national cloud deployments.
+        /// Create a new page in the specified section.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects from the specified section.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new page in the specified section. This API is available in the following national cloud deployments.
+        /// Create a new page in the specified section.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return new PagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+        /// Retrieve a list of page objects from the specified section.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
