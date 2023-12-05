@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public SetPositionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/setPosition", rawUrl) {
         }
         /// <summary>
-        /// Positions the chart relative to cells on the worksheet. This API is available in the following national cloud deployments.
+        /// Positions the chart relative to cells on the worksheet.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-setposition?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Positions the chart relative to cells on the worksheet. This API is available in the following national cloud deployments.
+        /// Positions the chart relative to cells on the worksheet.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

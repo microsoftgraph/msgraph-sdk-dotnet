@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of an sslCertificate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
         public class SslCertificateItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         public class SslCertificateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

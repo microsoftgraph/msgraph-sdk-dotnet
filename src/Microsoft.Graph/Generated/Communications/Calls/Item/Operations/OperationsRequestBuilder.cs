@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the status of an operation that adds the large gallery view to a call. This API is available in the following national cloud deployments.
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
             return await RequestAdapter.SendAsync<CommsOperation>(requestInfo, CommsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the status of an operation that adds the large gallery view to a call. This API is available in the following national cloud deployments.
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the status of an operation that adds the large gallery view to a call. This API is available in the following national cloud deployments.
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

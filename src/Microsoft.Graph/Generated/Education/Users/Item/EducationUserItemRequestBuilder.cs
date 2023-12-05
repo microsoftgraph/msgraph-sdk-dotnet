@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Education.Users.Item {
         public EducationUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a user. This API is available in the following national cloud deployments.
+        /// Delete a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationUser object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationUser object. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationUser object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user. This API is available in the following national cloud deployments.
+        /// Delete a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationUser object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationUser object. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationUser object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Education.Users.Item {
         public class EducationUserItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationUser object.
         /// </summary>
         public class EducationUserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

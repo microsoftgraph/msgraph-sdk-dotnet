@@ -28,7 +28,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
         public RemoveGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/removeGroup", rawUrl) {
         }
         /// <summary>
-        /// Removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
+        /// Removes a group from a lifecycle policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
             return await RequestAdapter.SendAsync<RemoveGroupPostResponse>(requestInfo, RemoveGroupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
+        /// Removes a group from a lifecycle policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup {
             return await RequestAdapter.SendAsync<RemoveGroupResponse>(requestInfo, RemoveGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
+        /// Removes a group from a lifecycle policy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

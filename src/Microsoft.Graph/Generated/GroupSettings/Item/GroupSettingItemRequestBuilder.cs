@@ -29,7 +29,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
         public GroupSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a tenant-level or group-specific groupSetting object. This API is available in the following national cloud deployments.
+        /// Delete a tenant-level or group-specific groupSetting object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
             return await RequestAdapter.SendAsync<GroupSetting>(requestInfo, GroupSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is available in the following national cloud deployments.
+        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
             return await RequestAdapter.SendAsync<GroupSetting>(requestInfo, GroupSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a tenant-level or group-specific groupSetting object. This API is available in the following national cloud deployments.
+        /// Delete a tenant-level or group-specific groupSetting object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is available in the following national cloud deployments.
+        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.GroupSettings.Item {
         public class GroupSettingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
         /// </summary>
         public class GroupSettingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

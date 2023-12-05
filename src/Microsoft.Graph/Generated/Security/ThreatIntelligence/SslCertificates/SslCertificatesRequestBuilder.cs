@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates {
         public SslCertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/sslCertificates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of sslCertificate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of sslCertificate objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-threatintelligence-list-sslcertificates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of sslCertificate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of sslCertificate objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates {
             return new SslCertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of sslCertificate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of sslCertificate objects and their properties.
         /// </summary>
         public class SslCertificatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

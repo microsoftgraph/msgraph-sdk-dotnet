@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Education.Users.Item.User {
         public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/user{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+        /// Retrieve the simple directory user that corresponds to this educationUser.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Education.Users.Item.User {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+        /// Retrieve the simple directory user that corresponds to this educationUser.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Education.Users.Item.User {
             return new UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+        /// Retrieve the simple directory user that corresponds to this educationUser.
         /// </summary>
         public class UserRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

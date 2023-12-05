@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads {
         public ThreadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group. This API is available in the following national cloud deployments.
+        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads {
             return await RequestAdapter.SendAsync<ConversationThreadCollectionResponse>(requestInfo, ConversationThreadCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread. This API is available in the following national cloud deployments.
+        /// Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads {
             return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group. This API is available in the following national cloud deployments.
+        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread. This API is available in the following national cloud deployments.
+        /// Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads {
             return new ThreadsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group. This API is available in the following national cloud deployments.
+        /// Get all the threads in a group conversation. Note: You can also get all the threads of a group.
         /// </summary>
         public class ThreadsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

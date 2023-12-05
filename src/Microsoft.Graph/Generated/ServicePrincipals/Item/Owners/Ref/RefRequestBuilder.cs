@@ -49,7 +49,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Owners.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals. This API is available in the following national cloud deployments.
+        /// Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals. This API is available in the following national cloud deployments.
+        /// Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

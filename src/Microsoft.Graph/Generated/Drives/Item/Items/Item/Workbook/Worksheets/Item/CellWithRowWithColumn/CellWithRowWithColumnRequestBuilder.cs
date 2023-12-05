@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWi
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="row">Usage: row={row}</param>
         public CellWithRowWithColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? column = default, int? row = default) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/cell(row={row},column={column})", pathParameters) {
-            if (column is not null) PathParameters.Add("column", column);
-            if (row is not null) PathParameters.Add("row", row);
+            if (column != null) PathParameters.Add("column", column);
+            if (row != null) PathParameters.Add("row", row);
         }
         /// <summary>
         /// Instantiates a new CellWithRowWithColumnRequestBuilder and sets the default values.

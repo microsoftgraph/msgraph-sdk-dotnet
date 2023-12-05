@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Tasks {
         public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects assigned to a User. This API is available in the following national cloud deployments.
+        /// Retrieve a list of plannertask objects assigned to a User.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Tasks {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects assigned to a User. This API is available in the following national cloud deployments.
+        /// Retrieve a list of plannertask objects assigned to a User.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects assigned to a User. This API is available in the following national cloud deployments.
+        /// Retrieve a list of plannertask objects assigned to a User.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

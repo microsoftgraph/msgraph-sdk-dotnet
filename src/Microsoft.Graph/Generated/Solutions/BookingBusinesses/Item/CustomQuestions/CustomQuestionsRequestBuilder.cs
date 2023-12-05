@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions {
         public CustomQuestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions {
             return await RequestAdapter.SendAsync<BookingCustomQuestionCollectionResponse>(requestInfo, BookingCustomQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new bookingCustomQuestion object. This API is available in the following national cloud deployments.
+        /// Create a new bookingCustomQuestion object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions {
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new bookingCustomQuestion object. This API is available in the following national cloud deployments.
+        /// Create a new bookingCustomQuestion object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions {
             return new CustomQuestionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

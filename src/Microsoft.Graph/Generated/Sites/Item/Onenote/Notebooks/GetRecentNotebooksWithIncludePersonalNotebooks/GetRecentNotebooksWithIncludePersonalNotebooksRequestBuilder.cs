@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithInc
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? includePersonalNotebooks = default) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (includePersonalNotebooks is not null) PathParameters.Add("includePersonalNotebooks", includePersonalNotebooks);
+            if (includePersonalNotebooks != null) PathParameters.Add("includePersonalNotebooks", includePersonalNotebooks);
         }
         /// <summary>
         /// Instantiates a new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder and sets the default values.

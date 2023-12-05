@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default, string userId = "") : base(requestAdapter, "{+baseurl}/reports/getUserArchivedPrintJobs(userId='{userId}',startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
         /// <summary>

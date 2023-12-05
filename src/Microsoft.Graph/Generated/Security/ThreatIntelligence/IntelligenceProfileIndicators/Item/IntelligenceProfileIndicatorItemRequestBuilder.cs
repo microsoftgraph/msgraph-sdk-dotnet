@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a intelligenceProfileIndicator object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-intelligenceprofileindicator-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a intelligenceProfileIndicator object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelligenceProfileIndicat
         public class IntelligenceProfileIndicatorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a intelligenceProfileIndicator object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a intelligenceProfileIndicator object.
         /// </summary>
         public class IntelligenceProfileIndicatorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

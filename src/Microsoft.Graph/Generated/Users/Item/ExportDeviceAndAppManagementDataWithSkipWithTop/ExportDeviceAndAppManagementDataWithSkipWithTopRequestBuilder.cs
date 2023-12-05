@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWit
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? skip = default, int? top = default) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/exportDeviceAndAppManagementData(skip={skip},top={top})", pathParameters) {
-            if (skip is not null) PathParameters.Add("skip", skip);
-            if (top is not null) PathParameters.Add("top", top);
+            if (skip != null) PathParameters.Add("skip", skip);
+            if (top != null) PathParameters.Add("top", top);
         }
         /// <summary>
         /// Instantiates a new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder and sets the default values.

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item {
         public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a directory object, for example, a group, user, application, or service principal. This API is available in the following national cloud deployments.
+        /// Delete a directory object, for example, a group, user, application, or service principal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a directoryObject object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a directoryObject object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a directory object, for example, a group, user, application, or service principal. This API is available in the following national cloud deployments.
+        /// Delete a directory object, for example, a group, user, application, or service principal.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a directoryObject object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a directoryObject object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item {
         public class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a directoryObject object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a directoryObject object.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

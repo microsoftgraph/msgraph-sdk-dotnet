@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Users.Item.Contacts {
         public ContactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder: This API is available in the following national cloud deployments.
+        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Users.Item.Contacts {
             return await RequestAdapter.SendAsync<ContactCollectionResponse>(requestInfo, ContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Users.Item.Contacts {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder: This API is available in the following national cloud deployments.
+        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.Contacts {
             return requestInfo;
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Users.Item.Contacts {
             return new ContactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder: This API is available in the following national cloud deployments.
+        /// Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
         /// </summary>
         public class ContactsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

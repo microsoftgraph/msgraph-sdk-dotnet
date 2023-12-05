@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes {
         public NotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/notes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
+        /// Get the list of authored notes assoicated with a subject rights request. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNoteCollectionResponse>(requestInfo, AuthoredNoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authoredNote object. This API is available in the following national cloud deployments.
+        /// Create a new authoredNote object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, AuthoredNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
+        /// Get the list of authored notes assoicated with a subject rights request. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authoredNote object. This API is available in the following national cloud deployments.
+        /// Create a new authoredNote object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes {
             return new NotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
+        /// Get the list of authored notes assoicated with a subject rights request. 
         /// </summary>
         public class NotesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Retrieve a collection of userConsentRequest objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return await RequestAdapter.SendAsync<UserConsentRequest>(requestInfo, UserConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Retrieve a collection of userConsentRequest objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return new UserConsentRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
+        /// Retrieve a collection of userConsentRequest objects and their properties.
         /// </summary>
         public class UserConsentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

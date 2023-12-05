@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
         public ChildHostPairsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/childHostPairs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.  This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
             return await RequestAdapter.SendAsync<HostPairCollectionResponse>(requestInfo, HostPairCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.  This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
             return new ChildHostPairsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*.  This API is available in the following national cloud deployments.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
         /// </summary>
         public class ChildHostPairsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

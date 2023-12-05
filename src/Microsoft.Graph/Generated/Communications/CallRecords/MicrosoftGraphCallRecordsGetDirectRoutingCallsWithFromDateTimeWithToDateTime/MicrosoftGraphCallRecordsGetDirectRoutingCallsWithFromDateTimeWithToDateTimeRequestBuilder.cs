@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
         public MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? fromDateTime = default, DateTimeOffset? toDateTime = default) : base(requestAdapter, "{+baseurl}/communications/callRecords/microsoft.graph.callRecords.getDirectRoutingCalls(fromDateTime={fromDateTime},toDateTime={toDateTime}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (fromDateTime is not null) PathParameters.Add("fromDateTime", fromDateTime);
-            if (toDateTime is not null) PathParameters.Add("toDateTime", toDateTime);
+            if (fromDateTime != null) PathParameters.Add("fromDateTime", fromDateTime);
+            if (toDateTime != null) PathParameters.Add("toDateTime", toDateTime);
         }
         /// <summary>
         /// Instantiates a new MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder and sets the default values.

@@ -25,9 +25,9 @@ namespace Microsoft.Graph.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkipW
         /// <param name="top">Usage: top={top}</param>
         public ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string filter = "", int? skip = default, string skipToken = "", int? top = default) : base(requestAdapter, "{+baseurl}/reports/managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')", pathParameters) {
             if (!string.IsNullOrWhiteSpace(filter)) PathParameters.Add("filter", filter);
-            if (skip is not null) PathParameters.Add("skip", skip);
+            if (skip != null) PathParameters.Add("skip", skip);
             if (!string.IsNullOrWhiteSpace(skipToken)) PathParameters.Add("skipToken", skipToken);
-            if (top is not null) PathParameters.Add("top", top);
+            if (top != null) PathParameters.Add("top", top);
         }
         /// <summary>
         /// Instantiates a new ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder and sets the default values.

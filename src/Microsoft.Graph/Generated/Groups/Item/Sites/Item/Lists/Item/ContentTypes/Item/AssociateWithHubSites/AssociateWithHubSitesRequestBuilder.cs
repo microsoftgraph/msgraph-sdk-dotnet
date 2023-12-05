@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.As
         public AssociateWithHubSitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/associateWithHubSites", rawUrl) {
         }
         /// <summary>
-        /// Associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is available in the following [national cloud deployments.
+        /// Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.As
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is available in the following [national cloud deployments.
+        /// Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

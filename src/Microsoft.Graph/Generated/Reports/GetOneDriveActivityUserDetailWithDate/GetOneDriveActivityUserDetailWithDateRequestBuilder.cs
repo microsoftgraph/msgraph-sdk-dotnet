@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Reports.GetOneDriveActivityUserDetailWithDate {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetOneDriveActivityUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getOneDriveActivityUserDetail(date={date})", pathParameters) {
-            if (date is not null) PathParameters.Add("date", date);
+            if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
         /// Instantiates a new GetOneDriveActivityUserDetailWithDateRequestBuilder and sets the default values.

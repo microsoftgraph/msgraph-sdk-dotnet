@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a hostCookie object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a hostCookie object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies.Item {
         public class HostCookieItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a hostCookie object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a hostCookie object.
         /// </summary>
         public class HostCookieItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

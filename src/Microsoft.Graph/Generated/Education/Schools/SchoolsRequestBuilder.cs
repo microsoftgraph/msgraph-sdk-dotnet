@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Education.Schools {
         public SchoolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the educationSchool objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the educationSchool objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Education.Schools {
             return await RequestAdapter.SendAsync<EducationSchoolCollectionResponse>(requestInfo, EducationSchoolCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new educationSchool object. This API is available in the following national cloud deployments.
+        /// Create a new educationSchool object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Education.Schools {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the educationSchool objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the educationSchool objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Education.Schools {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new educationSchool object. This API is available in the following national cloud deployments.
+        /// Create a new educationSchool object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Education.Schools {
             return new SchoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the educationSchool objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the educationSchool objects and their properties.
         /// </summary>
         public class SchoolsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

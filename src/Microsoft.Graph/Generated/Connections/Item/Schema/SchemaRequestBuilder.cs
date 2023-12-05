@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Connections.Item.Schema {
         public SchemaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/schema{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a schema object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a schema object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new schema object. This API is available in the following national cloud deployments.
+        /// Create a new schema object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a schema object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a schema object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Connections.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new schema object. This API is available in the following national cloud deployments.
+        /// Create a new schema object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Connections.Item.Schema {
             return new SchemaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a schema object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a schema object.
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

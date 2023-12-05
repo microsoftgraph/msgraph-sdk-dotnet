@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances {
         public AgreementAcceptancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/agreementAcceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the signed-in user&apos;s agreementAcceptance objects. This API is available in the following national cloud deployments.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances {
             return await RequestAdapter.SendAsync<AgreementAcceptanceCollectionResponse>(requestInfo, AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the signed-in user&apos;s agreementAcceptance objects. This API is available in the following national cloud deployments.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Users.Item.AgreementAcceptances {
             return new AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the signed-in user&apos;s agreementAcceptance objects. This API is available in the following national cloud deployments.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

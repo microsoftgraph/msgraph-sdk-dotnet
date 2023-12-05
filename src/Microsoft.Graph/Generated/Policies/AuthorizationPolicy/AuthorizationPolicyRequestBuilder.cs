@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an authorizationPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthorizationPolicy>(requestInfo, Microsoft.Graph.Models.AuthorizationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of an authorizationPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authorizationpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an authorizationPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of an authorizationPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Policies.AuthorizationPolicy {
         public class AuthorizationPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an authorizationPolicy object.
         /// </summary>
         public class AuthorizationPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

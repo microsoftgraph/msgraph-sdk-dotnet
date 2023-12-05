@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
         public NamedLocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/namedLocations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of namedLocation objects. This API is available in the following national cloud deployments.
+        /// Get a list of namedLocation objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return await RequestAdapter.SendAsync<NamedLocationCollectionResponse>(requestInfo, NamedLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects. This API is available in the following national cloud deployments.
+        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of namedLocation objects. This API is available in the following national cloud deployments.
+        /// Get a list of namedLocation objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects. This API is available in the following national cloud deployments.
+        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return new NamedLocationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of namedLocation objects. This API is available in the following national cloud deployments.
+        /// Get a list of namedLocation objects.
         /// </summary>
         public class NamedLocationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

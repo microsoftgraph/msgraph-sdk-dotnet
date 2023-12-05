@@ -49,7 +49,7 @@ namespace Microsoft.Graph.External.Connections.Item {
         public ExternalConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an externalConnection object. This API is available in the following national cloud deployments.
+        /// Deletes an externalConnection object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.External.Connections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an externalConnection object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an externalConnection object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.External.Connections.Item {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an externalConnection object. This API is available in the following national cloud deployments.
+        /// Update the properties of an externalConnection object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.External.Connections.Item {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an externalConnection object. This API is available in the following national cloud deployments.
+        /// Deletes an externalConnection object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.External.Connections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an externalConnection object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an externalConnection object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.External.Connections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an externalConnection object. This API is available in the following national cloud deployments.
+        /// Update the properties of an externalConnection object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.External.Connections.Item {
         public class ExternalConnectionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an externalConnection object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an externalConnection object.
         /// </summary>
         public class ExternalConnectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
         public AppointmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/appointments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointmentCollectionResponse>(requestInfo, BookingAppointmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new bookingAppointment for the specified bookingBusiness. This API is available in the following national cloud deployments.
+        /// Create a new bookingAppointment for the specified bookingBusiness.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new bookingAppointment for the specified bookingBusiness. This API is available in the following national cloud deployments.
+        /// Create a new bookingAppointment for the specified bookingBusiness.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return new AppointmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness. This API is available in the following national cloud deployments.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
         /// </summary>
         public class AppointmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

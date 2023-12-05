@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item {
         public PlannerTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a plannerTask object. This API is available in the following national cloud deployments.
+        /// Delete a plannerTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerTask object. This API is available in the following national cloud deployments.
+        /// Delete a plannerTask object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerTask object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item {
         public class PlannerTaskItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerTask object.
         /// </summary>
         public class PlannerTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

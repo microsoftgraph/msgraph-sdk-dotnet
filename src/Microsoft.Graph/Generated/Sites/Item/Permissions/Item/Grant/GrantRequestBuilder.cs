@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
         public GrantRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/permissions/{permission%2Did}/grant", rawUrl) {
         }
         /// <summary>
-        /// Grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
+        /// Grant users access to a link represented by a [permission][].
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
             return await RequestAdapter.SendAsync<GrantPostResponse>(requestInfo, GrantPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
+        /// Grant users access to a link represented by a [permission][].
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
             return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
+        /// Grant users access to a link represented by a [permission][].
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

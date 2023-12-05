@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
         public SearchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object. This API is available in the following national cloud deployments.
+        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return await RequestAdapter.SendAsync<EdiscoverySearchCollectionResponse>(requestInfo, EdiscoverySearchCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoverySearch object. This API is available in the following national cloud deployments.
+        /// Create a new ediscoverySearch object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return await RequestAdapter.SendAsync<EdiscoverySearch>(requestInfo, EdiscoverySearch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object. This API is available in the following national cloud deployments.
+        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoverySearch object. This API is available in the following national cloud deployments.
+        /// Create a new ediscoverySearch object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return new SearchesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object. This API is available in the following national cloud deployments.
+        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
         /// </summary>
         public class SearchesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

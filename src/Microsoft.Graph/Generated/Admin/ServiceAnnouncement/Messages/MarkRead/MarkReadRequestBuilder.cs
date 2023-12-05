@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead {
         public MarkReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/markRead", rawUrl) {
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as read for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead {
             return await RequestAdapter.SendAsync<MarkReadPostResponse>(requestInfo, MarkReadPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as read for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead {
             return await RequestAdapter.SendAsync<MarkReadResponse>(requestInfo, MarkReadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as read for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as read for the signed in user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
         public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/intelProfiles/{intelligenceProfile%2Did}/indicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
             return await RequestAdapter.SendAsync<IntelligenceProfileIndicatorCollectionResponse>(requestInfo, IntelligenceProfileIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
             return new IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

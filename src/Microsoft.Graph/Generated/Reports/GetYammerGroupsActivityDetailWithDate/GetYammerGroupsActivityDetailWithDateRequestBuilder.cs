@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Reports.GetYammerGroupsActivityDetailWithDate {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetYammerGroupsActivityDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getYammerGroupsActivityDetail(date={date})", pathParameters) {
-            if (date is not null) PathParameters.Add("date", date);
+            if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
         /// Instantiates a new GetYammerGroupsActivityDetailWithDateRequestBuilder and sets the default values.

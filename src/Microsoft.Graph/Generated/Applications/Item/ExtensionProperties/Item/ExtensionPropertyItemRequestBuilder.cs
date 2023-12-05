@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
         public ExtensionPropertyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/extensionProperties/{extensionProperty%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD). This API is available in the following national cloud deployments.
+        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object. This API is available in the following national cloud deployments.
+        /// Read a directory extension definition represented by an extensionProperty object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             return await RequestAdapter.SendAsync<ExtensionProperty>(requestInfo, ExtensionProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD). This API is available in the following national cloud deployments.
+        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object. This API is available in the following national cloud deployments.
+        /// Read a directory extension definition represented by an extensionProperty object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
         public class ExtensionPropertyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object. This API is available in the following national cloud deployments.
+        /// Read a directory extension definition represented by an extensionProperty object.
         /// </summary>
         public class ExtensionPropertyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

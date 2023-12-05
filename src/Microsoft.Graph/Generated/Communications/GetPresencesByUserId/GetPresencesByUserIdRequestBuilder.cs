@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
         public GetPresencesByUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", rawUrl) {
         }
         /// <summary>
-        /// Get the presence information for multiple users. This API is available in the following national cloud deployments.
+        /// Get the presence information for multiple users.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
             return await RequestAdapter.SendAsync<GetPresencesByUserIdPostResponse>(requestInfo, GetPresencesByUserIdPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the presence information for multiple users. This API is available in the following national cloud deployments.
+        /// Get the presence information for multiple users.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
             return await RequestAdapter.SendAsync<GetPresencesByUserIdResponse>(requestInfo, GetPresencesByUserIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the presence information for multiple users. This API is available in the following national cloud deployments.
+        /// Get the presence information for multiple users.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

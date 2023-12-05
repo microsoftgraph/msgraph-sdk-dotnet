@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
         public WorkbookTableRowItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/rows/{workbookTableRow%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes the row from the table. This API is available in the following national cloud deployments.
+        /// Deletes the row from the table.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of tablerow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of tablerow object. This API is available in the following national cloud deployments.
+        /// Update the properties of tablerow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the row from the table. This API is available in the following national cloud deployments.
+        /// Deletes the row from the table.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of tablerow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of tablerow object. This API is available in the following national cloud deployments.
+        /// Update the properties of tablerow object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
         public class WorkbookTableRowItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of tablerow object.
         /// </summary>
         public class WorkbookTableRowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

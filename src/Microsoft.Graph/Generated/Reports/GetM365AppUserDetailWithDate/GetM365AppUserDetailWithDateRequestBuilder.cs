@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Reports.GetM365AppUserDetailWithDate {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetM365AppUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getM365AppUserDetail(date={date})", pathParameters) {
-            if (date is not null) PathParameters.Add("date", date);
+            if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
         /// Instantiates a new GetM365AppUserDetailWithDateRequestBuilder and sets the default values.

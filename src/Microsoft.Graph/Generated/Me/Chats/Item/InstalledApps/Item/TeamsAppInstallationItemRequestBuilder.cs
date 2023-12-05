@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item {
         public TeamsAppInstallationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Uninstall an app installed within a chat. This API is available in the following national cloud deployments.
+        /// Uninstall an app installed within a chat.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an app installed in a chat. This API is available in the following national cloud deployments.
+        /// Get an app installed in a chat.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uninstall an app installed within a chat. This API is available in the following national cloud deployments.
+        /// Uninstall an app installed within a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get an app installed in a chat. This API is available in the following national cloud deployments.
+        /// Get an app installed in a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Me.Chats.Item.InstalledApps.Item {
         public class TeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get an app installed in a chat. This API is available in the following national cloud deployments.
+        /// Get an app installed in a chat.
         /// </summary>
         public class TeamsAppInstallationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

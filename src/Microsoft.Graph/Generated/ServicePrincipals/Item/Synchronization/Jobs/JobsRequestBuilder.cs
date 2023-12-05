@@ -47,7 +47,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
         public JobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal). This API is available in the following national cloud deployments.
+        /// List existing jobs for a given application instance (service principal).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return await RequestAdapter.SendAsync<SynchronizationJobCollectionResponse>(requestInfo, SynchronizationJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization. This API is available in the following national cloud deployments.
+        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal). This API is available in the following national cloud deployments.
+        /// List existing jobs for a given application instance (service principal).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return requestInfo;
         }
         /// <summary>
-        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization. This API is available in the following national cloud deployments.
+        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return new JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal). This API is available in the following national cloud deployments.
+        /// List existing jobs for a given application instance (service principal).
         /// </summary>
         public class JobsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

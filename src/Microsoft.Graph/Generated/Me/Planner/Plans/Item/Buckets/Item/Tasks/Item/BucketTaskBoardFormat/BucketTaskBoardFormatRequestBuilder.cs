@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.BucketTa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.BucketTa
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.BucketTa
         public class BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
         /// </summary>
         public class BucketTaskBoardFormatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

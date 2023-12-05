@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
         public MarkUnreadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/markUnread", rawUrl) {
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
             return await RequestAdapter.SendAsync<MarkUnreadPostResponse>(requestInfo, MarkUnreadPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread {
             return await RequestAdapter.SendAsync<MarkUnreadResponse>(requestInfo, MarkUnreadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a list of serviceUpdateMessages as unread for the signed in user. This API is available in the following national cloud deployments.
+        /// Mark a list of serviceUpdateMessages as unread for the signed in user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

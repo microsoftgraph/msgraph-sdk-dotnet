@@ -22,9 +22,9 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, string groupId = "", DateTimeOffset? startDateTime = default) : base(requestAdapter, "{+baseurl}/reports/getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
             if (!string.IsNullOrWhiteSpace(groupId)) PathParameters.Add("groupId", groupId);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
         }
         /// <summary>
         /// Instantiates a new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.

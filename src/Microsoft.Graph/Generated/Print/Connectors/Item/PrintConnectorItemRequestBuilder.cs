@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
         public PrintConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/connectors/{printConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete (unregister) a printConnector. This API is available in the following national cloud deployments.
+        /// Delete (unregister) a printConnector.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a printConnector object. This API is available in the following national cloud deployments.
+        /// Update the properties of a printConnector object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete (unregister) a printConnector. This API is available in the following national cloud deployments.
+        /// Delete (unregister) a printConnector.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a printConnector object. This API is available in the following national cloud deployments.
+        /// Update the properties of a printConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
         public class PrintConnectorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         public class PrintConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken {
         public AcquireAccessTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/acquireAccessToken", rawUrl) {
         }
         /// <summary>
-        /// Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application. This API is available in the following national cloud deployments.
+        /// Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.AcquireAccessToken {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application. This API is available in the following national cloud deployments.
+        /// Acquire an OAuth access token to authorize the Microsoft Entra provisioning service to provision users into an application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

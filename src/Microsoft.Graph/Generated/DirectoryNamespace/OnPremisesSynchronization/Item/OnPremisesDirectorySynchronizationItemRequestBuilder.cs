@@ -48,7 +48,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
+        /// Update the properties of an onPremisesDirectorySynchronization object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
+        /// Update the properties of an onPremisesDirectorySynchronization object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
         public class OnPremisesDirectorySynchronizationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
         public class OnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

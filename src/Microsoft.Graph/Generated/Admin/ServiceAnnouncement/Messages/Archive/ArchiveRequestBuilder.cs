@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive {
         public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/archive", rawUrl) {
         }
         /// <summary>
-        /// Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+        /// Archive a list of serviceUpdateMessages for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive {
             return await RequestAdapter.SendAsync<ArchivePostResponse>(requestInfo, ArchivePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+        /// Archive a list of serviceUpdateMessages for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive {
             return await RequestAdapter.SendAsync<ArchiveResponse>(requestInfo, ArchiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+        /// Archive a list of serviceUpdateMessages for the signed in user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

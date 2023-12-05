@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds {
         public TranslateExchangeIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/translateExchangeIds", rawUrl) {
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
+        /// Translate identifiers of Outlook-related resources between formats.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds {
             return await RequestAdapter.SendAsync<TranslateExchangeIdsPostResponse>(requestInfo, TranslateExchangeIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
+        /// Translate identifiers of Outlook-related resources between formats.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds {
             return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
+        /// Translate identifiers of Outlook-related resources between formats.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
         public TeamsTabItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/tabs/{teamsTab%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove (unpin) a tab from the specified chat.  This API is available in the following national cloud deployments.
+        /// Remove (unpin) a tab from the specified chat. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat.  This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the specified tab in a chat. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab. This API is available in the following national cloud deployments.
+        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove (unpin) a tab from the specified chat.  This API is available in the following national cloud deployments.
+        /// Remove (unpin) a tab from the specified chat. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat.  This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the specified tab in a chat. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab. This API is available in the following national cloud deployments.
+        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Tabs.Item {
         public class TeamsTabItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat.  This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the specified tab in a chat. 
         /// </summary>
         public class TeamsTabItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

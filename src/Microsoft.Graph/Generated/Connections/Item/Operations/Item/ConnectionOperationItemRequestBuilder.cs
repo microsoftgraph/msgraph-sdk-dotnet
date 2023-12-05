@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Connections.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a connectionOperation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Connections.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a connectionOperation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Connections.Item.Operations.Item {
         public class ConnectionOperationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a connectionOperation object.
         /// </summary>
         public class ConnectionOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

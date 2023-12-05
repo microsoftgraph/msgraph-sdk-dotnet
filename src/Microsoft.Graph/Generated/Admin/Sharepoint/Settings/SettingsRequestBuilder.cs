@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the tenant-level settings for SharePoint and OneDrive. This API is available in the following national cloud deployments.
+        /// Get the tenant-level settings for SharePoint and OneDrive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return await RequestAdapter.SendAsync<SharepointSettings>(requestInfo, SharepointSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update one or more tenant-level settings for SharePoint and OneDrive. This API is available in the following national cloud deployments.
+        /// Update one or more tenant-level settings for SharePoint and OneDrive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get the tenant-level settings for SharePoint and OneDrive. This API is available in the following national cloud deployments.
+        /// Get the tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update one or more tenant-level settings for SharePoint and OneDrive. This API is available in the following national cloud deployments.
+        /// Update one or more tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
         public class SettingsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the tenant-level settings for SharePoint and OneDrive. This API is available in the following national cloud deployments.
+        /// Get the tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a userRegistrationDetails object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a userRegistrationDetails object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a userRegistrationDetails object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a userRegistrationDetails object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails.
         public class UserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a userRegistrationDetails object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a userRegistrationDetails object.
         /// </summary>
         public class UserRegistrationDetailsItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

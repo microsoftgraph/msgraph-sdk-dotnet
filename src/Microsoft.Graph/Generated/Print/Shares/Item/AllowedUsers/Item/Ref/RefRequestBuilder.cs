@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/{user%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+        /// Revoke the specified user&apos;s access to submit print jobs to the associated printerShare.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

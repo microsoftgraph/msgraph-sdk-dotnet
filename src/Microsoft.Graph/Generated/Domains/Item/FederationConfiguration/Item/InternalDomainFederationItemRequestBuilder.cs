@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
         public InternalDomainFederationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}/federationConfiguration/{internalDomainFederation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Delete an internalDomainFederation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an internalDomainFederation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Update the properties of an internalDomainFederation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Delete an internalDomainFederation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an internalDomainFederation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Update the properties of an internalDomainFederation object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration.Item {
         public class InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an internalDomainFederation object.
         /// </summary>
         public class InternalDomainFederationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

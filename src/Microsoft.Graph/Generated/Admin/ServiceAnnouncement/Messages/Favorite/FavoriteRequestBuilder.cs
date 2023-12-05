@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
         public FavoriteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/favorite", rawUrl) {
         }
         /// <summary>
-        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
             return await RequestAdapter.SendAsync<FavoritePostResponse>(requestInfo, FavoritePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
             return await RequestAdapter.SendAsync<FavoriteResponse>(requestInfo, FavoriteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is available in the following national cloud deployments.
+        /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

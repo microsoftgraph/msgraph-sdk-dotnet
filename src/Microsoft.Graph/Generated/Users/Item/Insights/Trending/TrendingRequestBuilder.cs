@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Users.Item.Insights.Trending {
         public TrendingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/insights/trending{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user. This API is available in the following national cloud deployments.
+        /// Calculated insight that includes a list of documents trending around the user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Insights.Trending {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Trending>(requestInfo, Microsoft.Graph.Models.Trending.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user. This API is available in the following national cloud deployments.
+        /// Calculated insight that includes a list of documents trending around the user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Users.Item.Insights.Trending {
             return new TrendingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user. This API is available in the following national cloud deployments.
+        /// Calculated insight that includes a list of documents trending around the user.
         /// </summary>
         public class TrendingRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

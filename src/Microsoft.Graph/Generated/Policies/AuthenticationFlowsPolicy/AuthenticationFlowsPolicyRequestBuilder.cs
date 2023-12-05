@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationFlowsPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationFlowsPolicy>(requestInfo, Microsoft.Graph.Models.AuthenticationFlowsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified. This API is available in the following national cloud deployments.
+        /// Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationflowspolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationFlowsPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified. This API is available in the following national cloud deployments.
+        /// Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Policies.AuthenticationFlowsPolicy {
         public class AuthenticationFlowsPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationFlowsPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
         /// </summary>
         public class AuthenticationFlowsPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -23,8 +23,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="width">Usage: width={width}</param>
         public ImageWithWidthWithHeightWithFittingModeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string fittingMode = "", int? height = default, int? width = default) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/image(width={width},height={height},fittingMode='{fittingMode}')", pathParameters) {
             if (!string.IsNullOrWhiteSpace(fittingMode)) PathParameters.Add("fittingMode", fittingMode);
-            if (height is not null) PathParameters.Add("height", height);
-            if (width is not null) PathParameters.Add("width", width);
+            if (height != null) PathParameters.Add("height", height);
+            if (width != null) PathParameters.Add("width", width);
         }
         /// <summary>
         /// Instantiates a new ImageWithWidthWithHeightWithFittingModeRequestBuilder and sets the default values.

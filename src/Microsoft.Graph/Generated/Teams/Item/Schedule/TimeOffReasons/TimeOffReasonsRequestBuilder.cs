@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
         public TimeOffReasonsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffReasons{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOffReasons in a schedule.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return await RequestAdapter.SendAsync<TimeOffReasonCollectionResponse>(requestInfo, TimeOffReasonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new timeOffReason. This API is available in the following national cloud deployments.
+        /// Create a new timeOffReason.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOffReasons in a schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new timeOffReason. This API is available in the following national cloud deployments.
+        /// Create a new timeOffReason.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return new TimeOffReasonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of timeOffReasons in a schedule. This API is available in the following national cloud deployments.
+        /// Get the list of timeOffReasons in a schedule.
         /// </summary>
         public class TimeOffReasonsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
         public AppliesToRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}/appliesTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
+        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-list-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
+        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
             return new AppliesToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
+        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
         /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

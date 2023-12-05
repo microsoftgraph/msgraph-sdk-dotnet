@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Item.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/{educationUser%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Remove a teacher from an educationClass. This API is available in the following national cloud deployments.
+        /// Remove a teacher from an educationClass.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a teacher from an educationClass. This API is available in the following national cloud deployments.
+        /// Remove a teacher from an educationClass.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Item.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a teacher from an educationClass. This API is available in the following national cloud deployments.
+        /// Remove a teacher from an educationClass.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

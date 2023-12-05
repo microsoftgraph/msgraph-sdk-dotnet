@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Print.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printOperation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Print.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printOperation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Print.Operations.Item {
         public class PrintOperationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a printOperation object.
         /// </summary>
         public class PrintOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

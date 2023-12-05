@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         public PermissionGrantConditionSetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/includes/{permissionGrantConditionSet%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
+        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
+        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

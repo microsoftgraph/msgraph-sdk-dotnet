@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Me.AppRoleAssignments {
             return await RequestAdapter.SendAsync<AppRoleAssignmentCollectionResponse>(requestInfo, AppRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers: This API is available in the following national cloud deployments.
+        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.AppRoleAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers: This API is available in the following national cloud deployments.
+        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
