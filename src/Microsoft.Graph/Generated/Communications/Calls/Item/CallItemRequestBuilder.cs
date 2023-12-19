@@ -13,6 +13,7 @@ using Microsoft.Graph.Communications.Calls.Item.PlayPrompt;
 using Microsoft.Graph.Communications.Calls.Item.RecordResponse;
 using Microsoft.Graph.Communications.Calls.Item.Redirect;
 using Microsoft.Graph.Communications.Calls.Item.Reject;
+using Microsoft.Graph.Communications.Calls.Item.SendDtmfTones;
 using Microsoft.Graph.Communications.Calls.Item.SubscribeToTone;
 using Microsoft.Graph.Communications.Calls.Item.Transfer;
 using Microsoft.Graph.Communications.Calls.Item.Unmute;
@@ -87,6 +88,10 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <summary>Provides operations to call the reject method.</summary>
         public RejectRequestBuilder Reject { get =>
             new RejectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendDtmfTones method.</summary>
+        public SendDtmfTonesRequestBuilder SendDtmfTones { get =>
+            new SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeToTone method.</summary>
         public SubscribeToToneRequestBuilder SubscribeToTone { get =>

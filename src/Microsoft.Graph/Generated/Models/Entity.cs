@@ -649,6 +649,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.security.whoisHistoryRecord" => new WhoisHistoryRecord(),
                 "#microsoft.graph.security.whoisRecord" => new WhoisRecord(),
                 "#microsoft.graph.securityReportsRoot" => new SecurityReportsRoot(),
+                "#microsoft.graph.sendDtmfTonesOperation" => new SendDtmfTonesOperation(),
                 "#microsoft.graph.serviceAnnouncement" => new ServiceAnnouncement(),
                 "#microsoft.graph.serviceAnnouncementAttachment" => new ServiceAnnouncementAttachment(),
                 "#microsoft.graph.serviceAnnouncementBase" => new ServiceAnnouncementBase(),

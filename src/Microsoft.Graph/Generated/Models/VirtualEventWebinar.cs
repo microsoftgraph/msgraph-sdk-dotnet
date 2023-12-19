@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class VirtualEventWebinar : VirtualEvent, IParsable {
-        /// <summary>The audience property</summary>
+        /// <summary>To whom the webinar is visible.</summary>
         public MeetingAudience? Audience {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
-        /// <summary>The coOrganizers property</summary>
+        /// <summary>Identity information of coorganizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CommunicationsUserIdentity>? CoOrganizers {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>The registrations property</summary>
+        /// <summary>Registration records of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistration>? Registrations {
