@@ -51,6 +51,7 @@ using Microsoft.Graph.Me.Outlook;
 using Microsoft.Graph.Me.OwnedDevices;
 using Microsoft.Graph.Me.OwnedObjects;
 using Microsoft.Graph.Me.People;
+using Microsoft.Graph.Me.PermissionGrants;
 using Microsoft.Graph.Me.Photo;
 using Microsoft.Graph.Me.Photos;
 using Microsoft.Graph.Me.Planner;
@@ -289,6 +290,10 @@ namespace Microsoft.Graph.Me {
         /// <summary>Provides operations to manage the people property of the microsoft.graph.user entity.</summary>
         public PeopleRequestBuilder People { get =>
             new PeopleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
+        public PermissionGrantsRequestBuilder PermissionGrants { get =>
+            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
         public PhotoRequestBuilder Photo { get =>

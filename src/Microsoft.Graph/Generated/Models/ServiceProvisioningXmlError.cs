@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class ServiceProvisioningXmlError : ServiceProvisioningError, IParsable {
-        /// <summary>The errorDetail property</summary>
+        /// <summary>Error Information published by the Federated Service as an xml string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorDetail {

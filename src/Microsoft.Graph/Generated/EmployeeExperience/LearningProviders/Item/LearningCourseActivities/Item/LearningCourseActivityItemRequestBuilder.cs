@@ -29,7 +29,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
         public LearningCourseActivityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities/{learningCourseActivity%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
+        /// Delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
+        /// Delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

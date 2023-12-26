@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
         public MailboxSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/collaborators/{user%2Did}/mailboxSettings{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MailboxSettings>(requestInfo, Microsoft.Graph.Models.MailboxSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.
             return new MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
         /// </summary>
         public class MailboxSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

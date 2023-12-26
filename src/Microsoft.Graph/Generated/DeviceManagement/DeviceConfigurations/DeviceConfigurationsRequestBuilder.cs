@@ -42,8 +42,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
         public DeviceConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosGeneralDeviceConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-iosgeneraldeviceconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfigurationCollectionResponse>(requestInfo, DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windowsPhone81GeneralConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81generalconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new androidCustomConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the iosGeneralDeviceConfiguration objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windowsPhone81GeneralConfiguration object.
+        /// Create a new androidCustomConfiguration object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return new DeviceConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the iosGeneralDeviceConfiguration objects.
         /// </summary>
         public class DeviceConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

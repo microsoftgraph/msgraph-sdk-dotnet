@@ -30,8 +30,8 @@ namespace Microsoft.Graph.Models.ODataErrors {
 #endif
         /// <summary>Date when the error occured.</summary>
         public DateTimeOffset? Date {
-            get { return BackingStore?.Get<DateTimeOffset?>("Date"); }
-            set { BackingStore?.Set("Date", value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("date"); }
+            set { BackingStore?.Set("date", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models.ODataErrors {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
-                {"Date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"request-id", n => { RequestId = n.GetStringValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models.ODataErrors {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client-request-id", ClientRequestId);
-            writer.WriteDateTimeOffsetValue("Date", Date);
+            writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("request-id", RequestId);
             writer.WriteAdditionalData(AdditionalData);

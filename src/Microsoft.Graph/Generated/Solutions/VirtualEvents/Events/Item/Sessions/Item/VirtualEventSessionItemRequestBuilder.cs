@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for the virtual event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for the virtual event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item {
         public class VirtualEventSessionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get sessions from solutions
+        /// Sessions for the virtual event.
         /// </summary>
         public class VirtualEventSessionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

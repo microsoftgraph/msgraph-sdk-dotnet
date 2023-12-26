@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
         }
+        /// <summary>Indicates whether resource-specific consent for personal scope in Teams apps is enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.</summary>
+        public bool? IsUserPersonalScopeResourceSpecificConsentEnabled {
+            get { return BackingStore?.Get<bool?>("isUserPersonalScopeResourceSpecificConsentEnabled"); }
+            set { BackingStore?.Set("isUserPersonalScopeResourceSpecificConsentEnabled", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -25,6 +30,7 @@ namespace Microsoft.Graph.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
+                {"isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -35,6 +41,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowUserRequestsForAppAccess", AllowUserRequestsForAppAccess);
+            writer.WriteBoolValue("isUserPersonalScopeResourceSpecificConsentEnabled", IsUserPersonalScopeResourceSpecificConsentEnabled);
         }
     }
 }

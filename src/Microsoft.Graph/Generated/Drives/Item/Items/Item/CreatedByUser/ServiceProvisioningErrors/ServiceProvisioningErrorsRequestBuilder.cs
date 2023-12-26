@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreatedByUser.ServiceProvisioni
         public ServiceProvisioningErrorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/createdByUser/serviceProvisioningErrors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get serviceProvisioningErrors property value
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreatedByUser.ServiceProvisioni
             return await RequestAdapter.SendAsync<ServiceProvisioningErrorCollectionResponse>(requestInfo, ServiceProvisioningErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get serviceProvisioningErrors property value
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreatedByUser.ServiceProvisioni
             return new ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get serviceProvisioningErrors property value
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         public class ServiceProvisioningErrorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

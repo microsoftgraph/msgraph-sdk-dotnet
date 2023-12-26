@@ -53,6 +53,7 @@ using Microsoft.Graph.Users.Item.Outlook;
 using Microsoft.Graph.Users.Item.OwnedDevices;
 using Microsoft.Graph.Users.Item.OwnedObjects;
 using Microsoft.Graph.Users.Item.People;
+using Microsoft.Graph.Users.Item.PermissionGrants;
 using Microsoft.Graph.Users.Item.Photo;
 using Microsoft.Graph.Users.Item.Photos;
 using Microsoft.Graph.Users.Item.Planner;
@@ -290,6 +291,10 @@ namespace Microsoft.Graph.Users.Item {
         public PeopleRequestBuilder People { get =>
             new PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
+        public PermissionGrantsRequestBuilder PermissionGrants { get =>
+            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
         public PhotoRequestBuilder Photo { get =>
             new PhotoRequestBuilder(PathParameters, RequestAdapter);
@@ -411,8 +416,8 @@ namespace Microsoft.Graph.Users.Item {
             return new ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -431,8 +436,8 @@ namespace Microsoft.Graph.Users.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
+        /// Update the properties of a user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -479,7 +484,7 @@ namespace Microsoft.Graph.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
+        /// Read properties and relationships of the user object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -495,7 +500,7 @@ namespace Microsoft.Graph.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+        /// Update the properties of a user object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -527,7 +532,7 @@ namespace Microsoft.Graph.Users.Item {
         public class UserItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object.
+        /// Read properties and relationships of the user object.
         /// </summary>
         public class UserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

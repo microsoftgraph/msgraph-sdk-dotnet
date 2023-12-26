@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Me.Messages.Item {
         public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}{?includeHiddenMessages*,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete eventMessage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0" />
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
         }
         /// <summary>
         /// The messages in a mailbox or folder. Read-only. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete eventMessage.
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

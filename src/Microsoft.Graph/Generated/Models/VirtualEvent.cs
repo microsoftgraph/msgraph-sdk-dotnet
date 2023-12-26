@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class VirtualEvent : Entity, IParsable {
-        /// <summary>The createdBy property</summary>
+        /// <summary>Identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CommunicationsIdentitySet? CreatedBy {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? Description {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The endDateTime property</summary>
+        /// <summary>End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? EndDateTime {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
-        /// <summary>The sessions property</summary>
+        /// <summary>Sessions for the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventSession>? Sessions {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? StartDateTime {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.</summary>
         public VirtualEventStatus? Status {
             get { return BackingStore?.Get<VirtualEventStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

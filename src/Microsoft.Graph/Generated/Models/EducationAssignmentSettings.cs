@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class EducationAssignmentSettings : Entity, IParsable {
+        /// <summary>The gradingCategories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationGradingCategory>? GradingCategories {
+            get { return BackingStore?.Get<List<EducationGradingCategory>?>("gradingCategories"); }
+            set { BackingStore?.Set("gradingCategories", value); }
+        }
+#nullable restore
+#else
+        public List<EducationGradingCategory> GradingCategories {
+            get { return BackingStore?.Get<List<EducationGradingCategory>>("gradingCategories"); }
+            set { BackingStore?.Set("gradingCategories", value); }
+        }
+#endif
         /// <summary>Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn&apos;t shown. Default value is false.</summary>
         public bool? SubmissionAnimationDisabled {
             get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }
@@ -24,6 +38,7 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<EducationGradingCategory>(EducationGradingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
@@ -34,6 +49,7 @@ namespace Microsoft.Graph.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<EducationGradingCategory>("gradingCategories", GradingCategories);
             writer.WriteBoolValue("submissionAnimationDisabled", SubmissionAnimationDisabled);
         }
     }

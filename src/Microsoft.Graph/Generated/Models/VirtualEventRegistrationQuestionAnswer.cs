@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The booleanValue property</summary>
+        /// <summary>Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.</summary>
         public bool? BooleanValue {
             get { return BackingStore?.Get<bool?>("booleanValue"); }
             set { BackingStore?.Set("booleanValue", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The multiChoiceValues property</summary>
+        /// <summary>Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MultiChoiceValues {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The questionId property</summary>
+        /// <summary>id of the virtual event registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QuestionId {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("questionId", value); }
         }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {

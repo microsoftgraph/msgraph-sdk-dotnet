@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class VirtualEventRegistration : Entity, IParsable {
-        /// <summary>The cancelationDateTime property</summary>
+        /// <summary>Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CancelationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("cancelationDateTime"); }
             set { BackingStore?.Set("cancelationDateTime", value); }
         }
-        /// <summary>The email property</summary>
+        /// <summary>Email address of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>First name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("firstName", value); }
         }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>Last name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastName", value); }
         }
 #endif
-        /// <summary>The registrationDateTime property</summary>
+        /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
-        /// <summary>The registrationQuestionAnswers property</summary>
+        /// <summary>The registrant&apos;s answer to the registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers {
@@ -72,12 +72,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Registration status of the registrant. Read-only.</summary>
         public VirtualEventAttendeeRegistrationStatus? Status {
             get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>The registrant&apos;s ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

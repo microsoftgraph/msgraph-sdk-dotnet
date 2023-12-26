@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0" />
+        /// Send a new chatMessage in the specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
+        /// Send a new chatMessage in the specified channel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

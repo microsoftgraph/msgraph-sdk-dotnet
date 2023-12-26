@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
         public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Get a list of all registration records of a webinar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-list-registrations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +83,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
             return await RequestAdapter.SendAsync<VirtualEventRegistration>(requestInfo, VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Get a list of all registration records of a webinar.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
             return new RegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Get a list of all registration records of a webinar.
         /// </summary>
         public class RegistrationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

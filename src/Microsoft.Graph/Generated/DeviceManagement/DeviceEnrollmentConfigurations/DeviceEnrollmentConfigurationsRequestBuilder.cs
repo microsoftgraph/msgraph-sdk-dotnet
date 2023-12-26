@@ -62,8 +62,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
+        /// Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

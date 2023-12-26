@@ -29,8 +29,8 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Item {
         public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}/primaryChannel/members/{conversationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0" />
+        /// Delete a conversationMember from a channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Delete a conversationMember from a channel.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
