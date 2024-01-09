@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class SendDtmfTonesOperation : CommsOperation, IParsable {
-        /// <summary>The completionReason property</summary>
+        /// <summary>The results of the action. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled, unknownfutureValue.</summary>
         public SendDtmfCompletionReason? CompletionReason {
             get { return BackingStore?.Get<SendDtmfCompletionReason?>("completionReason"); }
             set { BackingStore?.Set("completionReason", value); }

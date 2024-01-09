@@ -42,8 +42,8 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
         public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyUsers/{riskyUser%2Did}/history{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the riskyUserHistoryItems from the history navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0" />
+        /// Read the properties and relationships of a riskyUserHistoryItem object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the riskyUserHistoryItems from the history navigation property.
+        /// Read the properties and relationships of a riskyUserHistoryItem object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             return new HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the riskyUserHistoryItems from the history navigation property.
+        /// Read the properties and relationships of a riskyUserHistoryItem object.
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

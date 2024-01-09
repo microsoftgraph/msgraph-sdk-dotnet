@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("acceptances", value); }
         }
 #endif
-        /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).</summary>
+        /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but isn&apos;t shown to end users who view the agreement. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("termsExpiration", value); }
         }
 #endif
-        /// <summary>The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).</summary>
+        /// <summary>The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).</summary>
         public TimeSpan? UserReacceptRequiredFrequency {
             get { return BackingStore?.Get<TimeSpan?>("userReacceptRequiredFrequency"); }
             set { BackingStore?.Set("userReacceptRequiredFrequency", value); }

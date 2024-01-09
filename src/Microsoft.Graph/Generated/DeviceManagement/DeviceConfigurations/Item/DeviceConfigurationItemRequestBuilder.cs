@@ -65,8 +65,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
         public DeviceConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a editionUpgradeConfiguration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-editionupgradeconfiguration-delete?view=graph-rest-1.0" />
+        /// Deletes a windows10SecureAssessmentConfiguration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the windowsPhone81CustomConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +113,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
             return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
         }
         /// <summary>
-        /// Update the properties of a macOSCustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscustomconfiguration-update?view=graph-rest-1.0" />
+        /// Update the properties of a windows10SecureAssessmentConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
             return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a editionUpgradeConfiguration.
+        /// Deletes a windows10SecureAssessmentConfiguration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
+        /// Read properties and relationships of the windowsPhone81CustomConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a macOSCustomConfiguration object.
+        /// Update the properties of a windows10SecureAssessmentConfiguration object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item {
         public class DeviceConfigurationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
+        /// Read properties and relationships of the windowsPhone81CustomConfiguration object.
         /// </summary>
         public class DeviceConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

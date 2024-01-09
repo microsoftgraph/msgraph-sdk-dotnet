@@ -49,8 +49,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         public class CustomCalloutExtensionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         public class CustomCalloutExtensionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
