@@ -29,14 +29,14 @@ namespace Microsoft.Graph.Solutions.VirtualEvents {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents{?%24select,%24expand}", pathParameters) {
+        public VirtualEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new VirtualEventsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents{?%24select,%24expand}", rawUrl) {
+        public VirtualEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property virtualEvents for solutions

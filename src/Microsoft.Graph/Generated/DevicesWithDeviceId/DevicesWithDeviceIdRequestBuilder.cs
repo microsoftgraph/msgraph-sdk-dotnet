@@ -20,7 +20,7 @@ namespace Microsoft.Graph.DevicesWithDeviceId {
         /// <param name="deviceId">Alternate key of device</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "") : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24select,%24expand}", pathParameters) {
+        public DevicesWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "") : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(deviceId)) PathParameters.Add("deviceId", deviceId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.DevicesWithDeviceId {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24select,%24expand}", rawUrl) {
+        public DevicesWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a registered device.

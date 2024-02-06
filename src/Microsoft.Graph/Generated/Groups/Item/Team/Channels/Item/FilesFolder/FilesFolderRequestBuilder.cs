@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.FilesFolder {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesFolderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/filesFolder{?%24select,%24expand}", pathParameters) {
+        public FilesFolderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/filesFolder{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new FilesFolderRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesFolderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/filesFolder{?%24select,%24expand}", rawUrl) {
+        public FilesFolderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/filesFolder{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the metadata for the location where the files of a channel are stored. 

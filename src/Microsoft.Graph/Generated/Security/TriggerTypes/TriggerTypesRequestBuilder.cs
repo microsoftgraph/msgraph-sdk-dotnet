@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Security.TriggerTypes {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggerTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggerTypes{?%24select,%24expand}", pathParameters) {
+        public TriggerTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggerTypes{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TriggerTypesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggerTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggerTypes{?%24select,%24expand}", rawUrl) {
+        public TriggerTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggerTypes{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property triggerTypes for security

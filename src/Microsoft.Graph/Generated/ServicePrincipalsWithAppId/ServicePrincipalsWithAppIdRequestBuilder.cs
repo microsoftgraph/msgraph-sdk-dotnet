@@ -20,7 +20,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
         /// <param name="appId">Alternate key of servicePrincipal</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24select,%24expand}", pathParameters) {
+        public ServicePrincipalsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24select,%24expand}", rawUrl) {
+        public ServicePrincipalsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a servicePrincipal object.

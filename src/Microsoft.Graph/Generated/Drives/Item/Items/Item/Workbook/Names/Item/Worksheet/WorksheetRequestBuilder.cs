@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item.Worksheet {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorksheetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}/worksheet{?%24select,%24expand}", pathParameters) {
+        public WorksheetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}/worksheet{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WorksheetRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorksheetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}/worksheet{?%24select,%24expand}", rawUrl) {
+        public WorksheetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}/worksheet{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.

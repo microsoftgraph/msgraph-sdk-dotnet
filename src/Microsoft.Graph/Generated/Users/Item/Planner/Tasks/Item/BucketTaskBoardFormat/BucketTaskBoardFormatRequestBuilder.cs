@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Users.Item.Planner.Tasks.Item.BucketTaskBoardFormat {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BucketTaskBoardFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/tasks/{plannerTask%2Did}/bucketTaskBoardFormat{?%24select,%24expand}", pathParameters) {
+        public BucketTaskBoardFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/tasks/{plannerTask%2Did}/bucketTaskBoardFormat{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BucketTaskBoardFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/tasks/{plannerTask%2Did}/bucketTaskBoardFormat{?%24select,%24expand}", rawUrl) {
+        public BucketTaskBoardFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/tasks/{plannerTask%2Did}/bucketTaskBoardFormat{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property bucketTaskBoardFormat for users

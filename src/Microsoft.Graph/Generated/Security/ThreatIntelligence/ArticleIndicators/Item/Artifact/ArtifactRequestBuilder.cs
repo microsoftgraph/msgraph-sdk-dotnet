@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.ArticleIndicators.Item.Art
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArtifactRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}/artifact{?%24select,%24expand}", pathParameters) {
+        public ArtifactRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}/artifact{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ArtifactRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArtifactRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}/artifact{?%24select,%24expand}", rawUrl) {
+        public ArtifactRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}/artifact{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The artifact related to this indicator.

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
         /// <param name="externalcourseActivityId">Alternate key of learningCourseActivity</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalcourseActivityId = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24select,%24expand}", pathParameters) {
+        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalcourseActivityId = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(externalcourseActivityId)) PathParameters.Add("externalcourseActivityId", externalcourseActivityId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24select,%24expand}", rawUrl) {
+        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.

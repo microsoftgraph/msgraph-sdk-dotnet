@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.Payload {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/payload{?%24select,%24expand}", pathParameters) {
+        public PayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/payload{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PayloadRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/payload{?%24select,%24expand}", rawUrl) {
+        public PayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/payload{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The payload associated with a simulation during its creation.

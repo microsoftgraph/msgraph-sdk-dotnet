@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("externalColumns", value); }
         }
 #endif
-        /// <summary>The isPersonalSite property</summary>
+        /// <summary>Identifies whether the site is personal or not. Read-only.</summary>
         public bool? IsPersonalSite {
             get { return BackingStore?.Get<bool?>("isPersonalSite"); }
             set { BackingStore?.Set("isPersonalSite", value); }

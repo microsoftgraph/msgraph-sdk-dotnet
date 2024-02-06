@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(role)) PathParameters.Add("role", role);
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
@@ -100,6 +100,16 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

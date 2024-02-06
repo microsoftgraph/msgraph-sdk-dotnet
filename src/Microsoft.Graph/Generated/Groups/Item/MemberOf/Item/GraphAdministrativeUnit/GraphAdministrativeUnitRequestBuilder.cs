@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.Item.GraphAdministrativeUnit {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphAdministrativeUnitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24select,%24expand}", pathParameters) {
+        public GraphAdministrativeUnitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GraphAdministrativeUnitRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphAdministrativeUnitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24select,%24expand}", rawUrl) {
+        public GraphAdministrativeUnitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit

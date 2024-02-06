@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Me.Insights.Trending.Item.Resource {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/trending/{trending%2Did}/resource{?%24select,%24expand}", pathParameters) {
+        public ResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/trending/{trending%2Did}/resource{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ResourceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/trending/{trending%2Did}/resource{?%24select,%24expand}", rawUrl) {
+        public ResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/trending/{trending%2Did}/resource{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Used for navigating to the trending document.

@@ -107,6 +107,7 @@ using Microsoft.Graph.Reports.ManagedDeviceEnrollmentTopFailures;
 using Microsoft.Graph.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByUser;
+using Microsoft.Graph.Reports.Partners;
 using Microsoft.Graph.Reports.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -169,6 +170,10 @@ namespace Microsoft.Graph.Reports {
         public MonthlyPrintUsageByUserRequestBuilder MonthlyPrintUsageByUser { get =>
             new MonthlyPrintUsageByUserRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the partners property of the microsoft.graph.reportRoot entity.</summary>
+        public PartnersRequestBuilder Partners { get =>
+            new PartnersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the security property of the microsoft.graph.reportRoot entity.</summary>
         public SecurityRequestBuilder Security { get =>
             new SecurityRequestBuilder(PathParameters, RequestAdapter);
@@ -178,14 +183,14 @@ namespace Microsoft.Graph.Reports {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24select,%24expand}", pathParameters) {
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24select,%24expand}", rawUrl) {
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Read properties and relationships of the reportRoot object.

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Groups.Item.CreatedOnBehalfOf {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreatedOnBehalfOfRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/createdOnBehalfOf{?%24select,%24expand}", pathParameters) {
+        public CreatedOnBehalfOfRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/createdOnBehalfOf{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CreatedOnBehalfOfRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreatedOnBehalfOfRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/createdOnBehalfOf{?%24select,%24expand}", rawUrl) {
+        public CreatedOnBehalfOfRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/createdOnBehalfOf{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.

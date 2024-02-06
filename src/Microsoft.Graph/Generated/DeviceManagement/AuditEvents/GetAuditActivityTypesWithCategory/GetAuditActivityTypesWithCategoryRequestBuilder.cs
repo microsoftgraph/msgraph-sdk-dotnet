@@ -19,7 +19,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWith
         /// <param name="category">Usage: category=&apos;{category}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAuditActivityTypesWithCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string category = "") : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetAuditActivityTypesWithCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string category = "") : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(category)) PathParameters.Add("category", category);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWith
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAuditActivityTypesWithCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetAuditActivityTypesWithCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getAuditActivityTypes

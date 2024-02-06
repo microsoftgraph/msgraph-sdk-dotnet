@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24select,%24expand}", pathParameters) {
+        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24select,%24expand}", rawUrl) {
+        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get lastSharedMethod from me

@@ -5,6 +5,7 @@ using Microsoft.Graph.Education.Classes.Item.AssignmentSettings;
 using Microsoft.Graph.Education.Classes.Item.Assignments;
 using Microsoft.Graph.Education.Classes.Item.Group;
 using Microsoft.Graph.Education.Classes.Item.Members;
+using Microsoft.Graph.Education.Classes.Item.Modules;
 using Microsoft.Graph.Education.Classes.Item.Schools;
 using Microsoft.Graph.Education.Classes.Item.Teachers;
 using Microsoft.Graph.Models.ODataErrors;
@@ -46,6 +47,10 @@ namespace Microsoft.Graph.Education.Classes.Item {
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the modules property of the microsoft.graph.educationClass entity.</summary>
+        public ModulesRequestBuilder Modules { get =>
+            new ModulesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationClass entity.</summary>
         public SchoolsRequestBuilder Schools { get =>
             new SchoolsRequestBuilder(PathParameters, RequestAdapter);
@@ -59,14 +64,14 @@ namespace Microsoft.Graph.Education.Classes.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}", pathParameters) {
+        public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EducationClassItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}", rawUrl) {
+        public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.

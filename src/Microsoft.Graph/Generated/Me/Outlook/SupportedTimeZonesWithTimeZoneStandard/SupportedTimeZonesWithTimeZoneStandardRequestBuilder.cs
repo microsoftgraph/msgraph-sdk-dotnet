@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="timeZoneStandard">Usage: TimeZoneStandard=&apos;{TimeZoneStandard}&apos;</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timeZoneStandard = "") : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timeZoneStandard = "") : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(timeZoneStandard)) PathParameters.Add("TimeZoneStandard", timeZoneStandard);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function supportedTimeZones

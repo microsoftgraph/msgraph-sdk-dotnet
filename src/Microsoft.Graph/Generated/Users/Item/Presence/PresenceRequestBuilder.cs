@@ -44,14 +44,14 @@ namespace Microsoft.Graph.Users.Item.Presence {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PresenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/presence{?%24select,%24expand}", pathParameters) {
+        public PresenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/presence{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PresenceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/presence{?%24select,%24expand}", rawUrl) {
+        public PresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/presence{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property presence for users
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Users.Item.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
+        /// Get a user&apos;s presence information.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get a user&apos;s presence information.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
         public class PresenceRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get a user&apos;s presence information.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

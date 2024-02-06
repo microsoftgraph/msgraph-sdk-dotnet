@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.LastModifiedByUser {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastModifiedByUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/lastModifiedByUser{?%24select,%24expand}", pathParameters) {
+        public LastModifiedByUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/lastModifiedByUser{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastModifiedByUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/lastModifiedByUser{?%24select,%24expand}", rawUrl) {
+        public LastModifiedByUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/lastModifiedByUser{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Identity of the user who last modified the item. Read-only.

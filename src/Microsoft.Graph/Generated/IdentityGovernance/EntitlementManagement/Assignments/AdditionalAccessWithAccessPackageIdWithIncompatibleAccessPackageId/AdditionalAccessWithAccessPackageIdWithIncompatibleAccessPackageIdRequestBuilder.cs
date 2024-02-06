@@ -20,7 +20,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
         /// <param name="incompatibleAccessPackageId">Usage: incompatibleAccessPackageId=&apos;{incompatibleAccessPackageId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string accessPackageId = "", string incompatibleAccessPackageId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string accessPackageId = "", string incompatibleAccessPackageId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(accessPackageId)) PathParameters.Add("accessPackageId", accessPackageId);
             if (!string.IsNullOrWhiteSpace(incompatibleAccessPackageId)) PathParameters.Add("incompatibleAccessPackageId", incompatibleAccessPackageId);
         }
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function additionalAccess
@@ -100,6 +100,16 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

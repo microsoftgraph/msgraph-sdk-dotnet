@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Education.Me.Rubrics.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationRubricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/rubrics/{educationRubric%2Did}{?%24select,%24expand}", pathParameters) {
+        public EducationRubricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/rubrics/{educationRubric%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EducationRubricItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationRubricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/rubrics/{educationRubric%2Did}{?%24select,%24expand}", rawUrl) {
+        public EducationRubricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/rubrics/{educationRubric%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete an educationRubric object. Only teachers can perform this operation.

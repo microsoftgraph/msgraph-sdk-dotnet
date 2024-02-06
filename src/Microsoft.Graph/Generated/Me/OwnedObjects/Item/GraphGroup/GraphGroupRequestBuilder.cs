@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Me.OwnedObjects.Item.GraphGroup {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/ownedObjects/{directoryObject%2Did}/graph.group{?%24select,%24expand}", pathParameters) {
+        public GraphGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/ownedObjects/{directoryObject%2Did}/graph.group{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GraphGroupRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/ownedObjects/{directoryObject%2Did}/graph.group{?%24select,%24expand}", rawUrl) {
+        public GraphGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/ownedObjects/{directoryObject%2Did}/graph.group{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group

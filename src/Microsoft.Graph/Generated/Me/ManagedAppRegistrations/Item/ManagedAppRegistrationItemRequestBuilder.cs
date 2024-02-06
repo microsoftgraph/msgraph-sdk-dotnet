@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedAppRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}", pathParameters) {
+        public ManagedAppRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedAppRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}", rawUrl) {
+        public ManagedAppRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Zero or more managed app registrations that belong to the user.

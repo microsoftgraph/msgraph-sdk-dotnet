@@ -29,14 +29,14 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitedUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24select,%24expand}", pathParameters) {
+        public InvitedUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new InvitedUserRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitedUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24select,%24expand}", rawUrl) {
+        public InvitedUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The user created as part of the invitation creation. Read-Only

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefaultAppManagementPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/defaultAppManagementPolicy{?%24select,%24expand}", pathParameters) {
+        public DefaultAppManagementPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/defaultAppManagementPolicy{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DefaultAppManagementPolicyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefaultAppManagementPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/defaultAppManagementPolicy{?%24select,%24expand}", rawUrl) {
+        public DefaultAppManagementPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/defaultAppManagementPolicy{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property defaultAppManagementPolicy for policies

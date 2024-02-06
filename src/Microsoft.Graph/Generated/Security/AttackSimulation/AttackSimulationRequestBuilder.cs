@@ -59,14 +59,14 @@ namespace Microsoft.Graph.Security.AttackSimulation {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttackSimulationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation{?%24select,%24expand}", pathParameters) {
+        public AttackSimulationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AttackSimulationRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttackSimulationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation{?%24select,%24expand}", rawUrl) {
+        public AttackSimulationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property attackSimulation for security

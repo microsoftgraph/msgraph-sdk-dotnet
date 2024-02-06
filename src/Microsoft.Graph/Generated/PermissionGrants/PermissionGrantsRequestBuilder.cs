@@ -47,14 +47,14 @@ namespace Microsoft.Graph.PermissionGrants {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionGrantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/permissionGrants{?%24search,%24filter,%24orderby,%24select,%24expand}", pathParameters) {
+        public PermissionGrantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/permissionGrants{?%24expand,%24filter,%24orderby,%24search,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PermissionGrantsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/permissionGrants{?%24search,%24filter,%24orderby,%24select,%24expand}", rawUrl) {
+        public PermissionGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/permissionGrants{?%24expand,%24filter,%24orderby,%24search,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get entities from permissionGrants

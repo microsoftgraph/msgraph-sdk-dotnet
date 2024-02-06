@@ -5,6 +5,8 @@ using Microsoft.Graph.Users.Item.OnlineMeetings.Item.AttendanceReports;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.AttendeeReport;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings;
+using Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentReminderSms;
+using Microsoft.Graph.Users.Item.OnlineMeetings.Item.SendVirtualAppointmentSms;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.Transcripts;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -35,6 +37,14 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
         public RecordingsRequestBuilder Recordings { get =>
             new RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the sendVirtualAppointmentReminderSms method.</summary>
+        public SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms { get =>
+            new SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendVirtualAppointmentSms method.</summary>
+        public SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms { get =>
+            new SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
         public TranscriptsRequestBuilder Transcripts { get =>
             new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
@@ -44,14 +54,14 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", pathParameters) {
+        public OnlineMeetingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", rawUrl) {
+        public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete an onlineMeeting object.

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId {
         /// <param name="appId">Alternate key of application</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/applications(appId='{appId}'){?%24select,%24expand}", pathParameters) {
+        public ApplicationsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/applications(appId='{appId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(appId='{appId}'){?%24select,%24expand}", rawUrl) {
+        public ApplicationsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(appId='{appId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.

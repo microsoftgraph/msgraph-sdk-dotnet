@@ -376,14 +376,14 @@ namespace Microsoft.Graph.Me {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me{?%24select,%24expand}", pathParameters) {
+        public MeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MeRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me{?%24select,%24expand}", rawUrl) {
+        public MeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.

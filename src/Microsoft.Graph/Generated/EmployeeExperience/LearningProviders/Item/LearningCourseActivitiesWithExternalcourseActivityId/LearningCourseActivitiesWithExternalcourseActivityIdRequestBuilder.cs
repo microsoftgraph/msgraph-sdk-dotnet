@@ -20,7 +20,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
         /// <param name="externalcourseActivityId">Alternate key of learningCourseActivity</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalcourseActivityId = "") : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24select,%24expand}", pathParameters) {
+        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalcourseActivityId = "") : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(externalcourseActivityId)) PathParameters.Add("externalcourseActivityId", externalcourseActivityId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24select,%24expand}", rawUrl) {
+        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningCourseActivities(externalcourseActivityId='{externalcourseActivityId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.

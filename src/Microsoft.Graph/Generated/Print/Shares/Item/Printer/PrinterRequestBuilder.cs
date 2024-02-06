@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Print.Shares.Item.Printer {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrinterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24select,%24expand}", pathParameters) {
+        public PrinterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrinterRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrinterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24select,%24expand}", rawUrl) {
+        public PrinterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The printer that this printer share is related to.

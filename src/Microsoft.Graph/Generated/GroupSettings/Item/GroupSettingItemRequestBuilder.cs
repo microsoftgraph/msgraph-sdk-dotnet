@@ -19,14 +19,14 @@ namespace Microsoft.Graph.GroupSettings.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24select,%24expand}", pathParameters) {
+        public GroupSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GroupSettingItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24select,%24expand}", rawUrl) {
+        public GroupSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupSettings/{groupSetting%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a tenant-level or group-specific groupSetting object.
