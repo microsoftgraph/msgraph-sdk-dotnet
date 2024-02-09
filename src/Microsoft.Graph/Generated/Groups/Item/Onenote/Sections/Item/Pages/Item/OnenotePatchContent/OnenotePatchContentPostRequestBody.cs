@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item.Pages.Item.OnenotePa
         }
 #endif
         /// <summary>
-        /// Instantiates a new onenotePatchContentPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="OnenotePatchContentPostRequestBody"/> and sets the default values.
         /// </summary>
         public OnenotePatchContentPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item.Pages.Item.OnenotePa
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="OnenotePatchContentPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static OnenotePatchContentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item.Pages.Item.OnenotePa
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"commands", n => { Commands = n.GetCollectionOfObjectValues<OnenotePatchContentCommand>(OnenotePatchContentCommand.CreateFromDiscriminatorValue)?.ToList(); } },

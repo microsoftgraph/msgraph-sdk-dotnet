@@ -16,14 +16,14 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Item {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TokenLifetimePolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TokenLifetimePolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TokenLifetimePolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

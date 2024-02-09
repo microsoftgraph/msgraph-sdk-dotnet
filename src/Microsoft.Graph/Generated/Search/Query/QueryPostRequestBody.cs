@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Search.Query {
         }
 #endif
         /// <summary>
-        /// Instantiates a new queryPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="QueryPostRequestBody"/> and sets the default values.
         /// </summary>
         public QueryPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Search.Query {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="QueryPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static QueryPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Search.Query {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"requests", n => { Requests = n.GetCollectionOfObjectValues<SearchRequest>(SearchRequest.CreateFromDiscriminatorValue)?.ToList(); } },

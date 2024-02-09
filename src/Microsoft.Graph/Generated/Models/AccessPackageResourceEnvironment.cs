@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class AccessPackageResourceEnvironment : Entity, IParsable {
+        /// <summary>The connectionInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.ConnectionInfo? ConnectionInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectionInfo?>("connectionInfo"); }
+            set { BackingStore?.Set("connectionInfo", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.ConnectionInfo ConnectionInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.ConnectionInfo>("connectionInfo"); }
+            set { BackingStore?.Set("connectionInfo", value); }
+        }
+#endif
         /// <summary>The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -94,6 +108,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="AccessPackageResourceEnvironment"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AccessPackageResourceEnvironment CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -102,8 +117,10 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"connectionInfo", n => { ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Models.ConnectionInfo>(Microsoft.Graph.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -121,6 +138,7 @@ namespace Microsoft.Graph.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Models.ConnectionInfo>("connectionInfo", ConnectionInfo);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

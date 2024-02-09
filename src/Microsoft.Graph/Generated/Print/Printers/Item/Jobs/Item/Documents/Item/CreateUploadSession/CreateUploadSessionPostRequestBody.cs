@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUpl
         }
 #endif
         /// <summary>
-        /// Instantiates a new createUploadSessionPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="CreateUploadSessionPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateUploadSessionPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUpl
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CreateUploadSessionPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CreateUploadSessionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUpl
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"properties", n => { Properties = n.GetObjectValue<PrintDocumentUploadProperties>(PrintDocumentUploadProperties.CreateFromDiscriminatorValue); } },

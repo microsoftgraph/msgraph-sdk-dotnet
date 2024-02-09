@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
         }
 #endif
         /// <summary>
-        /// Instantiates a new uploadClientCertificatePostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="UploadClientCertificatePostRequestBody"/> and sets the default values.
         /// </summary>
         public UploadClientCertificatePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="UploadClientCertificatePostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UploadClientCertificatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item.UploadClientCertificate {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"password", n => { Password = n.GetStringValue(); } },

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.AssignLicense {
         }
 #endif
         /// <summary>
-        /// Instantiates a new assignLicensePostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="AssignLicensePostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignLicensePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Groups.Item.AssignLicense {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="AssignLicensePostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AssignLicensePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Groups.Item.AssignLicense {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },

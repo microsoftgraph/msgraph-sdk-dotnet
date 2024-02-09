@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MinA {
         }
 #endif
         /// <summary>
-        /// Instantiates a new minAPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="MinAPostRequestBody"/> and sets the default values.
         /// </summary>
         public MinAPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MinA {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="MinAPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MinAPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.MinA {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

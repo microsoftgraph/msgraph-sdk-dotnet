@@ -563,6 +563,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #endif
+        /// <summary>The uniqueName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueName {
+            get { return BackingStore?.Get<string?>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#nullable restore
+#else
+        public string UniqueName {
+            get { return BackingStore?.Get<string>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#endif
         /// <summary>Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -592,7 +606,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new application and sets the default values.
+        /// Instantiates a new <see cref="Application"/> and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";
@@ -600,6 +614,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="Application"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Application CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -608,6 +623,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"addIns", n => { AddIns = n.GetCollectionOfObjectValues<AddIn>(AddIn.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -653,6 +669,7 @@ namespace Microsoft.Graph.Models {
                 {"tokenEncryptionKeyId", n => { TokenEncryptionKeyId = n.GetGuidValue(); } },
                 {"tokenIssuancePolicies", n => { TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>(TokenIssuancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tokenLifetimePolicies", n => { TokenLifetimePolicies = n.GetCollectionOfObjectValues<TokenLifetimePolicy>(TokenLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 {"verifiedPublisher", n => { VerifiedPublisher = n.GetObjectValue<Microsoft.Graph.Models.VerifiedPublisher>(Microsoft.Graph.Models.VerifiedPublisher.CreateFromDiscriminatorValue); } },
                 {"web", n => { Web = n.GetObjectValue<WebApplication>(WebApplication.CreateFromDiscriminatorValue); } },
             };
@@ -707,6 +724,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteGuidValue("tokenEncryptionKeyId", TokenEncryptionKeyId);
             writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
             writer.WriteCollectionOfObjectValues<TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
+            writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteObjectValue<Microsoft.Graph.Models.VerifiedPublisher>("verifiedPublisher", VerifiedPublisher);
             writer.WriteObjectValue<WebApplication>("web", Web);
         }

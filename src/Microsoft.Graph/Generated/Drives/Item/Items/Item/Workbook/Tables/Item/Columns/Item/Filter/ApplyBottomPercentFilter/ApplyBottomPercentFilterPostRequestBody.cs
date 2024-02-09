@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             set { BackingStore?.Set("percent", value); }
         }
         /// <summary>
-        /// Instantiates a new applyBottomPercentFilterPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ApplyBottomPercentFilterPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyBottomPercentFilterPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ApplyBottomPercentFilterPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ApplyBottomPercentFilterPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -37,6 +38,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"percent", n => { Percent = n.GetIntValue(); } },

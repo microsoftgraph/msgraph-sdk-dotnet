@@ -767,6 +767,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("transitiveMembers", value); }
         }
 #endif
+        /// <summary>The uniqueName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueName {
+            get { return BackingStore?.Get<string?>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#nullable restore
+#else
+        public string UniqueName {
+            get { return BackingStore?.Get<string>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#endif
         /// <summary>Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public int? UnseenCount {
             get { return BackingStore?.Get<int?>("unseenCount"); }
@@ -787,7 +801,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new group and sets the default values.
+        /// Instantiates a new <see cref="Group"/> and sets the default values.
         /// </summary>
         public Group() : base() {
             OdataType = "#microsoft.graph.group";
@@ -795,6 +809,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="Group"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Group CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -803,6 +818,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"acceptedSenders", n => { AcceptedSenders = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -869,6 +885,7 @@ namespace Microsoft.Graph.Models {
                 {"threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"transitiveMembers", n => { TransitiveMembers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 {"unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 {"visibility", n => { Visibility = n.GetStringValue(); } },
             };
@@ -944,6 +961,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMembers", TransitiveMembers);
+            writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteStringValue("visibility", Visibility);
         }
