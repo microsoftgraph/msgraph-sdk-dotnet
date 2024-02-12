@@ -41,8 +41,8 @@ jobs:
     name: Analyze
     runs-on: ubuntu-latest
     env:
-      solutionName: Microsoft.Graph.Beta.sln
-      projectName: src/Microsoft.Graph/Microsoft.Graph.Beta.csproj
+      solutionName: Microsoft.Graph.sln
+      projectName: src/Microsoft.Graph/Microsoft.Graph.csproj
     strategy:
       fail-fast: false
       matrix:
