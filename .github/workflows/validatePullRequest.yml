@@ -11,27 +11,52 @@ permissions:
   contents: read #those permissions are required to run the codeql analysis
   actions: read
   security-events: write
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       solutionName: Microsoft.Graph.sln
+      projectName: src/Microsoft.Graph/Microsoft.Graph.csproj
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Setup .NET
         uses: actions/setup-dotnet@v4.0.0
         with:
           dotnet-version: 6.0.x
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: csharp
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
+      - name: Build for netstandard2.0
+        run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release
+      - name: Build for netstandard2.1
+        run: dotnet build ${{ env.projectName }} -f netstandard2.1 --no-restore -c Release
+      - name: Build for net5.0
+        run: dotnet build ${{ env.projectName }} -f net5.0 --no-restore -c Release
       - name: Build
-        run: dotnet build ${{ env.solutionName }} --no-restore -c Release /p:UseSharedCompilation=false
+        run: dotnet build ${{ env.solutionName }} --no-restore -c Release
       - name: Test
         run: dotnet test ${{ env.solutionName }} --no-build --verbosity normal -c Release /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    env:
+      solutionName: Microsoft.Graph.Beta.sln
+      projectName: src/Microsoft.Graph/Microsoft.Graph.Beta.csproj
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'csharp' ]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.1.1
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.solutionName }}
+    - name: Build for netstandard2.0
+      run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release --no-incremental
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
