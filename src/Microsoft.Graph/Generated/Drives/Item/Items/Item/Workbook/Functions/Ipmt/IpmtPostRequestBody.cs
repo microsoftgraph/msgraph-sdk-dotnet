@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ipmt {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ipmtPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="IpmtPostRequestBody"/> and sets the default values.
         /// </summary>
         public IpmtPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -109,6 +109,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ipmt {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="IpmtPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static IpmtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -117,6 +118,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ipmt {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"fv", n => { Fv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

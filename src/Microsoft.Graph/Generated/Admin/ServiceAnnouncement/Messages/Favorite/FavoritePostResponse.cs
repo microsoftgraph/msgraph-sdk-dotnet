@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new favoritePostResponse and sets the default values.
+        /// Instantiates a new <see cref="FavoritePostResponse"/> and sets the default values.
         /// </summary>
         public FavoritePostResponse() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="FavoritePostResponse"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static FavoritePostResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -37,6 +38,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"value", n => { Value = n.GetBoolValue(); } },

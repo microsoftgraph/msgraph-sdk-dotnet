@@ -16,14 +16,14 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.I
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new IdentityProviderBaseItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IdentityProviderBaseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public IdentityProviderBaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders/{identityProviderBase%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new IdentityProviderBaseItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IdentityProviderBaseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -340,7 +340,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new organization and sets the default values.
+        /// Instantiates a new <see cref="Organization"/> and sets the default values.
         /// </summary>
         public Organization() : base() {
             OdataType = "#microsoft.graph.organization";
@@ -348,6 +348,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="Organization"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Organization CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -356,6 +357,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },

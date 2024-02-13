@@ -26,14 +26,14 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item {
             new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new UserItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/{user%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

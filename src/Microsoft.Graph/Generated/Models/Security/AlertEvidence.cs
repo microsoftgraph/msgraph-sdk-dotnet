@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("verdict", value); }
         }
         /// <summary>
-        /// Instantiates a new alertEvidence and sets the default values.
+        /// Instantiates a new <see cref="AlertEvidence"/> and sets the default values.
         /// </summary>
         public AlertEvidence() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -109,6 +109,7 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="AlertEvidence"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AlertEvidence CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -124,7 +125,9 @@ namespace Microsoft.Graph.Models.Security {
                 "#microsoft.graph.security.containerImageEvidence" => new ContainerImageEvidence(),
                 "#microsoft.graph.security.containerRegistryEvidence" => new ContainerRegistryEvidence(),
                 "#microsoft.graph.security.deviceEvidence" => new DeviceEvidence(),
+                "#microsoft.graph.security.dnsEvidence" => new DnsEvidence(),
                 "#microsoft.graph.security.fileEvidence" => new FileEvidence(),
+                "#microsoft.graph.security.fileHashEvidence" => new FileHashEvidence(),
                 "#microsoft.graph.security.gitHubOrganizationEvidence" => new GitHubOrganizationEvidence(),
                 "#microsoft.graph.security.gitHubRepoEvidence" => new GitHubRepoEvidence(),
                 "#microsoft.graph.security.gitHubUserEvidence" => new GitHubUserEvidence(),
@@ -160,6 +163,7 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },

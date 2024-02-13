@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class TokenIssuancePolicy : StsPolicy, IParsable {
         /// <summary>
-        /// Instantiates a new tokenIssuancePolicy and sets the default values.
+        /// Instantiates a new <see cref="TokenIssuancePolicy"/> and sets the default values.
         /// </summary>
         public TokenIssuancePolicy() : base() {
             OdataType = "#microsoft.graph.tokenIssuancePolicy";
@@ -15,6 +15,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="TokenIssuancePolicy"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new TokenIssuancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -23,6 +24,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
             };

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         }
 #endif
         /// <summary>
-        /// Instantiates a new setPositionPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="SetPositionPostRequestBody"/> and sets the default values.
         /// </summary>
         public SetPositionPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="SetPositionPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SetPositionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endCell", n => { EndCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Clean {
         }
 #endif
         /// <summary>
-        /// Instantiates a new cleanPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="CleanPostRequestBody"/> and sets the default values.
         /// </summary>
         public CleanPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Clean {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CleanPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CleanPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Clean {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

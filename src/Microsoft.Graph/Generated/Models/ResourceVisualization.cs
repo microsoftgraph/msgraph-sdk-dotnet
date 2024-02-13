@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new resourceVisualization and sets the default values.
+        /// Instantiates a new <see cref="ResourceVisualization"/> and sets the default values.
         /// </summary>
         public ResourceVisualization() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -150,6 +150,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ResourceVisualization"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ResourceVisualization CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -158,6 +159,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"containerDisplayName", n => { ContainerDisplayName = n.GetStringValue(); } },
