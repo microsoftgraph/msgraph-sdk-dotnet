@@ -21,14 +21,14 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Item {
             new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new GroupItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups/{group%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GroupItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

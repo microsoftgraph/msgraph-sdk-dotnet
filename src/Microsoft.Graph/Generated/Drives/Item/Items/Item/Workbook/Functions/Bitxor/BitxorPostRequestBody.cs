@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitxor {
         }
 #endif
         /// <summary>
-        /// Instantiates a new bitxorPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="BitxorPostRequestBody"/> and sets the default values.
         /// </summary>
         public BitxorPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitxor {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="BitxorPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static BitxorPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Bitxor {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"number1", n => { Number1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

@@ -6,6 +6,7 @@ using Microsoft.Graph.AppCatalogs;
 using Microsoft.Graph.ApplicationTemplates;
 using Microsoft.Graph.Applications;
 using Microsoft.Graph.ApplicationsWithAppId;
+using Microsoft.Graph.ApplicationsWithUniqueName;
 using Microsoft.Graph.AuditLogs;
 using Microsoft.Graph.AuthenticationMethodConfigurations;
 using Microsoft.Graph.AuthenticationMethodsPolicy;
@@ -38,6 +39,7 @@ using Microsoft.Graph.GroupLifecyclePolicies;
 using Microsoft.Graph.GroupSettingTemplates;
 using Microsoft.Graph.GroupSettings;
 using Microsoft.Graph.Groups;
+using Microsoft.Graph.GroupsWithUniqueName;
 using Microsoft.Graph.Identity;
 using Microsoft.Graph.IdentityGovernance;
 using Microsoft.Graph.IdentityProtection;
@@ -363,13 +365,23 @@ namespace Microsoft.Graph {
         /// <summary>
         /// Provides operations to manage the collection of application entities.
         /// </summary>
+        /// <returns>A <see cref="ApplicationsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of application</param>
         public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId) {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
         /// <summary>
-        /// Instantiates a new BaseGraphServiceClient and sets the default values.
+        /// Provides operations to manage the collection of application entities.
+        /// </summary>
+        /// <returns>A <see cref="ApplicationsWithUniqueNameRequestBuilder"/></returns>
+        /// <param name="uniqueName">Alternate key of application</param>
+        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+        }
+        /// <summary>
+        /// Instantiates a new <see cref="BaseGraphServiceClient"/> and sets the default values.
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -390,6 +402,7 @@ namespace Microsoft.Graph {
         /// <summary>
         /// Provides operations to manage the collection of device entities.
         /// </summary>
+        /// <returns>A <see cref="DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
         public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
@@ -398,14 +411,25 @@ namespace Microsoft.Graph {
         /// <summary>
         /// Provides operations to manage the collection of directoryRole entities.
         /// </summary>
+        /// <returns>A <see cref="DirectoryRolesWithRoleTemplateIdRequestBuilder"/></returns>
         /// <param name="roleTemplateId">Alternate key of directoryRole</param>
         public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId) {
             if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
             return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
         }
         /// <summary>
+        /// Provides operations to manage the collection of group entities.
+        /// </summary>
+        /// <returns>A <see cref="GroupsWithUniqueNameRequestBuilder"/></returns>
+        /// <param name="uniqueName">Alternate key of group</param>
+        public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+        }
+        /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.
         /// </summary>
+        /// <returns>A <see cref="ServicePrincipalsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
         public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId) {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));

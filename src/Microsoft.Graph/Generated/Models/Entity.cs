@@ -2,6 +2,8 @@
 using Microsoft.Graph.Models.CallRecords;
 using Microsoft.Graph.Models.ExternalConnectors;
 using Microsoft.Graph.Models.IdentityGovernance;
+using Microsoft.Graph.Models.Partners.Billing;
+using Microsoft.Graph.Models.Partners;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Models.TermStore;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -48,7 +50,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new entity and sets the default values.
+        /// Instantiates a new <see cref="Entity"/> and sets the default values.
         /// </summary>
         public Entity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -57,6 +59,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Entity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Entity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -171,6 +174,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.browserSite" => new BrowserSite(),
                 "#microsoft.graph.browserSiteList" => new BrowserSiteList(),
                 "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
+                "#microsoft.graph.bulkUpload" => new BulkUpload(),
                 "#microsoft.graph.calendar" => new Calendar(),
                 "#microsoft.graph.calendarGroup" => new CalendarGroup(),
                 "#microsoft.graph.calendarPermission" => new CalendarPermission(),
@@ -294,6 +298,8 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.educationFeedbackOutcome" => new EducationFeedbackOutcome(),
                 "#microsoft.graph.educationFeedbackResourceOutcome" => new EducationFeedbackResourceOutcome(),
                 "#microsoft.graph.educationGradingCategory" => new EducationGradingCategory(),
+                "#microsoft.graph.educationModule" => new EducationModule(),
+                "#microsoft.graph.educationModuleResource" => new EducationModuleResource(),
                 "#microsoft.graph.educationOrganization" => new EducationOrganization(),
                 "#microsoft.graph.educationOutcome" => new EducationOutcome(),
                 "#microsoft.graph.educationPointsOutcome" => new EducationPointsOutcome(),
@@ -503,6 +509,16 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.participant" => new Participant(),
                 "#microsoft.graph.participantJoiningNotification" => new ParticipantJoiningNotification(),
                 "#microsoft.graph.participantLeftNotification" => new ParticipantLeftNotification(),
+                "#microsoft.graph.partners" => new Microsoft.Graph.Models.Partners.Partners(),
+                "#microsoft.graph.partners.billing.azureUsage" => new AzureUsage(),
+                "#microsoft.graph.partners.billing.billedUsage" => new BilledUsage(),
+                "#microsoft.graph.partners.billing.billing" => new Microsoft.Graph.Models.Partners.Billing.Billing(),
+                "#microsoft.graph.partners.billing.exportSuccessOperation" => new ExportSuccessOperation(),
+                "#microsoft.graph.partners.billing.failedOperation" => new FailedOperation(),
+                "#microsoft.graph.partners.billing.manifest" => new Manifest(),
+                "#microsoft.graph.partners.billing.operation" => new Microsoft.Graph.Models.Partners.Billing.Operation(),
+                "#microsoft.graph.partners.billing.runningOperation" => new RunningOperation(),
+                "#microsoft.graph.partners.billing.unbilledUsage" => new UnbilledUsage(),
                 "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
                 "#microsoft.graph.payload" => new Payload(),
                 "#microsoft.graph.peopleAdminSettings" => new PeopleAdminSettings(),
@@ -894,6 +910,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             new WorksheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new ItemWithNameRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemWithNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="name">Usage: name=&apos;{name}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             if (!string.IsNullOrWhiteSpace(name)) PathParameters.Add("name", name);
         }
         /// <summary>
-        /// Instantiates a new ItemWithNameRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ItemWithNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -86,8 +86,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Invoke function item
         /// </summary>
+        /// <returns>A <see cref="WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<WorkbookChart?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -97,14 +99,14 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
+        /// <returns>A <see cref="ImageWithWidthRequestBuilder"/></returns>
         /// <param name="width">Usage: width={width}</param>
         public ImageWithWidthRequestBuilder ImageWithWidth(int? width) {
             _ = width ?? throw new ArgumentNullException(nameof(width));
@@ -113,6 +115,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
+        /// <returns>A <see cref="ImageWithWidthWithHeightRequestBuilder"/></returns>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
         public ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width) {
@@ -123,6 +126,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
+        /// <returns>A <see cref="ImageWithWidthWithHeightWithFittingModeRequestBuilder"/></returns>
         /// <param name="fittingMode">Usage: fittingMode=&apos;{fittingMode}&apos;</param>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
@@ -135,6 +139,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Invoke function item
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +156,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ItemWithNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ItemWithNameRequestBuilder WithUrl(string rawUrl) {
             return new ItemWithNameRequestBuilder(rawUrl, RequestAdapter);

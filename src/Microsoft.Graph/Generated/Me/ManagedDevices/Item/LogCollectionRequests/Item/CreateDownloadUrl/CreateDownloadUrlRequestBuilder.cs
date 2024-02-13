@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
     /// </summary>
     public class CreateDownloadUrlRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CreateDownloadUrlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CreateDownloadUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}/createDownloadUrl", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CreateDownloadUrlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,8 +30,10 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
         /// <summary>
         /// Invoke action createDownloadUrl
         /// </summary>
+        /// <returns>A <see cref="CreateDownloadUrlPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CreateDownloadUrlPostResponse?> PostAsCreateDownloadUrlPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -41,17 +43,18 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CreateDownloadUrlPostResponse>(requestInfo, CreateDownloadUrlPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action createDownloadUrl
         /// </summary>
+        /// <returns>A <see cref="CreateDownloadUrlResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CreateDownloadUrlResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,14 +64,14 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CreateDownloadUrlResponse>(requestInfo, CreateDownloadUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action createDownloadUrl
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.Crea
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CreateDownloadUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CreateDownloadUrlRequestBuilder WithUrl(string rawUrl) {
             return new CreateDownloadUrlRequestBuilder(rawUrl, RequestAdapter);

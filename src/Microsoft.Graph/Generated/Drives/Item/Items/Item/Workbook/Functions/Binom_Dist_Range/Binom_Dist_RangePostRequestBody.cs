@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         }
 #endif
         /// <summary>
-        /// Instantiates a new binom_Dist_RangePostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Binom_Dist_RangePostRequestBody"/> and sets the default values.
         /// </summary>
         public Binom_Dist_RangePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Binom_Dist_RangePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Binom_Dist_RangePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -89,6 +90,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"numberS", n => { NumberS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

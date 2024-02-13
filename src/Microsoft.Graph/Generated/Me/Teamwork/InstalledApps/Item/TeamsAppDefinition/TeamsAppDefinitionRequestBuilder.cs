@@ -15,24 +15,26 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.TeamsAppDefinition {
     /// </summary>
     public class TeamsAppDefinitionRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsAppDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsAppDefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/teamsAppDefinition{?%24select,%24expand}", pathParameters) {
+        public TeamsAppDefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/teamsAppDefinition{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TeamsAppDefinitionRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsAppDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsAppDefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/teamsAppDefinition{?%24select,%24expand}", rawUrl) {
+        public TeamsAppDefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/teamsAppDefinition{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The details of this version of the app.
         /// </summary>
+        /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Models.TeamsAppDefinition?> GetAsync(Action<RequestConfiguration<TeamsAppDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,14 +44,14 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.TeamsAppDefinition {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsAppDefinition>(requestInfo, Microsoft.Graph.Models.TeamsAppDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The details of this version of the app.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps.Item.TeamsAppDefinition {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TeamsAppDefinitionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TeamsAppDefinitionRequestBuilder WithUrl(string rawUrl) {
             return new TeamsAppDefinitionRequestBuilder(rawUrl, RequestAdapter);

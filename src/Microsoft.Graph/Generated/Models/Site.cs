@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("externalColumns", value); }
         }
 #endif
-        /// <summary>The isPersonalSite property</summary>
+        /// <summary>Identifies whether the site is personal or not. Read-only.</summary>
         public bool? IsPersonalSite {
             get { return BackingStore?.Get<bool?>("isPersonalSite"); }
             set { BackingStore?.Set("isPersonalSite", value); }
@@ -279,7 +279,7 @@ namespace Microsoft.Graph.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new site and sets the default values.
+        /// Instantiates a new <see cref="Site"/> and sets the default values.
         /// </summary>
         public Site() : base() {
             OdataType = "#microsoft.graph.site";
@@ -287,6 +287,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Site"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Site CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -295,6 +296,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"analytics", n => { Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },

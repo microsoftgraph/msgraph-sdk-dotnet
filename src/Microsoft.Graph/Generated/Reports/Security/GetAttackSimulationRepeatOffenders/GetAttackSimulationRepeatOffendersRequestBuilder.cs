@@ -14,24 +14,26 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
     /// </summary>
     public class GetAttackSimulationRepeatOffendersRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetAttackSimulationRepeatOffendersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAttackSimulationRepeatOffendersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationRepeatOffenders(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetAttackSimulationRepeatOffendersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationRepeatOffenders(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GetAttackSimulationRepeatOffendersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAttackSimulationRepeatOffendersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationRepeatOffenders(){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetAttackSimulationRepeatOffendersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationRepeatOffenders(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getAttackSimulationRepeatOffenders
         /// </summary>
+        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetAttackSimulationRepeatOffendersGetResponse?> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -41,17 +43,18 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersGetResponse>(requestInfo, GetAttackSimulationRepeatOffendersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAttackSimulationRepeatOffenders
         /// </summary>
+        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetAttackSimulationRepeatOffendersResponse?> GetAsync(Action<RequestConfiguration<GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,14 +64,14 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersResponse>(requestInfo, GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAttackSimulationRepeatOffenders
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GetAttackSimulationRepeatOffendersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetAttackSimulationRepeatOffendersRequestBuilder WithUrl(string rawUrl) {
             return new GetAttackSimulationRepeatOffendersRequestBuilder(rawUrl, RequestAdapter);

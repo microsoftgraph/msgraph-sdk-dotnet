@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("reminderNotificationsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new accessReviewScheduleSettings and sets the default values.
+        /// Instantiates a new <see cref="AccessReviewScheduleSettings"/> and sets the default values.
         /// </summary>
         public AccessReviewScheduleSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -139,6 +139,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AccessReviewScheduleSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AccessReviewScheduleSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -147,6 +148,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applyActions", n => { ApplyActions = n.GetCollectionOfObjectValues<AccessReviewApplyAction>(AccessReviewApplyAction.CreateFromDiscriminatorValue)?.ToList(); } },

@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser {
-    [Obsolete("This class is obsolete. Use allowedCalendarSharingRolesWithUserGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
     public class AllowedCalendarSharingRolesWithUserResponse : AllowedCalendarSharingRolesWithUserGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AllowedCalendarSharingRolesWithUserResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AllowedCalendarSharingRolesWithUserResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));

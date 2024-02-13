@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         }
 #endif
         /// <summary>
-        /// Instantiates a new atan2PostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Atan2PostRequestBody"/> and sets the default values.
         /// </summary>
         public Atan2PostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Atan2PostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Atan2PostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"xNum", n => { XNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

@@ -15,24 +15,26 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
     /// </summary>
     public class LastSharedMethodRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LastSharedMethodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24select,%24expand}", pathParameters) {
+        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LastSharedMethodRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LastSharedMethodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24select,%24expand}", rawUrl) {
+        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get lastSharedMethod from me
         /// </summary>
+        /// <returns>A <see cref="Entity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Entity?> GetAsync(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,14 +44,14 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Entity>(requestInfo, Entity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get lastSharedMethod from me
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LastSharedMethodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LastSharedMethodRequestBuilder WithUrl(string rawUrl) {
             return new LastSharedMethodRequestBuilder(rawUrl, RequestAdapter);

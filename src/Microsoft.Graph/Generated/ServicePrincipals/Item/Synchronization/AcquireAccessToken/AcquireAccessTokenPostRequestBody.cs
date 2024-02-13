@@ -30,7 +30,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessTo
         }
 #endif
         /// <summary>
-        /// Instantiates a new acquireAccessTokenPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="AcquireAccessTokenPostRequestBody"/> and sets the default values.
         /// </summary>
         public AcquireAccessTokenPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessTo
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AcquireAccessTokenPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AcquireAccessTokenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessTo
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },

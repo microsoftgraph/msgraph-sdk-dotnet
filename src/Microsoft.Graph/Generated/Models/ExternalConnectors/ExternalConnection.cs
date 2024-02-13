@@ -154,6 +154,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -162,6 +163,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },

@@ -15,14 +15,14 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
     /// </summary>
     public class InstantiateRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new InstantiateRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InstantiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public InstantiateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}/instantiate", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new InstantiateRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InstantiateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,9 +32,11 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
         /// Add an instance of an application from the Microsoft Entra application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="ApplicationServicePrincipal"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ApplicationServicePrincipal?> PostAsync(InstantiatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,14 +47,14 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApplicationServicePrincipal>(requestInfo, ApplicationServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add an instance of an application from the Microsoft Entra application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,6 +74,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="InstantiateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public InstantiateRequestBuilder WithUrl(string rawUrl) {
             return new InstantiateRequestBuilder(rawUrl, RequestAdapter);

@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
         }
 #endif
         /// <summary>
-        /// Instantiates a new findMeetingTimesPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="FindMeetingTimesPostRequestBody"/> and sets the default values.
         /// </summary>
         public FindMeetingTimesPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -92,6 +92,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="FindMeetingTimesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static FindMeetingTimesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -100,6 +101,7 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue)?.ToList(); } },

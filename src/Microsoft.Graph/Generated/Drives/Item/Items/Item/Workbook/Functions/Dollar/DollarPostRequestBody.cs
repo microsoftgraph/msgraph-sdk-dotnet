@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dollar {
         }
 #endif
         /// <summary>
-        /// Instantiates a new dollarPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="DollarPostRequestBody"/> and sets the default values.
         /// </summary>
         public DollarPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dollar {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DollarPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DollarPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dollar {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"decimals", n => { Decimals = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

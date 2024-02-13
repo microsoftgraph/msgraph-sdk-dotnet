@@ -14,28 +14,30 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
     /// </summary>
     public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="accessPackageId">Usage: accessPackageId=&apos;{accessPackageId}&apos;</param>
         /// <param name="incompatibleAccessPackageId">Usage: incompatibleAccessPackageId=&apos;{incompatibleAccessPackageId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string accessPackageId = "", string incompatibleAccessPackageId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string accessPackageId = "", string incompatibleAccessPackageId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(accessPackageId)) PathParameters.Add("accessPackageId", accessPackageId);
             if (!string.IsNullOrWhiteSpace(incompatibleAccessPackageId)) PathParameters.Add("incompatibleAccessPackageId", incompatibleAccessPackageId);
         }
         /// <summary>
-        /// Instantiates a new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(accessPackageId='{accessPackageId}',incompatibleAccessPackageId='{incompatibleAccessPackageId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function additionalAccess
         /// </summary>
+        /// <returns>A <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse?> GetAsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponseAsync(Action<RequestConfiguration<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,17 +47,18 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse>(requestInfo, AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function additionalAccess
         /// </summary>
+        /// <returns>A <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse?> GetAsync(Action<RequestConfiguration<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -65,14 +68,14 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse>(requestInfo, AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function additionalAccess
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +92,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder WithUrl(string rawUrl) {
             return new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder(rawUrl, RequestAdapter);
@@ -100,6 +104,16 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.A
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         }
 #endif
         /// <summary>
-        /// Instantiates a new findBPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="FindBPostRequestBody"/> and sets the default values.
         /// </summary>
         public FindBPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="FindBPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static FindBPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -75,6 +76,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"findText", n => { FindText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

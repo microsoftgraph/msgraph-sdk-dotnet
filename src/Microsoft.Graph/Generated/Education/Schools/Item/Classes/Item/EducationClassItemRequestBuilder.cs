@@ -16,14 +16,14 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Item {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new EducationClassItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/{educationClass%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new EducationClassItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -14,28 +14,30 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
     /// </summary>
     public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(role)) PathParameters.Add("role", role);
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
         /// <summary>
-        /// Instantiates a new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
+        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,17 +47,18 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleGetResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
+        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -65,14 +68,14 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +92,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder WithUrl(string rawUrl) {
             return new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(rawUrl, RequestAdapter);
@@ -100,6 +104,16 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

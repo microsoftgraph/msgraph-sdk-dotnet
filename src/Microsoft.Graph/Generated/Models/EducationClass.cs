@@ -235,6 +235,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("members", value); }
         }
 #endif
+        /// <summary>The modules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationModule>? Modules {
+            get { return BackingStore?.Get<List<EducationModule>?>("modules"); }
+            set { BackingStore?.Set("modules", value); }
+        }
+#nullable restore
+#else
+        public List<EducationModule> Modules {
+            get { return BackingStore?.Get<List<EducationModule>>("modules"); }
+            set { BackingStore?.Set("modules", value); }
+        }
+#endif
         /// <summary>All schools that this class is associated with. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -280,6 +294,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="EducationClass"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new EducationClass CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -288,6 +303,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assignmentCategories", n => { AssignmentCategories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -307,6 +323,7 @@ namespace Microsoft.Graph.Models {
                 {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"modules", n => { Modules = n.GetCollectionOfObjectValues<EducationModule>(EducationModule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"teachers", n => { Teachers = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"term", n => { Term = n.GetObjectValue<EducationTerm>(EducationTerm.CreateFromDiscriminatorValue); } },
@@ -336,6 +353,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteObjectValue<Microsoft.Graph.Models.Group>("group", Group);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<EducationUser>("members", Members);
+            writer.WriteCollectionOfObjectValues<EducationModule>("modules", Modules);
             writer.WriteCollectionOfObjectValues<EducationSchool>("schools", Schools);
             writer.WriteCollectionOfObjectValues<EducationUser>("teachers", Teachers);
             writer.WriteObjectValue<EducationTerm>("term", Term);

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         }
 #endif
         /// <summary>
-        /// Instantiates a new days360PostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Days360PostRequestBody"/> and sets the default values.
         /// </summary>
         public Days360PostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Days360PostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Days360PostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -75,6 +76,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Days360 {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endDate", n => { EndDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("productFamily", value); }
         }
         /// <summary>
-        /// Instantiates a new clientUserAgent and sets the default values.
+        /// Instantiates a new <see cref="ClientUserAgent"/> and sets the default values.
         /// </summary>
         public ClientUserAgent() : base() {
             OdataType = "#microsoft.graph.callRecords.clientUserAgent";
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ClientUserAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ClientUserAgent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"azureADAppId", n => { AzureADAppId = n.GetStringValue(); } },

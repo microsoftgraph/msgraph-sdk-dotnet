@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         }
 #endif
         /// <summary>
-        /// Instantiates a new itemIdResolver and sets the default values.
+        /// Instantiates a new <see cref="ItemIdResolver"/> and sets the default values.
         /// </summary>
         public ItemIdResolver() : base() {
             OdataType = "#microsoft.graph.externalConnectors.itemIdResolver";
@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ItemIdResolver"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ItemIdResolver CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -51,6 +52,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"itemId", n => { ItemId = n.GetStringValue(); } },

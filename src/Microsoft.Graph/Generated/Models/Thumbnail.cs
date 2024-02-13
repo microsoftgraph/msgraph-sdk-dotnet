@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("width", value); }
         }
         /// <summary>
-        /// Instantiates a new thumbnail and sets the default values.
+        /// Instantiates a new <see cref="Thumbnail"/> and sets the default values.
         /// </summary>
         public Thumbnail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -90,6 +90,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Thumbnail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Thumbnail CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -98,6 +99,7 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"content", n => { Content = n.GetByteArrayValue(); } },

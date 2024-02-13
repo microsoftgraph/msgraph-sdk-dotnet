@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("timesObserved", value); }
         }
         /// <summary>
-        /// Instantiates a new hostPortBanner and sets the default values.
+        /// Instantiates a new <see cref="HostPortBanner"/> and sets the default values.
         /// </summary>
         public HostPortBanner() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="HostPortBanner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static HostPortBanner CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -89,6 +90,7 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"banner", n => { Banner = n.GetStringValue(); } },
