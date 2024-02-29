@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
             return await RequestAdapter.SendAsync<AttachmentCollectionResponse>(requestInfo, AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0" />
+        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Attachment"/></returns>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -144,6 +144,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -152,6 +153,16 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,6 +175,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
+            [Obsolete("This property is deprecated, use OrderbyAsGetOrderbyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24orderby")]
@@ -173,7 +185,18 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
+            /// <summary>Order items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[]? OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[] OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
+            [Obsolete("This property is deprecated, use SelectAsGetSelectQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24select")]
@@ -182,6 +205,16 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Attachments {
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
+            /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[]? SelectAsGetSelectQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[] SelectAsGetSelectQueryParameterType { get; set; }
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]

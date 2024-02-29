@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0" />
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ItemRetentionLabel"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return requestInfo;
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -164,6 +164,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
         /// </summary>
         public class RetentionLabelRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -173,7 +174,18 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
+            [Obsolete("This property is deprecated, use SelectAsGetSelectQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24select")]
@@ -182,6 +194,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
+            /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[]? SelectAsGetSelectQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[] SelectAsGetSelectQueryParameterType { get; set; }
 #endif
         }
         /// <summary>

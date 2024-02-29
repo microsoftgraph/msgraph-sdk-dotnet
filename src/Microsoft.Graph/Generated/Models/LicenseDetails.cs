@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class LicenseDetails : Entity, IParsable {
-        /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
+        /// <summary>Information about the service plans assigned with the license. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServicePlanInfo>? ServicePlans {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
-        /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only</summary>
+        /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.</summary>
         public Guid? SkuId {
             get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
-        /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: &apos;AAD_Premium&apos;. Read-only</summary>
+        /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuPartNumber {

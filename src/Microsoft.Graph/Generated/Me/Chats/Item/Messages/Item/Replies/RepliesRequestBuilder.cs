@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new reply to a chatMessage in a specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0" />
+        /// Send a new reply to a chatMessage in a specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new reply to a chatMessage in a specified channel.
+        /// Send a new reply to a chatMessage in a specified channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -144,6 +144,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -152,6 +153,16 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,6 +175,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
+            [Obsolete("This property is deprecated, use OrderbyAsGetOrderbyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24orderby")]
@@ -172,6 +184,16 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Order items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[]? OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[] OrderbyAsGetOrderbyQueryParameterType { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -184,6 +206,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
+            [Obsolete("This property is deprecated, use SelectAsGetSelectQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24select")]
@@ -192,6 +215,16 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies {
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
+            /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[]? SelectAsGetSelectQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[] SelectAsGetSelectQueryParameterType { get; set; }
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]

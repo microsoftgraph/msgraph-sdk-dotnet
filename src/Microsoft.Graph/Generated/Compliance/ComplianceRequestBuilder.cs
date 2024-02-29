@@ -120,6 +120,7 @@ namespace Microsoft.Graph.Compliance {
         /// </summary>
         public class ComplianceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -128,6 +129,16 @@ namespace Microsoft.Graph.Compliance {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

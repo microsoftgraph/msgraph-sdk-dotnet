@@ -126,6 +126,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -134,6 +135,16 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,6 +157,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
+            [Obsolete("This property is deprecated, use OrderbyAsGetOrderbyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24orderby")]
@@ -154,6 +166,16 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Order items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[]? OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[] OrderbyAsGetOrderbyQueryParameterType { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,6 +188,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
+            [Obsolete("This property is deprecated, use SelectAsGetSelectQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24select")]
@@ -174,6 +197,16 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
+            /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[]? SelectAsGetSelectQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[] SelectAsGetSelectQueryParameterType { get; set; }
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]

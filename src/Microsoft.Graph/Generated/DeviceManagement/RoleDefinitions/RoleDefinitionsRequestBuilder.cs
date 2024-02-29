@@ -43,8 +43,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
         public RoleDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleDefinitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the roleDefinition objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return await RequestAdapter.SendAsync<RoleDefinitionCollectionResponse>(requestInfo, RoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new roleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-create?view=graph-rest-1.0" />
+        /// Create a new deviceAndAppManagementRoleDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+        /// List properties and relationships of the roleDefinition objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new roleDefinition object.
+        /// Create a new deviceAndAppManagementRoleDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,13 +132,14 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+        /// List properties and relationships of the roleDefinition objects.
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
+            [Obsolete("This property is deprecated, use ExpandAsGetExpandQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24expand")]
@@ -147,6 +148,16 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[]? ExpandAsGetExpandQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public GetExpandQueryParameterType[] ExpandAsGetExpandQueryParameterType { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,6 +170,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
+            [Obsolete("This property is deprecated, use OrderbyAsGetOrderbyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24orderby")]
@@ -167,6 +179,16 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Order items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[]? OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[] OrderbyAsGetOrderbyQueryParameterType { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,6 +201,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
+            [Obsolete("This property is deprecated, use SelectAsGetSelectQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24select")]
@@ -187,6 +210,16 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
+            /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[]? SelectAsGetSelectQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24select")]
+            public GetSelectQueryParameterType[] SelectAsGetSelectQueryParameterType { get; set; }
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]

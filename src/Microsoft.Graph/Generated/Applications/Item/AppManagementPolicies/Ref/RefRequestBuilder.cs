@@ -191,6 +191,7 @@ namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Ref {
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
+            [Obsolete("This property is deprecated, use OrderbyAsGetOrderbyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("%24orderby")]
@@ -199,6 +200,16 @@ namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Ref {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Order items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[]? OrderbyAsGetOrderbyQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24orderby")]
+            public GetOrderbyQueryParameterType[] OrderbyAsGetOrderbyQueryParameterType { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

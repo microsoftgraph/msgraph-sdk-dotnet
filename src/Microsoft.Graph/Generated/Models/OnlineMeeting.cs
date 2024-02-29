@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
-        /// <summary>The meeting end time in UTC.</summary>
+        /// <summary>The meeting end time in UTC. Required when you create an online meeting.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isBroadcast"); }
             set { BackingStore?.Set("isBroadcast", value); }
         }
-        /// <summary>The participants associated with the online meeting, including the organizer and the attendees.</summary>
+        /// <summary>The participants associated with the online meeting.  This includes the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MeetingParticipants? Participants {
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("recordings", value); }
         }
 #endif
-        /// <summary>The meeting start time in UTC.</summary>
+        /// <summary>The meeting start time in UTC. Required when you create an online meeting.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
