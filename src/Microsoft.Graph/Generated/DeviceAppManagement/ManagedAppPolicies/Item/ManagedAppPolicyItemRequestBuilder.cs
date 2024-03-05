@@ -53,8 +53,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppProtection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the targetedManagedAppProtection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppProtection object.
+        /// Read properties and relationships of the targetedManagedAppProtection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
         public class ManagedAppPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read properties and relationships of the managedAppProtection object.
+        /// Read properties and relationships of the targetedManagedAppProtection object.
         /// </summary>
         public class ManagedAppPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

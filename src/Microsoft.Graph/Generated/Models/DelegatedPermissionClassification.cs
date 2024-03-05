@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class DelegatedPermissionClassification : Entity, IParsable {
-        /// <summary>The classification value being given. Possible value: low. Doesn&apos;t support $filter.</summary>
+        /// <summary>The classification value. Possible values: low, medium (preview), high (preview). Doesn&apos;t support $filter.</summary>
         public PermissionClassificationType? Classification {
             get { return BackingStore?.Get<PermissionClassificationType?>("classification"); }
             set { BackingStore?.Set("classification", value); }

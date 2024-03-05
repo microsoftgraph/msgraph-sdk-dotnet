@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
     public class PrivilegedAccessGroupAssignmentSchedule : PrivilegedAccessSchedule, IParsable {
-        /// <summary>The identifier of the membership or ownership assignment to the group that is governed by PIM. Required. The possible values are: owner, member, unknownFutureValue. Supports $filter (eq).</summary>
+        /// <summary>The identifier of the membership or ownership assignment to the group that is governed through PIM. Required. The possible values are: owner, member, unknownFutureValue. Supports $filter (eq).</summary>
         public PrivilegedAccessGroupRelationships? AccessId {
             get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
-        /// <summary>When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.</summary>
+        /// <summary>When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it&apos;s null. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedAccessGroupEligibilitySchedule? ActivatedUsing {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<PrivilegedAccessGroupAssignmentType?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
-        /// <summary>References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.</summary>
+        /// <summary>References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.Group? Group {
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<PrivilegedAccessGroupMemberType?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
-        /// <summary>References the principal that&apos;s in the scope of this membership or ownership assignment request to the group that&apos;s governed by PIM. Supports $expand.</summary>
+        /// <summary>References the principal that&apos;s in the scope of this membership or ownership assignment request to the group that&apos;s governed through PIM. Supports $expand and $select nested in $expand for id only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DirectoryObject? Principal {

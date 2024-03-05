@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn&apos;t federated), this property is the local default domain name for the tenant, for example contoso.com.&lt;br&gt;For guests from other Microsoft Entra organization, this is the domain of the federated organization, for examplecontoso.com`.  For more information about filtering behavior for this property, see Filtering on the identities property of a user.</summary>
+        /// <summary>Specifies the issuer of the identity, for example facebook.com. 512 character limit. For local accounts (where signInType isn&apos;t federated), this property is the local default domain name for the tenant, for example contoso.com.  For guests from other Microsoft Entra organizations, this is the domain of the federated organization, for example contoso.com. For more information about filtering behavior for this property, see Filtering on the identities property of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Issuer {

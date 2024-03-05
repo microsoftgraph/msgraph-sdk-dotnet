@@ -15,6 +15,7 @@ using Microsoft.Graph.Groups.Item.Sites.Item.LastModifiedByUser;
 using Microsoft.Graph.Groups.Item.Sites.Item.Lists;
 using Microsoft.Graph.Groups.Item.Sites.Item.Onenote;
 using Microsoft.Graph.Groups.Item.Sites.Item.Operations;
+using Microsoft.Graph.Groups.Item.Sites.Item.Pages;
 using Microsoft.Graph.Groups.Item.Sites.Item.Permissions;
 using Microsoft.Graph.Groups.Item.Sites.Item.Sites;
 using Microsoft.Graph.Groups.Item.Sites.Item.TermStore;
@@ -85,6 +86,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item {
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
+        public PagesRequestBuilder Pages { get =>
+            new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>

@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
             set { BackingStore?.Set("failureDateTime", value); }
         }
-        /// <summary>The code with which the call ended. For more information, see RFC 3261.</summary>
+        /// <summary>The final response code with which the call ended. For more information, see RFC 3261.</summary>
         public int? FinalSipCode {
             get { return BackingStore?.Get<int?>("finalSipCode"); }
             set { BackingStore?.Set("finalSipCode", value); }
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>When the initial invite was sent.</summary>
+        /// <summary>The date and time when the initial invite was sent.</summary>
         public DateTimeOffset? InviteDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("inviteDateTime"); }
             set { BackingStore?.Set("inviteDateTime", value); }
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("signalingLocation", value); }
         }
 #endif
-        /// <summary>Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.</summary>
+        /// <summary>Call start time.For failed and unanswered calls, this value can be equal to the invite or failure time.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP Address, and can be the same as the user&apos;s email address.</summary>
+        /// <summary>UserPrincipalName (sign-in name) in Microsoft Entra ID. This value is usually the same as the user&apos;s SIP Address, and can be the same as the user&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

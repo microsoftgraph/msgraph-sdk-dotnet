@@ -29,7 +29,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         public PrincipalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest%2Did}/principal{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
-        /// The principal that&apos;s getting a role assignment through the request. Supports $expand.
+        /// The principal that&apos;s getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The principal that&apos;s getting a role assignment through the request. Supports $expand.
+        /// The principal that&apos;s getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             return new PrincipalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The principal that&apos;s getting a role assignment through the request. Supports $expand.
+        /// The principal that&apos;s getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
         /// </summary>
         public class PrincipalRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

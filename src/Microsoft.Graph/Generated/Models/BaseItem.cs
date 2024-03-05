@@ -151,12 +151,14 @@ namespace Microsoft.Graph.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.baseSitePage" => new BaseSitePage(),
                 "#microsoft.graph.drive" => new Drive(),
                 "#microsoft.graph.driveItem" => new DriveItem(),
                 "#microsoft.graph.list" => new List(),
                 "#microsoft.graph.listItem" => new ListItem(),
                 "#microsoft.graph.sharedDriveItem" => new SharedDriveItem(),
                 "#microsoft.graph.site" => new Site(),
+                "#microsoft.graph.sitePage" => new SitePage(),
                 _ => new BaseItem(),
             };
         }

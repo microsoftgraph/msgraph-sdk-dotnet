@@ -123,8 +123,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
         public MobileAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the microsoftStoreForBusinessApp objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-microsoftstoreforbusinessapp-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the managedApp objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedapp-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,8 +144,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileAppCollectionResponse>(requestInfo, MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new managedIOSLobApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedioslobapp-create?view=graph-rest-1.0" />
+        /// Create a new managedIOSStoreApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the microsoftStoreForBusinessApp objects.
+        /// List properties and relationships of the managedApp objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new managedIOSLobApp object.
+        /// Create a new managedIOSStoreApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return new MobileAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the microsoftStoreForBusinessApp objects.
+        /// List properties and relationships of the managedApp objects.
         /// </summary>
         public class MobileAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

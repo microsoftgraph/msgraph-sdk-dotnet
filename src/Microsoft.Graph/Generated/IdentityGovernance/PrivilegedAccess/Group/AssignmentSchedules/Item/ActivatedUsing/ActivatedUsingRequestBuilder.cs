@@ -29,7 +29,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         public ActivatedUsingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentSchedules/{privilegedAccessGroupAssignmentSchedule%2Did}/activatedUsing{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
-        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
+        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it&apos;s null. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilitySchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilitySchedule>(requestInfo, PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
+        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it&apos;s null. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new ActivatedUsingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
+        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it&apos;s null. Supports $expand.
         /// </summary>
         public class ActivatedUsingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

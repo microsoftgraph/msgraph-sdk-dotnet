@@ -11,6 +11,7 @@ using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists;
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote;
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations;
+using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages;
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions;
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites;
 using Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore;
@@ -77,6 +78,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetByPathWith
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
+        public PagesRequestBuilder Pages { get =>
+            new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>

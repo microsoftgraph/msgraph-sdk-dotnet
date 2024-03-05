@@ -13,6 +13,7 @@ using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.LastModifi
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Lists;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Onenote;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Operations;
+using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Pages;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Permissions;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites;
 using Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.TermStore;
@@ -77,6 +78,10 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1 {
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
+        public PagesRequestBuilder Pages { get =>
+            new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>

@@ -180,6 +180,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>The pages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<BaseSitePage>? Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#nullable restore
+#else
+        public List<BaseSitePage> Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -312,6 +326,7 @@ namespace Microsoft.Graph.Models {
                 {"lists", n => { Lists = n.GetCollectionOfObjectValues<List>(List.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Models.Onenote>(Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"pages", n => { Pages = n.GetCollectionOfObjectValues<BaseSitePage>(BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.Root>(Microsoft.Graph.Models.Root.CreateFromDiscriminatorValue); } },
                 {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
@@ -341,6 +356,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<List>("lists", Lists);
             writer.WriteObjectValue<Microsoft.Graph.Models.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<BaseSitePage>("pages", Pages);
             writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Models.Root>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);

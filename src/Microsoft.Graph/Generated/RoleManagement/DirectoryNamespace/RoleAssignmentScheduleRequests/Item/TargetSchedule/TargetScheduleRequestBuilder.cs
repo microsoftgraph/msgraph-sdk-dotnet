@@ -29,7 +29,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         public TargetScheduleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest%2Did}/targetSchedule{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
-        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentSchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return new TargetScheduleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+        /// The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
         /// </summary>
         public class TargetScheduleRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

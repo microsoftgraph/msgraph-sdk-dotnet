@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
-        /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand.</summary>
+        /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleEligibilitySchedule? ActivatedUsing {
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("justification", value); }
         }
 #endif
-        /// <summary>The principal that&apos;s getting a role assignment through the request. Supports $expand.</summary>
+        /// <summary>The principal that&apos;s getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DirectoryObject? Principal {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("principalId", value); }
         }
 #endif
-        /// <summary>Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.</summary>
+        /// <summary>Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleDefinition? RoleDefinition {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
-        /// <summary>The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.</summary>
+        /// <summary>The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleAssignmentSchedule? TargetSchedule {

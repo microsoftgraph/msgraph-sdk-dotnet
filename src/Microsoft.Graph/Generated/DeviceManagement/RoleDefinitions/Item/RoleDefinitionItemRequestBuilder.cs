@@ -75,8 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a roleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0" />
+        /// Update the properties of a deviceAndAppManagementRoleDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a roleDefinition object.
+        /// Update the properties of a deviceAndAppManagementRoleDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

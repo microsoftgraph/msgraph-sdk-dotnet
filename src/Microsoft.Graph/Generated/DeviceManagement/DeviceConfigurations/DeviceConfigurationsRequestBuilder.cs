@@ -43,8 +43,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
         public DeviceConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the windows10TeamGeneralConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10teamgeneralconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosUpdateConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdateconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfigurationCollectionResponse>(requestInfo, DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new androidWorkProfileCustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecustomconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new androidCustomConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the windows10TeamGeneralConfiguration objects.
+        /// List properties and relationships of the iosUpdateConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new androidWorkProfileCustomConfiguration object.
+        /// Create a new androidCustomConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return new DeviceConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the windows10TeamGeneralConfiguration objects.
+        /// List properties and relationships of the iosUpdateConfiguration objects.
         /// </summary>
         public class DeviceConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

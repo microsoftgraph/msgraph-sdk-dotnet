@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Identity {
         public B2xUserFlowsRequestBuilder B2xUserFlows { get =>
             new B2xUserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.</summary>
+        /// <summary>The conditionalAccess property</summary>
         public ConditionalAccessRequestBuilder ConditionalAccess { get =>
             new ConditionalAccessRequestBuilder(PathParameters, RequestAdapter);
         }

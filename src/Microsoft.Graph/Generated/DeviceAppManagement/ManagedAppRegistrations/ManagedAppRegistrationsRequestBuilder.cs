@@ -48,8 +48,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
         public ManagedAppRegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedAppRegistrations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the managedAppRegistration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
+        /// List properties and relationships of the managedAppRegistration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return new ManagedAppRegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
+        /// List properties and relationships of the managedAppRegistration objects.
         /// </summary>
         public class ManagedAppRegistrationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Time?>("dueTime"); }
             set { BackingStore?.Set("dueTime", value); }
         }
-        /// <summary>Default Teams channel to which notifications will be sent. Default value is null.</summary>
+        /// <summary>Default Teams channel to which notifications are sent. Default value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationChannelUrl {
