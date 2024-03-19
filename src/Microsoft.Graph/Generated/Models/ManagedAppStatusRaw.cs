@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Represents an un-typed status report about organizations app protection and configuration.
     /// </summary>
-    public class ManagedAppStatusRaw : ManagedAppStatus, IParsable {
+    public class ManagedAppStatusRaw : ManagedAppStatus, IParsable 
+    {
         /// <summary>Status report content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +27,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="ManagedAppStatusRaw"/> and sets the default values.
         /// </summary>
-        public ManagedAppStatusRaw() : base() {
+        public ManagedAppStatusRaw() : base()
+        {
             OdataType = "#microsoft.graph.managedAppStatusRaw";
         }
         /// <summary>
@@ -34,7 +36,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ManagedAppStatusRaw"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAppStatusRaw CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ManagedAppStatusRaw CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ManagedAppStatusRaw();
         }
@@ -42,8 +45,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +56,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Json>("content", Content);

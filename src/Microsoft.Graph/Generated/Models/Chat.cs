@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class Chat : Entity, IParsable {
+    public class Chat : Entity, IParsable 
+    {
         /// <summary>The chatType property</summary>
         public Microsoft.Graph.Models.ChatType? ChatType {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChatType?>("chatType"); }
@@ -30,7 +31,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
-        /// <summary>Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.</summary>
+        /// <summary>Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ChatMessageInfo? LastMessagePreview {
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lastMessagePreview", value); }
         }
 #endif
-        /// <summary>Date and time at which the chat was renamed or list of members were last changed. Read-only.</summary>
+        /// <summary>Date and time at which the chat was renamed or the list of members was last changed. Read-only.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("topic", value); }
         }
 #endif
-        /// <summary>Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.</summary>
+        /// <summary>Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ChatViewpoint? Viewpoint {
@@ -194,7 +195,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Chat"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Chat CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Chat CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Chat();
         }
@@ -202,8 +204,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"chatType", n => { ChatType = n.GetEnumValue<ChatType>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -225,7 +229,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ChatType>("chatType", ChatType);

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.Item {
     /// <summary>
     /// Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
     /// </summary>
-    public class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder {
+    public class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="HomeRealmDiscoveryPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HomeRealmDiscoveryPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy%2Did}{?%24expand,%24select}", pathParameters) {
+        public HomeRealmDiscoveryPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="HomeRealmDiscoveryPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HomeRealmDiscoveryPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy%2Did}{?%24expand,%24select}", rawUrl) {
+        public HomeRealmDiscoveryPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get homeRealmDiscoveryPolicies from applications
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HomeRealmDiscoveryPolicy?> GetAsync(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicy?> GetAsync(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<HomeRealmDiscoveryPolicy> GetAsync(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HomeRealmDiscoveryPolicy> GetAsync(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.Item {
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HomeRealmDiscoveryPolicyItemRequestBuilder WithUrl(string rawUrl) {
+        public HomeRealmDiscoveryPolicyItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new HomeRealmDiscoveryPolicyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get homeRealmDiscoveryPolicies from applications
         /// </summary>
-        public class HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters {
+        public class HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Applications.Item.HomeRealmDiscoveryPolicies.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters> {
+        public class HomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

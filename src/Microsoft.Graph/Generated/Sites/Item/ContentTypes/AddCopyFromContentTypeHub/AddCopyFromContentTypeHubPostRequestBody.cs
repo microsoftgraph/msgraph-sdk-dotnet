@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Sites.Item.ContentTypes.AddCopyFromContentTypeHub {
-    public class AddCopyFromContentTypeHubPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AddCopyFromContentTypeHubPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.AddCopyFromContentTypeHub {
         /// <summary>
         /// Instantiates a new <see cref="AddCopyFromContentTypeHubPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AddCopyFromContentTypeHubPostRequestBody() {
+        public AddCopyFromContentTypeHubPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -40,7 +42,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.AddCopyFromContentTypeHub {
         /// </summary>
         /// <returns>A <see cref="AddCopyFromContentTypeHubPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddCopyFromContentTypeHubPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AddCopyFromContentTypeHubPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AddCopyFromContentTypeHubPostRequestBody();
         }
@@ -48,8 +51,10 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.AddCopyFromContentTypeHub {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"contentTypeId", n => { ContentTypeId = n.GetStringValue(); } },
             };
         }
@@ -57,7 +62,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.AddCopyFromContentTypeHub {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contentTypeId", ContentTypeId);
             writer.WriteAdditionalData(AdditionalData);

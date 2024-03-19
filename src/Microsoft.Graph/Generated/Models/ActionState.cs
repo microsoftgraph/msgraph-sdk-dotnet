@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>State of the action on the device</summary>
-    public enum ActionState {
+    public enum ActionState
+    {
         /// <summary>Not a valid action state</summary>
         [EnumMember(Value = "none")]
         None,

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs
     /// <summary>
     /// Provides operations to manage the parentHostPairs property of the microsoft.graph.security.host entity.
     /// </summary>
-    public class HostPairItemRequestBuilder : BaseRequestBuilder {
+    public class HostPairItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="HostPairItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostPairItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/parentHostPairs/{hostPair%2Did}{?%24expand,%24select}", pathParameters) {
+        public HostPairItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/parentHostPairs/{hostPair%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="HostPairItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostPairItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/parentHostPairs/{hostPair%2Did}{?%24expand,%24select}", rawUrl) {
+        public HostPairItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/parentHostPairs/{hostPair%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HostPair?> GetAsync(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostPair?> GetAsync(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<HostPair> GetAsync(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostPair> GetAsync(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<HostPair>(requestInfo, HostPair.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs
         /// </summary>
         /// <returns>A <see cref="HostPairItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HostPairItemRequestBuilder WithUrl(string rawUrl) {
+        public HostPairItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new HostPairItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
         /// </summary>
-        public class HostPairItemRequestBuilderGetQueryParameters {
+        public class HostPairItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostPairItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters> {
+        public class HostPairItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HostPairItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class Site : BaseItem, IParsable {
+    public class Site : BaseItem, IParsable 
+    {
         /// <summary>Analytics about the view activities that took place in this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -180,6 +181,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>The pages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<BaseSitePage>? Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#nullable restore
+#else
+        public List<BaseSitePage> Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -281,7 +296,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Site"/> and sets the default values.
         /// </summary>
-        public Site() : base() {
+        public Site() : base()
+        {
             OdataType = "#microsoft.graph.site";
         }
         /// <summary>
@@ -289,7 +305,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Site"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Site CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Site CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Site();
         }
@@ -297,8 +314,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"analytics", n => { Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },
                 {"columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -312,6 +331,7 @@ namespace Microsoft.Graph.Models {
                 {"lists", n => { Lists = n.GetCollectionOfObjectValues<List>(List.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Models.Onenote>(Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"pages", n => { Pages = n.GetCollectionOfObjectValues<BaseSitePage>(BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.Root>(Microsoft.Graph.Models.Root.CreateFromDiscriminatorValue); } },
                 {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Models.SharepointIds>(Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
@@ -325,7 +345,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
@@ -341,6 +362,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<List>("lists", Lists);
             writer.WriteObjectValue<Microsoft.Graph.Models.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<BaseSitePage>("pages", Pages);
             writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Models.Root>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);

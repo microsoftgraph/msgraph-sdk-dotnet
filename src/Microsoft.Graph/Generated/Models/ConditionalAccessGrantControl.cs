@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ConditionalAccessGrantControl {
+    public enum ConditionalAccessGrantControl
+    {
         [EnumMember(Value = "block")]
         Block,
         [EnumMember(Value = "mfa")]

@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.IncomingChannels {
     /// <summary>
     /// Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
     /// </summary>
-    public class IncomingChannelsRequestBuilder : BaseRequestBuilder {
+    public class IncomingChannelsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of channel</param>
         /// <returns>A <see cref="ChannelItemRequestBuilder"/></returns>
-        public ChannelItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("channel%2Did", position);
-            return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public ChannelItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("channel%2Did", position);
+                return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="IncomingChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IncomingChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public IncomingChannelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="IncomingChannelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IncomingChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public IncomingChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the list of incoming channels (channels shared with a team).
@@ -52,13 +60,16 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.IncomingChannels {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ChannelCollectionResponse?> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ChannelCollectionResponse> GetAsync(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +81,12 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.IncomingChannels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +98,15 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.IncomingChannels {
         /// </summary>
         /// <returns>A <see cref="IncomingChannelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IncomingChannelsRequestBuilder WithUrl(string rawUrl) {
+        public IncomingChannelsRequestBuilder WithUrl(string rawUrl)
+        {
             return new IncomingChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
-        public class IncomingChannelsRequestBuilderGetQueryParameters {
+        public class IncomingChannelsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -156,7 +171,8 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.IncomingChannels {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncomingChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters> {
+        public class IncomingChannelsRequestBuilderGetRequestConfiguration : RequestConfiguration<IncomingChannelsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

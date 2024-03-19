@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Type of start menu app list visibility.</summary>
     [Flags]
-    public enum WindowsStartMenuAppListVisibilityType {
+    public enum WindowsStartMenuAppListVisibilityType
+    {
         /// <summary>User defined. Default value.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined = 1,

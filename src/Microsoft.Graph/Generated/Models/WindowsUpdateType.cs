@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Which branch devices will receive their updates from</summary>
-    public enum WindowsUpdateType {
+    public enum WindowsUpdateType
+    {
         /// <summary>Allow the user to set.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

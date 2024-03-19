@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
     /// <summary>
     /// Provides operations to call the translateExchangeIds method.
     /// </summary>
-    public class TranslateExchangeIdsRequestBuilder : BaseRequestBuilder {
+    public class TranslateExchangeIdsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="TranslateExchangeIdsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TranslateExchangeIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", pathParameters) {
+        public TranslateExchangeIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TranslateExchangeIdsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TranslateExchangeIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", rawUrl) {
+        public TranslateExchangeIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", rawUrl)
+        {
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TranslateExchangeIdsPostResponse?> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TranslateExchangeIdsPostResponse?> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TranslateExchangeIdsPostResponse> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TranslateExchangeIdsPostResponse> PostAsTranslateExchangeIdsPostResponseAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TranslateExchangeIdsPostResponse>(requestInfo, TranslateExchangeIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -62,14 +68,17 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
         [Obsolete("This method is obsolete. Use PostAsTranslateExchangeIdsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TranslateExchangeIdsResponse?> PostAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TranslateExchangeIdsResponse?> PostAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TranslateExchangeIdsResponse> PostAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TranslateExchangeIdsResponse> PostAsync(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,10 +91,12 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -99,14 +110,16 @@ namespace Microsoft.Graph.Users.Item.TranslateExchangeIds {
         /// </summary>
         /// <returns>A <see cref="TranslateExchangeIdsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TranslateExchangeIdsRequestBuilder WithUrl(string rawUrl) {
+        public TranslateExchangeIdsRequestBuilder WithUrl(string rawUrl)
+        {
             return new TranslateExchangeIdsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TranslateExchangeIdsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class TranslateExchangeIdsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

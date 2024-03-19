@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Search.Query {
-    public class QueryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class QueryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -32,7 +33,8 @@ namespace Microsoft.Graph.Search.Query {
         /// <summary>
         /// Instantiates a new <see cref="QueryPostRequestBody"/> and sets the default values.
         /// </summary>
-        public QueryPostRequestBody() {
+        public QueryPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -41,7 +43,8 @@ namespace Microsoft.Graph.Search.Query {
         /// </summary>
         /// <returns>A <see cref="QueryPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QueryPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static QueryPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new QueryPostRequestBody();
         }
@@ -49,8 +52,10 @@ namespace Microsoft.Graph.Search.Query {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"requests", n => { Requests = n.GetCollectionOfObjectValues<SearchRequest>(SearchRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -58,7 +63,8 @@ namespace Microsoft.Graph.Search.Query {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<SearchRequest>("requests", Requests);
             writer.WriteAdditionalData(AdditionalData);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
-    public enum SynchronizationJobRestartScope {
+    public enum SynchronizationJobRestartScope
+    {
         [EnumMember(Value = "None")]
         None = 1,
         [EnumMember(Value = "ConnectorDataStore")]

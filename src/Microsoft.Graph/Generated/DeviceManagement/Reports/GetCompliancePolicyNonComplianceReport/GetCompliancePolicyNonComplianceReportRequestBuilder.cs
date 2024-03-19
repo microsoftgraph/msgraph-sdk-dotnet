@@ -12,20 +12,23 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
     /// <summary>
     /// Provides operations to call the getCompliancePolicyNonComplianceReport method.
     /// </summary>
-    public class GetCompliancePolicyNonComplianceReportRequestBuilder : BaseRequestBuilder {
+    public class GetCompliancePolicyNonComplianceReportRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetCompliancePolicyNonComplianceReportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCompliancePolicyNonComplianceReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePolicyNonComplianceReport", pathParameters) {
+        public GetCompliancePolicyNonComplianceReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePolicyNonComplianceReport", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetCompliancePolicyNonComplianceReportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCompliancePolicyNonComplianceReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePolicyNonComplianceReport", rawUrl) {
+        public GetCompliancePolicyNonComplianceReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePolicyNonComplianceReport", rawUrl)
+        {
         }
         /// <summary>
         /// Not yet documented
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PostAsync(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetCompliancePolicyNonComplianceReportPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -75,14 +83,16 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// </summary>
         /// <returns>A <see cref="GetCompliancePolicyNonComplianceReportRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetCompliancePolicyNonComplianceReportRequestBuilder WithUrl(string rawUrl) {
+        public GetCompliancePolicyNonComplianceReportRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetCompliancePolicyNonComplianceReportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetCompliancePolicyNonComplianceReportRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetCompliancePolicyNonComplianceReportRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

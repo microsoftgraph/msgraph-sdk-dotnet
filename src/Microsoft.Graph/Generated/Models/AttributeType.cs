@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AttributeType {
+    public enum AttributeType
+    {
         [EnumMember(Value = "String")]
         String,
         [EnumMember(Value = "Integer")]

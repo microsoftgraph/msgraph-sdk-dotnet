@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ResponseType {
+    public enum ResponseType
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "organizer")]

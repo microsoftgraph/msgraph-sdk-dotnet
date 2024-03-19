@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
     [Obsolete("This class is obsolete. Use GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse instead.")]
-    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable {
+    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse();
         }

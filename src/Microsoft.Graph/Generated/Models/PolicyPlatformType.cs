@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Supported platform types for policies.</summary>
-    public enum PolicyPlatformType {
+    public enum PolicyPlatformType
+    {
         /// <summary>Android.</summary>
         [EnumMember(Value = "android")]
         Android,

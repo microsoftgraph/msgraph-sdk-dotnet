@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Education.Users.Item.TaughtClasses.Item {
     /// <summary>
     /// Provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
     /// </summary>
-    public class EducationClassItemRequestBuilder : BaseRequestBuilder {
+    public class EducationClassItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses/{educationClass%2Did}{?%24expand,%24select}", pathParameters) {
+        public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses/{educationClass%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EducationClassItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses/{educationClass%2Did}{?%24expand,%24select}", rawUrl) {
+        public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses/{educationClass%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Classes for which the user is a teacher.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Education.Users.Item.TaughtClasses.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationClass?> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationClass?> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EducationClass> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationClass> GetAsync(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Education.Users.Item.TaughtClasses.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Education.Users.Item.TaughtClasses.Item {
         /// </summary>
         /// <returns>A <see cref="EducationClassItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationClassItemRequestBuilder WithUrl(string rawUrl) {
+        public EducationClassItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EducationClassItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Classes for which the user is a teacher.
         /// </summary>
-        public class EducationClassItemRequestBuilderGetQueryParameters {
+        public class EducationClassItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Education.Users.Item.TaughtClasses.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationClassItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters> {
+        public class EducationClassItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationClassItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

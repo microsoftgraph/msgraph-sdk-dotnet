@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
     [Flags]
-    public enum DataSourceScopes {
+    public enum DataSourceScopes
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "allTenantMailboxes")]

@@ -15,32 +15,40 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
     /// <summary>
     /// Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder : BaseRequestBuilder {
+    public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereModelPerformance property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsWorkFromAnywhereModelPerformance</param>
         /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("userExperienceAnalyticsWorkFromAnywhereModelPerformance%2Did", position);
-            return new UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("userExperienceAnalyticsWorkFromAnywhereModelPerformance%2Did", position);
+                return new UserExperienceAnalyticsWorkFromAnywhereModelPerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// The user experience analytics work from anywhere model performance
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -72,14 +83,17 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance?> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance?> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -109,10 +125,12 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance", PathParameters);
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// </summary>
         /// <returns>A <see cref="UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder WithUrl(string rawUrl) {
+        public UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder WithUrl(string rawUrl)
+        {
             return new UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user experience analytics work from anywhere model performance
         /// </summary>
-        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters {
+        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -197,13 +217,15 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhe
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters> {
+        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

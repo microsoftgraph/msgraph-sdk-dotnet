@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Movies rating labels in Australia</summary>
-    public enum RatingAustraliaMoviesType {
+    public enum RatingAustraliaMoviesType
+    {
         /// <summary>Default value, allow all movies content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,

@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
     /// <summary>
     /// Provides operations to call the getStaffAvailability method.
     /// </summary>
-    public class GetStaffAvailabilityRequestBuilder : BaseRequestBuilder {
+    public class GetStaffAvailabilityRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetStaffAvailabilityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetStaffAvailabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/getStaffAvailability", pathParameters) {
+        public GetStaffAvailabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/getStaffAvailability", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetStaffAvailabilityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetStaffAvailabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/getStaffAvailability", rawUrl) {
+        public GetStaffAvailabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/getStaffAvailability", rawUrl)
+        {
         }
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetStaffAvailabilityPostResponse?> PostAsGetStaffAvailabilityPostResponseAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetStaffAvailabilityPostResponse?> PostAsGetStaffAvailabilityPostResponseAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetStaffAvailabilityPostResponse> PostAsGetStaffAvailabilityPostResponseAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetStaffAvailabilityPostResponse> PostAsGetStaffAvailabilityPostResponseAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetStaffAvailabilityPostResponse>(requestInfo, GetStaffAvailabilityPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -62,14 +68,17 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
         [Obsolete("This method is obsolete. Use PostAsGetStaffAvailabilityPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetStaffAvailabilityResponse?> PostAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetStaffAvailabilityResponse?> PostAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetStaffAvailabilityResponse> PostAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetStaffAvailabilityResponse> PostAsync(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetStaffAvailabilityResponse>(requestInfo, GetStaffAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,10 +91,12 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetStaffAvailabilityPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -99,14 +110,16 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
         /// </summary>
         /// <returns>A <see cref="GetStaffAvailabilityRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetStaffAvailabilityRequestBuilder WithUrl(string rawUrl) {
+        public GetStaffAvailabilityRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetStaffAvailabilityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetStaffAvailabilityRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetStaffAvailabilityRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum EducationUserRole {
+    public enum EducationUserRole
+    {
         [EnumMember(Value = "student")]
         Student,
         [EnumMember(Value = "teacher")]

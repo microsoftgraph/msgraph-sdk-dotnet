@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
     /// </summary>
-    public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable {
+    public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Indicates whether or not to allow the app from printing during the test.</summary>
         public bool? AllowPrinting {
             get { return BackingStore?.Get<bool?>("allowPrinting"); }
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Windows10SecureAssessmentConfiguration"/> and sets the default values.
         /// </summary>
-        public Windows10SecureAssessmentConfiguration() : base() {
+        public Windows10SecureAssessmentConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windows10SecureAssessmentConfiguration";
         }
         /// <summary>
@@ -63,7 +65,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Windows10SecureAssessmentConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10SecureAssessmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10SecureAssessmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10SecureAssessmentConfiguration();
         }
@@ -71,8 +74,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowPrinting", n => { AllowPrinting = n.GetBoolValue(); } },
                 {"allowScreenCapture", n => { AllowScreenCapture = n.GetBoolValue(); } },
                 {"allowTextSuggestion", n => { AllowTextSuggestion = n.GetBoolValue(); } },
@@ -84,7 +89,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowPrinting", AllowPrinting);

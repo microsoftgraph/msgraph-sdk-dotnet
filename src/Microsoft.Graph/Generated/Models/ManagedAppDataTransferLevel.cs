@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Data can be transferred from/to these classes of apps</summary>
-    public enum ManagedAppDataTransferLevel {
+    public enum ManagedAppDataTransferLevel
+    {
         /// <summary>All apps.</summary>
         [EnumMember(Value = "allApps")]
         AllApps,

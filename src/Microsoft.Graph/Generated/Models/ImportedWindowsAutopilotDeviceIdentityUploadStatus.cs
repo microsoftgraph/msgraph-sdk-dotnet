@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ImportedWindowsAutopilotDeviceIdentityUploadStatus {
+    public enum ImportedWindowsAutopilotDeviceIdentityUploadStatus
+    {
         /// <summary>No upload status.</summary>
         [EnumMember(Value = "noUpload")]
         NoUpload,

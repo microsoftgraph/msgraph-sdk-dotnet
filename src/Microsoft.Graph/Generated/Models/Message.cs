@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class Message : OutlookItem, IParsable {
+    public class Message : OutlookItem, IParsable 
+    {
         /// <summary>The fileAttachment and itemAttachment attachments for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,17 +152,17 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>The importance property</summary>
+        /// <summary>The importance of the message. The possible values are: low, normal, and high.</summary>
         public Microsoft.Graph.Models.Importance? Importance {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The inferenceClassification property</summary>
+        /// <summary>The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused or other.</summary>
         public InferenceClassificationType? InferenceClassification {
             get { return BackingStore?.Get<InferenceClassificationType?>("inferenceClassification"); }
             set { BackingStore?.Set("inferenceClassification", value); }
         }
-        /// <summary>The internetMessageHeaders property</summary>
+        /// <summary>A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<InternetMessageHeader>? InternetMessageHeaders {
@@ -175,7 +176,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("internetMessageHeaders", value); }
         }
 #endif
-        /// <summary>The internetMessageId property</summary>
+        /// <summary>The message ID in the format specified by RFC2822.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternetMessageId {
@@ -189,22 +190,22 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("internetMessageId", value); }
         }
 #endif
-        /// <summary>The isDeliveryReceiptRequested property</summary>
+        /// <summary>Indicates whether a read receipt is requested for the message.</summary>
         public bool? IsDeliveryReceiptRequested {
             get { return BackingStore?.Get<bool?>("isDeliveryReceiptRequested"); }
             set { BackingStore?.Set("isDeliveryReceiptRequested", value); }
         }
-        /// <summary>The isDraft property</summary>
+        /// <summary>Indicates whether the message is a draft. A message is a draft if it hasn&apos;t been sent yet.</summary>
         public bool? IsDraft {
             get { return BackingStore?.Get<bool?>("isDraft"); }
             set { BackingStore?.Set("isDraft", value); }
         }
-        /// <summary>The isRead property</summary>
+        /// <summary>Indicates whether the message has been read.</summary>
         public bool? IsRead {
             get { return BackingStore?.Get<bool?>("isRead"); }
             set { BackingStore?.Set("isRead", value); }
         }
-        /// <summary>The isReadReceiptRequested property</summary>
+        /// <summary>Indicates whether a read receipt is requested for the message.</summary>
         public bool? IsReadReceiptRequested {
             get { return BackingStore?.Get<bool?>("isReadReceiptRequested"); }
             set { BackingStore?.Set("isReadReceiptRequested", value); }
@@ -223,7 +224,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The parentFolderId property</summary>
+        /// <summary>The unique identifier for the message&apos;s parent mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentFolderId {
@@ -237,12 +238,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #endif
-        /// <summary>The receivedDateTime property</summary>
+        /// <summary>The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ReceivedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
-        /// <summary>The replyTo property</summary>
+        /// <summary>The email addresses to use when replying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recipient>? ReplyTo {
@@ -256,7 +257,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("replyTo", value); }
         }
 #endif
-        /// <summary>The sender property</summary>
+        /// <summary>The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Recipient? Sender {
@@ -270,7 +271,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sender", value); }
         }
 #endif
-        /// <summary>The sentDateTime property</summary>
+        /// <summary>The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("sentDateTime"); }
             set { BackingStore?.Set("sentDateTime", value); }
@@ -289,7 +290,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {
@@ -303,7 +304,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The toRecipients property</summary>
+        /// <summary>The To: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recipient>? ToRecipients {
@@ -317,7 +318,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("toRecipients", value); }
         }
 #endif
-        /// <summary>The uniqueBody property</summary>
+        /// <summary>The part of the body of the message that is unique to the current message. uniqueBody is not returned by default but can be retrieved for a given message by use of the ?$select=uniqueBody query. It can be in HTML or text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? UniqueBody {
@@ -331,7 +332,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("uniqueBody", value); }
         }
 #endif
-        /// <summary>The webLink property</summary>
+        /// <summary>The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, the browser shows the message in the Outlook on the web review pane.The message opens in the browser if you are signed in to your mailbox via Outlook on the web. You are prompted to sign in if you are not already signed in with the browser.This URL cannot be accessed from within an iFrame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebLink {
@@ -348,7 +349,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Message"/> and sets the default values.
         /// </summary>
-        public Message() : base() {
+        public Message() : base()
+        {
             OdataType = "#microsoft.graph.message";
         }
         /// <summary>
@@ -356,10 +358,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Message"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Message CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Message CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
                 "#microsoft.graph.eventMessage" => new EventMessage(),
                 "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
@@ -371,8 +375,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"bccRecipients", n => { BccRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
@@ -409,7 +415,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Attachment>("attachments", Attachments);

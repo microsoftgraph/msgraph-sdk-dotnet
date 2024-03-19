@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist {
-    public class Poisson_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Poisson_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist
         /// <summary>
         /// Instantiates a new <see cref="Poisson_DistPostRequestBody"/> and sets the default values.
         /// </summary>
-        public Poisson_DistPostRequestBody() {
+        public Poisson_DistPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -69,7 +71,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist
         /// </summary>
         /// <returns>A <see cref="Poisson_DistPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Poisson_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Poisson_DistPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Poisson_DistPostRequestBody();
         }
@@ -77,8 +80,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"mean", n => { Mean = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -88,7 +93,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Poisson_Dist
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("cumulative", Cumulative);
             writer.WriteObjectValue<Json>("mean", Mean);

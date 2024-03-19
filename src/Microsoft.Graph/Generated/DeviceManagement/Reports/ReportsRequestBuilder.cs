@@ -32,96 +32,118 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class ReportsRequestBuilder : BaseRequestBuilder {
+    public class ReportsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.</summary>
-        public ExportJobsRequestBuilder ExportJobs { get =>
-            new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
+        public ExportJobsRequestBuilder ExportJobs
+        {
+            get =>             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCachedReport method.</summary>
-        public GetCachedReportRequestBuilder GetCachedReport { get =>
-            new GetCachedReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCachedReportRequestBuilder GetCachedReport
+        {
+            get =>             new GetCachedReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceReport method.</summary>
-        public GetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport { get =>
-            new GetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport
+        {
+            get =>             new GetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.</summary>
-        public GetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport { get =>
-            new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport
+        {
+            get =>             new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingNonComplianceReport method.</summary>
-        public GetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport { get =>
-            new GetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport
+        {
+            get =>             new GetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceReport method.</summary>
-        public GetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport { get =>
-            new GetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport
+        {
+            get =>             new GetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.</summary>
-        public GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport { get =>
-            new GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport
+        {
+            get =>             new GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingNonComplianceReport method.</summary>
-        public GetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport { get =>
-            new GetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport
+        {
+            get =>             new GetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.</summary>
-        public GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles { get =>
-            new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles
+        {
+            get =>             new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentSettingsReport method.</summary>
-        public GetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport { get =>
-            new GetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport
+        {
+            get =>             new GetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
-        public GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport { get =>
-            new GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport
+        {
+            get =>             new GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
-        public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport { get =>
-            new GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport
+        {
+            get =>             new GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHistoricalReport method.</summary>
-        public GetHistoricalReportRequestBuilder GetHistoricalReport { get =>
-            new GetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetHistoricalReportRequestBuilder GetHistoricalReport
+        {
+            get =>             new GetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNoncompliantDevicesAndSettingsReport method.</summary>
-        public GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport { get =>
-            new GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport
+        {
+            get =>             new GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceMetadata method.</summary>
-        public GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata { get =>
-            new GetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata
+        {
+            get =>             new GetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceReport method.</summary>
-        public GetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport { get =>
-            new GetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport
+        {
+            get =>             new GetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceSummaryReport method.</summary>
-        public GetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport { get =>
-            new GetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport
+        {
+            get =>             new GetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getReportFilters method.</summary>
-        public GetReportFiltersRequestBuilder GetReportFilters { get =>
-            new GetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
+        public GetReportFiltersRequestBuilder GetReportFilters
+        {
+            get =>             new GetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSettingNonComplianceReport method.</summary>
-        public GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport { get =>
-            new GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport
+        {
+            get =>             new GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports{?%24expand,%24select}", pathParameters) {
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports{?%24expand,%24select}", rawUrl) {
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement
@@ -131,13 +153,16 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -152,13 +177,16 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementReports?> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementReports?> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementReports> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementReports> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementReports>(requestInfo, DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -174,14 +202,17 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementReports?> PatchAsync(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementReports?> PatchAsync(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementReports> PatchAsync(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementReports> PatchAsync(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementReports>(requestInfo, DeviceManagementReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -193,10 +224,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/reports", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -210,10 +243,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -228,10 +263,12 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DeviceManagementReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/reports", PathParameters);
@@ -245,19 +282,22 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// </summary>
         /// <returns>A <see cref="ReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ReportsRequestBuilder WithUrl(string rawUrl) {
+        public ReportsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Read properties and relationships of the deviceManagementReports object.
         /// </summary>
-        public class ReportsRequestBuilderGetQueryParameters {
+        public class ReportsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,13 +323,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<ReportsRequestBuilderGetQueryParameters> {
+        public class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<ReportsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

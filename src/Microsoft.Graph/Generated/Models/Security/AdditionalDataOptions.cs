@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
     [Flags]
-    public enum AdditionalDataOptions {
+    public enum AdditionalDataOptions
+    {
         [EnumMember(Value = "allVersions")]
         AllVersions = 1,
         [EnumMember(Value = "linkedFiles")]

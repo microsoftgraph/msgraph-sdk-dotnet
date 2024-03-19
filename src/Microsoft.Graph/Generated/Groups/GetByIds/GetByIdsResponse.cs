@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.GetByIds {
     [Obsolete("This class is obsolete. Use GetByIdsPostResponse instead.")]
-    public class GetByIdsResponse : GetByIdsPostResponse, IParsable {
+    public class GetByIdsResponse : GetByIdsPostResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetByIdsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByIdsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetByIdsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetByIdsResponse();
         }

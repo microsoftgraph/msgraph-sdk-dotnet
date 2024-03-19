@@ -26,46 +26,57 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
     /// <summary>
     /// Provides operations to call the item method.
     /// </summary>
-    public class ItemWithNameRequestBuilder : BaseRequestBuilder {
+    public class ItemWithNameRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the axes property of the microsoft.graph.workbookChart entity.</summary>
-        public AxesRequestBuilder Axes { get =>
-            new AxesRequestBuilder(PathParameters, RequestAdapter);
+        public AxesRequestBuilder Axes
+        {
+            get =>             new AxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataLabels property of the microsoft.graph.workbookChart entity.</summary>
-        public DataLabelsRequestBuilder DataLabels { get =>
-            new DataLabelsRequestBuilder(PathParameters, RequestAdapter);
+        public DataLabelsRequestBuilder DataLabels
+        {
+            get =>             new DataLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the format property of the microsoft.graph.workbookChart entity.</summary>
-        public FormatRequestBuilder Format { get =>
-            new FormatRequestBuilder(PathParameters, RequestAdapter);
+        public FormatRequestBuilder Format
+        {
+            get =>             new FormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the image method.</summary>
-        public ImageRequestBuilder Image { get =>
-            new ImageRequestBuilder(PathParameters, RequestAdapter);
+        public ImageRequestBuilder Image
+        {
+            get =>             new ImageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the legend property of the microsoft.graph.workbookChart entity.</summary>
-        public LegendRequestBuilder Legend { get =>
-            new LegendRequestBuilder(PathParameters, RequestAdapter);
+        public LegendRequestBuilder Legend
+        {
+            get =>             new LegendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the series property of the microsoft.graph.workbookChart entity.</summary>
-        public SeriesRequestBuilder Series { get =>
-            new SeriesRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesRequestBuilder Series
+        {
+            get =>             new SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setData method.</summary>
-        public SetDataRequestBuilder SetData { get =>
-            new SetDataRequestBuilder(PathParameters, RequestAdapter);
+        public SetDataRequestBuilder SetData
+        {
+            get =>             new SetDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setPosition method.</summary>
-        public SetPositionRequestBuilder SetPosition { get =>
-            new SetPositionRequestBuilder(PathParameters, RequestAdapter);
+        public SetPositionRequestBuilder SetPosition
+        {
+            get =>             new SetPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the title property of the microsoft.graph.workbookChart entity.</summary>
-        public TitleRequestBuilder Title { get =>
-            new TitleRequestBuilder(PathParameters, RequestAdapter);
+        public TitleRequestBuilder Title
+        {
+            get =>             new TitleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the worksheet property of the microsoft.graph.workbookChart entity.</summary>
-        public WorksheetRequestBuilder Worksheet { get =>
-            new WorksheetRequestBuilder(PathParameters, RequestAdapter);
+        public WorksheetRequestBuilder Worksheet
+        {
+            get =>             new WorksheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ItemWithNameRequestBuilder"/> and sets the default values.
@@ -73,7 +84,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="name">Usage: name=&apos;{name}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemWithNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string name = "") : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/item(name='{name}')", pathParameters) {
+        public ItemWithNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string name = "") : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/item(name='{name}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(name)) PathParameters.Add("name", name);
         }
         /// <summary>
@@ -81,7 +93,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemWithNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/item(name='{name}')", rawUrl) {
+        public ItemWithNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/item(name='{name}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function item
@@ -92,13 +105,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookChart?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookChart?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WorkbookChart> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookChart> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -108,7 +124,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// </summary>
         /// <returns>A <see cref="ImageWithWidthRequestBuilder"/></returns>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthRequestBuilder ImageWithWidth(int? width) {
+        public ImageWithWidthRequestBuilder ImageWithWidth(int? width)
+        {
             _ = width ?? throw new ArgumentNullException(nameof(width));
             return new ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
@@ -118,7 +135,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <returns>A <see cref="ImageWithWidthWithHeightRequestBuilder"/></returns>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width) {
+        public ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
+        {
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
             return new ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
@@ -130,7 +148,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="fittingMode">Usage: fittingMode=&apos;{fittingMode}&apos;</param>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width) {
+        public ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
+        {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
@@ -143,10 +162,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -158,14 +179,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// </summary>
         /// <returns>A <see cref="ItemWithNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemWithNameRequestBuilder WithUrl(string rawUrl) {
+        public ItemWithNameRequestBuilder WithUrl(string rawUrl)
+        {
             return new ItemWithNameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ItemWithNameRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ItemWithNameRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

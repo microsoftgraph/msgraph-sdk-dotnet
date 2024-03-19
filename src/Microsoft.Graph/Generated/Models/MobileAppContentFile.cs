@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
     /// </summary>
-    public class MobileAppContentFile : Entity, IParsable {
+    public class MobileAppContentFile : Entity, IParsable 
+    {
         /// <summary>The Azure Storage URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="MobileAppContentFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MobileAppContentFile();
         }
@@ -94,8 +96,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"azureStorageUri", n => { AzureStorageUri = n.GetStringValue(); } },
                 {"azureStorageUriExpirationDateTime", n => { AzureStorageUriExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -111,13 +115,10 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("azureStorageUri", AzureStorageUri);
-            writer.WriteDateTimeOffsetValue("azureStorageUriExpirationDateTime", AzureStorageUriExpirationDateTime);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteBoolValue("isCommitted", IsCommitted);
             writer.WriteByteArrayValue("manifest", Manifest);
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("size", Size);

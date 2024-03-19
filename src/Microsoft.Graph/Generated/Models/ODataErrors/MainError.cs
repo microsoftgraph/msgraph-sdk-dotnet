@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.ODataErrors {
-    public class MainError : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class MainError : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -87,7 +88,8 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// <summary>
         /// Instantiates a new <see cref="MainError"/> and sets the default values.
         /// </summary>
-        public MainError() {
+        public MainError()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -96,7 +98,8 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// </summary>
         /// <returns>A <see cref="MainError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MainError CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MainError CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MainError();
         }
@@ -104,8 +107,10 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"details", n => { Details = n.GetCollectionOfObjectValues<ErrorDetails>(ErrorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Models.ODataErrors.InnerError>(Microsoft.Graph.Models.ODataErrors.InnerError.CreateFromDiscriminatorValue); } },
@@ -117,7 +122,8 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteCollectionOfObjectValues<ErrorDetails>("details", Details);

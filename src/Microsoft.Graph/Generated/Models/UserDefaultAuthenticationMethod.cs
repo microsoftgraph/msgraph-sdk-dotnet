@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum UserDefaultAuthenticationMethod {
+    public enum UserDefaultAuthenticationMethod
+    {
         [EnumMember(Value = "push")]
         Push,
         [EnumMember(Value = "oath")]

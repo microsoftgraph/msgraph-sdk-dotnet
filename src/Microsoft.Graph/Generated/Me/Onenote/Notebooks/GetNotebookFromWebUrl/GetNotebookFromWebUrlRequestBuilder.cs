@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
     /// <summary>
     /// Provides operations to call the getNotebookFromWebUrl method.
     /// </summary>
-    public class GetNotebookFromWebUrlRequestBuilder : BaseRequestBuilder {
+    public class GetNotebookFromWebUrlRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetNotebookFromWebUrlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetNotebookFromWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/getNotebookFromWebUrl", pathParameters) {
+        public GetNotebookFromWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/getNotebookFromWebUrl", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetNotebookFromWebUrlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetNotebookFromWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/getNotebookFromWebUrl", rawUrl) {
+        public GetNotebookFromWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/getNotebookFromWebUrl", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
@@ -39,14 +42,17 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CopyNotebookModel?> PostAsync(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CopyNotebookModel?> PostAsync(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CopyNotebookModel> PostAsync(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CopyNotebookModel> PostAsync(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CopyNotebookModel>(requestInfo, CopyNotebookModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetNotebookFromWebUrlPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -76,14 +84,16 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
         /// </summary>
         /// <returns>A <see cref="GetNotebookFromWebUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetNotebookFromWebUrlRequestBuilder WithUrl(string rawUrl) {
+        public GetNotebookFromWebUrlRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetNotebookFromWebUrlRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

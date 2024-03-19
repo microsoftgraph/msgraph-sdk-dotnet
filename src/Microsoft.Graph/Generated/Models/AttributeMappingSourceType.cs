@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AttributeMappingSourceType {
+    public enum AttributeMappingSourceType
+    {
         [EnumMember(Value = "Attribute")]
         Attribute,
         [EnumMember(Value = "Constant")]

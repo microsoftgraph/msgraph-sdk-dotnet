@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PrintFinishing {
+    public enum PrintFinishing
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "staple")]

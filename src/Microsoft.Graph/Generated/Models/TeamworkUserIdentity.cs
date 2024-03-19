@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class TeamworkUserIdentity : Identity, IParsable {
+    public class TeamworkUserIdentity : Identity, IParsable 
+    {
         /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
         public TeamworkUserIdentityType? UserIdentityType {
             get { return BackingStore?.Get<TeamworkUserIdentityType?>("userIdentityType"); }
@@ -14,7 +15,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="TeamworkUserIdentity"/> and sets the default values.
         /// </summary>
-        public TeamworkUserIdentity() : base() {
+        public TeamworkUserIdentity() : base()
+        {
             OdataType = "#microsoft.graph.teamworkUserIdentity";
         }
         /// <summary>
@@ -22,7 +24,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="TeamworkUserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new TeamworkUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TeamworkUserIdentity();
         }
@@ -30,8 +33,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"userIdentityType", n => { UserIdentityType = n.GetEnumValue<TeamworkUserIdentityType>(); } },
             };
         }
@@ -39,7 +44,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<TeamworkUserIdentityType>("userIdentityType", UserIdentityType);

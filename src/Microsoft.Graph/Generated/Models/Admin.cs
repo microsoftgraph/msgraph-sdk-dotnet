@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -26,6 +27,20 @@ namespace Microsoft.Graph.Models {
         public Microsoft.Graph.Models.Edge Edge {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Edge>("edge"); }
             set { BackingStore?.Set("edge", value); }
+        }
+#endif
+        /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AdminMicrosoft365Apps? Microsoft365Apps {
+            get { return BackingStore?.Get<AdminMicrosoft365Apps?>("microsoft365Apps"); }
+            set { BackingStore?.Set("microsoft365Apps", value); }
+        }
+#nullable restore
+#else
+        public AdminMicrosoft365Apps Microsoft365Apps {
+            get { return BackingStore?.Get<AdminMicrosoft365Apps>("microsoft365Apps"); }
+            set { BackingStore?.Set("microsoft365Apps", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -87,7 +102,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Admin"/> and sets the default values.
         /// </summary>
-        public Admin() {
+        public Admin()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -96,7 +112,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Admin"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Admin CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Admin CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Admin();
         }
@@ -104,9 +121,12 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Models.Edge>(Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
+                {"microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
                 {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>(Microsoft.Graph.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
@@ -117,9 +137,11 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Models.Edge>("edge", Edge);
+            writer.WriteObjectValue<AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<PeopleAdminSettings>("people", People);
             writer.WriteObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);

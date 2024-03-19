@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Windows Update Notification Display Options</summary>
-    public enum WindowsUpdateNotificationDisplayOption {
+    public enum WindowsUpdateNotificationDisplayOption
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

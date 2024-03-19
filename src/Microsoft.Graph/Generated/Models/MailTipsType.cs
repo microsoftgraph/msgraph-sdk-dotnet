@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
-    public enum MailTipsType {
+    public enum MailTipsType
+    {
         [EnumMember(Value = "automaticReplies")]
         AutomaticReplies = 1,
         [EnumMember(Value = "mailboxFullStatus")]

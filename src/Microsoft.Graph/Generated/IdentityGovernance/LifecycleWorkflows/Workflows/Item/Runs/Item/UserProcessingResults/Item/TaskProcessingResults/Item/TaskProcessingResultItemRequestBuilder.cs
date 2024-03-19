@@ -16,32 +16,38 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
     /// <summary>
     /// Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
     /// </summary>
-    public class TaskProcessingResultItemRequestBuilder : BaseRequestBuilder {
+    public class TaskProcessingResultItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the resume method.</summary>
-        public MicrosoftGraphIdentityGovernanceResumeRequestBuilder MicrosoftGraphIdentityGovernanceResume { get =>
-            new MicrosoftGraphIdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIdentityGovernanceResumeRequestBuilder MicrosoftGraphIdentityGovernanceResume
+        {
+            get =>             new MicrosoftGraphIdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.</summary>
-        public SubjectRequestBuilder Subject { get =>
-            new SubjectRequestBuilder(PathParameters, RequestAdapter);
+        public SubjectRequestBuilder Subject
+        {
+            get =>             new SubjectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskProcessingResult entity.</summary>
-        public TaskRequestBuilder Task { get =>
-            new TaskRequestBuilder(PathParameters, RequestAdapter);
+        public TaskRequestBuilder Task
+        {
+            get =>             new TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TaskProcessingResultItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskProcessingResultItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults/{userProcessingResult%2Did}/taskProcessingResults/{taskProcessingResult%2Did}{?%24expand,%24select}", pathParameters) {
+        public TaskProcessingResultItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults/{userProcessingResult%2Did}/taskProcessingResults/{taskProcessingResult%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TaskProcessingResultItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskProcessingResultItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults/{userProcessingResult%2Did}/taskProcessingResults/{taskProcessingResult%2Did}{?%24expand,%24select}", rawUrl) {
+        public TaskProcessingResultItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/userProcessingResults/{userProcessingResult%2Did}/taskProcessingResults/{taskProcessingResult%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The associated individual task execution.
@@ -52,13 +58,16 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TaskProcessingResult?> GetAsync(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaskProcessingResult?> GetAsync(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TaskProcessingResult> GetAsync(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaskProcessingResult> GetAsync(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TaskProcessingResult>(requestInfo, TaskProcessingResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +79,12 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +96,15 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// </summary>
         /// <returns>A <see cref="TaskProcessingResultItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TaskProcessingResultItemRequestBuilder WithUrl(string rawUrl) {
+        public TaskProcessingResultItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new TaskProcessingResultItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The associated individual task execution.
         /// </summary>
-        public class TaskProcessingResultItemRequestBuilderGetQueryParameters {
+        public class TaskProcessingResultItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +130,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TaskProcessingResultItemRequestBuilderGetRequestConfiguration : RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters> {
+        public class TaskProcessingResultItemRequestBuilderGetRequestConfiguration : RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class ConditionalAccessFilter : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class ConditionalAccessFilter : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -50,7 +51,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="ConditionalAccessFilter"/> and sets the default values.
         /// </summary>
-        public ConditionalAccessFilter() {
+        public ConditionalAccessFilter()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -59,7 +61,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessFilter CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ConditionalAccessFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ConditionalAccessFilter();
         }
@@ -67,8 +70,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"mode", n => { Mode = n.GetEnumValue<FilterMode>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"rule", n => { Rule = n.GetStringValue(); } },
@@ -78,7 +83,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<FilterMode>("mode", Mode);
             writer.WriteStringValue("@odata.type", OdataType);

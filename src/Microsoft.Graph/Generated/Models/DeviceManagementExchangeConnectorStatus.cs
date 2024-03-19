@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>The current status of the Exchange Connector.</summary>
-    public enum DeviceManagementExchangeConnectorStatus {
+    public enum DeviceManagementExchangeConnectorStatus
+    {
         /// <summary>No Connector exists.</summary>
         [EnumMember(Value = "none")]
         None,

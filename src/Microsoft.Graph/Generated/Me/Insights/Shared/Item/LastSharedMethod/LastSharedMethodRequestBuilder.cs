@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
     /// <summary>
     /// Provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.
     /// </summary>
-    public class LastSharedMethodRequestBuilder : BaseRequestBuilder {
+    public class LastSharedMethodRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LastSharedMethodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", pathParameters) {
+        public LastSharedMethodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LastSharedMethodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", rawUrl) {
+        public LastSharedMethodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/insights/shared/{sharedInsight%2Did}/lastSharedMethod{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get lastSharedMethod from me
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Entity?> GetAsync(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Entity?> GetAsync(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Entity> GetAsync(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Entity> GetAsync(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Entity>(requestInfo, Entity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// </summary>
         /// <returns>A <see cref="LastSharedMethodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LastSharedMethodRequestBuilder WithUrl(string rawUrl) {
+        public LastSharedMethodRequestBuilder WithUrl(string rawUrl)
+        {
             return new LastSharedMethodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get lastSharedMethod from me
         /// </summary>
-        public class LastSharedMethodRequestBuilderGetQueryParameters {
+        public class LastSharedMethodRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Me.Insights.Shared.Item.LastSharedMethod {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LastSharedMethodRequestBuilderGetRequestConfiguration : RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters> {
+        public class LastSharedMethodRequestBuilderGetRequestConfiguration : RequestConfiguration<LastSharedMethodRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPairs.Item.ChildHost {
     /// <summary>
     /// Provides operations to manage the childHost property of the microsoft.graph.security.hostPair entity.
     /// </summary>
-    public class ChildHostRequestBuilder : BaseRequestBuilder {
+    public class ChildHostRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ChildHostRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildHostRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}/childHost{?%24expand,%24select}", pathParameters) {
+        public ChildHostRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}/childHost{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ChildHostRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildHostRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}/childHost{?%24expand,%24select}", rawUrl) {
+        public ChildHostRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}/childHost{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Host reached via the parentHost.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPairs.Item.ChildHost {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Host?> GetAsync(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.Host?> GetAsync(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Host> GetAsync(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.Host> GetAsync(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Host>(requestInfo, Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPairs.Item.ChildHost {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildHostRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPairs.Item.ChildHost {
         /// </summary>
         /// <returns>A <see cref="ChildHostRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ChildHostRequestBuilder WithUrl(string rawUrl) {
+        public ChildHostRequestBuilder WithUrl(string rawUrl)
+        {
             return new ChildHostRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Host reached via the parentHost.
         /// </summary>
-        public class ChildHostRequestBuilderGetQueryParameters {
+        public class ChildHostRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPairs.Item.ChildHost {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChildHostRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildHostRequestBuilderGetQueryParameters> {
+        public class ChildHostRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildHostRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AlertStatus {
+    public enum AlertStatus
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "newAlert")]

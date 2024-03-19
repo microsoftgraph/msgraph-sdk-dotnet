@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
-    public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class UserAgent : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// Instantiates a new <see cref="UserAgent"/> and sets the default values.
         /// </summary>
-        public UserAgent() {
+        public UserAgent()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -68,10 +70,12 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// </summary>
         /// <returns>A <see cref="UserAgent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserAgent CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UserAgent CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.callRecords.clientUserAgent" => new ClientUserAgent(),
                 "#microsoft.graph.callRecords.serviceUserAgent" => new ServiceUserAgent(),
                 _ => new UserAgent(),
@@ -81,8 +85,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
                 {"headerValue", n => { HeaderValue = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -92,7 +98,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applicationVersion", ApplicationVersion);
             writer.WriteStringValue("headerValue", HeaderValue);

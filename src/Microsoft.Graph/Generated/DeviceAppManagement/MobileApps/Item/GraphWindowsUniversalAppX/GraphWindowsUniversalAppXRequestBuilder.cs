@@ -17,36 +17,43 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
     /// <summary>
     /// Casts the previous resource to windowsUniversalAppX.
     /// </summary>
-    public class GraphWindowsUniversalAppXRequestBuilder : BaseRequestBuilder {
+    public class GraphWindowsUniversalAppXRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments { get =>
-            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AssignmentsRequestBuilder Assignments
+        {
+            get =>             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories { get =>
-            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public CategoriesRequestBuilder Categories
+        {
+            get =>             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the committedContainedApps property of the microsoft.graph.windowsUniversalAppX entity.</summary>
-        public CommittedContainedAppsRequestBuilder CommittedContainedApps { get =>
-            new CommittedContainedAppsRequestBuilder(PathParameters, RequestAdapter);
+        public CommittedContainedAppsRequestBuilder CommittedContainedApps
+        {
+            get =>             new CommittedContainedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.</summary>
-        public ContentVersionsRequestBuilder ContentVersions { get =>
-            new ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
+        public ContentVersionsRequestBuilder ContentVersions
+        {
+            get =>             new ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWindowsUniversalAppXRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWindowsUniversalAppXRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24expand,%24select}", pathParameters) {
+        public GraphWindowsUniversalAppXRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWindowsUniversalAppXRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWindowsUniversalAppXRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24expand,%24select}", rawUrl) {
+        public GraphWindowsUniversalAppXRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsUniversalAppX{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
@@ -57,13 +64,16 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsUniversalAppX?> GetAsync(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsUniversalAppX?> GetAsync(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WindowsUniversalAppX> GetAsync(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsUniversalAppX> GetAsync(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WindowsUniversalAppX>(requestInfo, WindowsUniversalAppX.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
         /// </summary>
         /// <returns>A <see cref="GraphWindowsUniversalAppXRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphWindowsUniversalAppXRequestBuilder WithUrl(string rawUrl) {
+        public GraphWindowsUniversalAppXRequestBuilder WithUrl(string rawUrl)
+        {
             return new GraphWindowsUniversalAppXRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
         /// </summary>
-        public class GraphWindowsUniversalAppXRequestBuilderGetQueryParameters {
+        public class GraphWindowsUniversalAppXRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,7 +136,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphWindowsUniversalAppXRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters> {
+        public class GraphWindowsUniversalAppXRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWindowsUniversalAppXRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

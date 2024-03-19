@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Partners.Billing {
-    public class Manifest : Microsoft.Graph.Models.Entity, IParsable {
+    public class Manifest : Microsoft.Graph.Models.Entity, IParsable 
+    {
         /// <summary>The total file count for this partner tenant ID.</summary>
         public int? BlobCount {
             get { return BackingStore?.Get<int?>("blobCount"); }
@@ -133,7 +134,8 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// </summary>
         /// <returns>A <see cref="Manifest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Manifest CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Manifest CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Manifest();
         }
@@ -141,8 +143,10 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"blobCount", n => { BlobCount = n.GetIntValue(); } },
                 {"blobs", n => { Blobs = n.GetCollectionOfObjectValues<Blob>(Blob.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -159,7 +163,8 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("blobCount", BlobCount);

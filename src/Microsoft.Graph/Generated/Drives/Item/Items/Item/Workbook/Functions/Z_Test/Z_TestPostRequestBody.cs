@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
-    public class Z_TestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Z_TestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// <summary>
         /// Instantiates a new <see cref="Z_TestPostRequestBody"/> and sets the default values.
         /// </summary>
-        public Z_TestPostRequestBody() {
+        public Z_TestPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -69,7 +71,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// </summary>
         /// <returns>A <see cref="Z_TestPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Z_TestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Z_TestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Z_TestPostRequestBody();
         }
@@ -77,8 +80,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"sigma", n => { Sigma = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -88,7 +93,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("array", Array);
             writer.WriteObjectValue<Json>("sigma", Sigma);

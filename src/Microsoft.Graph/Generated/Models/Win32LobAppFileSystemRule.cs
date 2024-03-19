@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// A complex type to store file or folder rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppFileSystemRule : Win32LobAppRule, IParsable {
+    public class Win32LobAppFileSystemRule : Win32LobAppRule, IParsable 
+    {
         /// <summary>A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.</summary>
         public bool? Check32BitOn64System {
             get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
 #endif
-        /// <summary>Contains all supported file system detection type.</summary>
+        /// <summary>A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.</summary>
         public Win32LobAppFileSystemOperationType? OperationType {
             get { return BackingStore?.Get<Win32LobAppFileSystemOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
@@ -69,7 +70,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Win32LobAppFileSystemRule"/> and sets the default values.
         /// </summary>
-        public Win32LobAppFileSystemRule() : base() {
+        public Win32LobAppFileSystemRule() : base()
+        {
             OdataType = "#microsoft.graph.win32LobAppFileSystemRule";
         }
         /// <summary>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Win32LobAppFileSystemRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppFileSystemRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Win32LobAppFileSystemRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Win32LobAppFileSystemRule();
         }
@@ -85,8 +88,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
                 {"comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
                 {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
@@ -99,7 +104,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("check32BitOn64System", Check32BitOn64System);

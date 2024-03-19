@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum StagedFeatureName {
+    public enum StagedFeatureName
+    {
         [EnumMember(Value = "passthroughAuthentication")]
         PassthroughAuthentication,
         [EnumMember(Value = "seamlessSso")]

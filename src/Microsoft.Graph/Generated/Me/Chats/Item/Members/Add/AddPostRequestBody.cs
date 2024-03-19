@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.Chats.Item.Members.Add {
-    public class AddPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AddPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -32,7 +33,8 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add {
         /// <summary>
         /// Instantiates a new <see cref="AddPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AddPostRequestBody() {
+        public AddPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -41,7 +43,8 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add {
         /// </summary>
         /// <returns>A <see cref="AddPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AddPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AddPostRequestBody();
         }
@@ -49,8 +52,10 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"values", n => { Values = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -58,7 +63,8 @@ namespace Microsoft.Graph.Me.Chats.Item.Members.Add {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ConversationMember>("values", Values);
             writer.WriteAdditionalData(AdditionalData);

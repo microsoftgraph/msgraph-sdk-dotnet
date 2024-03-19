@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AccessPackageRequestState {
+    public enum AccessPackageRequestState
+    {
         [EnumMember(Value = "submitted")]
         Submitted,
         [EnumMember(Value = "pendingApproval")]

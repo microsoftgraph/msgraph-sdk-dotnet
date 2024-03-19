@@ -14,24 +14,28 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
     /// <summary>
     /// Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.
     /// </summary>
-    public class BitlockerRequestBuilder : BaseRequestBuilder {
+    public class BitlockerRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.</summary>
-        public RecoveryKeysRequestBuilder RecoveryKeys { get =>
-            new RecoveryKeysRequestBuilder(PathParameters, RequestAdapter);
+        public RecoveryKeysRequestBuilder RecoveryKeys
+        {
+            get =>             new RecoveryKeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="BitlockerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitlockerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/bitlocker{?%24expand,%24select}", pathParameters) {
+        public BitlockerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/bitlocker{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BitlockerRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitlockerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/bitlocker{?%24expand,%24select}", rawUrl) {
+        public BitlockerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/bitlocker{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get bitlocker from informationProtection
@@ -42,13 +46,16 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Bitlocker?> GetAsync(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Bitlocker?> GetAsync(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Bitlocker> GetAsync(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Bitlocker> GetAsync(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Bitlocker>(requestInfo, Microsoft.Graph.Models.Bitlocker.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BitlockerRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +84,15 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
         /// </summary>
         /// <returns>A <see cref="BitlockerRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BitlockerRequestBuilder WithUrl(string rawUrl) {
+        public BitlockerRequestBuilder WithUrl(string rawUrl)
+        {
             return new BitlockerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get bitlocker from informationProtection
         /// </summary>
-        public class BitlockerRequestBuilderGetQueryParameters {
+        public class BitlockerRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +118,8 @@ namespace Microsoft.Graph.InformationProtection.Bitlocker {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BitlockerRequestBuilderGetRequestConfiguration : RequestConfiguration<BitlockerRequestBuilderGetQueryParameters> {
+        public class BitlockerRequestBuilderGetRequestConfiguration : RequestConfiguration<BitlockerRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// This class contains compliance settings for Windows 8.1 Mobile.
     /// </summary>
-    public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable {
+    public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable 
+    {
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +86,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsPhone81CompliancePolicy"/> and sets the default values.
         /// </summary>
-        public WindowsPhone81CompliancePolicy() : base() {
+        public WindowsPhone81CompliancePolicy() : base()
+        {
             OdataType = "#microsoft.graph.windowsPhone81CompliancePolicy";
         }
         /// <summary>
@@ -93,7 +95,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsPhone81CompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81CompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsPhone81CompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsPhone81CompliancePolicy();
         }
@@ -101,8 +104,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
                 {"passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
@@ -120,7 +125,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);

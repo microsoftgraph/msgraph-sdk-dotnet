@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class AppRoleAssignment : DirectoryObject, IParsable {
+    public class AppRoleAssignment : DirectoryObject, IParsable 
+    {
         /// <summary>The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application&apos;s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</summary>
         public Guid? AppRoleId {
             get { return BackingStore?.Get<Guid?>("appRoleId"); }
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="AppRoleAssignment"/> and sets the default values.
         /// </summary>
-        public AppRoleAssignment() : base() {
+        public AppRoleAssignment() : base()
+        {
             OdataType = "#microsoft.graph.appRoleAssignment";
         }
         /// <summary>
@@ -79,7 +81,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AppRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AppRoleAssignment();
         }
@@ -87,8 +90,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"appRoleId", n => { AppRoleId = n.GetGuidValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"principalDisplayName", n => { PrincipalDisplayName = n.GetStringValue(); } },
@@ -102,7 +107,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteGuidValue("appRoleId", AppRoleId);

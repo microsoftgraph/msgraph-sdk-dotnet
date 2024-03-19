@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ImportedWindowsAutopilotDeviceIdentityImportStatus {
+    public enum ImportedWindowsAutopilotDeviceIdentityImportStatus
+    {
         /// <summary>Unknown status.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

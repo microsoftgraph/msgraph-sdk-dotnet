@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Me.RegisteredDevices.Item {
     /// <summary>
     /// Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder {
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment { get =>
-            new GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get =>             new GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public GraphDeviceRequestBuilder GraphDevice { get =>
-            new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GraphDeviceRequestBuilder GraphDevice
+        {
+            get =>             new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public GraphEndpointRequestBuilder GraphEndpoint { get =>
-            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint
+        {
+            get =>             new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24expand,%24select}", pathParameters) {
+        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24expand,%24select}", rawUrl) {
+        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
@@ -52,13 +58,16 @@ namespace Microsoft.Graph.Me.RegisteredDevices.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject?> GetAsync(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject?> GetAsync(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DirectoryObject> GetAsync(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject> GetAsync(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +79,12 @@ namespace Microsoft.Graph.Me.RegisteredDevices.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +96,15 @@ namespace Microsoft.Graph.Me.RegisteredDevices.Item {
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
+        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
         /// </summary>
-        public class DirectoryObjectItemRequestBuilderGetQueryParameters {
+        public class DirectoryObjectItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +130,8 @@ namespace Microsoft.Graph.Me.RegisteredDevices.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> {
+        public class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoryObjectItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

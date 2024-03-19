@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AccessReviewHistoryStatus {
+    public enum AccessReviewHistoryStatus
+    {
         [EnumMember(Value = "done")]
         Done,
         [EnumMember(Value = "inprogress")]

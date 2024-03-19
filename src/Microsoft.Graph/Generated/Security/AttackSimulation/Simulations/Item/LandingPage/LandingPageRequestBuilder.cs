@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage
     /// <summary>
     /// Provides operations to manage the landingPage property of the microsoft.graph.simulation entity.
     /// </summary>
-    public class LandingPageRequestBuilder : BaseRequestBuilder {
+    public class LandingPageRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LandingPageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LandingPageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/landingPage{?%24expand,%24select}", pathParameters) {
+        public LandingPageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/landingPage{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LandingPageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LandingPageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/landingPage{?%24expand,%24select}", rawUrl) {
+        public LandingPageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/landingPage{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The landing page associated with a simulation during its creation.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.LandingPage?> GetAsync(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.LandingPage?> GetAsync(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.LandingPage> GetAsync(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.LandingPage> GetAsync(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LandingPage>(requestInfo, Microsoft.Graph.Models.LandingPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LandingPageRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage
         /// </summary>
         /// <returns>A <see cref="LandingPageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LandingPageRequestBuilder WithUrl(string rawUrl) {
+        public LandingPageRequestBuilder WithUrl(string rawUrl)
+        {
             return new LandingPageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The landing page associated with a simulation during its creation.
         /// </summary>
-        public class LandingPageRequestBuilderGetQueryParameters {
+        public class LandingPageRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item.LandingPage
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LandingPageRequestBuilderGetRequestConfiguration : RequestConfiguration<LandingPageRequestBuilderGetQueryParameters> {
+        public class LandingPageRequestBuilderGetRequestConfiguration : RequestConfiguration<LandingPageRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

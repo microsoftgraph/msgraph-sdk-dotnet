@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public class HostReputation : Microsoft.Graph.Models.Entity, IParsable {
+    public class HostReputation : Microsoft.Graph.Models.Entity, IParsable 
+    {
         /// <summary>The classification property</summary>
         public HostReputationClassification? Classification {
             get { return BackingStore?.Get<HostReputationClassification?>("classification"); }
@@ -35,7 +36,8 @@ namespace Microsoft.Graph.Models.Security {
         /// </summary>
         /// <returns>A <see cref="HostReputation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostReputation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new HostReputation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new HostReputation();
         }
@@ -43,8 +45,10 @@ namespace Microsoft.Graph.Models.Security {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"classification", n => { Classification = n.GetEnumValue<HostReputationClassification>(); } },
                 {"rules", n => { Rules = n.GetCollectionOfObjectValues<HostReputationRule>(HostReputationRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"score", n => { Score = n.GetIntValue(); } },
@@ -54,7 +58,8 @@ namespace Microsoft.Graph.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<HostReputationClassification>("classification", Classification);

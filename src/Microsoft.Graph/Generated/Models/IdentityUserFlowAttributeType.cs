@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum IdentityUserFlowAttributeType {
+    public enum IdentityUserFlowAttributeType
+    {
         [EnumMember(Value = "builtIn")]
         BuiltIn,
         [EnumMember(Value = "custom")]

@@ -14,24 +14,28 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
     /// <summary>
     /// Provides operations to manage the collection of applicationTemplate entities.
     /// </summary>
-    public class ApplicationTemplateItemRequestBuilder : BaseRequestBuilder {
+    public class ApplicationTemplateItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the instantiate method.</summary>
-        public InstantiateRequestBuilder Instantiate { get =>
-            new InstantiateRequestBuilder(PathParameters, RequestAdapter);
+        public InstantiateRequestBuilder Instantiate
+        {
+            get =>             new InstantiateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ApplicationTemplateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24expand,%24select}", pathParameters) {
+        public ApplicationTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ApplicationTemplateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24expand,%24select}", rawUrl) {
+        public ApplicationTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applicationTemplates/{applicationTemplate%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve the properties of an applicationTemplate object.
@@ -43,13 +47,16 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ApplicationTemplate?> GetAsync(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ApplicationTemplate?> GetAsync(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ApplicationTemplate> GetAsync(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ApplicationTemplate> GetAsync(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApplicationTemplate>(requestInfo, ApplicationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,10 +68,12 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +85,15 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
         /// </summary>
         /// <returns>A <see cref="ApplicationTemplateItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ApplicationTemplateItemRequestBuilder WithUrl(string rawUrl) {
+        public ApplicationTemplateItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ApplicationTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties of an applicationTemplate object.
         /// </summary>
-        public class ApplicationTemplateItemRequestBuilderGetQueryParameters {
+        public class ApplicationTemplateItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,7 +119,8 @@ namespace Microsoft.Graph.ApplicationTemplates.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApplicationTemplateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters> {
+        public class ApplicationTemplateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ApplicationTemplateItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

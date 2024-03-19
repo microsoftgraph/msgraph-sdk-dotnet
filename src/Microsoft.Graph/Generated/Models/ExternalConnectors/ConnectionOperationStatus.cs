@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    public enum ConnectionOperationStatus {
+    public enum ConnectionOperationStatus
+    {
         [EnumMember(Value = "unspecified")]
         Unspecified,
         [EnumMember(Value = "inprogress")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AuthenticationMethodKeyStrength {
+    public enum AuthenticationMethodKeyStrength
+    {
         [EnumMember(Value = "normal")]
         Normal,
         [EnumMember(Value = "weak")]

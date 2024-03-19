@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum SimulationAutomationStatus {
+    public enum SimulationAutomationStatus
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "draft")]

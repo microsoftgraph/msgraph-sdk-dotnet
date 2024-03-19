@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Android Work Profile required password type.</summary>
-    public enum AndroidWorkProfileRequiredPasswordType {
+    public enum AndroidWorkProfileRequiredPasswordType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

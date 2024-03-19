@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.DriveItem {
     /// <summary>
     /// Provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
     /// </summary>
-    public class DriveItemRequestBuilder : BaseRequestBuilder {
+    public class DriveItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the media for the drive entity.</summary>
-        public ContentRequestBuilder Content { get =>
-            new ContentRequestBuilder(PathParameters, RequestAdapter);
+        public ContentRequestBuilder Content
+        {
+            get =>             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem{?%24expand,%24select}", pathParameters) {
+        public DriveItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem{?%24expand,%24select}", rawUrl) {
+        public DriveItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/driveItem{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
@@ -42,13 +46,16 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.DriveItem {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DriveItem?> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem?> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DriveItem> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.DriveItem {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +84,15 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.DriveItem {
         /// </summary>
         /// <returns>A <see cref="DriveItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DriveItemRequestBuilder WithUrl(string rawUrl) {
+        public DriveItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DriveItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
         /// </summary>
-        public class DriveItemRequestBuilderGetQueryParameters {
+        public class DriveItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +118,8 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.DriveItem {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DriveItemRequestBuilderGetQueryParameters> {
+        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DriveItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

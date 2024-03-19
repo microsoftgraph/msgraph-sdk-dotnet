@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Scheduled Action Type Enum</summary>
-    public enum DeviceComplianceActionType {
+    public enum DeviceComplianceActionType
+    {
         /// <summary>No Action</summary>
         [EnumMember(Value = "noAction")]
         NoAction,

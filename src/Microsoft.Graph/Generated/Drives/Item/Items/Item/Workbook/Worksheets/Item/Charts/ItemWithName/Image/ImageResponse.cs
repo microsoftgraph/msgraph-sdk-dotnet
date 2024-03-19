@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.Image {
     [Obsolete("This class is obsolete. Use ImageGetResponse instead.")]
-    public class ImageResponse : ImageGetResponse, IParsable {
+    public class ImageResponse : ImageGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="ImageResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImageResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ImageResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ImageResponse();
         }

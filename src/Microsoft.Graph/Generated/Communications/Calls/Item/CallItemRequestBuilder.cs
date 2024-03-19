@@ -32,96 +32,118 @@ namespace Microsoft.Graph.Communications.Calls.Item {
     /// <summary>
     /// Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
     /// </summary>
-    public class CallItemRequestBuilder : BaseRequestBuilder {
+    public class CallItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the addLargeGalleryView method.</summary>
-        public AddLargeGalleryViewRequestBuilder AddLargeGalleryView { get =>
-            new AddLargeGalleryViewRequestBuilder(PathParameters, RequestAdapter);
+        public AddLargeGalleryViewRequestBuilder AddLargeGalleryView
+        {
+            get =>             new AddLargeGalleryViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the answer method.</summary>
-        public AnswerRequestBuilder Answer { get =>
-            new AnswerRequestBuilder(PathParameters, RequestAdapter);
+        public AnswerRequestBuilder Answer
+        {
+            get =>             new AnswerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.</summary>
-        public AudioRoutingGroupsRequestBuilder AudioRoutingGroups { get =>
-            new AudioRoutingGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public AudioRoutingGroupsRequestBuilder AudioRoutingGroups
+        {
+            get =>             new AudioRoutingGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancelMediaProcessing method.</summary>
-        public CancelMediaProcessingRequestBuilder CancelMediaProcessing { get =>
-            new CancelMediaProcessingRequestBuilder(PathParameters, RequestAdapter);
+        public CancelMediaProcessingRequestBuilder CancelMediaProcessing
+        {
+            get =>             new CancelMediaProcessingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changeScreenSharingRole method.</summary>
-        public ChangeScreenSharingRoleRequestBuilder ChangeScreenSharingRole { get =>
-            new ChangeScreenSharingRoleRequestBuilder(PathParameters, RequestAdapter);
+        public ChangeScreenSharingRoleRequestBuilder ChangeScreenSharingRole
+        {
+            get =>             new ChangeScreenSharingRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.</summary>
-        public ContentSharingSessionsRequestBuilder ContentSharingSessions { get =>
-            new ContentSharingSessionsRequestBuilder(PathParameters, RequestAdapter);
+        public ContentSharingSessionsRequestBuilder ContentSharingSessions
+        {
+            get =>             new ContentSharingSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the keepAlive method.</summary>
-        public KeepAliveRequestBuilder KeepAlive { get =>
-            new KeepAliveRequestBuilder(PathParameters, RequestAdapter);
+        public KeepAliveRequestBuilder KeepAlive
+        {
+            get =>             new KeepAliveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mute method.</summary>
-        public MuteRequestBuilder Mute { get =>
-            new MuteRequestBuilder(PathParameters, RequestAdapter);
+        public MuteRequestBuilder Mute
+        {
+            get =>             new MuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.call entity.</summary>
-        public OperationsRequestBuilder Operations { get =>
-            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        public OperationsRequestBuilder Operations
+        {
+            get =>             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
-        public ParticipantsRequestBuilder Participants { get =>
-            new ParticipantsRequestBuilder(PathParameters, RequestAdapter);
+        public ParticipantsRequestBuilder Participants
+        {
+            get =>             new ParticipantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the playPrompt method.</summary>
-        public PlayPromptRequestBuilder PlayPrompt { get =>
-            new PlayPromptRequestBuilder(PathParameters, RequestAdapter);
+        public PlayPromptRequestBuilder PlayPrompt
+        {
+            get =>             new PlayPromptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recordResponse method.</summary>
-        public RecordResponseRequestBuilder RecordResponse { get =>
-            new RecordResponseRequestBuilder(PathParameters, RequestAdapter);
+        public RecordResponseRequestBuilder RecordResponse
+        {
+            get =>             new RecordResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the redirect method.</summary>
-        public RedirectRequestBuilder Redirect { get =>
-            new RedirectRequestBuilder(PathParameters, RequestAdapter);
+        public RedirectRequestBuilder Redirect
+        {
+            get =>             new RedirectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reject method.</summary>
-        public RejectRequestBuilder Reject { get =>
-            new RejectRequestBuilder(PathParameters, RequestAdapter);
+        public RejectRequestBuilder Reject
+        {
+            get =>             new RejectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendDtmfTones method.</summary>
-        public SendDtmfTonesRequestBuilder SendDtmfTones { get =>
-            new SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
+        public SendDtmfTonesRequestBuilder SendDtmfTones
+        {
+            get =>             new SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeToTone method.</summary>
-        public SubscribeToToneRequestBuilder SubscribeToTone { get =>
-            new SubscribeToToneRequestBuilder(PathParameters, RequestAdapter);
+        public SubscribeToToneRequestBuilder SubscribeToTone
+        {
+            get =>             new SubscribeToToneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the transfer method.</summary>
-        public TransferRequestBuilder Transfer { get =>
-            new TransferRequestBuilder(PathParameters, RequestAdapter);
+        public TransferRequestBuilder Transfer
+        {
+            get =>             new TransferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unmute method.</summary>
-        public UnmuteRequestBuilder Unmute { get =>
-            new UnmuteRequestBuilder(PathParameters, RequestAdapter);
+        public UnmuteRequestBuilder Unmute
+        {
+            get =>             new UnmuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
-        public UpdateRecordingStatusRequestBuilder UpdateRecordingStatus { get =>
-            new UpdateRecordingStatusRequestBuilder(PathParameters, RequestAdapter);
+        public UpdateRecordingStatusRequestBuilder UpdateRecordingStatus
+        {
+            get =>             new UpdateRecordingStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CallItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CallItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}{?%24expand,%24select}", pathParameters) {
+        public CallItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CallItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CallItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}{?%24expand,%24select}", rawUrl) {
+        public CallItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
@@ -132,13 +154,16 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -153,13 +178,16 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Call?> GetAsync(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Call?> GetAsync(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Call> GetAsync(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Call> GetAsync(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -174,14 +202,17 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Call?> PatchAsync(Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Call?> PatchAsync(Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Call> PatchAsync(Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Call> PatchAsync(Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -193,10 +224,12 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/communications/calls/{call%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -210,10 +243,12 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CallItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -228,10 +263,12 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/communications/calls/{call%2Did}", PathParameters);
@@ -245,19 +282,22 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// </summary>
         /// <returns>A <see cref="CallItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CallItemRequestBuilder WithUrl(string rawUrl) {
+        public CallItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new CallItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class CallItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a call object.
         /// </summary>
-        public class CallItemRequestBuilderGetQueryParameters {
+        public class CallItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,13 +323,15 @@ namespace Microsoft.Graph.Communications.Calls.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CallItemRequestBuilderGetQueryParameters> {
+        public class CallItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CallItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class CallItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PrintQuality {
+    public enum PrintQuality
+    {
         [EnumMember(Value = "low")]
         Low,
         [EnumMember(Value = "medium")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-    public enum ManagedAppDataEncryptionType {
+    public enum ManagedAppDataEncryptionType
+    {
         /// <summary>App data is encrypted based on the default settings on the device.</summary>
         [EnumMember(Value = "useDeviceSettings")]
         UseDeviceSettings,

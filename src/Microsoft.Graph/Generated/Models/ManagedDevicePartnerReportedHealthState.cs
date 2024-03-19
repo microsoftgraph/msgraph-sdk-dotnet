@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Available health states for the Device Health API</summary>
-    public enum ManagedDevicePartnerReportedHealthState {
+    public enum ManagedDevicePartnerReportedHealthState
+    {
         /// <summary>Device health state is not yet reported</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

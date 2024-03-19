@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>The type of Exchange Connector.</summary>
-    public enum DeviceManagementExchangeConnectorType {
+    public enum DeviceManagementExchangeConnectorType
+    {
         /// <summary>Connects to on-premises Exchange Environment.</summary>
         [EnumMember(Value = "onPremises")]
         OnPremises,

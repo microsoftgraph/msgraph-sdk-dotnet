@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
-    public class PpmtPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class PpmtPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -102,7 +103,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// <summary>
         /// Instantiates a new <see cref="PpmtPostRequestBody"/> and sets the default values.
         /// </summary>
-        public PpmtPostRequestBody() {
+        public PpmtPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -111,7 +113,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// </summary>
         /// <returns>A <see cref="PpmtPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PpmtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PpmtPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PpmtPostRequestBody();
         }
@@ -119,8 +122,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"fv", n => { Fv = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"nper", n => { Nper = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"per", n => { Per = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -133,7 +138,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ppmt {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("fv", Fv);
             writer.WriteObjectValue<Json>("nper", Nper);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PrivilegedAccessGroupMemberType {
+    public enum PrivilegedAccessGroupMemberType
+    {
         [EnumMember(Value = "direct")]
         Direct,
         [EnumMember(Value = "group")]

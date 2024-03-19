@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.AssociateWithHubSites {
-    public class AssociateWithHubSitesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AssociateWithHubSitesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -36,7 +37,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.AssociateWithHubSites {
         /// <summary>
         /// Instantiates a new <see cref="AssociateWithHubSitesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AssociateWithHubSitesPostRequestBody() {
+        public AssociateWithHubSitesPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -45,7 +47,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.AssociateWithHubSites {
         /// </summary>
         /// <returns>A <see cref="AssociateWithHubSitesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssociateWithHubSitesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AssociateWithHubSitesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AssociateWithHubSitesPostRequestBody();
         }
@@ -53,8 +56,10 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.AssociateWithHubSites {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"hubSiteUrls", n => { HubSiteUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"propagateToExistingLists", n => { PropagateToExistingLists = n.GetBoolValue(); } },
             };
@@ -63,7 +68,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.AssociateWithHubSites {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("hubSiteUrls", HubSiteUrls);
             writer.WriteBoolValue("propagateToExistingLists", PropagateToExistingLists);

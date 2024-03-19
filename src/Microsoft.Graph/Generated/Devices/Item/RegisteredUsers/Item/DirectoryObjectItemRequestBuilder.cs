@@ -14,40 +14,48 @@ namespace Microsoft.Graph.Devices.Item.RegisteredUsers.Item {
     /// <summary>
     /// Builds and executes requests for operations under \devices\{device-id}\registeredUsers\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder {
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment { get =>
-            new GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        {
+            get =>             new GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public GraphEndpointRequestBuilder GraphEndpoint { get =>
-            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint
+        {
+            get =>             new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
-            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        {
+            get =>             new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public GraphUserRequestBuilder GraphUser { get =>
-            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser
+        {
+            get =>             new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of device entities.</summary>
-        public RefRequestBuilder Ref { get =>
-            new RefRequestBuilder(PathParameters, RequestAdapter);
+        public RefRequestBuilder Ref
+        {
+            get =>             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}", pathParameters) {
+        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}", rawUrl) {
+        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}", rawUrl)
+        {
         }
     }
 }

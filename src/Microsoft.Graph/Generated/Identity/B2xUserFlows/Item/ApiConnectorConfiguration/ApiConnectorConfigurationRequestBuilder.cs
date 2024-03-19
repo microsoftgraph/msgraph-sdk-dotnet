@@ -15,28 +15,33 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration {
     /// <summary>
     /// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\apiConnectorConfiguration
     /// </summary>
-    public class ApiConnectorConfigurationRequestBuilder : BaseRequestBuilder {
+    public class ApiConnectorConfigurationRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the postAttributeCollection property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        public PostAttributeCollectionRequestBuilder PostAttributeCollection { get =>
-            new PostAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
+        public PostAttributeCollectionRequestBuilder PostAttributeCollection
+        {
+            get =>             new PostAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the postFederationSignup property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        public PostFederationSignupRequestBuilder PostFederationSignup { get =>
-            new PostFederationSignupRequestBuilder(PathParameters, RequestAdapter);
+        public PostFederationSignupRequestBuilder PostFederationSignup
+        {
+            get =>             new PostFederationSignupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApiConnectorConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration{?%24expand,%24select}", pathParameters) {
+        public ApiConnectorConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApiConnectorConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration{?%24expand,%24select}", rawUrl) {
+        public ApiConnectorConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
@@ -47,13 +52,16 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserFlowApiConnectorConfiguration?> GetAsync(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserFlowApiConnectorConfiguration?> GetAsync(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserFlowApiConnectorConfiguration> GetAsync(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserFlowApiConnectorConfiguration> GetAsync(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserFlowApiConnectorConfiguration>(requestInfo, UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,13 +90,15 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration {
         /// </summary>
         /// <returns>A <see cref="ApiConnectorConfigurationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ApiConnectorConfigurationRequestBuilder WithUrl(string rawUrl) {
+        public ApiConnectorConfigurationRequestBuilder WithUrl(string rawUrl)
+        {
             return new ApiConnectorConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
         /// </summary>
-        public class ApiConnectorConfigurationRequestBuilderGetQueryParameters {
+        public class ApiConnectorConfigurationRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +124,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApiConnectorConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters> {
+        public class ApiConnectorConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

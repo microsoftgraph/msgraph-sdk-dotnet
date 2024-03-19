@@ -13,14 +13,16 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
     /// <summary>
     /// Provides operations to call the findTenantInformationByTenantId method.
     /// </summary>
-    public class FindTenantInformationByTenantIdWithTenantIdRequestBuilder : BaseRequestBuilder {
+    public class FindTenantInformationByTenantIdWithTenantIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="FindTenantInformationByTenantIdWithTenantIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string tenantId = "") : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", pathParameters) {
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string tenantId = "") : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(tenantId)) PathParameters.Add("tenantId", tenantId);
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", rawUrl) {
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function findTenantInformationByTenantId
@@ -39,13 +42,16 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TenantInformation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantInformation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TenantInformation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantInformation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TenantInformation>(requestInfo, TenantInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -72,14 +80,16 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
         /// </summary>
         /// <returns>A <see cref="FindTenantInformationByTenantIdWithTenantIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder WithUrl(string rawUrl) {
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FindTenantInformationByTenantIdWithTenantIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class FindTenantInformationByTenantIdWithTenantIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

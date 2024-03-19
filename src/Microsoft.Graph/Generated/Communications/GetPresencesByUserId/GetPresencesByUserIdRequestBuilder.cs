@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
     /// <summary>
     /// Provides operations to call the getPresencesByUserId method.
     /// </summary>
-    public class GetPresencesByUserIdRequestBuilder : BaseRequestBuilder {
+    public class GetPresencesByUserIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetPresencesByUserIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPresencesByUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", pathParameters) {
+        public GetPresencesByUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetPresencesByUserIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPresencesByUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", rawUrl) {
+        public GetPresencesByUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", rawUrl)
+        {
         }
         /// <summary>
         /// Get the presence information for multiple users.
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPresencesByUserIdPostResponse?> PostAsGetPresencesByUserIdPostResponseAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPresencesByUserIdPostResponse?> PostAsGetPresencesByUserIdPostResponseAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPresencesByUserIdPostResponse> PostAsGetPresencesByUserIdPostResponseAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPresencesByUserIdPostResponse> PostAsGetPresencesByUserIdPostResponseAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPresencesByUserIdPostResponse>(requestInfo, GetPresencesByUserIdPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -62,14 +68,17 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
         [Obsolete("This method is obsolete. Use PostAsGetPresencesByUserIdPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPresencesByUserIdResponse?> PostAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPresencesByUserIdResponse?> PostAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPresencesByUserIdResponse> PostAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPresencesByUserIdResponse> PostAsync(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPresencesByUserIdResponse>(requestInfo, GetPresencesByUserIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,10 +91,12 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetPresencesByUserIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -99,14 +110,16 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId {
         /// </summary>
         /// <returns>A <see cref="GetPresencesByUserIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetPresencesByUserIdRequestBuilder WithUrl(string rawUrl) {
+        public GetPresencesByUserIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetPresencesByUserIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetPresencesByUserIdRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetPresencesByUserIdRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

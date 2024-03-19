@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
     [Obsolete("This class is obsolete. Use GetRecentNotebooksWithIncludePersonalNotebooksGetResponse instead.")]
-    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable {
+    public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : GetRecentNotebooksWithIncludePersonalNotebooksGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetRecentNotebooksWithIncludePersonalNotebooksResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetRecentNotebooksWithIncludePersonalNotebooksResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetRecentNotebooksWithIncludePersonalNotebooksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetRecentNotebooksWithIncludePersonalNotebooksResponse();
         }

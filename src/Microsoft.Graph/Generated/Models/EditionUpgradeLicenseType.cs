@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Edition Upgrade License type</summary>
-    public enum EditionUpgradeLicenseType {
+    public enum EditionUpgradeLicenseType
+    {
         /// <summary>Product Key Type</summary>
         [EnumMember(Value = "productKey")]
         ProductKey,

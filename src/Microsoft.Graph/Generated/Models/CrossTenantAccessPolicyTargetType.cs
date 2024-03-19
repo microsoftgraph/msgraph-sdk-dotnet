@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum CrossTenantAccessPolicyTargetType {
+    public enum CrossTenantAccessPolicyTargetType
+    {
         [EnumMember(Value = "user")]
         User,
         [EnumMember(Value = "group")]

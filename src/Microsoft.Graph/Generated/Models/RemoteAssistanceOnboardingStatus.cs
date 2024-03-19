@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>The current TeamViewer connector status</summary>
-    public enum RemoteAssistanceOnboardingStatus {
+    public enum RemoteAssistanceOnboardingStatus
+    {
         /// <summary>The status reported when there is no active TeamViewer connector configured or active</summary>
         [EnumMember(Value = "notOnboarded")]
         NotOnboarded,

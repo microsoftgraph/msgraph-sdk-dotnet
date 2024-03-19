@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Contains properties for upload request states.</summary>
-    public enum MobileAppContentFileUploadState {
+    public enum MobileAppContentFileUploadState
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "transientError")]

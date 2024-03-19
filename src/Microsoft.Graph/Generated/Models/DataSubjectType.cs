@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum DataSubjectType {
+    public enum DataSubjectType
+    {
         [EnumMember(Value = "customer")]
         Customer,
         [EnumMember(Value = "currentEmployee")]

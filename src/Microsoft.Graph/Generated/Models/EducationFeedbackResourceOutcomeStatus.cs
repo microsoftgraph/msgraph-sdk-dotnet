@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum EducationFeedbackResourceOutcomeStatus {
+    public enum EducationFeedbackResourceOutcomeStatus
+    {
         [EnumMember(Value = "notPublished")]
         NotPublished,
         [EnumMember(Value = "pendingPublish")]

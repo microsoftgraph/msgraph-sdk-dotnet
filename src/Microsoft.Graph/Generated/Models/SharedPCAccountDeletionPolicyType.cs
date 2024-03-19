@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for when accounts are deleted on a shared PC.</summary>
-    public enum SharedPCAccountDeletionPolicyType {
+    public enum SharedPCAccountDeletionPolicyType
+    {
         /// <summary>Delete immediately.</summary>
         [EnumMember(Value = "immediate")]
         Immediate,

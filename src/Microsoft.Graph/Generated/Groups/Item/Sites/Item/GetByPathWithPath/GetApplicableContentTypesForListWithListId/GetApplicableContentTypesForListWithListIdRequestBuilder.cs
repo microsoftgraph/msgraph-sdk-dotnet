@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
     /// <summary>
     /// Provides operations to call the getApplicableContentTypesForList method.
     /// </summary>
-    public class GetApplicableContentTypesForListWithListIdRequestBuilder : BaseRequestBuilder {
+    public class GetApplicableContentTypesForListWithListIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetApplicableContentTypesForListWithListIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetApplicableContentTypesForListWithListIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string listId = "") : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getApplicableContentTypesForList(listId='{listId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetApplicableContentTypesForListWithListIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string listId = "") : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getApplicableContentTypesForList(listId='{listId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(listId)) PathParameters.Add("listId", listId);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetApplicableContentTypesForListWithListIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getApplicableContentTypesForList(listId='{listId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetApplicableContentTypesForListWithListIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getApplicableContentTypesForList(listId='{listId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getApplicableContentTypesForList
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetApplicableContentTypesForListWithListIdGetResponse?> GetAsGetApplicableContentTypesForListWithListIdGetResponseAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApplicableContentTypesForListWithListIdGetResponse?> GetAsGetApplicableContentTypesForListWithListIdGetResponseAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetApplicableContentTypesForListWithListIdGetResponse> GetAsGetApplicableContentTypesForListWithListIdGetResponseAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApplicableContentTypesForListWithListIdGetResponse> GetAsGetApplicableContentTypesForListWithListIdGetResponseAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdGetResponse>(requestInfo, GetApplicableContentTypesForListWithListIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         [Obsolete("This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetApplicableContentTypesForListWithListIdResponse?> GetAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApplicableContentTypesForListWithListIdResponse?> GetAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetApplicableContentTypesForListWithListIdResponse> GetAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApplicableContentTypesForListWithListIdResponse> GetAsync(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdResponse>(requestInfo, GetApplicableContentTypesForListWithListIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         /// </summary>
         /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetApplicableContentTypesForListWithListIdRequestBuilder WithUrl(string rawUrl) {
+        public GetApplicableContentTypesForListWithListIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getApplicableContentTypesForList
         /// </summary>
-        public class GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters {
+        public class GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetApplicable
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration : RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters> {
+        public class GetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration : RequestConfiguration<GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -379,1484 +379,1853 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
     /// <summary>
     /// Provides operations to manage the functions property of the microsoft.graph.workbook entity.
     /// </summary>
-    public class FunctionsRequestBuilder : BaseRequestBuilder {
+    public class FunctionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the abs method.</summary>
-        public AbsRequestBuilder Abs { get =>
-            new AbsRequestBuilder(PathParameters, RequestAdapter);
+        public AbsRequestBuilder Abs
+        {
+            get =>             new AbsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the accrInt method.</summary>
-        public AccrIntRequestBuilder AccrInt { get =>
-            new AccrIntRequestBuilder(PathParameters, RequestAdapter);
+        public AccrIntRequestBuilder AccrInt
+        {
+            get =>             new AccrIntRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the accrIntM method.</summary>
-        public AccrIntMRequestBuilder AccrIntM { get =>
-            new AccrIntMRequestBuilder(PathParameters, RequestAdapter);
+        public AccrIntMRequestBuilder AccrIntM
+        {
+            get =>             new AccrIntMRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acos method.</summary>
-        public AcosRequestBuilder Acos { get =>
-            new AcosRequestBuilder(PathParameters, RequestAdapter);
+        public AcosRequestBuilder Acos
+        {
+            get =>             new AcosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acosh method.</summary>
-        public AcoshRequestBuilder Acosh { get =>
-            new AcoshRequestBuilder(PathParameters, RequestAdapter);
+        public AcoshRequestBuilder Acosh
+        {
+            get =>             new AcoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acot method.</summary>
-        public AcotRequestBuilder Acot { get =>
-            new AcotRequestBuilder(PathParameters, RequestAdapter);
+        public AcotRequestBuilder Acot
+        {
+            get =>             new AcotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the acoth method.</summary>
-        public AcothRequestBuilder Acoth { get =>
-            new AcothRequestBuilder(PathParameters, RequestAdapter);
+        public AcothRequestBuilder Acoth
+        {
+            get =>             new AcothRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the amorDegrc method.</summary>
-        public AmorDegrcRequestBuilder AmorDegrc { get =>
-            new AmorDegrcRequestBuilder(PathParameters, RequestAdapter);
+        public AmorDegrcRequestBuilder AmorDegrc
+        {
+            get =>             new AmorDegrcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the amorLinc method.</summary>
-        public AmorLincRequestBuilder AmorLinc { get =>
-            new AmorLincRequestBuilder(PathParameters, RequestAdapter);
+        public AmorLincRequestBuilder AmorLinc
+        {
+            get =>             new AmorLincRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the and method.</summary>
-        public AndRequestBuilder And { get =>
-            new AndRequestBuilder(PathParameters, RequestAdapter);
+        public AndRequestBuilder And
+        {
+            get =>             new AndRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the arabic method.</summary>
-        public ArabicRequestBuilder Arabic { get =>
-            new ArabicRequestBuilder(PathParameters, RequestAdapter);
+        public ArabicRequestBuilder Arabic
+        {
+            get =>             new ArabicRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the areas method.</summary>
-        public AreasRequestBuilder Areas { get =>
-            new AreasRequestBuilder(PathParameters, RequestAdapter);
+        public AreasRequestBuilder Areas
+        {
+            get =>             new AreasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asc method.</summary>
-        public AscRequestBuilder Asc { get =>
-            new AscRequestBuilder(PathParameters, RequestAdapter);
+        public AscRequestBuilder Asc
+        {
+            get =>             new AscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asin method.</summary>
-        public AsinRequestBuilder Asin { get =>
-            new AsinRequestBuilder(PathParameters, RequestAdapter);
+        public AsinRequestBuilder Asin
+        {
+            get =>             new AsinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asinh method.</summary>
-        public AsinhRequestBuilder Asinh { get =>
-            new AsinhRequestBuilder(PathParameters, RequestAdapter);
+        public AsinhRequestBuilder Asinh
+        {
+            get =>             new AsinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atan method.</summary>
-        public AtanRequestBuilder Atan { get =>
-            new AtanRequestBuilder(PathParameters, RequestAdapter);
+        public AtanRequestBuilder Atan
+        {
+            get =>             new AtanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atan2 method.</summary>
-        public Atan2RequestBuilder Atan2 { get =>
-            new Atan2RequestBuilder(PathParameters, RequestAdapter);
+        public Atan2RequestBuilder Atan2
+        {
+            get =>             new Atan2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the atanh method.</summary>
-        public AtanhRequestBuilder Atanh { get =>
-            new AtanhRequestBuilder(PathParameters, RequestAdapter);
+        public AtanhRequestBuilder Atanh
+        {
+            get =>             new AtanhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the aveDev method.</summary>
-        public AveDevRequestBuilder AveDev { get =>
-            new AveDevRequestBuilder(PathParameters, RequestAdapter);
+        public AveDevRequestBuilder AveDev
+        {
+            get =>             new AveDevRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the average method.</summary>
-        public AverageRequestBuilder Average { get =>
-            new AverageRequestBuilder(PathParameters, RequestAdapter);
+        public AverageRequestBuilder Average
+        {
+            get =>             new AverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageA method.</summary>
-        public AverageARequestBuilder AverageA { get =>
-            new AverageARequestBuilder(PathParameters, RequestAdapter);
+        public AverageARequestBuilder AverageA
+        {
+            get =>             new AverageARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageIf method.</summary>
-        public AverageIfRequestBuilder AverageIf { get =>
-            new AverageIfRequestBuilder(PathParameters, RequestAdapter);
+        public AverageIfRequestBuilder AverageIf
+        {
+            get =>             new AverageIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the averageIfs method.</summary>
-        public AverageIfsRequestBuilder AverageIfs { get =>
-            new AverageIfsRequestBuilder(PathParameters, RequestAdapter);
+        public AverageIfsRequestBuilder AverageIfs
+        {
+            get =>             new AverageIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bahtText method.</summary>
-        public BahtTextRequestBuilder BahtText { get =>
-            new BahtTextRequestBuilder(PathParameters, RequestAdapter);
+        public BahtTextRequestBuilder BahtText
+        {
+            get =>             new BahtTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the base method.</summary>
-        public BaseRequestBuilderEscaped Base { get =>
-            new BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
+        public BaseRequestBuilderEscaped Base
+        {
+            get =>             new BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselI method.</summary>
-        public BesselIRequestBuilder BesselI { get =>
-            new BesselIRequestBuilder(PathParameters, RequestAdapter);
+        public BesselIRequestBuilder BesselI
+        {
+            get =>             new BesselIRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselJ method.</summary>
-        public BesselJRequestBuilder BesselJ { get =>
-            new BesselJRequestBuilder(PathParameters, RequestAdapter);
+        public BesselJRequestBuilder BesselJ
+        {
+            get =>             new BesselJRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselK method.</summary>
-        public BesselKRequestBuilder BesselK { get =>
-            new BesselKRequestBuilder(PathParameters, RequestAdapter);
+        public BesselKRequestBuilder BesselK
+        {
+            get =>             new BesselKRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselY method.</summary>
-        public BesselYRequestBuilder BesselY { get =>
-            new BesselYRequestBuilder(PathParameters, RequestAdapter);
+        public BesselYRequestBuilder BesselY
+        {
+            get =>             new BesselYRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the beta_Dist method.</summary>
-        public Beta_DistRequestBuilder Beta_Dist { get =>
-            new Beta_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Beta_DistRequestBuilder Beta_Dist
+        {
+            get =>             new Beta_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the beta_Inv method.</summary>
-        public Beta_InvRequestBuilder Beta_Inv { get =>
-            new Beta_InvRequestBuilder(PathParameters, RequestAdapter);
+        public Beta_InvRequestBuilder Beta_Inv
+        {
+            get =>             new Beta_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Dec method.</summary>
-        public Bin2DecRequestBuilder Bin2Dec { get =>
-            new Bin2DecRequestBuilder(PathParameters, RequestAdapter);
+        public Bin2DecRequestBuilder Bin2Dec
+        {
+            get =>             new Bin2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Hex method.</summary>
-        public Bin2HexRequestBuilder Bin2Hex { get =>
-            new Bin2HexRequestBuilder(PathParameters, RequestAdapter);
+        public Bin2HexRequestBuilder Bin2Hex
+        {
+            get =>             new Bin2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bin2Oct method.</summary>
-        public Bin2OctRequestBuilder Bin2Oct { get =>
-            new Bin2OctRequestBuilder(PathParameters, RequestAdapter);
+        public Bin2OctRequestBuilder Bin2Oct
+        {
+            get =>             new Bin2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Dist method.</summary>
-        public Binom_DistRequestBuilder Binom_Dist { get =>
-            new Binom_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Binom_DistRequestBuilder Binom_Dist
+        {
+            get =>             new Binom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Dist_Range method.</summary>
-        public Binom_Dist_RangeRequestBuilder Binom_Dist_Range { get =>
-            new Binom_Dist_RangeRequestBuilder(PathParameters, RequestAdapter);
+        public Binom_Dist_RangeRequestBuilder Binom_Dist_Range
+        {
+            get =>             new Binom_Dist_RangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the binom_Inv method.</summary>
-        public Binom_InvRequestBuilder Binom_Inv { get =>
-            new Binom_InvRequestBuilder(PathParameters, RequestAdapter);
+        public Binom_InvRequestBuilder Binom_Inv
+        {
+            get =>             new Binom_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitand method.</summary>
-        public BitandRequestBuilder Bitand { get =>
-            new BitandRequestBuilder(PathParameters, RequestAdapter);
+        public BitandRequestBuilder Bitand
+        {
+            get =>             new BitandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitlshift method.</summary>
-        public BitlshiftRequestBuilder Bitlshift { get =>
-            new BitlshiftRequestBuilder(PathParameters, RequestAdapter);
+        public BitlshiftRequestBuilder Bitlshift
+        {
+            get =>             new BitlshiftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitor method.</summary>
-        public BitorRequestBuilder Bitor { get =>
-            new BitorRequestBuilder(PathParameters, RequestAdapter);
+        public BitorRequestBuilder Bitor
+        {
+            get =>             new BitorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitrshift method.</summary>
-        public BitrshiftRequestBuilder Bitrshift { get =>
-            new BitrshiftRequestBuilder(PathParameters, RequestAdapter);
+        public BitrshiftRequestBuilder Bitrshift
+        {
+            get =>             new BitrshiftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the bitxor method.</summary>
-        public BitxorRequestBuilder Bitxor { get =>
-            new BitxorRequestBuilder(PathParameters, RequestAdapter);
+        public BitxorRequestBuilder Bitxor
+        {
+            get =>             new BitxorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ceiling_Math method.</summary>
-        public Ceiling_MathRequestBuilder Ceiling_Math { get =>
-            new Ceiling_MathRequestBuilder(PathParameters, RequestAdapter);
+        public Ceiling_MathRequestBuilder Ceiling_Math
+        {
+            get =>             new Ceiling_MathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ceiling_Precise method.</summary>
-        public Ceiling_PreciseRequestBuilder Ceiling_Precise { get =>
-            new Ceiling_PreciseRequestBuilder(PathParameters, RequestAdapter);
+        public Ceiling_PreciseRequestBuilder Ceiling_Precise
+        {
+            get =>             new Ceiling_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the char method.</summary>
-        public CharRequestBuilder Char { get =>
-            new CharRequestBuilder(PathParameters, RequestAdapter);
+        public CharRequestBuilder Char
+        {
+            get =>             new CharRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Dist method.</summary>
-        public ChiSq_DistRequestBuilder ChiSq_Dist { get =>
-            new ChiSq_DistRequestBuilder(PathParameters, RequestAdapter);
+        public ChiSq_DistRequestBuilder ChiSq_Dist
+        {
+            get =>             new ChiSq_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Dist_RT method.</summary>
-        public ChiSq_Dist_RTRequestBuilder ChiSq_Dist_RT { get =>
-            new ChiSq_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+        public ChiSq_Dist_RTRequestBuilder ChiSq_Dist_RT
+        {
+            get =>             new ChiSq_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Inv method.</summary>
-        public ChiSq_InvRequestBuilder ChiSq_Inv { get =>
-            new ChiSq_InvRequestBuilder(PathParameters, RequestAdapter);
+        public ChiSq_InvRequestBuilder ChiSq_Inv
+        {
+            get =>             new ChiSq_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the chiSq_Inv_RT method.</summary>
-        public ChiSq_Inv_RTRequestBuilder ChiSq_Inv_RT { get =>
-            new ChiSq_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
+        public ChiSq_Inv_RTRequestBuilder ChiSq_Inv_RT
+        {
+            get =>             new ChiSq_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the choose method.</summary>
-        public ChooseRequestBuilder Choose { get =>
-            new ChooseRequestBuilder(PathParameters, RequestAdapter);
+        public ChooseRequestBuilder Choose
+        {
+            get =>             new ChooseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clean method.</summary>
-        public CleanRequestBuilder Clean { get =>
-            new CleanRequestBuilder(PathParameters, RequestAdapter);
+        public CleanRequestBuilder Clean
+        {
+            get =>             new CleanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the code method.</summary>
-        public CodeRequestBuilder Code { get =>
-            new CodeRequestBuilder(PathParameters, RequestAdapter);
+        public CodeRequestBuilder Code
+        {
+            get =>             new CodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the columns method.</summary>
-        public ColumnsRequestBuilder Columns { get =>
-            new ColumnsRequestBuilder(PathParameters, RequestAdapter);
+        public ColumnsRequestBuilder Columns
+        {
+            get =>             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the combin method.</summary>
-        public CombinRequestBuilder Combin { get =>
-            new CombinRequestBuilder(PathParameters, RequestAdapter);
+        public CombinRequestBuilder Combin
+        {
+            get =>             new CombinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the combina method.</summary>
-        public CombinaRequestBuilder Combina { get =>
-            new CombinaRequestBuilder(PathParameters, RequestAdapter);
+        public CombinaRequestBuilder Combina
+        {
+            get =>             new CombinaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the complex method.</summary>
-        public ComplexRequestBuilder Complex { get =>
-            new ComplexRequestBuilder(PathParameters, RequestAdapter);
+        public ComplexRequestBuilder Complex
+        {
+            get =>             new ComplexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the concatenate method.</summary>
-        public ConcatenateRequestBuilder Concatenate { get =>
-            new ConcatenateRequestBuilder(PathParameters, RequestAdapter);
+        public ConcatenateRequestBuilder Concatenate
+        {
+            get =>             new ConcatenateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the confidence_Norm method.</summary>
-        public Confidence_NormRequestBuilder Confidence_Norm { get =>
-            new Confidence_NormRequestBuilder(PathParameters, RequestAdapter);
+        public Confidence_NormRequestBuilder Confidence_Norm
+        {
+            get =>             new Confidence_NormRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the confidence_T method.</summary>
-        public Confidence_TRequestBuilder Confidence_T { get =>
-            new Confidence_TRequestBuilder(PathParameters, RequestAdapter);
+        public Confidence_TRequestBuilder Confidence_T
+        {
+            get =>             new Confidence_TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the convert method.</summary>
-        public ConvertRequestBuilder Convert { get =>
-            new ConvertRequestBuilder(PathParameters, RequestAdapter);
+        public ConvertRequestBuilder Convert
+        {
+            get =>             new ConvertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cos method.</summary>
-        public CosRequestBuilder Cos { get =>
-            new CosRequestBuilder(PathParameters, RequestAdapter);
+        public CosRequestBuilder Cos
+        {
+            get =>             new CosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cosh method.</summary>
-        public CoshRequestBuilder Cosh { get =>
-            new CoshRequestBuilder(PathParameters, RequestAdapter);
+        public CoshRequestBuilder Cosh
+        {
+            get =>             new CoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cot method.</summary>
-        public CotRequestBuilder Cot { get =>
-            new CotRequestBuilder(PathParameters, RequestAdapter);
+        public CotRequestBuilder Cot
+        {
+            get =>             new CotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coth method.</summary>
-        public CothRequestBuilder Coth { get =>
-            new CothRequestBuilder(PathParameters, RequestAdapter);
+        public CothRequestBuilder Coth
+        {
+            get =>             new CothRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countA method.</summary>
-        public CountARequestBuilder CountA { get =>
-            new CountARequestBuilder(PathParameters, RequestAdapter);
+        public CountARequestBuilder CountA
+        {
+            get =>             new CountARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countBlank method.</summary>
-        public CountBlankRequestBuilder CountBlank { get =>
-            new CountBlankRequestBuilder(PathParameters, RequestAdapter);
+        public CountBlankRequestBuilder CountBlank
+        {
+            get =>             new CountBlankRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countIf method.</summary>
-        public CountIfRequestBuilder CountIf { get =>
-            new CountIfRequestBuilder(PathParameters, RequestAdapter);
+        public CountIfRequestBuilder CountIf
+        {
+            get =>             new CountIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the countIfs method.</summary>
-        public CountIfsRequestBuilder CountIfs { get =>
-            new CountIfsRequestBuilder(PathParameters, RequestAdapter);
+        public CountIfsRequestBuilder CountIfs
+        {
+            get =>             new CountIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDayBs method.</summary>
-        public CoupDayBsRequestBuilder CoupDayBs { get =>
-            new CoupDayBsRequestBuilder(PathParameters, RequestAdapter);
+        public CoupDayBsRequestBuilder CoupDayBs
+        {
+            get =>             new CoupDayBsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDays method.</summary>
-        public CoupDaysRequestBuilder CoupDays { get =>
-            new CoupDaysRequestBuilder(PathParameters, RequestAdapter);
+        public CoupDaysRequestBuilder CoupDays
+        {
+            get =>             new CoupDaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupDaysNc method.</summary>
-        public CoupDaysNcRequestBuilder CoupDaysNc { get =>
-            new CoupDaysNcRequestBuilder(PathParameters, RequestAdapter);
+        public CoupDaysNcRequestBuilder CoupDaysNc
+        {
+            get =>             new CoupDaysNcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupNcd method.</summary>
-        public CoupNcdRequestBuilder CoupNcd { get =>
-            new CoupNcdRequestBuilder(PathParameters, RequestAdapter);
+        public CoupNcdRequestBuilder CoupNcd
+        {
+            get =>             new CoupNcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupNum method.</summary>
-        public CoupNumRequestBuilder CoupNum { get =>
-            new CoupNumRequestBuilder(PathParameters, RequestAdapter);
+        public CoupNumRequestBuilder CoupNum
+        {
+            get =>             new CoupNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the coupPcd method.</summary>
-        public CoupPcdRequestBuilder CoupPcd { get =>
-            new CoupPcdRequestBuilder(PathParameters, RequestAdapter);
+        public CoupPcdRequestBuilder CoupPcd
+        {
+            get =>             new CoupPcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the csc method.</summary>
-        public CscRequestBuilder Csc { get =>
-            new CscRequestBuilder(PathParameters, RequestAdapter);
+        public CscRequestBuilder Csc
+        {
+            get =>             new CscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the csch method.</summary>
-        public CschRequestBuilder Csch { get =>
-            new CschRequestBuilder(PathParameters, RequestAdapter);
+        public CschRequestBuilder Csch
+        {
+            get =>             new CschRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cumIPmt method.</summary>
-        public CumIPmtRequestBuilder CumIPmt { get =>
-            new CumIPmtRequestBuilder(PathParameters, RequestAdapter);
+        public CumIPmtRequestBuilder CumIPmt
+        {
+            get =>             new CumIPmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cumPrinc method.</summary>
-        public CumPrincRequestBuilder CumPrinc { get =>
-            new CumPrincRequestBuilder(PathParameters, RequestAdapter);
+        public CumPrincRequestBuilder CumPrinc
+        {
+            get =>             new CumPrincRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the date method.</summary>
-        public DateRequestBuilder Date { get =>
-            new DateRequestBuilder(PathParameters, RequestAdapter);
+        public DateRequestBuilder Date
+        {
+            get =>             new DateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the datevalue method.</summary>
-        public DatevalueRequestBuilder Datevalue { get =>
-            new DatevalueRequestBuilder(PathParameters, RequestAdapter);
+        public DatevalueRequestBuilder Datevalue
+        {
+            get =>             new DatevalueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the daverage method.</summary>
-        public DaverageRequestBuilder Daverage { get =>
-            new DaverageRequestBuilder(PathParameters, RequestAdapter);
+        public DaverageRequestBuilder Daverage
+        {
+            get =>             new DaverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the day method.</summary>
-        public DayRequestBuilder Day { get =>
-            new DayRequestBuilder(PathParameters, RequestAdapter);
+        public DayRequestBuilder Day
+        {
+            get =>             new DayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the days method.</summary>
-        public DaysRequestBuilder Days { get =>
-            new DaysRequestBuilder(PathParameters, RequestAdapter);
+        public DaysRequestBuilder Days
+        {
+            get =>             new DaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the days360 method.</summary>
-        public Days360RequestBuilder Days360 { get =>
-            new Days360RequestBuilder(PathParameters, RequestAdapter);
+        public Days360RequestBuilder Days360
+        {
+            get =>             new Days360RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the db method.</summary>
-        public DbRequestBuilder Db { get =>
-            new DbRequestBuilder(PathParameters, RequestAdapter);
+        public DbRequestBuilder Db
+        {
+            get =>             new DbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dbcs method.</summary>
-        public DbcsRequestBuilder Dbcs { get =>
-            new DbcsRequestBuilder(PathParameters, RequestAdapter);
+        public DbcsRequestBuilder Dbcs
+        {
+            get =>             new DbcsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dcount method.</summary>
-        public DcountRequestBuilder Dcount { get =>
-            new DcountRequestBuilder(PathParameters, RequestAdapter);
+        public DcountRequestBuilder Dcount
+        {
+            get =>             new DcountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dcountA method.</summary>
-        public DcountARequestBuilder DcountA { get =>
-            new DcountARequestBuilder(PathParameters, RequestAdapter);
+        public DcountARequestBuilder DcountA
+        {
+            get =>             new DcountARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ddb method.</summary>
-        public DdbRequestBuilder Ddb { get =>
-            new DdbRequestBuilder(PathParameters, RequestAdapter);
+        public DdbRequestBuilder Ddb
+        {
+            get =>             new DdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Bin method.</summary>
-        public Dec2BinRequestBuilder Dec2Bin { get =>
-            new Dec2BinRequestBuilder(PathParameters, RequestAdapter);
+        public Dec2BinRequestBuilder Dec2Bin
+        {
+            get =>             new Dec2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Hex method.</summary>
-        public Dec2HexRequestBuilder Dec2Hex { get =>
-            new Dec2HexRequestBuilder(PathParameters, RequestAdapter);
+        public Dec2HexRequestBuilder Dec2Hex
+        {
+            get =>             new Dec2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dec2Oct method.</summary>
-        public Dec2OctRequestBuilder Dec2Oct { get =>
-            new Dec2OctRequestBuilder(PathParameters, RequestAdapter);
+        public Dec2OctRequestBuilder Dec2Oct
+        {
+            get =>             new Dec2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decimal method.</summary>
-        public DecimalRequestBuilder Decimal { get =>
-            new DecimalRequestBuilder(PathParameters, RequestAdapter);
+        public DecimalRequestBuilder Decimal
+        {
+            get =>             new DecimalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the degrees method.</summary>
-        public DegreesRequestBuilder Degrees { get =>
-            new DegreesRequestBuilder(PathParameters, RequestAdapter);
+        public DegreesRequestBuilder Degrees
+        {
+            get =>             new DegreesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta { get =>
-            new DeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta
+        {
+            get =>             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the devSq method.</summary>
-        public DevSqRequestBuilder DevSq { get =>
-            new DevSqRequestBuilder(PathParameters, RequestAdapter);
+        public DevSqRequestBuilder DevSq
+        {
+            get =>             new DevSqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dget method.</summary>
-        public DgetRequestBuilder Dget { get =>
-            new DgetRequestBuilder(PathParameters, RequestAdapter);
+        public DgetRequestBuilder Dget
+        {
+            get =>             new DgetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disc method.</summary>
-        public DiscRequestBuilder Disc { get =>
-            new DiscRequestBuilder(PathParameters, RequestAdapter);
+        public DiscRequestBuilder Disc
+        {
+            get =>             new DiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dmax method.</summary>
-        public DmaxRequestBuilder Dmax { get =>
-            new DmaxRequestBuilder(PathParameters, RequestAdapter);
+        public DmaxRequestBuilder Dmax
+        {
+            get =>             new DmaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dmin method.</summary>
-        public DminRequestBuilder Dmin { get =>
-            new DminRequestBuilder(PathParameters, RequestAdapter);
+        public DminRequestBuilder Dmin
+        {
+            get =>             new DminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollar method.</summary>
-        public DollarRequestBuilder Dollar { get =>
-            new DollarRequestBuilder(PathParameters, RequestAdapter);
+        public DollarRequestBuilder Dollar
+        {
+            get =>             new DollarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollarDe method.</summary>
-        public DollarDeRequestBuilder DollarDe { get =>
-            new DollarDeRequestBuilder(PathParameters, RequestAdapter);
+        public DollarDeRequestBuilder DollarDe
+        {
+            get =>             new DollarDeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dollarFr method.</summary>
-        public DollarFrRequestBuilder DollarFr { get =>
-            new DollarFrRequestBuilder(PathParameters, RequestAdapter);
+        public DollarFrRequestBuilder DollarFr
+        {
+            get =>             new DollarFrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dproduct method.</summary>
-        public DproductRequestBuilder Dproduct { get =>
-            new DproductRequestBuilder(PathParameters, RequestAdapter);
+        public DproductRequestBuilder Dproduct
+        {
+            get =>             new DproductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dstDev method.</summary>
-        public DstDevRequestBuilder DstDev { get =>
-            new DstDevRequestBuilder(PathParameters, RequestAdapter);
+        public DstDevRequestBuilder DstDev
+        {
+            get =>             new DstDevRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dstDevP method.</summary>
-        public DstDevPRequestBuilder DstDevP { get =>
-            new DstDevPRequestBuilder(PathParameters, RequestAdapter);
+        public DstDevPRequestBuilder DstDevP
+        {
+            get =>             new DstDevPRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dsum method.</summary>
-        public DsumRequestBuilder Dsum { get =>
-            new DsumRequestBuilder(PathParameters, RequestAdapter);
+        public DsumRequestBuilder Dsum
+        {
+            get =>             new DsumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the duration method.</summary>
-        public DurationRequestBuilder Duration { get =>
-            new DurationRequestBuilder(PathParameters, RequestAdapter);
+        public DurationRequestBuilder Duration
+        {
+            get =>             new DurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dvar method.</summary>
-        public DvarRequestBuilder Dvar { get =>
-            new DvarRequestBuilder(PathParameters, RequestAdapter);
+        public DvarRequestBuilder Dvar
+        {
+            get =>             new DvarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dvarP method.</summary>
-        public DvarPRequestBuilder DvarP { get =>
-            new DvarPRequestBuilder(PathParameters, RequestAdapter);
+        public DvarPRequestBuilder DvarP
+        {
+            get =>             new DvarPRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ecma_Ceiling method.</summary>
-        public Ecma_CeilingRequestBuilder Ecma_Ceiling { get =>
-            new Ecma_CeilingRequestBuilder(PathParameters, RequestAdapter);
+        public Ecma_CeilingRequestBuilder Ecma_Ceiling
+        {
+            get =>             new Ecma_CeilingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the edate method.</summary>
-        public EdateRequestBuilder Edate { get =>
-            new EdateRequestBuilder(PathParameters, RequestAdapter);
+        public EdateRequestBuilder Edate
+        {
+            get =>             new EdateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the effect method.</summary>
-        public EffectRequestBuilder Effect { get =>
-            new EffectRequestBuilder(PathParameters, RequestAdapter);
+        public EffectRequestBuilder Effect
+        {
+            get =>             new EffectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the eoMonth method.</summary>
-        public EoMonthRequestBuilder EoMonth { get =>
-            new EoMonthRequestBuilder(PathParameters, RequestAdapter);
+        public EoMonthRequestBuilder EoMonth
+        {
+            get =>             new EoMonthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erf method.</summary>
-        public ErfRequestBuilder Erf { get =>
-            new ErfRequestBuilder(PathParameters, RequestAdapter);
+        public ErfRequestBuilder Erf
+        {
+            get =>             new ErfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erf_Precise method.</summary>
-        public Erf_PreciseRequestBuilder Erf_Precise { get =>
-            new Erf_PreciseRequestBuilder(PathParameters, RequestAdapter);
+        public Erf_PreciseRequestBuilder Erf_Precise
+        {
+            get =>             new Erf_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erfC method.</summary>
-        public ErfCRequestBuilder ErfC { get =>
-            new ErfCRequestBuilder(PathParameters, RequestAdapter);
+        public ErfCRequestBuilder ErfC
+        {
+            get =>             new ErfCRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the erfC_Precise method.</summary>
-        public ErfC_PreciseRequestBuilder ErfC_Precise { get =>
-            new ErfC_PreciseRequestBuilder(PathParameters, RequestAdapter);
+        public ErfC_PreciseRequestBuilder ErfC_Precise
+        {
+            get =>             new ErfC_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the error_Type method.</summary>
-        public Error_TypeRequestBuilder Error_Type { get =>
-            new Error_TypeRequestBuilder(PathParameters, RequestAdapter);
+        public Error_TypeRequestBuilder Error_Type
+        {
+            get =>             new Error_TypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the even method.</summary>
-        public EvenRequestBuilder Even { get =>
-            new EvenRequestBuilder(PathParameters, RequestAdapter);
+        public EvenRequestBuilder Even
+        {
+            get =>             new EvenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exact method.</summary>
-        public ExactRequestBuilder Exact { get =>
-            new ExactRequestBuilder(PathParameters, RequestAdapter);
+        public ExactRequestBuilder Exact
+        {
+            get =>             new ExactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the exp method.</summary>
-        public ExpRequestBuilder Exp { get =>
-            new ExpRequestBuilder(PathParameters, RequestAdapter);
+        public ExpRequestBuilder Exp
+        {
+            get =>             new ExpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the expon_Dist method.</summary>
-        public Expon_DistRequestBuilder Expon_Dist { get =>
-            new Expon_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Expon_DistRequestBuilder Expon_Dist
+        {
+            get =>             new Expon_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Dist method.</summary>
-        public F_DistRequestBuilder F_Dist { get =>
-            new F_DistRequestBuilder(PathParameters, RequestAdapter);
+        public F_DistRequestBuilder F_Dist
+        {
+            get =>             new F_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Dist_RT method.</summary>
-        public F_Dist_RTRequestBuilder F_Dist_RT { get =>
-            new F_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+        public F_Dist_RTRequestBuilder F_Dist_RT
+        {
+            get =>             new F_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Inv method.</summary>
-        public F_InvRequestBuilder F_Inv { get =>
-            new F_InvRequestBuilder(PathParameters, RequestAdapter);
+        public F_InvRequestBuilder F_Inv
+        {
+            get =>             new F_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the f_Inv_RT method.</summary>
-        public F_Inv_RTRequestBuilder F_Inv_RT { get =>
-            new F_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
+        public F_Inv_RTRequestBuilder F_Inv_RT
+        {
+            get =>             new F_Inv_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fact method.</summary>
-        public FactRequestBuilder Fact { get =>
-            new FactRequestBuilder(PathParameters, RequestAdapter);
+        public FactRequestBuilder Fact
+        {
+            get =>             new FactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the factDouble method.</summary>
-        public FactDoubleRequestBuilder FactDouble { get =>
-            new FactDoubleRequestBuilder(PathParameters, RequestAdapter);
+        public FactDoubleRequestBuilder FactDouble
+        {
+            get =>             new FactDoubleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the false method.</summary>
-        public FalseRequestBuilder False { get =>
-            new FalseRequestBuilder(PathParameters, RequestAdapter);
+        public FalseRequestBuilder False
+        {
+            get =>             new FalseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the find method.</summary>
-        public FindRequestBuilder Find { get =>
-            new FindRequestBuilder(PathParameters, RequestAdapter);
+        public FindRequestBuilder Find
+        {
+            get =>             new FindRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the findB method.</summary>
-        public FindBRequestBuilder FindB { get =>
-            new FindBRequestBuilder(PathParameters, RequestAdapter);
+        public FindBRequestBuilder FindB
+        {
+            get =>             new FindBRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fisher method.</summary>
-        public FisherRequestBuilder Fisher { get =>
-            new FisherRequestBuilder(PathParameters, RequestAdapter);
+        public FisherRequestBuilder Fisher
+        {
+            get =>             new FisherRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fisherInv method.</summary>
-        public FisherInvRequestBuilder FisherInv { get =>
-            new FisherInvRequestBuilder(PathParameters, RequestAdapter);
+        public FisherInvRequestBuilder FisherInv
+        {
+            get =>             new FisherInvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fixed method.</summary>
-        public FixedRequestBuilder Fixed { get =>
-            new FixedRequestBuilder(PathParameters, RequestAdapter);
+        public FixedRequestBuilder Fixed
+        {
+            get =>             new FixedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the floor_Math method.</summary>
-        public Floor_MathRequestBuilder Floor_Math { get =>
-            new Floor_MathRequestBuilder(PathParameters, RequestAdapter);
+        public Floor_MathRequestBuilder Floor_Math
+        {
+            get =>             new Floor_MathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the floor_Precise method.</summary>
-        public Floor_PreciseRequestBuilder Floor_Precise { get =>
-            new Floor_PreciseRequestBuilder(PathParameters, RequestAdapter);
+        public Floor_PreciseRequestBuilder Floor_Precise
+        {
+            get =>             new Floor_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fv method.</summary>
-        public FvRequestBuilder Fv { get =>
-            new FvRequestBuilder(PathParameters, RequestAdapter);
+        public FvRequestBuilder Fv
+        {
+            get =>             new FvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the fvschedule method.</summary>
-        public FvscheduleRequestBuilder Fvschedule { get =>
-            new FvscheduleRequestBuilder(PathParameters, RequestAdapter);
+        public FvscheduleRequestBuilder Fvschedule
+        {
+            get =>             new FvscheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma method.</summary>
-        public GammaRequestBuilder Gamma { get =>
-            new GammaRequestBuilder(PathParameters, RequestAdapter);
+        public GammaRequestBuilder Gamma
+        {
+            get =>             new GammaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma_Dist method.</summary>
-        public Gamma_DistRequestBuilder Gamma_Dist { get =>
-            new Gamma_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Gamma_DistRequestBuilder Gamma_Dist
+        {
+            get =>             new Gamma_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gamma_Inv method.</summary>
-        public Gamma_InvRequestBuilder Gamma_Inv { get =>
-            new Gamma_InvRequestBuilder(PathParameters, RequestAdapter);
+        public Gamma_InvRequestBuilder Gamma_Inv
+        {
+            get =>             new Gamma_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gammaLn method.</summary>
-        public GammaLnRequestBuilder GammaLn { get =>
-            new GammaLnRequestBuilder(PathParameters, RequestAdapter);
+        public GammaLnRequestBuilder GammaLn
+        {
+            get =>             new GammaLnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gammaLn_Precise method.</summary>
-        public GammaLn_PreciseRequestBuilder GammaLn_Precise { get =>
-            new GammaLn_PreciseRequestBuilder(PathParameters, RequestAdapter);
+        public GammaLn_PreciseRequestBuilder GammaLn_Precise
+        {
+            get =>             new GammaLn_PreciseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gauss method.</summary>
-        public GaussRequestBuilder Gauss { get =>
-            new GaussRequestBuilder(PathParameters, RequestAdapter);
+        public GaussRequestBuilder Gauss
+        {
+            get =>             new GaussRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the gcd method.</summary>
-        public GcdRequestBuilder Gcd { get =>
-            new GcdRequestBuilder(PathParameters, RequestAdapter);
+        public GcdRequestBuilder Gcd
+        {
+            get =>             new GcdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the geoMean method.</summary>
-        public GeoMeanRequestBuilder GeoMean { get =>
-            new GeoMeanRequestBuilder(PathParameters, RequestAdapter);
+        public GeoMeanRequestBuilder GeoMean
+        {
+            get =>             new GeoMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the geStep method.</summary>
-        public GeStepRequestBuilder GeStep { get =>
-            new GeStepRequestBuilder(PathParameters, RequestAdapter);
+        public GeStepRequestBuilder GeStep
+        {
+            get =>             new GeStepRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the harMean method.</summary>
-        public HarMeanRequestBuilder HarMean { get =>
-            new HarMeanRequestBuilder(PathParameters, RequestAdapter);
+        public HarMeanRequestBuilder HarMean
+        {
+            get =>             new HarMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Bin method.</summary>
-        public Hex2BinRequestBuilder Hex2Bin { get =>
-            new Hex2BinRequestBuilder(PathParameters, RequestAdapter);
+        public Hex2BinRequestBuilder Hex2Bin
+        {
+            get =>             new Hex2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Dec method.</summary>
-        public Hex2DecRequestBuilder Hex2Dec { get =>
-            new Hex2DecRequestBuilder(PathParameters, RequestAdapter);
+        public Hex2DecRequestBuilder Hex2Dec
+        {
+            get =>             new Hex2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hex2Oct method.</summary>
-        public Hex2OctRequestBuilder Hex2Oct { get =>
-            new Hex2OctRequestBuilder(PathParameters, RequestAdapter);
+        public Hex2OctRequestBuilder Hex2Oct
+        {
+            get =>             new Hex2OctRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hlookup method.</summary>
-        public HlookupRequestBuilder Hlookup { get =>
-            new HlookupRequestBuilder(PathParameters, RequestAdapter);
+        public HlookupRequestBuilder Hlookup
+        {
+            get =>             new HlookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hour method.</summary>
-        public HourRequestBuilder Hour { get =>
-            new HourRequestBuilder(PathParameters, RequestAdapter);
+        public HourRequestBuilder Hour
+        {
+            get =>             new HourRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hyperlink method.</summary>
-        public HyperlinkRequestBuilder Hyperlink { get =>
-            new HyperlinkRequestBuilder(PathParameters, RequestAdapter);
+        public HyperlinkRequestBuilder Hyperlink
+        {
+            get =>             new HyperlinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hypGeom_Dist method.</summary>
-        public HypGeom_DistRequestBuilder HypGeom_Dist { get =>
-            new HypGeom_DistRequestBuilder(PathParameters, RequestAdapter);
+        public HypGeom_DistRequestBuilder HypGeom_Dist
+        {
+            get =>             new HypGeom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the if method.</summary>
-        public IfRequestBuilder If { get =>
-            new IfRequestBuilder(PathParameters, RequestAdapter);
+        public IfRequestBuilder If
+        {
+            get =>             new IfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imAbs method.</summary>
-        public ImAbsRequestBuilder ImAbs { get =>
-            new ImAbsRequestBuilder(PathParameters, RequestAdapter);
+        public ImAbsRequestBuilder ImAbs
+        {
+            get =>             new ImAbsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imaginary method.</summary>
-        public ImaginaryRequestBuilder Imaginary { get =>
-            new ImaginaryRequestBuilder(PathParameters, RequestAdapter);
+        public ImaginaryRequestBuilder Imaginary
+        {
+            get =>             new ImaginaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imArgument method.</summary>
-        public ImArgumentRequestBuilder ImArgument { get =>
-            new ImArgumentRequestBuilder(PathParameters, RequestAdapter);
+        public ImArgumentRequestBuilder ImArgument
+        {
+            get =>             new ImArgumentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imConjugate method.</summary>
-        public ImConjugateRequestBuilder ImConjugate { get =>
-            new ImConjugateRequestBuilder(PathParameters, RequestAdapter);
+        public ImConjugateRequestBuilder ImConjugate
+        {
+            get =>             new ImConjugateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCos method.</summary>
-        public ImCosRequestBuilder ImCos { get =>
-            new ImCosRequestBuilder(PathParameters, RequestAdapter);
+        public ImCosRequestBuilder ImCos
+        {
+            get =>             new ImCosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCosh method.</summary>
-        public ImCoshRequestBuilder ImCosh { get =>
-            new ImCoshRequestBuilder(PathParameters, RequestAdapter);
+        public ImCoshRequestBuilder ImCosh
+        {
+            get =>             new ImCoshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCot method.</summary>
-        public ImCotRequestBuilder ImCot { get =>
-            new ImCotRequestBuilder(PathParameters, RequestAdapter);
+        public ImCotRequestBuilder ImCot
+        {
+            get =>             new ImCotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCsc method.</summary>
-        public ImCscRequestBuilder ImCsc { get =>
-            new ImCscRequestBuilder(PathParameters, RequestAdapter);
+        public ImCscRequestBuilder ImCsc
+        {
+            get =>             new ImCscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imCsch method.</summary>
-        public ImCschRequestBuilder ImCsch { get =>
-            new ImCschRequestBuilder(PathParameters, RequestAdapter);
+        public ImCschRequestBuilder ImCsch
+        {
+            get =>             new ImCschRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imDiv method.</summary>
-        public ImDivRequestBuilder ImDiv { get =>
-            new ImDivRequestBuilder(PathParameters, RequestAdapter);
+        public ImDivRequestBuilder ImDiv
+        {
+            get =>             new ImDivRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imExp method.</summary>
-        public ImExpRequestBuilder ImExp { get =>
-            new ImExpRequestBuilder(PathParameters, RequestAdapter);
+        public ImExpRequestBuilder ImExp
+        {
+            get =>             new ImExpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLn method.</summary>
-        public ImLnRequestBuilder ImLn { get =>
-            new ImLnRequestBuilder(PathParameters, RequestAdapter);
+        public ImLnRequestBuilder ImLn
+        {
+            get =>             new ImLnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLog10 method.</summary>
-        public ImLog10RequestBuilder ImLog10 { get =>
-            new ImLog10RequestBuilder(PathParameters, RequestAdapter);
+        public ImLog10RequestBuilder ImLog10
+        {
+            get =>             new ImLog10RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imLog2 method.</summary>
-        public ImLog2RequestBuilder ImLog2 { get =>
-            new ImLog2RequestBuilder(PathParameters, RequestAdapter);
+        public ImLog2RequestBuilder ImLog2
+        {
+            get =>             new ImLog2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imPower method.</summary>
-        public ImPowerRequestBuilder ImPower { get =>
-            new ImPowerRequestBuilder(PathParameters, RequestAdapter);
+        public ImPowerRequestBuilder ImPower
+        {
+            get =>             new ImPowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imProduct method.</summary>
-        public ImProductRequestBuilder ImProduct { get =>
-            new ImProductRequestBuilder(PathParameters, RequestAdapter);
+        public ImProductRequestBuilder ImProduct
+        {
+            get =>             new ImProductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imReal method.</summary>
-        public ImRealRequestBuilder ImReal { get =>
-            new ImRealRequestBuilder(PathParameters, RequestAdapter);
+        public ImRealRequestBuilder ImReal
+        {
+            get =>             new ImRealRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSec method.</summary>
-        public ImSecRequestBuilder ImSec { get =>
-            new ImSecRequestBuilder(PathParameters, RequestAdapter);
+        public ImSecRequestBuilder ImSec
+        {
+            get =>             new ImSecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSech method.</summary>
-        public ImSechRequestBuilder ImSech { get =>
-            new ImSechRequestBuilder(PathParameters, RequestAdapter);
+        public ImSechRequestBuilder ImSech
+        {
+            get =>             new ImSechRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSin method.</summary>
-        public ImSinRequestBuilder ImSin { get =>
-            new ImSinRequestBuilder(PathParameters, RequestAdapter);
+        public ImSinRequestBuilder ImSin
+        {
+            get =>             new ImSinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSinh method.</summary>
-        public ImSinhRequestBuilder ImSinh { get =>
-            new ImSinhRequestBuilder(PathParameters, RequestAdapter);
+        public ImSinhRequestBuilder ImSinh
+        {
+            get =>             new ImSinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSqrt method.</summary>
-        public ImSqrtRequestBuilder ImSqrt { get =>
-            new ImSqrtRequestBuilder(PathParameters, RequestAdapter);
+        public ImSqrtRequestBuilder ImSqrt
+        {
+            get =>             new ImSqrtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSub method.</summary>
-        public ImSubRequestBuilder ImSub { get =>
-            new ImSubRequestBuilder(PathParameters, RequestAdapter);
+        public ImSubRequestBuilder ImSub
+        {
+            get =>             new ImSubRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imSum method.</summary>
-        public ImSumRequestBuilder ImSum { get =>
-            new ImSumRequestBuilder(PathParameters, RequestAdapter);
+        public ImSumRequestBuilder ImSum
+        {
+            get =>             new ImSumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the imTan method.</summary>
-        public ImTanRequestBuilder ImTan { get =>
-            new ImTanRequestBuilder(PathParameters, RequestAdapter);
+        public ImTanRequestBuilder ImTan
+        {
+            get =>             new ImTanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the int method.</summary>
-        public IntRequestBuilder Int { get =>
-            new IntRequestBuilder(PathParameters, RequestAdapter);
+        public IntRequestBuilder Int
+        {
+            get =>             new IntRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the intRate method.</summary>
-        public IntRateRequestBuilder IntRate { get =>
-            new IntRateRequestBuilder(PathParameters, RequestAdapter);
+        public IntRateRequestBuilder IntRate
+        {
+            get =>             new IntRateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ipmt method.</summary>
-        public IpmtRequestBuilder Ipmt { get =>
-            new IpmtRequestBuilder(PathParameters, RequestAdapter);
+        public IpmtRequestBuilder Ipmt
+        {
+            get =>             new IpmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the irr method.</summary>
-        public IrrRequestBuilder Irr { get =>
-            new IrrRequestBuilder(PathParameters, RequestAdapter);
+        public IrrRequestBuilder Irr
+        {
+            get =>             new IrrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isErr method.</summary>
-        public IsErrRequestBuilder IsErr { get =>
-            new IsErrRequestBuilder(PathParameters, RequestAdapter);
+        public IsErrRequestBuilder IsErr
+        {
+            get =>             new IsErrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isError method.</summary>
-        public IsErrorRequestBuilder IsError { get =>
-            new IsErrorRequestBuilder(PathParameters, RequestAdapter);
+        public IsErrorRequestBuilder IsError
+        {
+            get =>             new IsErrorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isEven method.</summary>
-        public IsEvenRequestBuilder IsEven { get =>
-            new IsEvenRequestBuilder(PathParameters, RequestAdapter);
+        public IsEvenRequestBuilder IsEven
+        {
+            get =>             new IsEvenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isFormula method.</summary>
-        public IsFormulaRequestBuilder IsFormula { get =>
-            new IsFormulaRequestBuilder(PathParameters, RequestAdapter);
+        public IsFormulaRequestBuilder IsFormula
+        {
+            get =>             new IsFormulaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isLogical method.</summary>
-        public IsLogicalRequestBuilder IsLogical { get =>
-            new IsLogicalRequestBuilder(PathParameters, RequestAdapter);
+        public IsLogicalRequestBuilder IsLogical
+        {
+            get =>             new IsLogicalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNA method.</summary>
-        public IsNARequestBuilder IsNA { get =>
-            new IsNARequestBuilder(PathParameters, RequestAdapter);
+        public IsNARequestBuilder IsNA
+        {
+            get =>             new IsNARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNonText method.</summary>
-        public IsNonTextRequestBuilder IsNonText { get =>
-            new IsNonTextRequestBuilder(PathParameters, RequestAdapter);
+        public IsNonTextRequestBuilder IsNonText
+        {
+            get =>             new IsNonTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isNumber method.</summary>
-        public IsNumberRequestBuilder IsNumber { get =>
-            new IsNumberRequestBuilder(PathParameters, RequestAdapter);
+        public IsNumberRequestBuilder IsNumber
+        {
+            get =>             new IsNumberRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the iso_Ceiling method.</summary>
-        public Iso_CeilingRequestBuilder Iso_Ceiling { get =>
-            new Iso_CeilingRequestBuilder(PathParameters, RequestAdapter);
+        public Iso_CeilingRequestBuilder Iso_Ceiling
+        {
+            get =>             new Iso_CeilingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isOdd method.</summary>
-        public IsOddRequestBuilder IsOdd { get =>
-            new IsOddRequestBuilder(PathParameters, RequestAdapter);
+        public IsOddRequestBuilder IsOdd
+        {
+            get =>             new IsOddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isoWeekNum method.</summary>
-        public IsoWeekNumRequestBuilder IsoWeekNum { get =>
-            new IsoWeekNumRequestBuilder(PathParameters, RequestAdapter);
+        public IsoWeekNumRequestBuilder IsoWeekNum
+        {
+            get =>             new IsoWeekNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ispmt method.</summary>
-        public IspmtRequestBuilder Ispmt { get =>
-            new IspmtRequestBuilder(PathParameters, RequestAdapter);
+        public IspmtRequestBuilder Ispmt
+        {
+            get =>             new IspmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isref method.</summary>
-        public IsrefRequestBuilder Isref { get =>
-            new IsrefRequestBuilder(PathParameters, RequestAdapter);
+        public IsrefRequestBuilder Isref
+        {
+            get =>             new IsrefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isText method.</summary>
-        public IsTextRequestBuilder IsText { get =>
-            new IsTextRequestBuilder(PathParameters, RequestAdapter);
+        public IsTextRequestBuilder IsText
+        {
+            get =>             new IsTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the kurt method.</summary>
-        public KurtRequestBuilder Kurt { get =>
-            new KurtRequestBuilder(PathParameters, RequestAdapter);
+        public KurtRequestBuilder Kurt
+        {
+            get =>             new KurtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the large method.</summary>
-        public LargeRequestBuilder Large { get =>
-            new LargeRequestBuilder(PathParameters, RequestAdapter);
+        public LargeRequestBuilder Large
+        {
+            get =>             new LargeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lcm method.</summary>
-        public LcmRequestBuilder Lcm { get =>
-            new LcmRequestBuilder(PathParameters, RequestAdapter);
+        public LcmRequestBuilder Lcm
+        {
+            get =>             new LcmRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the left method.</summary>
-        public LeftRequestBuilder Left { get =>
-            new LeftRequestBuilder(PathParameters, RequestAdapter);
+        public LeftRequestBuilder Left
+        {
+            get =>             new LeftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the leftb method.</summary>
-        public LeftbRequestBuilder Leftb { get =>
-            new LeftbRequestBuilder(PathParameters, RequestAdapter);
+        public LeftbRequestBuilder Leftb
+        {
+            get =>             new LeftbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the len method.</summary>
-        public LenRequestBuilder Len { get =>
-            new LenRequestBuilder(PathParameters, RequestAdapter);
+        public LenRequestBuilder Len
+        {
+            get =>             new LenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lenb method.</summary>
-        public LenbRequestBuilder Lenb { get =>
-            new LenbRequestBuilder(PathParameters, RequestAdapter);
+        public LenbRequestBuilder Lenb
+        {
+            get =>             new LenbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ln method.</summary>
-        public LnRequestBuilder Ln { get =>
-            new LnRequestBuilder(PathParameters, RequestAdapter);
+        public LnRequestBuilder Ln
+        {
+            get =>             new LnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the log method.</summary>
-        public LogRequestBuilder Log { get =>
-            new LogRequestBuilder(PathParameters, RequestAdapter);
+        public LogRequestBuilder Log
+        {
+            get =>             new LogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the log10 method.</summary>
-        public Log10RequestBuilder Log10 { get =>
-            new Log10RequestBuilder(PathParameters, RequestAdapter);
+        public Log10RequestBuilder Log10
+        {
+            get =>             new Log10RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logNorm_Dist method.</summary>
-        public LogNorm_DistRequestBuilder LogNorm_Dist { get =>
-            new LogNorm_DistRequestBuilder(PathParameters, RequestAdapter);
+        public LogNorm_DistRequestBuilder LogNorm_Dist
+        {
+            get =>             new LogNorm_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logNorm_Inv method.</summary>
-        public LogNorm_InvRequestBuilder LogNorm_Inv { get =>
-            new LogNorm_InvRequestBuilder(PathParameters, RequestAdapter);
+        public LogNorm_InvRequestBuilder LogNorm_Inv
+        {
+            get =>             new LogNorm_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lookup method.</summary>
-        public LookupRequestBuilder Lookup { get =>
-            new LookupRequestBuilder(PathParameters, RequestAdapter);
+        public LookupRequestBuilder Lookup
+        {
+            get =>             new LookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the lower method.</summary>
-        public LowerRequestBuilder Lower { get =>
-            new LowerRequestBuilder(PathParameters, RequestAdapter);
+        public LowerRequestBuilder Lower
+        {
+            get =>             new LowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the match method.</summary>
-        public MatchRequestBuilder Match { get =>
-            new MatchRequestBuilder(PathParameters, RequestAdapter);
+        public MatchRequestBuilder Match
+        {
+            get =>             new MatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the max method.</summary>
-        public MaxRequestBuilder Max { get =>
-            new MaxRequestBuilder(PathParameters, RequestAdapter);
+        public MaxRequestBuilder Max
+        {
+            get =>             new MaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the maxA method.</summary>
-        public MaxARequestBuilder MaxA { get =>
-            new MaxARequestBuilder(PathParameters, RequestAdapter);
+        public MaxARequestBuilder MaxA
+        {
+            get =>             new MaxARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mduration method.</summary>
-        public MdurationRequestBuilder Mduration { get =>
-            new MdurationRequestBuilder(PathParameters, RequestAdapter);
+        public MdurationRequestBuilder Mduration
+        {
+            get =>             new MdurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the median method.</summary>
-        public MedianRequestBuilder Median { get =>
-            new MedianRequestBuilder(PathParameters, RequestAdapter);
+        public MedianRequestBuilder Median
+        {
+            get =>             new MedianRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mid method.</summary>
-        public MidRequestBuilder Mid { get =>
-            new MidRequestBuilder(PathParameters, RequestAdapter);
+        public MidRequestBuilder Mid
+        {
+            get =>             new MidRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the midb method.</summary>
-        public MidbRequestBuilder Midb { get =>
-            new MidbRequestBuilder(PathParameters, RequestAdapter);
+        public MidbRequestBuilder Midb
+        {
+            get =>             new MidbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the min method.</summary>
-        public MinRequestBuilder Min { get =>
-            new MinRequestBuilder(PathParameters, RequestAdapter);
+        public MinRequestBuilder Min
+        {
+            get =>             new MinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the minA method.</summary>
-        public MinARequestBuilder MinA { get =>
-            new MinARequestBuilder(PathParameters, RequestAdapter);
+        public MinARequestBuilder MinA
+        {
+            get =>             new MinARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the minute method.</summary>
-        public MinuteRequestBuilder Minute { get =>
-            new MinuteRequestBuilder(PathParameters, RequestAdapter);
+        public MinuteRequestBuilder Minute
+        {
+            get =>             new MinuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mirr method.</summary>
-        public MirrRequestBuilder Mirr { get =>
-            new MirrRequestBuilder(PathParameters, RequestAdapter);
+        public MirrRequestBuilder Mirr
+        {
+            get =>             new MirrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mod method.</summary>
-        public ModRequestBuilder Mod { get =>
-            new ModRequestBuilder(PathParameters, RequestAdapter);
+        public ModRequestBuilder Mod
+        {
+            get =>             new ModRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the month method.</summary>
-        public MonthRequestBuilder Month { get =>
-            new MonthRequestBuilder(PathParameters, RequestAdapter);
+        public MonthRequestBuilder Month
+        {
+            get =>             new MonthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mround method.</summary>
-        public MroundRequestBuilder Mround { get =>
-            new MroundRequestBuilder(PathParameters, RequestAdapter);
+        public MroundRequestBuilder Mround
+        {
+            get =>             new MroundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the multiNomial method.</summary>
-        public MultiNomialRequestBuilder MultiNomial { get =>
-            new MultiNomialRequestBuilder(PathParameters, RequestAdapter);
+        public MultiNomialRequestBuilder MultiNomial
+        {
+            get =>             new MultiNomialRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the n method.</summary>
-        public NRequestBuilder N { get =>
-            new NRequestBuilder(PathParameters, RequestAdapter);
+        public NRequestBuilder N
+        {
+            get =>             new NRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the na method.</summary>
-        public NaRequestBuilder Na { get =>
-            new NaRequestBuilder(PathParameters, RequestAdapter);
+        public NaRequestBuilder Na
+        {
+            get =>             new NaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the negBinom_Dist method.</summary>
-        public NegBinom_DistRequestBuilder NegBinom_Dist { get =>
-            new NegBinom_DistRequestBuilder(PathParameters, RequestAdapter);
+        public NegBinom_DistRequestBuilder NegBinom_Dist
+        {
+            get =>             new NegBinom_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the networkDays method.</summary>
-        public NetworkDaysRequestBuilder NetworkDays { get =>
-            new NetworkDaysRequestBuilder(PathParameters, RequestAdapter);
+        public NetworkDaysRequestBuilder NetworkDays
+        {
+            get =>             new NetworkDaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the networkDays_Intl method.</summary>
-        public NetworkDays_IntlRequestBuilder NetworkDays_Intl { get =>
-            new NetworkDays_IntlRequestBuilder(PathParameters, RequestAdapter);
+        public NetworkDays_IntlRequestBuilder NetworkDays_Intl
+        {
+            get =>             new NetworkDays_IntlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the nominal method.</summary>
-        public NominalRequestBuilder Nominal { get =>
-            new NominalRequestBuilder(PathParameters, RequestAdapter);
+        public NominalRequestBuilder Nominal
+        {
+            get =>             new NominalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_Dist method.</summary>
-        public Norm_DistRequestBuilder Norm_Dist { get =>
-            new Norm_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Norm_DistRequestBuilder Norm_Dist
+        {
+            get =>             new Norm_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_Inv method.</summary>
-        public Norm_InvRequestBuilder Norm_Inv { get =>
-            new Norm_InvRequestBuilder(PathParameters, RequestAdapter);
+        public Norm_InvRequestBuilder Norm_Inv
+        {
+            get =>             new Norm_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_S_Dist method.</summary>
-        public Norm_S_DistRequestBuilder Norm_S_Dist { get =>
-            new Norm_S_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Norm_S_DistRequestBuilder Norm_S_Dist
+        {
+            get =>             new Norm_S_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the norm_S_Inv method.</summary>
-        public Norm_S_InvRequestBuilder Norm_S_Inv { get =>
-            new Norm_S_InvRequestBuilder(PathParameters, RequestAdapter);
+        public Norm_S_InvRequestBuilder Norm_S_Inv
+        {
+            get =>             new Norm_S_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the not method.</summary>
-        public NotRequestBuilder Not { get =>
-            new NotRequestBuilder(PathParameters, RequestAdapter);
+        public NotRequestBuilder Not
+        {
+            get =>             new NotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the now method.</summary>
-        public NowRequestBuilder Now { get =>
-            new NowRequestBuilder(PathParameters, RequestAdapter);
+        public NowRequestBuilder Now
+        {
+            get =>             new NowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the nper method.</summary>
-        public NperRequestBuilder Nper { get =>
-            new NperRequestBuilder(PathParameters, RequestAdapter);
+        public NperRequestBuilder Nper
+        {
+            get =>             new NperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the npv method.</summary>
-        public NpvRequestBuilder Npv { get =>
-            new NpvRequestBuilder(PathParameters, RequestAdapter);
+        public NpvRequestBuilder Npv
+        {
+            get =>             new NpvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the numberValue method.</summary>
-        public NumberValueRequestBuilder NumberValue { get =>
-            new NumberValueRequestBuilder(PathParameters, RequestAdapter);
+        public NumberValueRequestBuilder NumberValue
+        {
+            get =>             new NumberValueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Bin method.</summary>
-        public Oct2BinRequestBuilder Oct2Bin { get =>
-            new Oct2BinRequestBuilder(PathParameters, RequestAdapter);
+        public Oct2BinRequestBuilder Oct2Bin
+        {
+            get =>             new Oct2BinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Dec method.</summary>
-        public Oct2DecRequestBuilder Oct2Dec { get =>
-            new Oct2DecRequestBuilder(PathParameters, RequestAdapter);
+        public Oct2DecRequestBuilder Oct2Dec
+        {
+            get =>             new Oct2DecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oct2Hex method.</summary>
-        public Oct2HexRequestBuilder Oct2Hex { get =>
-            new Oct2HexRequestBuilder(PathParameters, RequestAdapter);
+        public Oct2HexRequestBuilder Oct2Hex
+        {
+            get =>             new Oct2HexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the odd method.</summary>
-        public OddRequestBuilder Odd { get =>
-            new OddRequestBuilder(PathParameters, RequestAdapter);
+        public OddRequestBuilder Odd
+        {
+            get =>             new OddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddFPrice method.</summary>
-        public OddFPriceRequestBuilder OddFPrice { get =>
-            new OddFPriceRequestBuilder(PathParameters, RequestAdapter);
+        public OddFPriceRequestBuilder OddFPrice
+        {
+            get =>             new OddFPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddFYield method.</summary>
-        public OddFYieldRequestBuilder OddFYield { get =>
-            new OddFYieldRequestBuilder(PathParameters, RequestAdapter);
+        public OddFYieldRequestBuilder OddFYield
+        {
+            get =>             new OddFYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddLPrice method.</summary>
-        public OddLPriceRequestBuilder OddLPrice { get =>
-            new OddLPriceRequestBuilder(PathParameters, RequestAdapter);
+        public OddLPriceRequestBuilder OddLPrice
+        {
+            get =>             new OddLPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the oddLYield method.</summary>
-        public OddLYieldRequestBuilder OddLYield { get =>
-            new OddLYieldRequestBuilder(PathParameters, RequestAdapter);
+        public OddLYieldRequestBuilder OddLYield
+        {
+            get =>             new OddLYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the or method.</summary>
-        public OrRequestBuilder Or { get =>
-            new OrRequestBuilder(PathParameters, RequestAdapter);
+        public OrRequestBuilder Or
+        {
+            get =>             new OrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pduration method.</summary>
-        public PdurationRequestBuilder Pduration { get =>
-            new PdurationRequestBuilder(PathParameters, RequestAdapter);
+        public PdurationRequestBuilder Pduration
+        {
+            get =>             new PdurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentile_Exc method.</summary>
-        public Percentile_ExcRequestBuilder Percentile_Exc { get =>
-            new Percentile_ExcRequestBuilder(PathParameters, RequestAdapter);
+        public Percentile_ExcRequestBuilder Percentile_Exc
+        {
+            get =>             new Percentile_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentile_Inc method.</summary>
-        public Percentile_IncRequestBuilder Percentile_Inc { get =>
-            new Percentile_IncRequestBuilder(PathParameters, RequestAdapter);
+        public Percentile_IncRequestBuilder Percentile_Inc
+        {
+            get =>             new Percentile_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentRank_Exc method.</summary>
-        public PercentRank_ExcRequestBuilder PercentRank_Exc { get =>
-            new PercentRank_ExcRequestBuilder(PathParameters, RequestAdapter);
+        public PercentRank_ExcRequestBuilder PercentRank_Exc
+        {
+            get =>             new PercentRank_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the percentRank_Inc method.</summary>
-        public PercentRank_IncRequestBuilder PercentRank_Inc { get =>
-            new PercentRank_IncRequestBuilder(PathParameters, RequestAdapter);
+        public PercentRank_IncRequestBuilder PercentRank_Inc
+        {
+            get =>             new PercentRank_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permut method.</summary>
-        public PermutRequestBuilder Permut { get =>
-            new PermutRequestBuilder(PathParameters, RequestAdapter);
+        public PermutRequestBuilder Permut
+        {
+            get =>             new PermutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the permutationa method.</summary>
-        public PermutationaRequestBuilder Permutationa { get =>
-            new PermutationaRequestBuilder(PathParameters, RequestAdapter);
+        public PermutationaRequestBuilder Permutationa
+        {
+            get =>             new PermutationaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the phi method.</summary>
-        public PhiRequestBuilder Phi { get =>
-            new PhiRequestBuilder(PathParameters, RequestAdapter);
+        public PhiRequestBuilder Phi
+        {
+            get =>             new PhiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pi method.</summary>
-        public PiRequestBuilder Pi { get =>
-            new PiRequestBuilder(PathParameters, RequestAdapter);
+        public PiRequestBuilder Pi
+        {
+            get =>             new PiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pmt method.</summary>
-        public PmtRequestBuilder Pmt { get =>
-            new PmtRequestBuilder(PathParameters, RequestAdapter);
+        public PmtRequestBuilder Pmt
+        {
+            get =>             new PmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the poisson_Dist method.</summary>
-        public Poisson_DistRequestBuilder Poisson_Dist { get =>
-            new Poisson_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Poisson_DistRequestBuilder Poisson_Dist
+        {
+            get =>             new Poisson_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the power method.</summary>
-        public PowerRequestBuilder Power { get =>
-            new PowerRequestBuilder(PathParameters, RequestAdapter);
+        public PowerRequestBuilder Power
+        {
+            get =>             new PowerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the ppmt method.</summary>
-        public PpmtRequestBuilder Ppmt { get =>
-            new PpmtRequestBuilder(PathParameters, RequestAdapter);
+        public PpmtRequestBuilder Ppmt
+        {
+            get =>             new PpmtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the price method.</summary>
-        public PriceRequestBuilder Price { get =>
-            new PriceRequestBuilder(PathParameters, RequestAdapter);
+        public PriceRequestBuilder Price
+        {
+            get =>             new PriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the priceDisc method.</summary>
-        public PriceDiscRequestBuilder PriceDisc { get =>
-            new PriceDiscRequestBuilder(PathParameters, RequestAdapter);
+        public PriceDiscRequestBuilder PriceDisc
+        {
+            get =>             new PriceDiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the priceMat method.</summary>
-        public PriceMatRequestBuilder PriceMat { get =>
-            new PriceMatRequestBuilder(PathParameters, RequestAdapter);
+        public PriceMatRequestBuilder PriceMat
+        {
+            get =>             new PriceMatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the product method.</summary>
-        public ProductRequestBuilder Product { get =>
-            new ProductRequestBuilder(PathParameters, RequestAdapter);
+        public ProductRequestBuilder Product
+        {
+            get =>             new ProductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the proper method.</summary>
-        public ProperRequestBuilder Proper { get =>
-            new ProperRequestBuilder(PathParameters, RequestAdapter);
+        public ProperRequestBuilder Proper
+        {
+            get =>             new ProperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pv method.</summary>
-        public PvRequestBuilder Pv { get =>
-            new PvRequestBuilder(PathParameters, RequestAdapter);
+        public PvRequestBuilder Pv
+        {
+            get =>             new PvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quartile_Exc method.</summary>
-        public Quartile_ExcRequestBuilder Quartile_Exc { get =>
-            new Quartile_ExcRequestBuilder(PathParameters, RequestAdapter);
+        public Quartile_ExcRequestBuilder Quartile_Exc
+        {
+            get =>             new Quartile_ExcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quartile_Inc method.</summary>
-        public Quartile_IncRequestBuilder Quartile_Inc { get =>
-            new Quartile_IncRequestBuilder(PathParameters, RequestAdapter);
+        public Quartile_IncRequestBuilder Quartile_Inc
+        {
+            get =>             new Quartile_IncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the quotient method.</summary>
-        public QuotientRequestBuilder Quotient { get =>
-            new QuotientRequestBuilder(PathParameters, RequestAdapter);
+        public QuotientRequestBuilder Quotient
+        {
+            get =>             new QuotientRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the radians method.</summary>
-        public RadiansRequestBuilder Radians { get =>
-            new RadiansRequestBuilder(PathParameters, RequestAdapter);
+        public RadiansRequestBuilder Radians
+        {
+            get =>             new RadiansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rand method.</summary>
-        public RandRequestBuilder Rand { get =>
-            new RandRequestBuilder(PathParameters, RequestAdapter);
+        public RandRequestBuilder Rand
+        {
+            get =>             new RandRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the randBetween method.</summary>
-        public RandBetweenRequestBuilder RandBetween { get =>
-            new RandBetweenRequestBuilder(PathParameters, RequestAdapter);
+        public RandBetweenRequestBuilder RandBetween
+        {
+            get =>             new RandBetweenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rank_Avg method.</summary>
-        public Rank_AvgRequestBuilder Rank_Avg { get =>
-            new Rank_AvgRequestBuilder(PathParameters, RequestAdapter);
+        public Rank_AvgRequestBuilder Rank_Avg
+        {
+            get =>             new Rank_AvgRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rank_Eq method.</summary>
-        public Rank_EqRequestBuilder Rank_Eq { get =>
-            new Rank_EqRequestBuilder(PathParameters, RequestAdapter);
+        public Rank_EqRequestBuilder Rank_Eq
+        {
+            get =>             new Rank_EqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rate method.</summary>
-        public RateRequestBuilder Rate { get =>
-            new RateRequestBuilder(PathParameters, RequestAdapter);
+        public RateRequestBuilder Rate
+        {
+            get =>             new RateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the received method.</summary>
-        public ReceivedRequestBuilder Received { get =>
-            new ReceivedRequestBuilder(PathParameters, RequestAdapter);
+        public ReceivedRequestBuilder Received
+        {
+            get =>             new ReceivedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the replace method.</summary>
-        public ReplaceRequestBuilder Replace { get =>
-            new ReplaceRequestBuilder(PathParameters, RequestAdapter);
+        public ReplaceRequestBuilder Replace
+        {
+            get =>             new ReplaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the replaceB method.</summary>
-        public ReplaceBRequestBuilder ReplaceB { get =>
-            new ReplaceBRequestBuilder(PathParameters, RequestAdapter);
+        public ReplaceBRequestBuilder ReplaceB
+        {
+            get =>             new ReplaceBRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rept method.</summary>
-        public ReptRequestBuilder Rept { get =>
-            new ReptRequestBuilder(PathParameters, RequestAdapter);
+        public ReptRequestBuilder Rept
+        {
+            get =>             new ReptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the right method.</summary>
-        public RightRequestBuilder Right { get =>
-            new RightRequestBuilder(PathParameters, RequestAdapter);
+        public RightRequestBuilder Right
+        {
+            get =>             new RightRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rightb method.</summary>
-        public RightbRequestBuilder Rightb { get =>
-            new RightbRequestBuilder(PathParameters, RequestAdapter);
+        public RightbRequestBuilder Rightb
+        {
+            get =>             new RightbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roman method.</summary>
-        public RomanRequestBuilder Roman { get =>
-            new RomanRequestBuilder(PathParameters, RequestAdapter);
+        public RomanRequestBuilder Roman
+        {
+            get =>             new RomanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the round method.</summary>
-        public RoundRequestBuilder Round { get =>
-            new RoundRequestBuilder(PathParameters, RequestAdapter);
+        public RoundRequestBuilder Round
+        {
+            get =>             new RoundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roundDown method.</summary>
-        public RoundDownRequestBuilder RoundDown { get =>
-            new RoundDownRequestBuilder(PathParameters, RequestAdapter);
+        public RoundDownRequestBuilder RoundDown
+        {
+            get =>             new RoundDownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the roundUp method.</summary>
-        public RoundUpRequestBuilder RoundUp { get =>
-            new RoundUpRequestBuilder(PathParameters, RequestAdapter);
+        public RoundUpRequestBuilder RoundUp
+        {
+            get =>             new RoundUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rows method.</summary>
-        public RowsRequestBuilder Rows { get =>
-            new RowsRequestBuilder(PathParameters, RequestAdapter);
+        public RowsRequestBuilder Rows
+        {
+            get =>             new RowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rri method.</summary>
-        public RriRequestBuilder Rri { get =>
-            new RriRequestBuilder(PathParameters, RequestAdapter);
+        public RriRequestBuilder Rri
+        {
+            get =>             new RriRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sec method.</summary>
-        public SecRequestBuilder Sec { get =>
-            new SecRequestBuilder(PathParameters, RequestAdapter);
+        public SecRequestBuilder Sec
+        {
+            get =>             new SecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sech method.</summary>
-        public SechRequestBuilder Sech { get =>
-            new SechRequestBuilder(PathParameters, RequestAdapter);
+        public SechRequestBuilder Sech
+        {
+            get =>             new SechRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the second method.</summary>
-        public SecondRequestBuilder Second { get =>
-            new SecondRequestBuilder(PathParameters, RequestAdapter);
+        public SecondRequestBuilder Second
+        {
+            get =>             new SecondRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the seriesSum method.</summary>
-        public SeriesSumRequestBuilder SeriesSum { get =>
-            new SeriesSumRequestBuilder(PathParameters, RequestAdapter);
+        public SeriesSumRequestBuilder SeriesSum
+        {
+            get =>             new SeriesSumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sheet method.</summary>
-        public SheetRequestBuilder Sheet { get =>
-            new SheetRequestBuilder(PathParameters, RequestAdapter);
+        public SheetRequestBuilder Sheet
+        {
+            get =>             new SheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sheets method.</summary>
-        public SheetsRequestBuilder Sheets { get =>
-            new SheetsRequestBuilder(PathParameters, RequestAdapter);
+        public SheetsRequestBuilder Sheets
+        {
+            get =>             new SheetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sign method.</summary>
-        public SignRequestBuilder Sign { get =>
-            new SignRequestBuilder(PathParameters, RequestAdapter);
+        public SignRequestBuilder Sign
+        {
+            get =>             new SignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sin method.</summary>
-        public SinRequestBuilder Sin { get =>
-            new SinRequestBuilder(PathParameters, RequestAdapter);
+        public SinRequestBuilder Sin
+        {
+            get =>             new SinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sinh method.</summary>
-        public SinhRequestBuilder Sinh { get =>
-            new SinhRequestBuilder(PathParameters, RequestAdapter);
+        public SinhRequestBuilder Sinh
+        {
+            get =>             new SinhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the skew method.</summary>
-        public SkewRequestBuilder Skew { get =>
-            new SkewRequestBuilder(PathParameters, RequestAdapter);
+        public SkewRequestBuilder Skew
+        {
+            get =>             new SkewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the skew_p method.</summary>
-        public Skew_pRequestBuilder Skew_p { get =>
-            new Skew_pRequestBuilder(PathParameters, RequestAdapter);
+        public Skew_pRequestBuilder Skew_p
+        {
+            get =>             new Skew_pRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sln method.</summary>
-        public SlnRequestBuilder Sln { get =>
-            new SlnRequestBuilder(PathParameters, RequestAdapter);
+        public SlnRequestBuilder Sln
+        {
+            get =>             new SlnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the small method.</summary>
-        public SmallRequestBuilder Small { get =>
-            new SmallRequestBuilder(PathParameters, RequestAdapter);
+        public SmallRequestBuilder Small
+        {
+            get =>             new SmallRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sqrt method.</summary>
-        public SqrtRequestBuilder Sqrt { get =>
-            new SqrtRequestBuilder(PathParameters, RequestAdapter);
+        public SqrtRequestBuilder Sqrt
+        {
+            get =>             new SqrtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sqrtPi method.</summary>
-        public SqrtPiRequestBuilder SqrtPi { get =>
-            new SqrtPiRequestBuilder(PathParameters, RequestAdapter);
+        public SqrtPiRequestBuilder SqrtPi
+        {
+            get =>             new SqrtPiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the standardize method.</summary>
-        public StandardizeRequestBuilder Standardize { get =>
-            new StandardizeRequestBuilder(PathParameters, RequestAdapter);
+        public StandardizeRequestBuilder Standardize
+        {
+            get =>             new StandardizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDev_P method.</summary>
-        public StDev_PRequestBuilder StDev_P { get =>
-            new StDev_PRequestBuilder(PathParameters, RequestAdapter);
+        public StDev_PRequestBuilder StDev_P
+        {
+            get =>             new StDev_PRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDev_S method.</summary>
-        public StDev_SRequestBuilder StDev_S { get =>
-            new StDev_SRequestBuilder(PathParameters, RequestAdapter);
+        public StDev_SRequestBuilder StDev_S
+        {
+            get =>             new StDev_SRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDevA method.</summary>
-        public StDevARequestBuilder StDevA { get =>
-            new StDevARequestBuilder(PathParameters, RequestAdapter);
+        public StDevARequestBuilder StDevA
+        {
+            get =>             new StDevARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the stDevPA method.</summary>
-        public StDevPARequestBuilder StDevPA { get =>
-            new StDevPARequestBuilder(PathParameters, RequestAdapter);
+        public StDevPARequestBuilder StDevPA
+        {
+            get =>             new StDevPARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the substitute method.</summary>
-        public SubstituteRequestBuilder Substitute { get =>
-            new SubstituteRequestBuilder(PathParameters, RequestAdapter);
+        public SubstituteRequestBuilder Substitute
+        {
+            get =>             new SubstituteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subtotal method.</summary>
-        public SubtotalRequestBuilder Subtotal { get =>
-            new SubtotalRequestBuilder(PathParameters, RequestAdapter);
+        public SubtotalRequestBuilder Subtotal
+        {
+            get =>             new SubtotalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sum method.</summary>
-        public SumRequestBuilder Sum { get =>
-            new SumRequestBuilder(PathParameters, RequestAdapter);
+        public SumRequestBuilder Sum
+        {
+            get =>             new SumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumIf method.</summary>
-        public SumIfRequestBuilder SumIf { get =>
-            new SumIfRequestBuilder(PathParameters, RequestAdapter);
+        public SumIfRequestBuilder SumIf
+        {
+            get =>             new SumIfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumIfs method.</summary>
-        public SumIfsRequestBuilder SumIfs { get =>
-            new SumIfsRequestBuilder(PathParameters, RequestAdapter);
+        public SumIfsRequestBuilder SumIfs
+        {
+            get =>             new SumIfsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sumSq method.</summary>
-        public SumSqRequestBuilder SumSq { get =>
-            new SumSqRequestBuilder(PathParameters, RequestAdapter);
+        public SumSqRequestBuilder SumSq
+        {
+            get =>             new SumSqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syd method.</summary>
-        public SydRequestBuilder Syd { get =>
-            new SydRequestBuilder(PathParameters, RequestAdapter);
+        public SydRequestBuilder Syd
+        {
+            get =>             new SydRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t method.</summary>
-        public TRequestBuilder T { get =>
-            new TRequestBuilder(PathParameters, RequestAdapter);
+        public TRequestBuilder T
+        {
+            get =>             new TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist method.</summary>
-        public T_DistRequestBuilder T_Dist { get =>
-            new T_DistRequestBuilder(PathParameters, RequestAdapter);
+        public T_DistRequestBuilder T_Dist
+        {
+            get =>             new T_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist_2T method.</summary>
-        public T_Dist_2TRequestBuilder T_Dist_2T { get =>
-            new T_Dist_2TRequestBuilder(PathParameters, RequestAdapter);
+        public T_Dist_2TRequestBuilder T_Dist_2T
+        {
+            get =>             new T_Dist_2TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Dist_RT method.</summary>
-        public T_Dist_RTRequestBuilder T_Dist_RT { get =>
-            new T_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
+        public T_Dist_RTRequestBuilder T_Dist_RT
+        {
+            get =>             new T_Dist_RTRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Inv method.</summary>
-        public T_InvRequestBuilder T_Inv { get =>
-            new T_InvRequestBuilder(PathParameters, RequestAdapter);
+        public T_InvRequestBuilder T_Inv
+        {
+            get =>             new T_InvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the t_Inv_2T method.</summary>
-        public T_Inv_2TRequestBuilder T_Inv_2T { get =>
-            new T_Inv_2TRequestBuilder(PathParameters, RequestAdapter);
+        public T_Inv_2TRequestBuilder T_Inv_2T
+        {
+            get =>             new T_Inv_2TRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tan method.</summary>
-        public TanRequestBuilder Tan { get =>
-            new TanRequestBuilder(PathParameters, RequestAdapter);
+        public TanRequestBuilder Tan
+        {
+            get =>             new TanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tanh method.</summary>
-        public TanhRequestBuilder Tanh { get =>
-            new TanhRequestBuilder(PathParameters, RequestAdapter);
+        public TanhRequestBuilder Tanh
+        {
+            get =>             new TanhRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillEq method.</summary>
-        public TbillEqRequestBuilder TbillEq { get =>
-            new TbillEqRequestBuilder(PathParameters, RequestAdapter);
+        public TbillEqRequestBuilder TbillEq
+        {
+            get =>             new TbillEqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillPrice method.</summary>
-        public TbillPriceRequestBuilder TbillPrice { get =>
-            new TbillPriceRequestBuilder(PathParameters, RequestAdapter);
+        public TbillPriceRequestBuilder TbillPrice
+        {
+            get =>             new TbillPriceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tbillYield method.</summary>
-        public TbillYieldRequestBuilder TbillYield { get =>
-            new TbillYieldRequestBuilder(PathParameters, RequestAdapter);
+        public TbillYieldRequestBuilder TbillYield
+        {
+            get =>             new TbillYieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the text method.</summary>
-        public TextRequestBuilder Text { get =>
-            new TextRequestBuilder(PathParameters, RequestAdapter);
+        public TextRequestBuilder Text
+        {
+            get =>             new TextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the time method.</summary>
-        public TimeRequestBuilder Time { get =>
-            new TimeRequestBuilder(PathParameters, RequestAdapter);
+        public TimeRequestBuilder Time
+        {
+            get =>             new TimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the timevalue method.</summary>
-        public TimevalueRequestBuilder Timevalue { get =>
-            new TimevalueRequestBuilder(PathParameters, RequestAdapter);
+        public TimevalueRequestBuilder Timevalue
+        {
+            get =>             new TimevalueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the today method.</summary>
-        public TodayRequestBuilder Today { get =>
-            new TodayRequestBuilder(PathParameters, RequestAdapter);
+        public TodayRequestBuilder Today
+        {
+            get =>             new TodayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trim method.</summary>
-        public TrimRequestBuilder Trim { get =>
-            new TrimRequestBuilder(PathParameters, RequestAdapter);
+        public TrimRequestBuilder Trim
+        {
+            get =>             new TrimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trimMean method.</summary>
-        public TrimMeanRequestBuilder TrimMean { get =>
-            new TrimMeanRequestBuilder(PathParameters, RequestAdapter);
+        public TrimMeanRequestBuilder TrimMean
+        {
+            get =>             new TrimMeanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the true method.</summary>
-        public TrueRequestBuilder True { get =>
-            new TrueRequestBuilder(PathParameters, RequestAdapter);
+        public TrueRequestBuilder True
+        {
+            get =>             new TrueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the trunc method.</summary>
-        public TruncRequestBuilder Trunc { get =>
-            new TruncRequestBuilder(PathParameters, RequestAdapter);
+        public TruncRequestBuilder Trunc
+        {
+            get =>             new TruncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the type method.</summary>
-        public TypeRequestBuilder Type { get =>
-            new TypeRequestBuilder(PathParameters, RequestAdapter);
+        public TypeRequestBuilder Type
+        {
+            get =>             new TypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unichar method.</summary>
-        public UnicharRequestBuilder Unichar { get =>
-            new UnicharRequestBuilder(PathParameters, RequestAdapter);
+        public UnicharRequestBuilder Unichar
+        {
+            get =>             new UnicharRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unicode method.</summary>
-        public UnicodeRequestBuilder Unicode { get =>
-            new UnicodeRequestBuilder(PathParameters, RequestAdapter);
+        public UnicodeRequestBuilder Unicode
+        {
+            get =>             new UnicodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the upper method.</summary>
-        public UpperRequestBuilder Upper { get =>
-            new UpperRequestBuilder(PathParameters, RequestAdapter);
+        public UpperRequestBuilder Upper
+        {
+            get =>             new UpperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the usdollar method.</summary>
-        public UsdollarRequestBuilder Usdollar { get =>
-            new UsdollarRequestBuilder(PathParameters, RequestAdapter);
+        public UsdollarRequestBuilder Usdollar
+        {
+            get =>             new UsdollarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the value method.</summary>
-        public ValueRequestBuilder Value { get =>
-            new ValueRequestBuilder(PathParameters, RequestAdapter);
+        public ValueRequestBuilder Value
+        {
+            get =>             new ValueRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the var_P method.</summary>
-        public Var_PRequestBuilder Var_P { get =>
-            new Var_PRequestBuilder(PathParameters, RequestAdapter);
+        public Var_PRequestBuilder Var_P
+        {
+            get =>             new Var_PRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the var_S method.</summary>
-        public Var_SRequestBuilder Var_S { get =>
-            new Var_SRequestBuilder(PathParameters, RequestAdapter);
+        public Var_SRequestBuilder Var_S
+        {
+            get =>             new Var_SRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the varA method.</summary>
-        public VarARequestBuilder VarA { get =>
-            new VarARequestBuilder(PathParameters, RequestAdapter);
+        public VarARequestBuilder VarA
+        {
+            get =>             new VarARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the varPA method.</summary>
-        public VarPARequestBuilder VarPA { get =>
-            new VarPARequestBuilder(PathParameters, RequestAdapter);
+        public VarPARequestBuilder VarPA
+        {
+            get =>             new VarPARequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the vdb method.</summary>
-        public VdbRequestBuilder Vdb { get =>
-            new VdbRequestBuilder(PathParameters, RequestAdapter);
+        public VdbRequestBuilder Vdb
+        {
+            get =>             new VdbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the vlookup method.</summary>
-        public VlookupRequestBuilder Vlookup { get =>
-            new VlookupRequestBuilder(PathParameters, RequestAdapter);
+        public VlookupRequestBuilder Vlookup
+        {
+            get =>             new VlookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weekday method.</summary>
-        public WeekdayRequestBuilder Weekday { get =>
-            new WeekdayRequestBuilder(PathParameters, RequestAdapter);
+        public WeekdayRequestBuilder Weekday
+        {
+            get =>             new WeekdayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weekNum method.</summary>
-        public WeekNumRequestBuilder WeekNum { get =>
-            new WeekNumRequestBuilder(PathParameters, RequestAdapter);
+        public WeekNumRequestBuilder WeekNum
+        {
+            get =>             new WeekNumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the weibull_Dist method.</summary>
-        public Weibull_DistRequestBuilder Weibull_Dist { get =>
-            new Weibull_DistRequestBuilder(PathParameters, RequestAdapter);
+        public Weibull_DistRequestBuilder Weibull_Dist
+        {
+            get =>             new Weibull_DistRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the workDay method.</summary>
-        public WorkDayRequestBuilder WorkDay { get =>
-            new WorkDayRequestBuilder(PathParameters, RequestAdapter);
+        public WorkDayRequestBuilder WorkDay
+        {
+            get =>             new WorkDayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the workDay_Intl method.</summary>
-        public WorkDay_IntlRequestBuilder WorkDay_Intl { get =>
-            new WorkDay_IntlRequestBuilder(PathParameters, RequestAdapter);
+        public WorkDay_IntlRequestBuilder WorkDay_Intl
+        {
+            get =>             new WorkDay_IntlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xirr method.</summary>
-        public XirrRequestBuilder Xirr { get =>
-            new XirrRequestBuilder(PathParameters, RequestAdapter);
+        public XirrRequestBuilder Xirr
+        {
+            get =>             new XirrRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xnpv method.</summary>
-        public XnpvRequestBuilder Xnpv { get =>
-            new XnpvRequestBuilder(PathParameters, RequestAdapter);
+        public XnpvRequestBuilder Xnpv
+        {
+            get =>             new XnpvRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the xor method.</summary>
-        public XorRequestBuilder Xor { get =>
-            new XorRequestBuilder(PathParameters, RequestAdapter);
+        public XorRequestBuilder Xor
+        {
+            get =>             new XorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the year method.</summary>
-        public YearRequestBuilder Year { get =>
-            new YearRequestBuilder(PathParameters, RequestAdapter);
+        public YearRequestBuilder Year
+        {
+            get =>             new YearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yearFrac method.</summary>
-        public YearFracRequestBuilder YearFrac { get =>
-            new YearFracRequestBuilder(PathParameters, RequestAdapter);
+        public YearFracRequestBuilder YearFrac
+        {
+            get =>             new YearFracRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yield method.</summary>
-        public YieldRequestBuilder Yield { get =>
-            new YieldRequestBuilder(PathParameters, RequestAdapter);
+        public YieldRequestBuilder Yield
+        {
+            get =>             new YieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yieldDisc method.</summary>
-        public YieldDiscRequestBuilder YieldDisc { get =>
-            new YieldDiscRequestBuilder(PathParameters, RequestAdapter);
+        public YieldDiscRequestBuilder YieldDisc
+        {
+            get =>             new YieldDiscRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the yieldMat method.</summary>
-        public YieldMatRequestBuilder YieldMat { get =>
-            new YieldMatRequestBuilder(PathParameters, RequestAdapter);
+        public YieldMatRequestBuilder YieldMat
+        {
+            get =>             new YieldMatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the z_Test method.</summary>
-        public Z_TestRequestBuilder Z_Test { get =>
-            new Z_TestRequestBuilder(PathParameters, RequestAdapter);
+        public Z_TestRequestBuilder Z_Test
+        {
+            get =>             new Z_TestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FunctionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", pathParameters) {
+        public FunctionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="FunctionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FunctionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", rawUrl) {
+        public FunctionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property functions for drives
@@ -1866,13 +2235,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -1886,13 +2258,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookFunctions?> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctions?> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WorkbookFunctions> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctions> GetAsync(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -1907,14 +2282,17 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkbookFunctions?> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctions?> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WorkbookFunctions> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkbookFunctions> PatchAsync(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -1926,10 +2304,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -1943,10 +2323,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FunctionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -1961,10 +2343,12 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WorkbookFunctions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions", PathParameters);
@@ -1978,19 +2362,22 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// </summary>
         /// <returns>A <see cref="FunctionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FunctionsRequestBuilder WithUrl(string rawUrl) {
+        public FunctionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FunctionsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class FunctionsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get functions from drives
         /// </summary>
-        public class FunctionsRequestBuilderGetQueryParameters {
+        public class FunctionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2016,13 +2403,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<FunctionsRequestBuilderGetQueryParameters> {
+        public class FunctionsRequestBuilderGetRequestConfiguration : RequestConfiguration<FunctionsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FunctionsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class FunctionsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

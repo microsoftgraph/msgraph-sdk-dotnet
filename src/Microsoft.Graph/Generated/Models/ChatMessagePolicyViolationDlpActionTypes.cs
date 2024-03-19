@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
-    public enum ChatMessagePolicyViolationDlpActionTypes {
+    public enum ChatMessagePolicyViolationDlpActionTypes
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "notifySender")]

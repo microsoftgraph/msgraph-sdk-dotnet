@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PhoneType {
+    public enum PhoneType
+    {
         [EnumMember(Value = "home")]
         Home,
         [EnumMember(Value = "business")]

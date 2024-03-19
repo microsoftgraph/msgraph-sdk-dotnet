@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Indicates the publishing state of an app.</summary>
-    public enum MobileAppPublishingState {
+    public enum MobileAppPublishingState
+    {
         /// <summary>The app is not yet published.</summary>
         [EnumMember(Value = "notPublished")]
         NotPublished,

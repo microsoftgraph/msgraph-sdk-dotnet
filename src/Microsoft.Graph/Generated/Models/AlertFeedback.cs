@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AlertFeedback {
+    public enum AlertFeedback
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "truePositive")]

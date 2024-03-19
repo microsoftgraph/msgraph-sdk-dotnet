@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for WIP Protection enforcement levels</summary>
-    public enum WindowsInformationProtectionEnforcementLevel {
+    public enum WindowsInformationProtectionEnforcementLevel
+    {
         /// <summary>No protection enforcement</summary>
         [EnumMember(Value = "noProtection")]
         NoProtection,

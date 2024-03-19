@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for firewallCertificateRevocationListCheckMethod</summary>
-    public enum FirewallCertificateRevocationListCheckMethodType {
+    public enum FirewallCertificateRevocationListCheckMethodType
+    {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

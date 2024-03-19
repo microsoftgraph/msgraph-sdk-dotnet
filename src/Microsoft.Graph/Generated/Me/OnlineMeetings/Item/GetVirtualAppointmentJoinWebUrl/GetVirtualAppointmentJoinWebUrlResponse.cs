@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl {
     [Obsolete("This class is obsolete. Use GetVirtualAppointmentJoinWebUrlGetResponse instead.")]
-    public class GetVirtualAppointmentJoinWebUrlResponse : GetVirtualAppointmentJoinWebUrlGetResponse, IParsable {
+    public class GetVirtualAppointmentJoinWebUrlResponse : GetVirtualAppointmentJoinWebUrlGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetVirtualAppointmentJoinWebUrlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetVirtualAppointmentJoinWebUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetVirtualAppointmentJoinWebUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetVirtualAppointmentJoinWebUrlResponse();
         }

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Devices.Item.MemberOf.Item.GraphAdministrativeUnit {
     /// <summary>
     /// Casts the previous resource to administrativeUnit.
     /// </summary>
-    public class GraphAdministrativeUnitRequestBuilder : BaseRequestBuilder {
+    public class GraphAdministrativeUnitRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphAdministrativeUnitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", pathParameters) {
+        public GraphAdministrativeUnitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphAdministrativeUnitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphAdministrativeUnitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", rawUrl) {
+        public GraphAdministrativeUnitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices/{device%2Did}/memberOf/{directoryObject%2Did}/graph.administrativeUnit{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Devices.Item.MemberOf.Item.GraphAdministrativeUnit {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AdministrativeUnit?> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AdministrativeUnit?> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AdministrativeUnit> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.AdministrativeUnit> GetAsync(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Devices.Item.MemberOf.Item.GraphAdministrativeUnit {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Devices.Item.MemberOf.Item.GraphAdministrativeUnit {
         /// </summary>
         /// <returns>A <see cref="GraphAdministrativeUnitRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphAdministrativeUnitRequestBuilder WithUrl(string rawUrl) {
+        public GraphAdministrativeUnitRequestBuilder WithUrl(string rawUrl)
+        {
             return new GraphAdministrativeUnitRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
         /// </summary>
-        public class GraphAdministrativeUnitRequestBuilderGetQueryParameters {
+        public class GraphAdministrativeUnitRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Devices.Item.MemberOf.Item.GraphAdministrativeUnit {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphAdministrativeUnitRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters> {
+        public class GraphAdministrativeUnitRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

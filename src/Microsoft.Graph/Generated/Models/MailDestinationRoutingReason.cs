@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum MailDestinationRoutingReason {
+    public enum MailDestinationRoutingReason
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "mailFlowRule")]

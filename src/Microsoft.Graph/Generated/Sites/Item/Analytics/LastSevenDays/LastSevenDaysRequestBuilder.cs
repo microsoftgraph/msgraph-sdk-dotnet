@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Sites.Item.Analytics.LastSevenDays {
     /// <summary>
     /// Provides operations to manage the lastSevenDays property of the microsoft.graph.itemAnalytics entity.
     /// </summary>
-    public class LastSevenDaysRequestBuilder : BaseRequestBuilder {
+    public class LastSevenDaysRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LastSevenDaysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSevenDaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24expand,%24select}", pathParameters) {
+        public LastSevenDaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LastSevenDaysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastSevenDaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24expand,%24select}", rawUrl) {
+        public LastSevenDaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get lastSevenDays from sites
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Sites.Item.Analytics.LastSevenDays {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ItemActivityStat?> GetAsync(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemActivityStat?> GetAsync(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ItemActivityStat> GetAsync(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemActivityStat> GetAsync(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ItemActivityStat>(requestInfo, ItemActivityStat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Sites.Item.Analytics.LastSevenDays {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Sites.Item.Analytics.LastSevenDays {
         /// </summary>
         /// <returns>A <see cref="LastSevenDaysRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LastSevenDaysRequestBuilder WithUrl(string rawUrl) {
+        public LastSevenDaysRequestBuilder WithUrl(string rawUrl)
+        {
             return new LastSevenDaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get lastSevenDays from sites
         /// </summary>
-        public class LastSevenDaysRequestBuilderGetQueryParameters {
+        public class LastSevenDaysRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Sites.Item.Analytics.LastSevenDays {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LastSevenDaysRequestBuilderGetRequestConfiguration : RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters> {
+        public class LastSevenDaysRequestBuilderGetRequestConfiguration : RequestConfiguration<LastSevenDaysRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

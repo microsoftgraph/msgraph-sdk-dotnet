@@ -37,116 +37,143 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class ManagedDeviceItemRequestBuilder : BaseRequestBuilder {
+    public class ManagedDeviceItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the bypassActivationLock method.</summary>
-        public BypassActivationLockRequestBuilder BypassActivationLock { get =>
-            new BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
+        public BypassActivationLockRequestBuilder BypassActivationLock
+        {
+            get =>             new BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cleanWindowsDevice method.</summary>
-        public CleanWindowsDeviceRequestBuilder CleanWindowsDevice { get =>
-            new CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public CleanWindowsDeviceRequestBuilder CleanWindowsDevice
+        {
+            get =>             new CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
-        public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice { get =>
-            new DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice
+        {
+            get =>             new DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.</summary>
-        public DeviceCategoryRequestBuilder DeviceCategory { get =>
-            new DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceCategoryRequestBuilder DeviceCategory
+        {
+            get =>             new DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.</summary>
-        public DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates { get =>
-            new DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates
+        {
+            get =>             new DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
-        public DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates { get =>
-            new DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates
+        {
+            get =>             new DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disableLostMode method.</summary>
-        public DisableLostModeRequestBuilder DisableLostMode { get =>
-            new DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
+        public DisableLostModeRequestBuilder DisableLostMode
+        {
+            get =>             new DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the locateDevice method.</summary>
-        public LocateDeviceRequestBuilder LocateDevice { get =>
-            new LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public LocateDeviceRequestBuilder LocateDevice
+        {
+            get =>             new LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
-        public LogCollectionRequestsRequestBuilder LogCollectionRequests { get =>
-            new LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public LogCollectionRequestsRequestBuilder LogCollectionRequests
+        {
+            get =>             new LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logoutSharedAppleDeviceActiveUser method.</summary>
-        public LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser { get =>
-            new LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
+        public LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser
+        {
+            get =>             new LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rebootNow method.</summary>
-        public RebootNowRequestBuilder RebootNow { get =>
-            new RebootNowRequestBuilder(PathParameters, RequestAdapter);
+        public RebootNowRequestBuilder RebootNow
+        {
+            get =>             new RebootNowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recoverPasscode method.</summary>
-        public RecoverPasscodeRequestBuilder RecoverPasscode { get =>
-            new RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
+        public RecoverPasscodeRequestBuilder RecoverPasscode
+        {
+            get =>             new RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remoteLock method.</summary>
-        public RemoteLockRequestBuilder RemoteLock { get =>
-            new RemoteLockRequestBuilder(PathParameters, RequestAdapter);
+        public RemoteLockRequestBuilder RemoteLock
+        {
+            get =>             new RemoteLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
-        public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
-            new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
+        public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
+        {
+            get =>             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetPasscode method.</summary>
-        public ResetPasscodeRequestBuilder ResetPasscode { get =>
-            new ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
+        public ResetPasscodeRequestBuilder ResetPasscode
+        {
+            get =>             new ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retire method.</summary>
-        public RetireRequestBuilder Retire { get =>
-            new RetireRequestBuilder(PathParameters, RequestAdapter);
+        public RetireRequestBuilder Retire
+        {
+            get =>             new RetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shutDown method.</summary>
-        public ShutDownRequestBuilder ShutDown { get =>
-            new ShutDownRequestBuilder(PathParameters, RequestAdapter);
+        public ShutDownRequestBuilder ShutDown
+        {
+            get =>             new ShutDownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncDevice method.</summary>
-        public SyncDeviceRequestBuilder SyncDevice { get =>
-            new SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public SyncDeviceRequestBuilder SyncDevice
+        {
+            get =>             new SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
-        public UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount { get =>
-            new UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
+        public UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount
+        {
+            get =>             new UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
-        public UsersRequestBuilder Users { get =>
-            new UsersRequestBuilder(PathParameters, RequestAdapter);
+        public UsersRequestBuilder Users
+        {
+            get =>             new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
-        public WindowsDefenderScanRequestBuilder WindowsDefenderScan { get =>
-            new WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsDefenderScanRequestBuilder WindowsDefenderScan
+        {
+            get =>             new WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderUpdateSignatures method.</summary>
-        public WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures { get =>
-            new WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures
+        {
+            get =>             new WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.</summary>
-        public WindowsProtectionStateRequestBuilder WindowsProtectionState { get =>
-            new WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsProtectionStateRequestBuilder WindowsProtectionState
+        {
+            get =>             new WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipe method.</summary>
-        public WipeRequestBuilder Wipe { get =>
-            new WipeRequestBuilder(PathParameters, RequestAdapter);
+        public WipeRequestBuilder Wipe
+        {
+            get =>             new WipeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ManagedDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24expand,%24select}", pathParameters) {
+        public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ManagedDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24expand,%24select}", rawUrl) {
+        public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Deletes a managedDevice.
@@ -157,13 +184,16 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -178,13 +208,16 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDevice?> GetAsync(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDevice?> GetAsync(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ManagedDevice> GetAsync(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDevice> GetAsync(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDevice>(requestInfo, ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -200,14 +233,17 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedDevice?> PatchAsync(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDevice?> PatchAsync(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ManagedDevice> PatchAsync(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedDevice> PatchAsync(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDevice>(requestInfo, ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -219,10 +255,12 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -236,10 +274,12 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -254,10 +294,12 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}", PathParameters);
@@ -271,19 +313,22 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedDeviceItemRequestBuilder WithUrl(string rawUrl) {
+        public ManagedDeviceItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ManagedDeviceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Read properties and relationships of the managedDevice object.
         /// </summary>
-        public class ManagedDeviceItemRequestBuilderGetQueryParameters {
+        public class ManagedDeviceItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -309,13 +354,15 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters> {
+        public class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedDeviceItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

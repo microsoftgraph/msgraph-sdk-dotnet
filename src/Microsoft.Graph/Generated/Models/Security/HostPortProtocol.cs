@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum HostPortProtocol {
+    public enum HostPortProtocol
+    {
         [EnumMember(Value = "tcp")]
         Tcp,
         [EnumMember(Value = "udp")]

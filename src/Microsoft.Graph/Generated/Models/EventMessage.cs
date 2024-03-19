@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class EventMessage : Message, IParsable {
+    public class EventMessage : Message, IParsable 
+    {
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +40,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
             set { BackingStore?.Set("isAllDay", value); }
         }
-        /// <summary>The isDelegated property</summary>
+        /// <summary>True if this meeting request is accessible to a delegate, false otherwise. Default is false.</summary>
         public bool? IsDelegated {
             get { return BackingStore?.Get<bool?>("isDelegated"); }
             set { BackingStore?.Set("isDelegated", value); }
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>The meetingMessageType property</summary>
+        /// <summary>The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.</summary>
         public Microsoft.Graph.Models.MeetingMessageType? MeetingMessageType {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingMessageType?>("meetingMessageType"); }
             set { BackingStore?.Set("meetingMessageType", value); }
@@ -104,7 +105,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="EventMessage"/> and sets the default values.
         /// </summary>
-        public EventMessage() : base() {
+        public EventMessage() : base()
+        {
             OdataType = "#microsoft.graph.eventMessage";
         }
         /// <summary>
@@ -112,10 +114,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="EventMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EventMessage CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EventMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
                 "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 _ => new EventMessage(),
@@ -125,8 +129,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"event", n => { Event = n.GetObjectValue<Microsoft.Graph.Models.Event>(Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue); } },
                 {"isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
@@ -143,7 +149,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);

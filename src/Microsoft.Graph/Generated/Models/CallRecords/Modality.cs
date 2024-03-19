@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
-    public enum Modality {
+    public enum Modality
+    {
         [EnumMember(Value = "audio")]
         Audio,
         [EnumMember(Value = "video")]

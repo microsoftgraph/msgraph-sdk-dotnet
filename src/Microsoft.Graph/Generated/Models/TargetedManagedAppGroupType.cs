@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
-    public enum TargetedManagedAppGroupType {
+    public enum TargetedManagedAppGroupType
+    {
         /// <summary>Target the collection of apps manually selected by the admin.</summary>
         [EnumMember(Value = "selectedPublicApps")]
         SelectedPublicApps,

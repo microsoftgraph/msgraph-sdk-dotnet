@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
     /// </summary>
-    public class ManagedApp : MobileApp, IParsable {
+    public class ManagedApp : MobileApp, IParsable 
+    {
         /// <summary>A managed (MAM) application&apos;s availability.</summary>
         public ManagedAppAvailability? AppAvailability {
             get { return BackingStore?.Get<ManagedAppAvailability?>("appAvailability"); }
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="ManagedApp"/> and sets the default values.
         /// </summary>
-        public ManagedApp() : base() {
+        public ManagedApp() : base()
+        {
             OdataType = "#microsoft.graph.managedApp";
         }
         /// <summary>
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ManagedApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ManagedApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
                 "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
                 "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
@@ -55,8 +59,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"appAvailability", n => { AppAvailability = n.GetEnumValue<ManagedAppAvailability>(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
@@ -65,7 +71,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ManagedAppAvailability>("appAvailability", AppAvailability);

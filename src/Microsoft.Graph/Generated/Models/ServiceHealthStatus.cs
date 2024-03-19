@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ServiceHealthStatus {
+    public enum ServiceHealthStatus
+    {
         [EnumMember(Value = "serviceOperational")]
         ServiceOperational,
         [EnumMember(Value = "investigating")]

@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespace {
-    public class DatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class DatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// <summary>
         /// Instantiates a new <see cref="DatePostRequestBody"/> and sets the default values.
         /// </summary>
-        public DatePostRequestBody() {
+        public DatePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -69,7 +71,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// </summary>
         /// <returns>A <see cref="DatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DatePostRequestBody();
         }
@@ -77,8 +80,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"day", n => { Day = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"month", n => { Month = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"year", n => { Year = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -88,7 +93,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DateNamespac
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("day", Day);
             writer.WriteObjectValue<Json>("month", Month);

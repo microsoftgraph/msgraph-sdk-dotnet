@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ConditionalAccessPolicyState {
+    public enum ConditionalAccessPolicyState
+    {
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

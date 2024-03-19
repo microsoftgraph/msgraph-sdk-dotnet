@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values of Cloud Block Level</summary>
-    public enum DefenderCloudBlockLevelType {
+    public enum DefenderCloudBlockLevelType
+    {
         /// <summary>Default value, uses the default Windows Defender Antivirus blocking level and provides strong detection without increasing the risk of detecting legitimate files</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

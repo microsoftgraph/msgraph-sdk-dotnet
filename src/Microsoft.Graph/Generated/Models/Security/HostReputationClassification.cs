@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum HostReputationClassification {
+    public enum HostReputationClassification
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "neutral")]

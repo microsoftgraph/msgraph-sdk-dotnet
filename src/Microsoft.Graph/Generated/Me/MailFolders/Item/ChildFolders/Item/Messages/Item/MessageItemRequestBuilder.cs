@@ -25,68 +25,83 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
     /// <summary>
     /// Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
     /// </summary>
-    public class MessageItemRequestBuilder : BaseRequestBuilder {
+    public class MessageItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.message entity.</summary>
-        public AttachmentsRequestBuilder Attachments { get =>
-            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AttachmentsRequestBuilder Attachments
+        {
+            get =>             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the user entity.</summary>
-        public ContentRequestBuilder Content { get =>
-            new ContentRequestBuilder(PathParameters, RequestAdapter);
+        public ContentRequestBuilder Content
+        {
+            get =>             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copy method.</summary>
-        public CopyRequestBuilder Copy { get =>
-            new CopyRequestBuilder(PathParameters, RequestAdapter);
+        public CopyRequestBuilder Copy
+        {
+            get =>             new CopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createForward method.</summary>
-        public CreateForwardRequestBuilder CreateForward { get =>
-            new CreateForwardRequestBuilder(PathParameters, RequestAdapter);
+        public CreateForwardRequestBuilder CreateForward
+        {
+            get =>             new CreateForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createReply method.</summary>
-        public CreateReplyRequestBuilder CreateReply { get =>
-            new CreateReplyRequestBuilder(PathParameters, RequestAdapter);
+        public CreateReplyRequestBuilder CreateReply
+        {
+            get =>             new CreateReplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createReplyAll method.</summary>
-        public CreateReplyAllRequestBuilder CreateReplyAll { get =>
-            new CreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
+        public CreateReplyAllRequestBuilder CreateReplyAll
+        {
+            get =>             new CreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.message entity.</summary>
-        public ExtensionsRequestBuilder Extensions { get =>
-            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        public ExtensionsRequestBuilder Extensions
+        {
+            get =>             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        public ForwardRequestBuilder Forward
+        {
+            get =>             new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the move method.</summary>
-        public MoveRequestBuilder Move { get =>
-            new MoveRequestBuilder(PathParameters, RequestAdapter);
+        public MoveRequestBuilder Move
+        {
+            get =>             new MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reply method.</summary>
-        public ReplyRequestBuilder Reply { get =>
-            new ReplyRequestBuilder(PathParameters, RequestAdapter);
+        public ReplyRequestBuilder Reply
+        {
+            get =>             new ReplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the replyAll method.</summary>
-        public ReplyAllRequestBuilder ReplyAll { get =>
-            new ReplyAllRequestBuilder(PathParameters, RequestAdapter);
+        public ReplyAllRequestBuilder ReplyAll
+        {
+            get =>             new ReplyAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the send method.</summary>
-        public SendRequestBuilder Send { get =>
-            new SendRequestBuilder(PathParameters, RequestAdapter);
+        public SendRequestBuilder Send
+        {
+            get =>             new SendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="MessageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}{?%24expand,%24select}", pathParameters) {
+        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MessageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}{?%24expand,%24select}", rawUrl) {
+        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property messages for me
@@ -96,13 +111,16 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -116,13 +134,16 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Message?> GetAsync(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Message?> GetAsync(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Message> GetAsync(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Message> GetAsync(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -137,14 +158,17 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Message?> PatchAsync(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Message?> PatchAsync(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Message> PatchAsync(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Message> PatchAsync(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -156,10 +180,12 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -173,10 +199,12 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -191,10 +219,12 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Message body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}", PathParameters);
@@ -208,19 +238,22 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// </summary>
         /// <returns>A <see cref="MessageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MessageItemRequestBuilder WithUrl(string rawUrl) {
+        public MessageItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new MessageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The collection of messages in the mailFolder.
         /// </summary>
-        public class MessageItemRequestBuilderGetQueryParameters {
+        public class MessageItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -246,13 +279,15 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MessageItemRequestBuilderGetQueryParameters> {
+        public class MessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MessageItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

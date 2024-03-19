@@ -12,7 +12,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
     /// <summary>
     /// Provides operations to call the getByUserIdAndRole method.
     /// </summary>
-    public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder : BaseRequestBuilder {
+    public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -20,7 +21,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string role = "", string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(role)) PathParameters.Add("role", role);
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
@@ -29,7 +31,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/getByUserIdAndRole(userId='{userId}',role='{role}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
@@ -40,13 +43,16 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleGetResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,13 +67,16 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         [Obsolete("This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -79,10 +88,12 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -94,13 +105,15 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// </summary>
         /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder WithUrl(string rawUrl) {
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
-        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters {
+        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -165,7 +178,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWit
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters> {
+        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

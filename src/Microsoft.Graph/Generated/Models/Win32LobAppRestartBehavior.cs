@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Indicates the type of restart action.</summary>
-    public enum Win32LobAppRestartBehavior {
+    public enum Win32LobAppRestartBehavior
+    {
         /// <summary>Intune will restart the device after running the app installation if the operation returns a reboot code.</summary>
         [EnumMember(Value = "basedOnReturnCode")]
         BasedOnReturnCode,

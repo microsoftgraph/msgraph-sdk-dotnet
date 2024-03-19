@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
-    public enum ChatMessagePolicyViolationUserActionTypes {
+    public enum ChatMessagePolicyViolationUserActionTypes
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "override")]

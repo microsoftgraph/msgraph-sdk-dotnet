@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>The type of Exchange Connector sync requested.</summary>
-    public enum DeviceManagementExchangeConnectorSyncType {
+    public enum DeviceManagementExchangeConnectorSyncType
+    {
         /// <summary>Discover all the device in Exchange.</summary>
         [EnumMember(Value = "fullSync")]
         FullSync,

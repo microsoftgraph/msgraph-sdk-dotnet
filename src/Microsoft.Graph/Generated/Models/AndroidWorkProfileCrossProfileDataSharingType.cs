@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Android Work Profile cross profile data sharing type.</summary>
-    public enum AndroidWorkProfileCrossProfileDataSharingType {
+    public enum AndroidWorkProfileCrossProfileDataSharingType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

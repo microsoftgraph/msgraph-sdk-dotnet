@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Type of managed browser</summary>
     [Flags]
-    public enum ManagedBrowserType {
+    public enum ManagedBrowserType
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured = 1,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum RiskDetectionTimingType {
+    public enum RiskDetectionTimingType
+    {
         [EnumMember(Value = "notDefined")]
         NotDefined,
         [EnumMember(Value = "realtime")]

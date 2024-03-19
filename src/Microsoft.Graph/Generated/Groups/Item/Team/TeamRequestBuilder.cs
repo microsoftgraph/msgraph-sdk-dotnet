@@ -31,92 +31,113 @@ namespace Microsoft.Graph.Groups.Item.Team {
     /// <summary>
     /// Provides operations to manage the team property of the microsoft.graph.group entity.
     /// </summary>
-    public class TeamRequestBuilder : BaseRequestBuilder {
+    public class TeamRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
-        public AllChannelsRequestBuilder AllChannels { get =>
-            new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
+        public AllChannelsRequestBuilder AllChannels
+        {
+            get =>             new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the archive method.</summary>
-        public ArchiveRequestBuilder Archive { get =>
-            new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        public ArchiveRequestBuilder Archive
+        {
+            get =>             new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
-        public ChannelsRequestBuilder Channels { get =>
-            new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        public ChannelsRequestBuilder Channels
+        {
+            get =>             new ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clone method.</summary>
-        public CloneRequestBuilder Clone { get =>
-            new CloneRequestBuilder(PathParameters, RequestAdapter);
+        public CloneRequestBuilder Clone
+        {
+            get =>             new CloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeMigration method.</summary>
-        public CompleteMigrationRequestBuilder CompleteMigration { get =>
-            new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+        public CompleteMigrationRequestBuilder CompleteMigration
+        {
+            get =>             new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.team entity.</summary>
-        public GroupRequestBuilder Group { get =>
-            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        public GroupRequestBuilder Group
+        {
+            get =>             new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
-        public IncomingChannelsRequestBuilder IncomingChannels { get =>
-            new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
+        public IncomingChannelsRequestBuilder IncomingChannels
+        {
+            get =>             new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.team entity.</summary>
-        public InstalledAppsRequestBuilder InstalledApps { get =>
-            new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
+        public InstalledAppsRequestBuilder InstalledApps
+        {
+            get =>             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
-        public MembersRequestBuilder Members { get =>
-            new MembersRequestBuilder(PathParameters, RequestAdapter);
+        public MembersRequestBuilder Members
+        {
+            get =>             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.team entity.</summary>
-        public OperationsRequestBuilder Operations { get =>
-            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        public OperationsRequestBuilder Operations
+        {
+            get =>             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants { get =>
-            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        public PermissionGrantsRequestBuilder PermissionGrants
+        {
+            get =>             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.team entity.</summary>
-        public PhotoRequestBuilder Photo { get =>
-            new PhotoRequestBuilder(PathParameters, RequestAdapter);
+        public PhotoRequestBuilder Photo
+        {
+            get =>             new PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.</summary>
-        public PrimaryChannelRequestBuilder PrimaryChannel { get =>
-            new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
+        public PrimaryChannelRequestBuilder PrimaryChannel
+        {
+            get =>             new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schedule property of the microsoft.graph.team entity.</summary>
-        public ScheduleRequestBuilder Schedule { get =>
-            new ScheduleRequestBuilder(PathParameters, RequestAdapter);
+        public ScheduleRequestBuilder Schedule
+        {
+            get =>             new ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-        public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
-            new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        public SendActivityNotificationRequestBuilder SendActivityNotification
+        {
+            get =>             new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
-        public TagsRequestBuilder Tags { get =>
-            new TagsRequestBuilder(PathParameters, RequestAdapter);
+        public TagsRequestBuilder Tags
+        {
+            get =>             new TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the template property of the microsoft.graph.team entity.</summary>
-        public TemplateRequestBuilder Template { get =>
-            new TemplateRequestBuilder(PathParameters, RequestAdapter);
+        public TemplateRequestBuilder Template
+        {
+            get =>             new TemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public UnarchiveRequestBuilder Unarchive { get =>
-            new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+        public UnarchiveRequestBuilder Unarchive
+        {
+            get =>             new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TeamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24expand,%24select}", pathParameters) {
+        public TeamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TeamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24expand,%24select}", rawUrl) {
+        public TeamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property team for groups
@@ -126,13 +147,16 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -146,13 +170,16 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Team?> GetAsync(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Team?> GetAsync(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Team> GetAsync(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Team> GetAsync(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -167,14 +194,17 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Team?> PutAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Team?> PutAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Team> PutAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Team> PutAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -186,10 +216,12 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/groups/{group%2Did}/team", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -203,10 +235,12 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -221,10 +255,12 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/groups/{group%2Did}/team", PathParameters);
@@ -238,19 +274,22 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// </summary>
         /// <returns>A <see cref="TeamRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeamRequestBuilder WithUrl(string rawUrl) {
+        public TeamRequestBuilder WithUrl(string rawUrl)
+        {
             return new TeamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class TeamRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The team associated with this group.
         /// </summary>
-        public class TeamRequestBuilderGetQueryParameters {
+        public class TeamRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,13 +315,15 @@ namespace Microsoft.Graph.Groups.Item.Team {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamRequestBuilderGetRequestConfiguration : RequestConfiguration<TeamRequestBuilderGetQueryParameters> {
+        public class TeamRequestBuilderGetRequestConfiguration : RequestConfiguration<TeamRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class TeamRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Contains properties for Windows architecture.</summary>
     [Flags]
-    public enum WindowsArchitecture {
+    public enum WindowsArchitecture
+    {
         /// <summary>No flags set.</summary>
         [EnumMember(Value = "none")]
         None = 1,

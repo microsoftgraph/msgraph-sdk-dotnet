@@ -13,20 +13,23 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
     /// <summary>
     /// Provides operations to manage the resourcePerformanceMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.
     /// </summary>
-    public class ResourcePerformanceMetricsRequestBuilder : BaseRequestBuilder {
+    public class ResourcePerformanceMetricsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ResourcePerformanceMetricsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcePerformanceMetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24expand,%24select}", pathParameters) {
+        public ResourcePerformanceMetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ResourcePerformanceMetricsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcePerformanceMetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24expand,%24select}", rawUrl) {
+        public ResourcePerformanceMetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The scores and insights for the resource performance metrics.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsCategory?> GetAsync(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsCategory?> GetAsync(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsCategory> GetAsync(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsCategory> GetAsync(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsCategory>(requestInfo, UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// </summary>
         /// <returns>A <see cref="ResourcePerformanceMetricsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourcePerformanceMetricsRequestBuilder WithUrl(string rawUrl) {
+        public ResourcePerformanceMetricsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ResourcePerformanceMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The scores and insights for the resource performance metrics.
         /// </summary>
-        public class ResourcePerformanceMetricsRequestBuilderGetQueryParameters {
+        public class ResourcePerformanceMetricsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsBaselines.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResourcePerformanceMetricsRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters> {
+        public class ResourcePerformanceMetricsRequestBuilderGetRequestConfiguration : RequestConfiguration<ResourcePerformanceMetricsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

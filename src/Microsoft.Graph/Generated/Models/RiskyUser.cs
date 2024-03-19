@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class RiskyUser : Entity, IParsable {
+    public class RiskyUser : Entity, IParsable 
+    {
         /// <summary>The activity related to user risk level change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,27 +26,27 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
             set { BackingStore?.Set("isDeleted", value); }
         }
-        /// <summary>Indicates whether a user&apos;s risky state is being processed by the backend. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the backend is processing a user&apos;s risky state.</summary>
         public bool? IsProcessing {
             get { return BackingStore?.Get<bool?>("isProcessing"); }
             set { BackingStore?.Set("isProcessing", value); }
         }
-        /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
+        /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.</summary>
         public Microsoft.Graph.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
-        /// <summary>The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).</summary>
+        /// <summary>The date and time that the risky user was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RiskLastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("riskLastUpdatedDateTime"); }
             set { BackingStore?.Set("riskLastUpdatedDateTime", value); }
         }
-        /// <summary>Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).</summary>
+        /// <summary>Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.RiskLevel? RiskLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).</summary>
+        /// <summary>State of the user&apos;s risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.RiskState? RiskState {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
@@ -83,10 +84,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="RiskyUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RiskyUser CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new RiskyUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.riskyUserHistoryItem" => new RiskyUserHistoryItem(),
                 _ => new RiskyUser(),
             };
@@ -95,8 +98,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"history", n => { History = n.GetCollectionOfObjectValues<RiskyUserHistoryItem>(RiskyUserHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
                 {"isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
@@ -112,7 +117,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<RiskyUserHistoryItem>("history", History);

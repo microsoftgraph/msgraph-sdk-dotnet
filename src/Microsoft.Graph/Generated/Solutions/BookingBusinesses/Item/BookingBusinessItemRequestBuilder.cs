@@ -22,56 +22,68 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
     /// <summary>
     /// Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
     /// </summary>
-    public class BookingBusinessItemRequestBuilder : BaseRequestBuilder {
+    public class BookingBusinessItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.</summary>
-        public AppointmentsRequestBuilder Appointments { get =>
-            new AppointmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AppointmentsRequestBuilder Appointments
+        {
+            get =>             new AppointmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.</summary>
-        public CalendarViewRequestBuilder CalendarView { get =>
-            new CalendarViewRequestBuilder(PathParameters, RequestAdapter);
+        public CalendarViewRequestBuilder CalendarView
+        {
+            get =>             new CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.</summary>
-        public CustomersRequestBuilder Customers { get =>
-            new CustomersRequestBuilder(PathParameters, RequestAdapter);
+        public CustomersRequestBuilder Customers
+        {
+            get =>             new CustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.</summary>
-        public CustomQuestionsRequestBuilder CustomQuestions { get =>
-            new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
+        public CustomQuestionsRequestBuilder CustomQuestions
+        {
+            get =>             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getStaffAvailability method.</summary>
-        public GetStaffAvailabilityRequestBuilder GetStaffAvailability { get =>
-            new GetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
+        public GetStaffAvailabilityRequestBuilder GetStaffAvailability
+        {
+            get =>             new GetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
-        public PublishRequestBuilder Publish { get =>
-            new PublishRequestBuilder(PathParameters, RequestAdapter);
+        public PublishRequestBuilder Publish
+        {
+            get =>             new PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
-        public ServicesRequestBuilder Services { get =>
-            new ServicesRequestBuilder(PathParameters, RequestAdapter);
+        public ServicesRequestBuilder Services
+        {
+            get =>             new ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.</summary>
-        public StaffMembersRequestBuilder StaffMembers { get =>
-            new StaffMembersRequestBuilder(PathParameters, RequestAdapter);
+        public StaffMembersRequestBuilder StaffMembers
+        {
+            get =>             new StaffMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unpublish method.</summary>
-        public UnpublishRequestBuilder Unpublish { get =>
-            new UnpublishRequestBuilder(PathParameters, RequestAdapter);
+        public UnpublishRequestBuilder Unpublish
+        {
+            get =>             new UnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="BookingBusinessItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookingBusinessItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24expand,%24select}", pathParameters) {
+        public BookingBusinessItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BookingBusinessItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookingBusinessItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24expand,%24select}", rawUrl) {
+        public BookingBusinessItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete a bookingBusiness object.
@@ -82,13 +94,16 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -103,13 +118,16 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingBusiness?> GetAsync(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingBusiness?> GetAsync(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BookingBusiness> GetAsync(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingBusiness> GetAsync(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -125,14 +143,17 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BookingBusiness?> PatchAsync(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingBusiness?> PatchAsync(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BookingBusiness> PatchAsync(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BookingBusiness> PatchAsync(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -144,10 +165,12 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -161,10 +184,12 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -179,10 +204,12 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(BookingBusiness body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}", PathParameters);
@@ -196,19 +223,22 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// </summary>
         /// <returns>A <see cref="BookingBusinessItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BookingBusinessItemRequestBuilder WithUrl(string rawUrl) {
+        public BookingBusinessItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new BookingBusinessItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BookingBusinessItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class BookingBusinessItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get the properties and relationships of a bookingBusiness object.
         /// </summary>
-        public class BookingBusinessItemRequestBuilderGetQueryParameters {
+        public class BookingBusinessItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,13 +264,15 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BookingBusinessItemRequestBuilderGetRequestConfiguration : RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters> {
+        public class BookingBusinessItemRequestBuilderGetRequestConfiguration : RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BookingBusinessItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class BookingBusinessItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

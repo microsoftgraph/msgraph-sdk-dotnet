@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    public enum IdentityType {
+    public enum IdentityType
+    {
         [EnumMember(Value = "user")]
         User,
         [EnumMember(Value = "group")]

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class ServicePrincipalRiskDetection : Entity, IParsable {
+    public class ServicePrincipalRiskDetection : Entity, IParsable 
+    {
         /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.</summary>
         public ActivityType? Activity {
             get { return BackingStore?.Get<ActivityType?>("activity"); }
@@ -210,7 +211,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalRiskDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServicePrincipalRiskDetection CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ServicePrincipalRiskDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ServicePrincipalRiskDetection();
         }
@@ -218,8 +220,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"activity", n => { Activity = n.GetEnumValue<ActivityType>(); } },
                 {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 {"additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
@@ -246,7 +250,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ActivityType>("activity", Activity);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum OnlineMeetingRole {
+    public enum OnlineMeetingRole
+    {
         [EnumMember(Value = "attendee")]
         Attendee,
         [EnumMember(Value = "presenter")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>State Management Setting.</summary>
-    public enum StateManagementSetting {
+    public enum StateManagementSetting
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    public enum RuleOperation {
+    public enum RuleOperation
+    {
         [EnumMember(Value = "equals")]
         Equals,
         [EnumMember(Value = "notEquals")]

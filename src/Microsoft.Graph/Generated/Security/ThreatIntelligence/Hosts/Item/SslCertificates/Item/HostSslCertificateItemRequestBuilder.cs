@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
     /// <summary>
     /// Provides operations to manage the sslCertificates property of the microsoft.graph.security.host entity.
     /// </summary>
-    public class HostSslCertificateItemRequestBuilder : BaseRequestBuilder {
+    public class HostSslCertificateItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="HostSslCertificateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostSslCertificateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/sslCertificates/{hostSslCertificate%2Did}{?%24expand,%24select}", pathParameters) {
+        public HostSslCertificateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/sslCertificates/{hostSslCertificate%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="HostSslCertificateItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostSslCertificateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/sslCertificates/{hostSslCertificate%2Did}{?%24expand,%24select}", rawUrl) {
+        public HostSslCertificateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/sslCertificates/{hostSslCertificate%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The hostSslCertificates that are associated with this host.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HostSslCertificate?> GetAsync(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostSslCertificate?> GetAsync(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<HostSslCertificate> GetAsync(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostSslCertificate> GetAsync(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
         /// </summary>
         /// <returns>A <see cref="HostSslCertificateItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HostSslCertificateItemRequestBuilder WithUrl(string rawUrl) {
+        public HostSslCertificateItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new HostSslCertificateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The hostSslCertificates that are associated with this host.
         /// </summary>
-        public class HostSslCertificateItemRequestBuilderGetQueryParameters {
+        public class HostSslCertificateItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostSslCertificateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters> {
+        public class HostSslCertificateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<HostSslCertificateItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

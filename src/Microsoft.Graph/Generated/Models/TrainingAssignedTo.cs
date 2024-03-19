@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum TrainingAssignedTo {
+    public enum TrainingAssignedTo
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "allUsers")]

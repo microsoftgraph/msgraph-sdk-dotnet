@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum DeviceRiskScore {
+    public enum DeviceRiskScore
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "informational")]

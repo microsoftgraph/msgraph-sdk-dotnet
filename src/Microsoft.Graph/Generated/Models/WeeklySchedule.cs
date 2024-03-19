@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for a weekly schedule.</summary>
-    public enum WeeklySchedule {
+    public enum WeeklySchedule
+    {
         /// <summary>User Defined, default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

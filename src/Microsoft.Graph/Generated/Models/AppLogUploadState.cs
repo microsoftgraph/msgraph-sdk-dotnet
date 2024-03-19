@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>AppLogUploadStatus</summary>
-    public enum AppLogUploadState {
+    public enum AppLogUploadState
+    {
         /// <summary>Default. Indicates that request is waiting to be processed or under processing.</summary>
         [EnumMember(Value = "pending")]
         Pending,

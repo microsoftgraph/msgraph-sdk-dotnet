@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible types of Application</summary>
-    public enum ApplicationType {
+    public enum ApplicationType
+    {
         /// <summary>The windows universal application</summary>
         [EnumMember(Value = "universal")]
         Universal,

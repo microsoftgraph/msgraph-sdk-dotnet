@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for applicationGuardBlockFileTransfer</summary>
-    public enum ApplicationGuardBlockFileTransferType {
+    public enum ApplicationGuardBlockFileTransferType
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

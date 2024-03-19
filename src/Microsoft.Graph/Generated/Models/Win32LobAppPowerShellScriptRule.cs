@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// A complex type to store the PowerShell script rule data for a Win32 LOB app.
     /// </summary>
-    public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable {
+    public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable 
+    {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +80,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Win32LobAppPowerShellScriptRule"/> and sets the default values.
         /// </summary>
-        public Win32LobAppPowerShellScriptRule() : base() {
+        public Win32LobAppPowerShellScriptRule() : base()
+        {
             OdataType = "#microsoft.graph.win32LobAppPowerShellScriptRule";
         }
         /// <summary>
@@ -87,7 +89,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Win32LobAppPowerShellScriptRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppPowerShellScriptRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Win32LobAppPowerShellScriptRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Win32LobAppPowerShellScriptRule();
         }
@@ -95,8 +98,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"comparisonValue", n => { ComparisonValue = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
@@ -111,7 +116,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("comparisonValue", ComparisonValue);

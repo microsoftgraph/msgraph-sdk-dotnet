@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum OnenoteSourceService {
+    public enum OnenoteSourceService
+    {
         [EnumMember(Value = "Unknown")]
         Unknown,
         [EnumMember(Value = "OneDrive")]

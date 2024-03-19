@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class EducationAssignmentDefaults : Entity, IParsable {
+    public class EducationAssignmentDefaults : Entity, IParsable 
+    {
         /// <summary>Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.</summary>
         public EducationAddedStudentAction? AddedStudentAction {
             get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
@@ -22,7 +23,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Time?>("dueTime"); }
             set { BackingStore?.Set("dueTime", value); }
         }
-        /// <summary>Default Teams channel to which notifications will be sent. Default value is null.</summary>
+        /// <summary>Default Teams channel to which notifications are sent. Default value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationChannelUrl {
@@ -41,7 +42,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentDefaults"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationAssignmentDefaults CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EducationAssignmentDefaults CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new EducationAssignmentDefaults();
         }
@@ -49,8 +51,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
                 {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
                 {"dueTime", n => { DueTime = n.GetTimeValue(); } },
@@ -61,7 +65,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<EducationAddedStudentAction>("addedStudentAction", AddedStudentAction);

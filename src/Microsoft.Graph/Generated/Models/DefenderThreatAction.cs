@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Defender’s default action to take on detected Malware threats.</summary>
-    public enum DefenderThreatAction {
+    public enum DefenderThreatAction
+    {
         /// <summary>Apply action based on the update definition.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

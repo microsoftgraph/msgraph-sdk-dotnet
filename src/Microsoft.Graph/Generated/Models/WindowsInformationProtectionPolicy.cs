@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Policy for Windows information protection without MDM
     /// </summary>
-    public class WindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable {
+    public class WindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable 
+    {
         /// <summary>Offline interval before app data is wiped (days)</summary>
         public int? DaysWithoutContactBeforeUnenroll {
             get { return BackingStore?.Get<int?>("daysWithoutContactBeforeUnenroll"); }
@@ -81,7 +82,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsInformationProtectionPolicy"/> and sets the default values.
         /// </summary>
-        public WindowsInformationProtectionPolicy() : base() {
+        public WindowsInformationProtectionPolicy() : base()
+        {
             OdataType = "#microsoft.graph.windowsInformationProtectionPolicy";
         }
         /// <summary>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsInformationProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsInformationProtectionPolicy();
         }
@@ -97,8 +100,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"daysWithoutContactBeforeUnenroll", n => { DaysWithoutContactBeforeUnenroll = n.GetIntValue(); } },
                 {"mdmEnrollmentUrl", n => { MdmEnrollmentUrl = n.GetStringValue(); } },
                 {"minutesOfInactivityBeforeDeviceLock", n => { MinutesOfInactivityBeforeDeviceLock = n.GetIntValue(); } },
@@ -117,7 +122,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("daysWithoutContactBeforeUnenroll", DaysWithoutContactBeforeUnenroll);

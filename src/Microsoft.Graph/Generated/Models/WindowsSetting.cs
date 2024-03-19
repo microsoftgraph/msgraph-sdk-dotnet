@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class WindowsSetting : Entity, IParsable {
-        /// <summary>The instances property</summary>
+    public class WindowsSetting : Entity, IParsable 
+    {
+        /// <summary>A collection of setting values for a given windowsSetting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WindowsSettingInstance>? Instances {
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("instances", value); }
         }
 #endif
-        /// <summary>The payloadType property</summary>
+        /// <summary>The type of setting payloads contained in the instances navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PayloadType {
@@ -39,7 +40,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<WindowsSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }
         }
-        /// <summary>The windowsDeviceId property</summary>
+        /// <summary>A unique identifier for the device the setting might belong to if it is of the settingType backup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WindowsDeviceId {
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsSetting();
         }
@@ -66,8 +68,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"instances", n => { Instances = n.GetCollectionOfObjectValues<WindowsSettingInstance>(WindowsSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"payloadType", n => { PayloadType = n.GetStringValue(); } },
                 {"settingType", n => { SettingType = n.GetEnumValue<WindowsSettingType>(); } },
@@ -78,7 +82,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<WindowsSettingInstance>("instances", Instances);

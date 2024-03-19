@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy {
     /// <summary>
     /// Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
     /// </summary>
-    public class DeviceRegistrationPolicyRequestBuilder : BaseRequestBuilder {
+    public class DeviceRegistrationPolicyRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DeviceRegistrationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceRegistrationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}", pathParameters) {
+        public DeviceRegistrationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceRegistrationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceRegistrationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}", rawUrl) {
+        public DeviceRegistrationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get deviceRegistrationPolicy from policies
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DeviceRegistrationPolicy?> GetAsync(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DeviceRegistrationPolicy?> GetAsync(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DeviceRegistrationPolicy> GetAsync(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DeviceRegistrationPolicy> GetAsync(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceRegistrationPolicy>(requestInfo, Microsoft.Graph.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy {
         /// </summary>
         /// <returns>A <see cref="DeviceRegistrationPolicyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceRegistrationPolicyRequestBuilder WithUrl(string rawUrl) {
+        public DeviceRegistrationPolicyRequestBuilder WithUrl(string rawUrl)
+        {
             return new DeviceRegistrationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get deviceRegistrationPolicy from policies
         /// </summary>
-        public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters {
+        public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters 
+        {
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +102,8 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters> {
+        public class DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceRegistrationPolicyRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum Status {
+    public enum Status
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "updated")]

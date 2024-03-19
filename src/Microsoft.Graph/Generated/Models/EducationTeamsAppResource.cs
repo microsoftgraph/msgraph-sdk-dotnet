@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class EducationTeamsAppResource : EducationResource, IParsable {
+    public class EducationTeamsAppResource : EducationResource, IParsable 
+    {
         /// <summary>URL that points to the icon of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +66,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="EducationTeamsAppResource"/> and sets the default values.
         /// </summary>
-        public EducationTeamsAppResource() : base() {
+        public EducationTeamsAppResource() : base()
+        {
             OdataType = "#microsoft.graph.educationTeamsAppResource";
         }
         /// <summary>
@@ -73,7 +75,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="EducationTeamsAppResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationTeamsAppResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EducationTeamsAppResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new EducationTeamsAppResource();
         }
@@ -81,8 +84,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"appIconWebUrl", n => { AppIconWebUrl = n.GetStringValue(); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"teamsEmbeddedContentUrl", n => { TeamsEmbeddedContentUrl = n.GetStringValue(); } },
@@ -93,7 +98,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appIconWebUrl", AppIconWebUrl);

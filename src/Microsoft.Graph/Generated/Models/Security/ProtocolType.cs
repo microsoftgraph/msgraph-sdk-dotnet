@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum ProtocolType {
+    public enum ProtocolType
+    {
         [EnumMember(Value = "tcp")]
         Tcp,
         [EnumMember(Value = "udp")]

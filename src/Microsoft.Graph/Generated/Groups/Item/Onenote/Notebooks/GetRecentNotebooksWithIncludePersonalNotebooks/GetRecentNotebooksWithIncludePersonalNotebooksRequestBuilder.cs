@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
     /// <summary>
     /// Provides operations to call the getRecentNotebooks method.
     /// </summary>
-    public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder : BaseRequestBuilder {
+    public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="includePersonalNotebooks">Usage: includePersonalNotebooks={includePersonalNotebooks}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? includePersonalNotebooks = default) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks}){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? includePersonalNotebooks = default) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks}){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
             if (includePersonalNotebooks != null) PathParameters.Add("includePersonalNotebooks", includePersonalNotebooks);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks}){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks}){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getRecentNotebooks
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse?> GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponseAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse?> GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponseAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse> GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponseAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse> GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponseAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse>(requestInfo, GetRecentNotebooksWithIncludePersonalNotebooksGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         [Obsolete("This method is obsolete. Use GetAsGetRecentNotebooksWithIncludePersonalNotebooksGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksResponse?> GetAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksResponse?> GetAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksResponse> GetAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRecentNotebooksWithIncludePersonalNotebooksResponse> GetAsync(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetRecentNotebooksWithIncludePersonalNotebooksResponse>(requestInfo, GetRecentNotebooksWithIncludePersonalNotebooksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         /// </summary>
         /// <returns>A <see cref="GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder WithUrl(string rawUrl) {
+        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getRecentNotebooks
         /// </summary>
-        public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters {
+        public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -133,7 +146,8 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWithIn
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters> {
+        public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum BrowserSiteMergeType {
+    public enum BrowserSiteMergeType
+    {
         /// <summary>No merge type</summary>
         [EnumMember(Value = "noMerge")]
         NoMerge,

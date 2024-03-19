@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
-    public enum Win32LobAppMsiPackageType {
+    public enum Win32LobAppMsiPackageType
+    {
         /// <summary>Indicates a per-machine app package.</summary>
         [EnumMember(Value = "perMachine")]
         PerMachine,
