@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class MailAssessmentRequest : ThreatAssessmentRequest, IParsable {
+    public class MailAssessmentRequest : ThreatAssessmentRequest, IParsable 
+    {
         /// <summary>The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
         public MailDestinationRoutingReason? DestinationRoutingReason {
             get { return BackingStore?.Get<MailDestinationRoutingReason?>("destinationRoutingReason"); }
@@ -42,7 +43,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="MailAssessmentRequest"/> and sets the default values.
         /// </summary>
-        public MailAssessmentRequest() : base() {
+        public MailAssessmentRequest() : base()
+        {
             OdataType = "#microsoft.graph.mailAssessmentRequest";
         }
         /// <summary>
@@ -50,7 +52,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="MailAssessmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MailAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MailAssessmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MailAssessmentRequest();
         }
@@ -58,8 +61,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"destinationRoutingReason", n => { DestinationRoutingReason = n.GetEnumValue<MailDestinationRoutingReason>(); } },
                 {"messageUri", n => { MessageUri = n.GetStringValue(); } },
                 {"recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
@@ -69,7 +74,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MailDestinationRoutingReason>("destinationRoutingReason", DestinationRoutingReason);

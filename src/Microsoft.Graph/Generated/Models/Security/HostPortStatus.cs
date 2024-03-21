@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum HostPortStatus {
+    public enum HostPortStatus
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "filtered")]

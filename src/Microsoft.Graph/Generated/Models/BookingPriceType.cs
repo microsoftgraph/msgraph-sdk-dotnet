@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Represents the type of pricing of a booking service.</summary>
-    public enum BookingPriceType {
+    public enum BookingPriceType
+    {
         /// <summary>The price of the service is not defined.</summary>
         [EnumMember(Value = "undefined")]
         Undefined,

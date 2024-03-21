@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Sites.GetAllSites {
     [Obsolete("This class is obsolete. Use GetAllSitesGetResponse instead.")]
-    public class GetAllSitesResponse : GetAllSitesGetResponse, IParsable {
+    public class GetAllSitesResponse : GetAllSitesGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetAllSitesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetAllSitesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetAllSitesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetAllSitesResponse();
         }

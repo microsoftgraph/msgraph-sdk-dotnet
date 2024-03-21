@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Windows 10 Edition type.</summary>
-    public enum Windows10EditionType {
+    public enum Windows10EditionType
+    {
         /// <summary>Windows 10 Enterprise</summary>
         [EnumMember(Value = "windows10Enterprise")]
         Windows10Enterprise,

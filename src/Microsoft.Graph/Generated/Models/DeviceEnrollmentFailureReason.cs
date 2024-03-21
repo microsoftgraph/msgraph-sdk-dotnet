@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Top level failure categories for enrollment.</summary>
-    public enum DeviceEnrollmentFailureReason {
+    public enum DeviceEnrollmentFailureReason
+    {
         /// <summary>Default value, failure reason is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

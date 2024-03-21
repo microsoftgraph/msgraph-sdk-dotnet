@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class DomainDnsRecord : Entity, IParsable {
+    public class DomainDnsRecord : Entity, IParsable 
+    {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
@@ -63,10 +64,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="DomainDnsRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DomainDnsRecord CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.domainDnsCnameRecord" => new DomainDnsCnameRecord(),
                 "#microsoft.graph.domainDnsMxRecord" => new DomainDnsMxRecord(),
                 "#microsoft.graph.domainDnsSrvRecord" => new DomainDnsSrvRecord(),
@@ -79,8 +82,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
                 {"label", n => { Label = n.GetStringValue(); } },
                 {"recordType", n => { RecordType = n.GetStringValue(); } },
@@ -92,7 +97,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isOptional", IsOptional);

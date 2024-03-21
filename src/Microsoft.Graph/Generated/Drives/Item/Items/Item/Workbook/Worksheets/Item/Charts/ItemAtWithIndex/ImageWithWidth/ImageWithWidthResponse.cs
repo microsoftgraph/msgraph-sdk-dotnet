@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemAtWithIndex.ImageWithWidth {
     [Obsolete("This class is obsolete. Use ImageWithWidthGetResponse instead.")]
-    public class ImageWithWidthResponse : ImageWithWidthGetResponse, IParsable {
+    public class ImageWithWidthResponse : ImageWithWidthGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="ImageWithWidthResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ImageWithWidthResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ImageWithWidthResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ImageWithWidthResponse();
         }

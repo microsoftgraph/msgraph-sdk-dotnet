@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum BrowserSiteCompatibilityMode {
+    public enum BrowserSiteCompatibilityMode
+    {
         /// <summary>Loads the site using default compatibility mode.</summary>
         [EnumMember(Value = "default")]
         Default,

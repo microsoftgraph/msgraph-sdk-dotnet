@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
     [Flags]
-    public enum LifecycleTaskCategory {
+    public enum LifecycleTaskCategory
+    {
         [EnumMember(Value = "joiner")]
         Joiner = 1,
         [EnumMember(Value = "leaver")]

@@ -30,88 +30,108 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
     /// <summary>
     /// Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
     /// </summary>
-    public class ThreatIntelligenceRequestBuilder : BaseRequestBuilder {
+    public class ThreatIntelligenceRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public ArticleIndicatorsRequestBuilder ArticleIndicators { get =>
-            new ArticleIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public ArticleIndicatorsRequestBuilder ArticleIndicators
+        {
+            get =>             new ArticleIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public ArticlesRequestBuilder Articles { get =>
-            new ArticlesRequestBuilder(PathParameters, RequestAdapter);
+        public ArticlesRequestBuilder Articles
+        {
+            get =>             new ArticlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostComponents property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostComponentsRequestBuilder HostComponents { get =>
-            new HostComponentsRequestBuilder(PathParameters, RequestAdapter);
+        public HostComponentsRequestBuilder HostComponents
+        {
+            get =>             new HostComponentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostCookies property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostCookiesRequestBuilder HostCookies { get =>
-            new HostCookiesRequestBuilder(PathParameters, RequestAdapter);
+        public HostCookiesRequestBuilder HostCookies
+        {
+            get =>             new HostCookiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostPairsRequestBuilder HostPairs { get =>
-            new HostPairsRequestBuilder(PathParameters, RequestAdapter);
+        public HostPairsRequestBuilder HostPairs
+        {
+            get =>             new HostPairsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostPorts property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostPortsRequestBuilder HostPorts { get =>
-            new HostPortsRequestBuilder(PathParameters, RequestAdapter);
+        public HostPortsRequestBuilder HostPorts
+        {
+            get =>             new HostPortsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostsRequestBuilder Hosts { get =>
-            new HostsRequestBuilder(PathParameters, RequestAdapter);
+        public HostsRequestBuilder Hosts
+        {
+            get =>             new HostsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostSslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostSslCertificatesRequestBuilder HostSslCertificates { get =>
-            new HostSslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        public HostSslCertificatesRequestBuilder HostSslCertificates
+        {
+            get =>             new HostSslCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public HostTrackersRequestBuilder HostTrackers { get =>
-            new HostTrackersRequestBuilder(PathParameters, RequestAdapter);
+        public HostTrackersRequestBuilder HostTrackers
+        {
+            get =>             new HostTrackersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public IntelligenceProfileIndicatorsRequestBuilder IntelligenceProfileIndicators { get =>
-            new IntelligenceProfileIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public IntelligenceProfileIndicatorsRequestBuilder IntelligenceProfileIndicators
+        {
+            get =>             new IntelligenceProfileIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intelProfiles property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public IntelProfilesRequestBuilder IntelProfiles { get =>
-            new IntelProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public IntelProfilesRequestBuilder IntelProfiles
+        {
+            get =>             new IntelProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public PassiveDnsRecordsRequestBuilder PassiveDnsRecords { get =>
-            new PassiveDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+        public PassiveDnsRecordsRequestBuilder PassiveDnsRecords
+        {
+            get =>             new PassiveDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public SslCertificatesRequestBuilder SslCertificates { get =>
-            new SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        public SslCertificatesRequestBuilder SslCertificates
+        {
+            get =>             new SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public SubdomainsRequestBuilder Subdomains { get =>
-            new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
+        public SubdomainsRequestBuilder Subdomains
+        {
+            get =>             new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public VulnerabilitiesRequestBuilder Vulnerabilities { get =>
-            new VulnerabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        public VulnerabilitiesRequestBuilder Vulnerabilities
+        {
+            get =>             new VulnerabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public WhoisHistoryRecordsRequestBuilder WhoisHistoryRecords { get =>
-            new WhoisHistoryRecordsRequestBuilder(PathParameters, RequestAdapter);
+        public WhoisHistoryRecordsRequestBuilder WhoisHistoryRecords
+        {
+            get =>             new WhoisHistoryRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
-        public WhoisRecordsRequestBuilder WhoisRecords { get =>
-            new WhoisRecordsRequestBuilder(PathParameters, RequestAdapter);
+        public WhoisRecordsRequestBuilder WhoisRecords
+        {
+            get =>             new WhoisRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ThreatIntelligenceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", pathParameters) {
+        public ThreatIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThreatIntelligenceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", rawUrl) {
+        public ThreatIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property threatIntelligence for security
@@ -121,13 +141,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -141,13 +164,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence?> GetAsync(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence?> GetAsync(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence> GetAsync(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence> GetAsync(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -162,14 +188,17 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence?> PatchAsync(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence?> PatchAsync(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence> PatchAsync(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.ThreatIntelligence> PatchAsync(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -181,10 +210,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/security/threatIntelligence", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -198,10 +229,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -216,10 +249,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.ThreatIntelligence body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/security/threatIntelligence", PathParameters);
@@ -233,19 +268,22 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// </summary>
         /// <returns>A <see cref="ThreatIntelligenceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ThreatIntelligenceRequestBuilder WithUrl(string rawUrl) {
+        public ThreatIntelligenceRequestBuilder WithUrl(string rawUrl)
+        {
             return new ThreatIntelligenceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThreatIntelligenceRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ThreatIntelligenceRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get threatIntelligence from security
         /// </summary>
-        public class ThreatIntelligenceRequestBuilderGetQueryParameters {
+        public class ThreatIntelligenceRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -271,13 +309,15 @@ namespace Microsoft.Graph.Security.ThreatIntelligence {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThreatIntelligenceRequestBuilderGetRequestConfiguration : RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters> {
+        public class ThreatIntelligenceRequestBuilderGetRequestConfiguration : RequestConfiguration<ThreatIntelligenceRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThreatIntelligenceRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ThreatIntelligenceRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

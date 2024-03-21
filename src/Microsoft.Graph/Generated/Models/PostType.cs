@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PostType {
+    public enum PostType
+    {
         [EnumMember(Value = "regular")]
         Regular,
         [EnumMember(Value = "quick")]

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
-    public class TaskObject : Microsoft.Graph.Models.Entity, IParsable {
+    public class TaskObject : Microsoft.Graph.Models.Entity, IParsable 
+    {
         /// <summary>Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +26,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.</summary>
+        /// <summary>A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren&apos;t run. Optional.</summary>
         public bool? ContinueOnError {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>An integer that states in what order the task will run in a workflow.Supports $orderby.</summary>
+        /// <summary>An integer that states in what order the task runs in a workflow.Supports $orderby.</summary>
         public int? ExecutionSequence {
             get { return BackingStore?.Get<int?>("executionSequence"); }
             set { BackingStore?.Set("executionSequence", value); }
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).</summary>
+        /// <summary>A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaskDefinitionId {
@@ -101,7 +102,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// </summary>
         /// <returns>A <see cref="TaskObject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TaskObject CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new TaskObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TaskObject();
         }
@@ -109,8 +111,10 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"arguments", n => { Arguments = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"category", n => { Category = n.GetEnumValue<LifecycleTaskCategory>(); } },
                 {"continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
@@ -126,7 +130,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>("arguments", Arguments);

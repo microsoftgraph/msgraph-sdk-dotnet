@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class Contact : OutlookItem, IParsable {
+    public class Contact : OutlookItem, IParsable 
+    {
         /// <summary>The name of the contact&apos;s assistant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,7 +222,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("homePhones", value); }
         }
 #endif
-        /// <summary>The imAddresses property</summary>
+        /// <summary>The contact&apos;s instant messaging (IM) addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ImAddresses {
@@ -235,7 +236,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("imAddresses", value); }
         }
 #endif
-        /// <summary>The initials property</summary>
+        /// <summary>The contact&apos;s initials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Initials {
@@ -249,7 +250,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("initials", value); }
         }
 #endif
-        /// <summary>The jobTitle property</summary>
+        /// <summary>The contact’s job title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobTitle {
@@ -263,7 +264,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
-        /// <summary>The manager property</summary>
+        /// <summary>The name of the contact&apos;s manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manager {
@@ -277,7 +278,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("manager", value); }
         }
 #endif
-        /// <summary>The middleName property</summary>
+        /// <summary>The contact&apos;s middle name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MiddleName {
@@ -291,7 +292,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("middleName", value); }
         }
 #endif
-        /// <summary>The mobilePhone property</summary>
+        /// <summary>The contact&apos;s mobile phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MobilePhone {
@@ -319,7 +320,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The nickName property</summary>
+        /// <summary>The contact&apos;s nickname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NickName {
@@ -333,7 +334,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("nickName", value); }
         }
 #endif
-        /// <summary>The officeLocation property</summary>
+        /// <summary>The location of the contact&apos;s office.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfficeLocation {
@@ -347,7 +348,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("officeLocation", value); }
         }
 #endif
-        /// <summary>The otherAddress property</summary>
+        /// <summary>Other addresses for the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PhysicalAddress? OtherAddress {
@@ -361,7 +362,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("otherAddress", value); }
         }
 #endif
-        /// <summary>The parentFolderId property</summary>
+        /// <summary>The ID of the contact&apos;s parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentFolderId {
@@ -375,7 +376,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #endif
-        /// <summary>The personalNotes property</summary>
+        /// <summary>The user&apos;s notes about the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersonalNotes {
@@ -403,7 +404,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("photo", value); }
         }
 #endif
-        /// <summary>The profession property</summary>
+        /// <summary>The contact&apos;s profession.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Profession {
@@ -431,7 +432,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The spouseName property</summary>
+        /// <summary>The name of the contact&apos;s spouse/partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SpouseName {
@@ -445,7 +446,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("spouseName", value); }
         }
 #endif
-        /// <summary>The surname property</summary>
+        /// <summary>The contact&apos;s surname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Surname {
@@ -459,7 +460,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("surname", value); }
         }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The contact&apos;s title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title {
@@ -473,7 +474,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("title", value); }
         }
 #endif
-        /// <summary>The yomiCompanyName property</summary>
+        /// <summary>The phonetic Japanese company name of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YomiCompanyName {
@@ -487,7 +488,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("yomiCompanyName", value); }
         }
 #endif
-        /// <summary>The yomiGivenName property</summary>
+        /// <summary>The phonetic Japanese given name (first name) of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YomiGivenName {
@@ -501,7 +502,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("yomiGivenName", value); }
         }
 #endif
-        /// <summary>The yomiSurname property</summary>
+        /// <summary>The phonetic Japanese surname (last name)  of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? YomiSurname {
@@ -518,7 +519,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="Contact"/> and sets the default values.
         /// </summary>
-        public Contact() : base() {
+        public Contact() : base()
+        {
             OdataType = "#microsoft.graph.contact";
         }
         /// <summary>
@@ -526,7 +528,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="Contact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Contact CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Contact CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Contact();
         }
@@ -534,8 +537,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"assistantName", n => { AssistantName = n.GetStringValue(); } },
                 {"birthday", n => { Birthday = n.GetDateTimeOffsetValue(); } },
                 {"businessAddress", n => { BusinessAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
@@ -579,7 +584,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assistantName", AssistantName);

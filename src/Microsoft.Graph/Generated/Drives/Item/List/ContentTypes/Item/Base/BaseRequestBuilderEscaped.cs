@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.Base {
     /// <summary>
     /// Provides operations to manage the base property of the microsoft.graph.contentType entity.
     /// </summary>
-    public class BaseRequestBuilderEscaped : BaseRequestBuilder {
+    public class BaseRequestBuilderEscaped : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="BaseRequestBuilderEscaped"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseRequestBuilderEscaped(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", pathParameters) {
+        public BaseRequestBuilderEscaped(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BaseRequestBuilderEscaped"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseRequestBuilderEscaped(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", rawUrl) {
+        public BaseRequestBuilderEscaped(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Parent contentType from which this content type is derived.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.Base {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentType?> GetAsync(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentType?> GetAsync(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ContentType> GetAsync(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentType> GetAsync(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.Base {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.Base {
         /// </summary>
         /// <returns>A <see cref="BaseRequestBuilderEscaped"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BaseRequestBuilderEscaped WithUrl(string rawUrl) {
+        public BaseRequestBuilderEscaped WithUrl(string rawUrl)
+        {
             return new BaseRequestBuilderEscaped(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Parent contentType from which this content type is derived.
         /// </summary>
-        public class BaseRequestBuilderGetQueryParameters {
+        public class BaseRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.Base {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BaseRequestBuilderGetRequestConfiguration : RequestConfiguration<BaseRequestBuilderGetQueryParameters> {
+        public class BaseRequestBuilderGetRequestConfiguration : RequestConfiguration<BaseRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

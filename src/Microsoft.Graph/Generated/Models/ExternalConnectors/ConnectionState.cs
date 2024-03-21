@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    public enum ConnectionState {
+    public enum ConnectionState
+    {
         [EnumMember(Value = "draft")]
         Draft,
         [EnumMember(Value = "ready")]

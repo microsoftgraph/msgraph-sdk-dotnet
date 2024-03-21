@@ -9,7 +9,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Represents diagnostics status.
     /// </summary>
-    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class ManagedAppDiagnosticStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -76,7 +77,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="ManagedAppDiagnosticStatus"/> and sets the default values.
         /// </summary>
-        public ManagedAppDiagnosticStatus() {
+        public ManagedAppDiagnosticStatus()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -85,7 +87,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ManagedAppDiagnosticStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagedAppDiagnosticStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ManagedAppDiagnosticStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ManagedAppDiagnosticStatus();
         }
@@ -93,8 +96,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"mitigationInstruction", n => { MitigationInstruction = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
@@ -105,7 +110,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("mitigationInstruction", MitigationInstruction);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum UserExperienceAnalyticsHealthState {
+    public enum UserExperienceAnalyticsHealthState
+    {
         /// <summary>Indicates that the health state is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

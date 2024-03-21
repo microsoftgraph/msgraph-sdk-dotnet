@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum OnenoteUserRole {
+    public enum OnenoteUserRole
+    {
         [EnumMember(Value = "None")]
         None,
         [EnumMember(Value = "Owner")]

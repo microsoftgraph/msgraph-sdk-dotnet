@@ -17,35 +17,41 @@ namespace Microsoft.Graph.TenantRelationships {
     /// <summary>
     /// Provides operations to manage the tenantRelationship singleton.
     /// </summary>
-    public class TenantRelationshipsRequestBuilder : BaseRequestBuilder {
+    public class TenantRelationshipsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.</summary>
-        public DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers { get =>
-            new DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
+        public DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers
+        {
+            get =>             new DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
-        public DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships { get =>
-            new DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        public DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships
+        {
+            get =>             new DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TenantRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantRelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships{?%24expand,%24select}", pathParameters) {
+        public TenantRelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TenantRelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantRelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships{?%24expand,%24select}", rawUrl) {
+        public TenantRelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Provides operations to call the findTenantInformationByDomainName method.
         /// </summary>
         /// <returns>A <see cref="FindTenantInformationByDomainNameWithDomainNameRequestBuilder"/></returns>
         /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
-        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName) {
+        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName)
+        {
             if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
             return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
         }
@@ -54,7 +60,8 @@ namespace Microsoft.Graph.TenantRelationships {
         /// </summary>
         /// <returns>A <see cref="FindTenantInformationByTenantIdWithTenantIdRequestBuilder"/></returns>
         /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId) {
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId)
+        {
             if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
             return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
@@ -67,13 +74,16 @@ namespace Microsoft.Graph.TenantRelationships {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TenantRelationship?> GetAsync(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantRelationship?> GetAsync(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TenantRelationship> GetAsync(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantRelationship> GetAsync(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -88,14 +98,17 @@ namespace Microsoft.Graph.TenantRelationships {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TenantRelationship?> PatchAsync(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantRelationship?> PatchAsync(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TenantRelationship> PatchAsync(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantRelationship> PatchAsync(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -107,10 +120,12 @@ namespace Microsoft.Graph.TenantRelationships {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -125,10 +140,12 @@ namespace Microsoft.Graph.TenantRelationships {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(TenantRelationship body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/tenantRelationships", PathParameters);
@@ -142,13 +159,15 @@ namespace Microsoft.Graph.TenantRelationships {
         /// </summary>
         /// <returns>A <see cref="TenantRelationshipsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TenantRelationshipsRequestBuilder WithUrl(string rawUrl) {
+        public TenantRelationshipsRequestBuilder WithUrl(string rawUrl)
+        {
             return new TenantRelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get tenantRelationships
         /// </summary>
-        public class TenantRelationshipsRequestBuilderGetQueryParameters {
+        public class TenantRelationshipsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,13 +193,15 @@ namespace Microsoft.Graph.TenantRelationships {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters> {
+        public class TenantRelationshipsRequestBuilderGetRequestConfiguration : RequestConfiguration<TenantRelationshipsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TenantRelationshipsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class TenantRelationshipsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

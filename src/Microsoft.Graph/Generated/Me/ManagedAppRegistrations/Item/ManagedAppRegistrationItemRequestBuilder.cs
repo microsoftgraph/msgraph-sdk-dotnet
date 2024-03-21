@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
     /// <summary>
     /// Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
     /// </summary>
-    public class ManagedAppRegistrationItemRequestBuilder : BaseRequestBuilder {
+    public class ManagedAppRegistrationItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedAppRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", pathParameters) {
+        public ManagedAppRegistrationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ManagedAppRegistrationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedAppRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", rawUrl) {
+        public ManagedAppRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Zero or more managed app registrations that belong to the user.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAppRegistration?> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedAppRegistration?> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ManagedAppRegistration> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedAppRegistration> GetAsync(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
         /// </summary>
         /// <returns>A <see cref="ManagedAppRegistrationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedAppRegistrationItemRequestBuilder WithUrl(string rawUrl) {
+        public ManagedAppRegistrationItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ManagedAppRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Zero or more managed app registrations that belong to the user.
         /// </summary>
-        public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters {
+        public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Me.ManagedAppRegistrations.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters> {
+        public class ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedAppRegistrationItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

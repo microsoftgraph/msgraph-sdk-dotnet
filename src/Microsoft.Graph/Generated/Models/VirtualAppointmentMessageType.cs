@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum VirtualAppointmentMessageType {
+    public enum VirtualAppointmentMessageType
+    {
         [EnumMember(Value = "confirmation")]
         Confirmation,
         [EnumMember(Value = "reschedule")]

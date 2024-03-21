@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport {
-    public class GetCompliancePolicyNonComplianceSummaryReportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class GetCompliancePolicyNonComplianceSummaryReportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -125,7 +126,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// <summary>
         /// Instantiates a new <see cref="GetCompliancePolicyNonComplianceSummaryReportPostRequestBody"/> and sets the default values.
         /// </summary>
-        public GetCompliancePolicyNonComplianceSummaryReportPostRequestBody() {
+        public GetCompliancePolicyNonComplianceSummaryReportPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -134,7 +136,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// </summary>
         /// <returns>A <see cref="GetCompliancePolicyNonComplianceSummaryReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetCompliancePolicyNonComplianceSummaryReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GetCompliancePolicyNonComplianceSummaryReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetCompliancePolicyNonComplianceSummaryReportPostRequestBody();
         }
@@ -142,8 +145,10 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"filter", n => { Filter = n.GetStringValue(); } },
                 {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -159,7 +164,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCompliancePolicyNonComplia
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);

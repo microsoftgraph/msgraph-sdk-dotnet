@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class OpenShiftItem : ShiftItem, IParsable {
+    public class OpenShiftItem : ShiftItem, IParsable 
+    {
         /// <summary>Count of the number of slots for the given open shift.</summary>
         public int? OpenSlotCount {
             get { return BackingStore?.Get<int?>("openSlotCount"); }
@@ -14,7 +15,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="OpenShiftItem"/> and sets the default values.
         /// </summary>
-        public OpenShiftItem() : base() {
+        public OpenShiftItem() : base()
+        {
             OdataType = "#microsoft.graph.openShiftItem";
         }
         /// <summary>
@@ -22,7 +24,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="OpenShiftItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenShiftItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new OpenShiftItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OpenShiftItem();
         }
@@ -30,8 +33,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"openSlotCount", n => { OpenSlotCount = n.GetIntValue(); } },
             };
         }
@@ -39,7 +44,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("openSlotCount", OpenSlotCount);

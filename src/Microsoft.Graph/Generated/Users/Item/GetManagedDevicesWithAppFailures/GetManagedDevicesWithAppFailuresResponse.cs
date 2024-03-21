@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures {
     [Obsolete("This class is obsolete. Use GetManagedDevicesWithAppFailuresGetResponse instead.")]
-    public class GetManagedDevicesWithAppFailuresResponse : GetManagedDevicesWithAppFailuresGetResponse, IParsable {
+    public class GetManagedDevicesWithAppFailuresResponse : GetManagedDevicesWithAppFailuresGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetManagedDevicesWithAppFailuresResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetManagedDevicesWithAppFailuresResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetManagedDevicesWithAppFailuresResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetManagedDevicesWithAppFailuresResponse();
         }

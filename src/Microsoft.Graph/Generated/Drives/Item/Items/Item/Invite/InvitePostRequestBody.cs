@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
-    public class InvitePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class InvitePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -103,7 +104,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
         /// <summary>
         /// Instantiates a new <see cref="InvitePostRequestBody"/> and sets the default values.
         /// </summary>
-        public InvitePostRequestBody() {
+        public InvitePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -112,7 +114,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
         /// </summary>
         /// <returns>A <see cref="InvitePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static InvitePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new InvitePostRequestBody();
         }
@@ -120,8 +123,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetStringValue(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"password", n => { Password = n.GetStringValue(); } },
@@ -136,7 +141,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("message", Message);

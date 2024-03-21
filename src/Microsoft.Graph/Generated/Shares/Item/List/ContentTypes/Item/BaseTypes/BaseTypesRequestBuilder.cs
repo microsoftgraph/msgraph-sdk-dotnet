@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes {
     /// <summary>
     /// Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
     /// </summary>
-    public class BaseTypesRequestBuilder : BaseRequestBuilder {
+    public class BaseTypesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
         /// <param name="position">The unique identifier of contentType</param>
         /// <returns>A <see cref="Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("contentType%2Did1", position);
-            return new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("contentType%2Did1", position);
+                return new Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="BaseTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/baseTypes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public BaseTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/baseTypes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BaseTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/baseTypes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public BaseTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/baseTypes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// The collection of content types that are ancestors of this content type.
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentTypeCollectionResponse?> GetAsync(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentTypeCollectionResponse?> GetAsync(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ContentTypeCollectionResponse> GetAsync(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentTypeCollectionResponse> GetAsync(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -69,10 +80,12 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +97,15 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes {
         /// </summary>
         /// <returns>A <see cref="BaseTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BaseTypesRequestBuilder WithUrl(string rawUrl) {
+        public BaseTypesRequestBuilder WithUrl(string rawUrl)
+        {
             return new BaseTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of content types that are ancestors of this content type.
         /// </summary>
-        public class BaseTypesRequestBuilderGetQueryParameters {
+        public class BaseTypesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -155,7 +170,8 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.BaseTypes {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BaseTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters> {
+        public class BaseTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<BaseTypesRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

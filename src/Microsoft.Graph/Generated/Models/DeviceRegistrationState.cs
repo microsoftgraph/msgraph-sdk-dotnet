@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Device registration status.</summary>
-    public enum DeviceRegistrationState {
+    public enum DeviceRegistrationState
+    {
         /// <summary>The device is not registered.</summary>
         [EnumMember(Value = "notRegistered")]
         NotRegistered,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum KubernetesPlatform {
+    public enum KubernetesPlatform
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "aks")]

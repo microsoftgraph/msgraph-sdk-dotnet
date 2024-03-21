@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ExchangeIdFormat {
+    public enum ExchangeIdFormat
+    {
         [EnumMember(Value = "entryId")]
         EntryId,
         [EnumMember(Value = "ewsId")]

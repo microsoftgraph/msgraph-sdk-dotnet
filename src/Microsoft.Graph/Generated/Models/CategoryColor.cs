@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum CategoryColor {
+    public enum CategoryColor
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "preset0")]

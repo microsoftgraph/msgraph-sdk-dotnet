@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ConnectionDirection {
+    public enum ConnectionDirection
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "inbound")]

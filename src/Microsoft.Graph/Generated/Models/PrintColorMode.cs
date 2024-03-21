@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PrintColorMode {
+    public enum PrintColorMode
+    {
         [EnumMember(Value = "blackAndWhite")]
         BlackAndWhite,
         [EnumMember(Value = "grayscale")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Operating System restart category.</summary>
-    public enum UserExperienceAnalyticsOperatingSystemRestartCategory {
+    public enum UserExperienceAnalyticsOperatingSystemRestartCategory
+    {
         /// <summary>Default. Set to unknown if device operating system restart category has not yet been calculated.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

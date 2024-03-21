@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AgreementAcceptanceState {
+    public enum AgreementAcceptanceState
+    {
         [EnumMember(Value = "accepted")]
         Accepted,
         [EnumMember(Value = "declined")]

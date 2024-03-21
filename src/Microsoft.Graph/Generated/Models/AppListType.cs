@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values of the compliance app list.</summary>
-    public enum AppListType {
+    public enum AppListType
+    {
         /// <summary>Default value, no intent.</summary>
         [EnumMember(Value = "none")]
         None,

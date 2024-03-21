@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Pin Character Requirements</summary>
-    public enum WindowsInformationProtectionPinCharacterRequirements {
+    public enum WindowsInformationProtectionPinCharacterRequirements
+    {
         /// <summary>Not allow</summary>
         [EnumMember(Value = "notAllow")]
         NotAllow,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>The reason for which a user has been flagged</summary>
-    public enum ManagedAppFlaggedReason {
+    public enum ManagedAppFlaggedReason
+    {
         /// <summary>No issue.</summary>
         [EnumMember(Value = "none")]
         None,

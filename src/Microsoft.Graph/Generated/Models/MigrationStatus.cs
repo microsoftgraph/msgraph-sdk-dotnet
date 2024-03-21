@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum MigrationStatus {
+    public enum MigrationStatus
+    {
         [EnumMember(Value = "ready")]
         Ready,
         [EnumMember(Value = "needsReview")]

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
-    public class MediaStream : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class MediaStream : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -190,7 +191,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// Instantiates a new <see cref="MediaStream"/> and sets the default values.
         /// </summary>
-        public MediaStream() {
+        public MediaStream()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -199,7 +201,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// </summary>
         /// <returns>A <see cref="MediaStream"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MediaStream CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MediaStream CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MediaStream();
         }
@@ -207,8 +210,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"audioCodec", n => { AudioCodec = n.GetEnumValue<AudioCodec>(); } },
                 {"averageAudioDegradation", n => { AverageAudioDegradation = n.GetFloatValue(); } },
                 {"averageAudioNetworkJitter", n => { AverageAudioNetworkJitter = n.GetTimeSpanValue(); } },
@@ -246,7 +251,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AudioCodec>("audioCodec", AudioCodec);
             writer.WriteFloatValue("averageAudioDegradation", AverageAudioDegradation);

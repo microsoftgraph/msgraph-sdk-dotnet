@@ -15,28 +15,33 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp {
     /// <summary>
     /// Casts the previous resource to iosStoreApp.
     /// </summary>
-    public class GraphIosStoreAppRequestBuilder : BaseRequestBuilder {
+    public class GraphIosStoreAppRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments { get =>
-            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AssignmentsRequestBuilder Assignments
+        {
+            get =>             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories { get =>
-            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public CategoriesRequestBuilder Categories
+        {
+            get =>             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphIosStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphIosStoreAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24expand,%24select}", pathParameters) {
+        public GraphIosStoreAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphIosStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphIosStoreAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24expand,%24select}", rawUrl) {
+        public GraphIosStoreAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
@@ -47,13 +52,16 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IosStoreApp?> GetAsync(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosStoreApp?> GetAsync(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<IosStoreApp> GetAsync(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosStoreApp> GetAsync(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IosStoreApp>(requestInfo, IosStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,13 +90,15 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp {
         /// </summary>
         /// <returns>A <see cref="GraphIosStoreAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphIosStoreAppRequestBuilder WithUrl(string rawUrl) {
+        public GraphIosStoreAppRequestBuilder WithUrl(string rawUrl)
+        {
             return new GraphIosStoreAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
         /// </summary>
-        public class GraphIosStoreAppRequestBuilderGetQueryParameters {
+        public class GraphIosStoreAppRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +124,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphIosStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters> {
+        public class GraphIosStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphIosStoreAppRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.</summary>
     [Flags]
-    public enum WindowsDeviceType {
+    public enum WindowsDeviceType
+    {
         /// <summary>No device types supported. Default value.</summary>
         [EnumMember(Value = "none")]
         None = 1,

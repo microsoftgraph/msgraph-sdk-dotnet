@@ -14,28 +14,35 @@ namespace Microsoft.Graph.Groups.Item.Photos {
     /// <summary>
     /// Provides operations to manage the photos property of the microsoft.graph.group entity.
     /// </summary>
-    public class PhotosRequestBuilder : BaseRequestBuilder {
+    public class PhotosRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.group entity.</summary>
         /// <param name="position">The unique identifier of profilePhoto</param>
         /// <returns>A <see cref="ProfilePhotoItemRequestBuilder"/></returns>
-        public ProfilePhotoItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("profilePhoto%2Did", position);
-            return new ProfilePhotoItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public ProfilePhotoItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("profilePhoto%2Did", position);
+                return new ProfilePhotoItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="PhotosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters) {
+        public PhotosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PhotosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl) {
+        public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve a list of profilePhoto objects.
@@ -47,13 +54,16 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfilePhotoCollectionResponse?> GetAsync(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfilePhotoCollectionResponse?> GetAsync(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ProfilePhotoCollectionResponse> GetAsync(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfilePhotoCollectionResponse> GetAsync(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -65,10 +75,12 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PhotosRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// </summary>
         /// <returns>A <see cref="PhotosRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PhotosRequestBuilder WithUrl(string rawUrl) {
+        public PhotosRequestBuilder WithUrl(string rawUrl)
+        {
             return new PhotosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of profilePhoto objects.
         /// </summary>
-        public class PhotosRequestBuilderGetQueryParameters {
+        public class PhotosRequestBuilderGetQueryParameters 
+        {
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,7 +142,8 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PhotosRequestBuilderGetRequestConfiguration : RequestConfiguration<PhotosRequestBuilderGetQueryParameters> {
+        public class PhotosRequestBuilderGetRequestConfiguration : RequestConfiguration<PhotosRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

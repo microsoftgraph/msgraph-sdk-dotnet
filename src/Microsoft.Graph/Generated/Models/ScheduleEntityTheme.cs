@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ScheduleEntityTheme {
+    public enum ScheduleEntityTheme
+    {
         [EnumMember(Value = "white")]
         White,
         [EnumMember(Value = "blue")]

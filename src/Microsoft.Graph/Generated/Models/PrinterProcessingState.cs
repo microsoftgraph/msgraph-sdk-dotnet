@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PrinterProcessingState {
+    public enum PrinterProcessingState
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "idle")]

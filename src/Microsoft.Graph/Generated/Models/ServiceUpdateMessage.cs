@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class ServiceUpdateMessage : ServiceAnnouncementBase, IParsable {
+    public class ServiceUpdateMessage : ServiceAnnouncementBase, IParsable 
+    {
         /// <summary>The expected deadline of the action for the message.</summary>
         public DateTimeOffset? ActionRequiredByDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("actionRequiredByDateTime"); }
@@ -118,7 +119,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="ServiceUpdateMessage"/> and sets the default values.
         /// </summary>
-        public ServiceUpdateMessage() : base() {
+        public ServiceUpdateMessage() : base()
+        {
             OdataType = "#microsoft.graph.serviceUpdateMessage";
         }
         /// <summary>
@@ -126,7 +128,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="ServiceUpdateMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceUpdateMessage CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ServiceUpdateMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ServiceUpdateMessage();
         }
@@ -134,8 +137,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"actionRequiredByDateTime", n => { ActionRequiredByDateTime = n.GetDateTimeOffsetValue(); } },
                 {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<ServiceAnnouncementAttachment>(ServiceAnnouncementAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attachmentsArchive", n => { AttachmentsArchive = n.GetByteArrayValue(); } },
@@ -153,7 +158,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("actionRequiredByDateTime", ActionRequiredByDateTime);

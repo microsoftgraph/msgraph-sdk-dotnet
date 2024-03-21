@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum SubjectRightsRequestStage {
+    public enum SubjectRightsRequestStage
+    {
         [EnumMember(Value = "contentRetrieval")]
         ContentRetrieval,
         [EnumMember(Value = "contentReview")]

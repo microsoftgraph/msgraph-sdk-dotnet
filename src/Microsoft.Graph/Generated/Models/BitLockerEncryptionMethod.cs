@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>BitLockerEncryptionMethod types</summary>
-    public enum BitLockerEncryptionMethod {
+    public enum BitLockerEncryptionMethod
+    {
         /// <summary>AES-CBC 128-bit.</summary>
         [EnumMember(Value = "aesCbc128")]
         AesCbc128,

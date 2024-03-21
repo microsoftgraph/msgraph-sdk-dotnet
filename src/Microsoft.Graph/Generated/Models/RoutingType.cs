@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum RoutingType {
+    public enum RoutingType
+    {
         [EnumMember(Value = "forwarded")]
         Forwarded,
         [EnumMember(Value = "lookup")]

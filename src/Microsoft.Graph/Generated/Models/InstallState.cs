@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for install state.</summary>
-    public enum InstallState {
+    public enum InstallState
+    {
         /// <summary>Not Applicable.</summary>
         [EnumMember(Value = "notApplicable")]
         NotApplicable,

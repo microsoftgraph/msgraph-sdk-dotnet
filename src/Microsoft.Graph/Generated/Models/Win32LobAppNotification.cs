@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Contains value for notification status.</summary>
-    public enum Win32LobAppNotification {
+    public enum Win32LobAppNotification
+    {
         /// <summary>Show all notifications.</summary>
         [EnumMember(Value = "showAll")]
         ShowAll,

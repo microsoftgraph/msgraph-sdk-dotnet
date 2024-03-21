@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum SocialIdentitySourceType {
+    public enum SocialIdentitySourceType
+    {
         [EnumMember(Value = "facebook")]
         Facebook,
         [EnumMember(Value = "unknownFutureValue")]

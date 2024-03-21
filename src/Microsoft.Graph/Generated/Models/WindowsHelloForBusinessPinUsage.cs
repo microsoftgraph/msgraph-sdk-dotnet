@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Windows Hello for Business pin usage options</summary>
-    public enum WindowsHelloForBusinessPinUsage {
+    public enum WindowsHelloForBusinessPinUsage
+    {
         /// <summary>Allowed the usage of certain pin rule</summary>
         [EnumMember(Value = "allowed")]
         Allowed,

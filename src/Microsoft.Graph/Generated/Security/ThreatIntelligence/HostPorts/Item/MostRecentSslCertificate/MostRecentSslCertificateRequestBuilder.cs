@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts.Item.MostRecentS
     /// <summary>
     /// Provides operations to manage the mostRecentSslCertificate property of the microsoft.graph.security.hostPort entity.
     /// </summary>
-    public class MostRecentSslCertificateRequestBuilder : BaseRequestBuilder {
+    public class MostRecentSslCertificateRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MostRecentSslCertificateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MostRecentSslCertificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24expand,%24select}", pathParameters) {
+        public MostRecentSslCertificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MostRecentSslCertificateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MostRecentSslCertificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24expand,%24select}", rawUrl) {
+        public MostRecentSslCertificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The most recent sslCertificate used to communicate on the port.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts.Item.MostRecentS
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.SslCertificate?> GetAsync(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.SslCertificate?> GetAsync(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.SslCertificate> GetAsync(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.Security.SslCertificate> GetAsync(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts.Item.MostRecentS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts.Item.MostRecentS
         /// </summary>
         /// <returns>A <see cref="MostRecentSslCertificateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MostRecentSslCertificateRequestBuilder WithUrl(string rawUrl) {
+        public MostRecentSslCertificateRequestBuilder WithUrl(string rawUrl)
+        {
             return new MostRecentSslCertificateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The most recent sslCertificate used to communicate on the port.
         /// </summary>
-        public class MostRecentSslCertificateRequestBuilderGetQueryParameters {
+        public class MostRecentSslCertificateRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts.Item.MostRecentS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MostRecentSslCertificateRequestBuilderGetRequestConfiguration : RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters> {
+        public class MostRecentSslCertificateRequestBuilderGetRequestConfiguration : RequestConfiguration<MostRecentSslCertificateRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values of a property</summary>
-    public enum Enablement {
+    public enum Enablement
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

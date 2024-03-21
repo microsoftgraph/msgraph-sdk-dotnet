@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Contains properties and inherited properties for the Microsoft Edge app on Windows.
     /// </summary>
-    public class WindowsMicrosoftEdgeApp : MobileApp, IParsable {
+    public class WindowsMicrosoftEdgeApp : MobileApp, IParsable 
+    {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
         public MicrosoftEdgeChannel? Channel {
             get { return BackingStore?.Get<MicrosoftEdgeChannel?>("channel"); }
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsMicrosoftEdgeApp"/> and sets the default values.
         /// </summary>
-        public WindowsMicrosoftEdgeApp() : base() {
+        public WindowsMicrosoftEdgeApp() : base()
+        {
             OdataType = "#microsoft.graph.windowsMicrosoftEdgeApp";
         }
         /// <summary>
@@ -39,7 +41,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsMicrosoftEdgeApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsMicrosoftEdgeApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsMicrosoftEdgeApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsMicrosoftEdgeApp();
         }
@@ -47,8 +50,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"channel", n => { Channel = n.GetEnumValue<MicrosoftEdgeChannel>(); } },
                 {"displayLanguageLocale", n => { DisplayLanguageLocale = n.GetStringValue(); } },
             };
@@ -57,7 +62,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MicrosoftEdgeChannel>("channel", Channel);

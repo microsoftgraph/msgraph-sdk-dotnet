@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AccessReviewHistoryDecisionFilter {
+    public enum AccessReviewHistoryDecisionFilter
+    {
         [EnumMember(Value = "approve")]
         Approve,
         [EnumMember(Value = "deny")]

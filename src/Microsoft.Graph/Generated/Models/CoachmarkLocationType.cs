@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum CoachmarkLocationType {
+    public enum CoachmarkLocationType
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "fromEmail")]

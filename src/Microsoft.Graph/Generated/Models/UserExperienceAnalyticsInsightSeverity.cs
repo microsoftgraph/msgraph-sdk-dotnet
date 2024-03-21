@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Indicates severity of insights. Possible values are: None, Informational, Warning, Error.</summary>
-    public enum UserExperienceAnalyticsInsightSeverity {
+    public enum UserExperienceAnalyticsInsightSeverity
+    {
         /// <summary>Indicates that the insight severity is none.</summary>
         [EnumMember(Value = "none")]
         None,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
-    public enum Label {
+    public enum Label
+    {
         [EnumMember(Value = "title")]
         Title,
         [EnumMember(Value = "url")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum ObjectMappingMetadata {
+    public enum ObjectMappingMetadata
+    {
         [EnumMember(Value = "EscrowBehavior")]
         EscrowBehavior,
         [EnumMember(Value = "DisableMonitoringForChanges")]

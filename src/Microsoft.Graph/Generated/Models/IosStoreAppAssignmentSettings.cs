@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// Contains properties used to assign an iOS Store mobile app to a group.
     /// </summary>
-    public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
+    public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
             get { return BackingStore?.Get<bool?>("isRemovable"); }
@@ -36,7 +37,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosStoreAppAssignmentSettings"/> and sets the default values.
         /// </summary>
-        public IosStoreAppAssignmentSettings() : base() {
+        public IosStoreAppAssignmentSettings() : base()
+        {
             OdataType = "#microsoft.graph.iosStoreAppAssignmentSettings";
         }
         /// <summary>
@@ -44,7 +46,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="IosStoreAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosStoreAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosStoreAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IosStoreAppAssignmentSettings();
         }
@@ -52,8 +55,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
                 {"uninstallOnDeviceRemoval", n => { UninstallOnDeviceRemoval = n.GetBoolValue(); } },
                 {"vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
@@ -63,7 +68,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isRemovable", IsRemovable);

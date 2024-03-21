@@ -5,13 +5,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class AuthorizationPolicy : PolicyBase, IParsable {
+    public class AuthorizationPolicy : PolicyBase, IParsable 
+    {
         /// <summary>Indicates whether users can sign up for email based subscriptions.</summary>
         public bool? AllowedToSignUpEmailBasedSubscriptions {
             get { return BackingStore?.Get<bool?>("allowedToSignUpEmailBasedSubscriptions"); }
             set { BackingStore?.Set("allowedToSignUpEmailBasedSubscriptions", value); }
         }
-        /// <summary>Indicates whether users can use the Self-Service Password Reset feature on the tenant.</summary>
+        /// <summary>Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.</summary>
         public bool? AllowedToUseSSPR {
             get { return BackingStore?.Get<bool?>("allowedToUseSSPR"); }
             set { BackingStore?.Set("allowedToUseSSPR", value); }
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
             set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
-        /// <summary>Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.</summary>
+        /// <summary>Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.</summary>
         public Microsoft.Graph.Models.AllowInvitesFrom? AllowInvitesFrom {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("defaultUserRolePermissions", value); }
         }
 #endif
-        /// <summary>Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
+        /// <summary>Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
         public Guid? GuestUserRoleId {
             get { return BackingStore?.Get<Guid?>("guestUserRoleId"); }
             set { BackingStore?.Set("guestUserRoleId", value); }
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="AuthorizationPolicy"/> and sets the default values.
         /// </summary>
-        public AuthorizationPolicy() : base() {
+        public AuthorizationPolicy() : base()
+        {
             OdataType = "#microsoft.graph.authorizationPolicy";
         }
         /// <summary>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="AuthorizationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AuthorizationPolicy();
         }
@@ -74,8 +77,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
                 {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
                 {"allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
@@ -90,7 +95,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowedToSignUpEmailBasedSubscriptions", AllowedToSignUpEmailBasedSubscriptions);

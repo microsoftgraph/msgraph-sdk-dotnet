@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible sync statuses associated with an Apple Volume Purchase Program token.</summary>
-    public enum VppTokenSyncStatus {
+    public enum VppTokenSyncStatus
+    {
         /// <summary>Default status.</summary>
         [EnumMember(Value = "none")]
         None,

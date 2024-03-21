@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PayloadComplexity {
+    public enum PayloadComplexity
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "low")]

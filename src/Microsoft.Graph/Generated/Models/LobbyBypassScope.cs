@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum LobbyBypassScope {
+    public enum LobbyBypassScope
+    {
         [EnumMember(Value = "organizer")]
         Organizer,
         [EnumMember(Value = "organization")]

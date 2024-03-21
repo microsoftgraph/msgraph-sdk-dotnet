@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum TeamworkUserIdentityType {
+    public enum TeamworkUserIdentityType
+    {
         [EnumMember(Value = "aadUser")]
         AadUser,
         [EnumMember(Value = "onPremiseAadUser")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Tenant mobile device management subscription state.</summary>
-    public enum DeviceManagementSubscriptionState {
+    public enum DeviceManagementSubscriptionState
+    {
         /// <summary>Pending</summary>
         [EnumMember(Value = "pending")]
         Pending,

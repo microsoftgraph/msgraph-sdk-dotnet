@@ -23,60 +23,73 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item 
     /// <summary>
     /// Provides operations to manage the instances property of the microsoft.graph.event entity.
     /// </summary>
-    public class EventItemRequestBuilder : BaseRequestBuilder {
+    public class EventItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the accept method.</summary>
-        public AcceptRequestBuilder Accept { get =>
-            new AcceptRequestBuilder(PathParameters, RequestAdapter);
+        public AcceptRequestBuilder Accept
+        {
+            get =>             new AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        public AttachmentsRequestBuilder Attachments { get =>
-            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AttachmentsRequestBuilder Attachments
+        {
+            get =>             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        public Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar { get =>
-            new Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder Calendar
+        {
+            get =>             new Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel
+        {
+            get =>             new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        public DeclineRequestBuilder Decline { get =>
-            new DeclineRequestBuilder(PathParameters, RequestAdapter);
+        public DeclineRequestBuilder Decline
+        {
+            get =>             new DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        public DismissReminderRequestBuilder DismissReminder { get =>
-            new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+        public DismissReminderRequestBuilder DismissReminder
+        {
+            get =>             new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        public ExtensionsRequestBuilder Extensions { get =>
-            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        public ExtensionsRequestBuilder Extensions
+        {
+            get =>             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        public ForwardRequestBuilder Forward
+        {
+            get =>             new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        public SnoozeReminderRequestBuilder SnoozeReminder { get =>
-            new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
+        public SnoozeReminderRequestBuilder SnoozeReminder
+        {
+            get =>             new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        public TentativelyAcceptRequestBuilder TentativelyAccept { get =>
-            new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
+        public TentativelyAcceptRequestBuilder TentativelyAccept
+        {
+            get =>             new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/{event%2Did1}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24select}", pathParameters) {
+        public EventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/{event%2Did1}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/{event%2Did1}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24select}", rawUrl) {
+        public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/instances/{event%2Did1}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
@@ -87,13 +100,16 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Event?> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event?> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Event> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -105,10 +121,12 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -120,13 +138,15 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item 
         /// </summary>
         /// <returns>A <see cref="EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EventItemRequestBuilder WithUrl(string rawUrl) {
+        public EventItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
-        public class EventItemRequestBuilderGetQueryParameters {
+        public class EventItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,7 +182,8 @@ namespace Microsoft.Graph.Groups.Item.Calendar.CalendarView.Item.Instances.Item 
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EventItemRequestBuilderGetQueryParameters> {
+        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EventItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class InferenceClassificationOverride : Entity, IParsable {
+    public class InferenceClassificationOverride : Entity, IParsable 
+    {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.</summary>
         public InferenceClassificationType? ClassifyAs {
             get { return BackingStore?.Get<InferenceClassificationType?>("classifyAs"); }
@@ -30,7 +31,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="InferenceClassificationOverride"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InferenceClassificationOverride CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new InferenceClassificationOverride CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new InferenceClassificationOverride();
         }
@@ -38,8 +40,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"classifyAs", n => { ClassifyAs = n.GetEnumValue<InferenceClassificationType>(); } },
                 {"senderEmailAddress", n => { SenderEmailAddress = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
             };
@@ -48,7 +52,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<InferenceClassificationType>("classifyAs", ClassifyAs);

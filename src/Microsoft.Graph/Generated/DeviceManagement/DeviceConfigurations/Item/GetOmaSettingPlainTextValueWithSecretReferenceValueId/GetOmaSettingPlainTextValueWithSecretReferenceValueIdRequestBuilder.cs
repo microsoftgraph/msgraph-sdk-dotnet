@@ -12,14 +12,16 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
     /// <summary>
     /// Provides operations to call the getOmaSettingPlainTextValue method.
     /// </summary>
-    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder : BaseRequestBuilder {
+    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="secretReferenceValueId">Usage: secretReferenceValueId=&apos;{secretReferenceValueId}&apos;</param>
-        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string secretReferenceValueId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')", pathParameters) {
+        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string secretReferenceValueId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(secretReferenceValueId)) PathParameters.Add("secretReferenceValueId", secretReferenceValueId);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')", rawUrl) {
+        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getOmaSettingPlainTextValue
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse?> GetAsGetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse?> GetAsGetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse> GetAsGetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse> GetAsGetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse>(requestInfo, GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
         [Obsolete("This method is obsolete. Use GetAsGetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse>(requestInfo, GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,14 +103,16 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSetti
         /// </summary>
         /// <returns>A <see cref="GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder WithUrl(string rawUrl) {
+        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

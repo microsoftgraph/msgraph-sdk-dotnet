@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum PayloadTheme {
+    public enum PayloadTheme
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "other")]

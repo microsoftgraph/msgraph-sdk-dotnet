@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// The user experience analytics device performance entity contains device boot performance details.
     /// </summary>
-    public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
+    public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable 
+    {
         /// <summary>Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens {
             get { return BackingStore?.Get<double?>("averageBlueScreens"); }
@@ -150,7 +151,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="UserExperienceAnalyticsDevicePerformance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new UserExperienceAnalyticsDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UserExperienceAnalyticsDevicePerformance();
         }
@@ -158,8 +160,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"averageBlueScreens", n => { AverageBlueScreens = n.GetDoubleValue(); } },
                 {"averageRestarts", n => { AverageRestarts = n.GetDoubleValue(); } },
                 {"blueScreenCount", n => { BlueScreenCount = n.GetIntValue(); } },
@@ -186,7 +190,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDoubleValue("averageBlueScreens", AverageBlueScreens);

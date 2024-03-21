@@ -2,24 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    /// <summary>Contains all supported file system detection type.</summary>
-    public enum Win32LobAppFileSystemOperationType {
-        /// <summary>Not configured.</summary>
+    /// <summary>A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.</summary>
+    public enum Win32LobAppFileSystemOperationType
+    {
+        /// <summary>Default. Indicates that the rule does not have the operation type configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,
-        /// <summary>Whether the specified file or folder exists.</summary>
+        /// <summary>Indicates that the rule evaluates whether the specified file or folder exists.</summary>
         [EnumMember(Value = "exists")]
         Exists,
-        /// <summary>Last modified date.</summary>
+        /// <summary>Indicates that the rule compares the modified date of the specified file against a provided comparison value by DateTime comparison.</summary>
         [EnumMember(Value = "modifiedDate")]
         ModifiedDate,
-        /// <summary>Created date.</summary>
+        /// <summary>Indicates that the rule compares the created date of the specified file against a provided comparison value by DateTime comparison.</summary>
         [EnumMember(Value = "createdDate")]
         CreatedDate,
-        /// <summary>Version value type.</summary>
+        /// <summary>Indicates that the rule compares the detected version of the specified file against a provided comparison value via version semantics (both operand values will be parsed as versions and directly compared). If the value read at the given registry value is not discovered to be in version-compatible format, a string comparison will be used instead.</summary>
         [EnumMember(Value = "version")]
         Version,
-        /// <summary>Size detection type.</summary>
+        /// <summary>Indicates that the rule compares the size of the file in MiB (rounded down) against a provided comparison value by integer comparison.</summary>
         [EnumMember(Value = "sizeInMB")]
         SizeInMB,
     }

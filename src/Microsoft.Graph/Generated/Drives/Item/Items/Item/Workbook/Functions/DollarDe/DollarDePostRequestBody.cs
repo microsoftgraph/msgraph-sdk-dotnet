@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
-    public class DollarDePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class DollarDePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -46,7 +47,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// <summary>
         /// Instantiates a new <see cref="DollarDePostRequestBody"/> and sets the default values.
         /// </summary>
-        public DollarDePostRequestBody() {
+        public DollarDePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -55,7 +57,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// </summary>
         /// <returns>A <see cref="DollarDePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DollarDePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DollarDePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DollarDePostRequestBody();
         }
@@ -63,8 +66,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"fraction", n => { Fraction = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"fractionalDollar", n => { FractionalDollar = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
@@ -73,7 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.DollarDe {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("fraction", Fraction);
             writer.WriteObjectValue<Json>("fractionalDollar", FractionalDollar);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Partner state of this tenant.</summary>
-    public enum DeviceManagementPartnerTenantState {
+    public enum DeviceManagementPartnerTenantState
+    {
         /// <summary>Partner state is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

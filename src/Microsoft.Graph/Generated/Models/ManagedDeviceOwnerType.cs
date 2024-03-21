@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Owner type of device.</summary>
-    public enum ManagedDeviceOwnerType {
+    public enum ManagedDeviceOwnerType
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

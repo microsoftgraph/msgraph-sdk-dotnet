@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Models {
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81GeneralConfiguration resource.
     /// </summary>
-    public class WindowsPhone81GeneralConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsPhone81GeneralConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindowsPhone81 {
             get { return BackingStore?.Get<bool?>("applyOnlyToWindowsPhone81"); }
@@ -166,7 +167,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsPhone81GeneralConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsPhone81GeneralConfiguration() : base() {
+        public WindowsPhone81GeneralConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsPhone81GeneralConfiguration";
         }
         /// <summary>
@@ -174,7 +176,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsPhone81GeneralConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsPhone81GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsPhone81GeneralConfiguration();
         }
@@ -182,8 +185,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"applyOnlyToWindowsPhone81", n => { ApplyOnlyToWindowsPhone81 = n.GetBoolValue(); } },
                 {"appsBlockCopyPaste", n => { AppsBlockCopyPaste = n.GetBoolValue(); } },
                 {"bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
@@ -219,7 +224,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("appsBlockCopyPaste", AppsBlockCopyPaste);

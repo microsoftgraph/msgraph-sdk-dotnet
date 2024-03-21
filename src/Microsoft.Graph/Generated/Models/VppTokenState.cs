@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible states associated with an Apple Volume Purchase Program token.</summary>
-    public enum VppTokenState {
+    public enum VppTokenState
+    {
         /// <summary>Default state.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class CloudAppSecuritySessionControl : ConditionalAccessSessionControl, IParsable {
+    public class CloudAppSecuritySessionControl : ConditionalAccessSessionControl, IParsable 
+    {
         /// <summary>Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.</summary>
         public CloudAppSecuritySessionControlType? CloudAppSecurityType {
             get { return BackingStore?.Get<CloudAppSecuritySessionControlType?>("cloudAppSecurityType"); }
@@ -14,7 +15,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="CloudAppSecuritySessionControl"/> and sets the default values.
         /// </summary>
-        public CloudAppSecuritySessionControl() : base() {
+        public CloudAppSecuritySessionControl() : base()
+        {
             OdataType = "#microsoft.graph.cloudAppSecuritySessionControl";
         }
         /// <summary>
@@ -22,7 +24,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="CloudAppSecuritySessionControl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudAppSecuritySessionControl CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CloudAppSecuritySessionControl CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CloudAppSecuritySessionControl();
         }
@@ -30,8 +33,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"cloudAppSecurityType", n => { CloudAppSecurityType = n.GetEnumValue<CloudAppSecuritySessionControlType>(); } },
             };
         }
@@ -39,7 +44,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<CloudAppSecuritySessionControlType>("cloudAppSecurityType", CloudAppSecurityType);

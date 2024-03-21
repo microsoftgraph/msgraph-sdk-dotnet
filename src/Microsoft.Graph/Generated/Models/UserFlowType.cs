@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum UserFlowType {
+    public enum UserFlowType
+    {
         [EnumMember(Value = "signUp")]
         SignUp,
         [EnumMember(Value = "signIn")]

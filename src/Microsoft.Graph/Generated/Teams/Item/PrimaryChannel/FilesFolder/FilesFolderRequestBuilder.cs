@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.FilesFolder {
     /// <summary>
     /// Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
     /// </summary>
-    public class FilesFolderRequestBuilder : BaseRequestBuilder {
+    public class FilesFolderRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the media for the team entity.</summary>
-        public ContentRequestBuilder Content { get =>
-            new ContentRequestBuilder(PathParameters, RequestAdapter);
+        public ContentRequestBuilder Content
+        {
+            get =>             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="FilesFolderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesFolderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24expand,%24select}", pathParameters) {
+        public FilesFolderRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="FilesFolderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesFolderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24expand,%24select}", rawUrl) {
+        public FilesFolderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/filesFolder{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the metadata for the location where the files of a channel are stored. 
@@ -43,13 +47,16 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.FilesFolder {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DriveItem?> GetAsync(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem?> GetAsync(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DriveItem> GetAsync(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.DriveItem> GetAsync(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,10 +68,12 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.FilesFolder {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +85,15 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.FilesFolder {
         /// </summary>
         /// <returns>A <see cref="FilesFolderRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FilesFolderRequestBuilder WithUrl(string rawUrl) {
+        public FilesFolderRequestBuilder WithUrl(string rawUrl)
+        {
             return new FilesFolderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the metadata for the location where the files of a channel are stored. 
         /// </summary>
-        public class FilesFolderRequestBuilderGetQueryParameters {
+        public class FilesFolderRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,7 +119,8 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.FilesFolder {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilesFolderRequestBuilderGetRequestConfiguration : RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters> {
+        public class FilesFolderRequestBuilderGetRequestConfiguration : RequestConfiguration<FilesFolderRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

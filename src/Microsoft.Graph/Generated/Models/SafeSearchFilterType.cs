@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Specifies what level of safe search (filtering adult content) is required</summary>
-    public enum SafeSearchFilterType {
+    public enum SafeSearchFilterType
+    {
         /// <summary>User Defined, default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

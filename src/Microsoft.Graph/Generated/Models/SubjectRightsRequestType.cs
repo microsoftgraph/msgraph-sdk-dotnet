@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum SubjectRightsRequestType {
+    public enum SubjectRightsRequestType
+    {
         [EnumMember(Value = "export")]
         Export,
         [EnumMember(Value = "delete")]

@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class AccessPackageResourceEnvironment : Entity, IParsable {
-        /// <summary>The connectionInfo property</summary>
+    public class AccessPackageResourceEnvironment : Entity, IParsable 
+    {
+        /// <summary>Connection information of an environment used to connect to a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.ConnectionInfo? ConnectionInfo {
@@ -110,7 +111,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="AccessPackageResourceEnvironment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResourceEnvironment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AccessPackageResourceEnvironment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AccessPackageResourceEnvironment();
         }
@@ -118,8 +120,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"connectionInfo", n => { ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Models.ConnectionInfo>(Microsoft.Graph.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -135,7 +139,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Models.ConnectionInfo>("connectionInfo", ConnectionInfo);

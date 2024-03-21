@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Partner App Type.</summary>
-    public enum DeviceManagementPartnerAppType {
+    public enum DeviceManagementPartnerAppType
+    {
         /// <summary>Partner App type is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

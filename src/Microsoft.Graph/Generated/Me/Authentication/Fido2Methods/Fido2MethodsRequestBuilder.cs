@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods {
     /// <summary>
     /// Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
     /// </summary>
-    public class Fido2MethodsRequestBuilder : BaseRequestBuilder {
+    public class Fido2MethodsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of fido2AuthenticationMethod</param>
         /// <returns>A <see cref="Fido2AuthenticationMethodItemRequestBuilder"/></returns>
-        public Fido2AuthenticationMethodItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("fido2AuthenticationMethod%2Did", position);
-            return new Fido2AuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public Fido2AuthenticationMethodItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("fido2AuthenticationMethod%2Did", position);
+                return new Fido2AuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="Fido2MethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Fido2MethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public Fido2MethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Fido2MethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Fido2MethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public Fido2MethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
@@ -52,13 +60,16 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethodCollectionResponse>(requestInfo, Fido2AuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +81,12 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +98,15 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods {
         /// </summary>
         /// <returns>A <see cref="Fido2MethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Fido2MethodsRequestBuilder WithUrl(string rawUrl) {
+        public Fido2MethodsRequestBuilder WithUrl(string rawUrl)
+        {
             return new Fido2MethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
         /// </summary>
-        public class Fido2MethodsRequestBuilderGetQueryParameters {
+        public class Fido2MethodsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -156,7 +171,8 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class Fido2MethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters> {
+        public class Fido2MethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

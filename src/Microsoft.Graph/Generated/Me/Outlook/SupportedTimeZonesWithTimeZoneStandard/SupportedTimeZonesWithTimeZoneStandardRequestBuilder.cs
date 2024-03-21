@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
     /// <summary>
     /// Provides operations to call the supportedTimeZones method.
     /// </summary>
-    public class SupportedTimeZonesWithTimeZoneStandardRequestBuilder : BaseRequestBuilder {
+    public class SupportedTimeZonesWithTimeZoneStandardRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SupportedTimeZonesWithTimeZoneStandardRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="timeZoneStandard">Usage: TimeZoneStandard=&apos;{TimeZoneStandard}&apos;</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timeZoneStandard = "") : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string timeZoneStandard = "") : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(timeZoneStandard)) PathParameters.Add("TimeZoneStandard", timeZoneStandard);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/supportedTimeZones(TimeZoneStandard='{TimeZoneStandard}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function supportedTimeZones
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SupportedTimeZonesWithTimeZoneStandardGetResponse?> GetAsSupportedTimeZonesWithTimeZoneStandardGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesWithTimeZoneStandardGetResponse?> GetAsSupportedTimeZonesWithTimeZoneStandardGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SupportedTimeZonesWithTimeZoneStandardGetResponse> GetAsSupportedTimeZonesWithTimeZoneStandardGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesWithTimeZoneStandardGetResponse> GetAsSupportedTimeZonesWithTimeZoneStandardGetResponseAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SupportedTimeZonesWithTimeZoneStandardGetResponse>(requestInfo, SupportedTimeZonesWithTimeZoneStandardGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         [Obsolete("This method is obsolete. Use GetAsSupportedTimeZonesWithTimeZoneStandardGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SupportedTimeZonesWithTimeZoneStandardResponse?> GetAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesWithTimeZoneStandardResponse?> GetAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SupportedTimeZonesWithTimeZoneStandardResponse> GetAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SupportedTimeZonesWithTimeZoneStandardResponse> GetAsync(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SupportedTimeZonesWithTimeZoneStandardResponse>(requestInfo, SupportedTimeZonesWithTimeZoneStandardResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// </summary>
         /// <returns>A <see cref="SupportedTimeZonesWithTimeZoneStandardRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder WithUrl(string rawUrl) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder WithUrl(string rawUrl)
+        {
             return new SupportedTimeZonesWithTimeZoneStandardRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function supportedTimeZones
         /// </summary>
-        public class SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters {
+        public class SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -133,7 +146,8 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration : RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters> {
+        public class SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetRequestConfiguration : RequestConfiguration<SupportedTimeZonesWithTimeZoneStandardRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for applicationGuardBlockClipboardSharingType</summary>
-    public enum ApplicationGuardBlockClipboardSharingType {
+    public enum ApplicationGuardBlockClipboardSharingType
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

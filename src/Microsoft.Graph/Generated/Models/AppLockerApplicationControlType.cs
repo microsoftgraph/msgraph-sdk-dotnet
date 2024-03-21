@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values of AppLocker Application Control Types</summary>
-    public enum AppLockerApplicationControlType {
+    public enum AppLockerApplicationControlType
+    {
         /// <summary>Device default value, no Application Control type selected.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

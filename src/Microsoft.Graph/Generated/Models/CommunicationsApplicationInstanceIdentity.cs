@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class CommunicationsApplicationInstanceIdentity : Identity, IParsable {
+    public class CommunicationsApplicationInstanceIdentity : Identity, IParsable 
+    {
         /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
@@ -28,7 +29,8 @@ namespace Microsoft.Graph.Models {
         /// <summary>
         /// Instantiates a new <see cref="CommunicationsApplicationInstanceIdentity"/> and sets the default values.
         /// </summary>
-        public CommunicationsApplicationInstanceIdentity() : base() {
+        public CommunicationsApplicationInstanceIdentity() : base()
+        {
             OdataType = "#microsoft.graph.communicationsApplicationInstanceIdentity";
         }
         /// <summary>
@@ -36,7 +38,8 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="CommunicationsApplicationInstanceIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CommunicationsApplicationInstanceIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CommunicationsApplicationInstanceIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CommunicationsApplicationInstanceIdentity();
         }
@@ -44,8 +47,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"hidden", n => { Hidden = n.GetBoolValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -54,7 +59,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("hidden", Hidden);

@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
     [Flags]
-    public enum NotificationTemplateBrandingOptions {
+    public enum NotificationTemplateBrandingOptions
+    {
         /// <summary>Indicates that no branding options are set in the message template.</summary>
         [EnumMember(Value = "none")]
         None = 1,

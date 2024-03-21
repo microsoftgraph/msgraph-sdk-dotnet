@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
-    public enum TemplateScenarios {
+    public enum TemplateScenarios
+    {
         [EnumMember(Value = "new")]
         New = 1,
         [EnumMember(Value = "secureFoundation")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum SignInFrequencyInterval {
+    public enum SignInFrequencyInterval
+    {
         [EnumMember(Value = "timeBased")]
         TimeBased,
         [EnumMember(Value = "everyTime")]

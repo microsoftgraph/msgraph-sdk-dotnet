@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values to specify which cookies are allowed in Microsoft Edge.</summary>
-    public enum EdgeCookiePolicy {
+    public enum EdgeCookiePolicy
+    {
         /// <summary>Allow the user to set.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

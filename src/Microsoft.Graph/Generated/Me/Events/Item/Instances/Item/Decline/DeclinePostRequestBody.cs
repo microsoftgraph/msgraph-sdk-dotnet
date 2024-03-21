@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.Events.Item.Instances.Item.Decline {
-    public class DeclinePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class DeclinePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -51,7 +52,8 @@ namespace Microsoft.Graph.Me.Events.Item.Instances.Item.Decline {
         /// <summary>
         /// Instantiates a new <see cref="DeclinePostRequestBody"/> and sets the default values.
         /// </summary>
-        public DeclinePostRequestBody() {
+        public DeclinePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -60,7 +62,8 @@ namespace Microsoft.Graph.Me.Events.Item.Instances.Item.Decline {
         /// </summary>
         /// <returns>A <see cref="DeclinePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeclinePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DeclinePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeclinePostRequestBody();
         }
@@ -68,8 +71,10 @@ namespace Microsoft.Graph.Me.Events.Item.Instances.Item.Decline {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"Comment", n => { Comment = n.GetStringValue(); } },
                 {"ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
                 {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
@@ -79,7 +84,8 @@ namespace Microsoft.Graph.Me.Events.Item.Instances.Item.Decline {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Comment", Comment);
             writer.WriteObjectValue<TimeSlot>("ProposedNewTime", ProposedNewTime);

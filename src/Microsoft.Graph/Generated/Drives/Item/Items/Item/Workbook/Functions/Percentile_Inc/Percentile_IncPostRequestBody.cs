@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_Inc {
-    public class Percentile_IncPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Percentile_IncPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -46,7 +47,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_I
         /// <summary>
         /// Instantiates a new <see cref="Percentile_IncPostRequestBody"/> and sets the default values.
         /// </summary>
-        public Percentile_IncPostRequestBody() {
+        public Percentile_IncPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -55,7 +57,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_I
         /// </summary>
         /// <returns>A <see cref="Percentile_IncPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Percentile_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Percentile_IncPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Percentile_IncPostRequestBody();
         }
@@ -63,8 +66,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_I
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"k", n => { K = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
@@ -73,7 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Percentile_I
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Json>("array", Array);
             writer.WriteObjectValue<Json>("k", K);

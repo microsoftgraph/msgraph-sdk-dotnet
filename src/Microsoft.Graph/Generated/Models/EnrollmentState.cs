@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum EnrollmentState {
+    public enum EnrollmentState
+    {
         /// <summary>Device enrollment state is unknown</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

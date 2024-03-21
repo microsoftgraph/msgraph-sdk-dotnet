@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum AttestationLevel {
+    public enum AttestationLevel
+    {
         [EnumMember(Value = "attested")]
         Attested,
         [EnumMember(Value = "notAttested")]

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
-    public class DirectRoutingLogRow : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class DirectRoutingLogRow : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
             set { BackingStore?.Set("failureDateTime", value); }
         }
-        /// <summary>The code with which the call ended. For more information, see RFC 3261.</summary>
+        /// <summary>The final response code with which the call ended. For more information, see RFC 3261.</summary>
         public int? FinalSipCode {
             get { return BackingStore?.Get<int?>("finalSipCode"); }
             set { BackingStore?.Set("finalSipCode", value); }
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>When the initial invite was sent.</summary>
+        /// <summary>The date and time when the initial invite was sent.</summary>
         public DateTimeOffset? InviteDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("inviteDateTime"); }
             set { BackingStore?.Set("inviteDateTime", value); }
@@ -175,7 +176,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("signalingLocation", value); }
         }
 #endif
-        /// <summary>Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.</summary>
+        /// <summary>Call start time.For failed and unanswered calls, this value can be equal to the invite or failure time.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
@@ -227,7 +228,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP Address, and can be the same as the user&apos;s email address.</summary>
+        /// <summary>UserPrincipalName (sign-in name) in Microsoft Entra ID. This value is usually the same as the user&apos;s SIP Address, and can be the same as the user&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -244,7 +245,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>
         /// Instantiates a new <see cref="DirectRoutingLogRow"/> and sets the default values.
         /// </summary>
-        public DirectRoutingLogRow() {
+        public DirectRoutingLogRow()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -253,7 +255,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// </summary>
         /// <returns>A <see cref="DirectRoutingLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DirectRoutingLogRow CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DirectRoutingLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DirectRoutingLogRow();
         }
@@ -261,8 +264,10 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
                 {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
@@ -291,7 +296,8 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calleeNumber", CalleeNumber);
             writer.WriteIntValue("callEndSubReason", CallEndSubReason);

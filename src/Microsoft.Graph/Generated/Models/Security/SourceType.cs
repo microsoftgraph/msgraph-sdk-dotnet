@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
     [Flags]
-    public enum SourceType {
+    public enum SourceType
+    {
         [EnumMember(Value = "mailbox")]
         Mailbox = 1,
         [EnumMember(Value = "site")]

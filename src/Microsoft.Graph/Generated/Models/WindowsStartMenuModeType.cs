@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Type of display modes for the start menu.</summary>
-    public enum WindowsStartMenuModeType {
+    public enum WindowsStartMenuModeType
+    {
         /// <summary>User defined. Default value.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
-    public enum AudioCodec {
+    public enum AudioCodec
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "invalid")]

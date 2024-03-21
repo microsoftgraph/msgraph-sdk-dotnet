@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Web Browser Cookie Settings.</summary>
-    public enum WebBrowserCookieSettings {
+    public enum WebBrowserCookieSettings
+    {
         /// <summary>Browser default value, no intent.</summary>
         [EnumMember(Value = "browserDefault")]
         BrowserDefault,

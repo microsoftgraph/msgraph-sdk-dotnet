@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
-    public class IdentityUserFlow : Entity, IParsable {
+    public class IdentityUserFlow : Entity, IParsable 
+    {
         /// <summary>The userFlowType property</summary>
         public Microsoft.Graph.Models.UserFlowType? UserFlowType {
             get { return BackingStore?.Get<Microsoft.Graph.Models.UserFlowType?>("userFlowType"); }
@@ -21,10 +22,12 @@ namespace Microsoft.Graph.Models {
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.b2xIdentityUserFlow" => new B2xIdentityUserFlow(),
                 _ => new IdentityUserFlow(),
             };
@@ -33,8 +36,10 @@ namespace Microsoft.Graph.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
                 {"userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
@@ -43,7 +48,8 @@ namespace Microsoft.Graph.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<UserFlowType>("userFlowType", UserFlowType);

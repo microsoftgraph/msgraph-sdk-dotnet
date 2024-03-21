@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Work From Anywhere windows device upgrade eligibility status.</summary>
-    public enum OperatingSystemUpgradeEligibility {
+    public enum OperatingSystemUpgradeEligibility
+    {
         /// <summary>The device is upgraded to latest version of windows.</summary>
         [EnumMember(Value = "upgraded")]
         Upgraded,

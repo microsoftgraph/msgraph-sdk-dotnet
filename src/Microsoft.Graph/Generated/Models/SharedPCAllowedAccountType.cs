@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Type of accounts that are allowed to share the PC.</summary>
     [Flags]
-    public enum SharedPCAllowedAccountType {
+    public enum SharedPCAllowedAccountType
+    {
         /// <summary>Only guest accounts.</summary>
         [EnumMember(Value = "guest")]
         Guest = 1,

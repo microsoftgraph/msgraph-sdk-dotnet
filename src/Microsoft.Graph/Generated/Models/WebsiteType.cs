@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum WebsiteType {
+    public enum WebsiteType
+    {
         [EnumMember(Value = "other")]
         Other,
         [EnumMember(Value = "home")]

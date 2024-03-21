@@ -15,28 +15,33 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
     /// <summary>
     /// Provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
     /// </summary>
-    public class InvitedUserRequestBuilder : BaseRequestBuilder {
+    public class InvitedUserRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The mailboxSettings property</summary>
-        public MailboxSettingsRequestBuilder MailboxSettings { get =>
-            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        public MailboxSettingsRequestBuilder MailboxSettings
+        {
+            get =>             new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
-            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        {
+            get =>             new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="InvitedUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitedUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", pathParameters) {
+        public InvitedUserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InvitedUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitedUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", rawUrl) {
+        public InvitedUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}/invitedUser{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The user created as part of the invitation creation. Read-Only
@@ -47,13 +52,16 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.User?> GetAsync(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Models.User> GetAsync(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,13 +90,15 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
         /// </summary>
         /// <returns>A <see cref="InvitedUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InvitedUserRequestBuilder WithUrl(string rawUrl) {
+        public InvitedUserRequestBuilder WithUrl(string rawUrl)
+        {
             return new InvitedUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user created as part of the invitation creation. Read-Only
         /// </summary>
-        public class InvitedUserRequestBuilderGetQueryParameters {
+        public class InvitedUserRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +124,8 @@ namespace Microsoft.Graph.Invitations.Item.InvitedUser {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InvitedUserRequestBuilderGetRequestConfiguration : RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters> {
+        public class InvitedUserRequestBuilderGetRequestConfiguration : RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

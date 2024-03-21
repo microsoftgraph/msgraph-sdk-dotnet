@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum TrainingSettingType {
+    public enum TrainingSettingType
+    {
         [EnumMember(Value = "microsoftCustom")]
         MicrosoftCustom,
         [EnumMember(Value = "microsoftManaged")]

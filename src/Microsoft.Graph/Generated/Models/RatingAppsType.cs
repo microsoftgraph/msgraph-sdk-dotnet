@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Apps rating as in media content</summary>
-    public enum RatingAppsType {
+    public enum RatingAppsType
+    {
         /// <summary>Default value, allow all apps content</summary>
         [EnumMember(Value = "allAllowed")]
         AllAllowed,

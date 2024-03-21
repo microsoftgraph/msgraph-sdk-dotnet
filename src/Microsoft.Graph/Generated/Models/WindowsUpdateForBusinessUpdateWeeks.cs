@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Scheduled the update installation on the weeks of the month</summary>
     [Flags]
-    public enum WindowsUpdateForBusinessUpdateWeeks {
+    public enum WindowsUpdateForBusinessUpdateWeeks
+    {
         /// <summary>Allow the user to set.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined = 1,

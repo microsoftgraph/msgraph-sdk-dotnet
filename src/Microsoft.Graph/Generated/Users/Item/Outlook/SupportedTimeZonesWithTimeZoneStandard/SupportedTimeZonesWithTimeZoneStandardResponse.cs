@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard {
     [Obsolete("This class is obsolete. Use SupportedTimeZonesWithTimeZoneStandardGetResponse instead.")]
-    public class SupportedTimeZonesWithTimeZoneStandardResponse : SupportedTimeZonesWithTimeZoneStandardGetResponse, IParsable {
+    public class SupportedTimeZonesWithTimeZoneStandardResponse : SupportedTimeZonesWithTimeZoneStandardGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="SupportedTimeZonesWithTimeZoneStandardResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SupportedTimeZonesWithTimeZoneStandardResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new SupportedTimeZonesWithTimeZoneStandardResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SupportedTimeZonesWithTimeZoneStandardResponse();
         }

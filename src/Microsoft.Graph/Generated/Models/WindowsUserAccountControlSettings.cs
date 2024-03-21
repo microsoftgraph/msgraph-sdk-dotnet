@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Possible values for Windows user account control settings.</summary>
-    public enum WindowsUserAccountControlSettings {
+    public enum WindowsUserAccountControlSettings
+    {
         /// <summary>User Defined, default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

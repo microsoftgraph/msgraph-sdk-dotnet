@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum BaseAuthenticationMethod {
+    public enum BaseAuthenticationMethod
+    {
         [EnumMember(Value = "password")]
         Password,
         [EnumMember(Value = "voice")]

@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.GetMailTips {
     [Obsolete("This class is obsolete. Use GetMailTipsPostResponse instead.")]
-    public class GetMailTipsResponse : GetMailTipsPostResponse, IParsable {
+    public class GetMailTipsResponse : GetMailTipsPostResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetMailTipsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetMailTipsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetMailTipsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetMailTipsResponse();
         }

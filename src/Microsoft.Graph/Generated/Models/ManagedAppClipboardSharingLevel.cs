@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-    public enum ManagedAppClipboardSharingLevel {
+    public enum ManagedAppClipboardSharingLevel
+    {
         /// <summary>Sharing is allowed between all apps, managed or not</summary>
         [EnumMember(Value = "allApps")]
         AllApps,

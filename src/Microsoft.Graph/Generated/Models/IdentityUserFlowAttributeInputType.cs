@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum IdentityUserFlowAttributeInputType {
+    public enum IdentityUserFlowAttributeInputType
+    {
         [EnumMember(Value = "textBox")]
         TextBox,
         [EnumMember(Value = "dateTimeDropdown")]

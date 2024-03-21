@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
-    public enum IncidentStatus {
+    public enum IncidentStatus
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "resolved")]

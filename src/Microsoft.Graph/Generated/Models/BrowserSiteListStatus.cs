@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
-    public enum BrowserSiteListStatus {
+    public enum BrowserSiteListStatus
+    {
         /// <summary>A site list that has not yet been published</summary>
         [EnumMember(Value = "draft")]
         Draft,
