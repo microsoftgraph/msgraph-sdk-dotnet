@@ -51,8 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
         {
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosCertificateProfile objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscertificateprofile-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfigurationCollectionResponse>(requestInfo, DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new editionUpgradeConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-editionupgradeconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new windowsPhone81CustomConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81customconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return await RequestAdapter.SendAsync<DeviceConfiguration>(requestInfo, DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the iosCertificateProfile objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new editionUpgradeConfiguration object.
+        /// Create a new windowsPhone81CustomConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations {
             return new DeviceConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the iosCertificateProfile objects.
         /// </summary>
         public class DeviceConfigurationsRequestBuilderGetQueryParameters 
         {

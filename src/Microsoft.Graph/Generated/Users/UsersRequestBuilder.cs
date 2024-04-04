@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Users {
         {
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0" />
+        /// Retrieve a list of user objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users {
         }
         /// <summary>
         /// Create a new user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Users {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
+        /// Retrieve a list of user objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Users {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
+        /// Retrieve a list of user objects.
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters 
         {

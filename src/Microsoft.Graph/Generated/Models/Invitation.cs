@@ -63,6 +63,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("invitedUserMessageInfo", value); }
         }
 #endif
+        /// <summary>The invitedUserSponsors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DirectoryObject>? InvitedUserSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("invitedUserSponsors"); }
+            set { BackingStore?.Set("invitedUserSponsors", value); }
+        }
+#nullable restore
+#else
+        public List<DirectoryObject> InvitedUserSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>>("invitedUserSponsors"); }
+            set { BackingStore?.Set("invitedUserSponsors", value); }
+        }
+#endif
         /// <summary>The userType of the user being invited. By default, this is Guest. You can invite as Member if you&apos;re a company administrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +167,7 @@ namespace Microsoft.Graph.Models {
                 {"invitedUserDisplayName", n => { InvitedUserDisplayName = n.GetStringValue(); } },
                 {"invitedUserEmailAddress", n => { InvitedUserEmailAddress = n.GetStringValue(); } },
                 {"invitedUserMessageInfo", n => { InvitedUserMessageInfo = n.GetObjectValue<Microsoft.Graph.Models.InvitedUserMessageInfo>(Microsoft.Graph.Models.InvitedUserMessageInfo.CreateFromDiscriminatorValue); } },
+                {"invitedUserSponsors", n => { InvitedUserSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"invitedUserType", n => { InvitedUserType = n.GetStringValue(); } },
                 {"resetRedemption", n => { ResetRedemption = n.GetBoolValue(); } },
                 {"sendInvitationMessage", n => { SendInvitationMessage = n.GetBoolValue(); } },
@@ -171,6 +186,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteStringValue("invitedUserDisplayName", InvitedUserDisplayName);
             writer.WriteStringValue("invitedUserEmailAddress", InvitedUserEmailAddress);
             writer.WriteObjectValue<Microsoft.Graph.Models.InvitedUserMessageInfo>("invitedUserMessageInfo", InvitedUserMessageInfo);
+            writer.WriteCollectionOfObjectValues<DirectoryObject>("invitedUserSponsors", InvitedUserSponsors);
             writer.WriteStringValue("invitedUserType", InvitedUserType);
             writer.WriteStringValue("inviteRedeemUrl", InviteRedeemUrl);
             writer.WriteStringValue("inviteRedirectUrl", InviteRedirectUrl);

@@ -51,8 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosMobileAppConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+        /// List properties and relationships of the iosMobileAppConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return new MobileAppConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+        /// List properties and relationships of the iosMobileAppConfiguration objects.
         /// </summary>
         public class MobileAppConfigurationsRequestBuilderGetQueryParameters 
         {

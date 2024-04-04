@@ -15,7 +15,7 @@
 
 #>
 
-$fullFileName = $PWD.ToString() + "\src\Microsoft.Graph\Microsoft.Graph.csproj"
+$fullFileName = Join-Path $PWD.ToString() "src" "Microsoft.Graph" "Microsoft.Graph.csproj"
 
 # Read .csproj file as UTF-8
 $xmlDoc = New-Object -TypeName XML
@@ -59,3 +59,5 @@ $updatedVersionPrefixString = "{0}.{1}.{2}" -f $majorVersion, $minorVersion, $pa
 $xmlDoc.Project.PropertyGroup[0].VersionPrefix = $updatedVersionPrefixString
 
 $xmlDoc.Save($fullFileName)
+
+Write-Host "Version incremented from $versionPrefixString to $updatedVersionPrefixString"

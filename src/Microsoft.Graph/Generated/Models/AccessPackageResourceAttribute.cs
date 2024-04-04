@@ -29,6 +29,16 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("destination", value); }
         }
 #endif
+        /// <summary>The isEditable property</summary>
+        public bool? IsEditable {
+            get { return BackingStore?.Get<bool?>("isEditable"); }
+            set { BackingStore?.Set("isEditable", value); }
+        }
+        /// <summary>The isPersistedOnAssignmentRemoval property</summary>
+        public bool? IsPersistedOnAssignmentRemoval {
+            get { return BackingStore?.Get<bool?>("isPersistedOnAssignmentRemoval"); }
+            set { BackingStore?.Set("isPersistedOnAssignmentRemoval", value); }
+        }
         /// <summary>The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +108,8 @@ namespace Microsoft.Graph.Models {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"destination", n => { Destination = n.GetObjectValue<AccessPackageResourceAttributeDestination>(AccessPackageResourceAttributeDestination.CreateFromDiscriminatorValue); } },
+                {"isEditable", n => { IsEditable = n.GetBoolValue(); } },
+                {"isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"source", n => { Source = n.GetObjectValue<AccessPackageResourceAttributeSource>(AccessPackageResourceAttributeSource.CreateFromDiscriminatorValue); } },
@@ -111,6 +123,8 @@ namespace Microsoft.Graph.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<AccessPackageResourceAttributeDestination>("destination", Destination);
+            writer.WriteBoolValue("isEditable", IsEditable);
+            writer.WriteBoolValue("isPersistedOnAssignmentRemoval", IsPersistedOnAssignmentRemoval);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<AccessPackageResourceAttributeSource>("source", Source);

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
         {
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for a user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OutlookCategoryCollectionResponse"/></returns>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories {
             return new MasterCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// Get all the categories that have been defined for a user.
         /// </summary>
         public class MasterCategoriesRequestBuilderGetQueryParameters 
         {

@@ -86,8 +86,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         {
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-delete?view=graph-rest-1.0" />
+        /// Deletes a macOSCompliancePolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,8 +109,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the windows10CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the windows10MobileCompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,8 +133,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a windows10CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-update?view=graph-rest-1.0" />
+        /// Update the properties of a windows81CompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
+        /// Deletes a macOSCompliancePolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the windows10CompliancePolicy object.
+        /// Read properties and relationships of the windows10MobileCompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a windows10CompliancePolicy object.
+        /// Update the properties of a windows81CompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the windows10CompliancePolicy object.
+        /// Read properties and relationships of the windows10MobileCompliancePolicy object.
         /// </summary>
         public class DeviceCompliancePolicyItemRequestBuilderGetQueryParameters 
         {

@@ -6,6 +6,7 @@ using Microsoft.Graph.Security.Alerts_v2;
 using Microsoft.Graph.Security.AttackSimulation;
 using Microsoft.Graph.Security.Cases;
 using Microsoft.Graph.Security.Incidents;
+using Microsoft.Graph.Security.Labels;
 using Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Security.SecureScores;
@@ -51,6 +52,11 @@ namespace Microsoft.Graph.Security {
         public IncidentsRequestBuilder Incidents
         {
             get => new IncidentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the labels property of the microsoft.graph.security entity.</summary>
+        public LabelsRequestBuilder Labels
+        {
+            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the runHuntingQuery method.</summary>
         public MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery

@@ -77,6 +77,20 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("incidents", value); }
         }
 #endif
+        /// <summary>The labels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public LabelsRoot? Labels {
+            get { return BackingStore?.Get<LabelsRoot?>("labels"); }
+            set { BackingStore?.Set("labels", value); }
+        }
+#nullable restore
+#else
+        public LabelsRoot Labels {
+            get { return BackingStore?.Get<LabelsRoot>("labels"); }
+            set { BackingStore?.Set("labels", value); }
+        }
+#endif
         /// <summary>The secureScoreControlProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,6 +198,7 @@ namespace Microsoft.Graph.Models.Security {
                 {"attackSimulation", n => { AttackSimulation = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationRoot>(Microsoft.Graph.Models.AttackSimulationRoot.CreateFromDiscriminatorValue); } },
                 {"cases", n => { Cases = n.GetObjectValue<CasesRoot>(CasesRoot.CreateFromDiscriminatorValue); } },
                 {"incidents", n => { Incidents = n.GetCollectionOfObjectValues<Incident>(Incident.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"labels", n => { Labels = n.GetObjectValue<LabelsRoot>(LabelsRoot.CreateFromDiscriminatorValue); } },
                 {"secureScoreControlProfiles", n => { SecureScoreControlProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlProfile>(Microsoft.Graph.Models.SecureScoreControlProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"secureScores", n => { SecureScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SecureScore>(Microsoft.Graph.Models.SecureScore.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subjectRightsRequests", n => { SubjectRightsRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.SubjectRightsRequest>(Microsoft.Graph.Models.SubjectRightsRequest.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -205,6 +220,7 @@ namespace Microsoft.Graph.Models.Security {
             writer.WriteObjectValue<Microsoft.Graph.Models.AttackSimulationRoot>("attackSimulation", AttackSimulation);
             writer.WriteObjectValue<CasesRoot>("cases", Cases);
             writer.WriteCollectionOfObjectValues<Incident>("incidents", Incidents);
+            writer.WriteObjectValue<LabelsRoot>("labels", Labels);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SecureScoreControlProfile>("secureScoreControlProfiles", SecureScoreControlProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SecureScore>("secureScores", SecureScores);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Models.SubjectRightsRequest>("subjectRightsRequests", SubjectRightsRequests);

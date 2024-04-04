@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Users.Item.Messages.Item.Value {
         }
         /// <summary>
         /// Get media content for the navigation property messages from users
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Models {
     public class RelyingPartyDetailedSummary : Entity, IParsable 
     {
-        /// <summary>The failedSignInCount property</summary>
+        /// <summary>Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).</summary>
         public long? FailedSignInCount {
             get { return BackingStore?.Get<long?>("failedSignInCount"); }
             set { BackingStore?.Set("failedSignInCount", value); }
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MigrationStatus?>("migrationStatus"); }
             set { BackingStore?.Set("migrationStatus", value); }
         }
-        /// <summary>The migrationValidationDetails property</summary>
+        /// <summary>Specifies all the validations checks done on applications config details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValuePair>? MigrationValidationDetails {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
 #endif
-        /// <summary>The relyingPartyId property</summary>
+        /// <summary>Identifies the relying party to this federation service. It&apos;s used when issuing claims to the relying party. Supports $orderby, $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelyingPartyId {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("relyingPartyId", value); }
         }
 #endif
-        /// <summary>The relyingPartyName property</summary>
+        /// <summary>Name of the relying party&apos;s website or other entity on the Internet that uses an identity provider to authenticate a user who wants to log in. Supports $orderby, $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelyingPartyName {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("relyingPartyName", value); }
         }
 #endif
-        /// <summary>The replyUrls property</summary>
+        /// <summary>Specifies where the relying party expects to receive the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ReplyUrls {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("replyUrls", value); }
         }
 #endif
-        /// <summary>The serviceId property</summary>
+        /// <summary>Uniquely identifies the Active Directory forest. Supports $orderby, $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceId {
@@ -87,22 +87,22 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("serviceId", value); }
         }
 #endif
-        /// <summary>The signInSuccessRate property</summary>
+        /// <summary>Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).</summary>
         public double? SignInSuccessRate {
             get { return BackingStore?.Get<double?>("signInSuccessRate"); }
             set { BackingStore?.Set("signInSuccessRate", value); }
         }
-        /// <summary>The successfulSignInCount property</summary>
+        /// <summary>Number of successful sign ins on AD FS. Supports $orderby, $filter (eq).</summary>
         public long? SuccessfulSignInCount {
             get { return BackingStore?.Get<long?>("successfulSignInCount"); }
             set { BackingStore?.Set("successfulSignInCount", value); }
         }
-        /// <summary>The totalSignInCount property</summary>
+        /// <summary>Number of successful + failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).</summary>
         public long? TotalSignInCount {
             get { return BackingStore?.Get<long?>("totalSignInCount"); }
             set { BackingStore?.Set("totalSignInCount", value); }
         }
-        /// <summary>The uniqueUserCount property</summary>
+        /// <summary>Number of unique users that signed into the application. Supports $orderby, $filter (eq).</summary>
         public long? UniqueUserCount {
             get { return BackingStore?.Get<long?>("uniqueUserCount"); }
             set { BackingStore?.Set("uniqueUserCount", value); }

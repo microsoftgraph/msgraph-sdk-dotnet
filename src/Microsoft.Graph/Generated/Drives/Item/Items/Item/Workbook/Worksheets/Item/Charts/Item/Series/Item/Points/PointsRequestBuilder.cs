@@ -52,8 +52,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartpoint-list?view=graph-rest-1.0" />
+        /// Retrieve a list of chartpoints objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseries-list-points?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookChartPointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartPoint>(requestInfo, WorkbookChartPoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
+        /// Retrieve a list of chartpoints objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new PointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
+        /// Retrieve a list of chartpoints objects.
         /// </summary>
         public class PointsRequestBuilderGetQueryParameters 
         {

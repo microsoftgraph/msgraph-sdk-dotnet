@@ -55,8 +55,8 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0" />
+        /// Retrieve a conversationMember from a chat or channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
+        /// Retrieve a conversationMember from a chat or channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Item {
         {
         }
         /// <summary>
-        /// Retrieve a conversationMember from a chat.
+        /// Retrieve a conversationMember from a chat or channel.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters 
         {
