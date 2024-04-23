@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
         {
         }
         /// <summary>
-        /// Deletes a deviceCategory.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceCategories for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCategory object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0" />
+        /// The list of device categories with the tenant.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCategory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCategory>(requestInfo, Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceCategory object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceCategories in deviceManagement
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCategory>(requestInfo, Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a deviceCategory.
+        /// Delete navigation property deviceCategories for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCategory object.
+        /// The list of device categories with the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceCategory object.
+        /// Update the navigation property deviceCategories in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCategory object.
+        /// The list of device categories with the tenant.
         /// </summary>
         public class DeviceCategoryItemRequestBuilderGetQueryParameters 
         {

@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an alert object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0" />
+        /// A collection of alerts in Microsoft 365 Defender.
         /// </summary>
         /// <returns>A <see cref="Alert"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item {
             return await RequestAdapter.SendAsync<Alert>(requestInfo, Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an alert object in an organization based on the specified alert id property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0" />
+        /// Update the navigation property alerts_v2 in security
         /// </summary>
         /// <returns>A <see cref="Alert"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an alert object.
+        /// A collection of alerts in Microsoft 365 Defender.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an alert object in an organization based on the specified alert id property.
+        /// Update the navigation property alerts_v2 in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of an alert object.
+        /// A collection of alerts in Microsoft 365 Defender.
         /// </summary>
         public class AlertItemRequestBuilderGetQueryParameters 
         {

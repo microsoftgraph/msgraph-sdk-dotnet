@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
         {
         }
         /// <summary>
-        /// Remove a conversationMember from a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0" />
+        /// Delete navigation property members for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a conversationMember from a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0" />
+        /// Members and owners of the team.
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0" />
+        /// Update the navigation property members in users
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a conversationMember from a team.
+        /// Delete navigation property members for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a conversationMember from a team.
+        /// Members and owners of the team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team.
+        /// Update the navigation property members in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Members.Item {
         {
         }
         /// <summary>
-        /// Get a conversationMember from a team.
+        /// Members and owners of the team.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters 
         {

@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         {
         }
         /// <summary>
-        /// Delete a browserSiteList object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0" />
+        /// Delete navigation property siteLists for admin
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0" />
+        /// A collection of site lists to support Internet Explorer mode.
         /// </summary>
         /// <returns>A <see cref="BrowserSiteList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return await RequestAdapter.SendAsync<BrowserSiteList>(requestInfo, BrowserSiteList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a browserSiteList object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0" />
+        /// Update the navigation property siteLists in admin
         /// </summary>
         /// <returns>A <see cref="BrowserSiteList"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return await RequestAdapter.SendAsync<BrowserSiteList>(requestInfo, BrowserSiteList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a browserSiteList object.
+        /// Delete navigation property siteLists for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+        /// A collection of site lists to support Internet Explorer mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a browserSiteList object.
+        /// Update the navigation property siteLists in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         {
         }
         /// <summary>
-        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+        /// A collection of site lists to support Internet Explorer mode.
         /// </summary>
         public class BrowserSiteListItemRequestBuilderGetQueryParameters 
         {

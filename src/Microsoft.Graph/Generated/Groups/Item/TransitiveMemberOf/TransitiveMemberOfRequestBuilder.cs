@@ -64,7 +64,6 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
         }
         /// <summary>
         /// The groups that a group is a member of, either directly or through nested membership. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

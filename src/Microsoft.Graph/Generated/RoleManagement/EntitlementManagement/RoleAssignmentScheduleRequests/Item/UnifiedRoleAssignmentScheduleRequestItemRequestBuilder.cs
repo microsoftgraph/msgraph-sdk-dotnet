@@ -96,8 +96,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-get?view=graph-rest-1.0" />
+        /// Requests for active role assignments to principals through PIM.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentScheduleRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -164,7 +163,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             return requestInfo;
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
+        /// Requests for active role assignments to principals through PIM.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -221,7 +220,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         {
         }
         /// <summary>
-        /// In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
+        /// Requests for active role assignments to principals through PIM.
         /// </summary>
         public class UnifiedRoleAssignmentScheduleRequestItemRequestBuilderGetQueryParameters 
         {

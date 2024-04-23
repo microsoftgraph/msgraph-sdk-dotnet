@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
         {
         }
         /// <summary>
-        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-delete?view=graph-rest-1.0" />
+        /// Delete navigation property temporaryAccessPassMethods for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-get?view=graph-rest-1.0" />
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// </summary>
         /// <returns>A <see cref="TemporaryAccessPassAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +77,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
+        /// Delete navigation property temporaryAccessPassMethods for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +96,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +131,7 @@ namespace Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.Item {
         {
         }
         /// <summary>
-        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
         /// </summary>
         public class TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

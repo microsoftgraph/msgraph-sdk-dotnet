@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostTrackers {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a hostTracker object.
+        /// Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="HostTrackerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostTrackers {
             return await RequestAdapter.SendAsync<HostTracker>(requestInfo, HostTracker.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostTracker object.
+        /// Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostTrackers {
             return new HostTrackersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostTracker object.
+        /// Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
         /// </summary>
         public class HostTrackersRequestBuilderGetQueryParameters 
         {

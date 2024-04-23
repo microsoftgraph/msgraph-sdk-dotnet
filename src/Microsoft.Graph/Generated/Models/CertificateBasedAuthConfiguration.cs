@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class CertificateBasedAuthConfiguration : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

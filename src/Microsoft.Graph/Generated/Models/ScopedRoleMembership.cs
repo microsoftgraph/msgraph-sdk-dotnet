@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ScopedRoleMembership : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

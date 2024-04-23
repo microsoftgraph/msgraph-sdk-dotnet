@@ -82,7 +82,6 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners {
         }
         /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

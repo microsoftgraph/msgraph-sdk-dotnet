@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names {
         {
         }
         /// <summary>
-        /// Retrieve a list of nameditem objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-list?view=graph-rest-1.0" />
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookNamedItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names {
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of nameditem objects.
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +161,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names {
             return new NamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of nameditem objects.
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         public class NamesRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicyDeviceStateSumm
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-get?view=graph-rest-1.0" />
+        /// The device compliance state summary for this account.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicyDeviceStateSumm
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary>(requestInfo, Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceCompliancePolicyDeviceStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicydevicestatesummary-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCompliancePolicyDeviceStateSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicyDeviceStateSumm
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
+        /// The device compliance state summary for this account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicyDeviceStateSumm
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceCompliancePolicyDeviceStateSummary object.
+        /// Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicyDeviceStateSumm
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
+        /// The device compliance state summary for this account.
         /// </summary>
         public class DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetQueryParameters 
         {

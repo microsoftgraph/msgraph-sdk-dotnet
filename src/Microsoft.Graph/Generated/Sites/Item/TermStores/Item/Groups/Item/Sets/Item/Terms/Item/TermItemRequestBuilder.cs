@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
         {
         }
         /// <summary>
-        /// Delete a term object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0" />
+        /// Delete navigation property terms for sites
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0" />
+        /// All the terms under the set.
         /// </summary>
         /// <returns>A <see cref="Term"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a term object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0" />
+        /// Update the navigation property terms in sites
         /// </summary>
         /// <returns>A <see cref="Term"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a term object.
+        /// Delete navigation property terms for sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// All the terms under the set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a term object.
+        /// Update the navigation property terms in sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Groups.Item.Sets.Item.Terms
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// All the terms under the set.
         /// </summary>
         public class TermItemRequestBuilderGetQueryParameters 
         {

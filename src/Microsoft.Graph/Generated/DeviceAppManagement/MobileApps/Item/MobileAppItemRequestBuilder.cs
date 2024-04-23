@@ -146,8 +146,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
         {
         }
         /// <summary>
-        /// Deletes a managedIOSStoreApp.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-delete?view=graph-rest-1.0" />
+        /// Delete navigation property mobileApps for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -169,8 +168,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidStoreApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-get?view=graph-rest-1.0" />
+        /// The mobile apps.
         /// </summary>
         /// <returns>A <see cref="MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -193,8 +191,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedAndroidStoreApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-update?view=graph-rest-1.0" />
+        /// Update the navigation property mobileApps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -219,7 +216,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a managedIOSStoreApp.
+        /// Delete navigation property mobileApps for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -238,7 +235,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidStoreApp object.
+        /// The mobile apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -257,7 +254,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedAndroidStoreApp object.
+        /// Update the navigation property mobileApps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -295,7 +292,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidStoreApp object.
+        /// The mobile apps.
         /// </summary>
         public class MobileAppItemRequestBuilderGetQueryParameters 
         {

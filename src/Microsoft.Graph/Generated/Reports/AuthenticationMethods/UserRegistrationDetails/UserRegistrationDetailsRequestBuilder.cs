@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails 
         {
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0" />
+        /// Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
         /// </summary>
         /// <returns>A <see cref="UserRegistrationDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails 
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+        /// Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UserRegistrationDetails 
             return new UserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+        /// Represents the state of a user&apos;s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
         /// </summary>
         public class UserRegistrationDetailsRequestBuilderGetQueryParameters 
         {

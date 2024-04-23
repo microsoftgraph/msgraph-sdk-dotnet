@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
     [Obsolete("This class is obsolete. Use SearchWithQGetResponse instead.")]
+    #pragma warning disable CS1591
     public class SearchWithQResponse : SearchWithQGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

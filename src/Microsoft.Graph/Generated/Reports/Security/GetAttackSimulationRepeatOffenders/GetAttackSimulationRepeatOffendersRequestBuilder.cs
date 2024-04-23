@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
         {
         }
         /// <summary>
-        /// Invoke function getAttackSimulationRepeatOffenders
+        /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAttackSimulationRepeatOffendersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
             return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersGetResponse>(requestInfo, GetAttackSimulationRepeatOffendersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationRepeatOffenders
+        /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationrepeatoffenders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAttackSimulationRepeatOffendersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
             return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersResponse>(requestInfo, GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationRepeatOffenders
+        /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
             return new GetAttackSimulationRepeatOffendersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationRepeatOffenders
+        /// List the tenant users who have yielded to attacks more than once in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// </summary>
         public class GetAttackSimulationRepeatOffendersRequestBuilderGetQueryParameters 
         {

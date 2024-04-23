@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ServicePrincipal : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they&apos;re assigned to it. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled {

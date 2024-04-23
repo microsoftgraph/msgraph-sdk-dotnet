@@ -6,12 +6,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DefaultUserRolePermissions : IAdditionalDataHolder, IBackedModel, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
-            set { BackingStore?.Set("AdditionalData", value); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.</summary>
         public bool? AllowedToCreateApps {

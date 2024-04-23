@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
         {
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0" />
+        /// Delete ref of navigation property categories for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0" />
+        /// Create new navigation property ref to categories for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Delete ref of navigation property categories for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Create new navigation property ref to categories for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Delete ref of navigation property categories for education
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Categories.Ref {
         {
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.Activities {
         {
         }
         /// <summary>
-        /// Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application&apos;s activities, use the nextLink property to paginate.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-get-activities?view=graph-rest-1.0" />
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="UserActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Me.Activities {
             return await RequestAdapter.SendAsync<UserActivity>(requestInfo, UserActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application&apos;s activities, use the nextLink property to paginate.
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Me.Activities {
             return new ActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application&apos;s activities, use the nextLink property to paginate.
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters 
         {

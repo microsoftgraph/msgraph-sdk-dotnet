@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printusagebyprinter-get?view=graph-rest-1.0" />
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         /// <returns>A <see cref="PrintUsageByPrinter"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Reports.DailyPrintUsageByPrinter.Item {
         {
         }
         /// <summary>
-        /// Retrieve a usage summary for a printer for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         public class PrintUsageByPrinterItemRequestBuilderGetQueryParameters 
         {

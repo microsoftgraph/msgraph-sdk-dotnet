@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum SignInFrequencyInterval
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "timeBased")]
+        #pragma warning disable CS1591
         TimeBased,
+        #pragma warning restore CS1591
         [EnumMember(Value = "everyTime")]
+        #pragma warning disable CS1591
         EveryTime,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

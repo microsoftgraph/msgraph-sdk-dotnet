@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags {
         {
         }
         /// <summary>
-        /// Get a list of eDiscoveryReviewTag objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0" />
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTagCollectionResponse>(requestInfo, EdiscoveryReviewTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryReviewTag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0" />
+        /// Create new navigation property to tags for security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewTag"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of eDiscoveryReviewTag objects and their properties.
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryReviewTag object.
+        /// Create new navigation property to tags for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags {
             return new TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of eDiscoveryReviewTag objects and their properties.
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters 
         {

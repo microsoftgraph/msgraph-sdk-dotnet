@@ -13,8 +13,8 @@ namespace Microsoft.Graph.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
-            set { BackingStore?.Set("AdditionalData", value); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>True if to allow customers to choose a specific person for the booking.</summary>
         public bool? AllowStaffSelection {

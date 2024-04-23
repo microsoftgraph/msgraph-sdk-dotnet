@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class StandardWebPart : WebPart, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

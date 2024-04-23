@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class VerticalSection : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.</summary>
         public SectionEmphasisType? Emphasis {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
         {
         }
         /// <summary>
-        /// Delete an educationRubric object. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationrubric-delete?view=graph-rest-1.0" />
+        /// Delete navigation property rubrics for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationrubric-get?view=graph-rest-1.0" />
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         /// <returns>A <see cref="EducationRubric"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
             return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationRubric object. Only teachers can perform this operation. Updating a rubric attached to an assignment (PATCH /education/classes/{class-id}/assignments/{assignment-id}/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics. After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment. That rubric can be retrieved using GET /education/classes/{class-id}/assignments/{assignment-id}/rubric, but it cannot be updated.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationrubric-update?view=graph-rest-1.0" />
+        /// Update the navigation property rubrics in education
         /// </summary>
         /// <returns>A <see cref="EducationRubric"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
             return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an educationRubric object. Only teachers can perform this operation.
+        /// Delete navigation property rubrics for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationRubric object. Only teachers can perform this operation. Updating a rubric attached to an assignment (PATCH /education/classes/{class-id}/assignments/{assignment-id}/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics. After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment. That rubric can be retrieved using GET /education/classes/{class-id}/assignments/{assignment-id}/rubric, but it cannot be updated.
+        /// Update the navigation property rubrics in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Education.Users.Item.Rubrics.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an educationRubric object. Only teachers and students can perform this operation.
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         public class EducationRubricItemRequestBuilderGetQueryParameters 
         {

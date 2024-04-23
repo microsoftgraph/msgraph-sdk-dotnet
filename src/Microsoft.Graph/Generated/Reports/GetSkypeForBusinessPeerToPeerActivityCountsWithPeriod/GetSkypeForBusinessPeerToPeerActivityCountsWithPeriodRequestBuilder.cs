@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessPeerToPeerActivityCountsWit
         {
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessPeerToPeerActivityCounts
+        /// Get usage trends on the number and type of sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessPeerToPeerActivityCountsWit
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessPeerToPeerActivityCounts
+        /// Get usage trends on the number and type of sessions held in your organization. Types of sessions include IM, audio, video, application sharing, and file transfer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

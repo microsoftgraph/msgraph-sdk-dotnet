@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
         {
         }
         /// <summary>
-        /// Revoke the specified group&apos;s access to submit print jobs to the associated printerShare.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0" />
+        /// Delete ref of navigation property allowedGroups for print
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0" />
+        /// The groups whose users have access to print using the printer.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant the specified group access to submit print jobs to the associated printerShare.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0" />
+        /// Create new navigation property ref to allowedGroups for print
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revoke the specified group&apos;s access to submit print jobs to the associated printerShare.
+        /// Delete ref of navigation property allowedGroups for print
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// The groups whose users have access to print using the printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Grant the specified group access to submit print jobs to the associated printerShare.
+        /// Create new navigation property ref to allowedGroups for print
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Revoke the specified group&apos;s access to submit print jobs to the associated printerShare.
+        /// Delete ref of navigation property allowedGroups for print
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedGroups.Ref {
         {
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// The groups whose users have access to print using the printer.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

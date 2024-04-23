@@ -44,8 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
         {
         }
         /// <summary>
-        /// Deletes an accessReviewScheduleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-delete?view=graph-rest-1.0" />
+        /// Delete navigation property definitions for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-get?view=graph-rest-1.0" />
+        /// Represents the template and scheduling for an access review.
         /// </summary>
         /// <returns>A <see cref="AccessReviewScheduleDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +114,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinition>(requestInfo, AccessReviewScheduleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an accessReviewScheduleDefinition object.
+        /// Delete navigation property definitions for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
+        /// Represents the template and scheduling for an access review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
+        /// Represents the template and scheduling for an access review.
         /// </summary>
         public class AccessReviewScheduleDefinitionItemRequestBuilderGetQueryParameters 
         {

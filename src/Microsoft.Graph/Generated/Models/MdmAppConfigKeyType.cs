@@ -6,14 +6,24 @@ namespace Microsoft.Graph.Models {
     public enum MdmAppConfigKeyType
     {
         [EnumMember(Value = "stringType")]
+        #pragma warning disable CS1591
         StringType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "integerType")]
+        #pragma warning disable CS1591
         IntegerType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "realType")]
+        #pragma warning disable CS1591
         RealType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "booleanType")]
+        #pragma warning disable CS1591
         BooleanType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tokenType")]
+        #pragma warning disable CS1591
         TokenType,
+        #pragma warning restore CS1591
     }
 }

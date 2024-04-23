@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         /// <returns>A <see cref="SetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             return await RequestAdapter.SendAsync<SetCollectionResponse>(requestInfo, SetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new set object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-post?view=graph-rest-1.0" />
+        /// Create new navigation property to sets for groups
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Set"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new set object.
+        /// Create new navigation property to sets for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Sets {
             return new SetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         public class SetsRequestBuilderGetQueryParameters 
         {

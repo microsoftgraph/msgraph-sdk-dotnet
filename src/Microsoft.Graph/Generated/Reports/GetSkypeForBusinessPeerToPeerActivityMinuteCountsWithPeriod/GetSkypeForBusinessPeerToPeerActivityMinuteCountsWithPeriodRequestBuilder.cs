@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessPeerToPeerActivityMinuteCou
         {
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
+        /// Get usage trends on the length in minutes and type of peer-to-peer sessions held in your organization. Types of sessions include audio and video.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityminutecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessPeerToPeerActivityMinuteCou
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
+        /// Get usage trends on the length in minutes and type of peer-to-peer sessions held in your organization. Types of sessions include audio and video.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

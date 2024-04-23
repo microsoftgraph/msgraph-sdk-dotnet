@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class RegistryValueEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

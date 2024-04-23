@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum OnenoteSourceService
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OneDrive")]
+        #pragma warning disable CS1591
         OneDrive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OneDriveForBusiness")]
+        #pragma warning disable CS1591
         OneDriveForBusiness,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OnPremOneDriveForBusiness")]
+        #pragma warning disable CS1591
         OnPremOneDriveForBusiness,
+        #pragma warning restore CS1591
     }
 }

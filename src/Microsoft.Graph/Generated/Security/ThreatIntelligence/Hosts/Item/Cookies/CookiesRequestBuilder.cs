@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies {
         {
         }
         /// <summary>
-        /// Get a list of hostCookie resources.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-cookies?view=graph-rest-1.0" />
+        /// The hostCookies that are associated with this host.
         /// </summary>
         /// <returns>A <see cref="HostCookieCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies {
             return await RequestAdapter.SendAsync<HostCookieCollectionResponse>(requestInfo, HostCookieCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of hostCookie resources.
+        /// The hostCookies that are associated with this host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies {
             return new CookiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of hostCookie resources.
+        /// The hostCookies that are associated with this host.
         /// </summary>
         public class CookiesRequestBuilderGetQueryParameters 
         {

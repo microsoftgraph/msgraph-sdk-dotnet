@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests.I
         {
         }
         /// <summary>
-        /// Delete a timeOffRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0" />
+        /// Delete navigation property timeOffRequests for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a timeoffrequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0" />
+        /// The time off requests in the schedule.
         /// </summary>
         /// <returns>A <see cref="TimeOffRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests.I
             return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a timeOffRequest object.
+        /// Delete navigation property timeOffRequests for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests.I
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a timeoffrequest object.
+        /// The time off requests in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests.I
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a timeoffrequest object.
+        /// The time off requests in the schedule.
         /// </summary>
         public class TimeOffRequestItemRequestBuilderGetQueryParameters 
         {

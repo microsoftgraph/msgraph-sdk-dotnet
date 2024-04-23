@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Delete a tag object permanently.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0" />
+        /// Delete navigation property tags for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0" />
+        /// The tags associated with the team.
         /// </summary>
         /// <returns>A <see cref="TeamworkTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a tag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0" />
+        /// Update the navigation property tags in me
         /// </summary>
         /// <returns>A <see cref="TeamworkTag"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a tag object permanently.
+        /// Delete navigation property tags for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
+        /// The tags associated with the team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a tag object.
+        /// Update the navigation property tags in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a tag object.
+        /// The tags associated with the team.
         /// </summary>
         public class TeamworkTagItemRequestBuilderGetQueryParameters 
         {

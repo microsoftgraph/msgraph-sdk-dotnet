@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Terms {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// All the terms under the set.
         /// </summary>
         /// <returns>A <see cref="TermCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Terms {
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// All the terms under the set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Terms {
             return new TermsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a term object.
+        /// All the terms under the set.
         /// </summary>
         public class TermsRequestBuilderGetQueryParameters 
         {

@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Delta {
+    #pragma warning disable CS1591
     public class DeltaGetResponse : BaseDeltaFunctionResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly-created or updated assignments without reading the whole collection. A teacher or an application running with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

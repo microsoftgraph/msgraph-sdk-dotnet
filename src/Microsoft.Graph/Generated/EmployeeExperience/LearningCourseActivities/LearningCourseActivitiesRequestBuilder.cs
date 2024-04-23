@@ -51,7 +51,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities {
         {
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities {
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities {
             return new LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         public class LearningCourseActivitiesRequestBuilderGetQueryParameters 
         {

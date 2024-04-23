@@ -52,8 +52,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
         }
         /// <summary>
-        /// Get a list of the taskReport objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0" />
+        /// Represents the aggregation of task execution data for tasks within a workflow object.
         /// </summary>
         /// <returns>A <see cref="TaskReportCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +87,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Get a list of the taskReport objects and their properties.
+        /// Represents the aggregation of task execution data for tasks within a workflow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +115,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new TaskReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the taskReport objects and their properties.
+        /// Represents the aggregation of task execution data for tasks within a workflow object.
         /// </summary>
         public class TaskReportsRequestBuilderGetQueryParameters 
         {

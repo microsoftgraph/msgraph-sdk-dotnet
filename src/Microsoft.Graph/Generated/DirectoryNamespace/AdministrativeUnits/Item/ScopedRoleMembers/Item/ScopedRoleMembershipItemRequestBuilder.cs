@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         {
         }
         /// <summary>
-        /// Remove a Microsoft Entra role assignment with administrative unit scope.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0" />
+        /// Delete navigation property scopedRoleMembers for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a Microsoft Entra role assignment with administrative unit scope.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0" />
+        /// Scoped-role members of this administrative unit.
         /// </summary>
         /// <returns>A <see cref="ScopedRoleMembership"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a Microsoft Entra role assignment with administrative unit scope.
+        /// Delete navigation property scopedRoleMembers for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
             return requestInfo;
         }
         /// <summary>
-        /// Get a Microsoft Entra role assignment with administrative unit scope.
+        /// Scoped-role members of this administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.ScopedRole
         {
         }
         /// <summary>
-        /// Get a Microsoft Entra role assignment with administrative unit scope.
+        /// Scoped-role members of this administrative unit.
         /// </summary>
         public class ScopedRoleMembershipItemRequestBuilderGetQueryParameters 
         {

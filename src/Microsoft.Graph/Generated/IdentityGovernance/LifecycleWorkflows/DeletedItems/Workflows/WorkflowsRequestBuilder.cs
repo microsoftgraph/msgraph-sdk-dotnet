@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0" />
+        /// Deleted workflows that end up in the deletedItemsContainer.
         /// </summary>
         /// <returns>A <see cref="WorkflowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return await RequestAdapter.SendAsync<WorkflowCollectionResponse>(requestInfo, WorkflowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
+        /// Deleted workflows that end up in the deletedItemsContainer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
+        /// Deleted workflows that end up in the deletedItemsContainer.
         /// </summary>
         public class WorkflowsRequestBuilderGetQueryParameters 
         {

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemA
         {
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Gets a row based on its position in the collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerowcollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookTableRow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemA
             return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Gets a row based on its position in the collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -95,8 +95,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Deletes the chart object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-delete?view=graph-rest-1.0" />
+        /// Delete navigation property charts for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,8 +117,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chart object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-get?view=graph-rest-1.0" />
+        /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -178,8 +176,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
-        /// Update the properties of chart object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-update?view=graph-rest-1.0" />
+        /// Update the navigation property charts in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChart"/></returns>
         /// <param name="body">The request body</param>
@@ -204,7 +201,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the chart object.
+        /// Delete navigation property charts for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -223,7 +220,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chart object.
+        /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -242,7 +239,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chart object.
+        /// Update the navigation property charts in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -280,7 +277,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chart object.
+        /// Returns collection of charts that are part of the worksheet. Read-only.
         /// </summary>
         public class WorkbookChartItemRequestBuilderGetQueryParameters 
         {

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

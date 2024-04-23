@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Item {
         {
         }
         /// <summary>
-        /// Delete an existing user activity for your app.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0" />
+        /// Delete navigation property activities for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Item {
             return await RequestAdapter.SendAsync<UserActivity>(requestInfo, UserActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing user activity for your app.
+        /// Delete navigation property activities for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

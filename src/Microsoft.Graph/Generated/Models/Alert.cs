@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Alert : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Name or alias of the activity group (attacker) this alert is attributed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +79,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
-        /// <summary>Category of the alert (for example, credentialTheft, ransomware, etc.).</summary>
+        /// <summary>Category of the alert (for example, credentialTheft, ransomware).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category {
@@ -162,12 +164,12 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("detectionIds", value); }
         }
 #endif
-        /// <summary>Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
+        /// <summary>Time at which the event or events that served as the trigger to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. (supports update)</summary>
+        /// <summary>Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.</summary>
         public AlertFeedback? Feedback {
             get { return BackingStore?.Get<AlertFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
@@ -355,7 +357,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>Hyperlinks (URIs) to the source material related to the alert, for example, provider&apos;s user interface for alerts or log search, etc.</summary>
+        /// <summary>Hyperlinks (URIs) to the source material related to the alert, for example, provider&apos;s user interface for alerts or log search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SourceMaterials {
@@ -374,7 +376,7 @@ namespace Microsoft.Graph.Models {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>User-definable labels that can be applied to an alert and can serve as filter conditions (for example &apos;HVA&apos;, &apos;SAW&apos;, etc.) (supports update).</summary>
+        /// <summary>User-definable labels that can be applied to an alert and can serve as filter conditions (for example &apos;HVA&apos;, &apos;SAW&apos;) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags {

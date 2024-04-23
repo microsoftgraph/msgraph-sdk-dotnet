@@ -82,7 +82,6 @@ namespace Microsoft.Graph.Applications.Item.Owners {
         }
         /// <summary>
         /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

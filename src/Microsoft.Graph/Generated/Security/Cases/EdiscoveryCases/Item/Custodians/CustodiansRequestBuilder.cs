@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians {
         {
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0" />
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCustodianCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,8 +86,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians {
             return await RequestAdapter.SendAsync<EdiscoveryCustodianCollectionResponse>(requestInfo, EdiscoveryCustodianCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0" />
+        /// Create new navigation property to custodians for security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCustodian"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians {
             return await RequestAdapter.SendAsync<EdiscoveryCustodian>(requestInfo, EdiscoveryCustodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site.
+        /// Create new navigation property to custodians for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +161,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians {
             return new CustodiansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         public class CustodiansRequestBuilderGetQueryParameters 
         {

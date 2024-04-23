@@ -51,8 +51,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0" />
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminServiceManagementDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
             return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
             return new ServiceManagementDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         public class ServiceManagementDetailsRequestBuilderGetQueryParameters 
         {

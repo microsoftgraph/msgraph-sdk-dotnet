@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
     [Obsolete("This class is obsolete. Use CreateDownloadUrlPostResponse instead.")]
+    #pragma warning disable CS1591
     public class CreateDownloadUrlResponse : CreateDownloadUrlPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories {
         {
         }
         /// <summary>
-        /// Invoke function getAuditCategories
+        /// Not yet documented
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAuditCategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories {
             return await RequestAdapter.SendAsync<GetAuditCategoriesGetResponse>(requestInfo, GetAuditCategoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAuditCategories
+        /// Not yet documented
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAuditCategoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories {
             return await RequestAdapter.SendAsync<GetAuditCategoriesResponse>(requestInfo, GetAuditCategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAuditCategories
+        /// Not yet documented
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories {
             return new GetAuditCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAuditCategories
+        /// Not yet documented
         /// </summary>
         public class GetAuditCategoriesRequestBuilderGetQueryParameters 
         {

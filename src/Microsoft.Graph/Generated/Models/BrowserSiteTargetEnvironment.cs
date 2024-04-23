@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSiteTargetEnvironment
+    #pragma warning restore CS1591
     {
         /// <summary>Open in Internet Explorer Mode</summary>
         [EnumMember(Value = "internetExplorerMode")]

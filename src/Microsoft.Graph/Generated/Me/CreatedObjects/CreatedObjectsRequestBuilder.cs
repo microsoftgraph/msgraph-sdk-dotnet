@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
         {
         }
         /// <summary>
-        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0" />
+        /// Directory objects that the user created. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
+        /// Directory objects that the user created. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             return new CreatedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
+        /// Directory objects that the user created. Read-only. Nullable.
         /// </summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters 
         {

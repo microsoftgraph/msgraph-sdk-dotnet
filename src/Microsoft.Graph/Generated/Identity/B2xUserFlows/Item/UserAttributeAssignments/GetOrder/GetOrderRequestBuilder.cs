@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Ge
         {
         }
         /// <summary>
-        /// Invoke function getOrder
+        /// Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AssignmentOrder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Ge
             return await RequestAdapter.SendAsync<AssignmentOrder>(requestInfo, AssignmentOrder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getOrder
+        /// Get the order of identityUserFlowAttributeAssignments being collected within a user flow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

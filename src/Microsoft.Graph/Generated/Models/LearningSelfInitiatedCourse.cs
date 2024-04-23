@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class LearningSelfInitiatedCourse : LearningCourseActivity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time on which the learner started the self-initiated course. Optional.</summary>
         public DateTimeOffset? StartedDateTime {

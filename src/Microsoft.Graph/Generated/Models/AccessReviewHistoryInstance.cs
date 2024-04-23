@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AccessReviewHistoryInstance : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

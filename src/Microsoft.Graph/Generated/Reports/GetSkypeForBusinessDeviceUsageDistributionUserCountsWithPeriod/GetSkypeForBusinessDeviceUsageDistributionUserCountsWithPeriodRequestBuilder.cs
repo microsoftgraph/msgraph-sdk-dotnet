@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageDistributionUser
         {
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
+        /// Get the number of users using unique devices in your organization. The report will show you the number of users per device including Windows, Windows phone, Android phone, iPhone, and iPad.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusagedistributionusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageDistributionUser
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
+        /// Get the number of users using unique devices in your organization. The report will show you the number of users per device including Windows, Windows phone, Android phone, iPhone, and iPad.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

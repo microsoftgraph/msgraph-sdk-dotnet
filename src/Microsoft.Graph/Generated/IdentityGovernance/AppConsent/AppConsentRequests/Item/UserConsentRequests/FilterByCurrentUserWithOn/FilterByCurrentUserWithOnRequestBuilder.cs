@@ -33,7 +33,8 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
         {
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnGetResponse>(requestInfo, FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnResponse>(requestInfo, FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return new FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve a collection of userConsentRequest objects for accessing a specified app, for which the current user is the reviewer.
         /// </summary>
         public class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 
         {

@@ -86,8 +86,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         {
         }
         /// <summary>
-        /// Delete a bookingBusiness object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0" />
+        /// Delete navigation property bookingBusinesses for solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,8 +108,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingBusiness object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0" />
+        /// Get bookingBusinesses from solutions
         /// </summary>
         /// <returns>A <see cref="BookingBusiness"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,8 +131,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingBusiness object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0" />
+        /// Update the navigation property bookingBusinesses in solutions
         /// </summary>
         /// <returns>A <see cref="BookingBusiness"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +156,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a bookingBusiness object.
+        /// Delete navigation property bookingBusinesses for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +175,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingBusiness object.
+        /// Get bookingBusinesses from solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +194,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingBusiness object.
+        /// Update the navigation property bookingBusinesses in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -235,7 +232,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingBusiness object.
+        /// Get bookingBusinesses from solutions
         /// </summary>
         public class BookingBusinessItemRequestBuilderGetQueryParameters 
         {

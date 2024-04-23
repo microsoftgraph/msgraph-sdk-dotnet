@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ResellerDelegatedAdminRelationship : DelegatedAdminRelationship, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

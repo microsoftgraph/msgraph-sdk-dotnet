@@ -62,8 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the accessReviewInstance objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0" />
+        /// If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that doesn&apos;t recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource has a unique instance for each recurrence.
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the accessReviewInstance objects and their properties.
+        /// If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that doesn&apos;t recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource has a unique instance for each recurrence.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +160,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return new InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the accessReviewInstance objects and their properties.
+        /// If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that doesn&apos;t recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource has a unique instance for each recurrence.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters 
         {

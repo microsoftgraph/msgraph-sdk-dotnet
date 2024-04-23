@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamworkUserIdentity : Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
         public TeamworkUserIdentityType? UserIdentityType {

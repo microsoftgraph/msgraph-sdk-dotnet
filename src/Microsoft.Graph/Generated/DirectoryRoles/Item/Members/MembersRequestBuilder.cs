@@ -94,7 +94,6 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members {
         }
         /// <summary>
         /// Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ListItem : BaseItem, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Analytics about the view activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +51,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("documentSetVersions", value); }
         }
 #endif
-        /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
+        /// <summary>For document libraries, the driveItem relationship exposes the listItem as a driveItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Models.DriveItem? DriveItem {

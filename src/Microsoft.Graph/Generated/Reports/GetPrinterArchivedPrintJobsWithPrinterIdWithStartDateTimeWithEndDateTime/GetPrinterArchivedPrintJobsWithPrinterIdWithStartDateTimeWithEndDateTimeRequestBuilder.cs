@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
         {
         }
         /// <summary>
-        /// Invoke function getPrinterArchivedPrintJobs
+        /// Get a list of archived print jobs that were queued for particular printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
             return await RequestAdapter.SendAsync<GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getPrinterArchivedPrintJobs
+        /// Get a list of archived print jobs that were queued for particular printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
             return await RequestAdapter.SendAsync<GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeResponse>(requestInfo, GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getPrinterArchivedPrintJobs
+        /// Get a list of archived print jobs that were queued for particular printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
             return new GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getPrinterArchivedPrintJobs
+        /// Get a list of archived print jobs that were queued for particular printer.
         /// </summary>
         public class GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

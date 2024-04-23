@@ -77,8 +77,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
             return await RequestAdapter.SendAsync<EducationGradingCategory>(requestInfo, EducationGradingCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationgradingcategory-update?view=graph-rest-1.0" />
+        /// Update the navigation property gradingCategories in education
         /// </summary>
         /// <returns>A <see cref="EducationGradingCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +140,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings.GradingCateg
             return requestInfo;
         }
         /// <summary>
-        /// Update a single gradingCategory on the educationAssignmentSettings. Only teachers can perform this operation.
+        /// Update the navigation property gradingCategories in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

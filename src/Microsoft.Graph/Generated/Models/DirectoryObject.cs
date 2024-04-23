@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DirectoryObject : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
         public DateTimeOffset? DeletedDateTime {

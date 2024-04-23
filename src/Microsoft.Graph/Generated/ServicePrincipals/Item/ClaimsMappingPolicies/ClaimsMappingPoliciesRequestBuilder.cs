@@ -57,8 +57,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies {
         {
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0" />
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="ClaimsMappingPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies {
             return await RequestAdapter.SendAsync<ClaimsMappingPolicyCollectionResponse>(requestInfo, ClaimsMappingPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies {
             return new ClaimsMappingPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         public class ClaimsMappingPoliciesRequestBuilderGetQueryParameters 
         {

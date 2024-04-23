@@ -31,7 +31,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
         {
         }
         /// <summary>
-        /// Invoke function functions
+        /// List all the functions currently supported in the attributeMappingSource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FunctionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return await RequestAdapter.SendAsync<FunctionsGetResponse>(requestInfo, FunctionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function functions
+        /// List all the functions currently supported in the attributeMappingSource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FunctionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return await RequestAdapter.SendAsync<FunctionsResponse>(requestInfo, FunctionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function functions
+        /// List all the functions currently supported in the attributeMappingSource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schem
             return new FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function functions
+        /// List all the functions currently supported in the attributeMappingSource.
         /// </summary>
         public class FunctionsRequestBuilderGetQueryParameters 
         {

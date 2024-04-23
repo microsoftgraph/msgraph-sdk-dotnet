@@ -97,7 +97,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Gets a chart based on its position in the collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartcollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Gets a chart based on its position in the collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

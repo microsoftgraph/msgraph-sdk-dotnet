@@ -52,8 +52,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         {
         }
         /// <summary>
-        /// Get user processing results of a workflow run object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-run-list-userprocessingresults?view=graph-rest-1.0" />
+        /// The associated individual user execution.
         /// </summary>
         /// <returns>A <see cref="UserProcessingResultCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +87,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Get user processing results of a workflow run object.
+        /// The associated individual user execution.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +115,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new UserProcessingResultsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get user processing results of a workflow run object.
+        /// The associated individual user execution.
         /// </summary>
         public class UserProcessingResultsRequestBuilderGetQueryParameters 
         {

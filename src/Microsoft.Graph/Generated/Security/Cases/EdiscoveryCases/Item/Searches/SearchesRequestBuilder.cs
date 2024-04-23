@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
         {
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0" />
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoverySearchCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return await RequestAdapter.SendAsync<EdiscoverySearchCollectionResponse>(requestInfo, EdiscoverySearchCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoverySearch object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0" />
+        /// Create new navigation property to searches for security
         /// </summary>
         /// <returns>A <see cref="EdiscoverySearch"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return await RequestAdapter.SendAsync<EdiscoverySearch>(requestInfo, EdiscoverySearch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoverySearch object.
+        /// Create new navigation property to searches for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches {
             return new SearchesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         public class SearchesRequestBuilderGetQueryParameters 
         {

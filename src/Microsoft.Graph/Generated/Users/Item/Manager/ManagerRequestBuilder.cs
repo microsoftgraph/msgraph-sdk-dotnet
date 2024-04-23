@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Users.Item.Manager {
         {
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
+        /// The user or contact that is this user&apos;s manager. Read-only. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Users.Item.Manager {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// The user or contact that is this user&apos;s manager. Read-only. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +89,7 @@ namespace Microsoft.Graph.Users.Item.Manager {
             return new ManagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// The user or contact that is this user&apos;s manager. Read-only. Supports $expand.
         /// </summary>
         public class ManagerRequestBuilderGetQueryParameters 
         {

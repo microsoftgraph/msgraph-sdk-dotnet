@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property homeRealmDiscoveryPolicies for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0" />
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property homeRealmDiscoveryPolicies in policies
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a homeRealmDiscoveryPolicy object.
+        /// Delete navigation property homeRealmDiscoveryPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a homeRealmDiscoveryPolicy object.
+        /// Update the navigation property homeRealmDiscoveryPolicies in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         public class HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters 
         {

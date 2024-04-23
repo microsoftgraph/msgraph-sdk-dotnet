@@ -60,8 +60,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the applePushNotificationCertificate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-get?view=graph-rest-1.0" />
+        /// Apple push notification certificate.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ApplePushNotificationCertificate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ApplePushNotificationCertificate>(requestInfo, Microsoft.Graph.Models.ApplePushNotificationCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a applePushNotificationCertificate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-update?view=graph-rest-1.0" />
+        /// Update the navigation property applePushNotificationCertificate in deviceManagement
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ApplePushNotificationCertificate"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the applePushNotificationCertificate object.
+        /// Apple push notification certificate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a applePushNotificationCertificate object.
+        /// Update the navigation property applePushNotificationCertificate in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the applePushNotificationCertificate object.
+        /// Apple push notification certificate.
         /// </summary>
         public class ApplePushNotificationCertificateRequestBuilderGetQueryParameters 
         {

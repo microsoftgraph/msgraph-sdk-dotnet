@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the eBookInstallSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-get?view=graph-rest-1.0" />
+        /// Mobile App Install Summary.
         /// </summary>
         /// <returns>A <see cref="EBookInstallSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary 
             return await RequestAdapter.SendAsync<EBookInstallSummary>(requestInfo, EBookInstallSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a eBookInstallSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-ebookinstallsummary-update?view=graph-rest-1.0" />
+        /// Update the navigation property installSummary in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="EBookInstallSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary 
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the eBookInstallSummary object.
+        /// Mobile App Install Summary.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a eBookInstallSummary object.
+        /// Update the navigation property installSummary in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.InstallSummary 
         {
         }
         /// <summary>
-        /// Read properties and relationships of the eBookInstallSummary object.
+        /// Mobile App Install Summary.
         /// </summary>
         public class InstallSummaryRequestBuilderGetQueryParameters 
         {

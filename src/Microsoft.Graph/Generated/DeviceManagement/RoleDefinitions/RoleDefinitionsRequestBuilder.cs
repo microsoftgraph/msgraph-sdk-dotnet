@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0" />
+        /// The Role Definitions.
         /// </summary>
         /// <returns>A <see cref="RoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return await RequestAdapter.SendAsync<RoleDefinitionCollectionResponse>(requestInfo, RoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceAndAppManagementRoleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-create?view=graph-rest-1.0" />
+        /// Create new navigation property to roleDefinitions for deviceManagement
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+        /// The Role Definitions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceAndAppManagementRoleDefinition object.
+        /// Create new navigation property to roleDefinitions for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions {
             return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+        /// The Role Definitions.
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters 
         {

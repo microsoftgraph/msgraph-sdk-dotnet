@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies {
         {
         }
         /// <summary>
-        /// Get the details of the policies in PIM that can be applied to Microsoft Entra roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0" />
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicy>(requestInfo, UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details of the policies in PIM that can be applied to Microsoft Entra roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies {
             return new RoleManagementPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the details of the policies in PIM that can be applied to Microsoft Entra roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         public class RoleManagementPoliciesRequestBuilderGetQueryParameters 
         {

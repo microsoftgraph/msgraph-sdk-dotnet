@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts {
         {
         }
         /// <summary>
-        /// Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0" />
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="CallTranscriptCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts {
             return await RequestAdapter.SendAsync<CallTranscript>(requestInfo, CallTranscript.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings.
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts {
             return new TranscriptsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings.
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         public class TranscriptsRequestBuilderGetQueryParameters 
         {

@@ -70,7 +70,6 @@ namespace Microsoft.Graph.Users.Item.OwnedDevices {
         }
         /// <summary>
         /// Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

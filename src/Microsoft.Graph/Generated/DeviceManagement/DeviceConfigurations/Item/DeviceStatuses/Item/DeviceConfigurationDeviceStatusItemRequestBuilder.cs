@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
         {
         }
         /// <summary>
-        /// Deletes a deviceConfigurationDeviceStatus.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceStatuses for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-get?view=graph-rest-1.0" />
+        /// Device configuration installation status by device.
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationDeviceStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
             return await RequestAdapter.SendAsync<DeviceConfigurationDeviceStatus>(requestInfo, DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationDeviceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceStatuses in deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationDeviceStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
             return await RequestAdapter.SendAsync<DeviceConfigurationDeviceStatus>(requestInfo, DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a deviceConfigurationDeviceStatus.
+        /// Delete navigation property deviceStatuses for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStatus object.
+        /// Device configuration installation status by device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationDeviceStatus object.
+        /// Update the navigation property deviceStatuses in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceStatu
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStatus object.
+        /// Device configuration installation status by device.
         /// </summary>
         public class DeviceConfigurationDeviceStatusItemRequestBuilderGetQueryParameters 
         {

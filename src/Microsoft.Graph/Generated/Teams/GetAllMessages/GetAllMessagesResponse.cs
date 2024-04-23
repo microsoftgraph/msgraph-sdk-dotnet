@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Teams.GetAllMessages {
     [Obsolete("This class is obsolete. Use GetAllMessagesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetAllMessagesResponse : GetAllMessagesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

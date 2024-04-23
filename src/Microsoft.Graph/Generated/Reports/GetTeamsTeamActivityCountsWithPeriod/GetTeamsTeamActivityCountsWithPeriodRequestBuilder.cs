@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetTeamsTeamActivityCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getTeamsTeamActivityCounts
+        /// Get the number of team activities across Microsoft Teams. The activity types are related to meetings and messages.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetTeamsTeamActivityCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getTeamsTeamActivityCounts
+        /// Get the number of team activities across Microsoft Teams. The activity types are related to meetings and messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

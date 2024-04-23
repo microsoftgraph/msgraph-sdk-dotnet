@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PositiveReinforcementNotification : BaseEndUserNotification, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.</summary>
         public NotificationDeliveryPreference? DeliveryPreference {

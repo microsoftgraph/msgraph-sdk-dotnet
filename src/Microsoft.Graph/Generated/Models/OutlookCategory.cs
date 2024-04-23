@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class OutlookCategory : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.</summary>
         public CategoryColor? Color {

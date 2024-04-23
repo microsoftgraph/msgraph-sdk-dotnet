@@ -36,7 +36,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWi
         {
         }
         /// <summary>
-        /// Invoke function cell
+        /// Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it&apos;s stays within the worksheet grid.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-cell?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWi
             return await RequestAdapter.SendAsync<WorkbookRange>(requestInfo, WorkbookRange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function cell
+        /// Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it&apos;s stays within the worksheet grid.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

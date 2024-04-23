@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
         {
         }
         /// <summary>
-        /// Deletes a settingStateDeviceSummary.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceSettingStateSummaries for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the settingStateDeviceSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-get?view=graph-rest-1.0" />
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         /// <returns>A <see cref="SettingStateDeviceSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return await RequestAdapter.SendAsync<SettingStateDeviceSummary>(requestInfo, SettingStateDeviceSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a settingStateDeviceSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceSettingStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="SettingStateDeviceSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return await RequestAdapter.SendAsync<SettingStateDeviceSummary>(requestInfo, SettingStateDeviceSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a settingStateDeviceSummary.
+        /// Delete navigation property deviceSettingStateSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the settingStateDeviceSummary object.
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a settingStateDeviceSummary object.
+        /// Update the navigation property deviceSettingStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
         {
         }
         /// <summary>
-        /// Read properties and relationships of the settingStateDeviceSummary object.
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         public class SettingStateDeviceSummaryItemRequestBuilderGetQueryParameters 
         {

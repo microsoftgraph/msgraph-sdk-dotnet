@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Admin.Microsoft365Apps.InstallationOptions {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an m365AppsInstallationOptions object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/m365appsinstallationoptions-get?view=graph-rest-1.0" />
+        /// A container for tenant-level settings for Microsoft 365 applications.
         /// </summary>
         /// <returns>A <see cref="M365AppsInstallationOptions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Admin.Microsoft365Apps.InstallationOptions {
             return await RequestAdapter.SendAsync<M365AppsInstallationOptions>(requestInfo, M365AppsInstallationOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an m365AppsInstallationOptions object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/m365appsinstallationoptions-update?view=graph-rest-1.0" />
+        /// Update the navigation property installationOptions in admin
         /// </summary>
         /// <returns>A <see cref="M365AppsInstallationOptions"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Admin.Microsoft365Apps.InstallationOptions {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an m365AppsInstallationOptions object.
+        /// A container for tenant-level settings for Microsoft 365 applications.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Admin.Microsoft365Apps.InstallationOptions {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an m365AppsInstallationOptions object.
+        /// Update the navigation property installationOptions in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Admin.Microsoft365Apps.InstallationOptions {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an m365AppsInstallationOptions object.
+        /// A container for tenant-level settings for Microsoft 365 applications.
         /// </summary>
         public class InstallationOptionsRequestBuilderGetQueryParameters 
         {

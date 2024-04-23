@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ColumnDefinition : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>This column stores boolean values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -219,7 +221,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("lookup", value); }
         }
 #endif
-        /// <summary>The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.</summary>
+        /// <summary>The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {

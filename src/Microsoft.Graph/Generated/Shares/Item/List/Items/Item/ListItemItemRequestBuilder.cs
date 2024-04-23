@@ -87,8 +87,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item {
         {
         }
         /// <summary>
-        /// Removes an item from a [list][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0" />
+        /// Delete navigation property items for shares
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,8 +123,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item {
             return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
         }
         /// <summary>
-        /// Returns the metadata for an [item][] in a [list][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0" />
+        /// All items contained in the list.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ListItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,7 +171,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItem>(requestInfo, Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes an item from a [list][].
+        /// Delete navigation property items for shares
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Returns the metadata for an [item][] in a [list][].
+        /// All items contained in the list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -249,7 +247,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item {
         {
         }
         /// <summary>
-        /// Returns the metadata for an [item][] in a [list][].
+        /// All items contained in the list.
         /// </summary>
         public class ListItemItemRequestBuilderGetQueryParameters 
         {

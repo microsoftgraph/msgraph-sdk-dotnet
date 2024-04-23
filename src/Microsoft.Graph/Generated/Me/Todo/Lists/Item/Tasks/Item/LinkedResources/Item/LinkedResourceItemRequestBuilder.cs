@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
         {
         }
         /// <summary>
-        /// Delete a linkedResource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0" />
+        /// Delete navigation property linkedResources for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0" />
+        /// A collection of resources linked to the task.
         /// </summary>
         /// <returns>A <see cref="LinkedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
             return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a linkedResource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0" />
+        /// Update the navigation property linkedResources in me
         /// </summary>
         /// <returns>A <see cref="LinkedResource"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
             return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a linkedResource object.
+        /// Delete navigation property linkedResources for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object.
+        /// A collection of resources linked to the task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a linkedResource object.
+        /// Update the navigation property linkedResources in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a linkedResource object.
+        /// A collection of resources linked to the task.
         /// </summary>
         public class LinkedResourceItemRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class RemoteDesktopSecurityConfiguration : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.</summary>
         public bool? IsRemoteDesktopProtocolEnabled {

@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
         {
         }
         /// <summary>
-        /// Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-delete?view=graph-rest-1.0" />
+        /// Delete navigation property localizations for organization
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,8 +96,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0" />
+        /// Add different branding based on a locale.
         /// </summary>
         /// <returns>A <see cref="OrganizationalBrandingLocalization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,8 +119,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
             return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an organizationalBrandingLocalization object for a specific localization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0" />
+        /// Update the navigation property localizations in organization
         /// </summary>
         /// <returns>A <see cref="OrganizationalBrandingLocalization"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +144,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
             return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
+        /// Delete navigation property localizations for organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +163,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.
+        /// Add different branding based on a locale.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +182,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an organizationalBrandingLocalization object for a specific localization.
+        /// Update the navigation property localizations in organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -223,7 +220,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.
+        /// Add different branding based on a locale.
         /// </summary>
         public class OrganizationalBrandingLocalizationItemRequestBuilderGetQueryParameters 
         {

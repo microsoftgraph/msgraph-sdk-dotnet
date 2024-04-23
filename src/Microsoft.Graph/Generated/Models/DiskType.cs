@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum DiskType
+    #pragma warning restore CS1591
     {
         /// <summary>Enum member for unknown or default diskType.</summary>
         [EnumMember(Value = "unknown")]

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AuthenticationMethodTarget : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Determines if the user is enforced to register the authentication method.</summary>
         public bool? IsRegistrationRequired {

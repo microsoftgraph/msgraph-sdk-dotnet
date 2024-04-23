@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
         {
         }
         /// <summary>
-        /// Remove an educationUser from an educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0" />
+        /// Delete ref of navigation property members for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0" />
+        /// All users in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an educationUser member to an educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0" />
+        /// Create new navigation property ref to members for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an educationUser from an educationClass.
+        /// Delete ref of navigation property members for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// All users in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add an educationUser member to an educationClass.
+        /// Create new navigation property ref to members for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an educationUser from an educationClass.
+        /// Delete ref of navigation property members for education
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members.Ref {
         {
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// All users in the class. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses {
         {
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationUser.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-list-taughtclasses?view=graph-rest-1.0" />
+        /// Classes for which the user is a teacher.
         /// </summary>
         /// <returns>A <see cref="EducationClassCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses {
             return await RequestAdapter.SendAsync<EducationClassCollectionResponse>(requestInfo, EducationClassCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationUser.
+        /// Classes for which the user is a teacher.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Education.Me.TaughtClasses {
             return new TaughtClassesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationUser.
+        /// Classes for which the user is a teacher.
         /// </summary>
         public class TaughtClassesRequestBuilderGetQueryParameters 
         {

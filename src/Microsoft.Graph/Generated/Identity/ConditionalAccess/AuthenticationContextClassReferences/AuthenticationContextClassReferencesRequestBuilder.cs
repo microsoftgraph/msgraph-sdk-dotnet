@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
         {
         }
         /// <summary>
-        /// Retrieve a list of authenticationContextClassReference objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
         /// </summary>
         /// <returns>A <see cref="AuthenticationContextClassReferenceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
             return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of authenticationContextClassReference objects.
+        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassR
             return new AuthenticationContextClassReferencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of authenticationContextClassReference objects.
+        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
         /// </summary>
         public class AuthenticationContextClassReferencesRequestBuilderGetQueryParameters 
         {

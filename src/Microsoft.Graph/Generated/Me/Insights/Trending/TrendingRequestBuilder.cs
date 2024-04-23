@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.Insights.Trending {
         {
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0" />
+        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user&apos;s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         /// </summary>
         /// <returns>A <see cref="TrendingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Me.Insights.Trending {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Trending>(requestInfo, Microsoft.Graph.Models.Trending.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user.
+        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user&apos;s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Me.Insights.Trending {
             return new TrendingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Calculated insight that includes a list of documents trending around the user.
+        /// Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user&apos;s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         /// </summary>
         public class TrendingRequestBuilderGetQueryParameters 
         {

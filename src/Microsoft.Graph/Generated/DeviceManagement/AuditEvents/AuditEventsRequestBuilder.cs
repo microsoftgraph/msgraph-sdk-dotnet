@@ -58,8 +58,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents {
         {
         }
         /// <summary>
-        /// List properties and relationships of the auditEvent objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-list?view=graph-rest-1.0" />
+        /// The Audit Events
         /// </summary>
         /// <returns>A <see cref="AuditEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,8 +91,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents {
             return new GetAuditActivityTypesWithCategoryRequestBuilder(PathParameters, RequestAdapter, category);
         }
         /// <summary>
-        /// Create a new auditEvent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-create?view=graph-rest-1.0" />
+        /// Create new navigation property to auditEvents for deviceManagement
         /// </summary>
         /// <returns>A <see cref="AuditEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +116,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents {
             return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the auditEvent objects.
+        /// The Audit Events
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +135,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new auditEvent object.
+        /// Create new navigation property to auditEvents for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +166,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents {
             return new AuditEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the auditEvent objects.
+        /// The Audit Events
         /// </summary>
         public class AuditEventsRequestBuilderGetQueryParameters 
         {

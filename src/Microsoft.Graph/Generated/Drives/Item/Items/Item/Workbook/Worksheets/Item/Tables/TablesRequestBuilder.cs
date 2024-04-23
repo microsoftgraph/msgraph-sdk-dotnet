@@ -58,8 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         {
         }
         /// <summary>
-        /// Retrieve a list of table objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-list-tables?view=graph-rest-1.0" />
+        /// Collection of tables that are part of the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookTableCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
             return await RequestAdapter.SendAsync<WorkbookTable>(requestInfo, WorkbookTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of table objects.
+        /// Collection of tables that are part of the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +166,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
             return new TablesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of table objects.
+        /// Collection of tables that are part of the worksheet. Read-only.
         /// </summary>
         public class TablesRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item.Instances.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL. This method gets a windowsSettingInstance for the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowssettinginstance-get?view=graph-rest-1.0" />
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         /// <returns>A <see cref="WindowsSettingInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item.Instances.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL. This method gets a windowsSettingInstance for the signed-in user.
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item.Instances.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSettingInstance object by passing the Windows setting ID and Windows setting instance ID in the URL. This method gets a windowsSettingInstance for the signed-in user.
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         public class WindowsSettingInstanceItemRequestBuilderGetQueryParameters 
         {

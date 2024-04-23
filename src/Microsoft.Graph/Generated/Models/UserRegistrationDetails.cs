@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class UserRegistrationDetails : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
         public bool? IsAdmin {

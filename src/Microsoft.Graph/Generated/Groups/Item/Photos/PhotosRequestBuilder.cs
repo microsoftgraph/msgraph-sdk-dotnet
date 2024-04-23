@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         {
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0" />
+        /// The profile photos owned by the group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ProfilePhotoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
+        /// The profile photos owned by the group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +96,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return new PhotosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of profilePhoto objects.
+        /// The profile photos owned by the group. Read-only. Nullable.
         /// </summary>
         public class PhotosRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
         {
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0" />
+        /// Delete navigation property identitySynchronization for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0" />
+        /// Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
         /// </summary>
         /// <returns>A <see cref="CrossTenantIdentitySyncPolicyPartner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return await RequestAdapter.SendAsync<CrossTenantIdentitySyncPolicyPartner>(requestInfo, CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete navigation property identitySynchronization for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return requestInfo;
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
         {
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
         /// </summary>
         public class IdentitySynchronizationRequestBuilderGetQueryParameters 
         {

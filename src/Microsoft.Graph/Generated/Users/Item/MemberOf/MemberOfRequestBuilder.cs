@@ -70,7 +70,6 @@ namespace Microsoft.Graph.Users.Item.MemberOf {
         }
         /// <summary>
         /// The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

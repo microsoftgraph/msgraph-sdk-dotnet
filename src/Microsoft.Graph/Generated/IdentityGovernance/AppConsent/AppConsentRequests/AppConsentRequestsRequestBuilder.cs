@@ -62,8 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests {
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve appConsentRequest objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0" />
+        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
         /// </summary>
         /// <returns>A <see cref="AppConsentRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests {
             return await RequestAdapter.SendAsync<AppConsentRequest>(requestInfo, AppConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve appConsentRequest objects and their properties.
+        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +160,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests {
             return new AppConsentRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve appConsentRequest objects and their properties.
+        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
         /// </summary>
         public class AppConsentRequestsRequestBuilderGetQueryParameters 
         {

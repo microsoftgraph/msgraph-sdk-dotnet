@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans {
         {
         }
         /// <summary>
-        /// Retrieve a list of plannerPlan objects owned by a group object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannerPlan objects owned by a group object.
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans {
             return new PlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannerPlan objects owned by a group object.
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LandingPages {
         {
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-landingpage?view=graph-rest-1.0" />
+        /// Represents an attack simulation training landing page.
         /// </summary>
         /// <returns>A <see cref="LandingPageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LandingPages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LandingPage>(requestInfo, Microsoft.Graph.Models.LandingPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties.
+        /// Represents an attack simulation training landing page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LandingPages {
             return new LandingPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties.
+        /// Represents an attack simulation training landing page.
         /// </summary>
         public class LandingPagesRequestBuilderGetQueryParameters 
         {

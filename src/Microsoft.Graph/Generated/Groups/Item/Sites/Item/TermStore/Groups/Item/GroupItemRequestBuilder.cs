@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item {
         {
         }
         /// <summary>
-        /// Delete a group object in a term [store].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0" />
+        /// Delete navigation property groups for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a term store group object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0" />
+        /// Collection of all groups available in the term store.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a group object in a term [store].
+        /// Delete navigation property groups for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a term store group object.
+        /// Collection of all groups available in the term store.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStore.Groups.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a term store group object.
+        /// Collection of all groups available in the term store.
         /// </summary>
         public class GroupItemRequestBuilderGetQueryParameters 
         {

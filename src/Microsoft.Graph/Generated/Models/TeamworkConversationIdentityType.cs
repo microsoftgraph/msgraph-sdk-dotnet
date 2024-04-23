@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum TeamworkConversationIdentityType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "team")]
+        #pragma warning disable CS1591
         Team,
+        #pragma warning restore CS1591
         [EnumMember(Value = "channel")]
+        #pragma warning disable CS1591
         Channel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "chat")]
+        #pragma warning disable CS1591
         Chat,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum SendDtmfCompletionReason
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completedSuccessfully")]
+        #pragma warning disable CS1591
         CompletedSuccessfully,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mediaOperationCanceled")]
+        #pragma warning disable CS1591
         MediaOperationCanceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

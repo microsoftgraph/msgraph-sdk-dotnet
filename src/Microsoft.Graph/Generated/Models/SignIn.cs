@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class SignIn : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

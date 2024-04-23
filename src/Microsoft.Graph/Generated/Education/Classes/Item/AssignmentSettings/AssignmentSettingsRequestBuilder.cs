@@ -83,8 +83,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings {
             return await RequestAdapter.SendAsync<EducationAssignmentSettings>(requestInfo, EducationAssignmentSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property assignmentSettings in education
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +146,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
+        /// Update the navigation property assignmentSettings in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

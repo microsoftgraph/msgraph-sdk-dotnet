@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Agreements.Item.Acceptances {
         {
         }
         /// <summary>
-        /// Get the details about the acceptance records for a specific agreement.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0" />
+        /// Read-only. Information about acceptances of this agreement.
         /// </summary>
         /// <returns>A <see cref="AgreementAcceptanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Agreements.Item.Acceptances {
             return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, AgreementAcceptance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details about the acceptance records for a specific agreement.
+        /// Read-only. Information about acceptances of this agreement.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Agreements.Item.Acceptances {
             return new AcceptancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the details about the acceptance records for a specific agreement.
+        /// Read-only. Information about acceptances of this agreement.
         /// </summary>
         public class AcceptancesRequestBuilderGetQueryParameters 
         {

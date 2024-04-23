@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AgreementFile : AgreementFileProperties, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The localized version of the terms of use agreement files attached to the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

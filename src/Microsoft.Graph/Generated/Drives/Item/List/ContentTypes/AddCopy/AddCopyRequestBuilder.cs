@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.AddCopy {
         {
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+        /// Add a copy of a content type from a site to a list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ContentType"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.AddCopy {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+        /// Add a copy of a content type from a site to a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

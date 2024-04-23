@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSiteCompatibilityMode
+    #pragma warning restore CS1591
     {
         /// <summary>Loads the site using default compatibility mode.</summary>
         [EnumMember(Value = "default")]

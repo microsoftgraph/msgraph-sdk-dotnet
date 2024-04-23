@@ -56,8 +56,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
         {
         }
         /// <summary>
-        /// Delete a set object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-1.0" />
+        /// Delete navigation property sets for sites
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,8 +78,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-1.0" />
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Set"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,8 +101,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a set object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-1.0" />
+        /// Update the navigation property sets in sites
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Set"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +126,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a set object.
+        /// Delete navigation property sets for sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +145,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +164,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a set object.
+        /// Update the navigation property sets in sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -205,7 +202,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         /// </summary>
         public class SetItemRequestBuilderGetQueryParameters 
         {

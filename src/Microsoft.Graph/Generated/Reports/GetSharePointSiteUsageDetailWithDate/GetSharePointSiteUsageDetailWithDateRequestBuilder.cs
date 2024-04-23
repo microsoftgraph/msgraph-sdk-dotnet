@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetSharePointSiteUsageDetailWithDate {
         {
         }
         /// <summary>
-        /// Invoke function getSharePointSiteUsageDetail
+        /// Get details about SharePoint site usage.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagedetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetSharePointSiteUsageDetailWithDate {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSharePointSiteUsageDetail
+        /// Get details about SharePoint site usage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

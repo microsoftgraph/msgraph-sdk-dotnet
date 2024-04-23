@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.Users {
         {
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-user-list?view=graph-rest-1.0" />
+        /// The primary users associated with the managed device.
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.Users {
             return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
+        /// The primary users associated with the managed device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.Users {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the user objects.
+        /// The primary users associated with the managed device.
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
         {
         }
         /// <summary>
-        /// Delete a user from a school.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0" />
+        /// Delete ref of navigation property users for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the educationUser resources associated with an educationSchool.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0" />
+        /// Users in the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user to a school.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-post-users?view=graph-rest-1.0" />
+        /// Create new navigation property ref to users for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user from a school.
+        /// Delete ref of navigation property users for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Get the educationUser resources associated with an educationSchool.
+        /// Users in the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a user to a school.
+        /// Create new navigation property ref to users for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a user from a school.
+        /// Delete ref of navigation property users for education
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Ref {
         {
         }
         /// <summary>
-        /// Get the educationUser resources associated with an educationSchool.
+        /// Users in the school. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

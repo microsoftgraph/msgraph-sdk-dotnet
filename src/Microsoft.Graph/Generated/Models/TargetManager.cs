@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TargetManager : SubjectSet, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Manager level, between 1 and 4. The direct manager is 1.</summary>
         public int? ManagerLevel {

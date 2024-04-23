@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.BannerLo
         }
         /// <summary>
         /// A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

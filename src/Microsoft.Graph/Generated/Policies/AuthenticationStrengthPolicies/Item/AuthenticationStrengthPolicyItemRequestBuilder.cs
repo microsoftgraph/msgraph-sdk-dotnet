@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete a custom authenticationStrengthPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-delete-policies?view=graph-rest-1.0" />
+        /// Delete navigation property authenticationStrengthPolicies for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationStrengthPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-get?view=graph-rest-1.0" />
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property authenticationStrengthPolicies in policies
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a custom authenticationStrengthPolicy object.
+        /// Delete navigation property authenticationStrengthPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationStrengthPolicy object.
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action.
+        /// Update the navigation property authenticationStrengthPolicies in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationStrengthPolicy object.
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         public class AuthenticationStrengthPolicyItemRequestBuilderGetQueryParameters 
         {

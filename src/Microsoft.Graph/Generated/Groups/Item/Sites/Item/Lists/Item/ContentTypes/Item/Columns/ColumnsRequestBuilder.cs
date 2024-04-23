@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
         {
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0" />
+        /// The collection of column definitions for this content type.
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0" />
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
+        /// The collection of column definitions for this content type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
+        /// The collection of column definitions for this content type.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
         {
         }
         /// <summary>
-        /// Get a list of administrativeUnits associated with an educationSchool object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list-administrativeunit?view=graph-rest-1.0" />
+        /// The underlying administrativeUnit for this school.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of administrativeUnits associated with an educationSchool object.
+        /// The underlying administrativeUnit for this school.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +130,7 @@ namespace Microsoft.Graph.Education.Schools.Item.AdministrativeUnit {
             return new AdministrativeUnitRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of administrativeUnits associated with an educationSchool object.
+        /// The underlying administrativeUnit for this school.
         /// </summary>
         public class AdministrativeUnitRequestBuilderGetQueryParameters 
         {

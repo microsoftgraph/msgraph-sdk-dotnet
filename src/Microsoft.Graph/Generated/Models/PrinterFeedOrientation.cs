@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum PrinterFeedOrientation
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "longEdgeFirst")]
+        #pragma warning disable CS1591
         LongEdgeFirst,
+        #pragma warning restore CS1591
         [EnumMember(Value = "shortEdgeFirst")]
+        #pragma warning disable CS1591
         ShortEdgeFirst,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class LearningContent : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

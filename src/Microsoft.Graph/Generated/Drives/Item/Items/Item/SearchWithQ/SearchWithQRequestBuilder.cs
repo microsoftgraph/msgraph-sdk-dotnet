@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
         {
         }
         /// <summary>
-        /// Invoke function search
+        /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SearchWithQGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
             return await RequestAdapter.SendAsync<SearchWithQGetResponse>(requestInfo, SearchWithQGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function search
+        /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SearchWithQResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
             return await RequestAdapter.SendAsync<SearchWithQResponse>(requestInfo, SearchWithQResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function search
+        /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
             return new SearchWithQRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function search
+        /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
         /// </summary>
         public class SearchWithQRequestBuilderGetQueryParameters 
         {

@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AttributeMappingSourceType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Attribute")]
+        #pragma warning disable CS1591
         Attribute,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Constant")]
+        #pragma warning disable CS1591
         Constant,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Function")]
+        #pragma warning disable CS1591
         Function,
+        #pragma warning restore CS1591
     }
 }

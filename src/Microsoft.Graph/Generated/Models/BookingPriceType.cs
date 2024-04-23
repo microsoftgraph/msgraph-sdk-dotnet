@@ -30,6 +30,8 @@ namespace Microsoft.Graph.Models {
         [EnumMember(Value = "notSet")]
         NotSet,
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

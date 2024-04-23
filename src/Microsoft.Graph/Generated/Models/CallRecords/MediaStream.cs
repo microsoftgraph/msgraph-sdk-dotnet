@@ -6,12 +6,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
+    #pragma warning disable CS1591
     public class MediaStream : IAdditionalDataHolder, IBackedModel, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
-            set { BackingStore?.Set("AdditionalData", value); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.CallRecords.AudioCodec? AudioCodec {
@@ -23,7 +25,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("averageAudioDegradation"); }
             set { BackingStore?.Set("averageAudioDegradation", value); }
         }
-        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageAudioNetworkJitter {
             get { return BackingStore?.Get<TimeSpan?>("averageAudioNetworkJitter"); }
             set { BackingStore?.Set("averageAudioNetworkJitter", value); }
@@ -38,7 +40,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<TimeSpan?>("averageFreezeDuration"); }
             set { BackingStore?.Set("averageFreezeDuration", value); }
         }
-        /// <summary>Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageJitter {
             get { return BackingStore?.Get<TimeSpan?>("averageJitter"); }
             set { BackingStore?.Set("averageJitter", value); }
@@ -58,7 +60,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("averageReceivedFrameRate"); }
             set { BackingStore?.Set("averageReceivedFrameRate", value); }
         }
-        /// <summary>Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? AverageRoundTripTime {
             get { return BackingStore?.Get<TimeSpan?>("averageRoundTripTime"); }
             set { BackingStore?.Set("averageRoundTripTime", value); }
@@ -73,7 +75,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("averageVideoFrameRate"); }
             set { BackingStore?.Set("averageVideoFrameRate", value); }
         }
-        /// <summary>Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.</summary>
+        /// <summary>Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.</summary>
         public float? AverageVideoPacketLossRate {
             get { return BackingStore?.Get<float?>("averageVideoPacketLossRate"); }
             set { BackingStore?.Set("averageVideoPacketLossRate", value); }
@@ -100,12 +102,12 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("lowVideoProcessingCapabilityRatio"); }
             set { BackingStore?.Set("lowVideoProcessingCapabilityRatio", value); }
         }
-        /// <summary>Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxAudioNetworkJitter {
             get { return BackingStore?.Get<TimeSpan?>("maxAudioNetworkJitter"); }
             set { BackingStore?.Set("maxAudioNetworkJitter", value); }
         }
-        /// <summary>Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxJitter {
             get { return BackingStore?.Get<TimeSpan?>("maxJitter"); }
             set { BackingStore?.Set("maxJitter", value); }
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.Models.CallRecords {
             get { return BackingStore?.Get<float?>("maxRatioOfConcealedSamples"); }
             set { BackingStore?.Set("maxRatioOfConcealedSamples", value); }
         }
-        /// <summary>Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
+        /// <summary>Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as &apos;PT1S&apos;, where &apos;P&apos; is the duration designator, &apos;T&apos; is the time designator, and &apos;S&apos; is the second designator.</summary>
         public TimeSpan? MaxRoundTripTime {
             get { return BackingStore?.Get<TimeSpan?>("maxRoundTripTime"); }
             set { BackingStore?.Set("maxRoundTripTime", value); }

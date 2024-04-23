@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0" />
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="CallTranscript"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.Transcripts.Item {
         {
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         public class CallTranscriptItemRequestBuilderGetQueryParameters 
         {

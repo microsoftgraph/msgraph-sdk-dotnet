@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Drives {
         {
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-list?view=graph-rest-1.0" />
+        /// A collection of drives available for this user. Read-only.
         /// </summary>
         /// <returns>A <see cref="DriveCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.Drives {
             return await RequestAdapter.SendAsync<DriveCollectionResponse>(requestInfo, DriveCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// A collection of drives available for this user. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.Drives {
             return new DrivesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// A collection of drives available for this user. Read-only.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters 
         {

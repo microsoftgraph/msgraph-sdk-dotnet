@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events {
         {
         }
         /// <summary>
-        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0" />
+        /// The events in the calendar. Navigation property. Read-only.
         /// </summary>
         /// <returns>A <see cref="EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events {
             return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0" />
+        /// Create new navigation property to events for me
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
+        /// The events in the calendar. Navigation property. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+        /// Create new navigation property to events for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
+        /// The events in the calendar. Navigation property. Read-only.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {

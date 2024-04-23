@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Teams.Item.InstalledApps.Item {
         {
         }
         /// <summary>
-        /// Uninstalls an app from the specified team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0" />
+        /// Delete navigation property installedApps for teams
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Teams.Item.InstalledApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the app installed in the specified team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0" />
+        /// The apps installed in this team.
         /// </summary>
         /// <returns>A <see cref="TeamsAppInstallation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.InstalledApps.Item {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uninstalls an app from the specified team.
+        /// Delete navigation property installedApps for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Teams.Item.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the app installed in the specified team.
+        /// The apps installed in this team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -198,7 +196,7 @@ namespace Microsoft.Graph.Teams.Item.InstalledApps.Item {
         {
         }
         /// <summary>
-        /// Retrieve the app installed in the specified team.
+        /// The apps installed in this team.
         /// </summary>
         public class TeamsAppInstallationItemRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments 
         {
         }
         /// <summary>
-        /// List properties and relationships of the roleAssignment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-list?view=graph-rest-1.0" />
+        /// List of Role assignments for this role definition.
         /// </summary>
         /// <returns>A <see cref="RoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments 
             return await RequestAdapter.SendAsync<RoleAssignmentCollectionResponse>(requestInfo, RoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new roleAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-create?view=graph-rest-1.0" />
+        /// Create new navigation property to roleAssignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments 
             return await RequestAdapter.SendAsync<RoleAssignment>(requestInfo, RoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the roleAssignment objects.
+        /// List of Role assignments for this role definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments 
             return requestInfo;
         }
         /// <summary>
-        /// Create a new roleAssignment object.
+        /// Create new navigation property to roleAssignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments 
             return new RoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the roleAssignment objects.
+        /// List of Role assignments for this role definition.
         /// </summary>
         public class RoleAssignmentsRequestBuilderGetQueryParameters 
         {

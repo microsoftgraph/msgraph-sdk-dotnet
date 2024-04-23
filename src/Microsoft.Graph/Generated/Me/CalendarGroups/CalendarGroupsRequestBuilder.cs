@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
         {
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0" />
+        /// The user&apos;s calendar groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="CalendarGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return await RequestAdapter.SendAsync<CalendarGroupCollectionResponse>(requestInfo, CalendarGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new CalendarGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0" />
+        /// Create new navigation property to calendarGroups for me
         /// </summary>
         /// <returns>A <see cref="CalendarGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return await RequestAdapter.SendAsync<CalendarGroup>(requestInfo, CalendarGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups.
+        /// The user&apos;s calendar groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new CalendarGroup.
+        /// Create new navigation property to calendarGroups for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Me.CalendarGroups {
             return new CalendarGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the user&apos;s calendar groups.
+        /// The user&apos;s calendar groups. Read-only. Nullable.
         /// </summary>
         public class CalendarGroupsRequestBuilderGetQueryParameters 
         {

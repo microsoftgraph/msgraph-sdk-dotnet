@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Sites.Item.Onenote.SectionGroups.Item.Sections.Item.Pa
         }
         /// <summary>
         /// The page&apos;s HTML content.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

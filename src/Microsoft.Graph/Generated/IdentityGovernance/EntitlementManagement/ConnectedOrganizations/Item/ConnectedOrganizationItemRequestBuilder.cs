@@ -44,8 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Delete a connectedOrganization object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0" />
+        /// Delete navigation property connectedOrganizations for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a connectedOrganization object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0" />
+        /// References to a directory or domain of another organization whose users can request access.
         /// </summary>
         /// <returns>A <see cref="ConnectedOrganization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<ConnectedOrganization>(requestInfo, ConnectedOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a connectedOrganization object to change one or more of its properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0" />
+        /// Update the navigation property connectedOrganizations in identityGovernance
         /// </summary>
         /// <returns>A <see cref="ConnectedOrganization"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<ConnectedOrganization>(requestInfo, ConnectedOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a connectedOrganization object.
+        /// Delete navigation property connectedOrganizations for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a connectedOrganization object.
+        /// References to a directory or domain of another organization whose users can request access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Update a connectedOrganization object to change one or more of its properties.
+        /// Update the navigation property connectedOrganizations in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a connectedOrganization object.
+        /// References to a directory or domain of another organization whose users can request access.
         /// </summary>
         public class ConnectedOrganizationItemRequestBuilderGetQueryParameters 
         {

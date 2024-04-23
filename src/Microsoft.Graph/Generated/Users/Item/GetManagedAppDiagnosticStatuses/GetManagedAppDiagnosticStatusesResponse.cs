@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses {
     [Obsolete("This class is obsolete. Use GetManagedAppDiagnosticStatusesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetManagedAppDiagnosticStatusesResponse : GetManagedAppDiagnosticStatusesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

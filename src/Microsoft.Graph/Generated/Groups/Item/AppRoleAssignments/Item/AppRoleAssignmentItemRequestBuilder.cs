@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments.Item {
         {
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a group has been granted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0" />
+        /// Delete navigation property appRoleAssignments for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a group has been granted.
+        /// Delete navigation property appRoleAssignments for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

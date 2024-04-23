@@ -51,8 +51,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
         {
         }
         /// <summary>
-        /// Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0" />
+        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
             return await RequestAdapter.SendAsync<AppRoleAssignmentCollectionResponse>(requestInfo, AppRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0" />
+        /// Create new navigation property to appRoleAssignedTo for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
             return requestInfo;
         }
         /// <summary>
-        /// Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
+        /// Create new navigation property to appRoleAssignedTo for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo {
             return new AppRoleAssignedToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
         /// </summary>
         public class AppRoleAssignedToRequestBuilderGetQueryParameters 
         {

@@ -84,8 +84,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPC object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0" />
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         /// <returns>A <see cref="CloudPC"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPC object.
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPC object.
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         public class CloudPCItemRequestBuilderGetQueryParameters 
         {

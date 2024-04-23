@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AuthenticationStrengthPolicy : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

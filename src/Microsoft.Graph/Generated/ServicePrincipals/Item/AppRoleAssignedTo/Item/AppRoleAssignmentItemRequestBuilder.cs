@@ -32,8 +32,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
         {
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0" />
+        /// Delete navigation property appRoleAssignedTo for servicePrincipals
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+        /// Delete navigation property appRoleAssignedTo for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

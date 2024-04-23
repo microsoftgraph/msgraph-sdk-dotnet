@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
         {
         }
         /// <summary>
-        /// Delete a browserSharedCookie from a browserSiteList.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0" />
+        /// Delete navigation property sharedCookies for admin
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0" />
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         /// <returns>A <see cref="BrowserSharedCookie"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return await RequestAdapter.SendAsync<BrowserSharedCookie>(requestInfo, BrowserSharedCookie.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a browserSharedCookie object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0" />
+        /// Update the navigation property sharedCookies in admin
         /// </summary>
         /// <returns>A <see cref="BrowserSharedCookie"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return await RequestAdapter.SendAsync<BrowserSharedCookie>(requestInfo, BrowserSharedCookie.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a browserSharedCookie from a browserSiteList.
+        /// Delete navigation property sharedCookies for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return requestInfo;
         }
         /// <summary>
-        /// Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a browserSharedCookie object.
+        /// Update the navigation property sharedCookies in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
         {
         }
         /// <summary>
-        /// Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         public class BrowserSharedCookieItemRequestBuilderGetQueryParameters 
         {

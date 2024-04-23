@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
         {
         }
         /// <summary>
-        /// Remove a tokenIssuancePolicy from an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0" />
+        /// Delete ref of navigation property tokenIssuancePolicies for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0" />
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a tokenIssuancePolicy to an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0" />
+        /// Create new navigation property ref to tokenIssuancePolicies for applications
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a tokenIssuancePolicy from an application.
+        /// Delete ref of navigation property tokenIssuancePolicies for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Assign a tokenIssuancePolicy to an application.
+        /// Create new navigation property ref to tokenIssuancePolicies for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a tokenIssuancePolicy from an application.
+        /// Delete ref of navigation property tokenIssuancePolicies for applications
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Ref {
         {
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

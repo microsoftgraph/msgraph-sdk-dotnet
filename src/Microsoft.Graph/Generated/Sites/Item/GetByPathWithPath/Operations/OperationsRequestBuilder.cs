@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Operations {
         {
         }
         /// <summary>
-        /// Get a list of rich long-running operations associated with a site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0" />
+        /// The collection of long-running operations on the site.
         /// </summary>
         /// <returns>A <see cref="RichLongRunningOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Operations {
             return await RequestAdapter.SendAsync<RichLongRunningOperation>(requestInfo, RichLongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of rich long-running operations associated with a site.
+        /// The collection of long-running operations on the site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +130,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of rich long-running operations associated with a site.
+        /// The collection of long-running operations on the site.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

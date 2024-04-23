@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
         {
         }
         /// <summary>
-        /// Delete a school.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delete?view=graph-rest-1.0" />
+        /// Delete navigation property schools for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationSchool object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-get?view=graph-rest-1.0" />
+        /// Get schools from education
         /// </summary>
         /// <returns>A <see cref="EducationSchool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationSchool object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-update?view=graph-rest-1.0" />
+        /// Update the navigation property schools in education
         /// </summary>
         /// <returns>A <see cref="EducationSchool"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a school.
+        /// Delete navigation property schools for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationSchool object.
+        /// Get schools from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationSchool object.
+        /// Update the navigation property schools in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.Education.Schools.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationSchool object.
+        /// Get schools from education
         /// </summary>
         public class EducationSchoolItemRequestBuilderGetQueryParameters 
         {

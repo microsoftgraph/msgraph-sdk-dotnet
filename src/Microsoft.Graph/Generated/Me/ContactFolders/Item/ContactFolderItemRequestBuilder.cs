@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
         {
         }
         /// <summary>
-        /// Delete contactFolder other than the default contactFolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0" />
+        /// Delete navigation property contactFolders for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0" />
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ContactFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of contactfolder object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0" />
+        /// Update the navigation property contactFolders in me
         /// </summary>
         /// <returns>A <see cref="ContactFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete contactFolder other than the default contactFolder.
+        /// Delete navigation property contactFolders for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of contactfolder object.
+        /// Update the navigation property contactFolders in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item {
         {
         }
         /// <summary>
-        /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         public class ContactFolderItemRequestBuilderGetQueryParameters 
         {

@@ -108,8 +108,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCustodian object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-get?view=graph-rest-1.0" />
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCustodian"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,7 +175,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCustodian object.
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -233,7 +232,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCustodian object.
+        /// Returns a list of case ediscoveryCustodian objects for this case.
         /// </summary>
         public class EdiscoveryCustodianItemRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>User source or SharePoint site data source as noncustodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

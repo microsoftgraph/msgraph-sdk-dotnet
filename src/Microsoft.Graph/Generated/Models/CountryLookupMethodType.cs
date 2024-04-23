@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum CountryLookupMethodType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "clientIpAddress")]
+        #pragma warning disable CS1591
         ClientIpAddress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "authenticatorAppGps")]
+        #pragma warning disable CS1591
         AuthenticatorAppGps,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Following {
         {
         }
         /// <summary>
-        /// List the items that have been followed by the signed in user.This collection includes items that are in the user&apos;s drive as well as items they have access to from other drives.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0" />
+        /// The list of items the user is following. Only in OneDrive for Business.
         /// </summary>
         /// <returns>A <see cref="DriveItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Drives.Item.Following {
             return await RequestAdapter.SendAsync<DriveItemCollectionResponse>(requestInfo, DriveItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the items that have been followed by the signed in user.This collection includes items that are in the user&apos;s drive as well as items they have access to from other drives.
+        /// The list of items the user is following. Only in OneDrive for Business.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Drives.Item.Following {
             return new FollowingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the items that have been followed by the signed in user.This collection includes items that are in the user&apos;s drive as well as items they have access to from other drives.
+        /// The list of items the user is following. Only in OneDrive for Business.
         /// </summary>
         public class FollowingRequestBuilderGetQueryParameters 
         {

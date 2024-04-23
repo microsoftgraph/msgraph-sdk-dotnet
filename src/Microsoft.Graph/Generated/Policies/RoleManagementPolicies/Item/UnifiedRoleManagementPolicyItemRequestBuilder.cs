@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details of a role management policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0" />
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the details of a role management policy.
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Retrieve the details of a role management policy.
+        /// Specifies the various policies associated with scopes and roles.
         /// </summary>
         public class UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
         {
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0" />
+        /// The collection of historical records associated to this WHOIS object.
         /// </summary>
         /// <returns>A <see cref="WhoisHistoryRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
             return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
+        /// The collection of historical records associated to this WHOIS object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords.Item.History 
             return new HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
+        /// The collection of historical records associated to this WHOIS object.
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters 
         {

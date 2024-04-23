@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments {
         {
         }
         /// <summary>
-        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0" />
+        /// The assignment of a role management policy to a role definition object.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementPolicyAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyAssignment>(requestInfo, UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
+        /// The assignment of a role management policy to a role definition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Policies.RoleManagementPolicyAssignments {
             return new RoleManagementPolicyAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
+        /// The assignment of a role management policy to a role definition object.
         /// </summary>
         public class RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters 
         {

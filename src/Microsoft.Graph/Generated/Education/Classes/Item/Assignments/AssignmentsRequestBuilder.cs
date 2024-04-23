@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments {
         {
         }
         /// <summary>
-        /// Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher, or an application running with application permissions, can see all assignment objects for the class. Students can only see assignments that are assigned to them.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-assignments?view=graph-rest-1.0" />
+        /// All assignments associated with this class. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments {
             return await RequestAdapter.SendAsync<EducationAssignmentCollectionResponse>(requestInfo, EducationAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-assignment?view=graph-rest-1.0" />
+        /// Create new navigation property to assignments for education
         /// </summary>
         /// <returns>A <see cref="EducationAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments {
             return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher, or an application running with application permissions, can see all assignment objects for the class. Students can only see assignments that are assigned to them.
+        /// All assignments associated with this class. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.
+        /// Create new navigation property to assignments for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments {
             return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher, or an application running with application permissions, can see all assignment objects for the class. Students can only see assignments that are assigned to them.
+        /// All assignments associated with this class. Nullable.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters 
         {

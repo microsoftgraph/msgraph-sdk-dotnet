@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete an appManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property appManagementPolicies for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of an appManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0" />
+        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
         /// </summary>
         /// <returns>A <see cref="AppManagementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an appManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property appManagementPolicies in policies
         /// </summary>
         /// <returns>A <see cref="AppManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an appManagementPolicy object.
+        /// Delete navigation property appManagementPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties of an appManagementPolicy object.
+        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an appManagementPolicy object.
+        /// Update the navigation property appManagementPolicies in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Read the properties of an appManagementPolicy object.
+        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
         /// </summary>
         public class AppManagementPolicyItemRequestBuilderGetQueryParameters 
         {

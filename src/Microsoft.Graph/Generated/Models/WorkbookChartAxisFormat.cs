@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WorkbookChartAxisFormat : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

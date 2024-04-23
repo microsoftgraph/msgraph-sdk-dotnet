@@ -80,8 +80,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0" />
+        /// Create new navigation property to appliesTo for policies
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +124,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return requestInfo;
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+        /// Create new navigation property to appliesTo for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

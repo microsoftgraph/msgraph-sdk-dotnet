@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PrintOperation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The DateTimeOffset when the operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {

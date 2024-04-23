@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class TimeBasedAttributeTrigger : WorkflowExecutionTrigger, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -180 and 180 days.</summary>
         public int? OffsetInDays {

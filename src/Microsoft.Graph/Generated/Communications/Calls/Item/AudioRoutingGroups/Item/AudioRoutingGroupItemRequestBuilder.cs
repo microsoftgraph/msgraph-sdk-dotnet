@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
         {
         }
         /// <summary>
-        /// Delete the specified audioRoutingGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0" />
+        /// Delete navigation property audioRoutingGroups for communications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an audioRoutingGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0" />
+        /// Get audioRoutingGroups from communications
         /// </summary>
         /// <returns>A <see cref="AudioRoutingGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Modify sources and receivers of an audioRoutingGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0" />
+        /// Update the navigation property audioRoutingGroups in communications
         /// </summary>
         /// <returns>A <see cref="AudioRoutingGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified audioRoutingGroup.
+        /// Delete navigation property audioRoutingGroups for communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an audioRoutingGroup object.
+        /// Get audioRoutingGroups from communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Modify sources and receivers of an audioRoutingGroup.
+        /// Update the navigation property audioRoutingGroups in communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an audioRoutingGroup object.
+        /// Get audioRoutingGroups from communications
         /// </summary>
         public class AudioRoutingGroupItemRequestBuilderGetQueryParameters 
         {

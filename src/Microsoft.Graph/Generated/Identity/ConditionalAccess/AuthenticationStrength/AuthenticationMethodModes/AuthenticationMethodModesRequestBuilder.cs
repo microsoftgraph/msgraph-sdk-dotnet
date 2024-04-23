@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
         {
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0" />
+        /// Names and descriptions of all valid authentication method modes in the system.
         /// </summary>
         /// <returns>A <see cref="AuthenticationMethodModeDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
             return await RequestAdapter.SendAsync<AuthenticationMethodModeDetail>(requestInfo, AuthenticationMethodModeDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Names and descriptions of all valid authentication method modes in the system.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Auth
             return new AuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Names and descriptions of all valid authentication method modes in the system.
         /// </summary>
         public class AuthenticationMethodModesRequestBuilderGetQueryParameters 
         {

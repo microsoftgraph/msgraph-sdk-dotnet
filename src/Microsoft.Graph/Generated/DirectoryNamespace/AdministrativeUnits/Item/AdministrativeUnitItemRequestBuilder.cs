@@ -50,8 +50,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
         {
         }
         /// <summary>
-        /// Delete an administrativeUnit.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0" />
+        /// Delete navigation property administrativeUnits for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0" />
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an administrativeUnit object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0" />
+        /// Update the navigation property administrativeUnits in directory
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an administrativeUnit.
+        /// Delete navigation property administrativeUnits for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an administrativeUnit object.
+        /// Update the navigation property administrativeUnits in directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         public class AdministrativeUnitItemRequestBuilderGetQueryParameters 
         {

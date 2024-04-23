@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
+    #pragma warning disable CS1591
     public class ClientUserAgent : UserAgent, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the Microsoft Entra application used by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

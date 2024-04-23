@@ -60,8 +60,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-get?view=graph-rest-1.0" />
+        /// Users that are flagged as at-risk by Microsoft Entra ID Protection.
         /// </summary>
         /// <returns>A <see cref="RiskyUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUser object.
+        /// Users that are flagged as at-risk by Microsoft Entra ID Protection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUser object.
+        /// Users that are flagged as at-risk by Microsoft Entra ID Protection.
         /// </summary>
         public class RiskyUserItemRequestBuilderGetQueryParameters 
         {

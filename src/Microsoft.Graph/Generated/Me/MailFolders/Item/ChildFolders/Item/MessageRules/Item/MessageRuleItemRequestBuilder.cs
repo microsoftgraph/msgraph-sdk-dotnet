@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
         {
         }
         /// <summary>
-        /// Delete the specified messageRule object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0" />
+        /// Delete navigation property messageRules for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0" />
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         /// <returns>A <see cref="MessageRule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
             return await RequestAdapter.SendAsync<MessageRule>(requestInfo, MessageRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change writable properties on a messageRule object and save the changes.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0" />
+        /// Update the navigation property messageRules in me
         /// </summary>
         /// <returns>A <see cref="MessageRule"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
             return await RequestAdapter.SendAsync<MessageRule>(requestInfo, MessageRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified messageRule object.
+        /// Delete navigation property messageRules for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object.
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Change writable properties on a messageRule object and save the changes.
+        /// Update the navigation property messageRules in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.MessageRules.Ite
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a messageRule object.
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         public class MessageRuleItemRequestBuilderGetQueryParameters 
         {

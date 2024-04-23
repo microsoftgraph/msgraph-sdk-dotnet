@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

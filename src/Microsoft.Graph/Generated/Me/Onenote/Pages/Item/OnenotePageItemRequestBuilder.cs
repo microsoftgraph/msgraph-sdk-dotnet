@@ -68,8 +68,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
         {
         }
         /// <summary>
-        /// Delete a OneNote page.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0" />
+        /// Delete navigation property pages for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,8 +90,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0" />
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnenotePage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +138,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a OneNote page.
+        /// Delete navigation property pages for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +157,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -216,7 +214,7 @@ namespace Microsoft.Graph.Me.Onenote.Pages.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a page object. Getting page information Access a page&apos;s metadata by page identifier: Getting page content You can use the page&apos;s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         public class OnenotePageItemRequestBuilderGetQueryParameters 
         {

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
         {
         }
         /// <summary>
-        /// Invoke function getUserIdsWithFlaggedAppRegistration
+        /// Not yet documented
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetUserIdsWithFlaggedAppRegistrationGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
             return await RequestAdapter.SendAsync<GetUserIdsWithFlaggedAppRegistrationGetResponse>(requestInfo, GetUserIdsWithFlaggedAppRegistrationGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getUserIdsWithFlaggedAppRegistration
+        /// Not yet documented
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetUserIdsWithFlaggedAppRegistrationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
             return await RequestAdapter.SendAsync<GetUserIdsWithFlaggedAppRegistrationResponse>(requestInfo, GetUserIdsWithFlaggedAppRegistrationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getUserIdsWithFlaggedAppRegistration
+        /// Not yet documented
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
             return new GetUserIdsWithFlaggedAppRegistrationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getUserIdsWithFlaggedAppRegistration
+        /// Not yet documented
         /// </summary>
         public class GetUserIdsWithFlaggedAppRegistrationRequestBuilderGetQueryParameters 
         {

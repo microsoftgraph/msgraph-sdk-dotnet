@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DriveItem : BaseItem, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Analytics about the view activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -390,7 +392,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
-        /// <summary>Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.</summary>
+        /// <summary>Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ThumbnailSet>? Thumbnails {
@@ -404,7 +406,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("thumbnails", value); }
         }
 #endif
-        /// <summary>The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.</summary>
+        /// <summary>The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DriveItemVersion>? Versions {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
         {
         }
         /// <summary>
-        /// Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-1.0" />
+        /// Delete ref of navigation property owners for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +55,6 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
         }
         /// <summary>
         /// The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user or service principal to a Microsoft 365 or security group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-owners?view=graph-rest-1.0" />
+        /// Create new navigation property ref to owners for groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+        /// Delete ref of navigation property owners for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a user or service principal to a Microsoft 365 or security group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object.
+        /// Create new navigation property ref to owners for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+        /// Delete ref of navigation property owners for groups
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {

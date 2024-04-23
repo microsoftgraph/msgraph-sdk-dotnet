@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum RecurrenceRangeType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "endDate")]
+        #pragma warning disable CS1591
         EndDate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "noEnd")]
+        #pragma warning disable CS1591
         NoEnd,
+        #pragma warning restore CS1591
         [EnumMember(Value = "numbered")]
+        #pragma warning disable CS1591
         Numbered,
+        #pragma warning restore CS1591
     }
 }

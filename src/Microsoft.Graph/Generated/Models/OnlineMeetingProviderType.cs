@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum OnlineMeetingProviderType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "skypeForBusiness")]
+        #pragma warning disable CS1591
         SkypeForBusiness,
+        #pragma warning restore CS1591
         [EnumMember(Value = "skypeForConsumer")]
+        #pragma warning disable CS1591
         SkypeForConsumer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "teamsForBusiness")]
+        #pragma warning disable CS1591
         TeamsForBusiness,
+        #pragma warning restore CS1591
     }
 }

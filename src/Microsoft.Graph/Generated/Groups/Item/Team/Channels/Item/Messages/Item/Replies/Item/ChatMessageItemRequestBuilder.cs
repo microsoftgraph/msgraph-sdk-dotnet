@@ -84,8 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0" />
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies.I
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.Messages.Item.Replies.I
         {
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         public class ChatMessageItemRequestBuilderGetQueryParameters 
         {

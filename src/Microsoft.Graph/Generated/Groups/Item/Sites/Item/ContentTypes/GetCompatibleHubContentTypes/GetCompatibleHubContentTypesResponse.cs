@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.GetCompatibleHubContentTypes {
     [Obsolete("This class is obsolete. Use GetCompatibleHubContentTypesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetCompatibleHubContentTypesResponse : GetCompatibleHubContentTypesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

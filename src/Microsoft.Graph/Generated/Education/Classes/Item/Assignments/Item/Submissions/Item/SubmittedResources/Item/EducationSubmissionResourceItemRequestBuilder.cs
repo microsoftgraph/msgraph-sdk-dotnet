@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Teachers can leave notes in some resources.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmittedsubmissionresource-get?view=graph-rest-1.0" />
+        /// Get submittedResources from education
         /// </summary>
         /// <returns>A <see cref="EducationSubmissionResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Teachers can leave notes in some resources.
+        /// Get submittedResources from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         {
         }
         /// <summary>
-        /// Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Teachers can leave notes in some resources.
+        /// Get submittedResources from education
         /// </summary>
         public class EducationSubmissionResourceItemRequestBuilderGetQueryParameters 
         {

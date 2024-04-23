@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a vulnerability object.
+        /// Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="VulnerabilityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities {
             return await RequestAdapter.SendAsync<Vulnerability>(requestInfo, Vulnerability.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a vulnerability object.
+        /// Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Vulnerabilities {
             return new VulnerabilitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a vulnerability object.
+        /// Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
         /// </summary>
         public class VulnerabilitiesRequestBuilderGetQueryParameters 
         {

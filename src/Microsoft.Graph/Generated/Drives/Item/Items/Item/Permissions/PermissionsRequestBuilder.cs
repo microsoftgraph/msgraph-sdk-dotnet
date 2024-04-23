@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions {
         {
         }
         /// <summary>
-        /// List the effective sharing permissions on a driveItem.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0" />
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Permission>(requestInfo, Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the effective sharing permissions on a driveItem.
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions {
             return new PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the effective sharing permissions on a driveItem.
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         public class PermissionsRequestBuilderGetQueryParameters 
         {

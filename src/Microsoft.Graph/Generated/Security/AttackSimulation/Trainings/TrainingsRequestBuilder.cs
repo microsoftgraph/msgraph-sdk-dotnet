@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings {
         {
         }
         /// <summary>
-        /// Get a list of the training objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-trainings?view=graph-rest-1.0" />
+        /// Represents details about attack simulation trainings.
         /// </summary>
         /// <returns>A <see cref="TrainingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings {
             return await RequestAdapter.SendAsync<Training>(requestInfo, Training.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the training objects and their properties.
+        /// Represents details about attack simulation trainings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings {
             return new TrainingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the training objects and their properties.
+        /// Represents details about attack simulation trainings.
         /// </summary>
         public class TrainingsRequestBuilderGetQueryParameters 
         {

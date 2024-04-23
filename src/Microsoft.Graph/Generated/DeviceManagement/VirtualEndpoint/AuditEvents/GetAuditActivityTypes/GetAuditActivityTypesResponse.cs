@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes {
     [Obsolete("This class is obsolete. Use GetAuditActivityTypesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetAuditActivityTypesResponse : GetAuditActivityTypesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

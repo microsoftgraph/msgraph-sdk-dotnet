@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ThumbnailSet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails.Item {
         {
         }
         /// <summary>
-        /// Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         public class ThumbnailSetItemRequestBuilderGetQueryParameters 
         {

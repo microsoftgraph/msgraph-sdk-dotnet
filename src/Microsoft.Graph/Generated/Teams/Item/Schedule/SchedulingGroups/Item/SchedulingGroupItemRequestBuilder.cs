@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
         {
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0" />
+        /// Delete navigation property schedulingGroups for teams
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0" />
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         /// <returns>A <see cref="SchedulingGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
             return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace an existing schedulingGroup. If the specified schedulingGroup doesn&apos;t exist, this method returns 404 Not found.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0" />
+        /// Update the navigation property schedulingGroups in teams
         /// </summary>
         /// <returns>A <see cref="SchedulingGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
             return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+        /// Delete navigation property schedulingGroups for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Replace an existing schedulingGroup. If the specified schedulingGroup doesn&apos;t exist, this method returns 404 Not found.
+        /// Update the navigation property schedulingGroups in teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a schedulingGroup by ID.
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         public class SchedulingGroupItemRequestBuilderGetQueryParameters 
         {

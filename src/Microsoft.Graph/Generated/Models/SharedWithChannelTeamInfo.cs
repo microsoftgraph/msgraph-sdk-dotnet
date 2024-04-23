@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

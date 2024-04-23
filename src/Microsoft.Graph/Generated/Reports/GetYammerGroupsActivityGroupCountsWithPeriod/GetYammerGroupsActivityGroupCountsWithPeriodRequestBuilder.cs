@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetYammerGroupsActivityGroupCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getYammerGroupsActivityGroupCounts
+        /// Get the total number of groups that existed and how many included group conversation activities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitygroupcounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetYammerGroupsActivityGroupCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getYammerGroupsActivityGroupCounts
+        /// Get the total number of groups that existed and how many included group conversation activities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DomainDnsRecord : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {

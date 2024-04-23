@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Sites.GetAllSites {
         {
         }
         /// <summary>
-        /// Invoke function getAllSites
+        /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllSitesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Sites.GetAllSites {
             return await RequestAdapter.SendAsync<GetAllSitesGetResponse>(requestInfo, GetAllSitesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllSites
+        /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllSitesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Sites.GetAllSites {
             return await RequestAdapter.SendAsync<GetAllSitesResponse>(requestInfo, GetAllSitesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllSites
+        /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Sites.GetAllSites {
             return new GetAllSitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllSites
+        /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
         /// </summary>
         public class GetAllSitesRequestBuilderGetQueryParameters 
         {

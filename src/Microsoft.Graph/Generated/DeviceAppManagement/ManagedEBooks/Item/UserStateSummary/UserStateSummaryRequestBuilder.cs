@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummar
         {
         }
         /// <summary>
-        /// List properties and relationships of the userInstallStateSummary objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-userinstallstatesummary-list?view=graph-rest-1.0" />
+        /// The list of installation states for this eBook.
         /// </summary>
         /// <returns>A <see cref="UserInstallStateSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummar
             return await RequestAdapter.SendAsync<UserInstallStateSummaryCollectionResponse>(requestInfo, UserInstallStateSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new userInstallStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-userinstallstatesummary-create?view=graph-rest-1.0" />
+        /// Create new navigation property to userStateSummary for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="UserInstallStateSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummar
             return await RequestAdapter.SendAsync<UserInstallStateSummary>(requestInfo, UserInstallStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the userInstallStateSummary objects.
+        /// The list of installation states for this eBook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummar
             return requestInfo;
         }
         /// <summary>
-        /// Create a new userInstallStateSummary object.
+        /// Create new navigation property to userStateSummary for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummar
             return new UserStateSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the userInstallStateSummary objects.
+        /// The list of installation states for this eBook.
         /// </summary>
         public class UserStateSummaryRequestBuilderGetQueryParameters 
         {

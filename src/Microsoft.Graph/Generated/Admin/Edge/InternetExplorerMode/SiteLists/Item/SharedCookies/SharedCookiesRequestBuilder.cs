@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
         {
         }
         /// <summary>
-        /// Get a list of the browserSharedCookie objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0" />
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         /// <returns>A <see cref="BrowserSharedCookieCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return await RequestAdapter.SendAsync<BrowserSharedCookieCollectionResponse>(requestInfo, BrowserSharedCookieCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new browserSharedCookie object in a browserSiteList.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0" />
+        /// Create new navigation property to sharedCookies for admin
         /// </summary>
         /// <returns>A <see cref="BrowserSharedCookie"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return await RequestAdapter.SendAsync<BrowserSharedCookie>(requestInfo, BrowserSharedCookie.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the browserSharedCookie objects and their properties.
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return requestInfo;
         }
         /// <summary>
-        /// Create a new browserSharedCookie object in a browserSiteList.
+        /// Create new navigation property to sharedCookies for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedC
             return new SharedCookiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the browserSharedCookie objects and their properties.
+        /// A collection of shared cookies defined for the site list.
         /// </summary>
         public class SharedCookiesRequestBuilderGetQueryParameters 
         {

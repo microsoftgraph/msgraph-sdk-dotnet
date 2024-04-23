@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
         {
         }
         /// <summary>
-        /// Delete calendarPermission.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0" />
+        /// Delete navigation property calendarPermissions for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0" />
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         /// <returns>A <see cref="CalendarPermission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0" />
+        /// Update the navigation property calendarPermissions in me
         /// </summary>
         /// <returns>A <see cref="CalendarPermission"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete calendarPermission.
+        /// Delete navigation property calendarPermissions for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the permissions assigned to an existing share recipient or delegate, through the corresponding &lt;b&gt;calendarPermission&lt;/b&gt; object for a calendar.
+        /// Update the navigation property calendarPermissions in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarPermissions.Item {
         {
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared.
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         public class CalendarPermissionItemRequestBuilderGetQueryParameters 
         {

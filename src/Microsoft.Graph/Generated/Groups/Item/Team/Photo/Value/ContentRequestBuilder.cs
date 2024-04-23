@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Groups.Item.Team.Photo.Value {
         }
         /// <summary>
         /// Get media content for the navigation property photo from groups
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

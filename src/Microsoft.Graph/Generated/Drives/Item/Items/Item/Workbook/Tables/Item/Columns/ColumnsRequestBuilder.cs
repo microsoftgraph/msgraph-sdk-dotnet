@@ -58,8 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
         {
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0" />
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookTableColumnCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,8 +91,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
-        /// Use this API to create a new TableColumn.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-post-columns?view=graph-rest-1.0" />
+        /// Create new navigation property to columns for drives
         /// </summary>
         /// <returns>A <see cref="WorkbookTableColumn"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +116,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +135,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new TableColumn.
+        /// Create new navigation property to columns for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +166,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns {
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tablecolumn objects.
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters 
         {

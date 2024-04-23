@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class OauthApplicationEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

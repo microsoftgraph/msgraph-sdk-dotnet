@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The average inbound stream video bit rate per second.</summary>
         public double? AverageInboundBitRate {

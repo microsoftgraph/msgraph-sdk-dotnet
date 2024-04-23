@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions {
         {
         }
         /// <summary>
-        /// List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they&apos;re associated with.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0" />
+        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions {
             return await RequestAdapter.SendAsync<EducationSubmission>(requestInfo, EducationSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they&apos;re associated with.
+        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions {
             return new SubmissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they&apos;re associated with.
+        /// Once published, there&apos;s a submission object for each student representing their work and grade. Read-only. Nullable.
         /// </summary>
         public class SubmissionsRequestBuilderGetQueryParameters 
         {

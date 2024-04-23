@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones {
     [Obsolete("This class is obsolete. Use SupportedTimeZonesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class SupportedTimeZonesResponse : SupportedTimeZonesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

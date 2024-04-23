@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TemporaryAccessPassAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.</summary>
         public int? DefaultLength {

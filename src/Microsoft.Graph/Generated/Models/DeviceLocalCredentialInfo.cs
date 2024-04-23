@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DeviceLocalCredentialInfo : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The credentials of the device&apos;s local administrator account backed up to Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

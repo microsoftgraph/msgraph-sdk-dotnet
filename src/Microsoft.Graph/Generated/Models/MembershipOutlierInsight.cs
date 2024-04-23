@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class MembershipOutlierInsight : GovernanceInsight, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DomainDnsMxRecord : DomainDnsRecord, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Value used when configuring the answer/destination/value of the MX record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

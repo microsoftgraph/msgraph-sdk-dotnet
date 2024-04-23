@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs {
         {
         }
         /// <summary>
-        /// List the cloudPC devices in a tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0" />
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         /// <returns>A <see cref="CloudPCCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs {
             return await RequestAdapter.SendAsync<CloudPC>(requestInfo, CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the cloudPC devices in a tenant.
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs {
             return new CloudPCsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the cloudPC devices in a tenant.
+        /// A collection of cloud-managed virtual desktops.
         /// </summary>
         public class CloudPCsRequestBuilderGetQueryParameters 
         {

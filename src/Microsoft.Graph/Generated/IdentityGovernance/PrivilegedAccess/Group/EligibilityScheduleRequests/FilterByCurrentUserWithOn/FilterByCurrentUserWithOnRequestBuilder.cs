@@ -33,7 +33,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnGetResponse>(requestInfo, FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnResponse>(requestInfo, FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In PIM for groups, retrieve the requests for membership or ownership eligibilities for the calling principal to groups that are governed by PIM.
         /// </summary>
         public class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 
         {

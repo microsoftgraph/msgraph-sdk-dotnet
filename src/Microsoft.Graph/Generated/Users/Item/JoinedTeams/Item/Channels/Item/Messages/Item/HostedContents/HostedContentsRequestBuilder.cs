@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Ite
         {
         }
         /// <summary>
-        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0" />
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         /// <returns>A <see cref="ChatMessageHostedContentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Ite
             return await RequestAdapter.SendAsync<ChatMessageHostedContent>(requestInfo, ChatMessageHostedContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Ite
             return new HostedContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         public class HostedContentsRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class CustomTaskExtensionCallbackConfiguration : Microsoft.Graph.Models.CustomExtensionCallbackConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The authorizedApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

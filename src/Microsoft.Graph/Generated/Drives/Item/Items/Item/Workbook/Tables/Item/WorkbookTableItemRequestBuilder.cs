@@ -98,8 +98,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
         {
         }
         /// <summary>
-        /// Deletes the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-delete?view=graph-rest-1.0" />
+        /// Delete navigation property tables for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,8 +120,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of table object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-get?view=graph-rest-1.0" />
+        /// Represents a collection of tables associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookTable"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -145,8 +143,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
             return await RequestAdapter.SendAsync<WorkbookTable>(requestInfo, WorkbookTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of table object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-update?view=graph-rest-1.0" />
+        /// Update the navigation property tables in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookTable"/></returns>
         /// <param name="body">The request body</param>
@@ -171,7 +168,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
             return await RequestAdapter.SendAsync<WorkbookTable>(requestInfo, WorkbookTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the table.
+        /// Delete navigation property tables for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +187,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of table object.
+        /// Represents a collection of tables associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +206,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of table object.
+        /// Update the navigation property tables in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -247,7 +244,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of table object.
+        /// Represents a collection of tables associated with the workbook. Read-only.
         /// </summary>
         public class WorkbookTableItemRequestBuilderGetQueryParameters 
         {

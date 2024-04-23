@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
         {
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0" />
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <returns>A <see cref="ChatMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
+        /// Create new navigation property to replies for teams
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
             return requestInfo;
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
+        /// Create new navigation property to replies for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
             return new RepliesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         public class RepliesRequestBuilderGetQueryParameters 
         {

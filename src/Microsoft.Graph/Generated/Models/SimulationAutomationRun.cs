@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class SimulationAutomationRun : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
         public DateTimeOffset? EndDateTime {

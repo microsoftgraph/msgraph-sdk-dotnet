@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts {
         {
         }
         /// <summary>
-        /// List openShift objects in a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0" />
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         /// <returns>A <see cref="OpenShiftCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts {
             return await RequestAdapter.SendAsync<OpenShiftCollectionResponse>(requestInfo, OpenShiftCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an instance of an openShift object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0" />
+        /// Create new navigation property to openShifts for users
         /// </summary>
         /// <returns>A <see cref="OpenShift"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts {
             return await RequestAdapter.SendAsync<OpenShift>(requestInfo, OpenShift.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List openShift objects in a team.
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts {
             return requestInfo;
         }
         /// <summary>
-        /// Create an instance of an openShift object.
+        /// Create new navigation property to openShifts for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts {
             return new OpenShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List openShift objects in a team.
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         public class OpenShiftsRequestBuilderGetQueryParameters 
         {

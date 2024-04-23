@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs {
         {
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified channel within a team. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0" />
+        /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         /// <returns>A <see cref="TeamsTabCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs {
             return await RequestAdapter.SendAsync<TeamsTabCollectionResponse>(requestInfo, TeamsTabCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0" />
+        /// Create new navigation property to tabs for me
         /// </summary>
         /// <returns>A <see cref="TeamsTab"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified channel within a team. 
+        /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs {
             return requestInfo;
         }
         /// <summary>
-        /// Add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
+        /// Create new navigation property to tabs for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Tabs {
             return new TabsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of tabs in the specified channel within a team. 
+        /// A collection of all the tabs in the channel. A navigation property.
         /// </summary>
         public class TabsRequestBuilderGetQueryParameters 
         {

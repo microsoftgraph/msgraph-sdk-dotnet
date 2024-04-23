@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ThreatAssessmentStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
     }
 }

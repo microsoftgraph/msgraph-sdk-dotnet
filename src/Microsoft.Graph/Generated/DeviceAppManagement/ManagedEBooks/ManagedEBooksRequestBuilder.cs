@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
         {
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBook objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0" />
+        /// The Managed eBook.
         /// </summary>
         /// <returns>A <see cref="ManagedEBookCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
             return await RequestAdapter.SendAsync<ManagedEBookCollectionResponse>(requestInfo, ManagedEBookCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosVppEBook object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-create?view=graph-rest-1.0" />
+        /// Create new navigation property to managedEBooks for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedEBook"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
             return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBook objects.
+        /// The Managed eBook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosVppEBook object.
+        /// Create new navigation property to managedEBooks for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks {
             return new ManagedEBooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBook objects.
+        /// The Managed eBook.
         /// </summary>
         public class ManagedEBooksRequestBuilderGetQueryParameters 
         {

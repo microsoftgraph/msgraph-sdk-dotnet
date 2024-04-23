@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.ProgressTask
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
         /// </summary>
         /// <returns>A <see cref="PlannerProgressTaskBoardTaskFormat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +78,6 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.ProgressTask
         }
         /// <summary>
         /// Update the navigation property progressTaskBoardFormat in groups
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerProgressTaskBoardTaskFormat"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.ProgressTask
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.ProgressTask
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
         /// </summary>
         public class ProgressTaskBoardFormatRequestBuilderGetQueryParameters 
         {
