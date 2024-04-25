@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Subscription : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Optional. Identifier of the application used to create the subscription. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

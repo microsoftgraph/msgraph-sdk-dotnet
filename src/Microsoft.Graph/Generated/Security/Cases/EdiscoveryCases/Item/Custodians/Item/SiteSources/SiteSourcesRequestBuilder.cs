@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
         {
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0" />
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         /// <returns>A <see cref="SiteSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return await RequestAdapter.SendAsync<SiteSourceCollectionResponse>(requestInfo, SiteSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new siteSource object associated with an eDiscovery custodian.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0" />
+        /// Create new navigation property to siteSources for security
         /// </summary>
         /// <returns>A <see cref="SiteSource"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return requestInfo;
         }
         /// <summary>
-        /// Create a new siteSource object associated with an eDiscovery custodian.
+        /// Create new navigation property to siteSources for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return new SiteSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         public class SiteSourcesRequestBuilderGetQueryParameters 
         {

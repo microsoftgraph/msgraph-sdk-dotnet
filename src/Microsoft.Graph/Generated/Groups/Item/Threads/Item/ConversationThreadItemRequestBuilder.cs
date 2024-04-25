@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
         {
         }
         /// <summary>
-        /// Delete conversationThread.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0" />
+        /// Delete navigation property threads for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0" />
+        /// The group&apos;s conversation threads. Nullable.
         /// </summary>
         /// <returns>A <see cref="ConversationThread"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
             return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update conversation thread
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0" />
+        /// Update the navigation property threads in groups
         /// </summary>
         /// <returns>A <see cref="ConversationThread"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
             return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete conversationThread.
+        /// Delete navigation property threads for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+        /// The group&apos;s conversation threads. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update conversation thread
+        /// Update the navigation property threads in groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item {
         {
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+        /// The group&apos;s conversation threads. Nullable.
         /// </summary>
         public class ConversationThreadItemRequestBuilderGetQueryParameters 
         {

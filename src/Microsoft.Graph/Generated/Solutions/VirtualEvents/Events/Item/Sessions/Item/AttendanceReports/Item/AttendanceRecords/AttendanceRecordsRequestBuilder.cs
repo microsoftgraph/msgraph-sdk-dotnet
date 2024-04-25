@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item.Atte
         {
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0" />
+        /// List of attendance records of an attendance report. Read-only.
         /// </summary>
         /// <returns>A <see cref="AttendanceRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item.Atte
             return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
+        /// List of attendance records of an attendance report. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Events.Item.Sessions.Item.Atte
             return new AttendanceRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of attendanceRecord objects and their properties.
+        /// List of attendance records of an attendance report. Read-only.
         /// </summary>
         public class AttendanceRecordsRequestBuilderGetQueryParameters 
         {

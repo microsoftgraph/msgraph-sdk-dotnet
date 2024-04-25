@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Groups.Item.RejectedSenders {
         {
         }
         /// <summary>
-        /// Users in the rejected senders list can&apos;t post to conversations of the group (identified in the GET request URL). Make sure you don&apos;t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0" />
+        /// The list of users or groups not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Groups.Item.RejectedSenders {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users in the rejected senders list can&apos;t post to conversations of the group (identified in the GET request URL). Make sure you don&apos;t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
+        /// The list of users or groups not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Groups.Item.RejectedSenders {
             return new RejectedSendersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Users in the rejected senders list can&apos;t post to conversations of the group (identified in the GET request URL). Make sure you don&apos;t specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
+        /// The list of users or groups not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         public class RejectedSendersRequestBuilderGetQueryParameters 
         {

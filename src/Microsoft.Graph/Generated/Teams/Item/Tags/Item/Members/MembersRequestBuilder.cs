@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members {
         {
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0" />
+        /// Users assigned to the tag.
         /// </summary>
         /// <returns>A <see cref="TeamworkTagMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members {
             return await RequestAdapter.SendAsync<TeamworkTagMemberCollectionResponse>(requestInfo, TeamworkTagMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new teamworkTagMember object in a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0" />
+        /// Create new navigation property to members for teams
         /// </summary>
         /// <returns>A <see cref="TeamworkTagMember"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members {
             return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
+        /// Users assigned to the tag.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new teamworkTagMember object in a team.
+        /// Create new navigation property to members for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Teams.Item.Tags.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the members of a standard tag in a team and their properties.
+        /// Users assigned to the tag.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

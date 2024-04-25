@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShiftChangeRe
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0" />
+        /// The open shift requests in the schedule.
         /// </summary>
         /// <returns>A <see cref="OpenShiftChangeRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShiftChangeRe
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
+        /// The open shift requests in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShiftChangeRe
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
+        /// The open shift requests in the schedule.
         /// </summary>
         public class OpenShiftChangeRequestItemRequestBuilderGetQueryParameters 
         {

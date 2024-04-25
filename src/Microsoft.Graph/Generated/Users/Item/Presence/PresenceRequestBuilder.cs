@@ -84,8 +84,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
+        /// Get presence from users
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Presence"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get presence from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.Users.Item.Presence {
         {
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get presence from users
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters 
         {

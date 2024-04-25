@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Permission : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there&apos;s no expiration set for this permission. Optional.</summary>
         public DateTimeOffset? ExpirationDateTime {

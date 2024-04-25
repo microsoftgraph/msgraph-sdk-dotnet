@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceSettingState objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-list?view=graph-rest-1.0" />
+        /// Not yet documented
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceSettingStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return await RequestAdapter.SendAsync<DeviceComplianceSettingStateCollectionResponse>(requestInfo, DeviceComplianceSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceComplianceSettingState object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancesettingstate-create?view=graph-rest-1.0" />
+        /// Create new navigation property to deviceComplianceSettingStates for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceSettingState"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return await RequestAdapter.SendAsync<DeviceComplianceSettingState>(requestInfo, DeviceComplianceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceSettingState objects.
+        /// Not yet documented
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceComplianceSettingState object.
+        /// Create new navigation property to deviceComplianceSettingStates for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return new DeviceComplianceSettingStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceSettingState objects.
+        /// Not yet documented
         /// </summary>
         public class DeviceComplianceSettingStatesRequestBuilderGetQueryParameters 
         {

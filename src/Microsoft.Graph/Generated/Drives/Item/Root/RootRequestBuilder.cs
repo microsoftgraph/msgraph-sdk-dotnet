@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Drives.Item.Root {
         {
         }
         /// <summary>
-        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.item-id is the ID of a driveItem. It may also be the unique ID of a SharePoint list item.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0" />
+        /// The root folder of the drive. Read-only.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Drives.Item.Root {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.item-id is the ID of a driveItem. It may also be the unique ID of a SharePoint list item.
+        /// The root folder of the drive. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +89,7 @@ namespace Microsoft.Graph.Drives.Item.Root {
             return new RootRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.item-id is the ID of a driveItem. It may also be the unique ID of a SharePoint list item.
+        /// The root folder of the drive. Read-only.
         /// </summary>
         public class RootRequestBuilderGetQueryParameters 
         {

@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
         {
         }
         /// <summary>
-        /// Delete a retentionEvent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0" />
+        /// Delete navigation property retentionEvents for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0" />
+        /// Get retentionEvents from security
         /// </summary>
         /// <returns>A <see cref="RetentionEvent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             return await RequestAdapter.SendAsync<RetentionEvent>(requestInfo, RetentionEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a retentionEvent object.
+        /// Delete navigation property retentionEvents for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
+        /// Get retentionEvents from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Security.Triggers.RetentionEvents.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a retentionEvent object.
+        /// Get retentionEvents from security
         /// </summary>
         public class RetentionEventItemRequestBuilderGetQueryParameters 
         {

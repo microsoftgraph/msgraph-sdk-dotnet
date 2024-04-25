@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class FileEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.Security.DetectionStatus? DetectionStatus {

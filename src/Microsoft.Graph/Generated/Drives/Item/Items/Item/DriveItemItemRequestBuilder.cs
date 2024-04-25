@@ -203,8 +203,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Delete a DriveItem by using its ID or path.Deleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-delete?view=graph-rest-1.0" />
+        /// Delete navigation property items for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -273,8 +272,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0" />
+        /// Update the navigation property items in drives
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>
@@ -309,7 +307,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
         }
         /// <summary>
-        /// Delete a DriveItem by using its ID or path.Deleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
+        /// Delete navigation property items for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -347,7 +345,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
+        /// Update the navigation property items in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ProvisioningObjectSummary : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.</summary>
         public DateTimeOffset? ActivityDateTime {

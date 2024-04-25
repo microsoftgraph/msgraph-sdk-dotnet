@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityStorageWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getOffice365GroupsActivityStorage
+        /// Get the total storage used across all group mailboxes and group sites.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitystorage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityStorageWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getOffice365GroupsActivityStorage
+        /// Get the total storage used across all group mailboxes and group sites.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

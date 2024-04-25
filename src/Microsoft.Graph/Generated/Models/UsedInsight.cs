@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class UsedInsight : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

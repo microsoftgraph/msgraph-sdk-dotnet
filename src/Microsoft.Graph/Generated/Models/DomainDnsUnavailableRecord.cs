@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DomainDnsUnavailableRecord : DomainDnsRecord, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Provides the reason why the DomainDnsUnavailableRecord entity is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

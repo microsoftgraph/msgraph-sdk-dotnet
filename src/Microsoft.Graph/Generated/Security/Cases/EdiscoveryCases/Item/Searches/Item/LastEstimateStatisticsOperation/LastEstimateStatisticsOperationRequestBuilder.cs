@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
         {
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0" />
+        /// The last estimate operation associated with the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryEstimateOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             return await RequestAdapter.SendAsync<EdiscoveryEstimateOperation>(requestInfo, EdiscoveryEstimateOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
+        /// The last estimate operation associated with the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Last
             return new LastEstimateStatisticsOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the last  ediscoveryEstimateOperation objects and their properties.
+        /// The last estimate operation associated with the eDiscovery search.
         /// </summary>
         public class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters 
         {

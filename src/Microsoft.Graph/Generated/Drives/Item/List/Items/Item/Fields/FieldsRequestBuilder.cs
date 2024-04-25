@@ -77,8 +77,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Fields {
             return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties on a [listItem][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0" />
+        /// Update the navigation property fields in drives
         /// </summary>
         /// <returns>A <see cref="FieldValueSet"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +140,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Fields {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties on a [listItem][].
+        /// Update the navigation property fields in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

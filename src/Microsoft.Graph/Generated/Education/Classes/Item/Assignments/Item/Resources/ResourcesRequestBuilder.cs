@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
         {
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0" />
+        /// Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-resource?view=graph-rest-1.0" />
+        /// Create new navigation property to resources for education
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentResource"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+        /// Create new navigation property to resources for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources {
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters 
         {

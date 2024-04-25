@@ -34,7 +34,8 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
         {
         }
         /// <summary>
-        /// Invoke function findTenantInformationByTenantId
+        /// Given a tenant ID, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant cross-tenant access settings between you and the tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-findtenantinformationbytenantid?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TenantInformation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWit
             return await RequestAdapter.SendAsync<TenantInformation>(requestInfo, TenantInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function findTenantInformationByTenantId
+        /// Given a tenant ID, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant cross-tenant access settings between you and the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class UnclassifiedArtifact : Artifact, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The kind for this unclassifiedArtifact resource, describing what this value means.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

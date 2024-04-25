@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp {
     [Obsolete("This class is obsolete. Use CheckGrantedPermissionsForAppPostResponse instead.")]
+    #pragma warning disable CS1591
     public class CheckGrantedPermissionsForAppResponse : CheckGrantedPermissionsForAppPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0" />
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         /// <returns>A <see cref="PrintTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks.Item {
             return await RequestAdapter.SendAsync<PrintTask>(requestInfo, PrintTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0" />
+        /// Update the navigation property tasks in print
         /// </summary>
         /// <returns>A <see cref="PrintTask"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Update the navigation property tasks in print
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks.Item {
         {
         }
         /// <summary>
-        /// Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         public class PrintTaskItemRequestBuilderGetQueryParameters 
         {

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ServiceUpdateSeverity
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "normal")]
+        #pragma warning disable CS1591
         Normal,
+        #pragma warning restore CS1591
         [EnumMember(Value = "high")]
+        #pragma warning disable CS1591
         High,
+        #pragma warning restore CS1591
         [EnumMember(Value = "critical")]
+        #pragma warning disable CS1591
         Critical,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Users.Item.Chats {
         {
         }
         /// <summary>
-        /// Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list?view=graph-rest-1.0" />
+        /// Get chats from users
         /// </summary>
         /// <returns>A <see cref="ChatCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.Chats {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Chat>(requestInfo, Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
+        /// Get chats from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.Chats {
             return new ChatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
+        /// Get chats from users
         /// </summary>
         public class ChatsRequestBuilderGetQueryParameters 
         {

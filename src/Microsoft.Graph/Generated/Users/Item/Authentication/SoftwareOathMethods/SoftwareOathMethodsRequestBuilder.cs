@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods {
         {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0" />
+        /// The software OATH TOTP applications registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="SoftwareOathAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods {
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethodCollectionResponse>(requestInfo, SoftwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
+        /// The software OATH TOTP applications registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods {
             return new SoftwareOathMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
+        /// The software OATH TOTP applications registered to a user for authentication.
         /// </summary>
         public class SoftwareOathMethodsRequestBuilderGetQueryParameters 
         {

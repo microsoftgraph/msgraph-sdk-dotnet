@@ -68,8 +68,7 @@ namespace Microsoft.Graph.Education.Users.Item {
         {
         }
         /// <summary>
-        /// Delete a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0" />
+        /// Delete navigation property users for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,8 +90,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0" />
+        /// Get users from education
         /// </summary>
         /// <returns>A <see cref="EducationUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,8 +113,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationUser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0" />
+        /// Update the navigation property users in education
         /// </summary>
         /// <returns>A <see cref="EducationUser"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +138,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user.
+        /// Delete navigation property users for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +157,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object.
+        /// Get users from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +176,7 @@ namespace Microsoft.Graph.Education.Users.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationUser object.
+        /// Update the navigation property users in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -217,7 +214,7 @@ namespace Microsoft.Graph.Education.Users.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationUser object.
+        /// Get users from education
         /// </summary>
         public class EducationUserItemRequestBuilderGetQueryParameters 
         {

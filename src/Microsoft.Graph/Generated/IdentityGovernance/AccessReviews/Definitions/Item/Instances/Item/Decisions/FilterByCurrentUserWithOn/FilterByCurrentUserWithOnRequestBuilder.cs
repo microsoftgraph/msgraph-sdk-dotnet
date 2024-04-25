@@ -33,7 +33,8 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnGetResponse>(requestInfo, FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnResponse>(requestInfo, FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return new FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// Retrieve all decision items for an instance of an access review or a stage of an instance of a multi-stage access review, for which the calling user is the reviewer. The decision items are represented by accessReviewInstanceDecisionItem objects on a given accessReviewInstance or accessReviewStage for which the calling user is the reviewer.
         /// </summary>
         public class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 
         {

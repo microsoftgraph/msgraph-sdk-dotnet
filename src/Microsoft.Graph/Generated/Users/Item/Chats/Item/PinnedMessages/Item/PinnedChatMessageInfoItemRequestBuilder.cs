@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item {
         {
         }
         /// <summary>
-        /// Unpin a message from a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0" />
+        /// Delete navigation property pinnedMessages for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages.Item {
             return await RequestAdapter.SendAsync<PinnedChatMessageInfo>(requestInfo, PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unpin a message from a chat.
+        /// Delete navigation property pinnedMessages for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

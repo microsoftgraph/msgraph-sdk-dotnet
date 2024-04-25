@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Item {
         {
         }
         /// <summary>
-        /// Delete a samlOrWsFedExternalDomainFederation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0" />
+        /// Delete navigation property federationConfigurations for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.DirectoryNamespace.FederationConfigurations.Item {
             return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, IdentityProviderBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a samlOrWsFedExternalDomainFederation object.
+        /// Delete navigation property federationConfigurations for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

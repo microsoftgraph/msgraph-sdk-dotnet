@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item.Re
         {
         }
         /// <summary>
-        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0" />
+        /// Delete ref of navigation property appliesTo for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+        /// Delete ref of navigation property appliesTo for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

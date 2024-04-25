@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class RetentionDurationInDays : RetentionDuration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies the time period in days for which an item with the applied retention label will be retained for.</summary>
         public int? Days {

@@ -33,7 +33,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnGetResponse>(requestInfo, FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<FilterByCurrentUserWithOnResponse>(requestInfo, FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function filterByCurrentUser
+        /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackage objects filtered on the signed-in user.
         /// </summary>
         public class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 
         {

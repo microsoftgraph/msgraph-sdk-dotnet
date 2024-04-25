@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.FilterByCurrentUserWithOn {
     [Obsolete("This class is obsolete. Use FilterByCurrentUserWithOnGetResponse instead.")]
+    #pragma warning disable CS1591
     public class FilterByCurrentUserWithOnResponse : FilterByCurrentUserWithOnGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

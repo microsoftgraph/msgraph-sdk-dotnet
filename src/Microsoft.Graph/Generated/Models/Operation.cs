@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Operation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The start time of the operation.</summary>
         public DateTimeOffset? CreatedDateTime {

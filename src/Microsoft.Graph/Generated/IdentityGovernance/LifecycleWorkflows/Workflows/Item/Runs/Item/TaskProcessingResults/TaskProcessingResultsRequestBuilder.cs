@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         {
         }
         /// <summary>
-        /// Get the taskProcessingResult resources for a run.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-run-list-taskprocessingresults?view=graph-rest-1.0" />
+        /// The related taskProcessingResults.
         /// </summary>
         /// <returns>A <see cref="TaskProcessingResultCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return await RequestAdapter.SendAsync<TaskProcessingResultCollectionResponse>(requestInfo, TaskProcessingResultCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the taskProcessingResult resources for a run.
+        /// The related taskProcessingResults.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new TaskProcessingResultsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the taskProcessingResult resources for a run.
+        /// The related taskProcessingResults.
         /// </summary>
         public class TaskProcessingResultsRequestBuilderGetQueryParameters 
         {

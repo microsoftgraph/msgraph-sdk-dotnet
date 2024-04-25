@@ -51,8 +51,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
         {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0" />
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationshipOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipOperation>(requestInfo, DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.O
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

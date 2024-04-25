@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum PagePromotionType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "microsoftReserved")]
+        #pragma warning disable CS1591
         MicrosoftReserved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "page")]
+        #pragma warning disable CS1591
         Page,
+        #pragma warning restore CS1591
         [EnumMember(Value = "newsPost")]
+        #pragma warning disable CS1591
         NewsPost,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

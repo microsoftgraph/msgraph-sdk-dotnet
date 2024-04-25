@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ScopeOperatorType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Binary")]
+        #pragma warning disable CS1591
         Binary,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Unary")]
+        #pragma warning disable CS1591
         Unary,
+        #pragma warning restore CS1591
     }
 }

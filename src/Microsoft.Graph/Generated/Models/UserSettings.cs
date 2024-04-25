@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class UserSettings : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn&apos;t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
         public bool? ContributionToContentDiscoveryAsOrganizationDisabled {

@@ -62,8 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackages?view=graph-rest-1.0" />
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         /// <returns>A <see cref="AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,8 +85,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackages?view=graph-rest-1.0" />
+        /// Create new navigation property to accessPackages for identityGovernance
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackage"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackage>(requestInfo, Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +129,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return requestInfo;
         }
         /// <summary>
-        /// Create a new accessPackage object. The access package will be added to an existing accessPackageCatalog.
+        /// Create new navigation property to accessPackages for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +160,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new AccessPackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accessPackage objects.  The resulting list includes all the access packages that the caller has access to read, across all catalogs.
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         public class AccessPackagesRequestBuilderGetQueryParameters 
         {

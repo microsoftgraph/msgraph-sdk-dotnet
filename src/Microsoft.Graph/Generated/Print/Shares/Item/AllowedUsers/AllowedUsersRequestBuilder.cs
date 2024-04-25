@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers {
         {
         }
         /// <summary>
-        /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0" />
+        /// The users who have access to print using the printer.
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers {
             return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+        /// The users who have access to print using the printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers {
             return new AllowedUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+        /// The users who have access to print using the printer.
         /// </summary>
         public class AllowedUsersRequestBuilderGetQueryParameters 
         {

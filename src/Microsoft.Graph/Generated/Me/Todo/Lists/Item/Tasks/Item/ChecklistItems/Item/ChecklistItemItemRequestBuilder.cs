@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
         {
         }
         /// <summary>
-        /// Delete a checklistItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0" />
+        /// Delete navigation property checklistItems for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a checklistItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0" />
+        /// A collection of checklistItems linked to a task.
         /// </summary>
         /// <returns>A <see cref="ChecklistItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
             return await RequestAdapter.SendAsync<ChecklistItem>(requestInfo, ChecklistItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a checklistItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0" />
+        /// Update the navigation property checklistItems in me
         /// </summary>
         /// <returns>A <see cref="ChecklistItem"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
             return await RequestAdapter.SendAsync<ChecklistItem>(requestInfo, ChecklistItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a checklistItem object.
+        /// Delete navigation property checklistItems for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a checklistItem object.
+        /// A collection of checklistItems linked to a task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a checklistItem object.
+        /// Update the navigation property checklistItems in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a checklistItem object.
+        /// A collection of checklistItems linked to a task.
         /// </summary>
         public class ChecklistItemItemRequestBuilderGetQueryParameters 
         {

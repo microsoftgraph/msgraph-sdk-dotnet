@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles {
         {
         }
         /// <summary>
-        /// Get a list of the intelligenceProfile objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-threatintelligence-list-intelprofiles?view=graph-rest-1.0" />
+        /// A list of intelligenceProfile objects.
         /// </summary>
         /// <returns>A <see cref="IntelligenceProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles {
             return await RequestAdapter.SendAsync<IntelligenceProfile>(requestInfo, IntelligenceProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the intelligenceProfile objects and their properties.
+        /// A list of intelligenceProfile objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles {
             return new IntelProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the intelligenceProfile objects and their properties.
+        /// A list of intelligenceProfile objects.
         /// </summary>
         public class IntelProfilesRequestBuilderGetQueryParameters 
         {

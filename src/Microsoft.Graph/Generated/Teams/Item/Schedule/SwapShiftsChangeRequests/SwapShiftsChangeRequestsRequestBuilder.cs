@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
         {
         }
         /// <summary>
-        /// Retrieve a list of swapShiftsChangeRequest objects in the team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0" />
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         /// <returns>A <see cref="SwapShiftsChangeRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return await RequestAdapter.SendAsync<SwapShiftsChangeRequestCollectionResponse>(requestInfo, SwapShiftsChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an instance of a swapShiftsChangeRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0" />
+        /// Create new navigation property to swapShiftsChangeRequests for teams
         /// </summary>
         /// <returns>A <see cref="SwapShiftsChangeRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return await RequestAdapter.SendAsync<SwapShiftsChangeRequest>(requestInfo, SwapShiftsChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of swapShiftsChangeRequest objects in the team.
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create an instance of a swapShiftsChangeRequest object.
+        /// Create new navigation property to swapShiftsChangeRequests for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return new SwapShiftsChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of swapShiftsChangeRequest objects in the team.
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         public class SwapShiftsChangeRequestsRequestBuilderGetQueryParameters 
         {

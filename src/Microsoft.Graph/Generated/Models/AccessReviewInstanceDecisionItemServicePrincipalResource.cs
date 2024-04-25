@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AccessReviewInstanceDecisionItemServicePrincipalResource : AccessReviewInstanceDecisionItemResource, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The globally unique identifier of the application to which access has been granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

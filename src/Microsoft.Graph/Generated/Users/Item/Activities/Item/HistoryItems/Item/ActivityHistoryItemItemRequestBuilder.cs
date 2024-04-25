@@ -83,8 +83,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Item.HistoryItems.Item {
             return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0" />
+        /// Update the navigation property historyItems in users
         /// </summary>
         /// <returns>A <see cref="ActivityHistoryItem"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +146,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new or replace an existing history item for an existing user activity.
+        /// Update the navigation property historyItems in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

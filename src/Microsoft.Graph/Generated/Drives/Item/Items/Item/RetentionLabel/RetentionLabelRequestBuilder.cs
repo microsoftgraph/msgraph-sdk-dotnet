@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
         {
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0" />
+        /// Delete navigation property retentionLabel for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0" />
+        /// Update the navigation property retentionLabel in drives
         /// </summary>
         /// <returns>A <see cref="ItemRetentionLabel"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Delete navigation property retentionLabel for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return requestInfo;
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+        /// Update the navigation property retentionLabel in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

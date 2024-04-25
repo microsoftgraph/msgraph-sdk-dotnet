@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Labels.Authorities {
         {
         }
         /// <summary>
-        /// Get a list of the authorityTemplate objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-authorities?view=graph-rest-1.0" />
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         /// <returns>A <see cref="AuthorityTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Labels.Authorities {
             return await RequestAdapter.SendAsync<AuthorityTemplateCollectionResponse>(requestInfo, AuthorityTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authorityTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-authorities?view=graph-rest-1.0" />
+        /// Create new navigation property to authorities for security
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.AuthorityTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Labels.Authorities {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the authorityTemplate objects and their properties.
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Labels.Authorities {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authorityTemplate object.
+        /// Create new navigation property to authorities for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Labels.Authorities {
             return new AuthoritiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the authorityTemplate objects and their properties.
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         public class AuthoritiesRequestBuilderGetQueryParameters 
         {

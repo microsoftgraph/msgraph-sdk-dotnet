@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class CommunicationsApplicationInstanceIdentity : Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
         public bool? Hidden {

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum CloudAppSecuritySessionControlType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "mcasConfigured")]
+        #pragma warning disable CS1591
         McasConfigured,
+        #pragma warning restore CS1591
         [EnumMember(Value = "monitorOnly")]
+        #pragma warning disable CS1591
         MonitorOnly,
+        #pragma warning restore CS1591
         [EnumMember(Value = "blockDownloads")]
+        #pragma warning disable CS1591
         BlockDownloads,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

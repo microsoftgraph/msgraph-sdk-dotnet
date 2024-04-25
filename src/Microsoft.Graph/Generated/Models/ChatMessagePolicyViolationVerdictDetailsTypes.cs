@@ -3,15 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum ChatMessagePolicyViolationVerdictDetailsTypes
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "allowFalsePositiveOverride")]
+        #pragma warning disable CS1591
         AllowFalsePositiveOverride = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "allowOverrideWithoutJustification")]
+        #pragma warning disable CS1591
         AllowOverrideWithoutJustification = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "allowOverrideWithJustification")]
+        #pragma warning disable CS1591
         AllowOverrideWithJustification = 8,
+        #pragma warning restore CS1591
     }
 }

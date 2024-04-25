@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DaylightTimeZoneOffset : StandardTimeZoneOffset, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.</summary>
         public int? DaylightBias {

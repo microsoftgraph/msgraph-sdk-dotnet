@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks {
         {
         }
         /// <summary>
-        /// Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0" />
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         /// <returns>A <see cref="PrintTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks {
             return await RequestAdapter.SendAsync<PrintTask>(requestInfo, PrintTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Print.TaskDefinitions.Item.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

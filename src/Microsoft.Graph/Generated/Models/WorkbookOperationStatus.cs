@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum WorkbookOperationStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "notStarted")]
+        #pragma warning disable CS1591
         NotStarted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "running")]
+        #pragma warning disable CS1591
         Running,
+        #pragma warning restore CS1591
         [EnumMember(Value = "succeeded")]
+        #pragma warning disable CS1591
         Succeeded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
     }
 }

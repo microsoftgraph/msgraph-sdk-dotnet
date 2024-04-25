@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ShiftPreferences : ChangeTrackedEntity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Availability of the user to be scheduled for work and its recurrence pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

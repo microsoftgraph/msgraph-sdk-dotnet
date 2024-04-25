@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PermissionGrantConditionSet : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

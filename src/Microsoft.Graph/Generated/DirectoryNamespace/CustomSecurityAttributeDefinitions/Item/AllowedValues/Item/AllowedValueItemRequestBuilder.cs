@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an allowedValue object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0" />
+        /// Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
         /// </summary>
         /// <returns>A <see cref="AllowedValue"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, AllowedValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an allowedValue object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0" />
+        /// Update the navigation property allowedValues in directory
         /// </summary>
         /// <returns>A <see cref="AllowedValue"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an allowedValue object.
+        /// Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an allowedValue object.
+        /// Update the navigation property allowedValues in directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions.
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an allowedValue object.
+        /// Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
         /// </summary>
         public class AllowedValueItemRequestBuilderGetQueryParameters 
         {

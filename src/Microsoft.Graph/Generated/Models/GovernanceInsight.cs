@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class GovernanceInsight : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates when the insight was created.</summary>
         public DateTimeOffset? InsightCreatedDateTime {

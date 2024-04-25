@@ -51,8 +51,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
         {
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0" />
+        /// Get delegatedPermissionClassifications from servicePrincipals
         /// </summary>
         /// <returns>A <see cref="DelegatedPermissionClassificationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return await RequestAdapter.SendAsync<DelegatedPermissionClassificationCollectionResponse>(requestInfo, DelegatedPermissionClassificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0" />
+        /// Create new navigation property to delegatedPermissionClassifications for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="DelegatedPermissionClassification"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+        /// Get delegatedPermissionClassifications from servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return requestInfo;
         }
         /// <summary>
-        /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+        /// Create new navigation property to delegatedPermissionClassifications for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return new DelegatedPermissionClassificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+        /// Get delegatedPermissionClassifications from servicePrincipals
         /// </summary>
         public class DelegatedPermissionClassificationsRequestBuilderGetQueryParameters 
         {

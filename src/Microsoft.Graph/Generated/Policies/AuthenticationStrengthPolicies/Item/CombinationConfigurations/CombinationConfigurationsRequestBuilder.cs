@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.Combinati
         {
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0" />
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         /// <returns>A <see cref="AuthenticationCombinationConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.Combinati
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfigurationCollectionResponse>(requestInfo, AuthenticationCombinationConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0" />
+        /// Create new navigation property to combinationConfigurations for policies
         /// </summary>
         /// <returns>A <see cref="AuthenticationCombinationConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.Combinati
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfiguration>(requestInfo, AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.Combinati
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
+        /// Create new navigation property to combinationConfigurations for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Policies.AuthenticationStrengthPolicies.Item.Combinati
             return new CombinationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         public class CombinationConfigurationsRequestBuilderGetQueryParameters 
         {

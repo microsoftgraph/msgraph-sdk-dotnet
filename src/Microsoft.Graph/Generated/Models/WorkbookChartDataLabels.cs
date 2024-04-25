@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WorkbookChartDataLabels : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

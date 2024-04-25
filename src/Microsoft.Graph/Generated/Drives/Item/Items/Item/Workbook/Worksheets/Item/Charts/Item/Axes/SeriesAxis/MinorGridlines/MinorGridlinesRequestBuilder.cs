@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartgridlines object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartgridlines-get?view=graph-rest-1.0" />
+        /// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartGridlines"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartGridlines>(requestInfo, WorkbookChartGridlines.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartgridlines object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartgridlines-update?view=graph-rest-1.0" />
+        /// Update the navigation property minorGridlines in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartGridlines"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartgridlines object.
+        /// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartgridlines object.
+        /// Update the navigation property minorGridlines in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartgridlines object.
+        /// Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
         /// </summary>
         public class MinorGridlinesRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class CustomTaskExtensionCallbackData : Microsoft.Graph.Models.CustomExtensionData, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Operation status that&apos;s provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.</summary>
         public CustomTaskExtensionOperationStatus? OperationStatus {

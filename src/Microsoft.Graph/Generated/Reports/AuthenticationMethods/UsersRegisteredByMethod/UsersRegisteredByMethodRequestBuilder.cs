@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethod 
         {
         }
         /// <summary>
-        /// Invoke function usersRegisteredByMethod
+        /// Get the number of users registered for each authentication method.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserRegistrationMethodSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethod 
             return await RequestAdapter.SendAsync<UserRegistrationMethodSummary>(requestInfo, UserRegistrationMethodSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function usersRegisteredByMethod
+        /// Get the number of users registered for each authentication method.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

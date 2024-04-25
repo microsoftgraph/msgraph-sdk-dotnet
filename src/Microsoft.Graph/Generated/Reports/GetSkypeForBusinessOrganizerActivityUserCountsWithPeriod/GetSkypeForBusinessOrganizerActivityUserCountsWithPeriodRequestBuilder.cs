@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessOrganizerActivityUserCounts
         {
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessOrganizerActivityUserCounts
+        /// Get usage trends on the number of unique users and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and dial-in/out Microsoft.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessorganizeractivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessOrganizerActivityUserCounts
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSkypeForBusinessOrganizerActivityUserCounts
+        /// Get usage trends on the number of unique users and type of conference sessions held and organized by users in your organization. Types of conference sessions include IM, audio/video, application sharing, web, dial-in/out - third party, and dial-in/out Microsoft.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class OnPremisesDirectorySynchronization : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

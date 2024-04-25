@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Partners.Billing {
+    #pragma warning disable CS1591
     public class Manifest : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The total file count for this partner tenant ID.</summary>
         public int? BlobCount {

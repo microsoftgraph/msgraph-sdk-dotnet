@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DomainDnsCnameRecord : DomainDnsRecord, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an operation object.
+        /// Represents an operation to export the billing data of a partner.
         /// </summary>
         /// <returns>A <see cref="OperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations {
             return await RequestAdapter.SendAsync<Operation>(requestInfo, Operation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an operation object.
+        /// Represents an operation to export the billing data of a partner.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of an operation object.
+        /// Represents an operation to export the billing data of a partner.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

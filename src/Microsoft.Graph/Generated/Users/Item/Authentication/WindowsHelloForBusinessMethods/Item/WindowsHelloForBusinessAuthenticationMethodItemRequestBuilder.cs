@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
         {
         }
         /// <summary>
-        /// Deletes a windowsHelloForBusinessAuthenticationMethod object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-delete?view=graph-rest-1.0" />
+        /// Delete navigation property windowsHelloForBusinessMethods for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0" />
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="WindowsHelloForBusinessAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
             return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(requestInfo, WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a windowsHelloForBusinessAuthenticationMethod object.
+        /// Delete navigation property windowsHelloForBusinessMethods for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
+        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
         /// </summary>
         public class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

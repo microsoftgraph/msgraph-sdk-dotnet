@@ -69,8 +69,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes {
         {
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0" />
+        /// The collection of content types defined for this site.
         /// </summary>
         /// <returns>A <see cref="ContentTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,8 +92,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new [contentType][] in a [site][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0" />
+        /// Create new navigation property to contentTypes for sites
         /// </summary>
         /// <returns>A <see cref="ContentType"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +117,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
+        /// The collection of content types defined for this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +136,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [contentType][] in a [site][].
+        /// Create new navigation property to contentTypes for sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +167,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes {
             return new ContentTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
+        /// The collection of content types defined for this site.
         /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>If set to true, Microsoft Entra security defaults are enabled for the tenant.</summary>
         public bool? IsEnabled {

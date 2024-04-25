@@ -38,8 +38,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item {
         {
         }
         /// <summary>
-        /// Delete an app from an organization&apos;s app catalog (the tenant app catalog). To delete an app, the distributionMethod property for the app must be set to organization. You can also use this API to remove a submitted app from the review process.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0" />
+        /// Delete navigation property teamsApps for appCatalogs
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsApp>(requestInfo, Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an app from an organization&apos;s app catalog (the tenant app catalog). To delete an app, the distributionMethod property for the app must be set to organization. You can also use this API to remove a submitted app from the review process.
+        /// Delete navigation property teamsApps for appCatalogs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

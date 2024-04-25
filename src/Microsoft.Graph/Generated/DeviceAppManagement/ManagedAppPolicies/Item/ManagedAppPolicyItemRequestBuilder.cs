@@ -60,8 +60,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the targetedManagedAppProtection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0" />
+        /// Managed app policies.
         /// </summary>
         /// <returns>A <see cref="ManagedAppPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the targetedManagedAppProtection object.
+        /// Managed app policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the targetedManagedAppProtection object.
+        /// Managed app policies.
         /// </summary>
         public class ManagedAppPolicyItemRequestBuilderGetQueryParameters 
         {

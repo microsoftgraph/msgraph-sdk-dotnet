@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies {
         {
         }
         /// <summary>
-        /// Get a list of bookingCurrency objects available to a Microsoft Bookings business.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0" />
+        /// Get bookingCurrencies from solutions
         /// </summary>
         /// <returns>A <see cref="BookingCurrencyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies {
             return await RequestAdapter.SendAsync<BookingCurrency>(requestInfo, BookingCurrency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+        /// Get bookingCurrencies from solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies {
             return new BookingCurrenciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+        /// Get bookingCurrencies from solutions
         /// </summary>
         public class BookingCurrenciesRequestBuilderGetQueryParameters 
         {

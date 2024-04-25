@@ -51,8 +51,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers {
         {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminCustomer objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0" />
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminCustomerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers {
             return await RequestAdapter.SendAsync<DelegatedAdminCustomer>(requestInfo, DelegatedAdminCustomer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminCustomer objects and their properties.
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers {
             return new DelegatedAdminCustomersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminCustomer objects and their properties.
+        /// The customer who has a delegated admin relationship with a Microsoft partner.
         /// </summary>
         public class DelegatedAdminCustomersRequestBuilderGetQueryParameters 
         {

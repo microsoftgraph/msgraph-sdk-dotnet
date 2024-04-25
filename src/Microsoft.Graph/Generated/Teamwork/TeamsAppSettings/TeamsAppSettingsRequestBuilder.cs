@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappsettings-get?view=graph-rest-1.0" />
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamsAppSettings>(requestInfo, Microsoft.Graph.Models.TeamsAppSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappsettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property teamsAppSettings in teamwork
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
+        /// Update the navigation property teamsAppSettings in teamwork
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Teamwork.TeamsAppSettings {
         {
         }
         /// <summary>
-        /// Get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
+        /// Represents tenant-wide settings for all Teams apps in the tenant.
         /// </summary>
         public class TeamsAppSettingsRequestBuilderGetQueryParameters 
         {

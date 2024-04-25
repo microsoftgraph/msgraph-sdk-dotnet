@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Functions {
+    #pragma warning disable CS1591
     public class FunctionsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

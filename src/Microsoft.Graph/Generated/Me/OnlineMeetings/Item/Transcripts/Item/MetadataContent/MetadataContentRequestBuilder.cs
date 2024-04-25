@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.Transcripts.Item.MetadataConten
         }
         /// <summary>
         /// The time-aligned metadata of the utterances in the transcript. Read-only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies 
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
+        /// Get replies from drives
         /// </summary>
         /// <returns>A <see cref="WorkbookCommentReplyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies 
             return await RequestAdapter.SendAsync<WorkbookCommentReply>(requestInfo, WorkbookCommentReply.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
+        /// Get replies from drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies 
             return new RepliesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
+        /// Get replies from drives
         /// </summary>
         public class RepliesRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
         {
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0" />
+        /// The mobile app categories.
         /// </summary>
         /// <returns>A <see cref="MobileAppCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return await RequestAdapter.SendAsync<MobileAppCategoryCollectionResponse>(requestInfo, MobileAppCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new mobileAppCategory object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0" />
+        /// Create new navigation property to mobileAppCategories for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="MobileAppCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
+        /// The mobile app categories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mobileAppCategory object.
+        /// Create new navigation property to mobileAppCategories for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories {
             return new MobileAppCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the mobileAppCategory objects.
+        /// The mobile app categories.
         /// </summary>
         public class MobileAppCategoriesRequestBuilderGetQueryParameters 
         {

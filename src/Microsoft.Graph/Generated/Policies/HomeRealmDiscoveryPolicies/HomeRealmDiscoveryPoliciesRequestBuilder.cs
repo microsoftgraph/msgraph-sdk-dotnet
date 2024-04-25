@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
         {
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0" />
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicyCollectionResponse>(requestInfo, HomeRealmDiscoveryPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// Create new navigation property to homeRealmDiscoveryPolicies for policies
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicy>(requestInfo, HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new homeRealmDiscoveryPolicy object.
+        /// Create new navigation property to homeRealmDiscoveryPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies {
             return new HomeRealmDiscoveryPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of homeRealmDiscoveryPolicy objects.
+        /// The policy to control Microsoft Entra authentication behavior for federated users.
         /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters 
         {

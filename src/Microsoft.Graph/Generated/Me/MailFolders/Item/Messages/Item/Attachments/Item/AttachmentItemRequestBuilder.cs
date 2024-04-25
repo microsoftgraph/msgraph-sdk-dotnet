@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.Attachments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0" />
+        /// The fileAttachment and itemAttachment attachments for the message.
         /// </summary>
         /// <returns>A <see cref="Attachment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +96,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.Attachments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
+        /// The fileAttachment and itemAttachment attachments for the message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +131,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
+        /// The fileAttachment and itemAttachment attachments for the message.
         /// </summary>
         public class AttachmentItemRequestBuilderGetQueryParameters 
         {

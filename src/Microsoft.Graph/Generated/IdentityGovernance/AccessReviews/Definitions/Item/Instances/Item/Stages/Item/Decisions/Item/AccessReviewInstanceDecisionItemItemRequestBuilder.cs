@@ -60,8 +60,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0" />
+        /// Update the navigation property decisions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
+        /// Update the navigation property decisions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         public class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters 
         {

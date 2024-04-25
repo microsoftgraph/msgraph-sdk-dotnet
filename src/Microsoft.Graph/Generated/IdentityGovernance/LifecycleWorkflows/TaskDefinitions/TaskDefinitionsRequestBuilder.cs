@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.TaskDefinitions 
         {
         }
         /// <summary>
-        /// Get a list of the taskDefinition objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-1.0" />
+        /// The definition of tasks within the lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="TaskDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.TaskDefinitions 
             return await RequestAdapter.SendAsync<TaskDefinitionCollectionResponse>(requestInfo, TaskDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the taskDefinition objects and their properties.
+        /// The definition of tasks within the lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.TaskDefinitions 
             return new TaskDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the taskDefinition objects and their properties.
+        /// The definition of tasks within the lifecycle workflows instance.
         /// </summary>
         public class TaskDefinitionsRequestBuilderGetQueryParameters 
         {

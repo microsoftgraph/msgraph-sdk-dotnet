@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class VirtualEvent : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

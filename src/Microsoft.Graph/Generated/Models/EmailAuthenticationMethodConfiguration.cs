@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class EmailAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn&apos;t use public preview have email OTP enabled beginning in October 2021.</summary>
         public ExternalEmailOtpState? AllowExternalIdToUseEmailOtp {

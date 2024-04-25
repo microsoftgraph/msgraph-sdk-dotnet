@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
         {
         }
         /// <summary>
-        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0" />
+        /// Delete navigation property extensionProperties for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="ExtensionProperty"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             return await RequestAdapter.SendAsync<ExtensionProperty>(requestInfo, ExtensionProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD).
+        /// Delete navigation property extensionProperties for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object.
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties.Item {
         {
         }
         /// <summary>
-        /// Read a directory extension definition represented by an extensionProperty object.
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         public class ExtensionPropertyItemRequestBuilderGetQueryParameters 
         {

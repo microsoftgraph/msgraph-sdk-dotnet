@@ -66,8 +66,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessReviewStage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewstage-get?view=graph-rest-1.0" />
+        /// If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
         /// </summary>
         /// <returns>A <see cref="AccessReviewStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<AccessReviewStage>(requestInfo, AccessReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can&apos;t remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewstage-update?view=graph-rest-1.0" />
+        /// Update the navigation property stages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="AccessReviewStage"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessReviewStage object.
+        /// If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can&apos;t remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
+        /// Update the navigation property stages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an accessReviewStage object.
+        /// If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
         /// </summary>
         public class AccessReviewStageItemRequestBuilderGetQueryParameters 
         {

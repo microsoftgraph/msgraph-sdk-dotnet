@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Chats.Item.Messages.Item.Replies.Item.HostedContents.I
         }
         /// <summary>
         /// Get media content for the navigation property hostedContents from chats
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

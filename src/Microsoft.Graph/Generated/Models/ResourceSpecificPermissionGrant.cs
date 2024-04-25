@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

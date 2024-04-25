@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AccessReviewReviewer : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date when the reviewer was added for the access review.</summary>
         public DateTimeOffset? CreatedDateTime {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders {
         {
         }
         /// <summary>
-        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-1.0" />
+        /// A collection of learning providers.
         /// </summary>
         /// <returns>A <see cref="LearningProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders {
             return await RequestAdapter.SendAsync<LearningProviderCollectionResponse>(requestInfo, LearningProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-1.0" />
+        /// Create new navigation property to learningProviders for employeeExperience
         /// </summary>
         /// <returns>A <see cref="LearningProvider"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders {
             return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
+        /// A collection of learning providers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
+        /// Create new navigation property to learningProviders for employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders {
             return new LearningProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
+        /// A collection of learning providers.
         /// </summary>
         public class LearningProvidersRequestBuilderGetQueryParameters 
         {

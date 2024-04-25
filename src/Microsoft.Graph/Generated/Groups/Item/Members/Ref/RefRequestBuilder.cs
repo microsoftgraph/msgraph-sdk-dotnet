@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
         {
         }
         /// <summary>
-        /// Remove a member from a group via the members navigation property. You can&apos;t remove a member from groups with dynamic memberships.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0" />
+        /// Delete ref of navigation property members for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +55,6 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
         }
         /// <summary>
         /// The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0" />
+        /// Create new navigation property ref to members for groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a member from a group via the members navigation property. You can&apos;t remove a member from groups with dynamic memberships.
+        /// Delete ref of navigation property members for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+        /// Create new navigation property ref to members for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a member from a group via the members navigation property. You can&apos;t remove a member from groups with dynamic memberships.
+        /// Delete ref of navigation property members for groups
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {

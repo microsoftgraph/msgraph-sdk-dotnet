@@ -60,8 +60,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a userConsentRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0" />
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// </summary>
         /// <returns>A <see cref="UserConsentRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a userConsentRequest object.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a userConsentRequest object.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// </summary>
         public class UserConsentRequestItemRequestBuilderGetQueryParameters 
         {

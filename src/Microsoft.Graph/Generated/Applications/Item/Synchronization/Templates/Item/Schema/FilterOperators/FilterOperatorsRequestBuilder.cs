@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
         }
         /// <summary>
-        /// Invoke function filterOperators
+        /// List all operators supported in the scoping filters.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterOperatorsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
             return await RequestAdapter.SendAsync<FilterOperatorsGetResponse>(requestInfo, FilterOperatorsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterOperators
+        /// List all operators supported in the scoping filters.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FilterOperatorsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
             return await RequestAdapter.SendAsync<FilterOperatorsResponse>(requestInfo, FilterOperatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function filterOperators
+        /// List all operators supported in the scoping filters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
             return new FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function filterOperators
+        /// List all operators supported in the scoping filters.
         /// </summary>
         public class FilterOperatorsRequestBuilderGetQueryParameters 
         {

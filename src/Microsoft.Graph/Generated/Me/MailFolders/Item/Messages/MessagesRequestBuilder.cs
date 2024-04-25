@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
         {
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0" />
+        /// The collection of messages in the mailFolder.
         /// </summary>
         /// <returns>A <see cref="MessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return await RequestAdapter.SendAsync<MessageCollectionResponse>(requestInfo, MessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new Message in a mailfolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0" />
+        /// Create new navigation property to messages for me
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// The collection of messages in the mailFolder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new Message in a mailfolder.
+        /// Create new navigation property to messages for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages {
             return new MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// The collection of messages in the mailFolder.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters 
         {

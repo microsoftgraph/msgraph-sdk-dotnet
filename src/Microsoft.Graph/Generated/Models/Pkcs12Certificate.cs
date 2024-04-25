@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Pkcs12Certificate : ApiAuthenticationConfigurationBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The password for the pfx file. Required. If no password is used, you must still provide a value of &apos;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

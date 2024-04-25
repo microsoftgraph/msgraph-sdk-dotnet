@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
+    #pragma warning disable CS1591
     public class ExternalConnection : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

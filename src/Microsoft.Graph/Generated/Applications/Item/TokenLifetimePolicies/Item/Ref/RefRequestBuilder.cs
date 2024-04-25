@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Item.Ref {
         {
         }
         /// <summary>
-        /// Remove a tokenLifetimePolicy from an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0" />
+        /// Delete ref of navigation property tokenLifetimePolicies for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a tokenLifetimePolicy from an application.
+        /// Delete ref of navigation property tokenLifetimePolicies for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

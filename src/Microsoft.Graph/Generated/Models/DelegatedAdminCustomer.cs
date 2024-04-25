@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DelegatedAdminCustomer : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

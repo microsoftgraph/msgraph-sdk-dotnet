@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs {
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementExportJob objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-list?view=graph-rest-1.0" />
+        /// Entity representing a job to export a report
         /// </summary>
         /// <returns>A <see cref="DeviceManagementExportJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs {
             return await RequestAdapter.SendAsync<DeviceManagementExportJobCollectionResponse>(requestInfo, DeviceManagementExportJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceManagementExportJob object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0" />
+        /// Create new navigation property to exportJobs for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceManagementExportJob"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs {
             return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, DeviceManagementExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementExportJob objects.
+        /// Entity representing a job to export a report
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceManagementExportJob object.
+        /// Create new navigation property to exportJobs for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs {
             return new ExportJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementExportJob objects.
+        /// Entity representing a job to export a report
         /// </summary>
         public class ExportJobsRequestBuilderGetQueryParameters 
         {

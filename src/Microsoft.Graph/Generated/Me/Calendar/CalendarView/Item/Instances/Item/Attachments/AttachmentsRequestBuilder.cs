@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Attachmen
         {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0" />
+        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="AttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Attachmen
             return await RequestAdapter.SendAsync<AttachmentCollectionResponse>(requestInfo, AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0" />
+        /// Create new navigation property to attachments for me
         /// </summary>
         /// <returns>A <see cref="Attachment"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Attachmen
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
+        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Attachmen
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+        /// Create new navigation property to attachments for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Item.Instances.Item.Attachmen
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
+        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters 
         {

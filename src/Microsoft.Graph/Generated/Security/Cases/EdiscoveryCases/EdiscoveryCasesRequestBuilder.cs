@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases {
         {
         }
         /// <summary>
-        /// Get a list of the ediscoveryCase objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0" />
+        /// Get ediscoveryCases from security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases {
             return await RequestAdapter.SendAsync<EdiscoveryCaseCollectionResponse>(requestInfo, EdiscoveryCaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryCase object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0" />
+        /// Create new navigation property to ediscoveryCases for security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCase"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases {
             return await RequestAdapter.SendAsync<EdiscoveryCase>(requestInfo, EdiscoveryCase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the ediscoveryCase objects and their properties.
+        /// Get ediscoveryCases from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryCase object.
+        /// Create new navigation property to ediscoveryCases for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases {
             return new EdiscoveryCasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the ediscoveryCase objects and their properties.
+        /// Get ediscoveryCases from security
         /// </summary>
         public class EdiscoveryCasesRequestBuilderGetQueryParameters 
         {

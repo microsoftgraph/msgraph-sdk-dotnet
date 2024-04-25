@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
         {
         }
         /// <summary>
-        /// Invoke function getUserArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
             return await RequestAdapter.SendAsync<GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getUserArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getuserarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
             return await RequestAdapter.SendAsync<GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse>(requestInfo, GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getUserArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDat
             return new GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getUserArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular user.
         /// </summary>
         public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class MessagePinnedEventMessageDetail : EventMessageDetail, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Date and time when the event occurred.</summary>
         public DateTimeOffset? EventDateTime {

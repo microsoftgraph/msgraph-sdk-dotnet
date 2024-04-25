@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
+    #pragma warning disable CS1591
     public class ConnectionOperation : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

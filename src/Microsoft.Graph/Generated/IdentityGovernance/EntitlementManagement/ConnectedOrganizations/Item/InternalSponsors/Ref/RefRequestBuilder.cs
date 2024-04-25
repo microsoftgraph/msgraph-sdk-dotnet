@@ -32,8 +32,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-delete-internalsponsors?view=graph-rest-1.0" />
+        /// Delete ref of navigation property internalSponsors for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-list-internalsponsors?view=graph-rest-1.0" />
+        /// Get ref of internalSponsors from identityGovernance
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-post-internalsponsors?view=graph-rest-1.0" />
+        /// Create new navigation property ref to internalSponsors for identityGovernance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Delete ref of navigation property internalSponsors for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Get ref of internalSponsors from identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Create new navigation property ref to internalSponsors for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Delete ref of navigation property internalSponsors for identityGovernance
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Get ref of internalSponsors from identityGovernance
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamsAppSettings : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether users are allowed to request access to the unavailable Teams apps.</summary>
         public bool? AllowUserRequestsForAppAccess {

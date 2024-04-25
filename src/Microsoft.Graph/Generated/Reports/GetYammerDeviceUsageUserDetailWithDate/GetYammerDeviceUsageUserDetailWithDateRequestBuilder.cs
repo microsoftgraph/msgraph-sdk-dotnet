@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetYammerDeviceUsageUserDetailWithDate {
         {
         }
         /// <summary>
-        /// Invoke function getYammerDeviceUsageUserDetail
+        /// Get details about Yammer device usage by user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageuserdetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetYammerDeviceUsageUserDetailWithDate {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getYammerDeviceUsageUserDetail
+        /// Get details about Yammer device usage by user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

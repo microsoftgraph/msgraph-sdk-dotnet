@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// Delete a taskFileAttachment object from a todoTask resource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property attachments for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a taskFileAttachment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0" />
+        /// A collection of file attachments for the task.
         /// </summary>
         /// <returns>A <see cref="AttachmentBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +83,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
             return await RequestAdapter.SendAsync<AttachmentBase>(requestInfo, AttachmentBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a taskFileAttachment object from a todoTask resource.
+        /// Delete navigation property attachments for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a taskFileAttachment object.
+        /// A collection of file attachments for the task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a taskFileAttachment object.
+        /// A collection of file attachments for the task.
         /// </summary>
         public class AttachmentBaseItemRequestBuilderGetQueryParameters 
         {

@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites {
         {
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0" />
+        /// Get followedSites from users
         /// </summary>
         /// <returns>A <see cref="SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites {
             return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
+        /// Get followedSites from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +114,7 @@ namespace Microsoft.Graph.Users.Item.FollowedSites {
             return new FollowedSitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the sites that have been followed by the signed in user.
+        /// Get followedSites from users
         /// </summary>
         public class FollowedSitesRequestBuilderGetQueryParameters 
         {

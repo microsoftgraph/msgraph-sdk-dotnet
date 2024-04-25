@@ -78,8 +78,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the schema for a given synchronization job or template.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0" />
+        /// The synchronization schema configured for the job.
         /// </summary>
         /// <returns>A <see cref="SynchronizationSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,8 +101,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema {
             return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0" />
+        /// Update the navigation property schema in applications
         /// </summary>
         /// <returns>A <see cref="SynchronizationSchema"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +145,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the schema for a given synchronization job or template.
+        /// The synchronization schema configured for the job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +164,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
+        /// Update the navigation property schema in applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -204,7 +202,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema {
         {
         }
         /// <summary>
-        /// Retrieve the schema for a given synchronization job or template.
+        /// The synchronization schema configured for the job.
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters 
         {

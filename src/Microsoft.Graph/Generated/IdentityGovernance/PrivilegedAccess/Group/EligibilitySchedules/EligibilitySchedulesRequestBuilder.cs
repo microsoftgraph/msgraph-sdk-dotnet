@@ -62,8 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0" />
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilitySchedule>(requestInfo, PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties.
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +160,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new EligibilitySchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties.
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         public class EligibilitySchedulesRequestBuilderGetQueryParameters 
         {

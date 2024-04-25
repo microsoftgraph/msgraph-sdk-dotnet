@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartdatalabels-get?view=graph-rest-1.0" />
+        /// Represents the datalabels on the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartDataLabels"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartDataLabels>(requestInfo, WorkbookChartDataLabels.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartdatalabels object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartdatalabels-update?view=graph-rest-1.0" />
+        /// Update the navigation property dataLabels in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartDataLabels"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object.
+        /// Represents the datalabels on the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartdatalabels object.
+        /// Update the navigation property dataLabels in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartdatalabels object.
+        /// Represents the datalabels on the chart. Read-only.
         /// </summary>
         public class DataLabelsRequestBuilderGetQueryParameters 
         {

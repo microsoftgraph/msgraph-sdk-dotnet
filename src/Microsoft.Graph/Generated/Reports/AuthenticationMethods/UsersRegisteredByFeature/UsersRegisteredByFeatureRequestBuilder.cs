@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
         {
         }
         /// <summary>
-        /// Invoke function usersRegisteredByFeature
+        /// Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserRegistrationFeatureSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByFeature
             return await RequestAdapter.SendAsync<UserRegistrationFeatureSummary>(requestInfo, UserRegistrationFeatureSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function usersRegisteredByFeature
+        /// Get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Reports.GetOffice365ActivationsUserCounts {
         {
         }
         /// <summary>
-        /// Invoke function getOffice365ActivationsUserCounts
+        /// Get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365activationsusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,7 @@ namespace Microsoft.Graph.Reports.GetOffice365ActivationsUserCounts {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getOffice365ActivationsUserCounts
+        /// Get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

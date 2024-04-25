@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability {
     [Obsolete("This class is obsolete. Use GetStaffAvailabilityPostResponse instead.")]
+    #pragma warning disable CS1591
     public class GetStaffAvailabilityResponse : GetStaffAvailabilityPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

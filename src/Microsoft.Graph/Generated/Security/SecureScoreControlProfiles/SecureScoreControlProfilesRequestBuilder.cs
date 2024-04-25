@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0" />
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         /// <returns>A <see cref="SecureScoreControlProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
             return await RequestAdapter.SendAsync<SecureScoreControlProfile>(requestInfo, SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles {
             return new SecureScoreControlProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a secureScoreControlProfiles object.
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         public class SecureScoreControlProfilesRequestBuilderGetQueryParameters 
         {

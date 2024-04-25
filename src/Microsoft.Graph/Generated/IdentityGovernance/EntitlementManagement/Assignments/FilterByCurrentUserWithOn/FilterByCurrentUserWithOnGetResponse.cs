@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn {
+    #pragma warning disable CS1591
     public class FilterByCurrentUserWithOnGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

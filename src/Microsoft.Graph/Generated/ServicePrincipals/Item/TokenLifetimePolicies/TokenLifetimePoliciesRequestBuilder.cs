@@ -51,8 +51,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies {
         {
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-1.0" />
+        /// The tokenLifetimePolicies assigned to this service principal.
         /// </summary>
         /// <returns>A <see cref="TokenLifetimePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies {
             return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
+        /// The tokenLifetimePolicies assigned to this service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies {
             return new TokenLifetimePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
+        /// The tokenLifetimePolicies assigned to this service principal.
         /// </summary>
         public class TokenLifetimePoliciesRequestBuilderGetQueryParameters 
         {

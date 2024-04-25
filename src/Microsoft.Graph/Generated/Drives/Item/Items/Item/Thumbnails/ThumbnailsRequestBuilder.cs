@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails {
         {
         }
         /// <summary>
-        /// Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There are many ways to work with thumbnails on OneDrive.Here are the most common ones:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0" />
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ThumbnailSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails {
             return await RequestAdapter.SendAsync<ThumbnailSet>(requestInfo, ThumbnailSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There are many ways to work with thumbnails on OneDrive.Here are the most common ones:
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Thumbnails {
             return new ThumbnailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There are many ways to work with thumbnails on OneDrive.Here are the most common ones:
+        /// Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
         /// </summary>
         public class ThumbnailsRequestBuilderGetQueryParameters 
         {

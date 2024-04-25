@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time that this app was registered. This property is null if the device isn&apos;t registered for passwordless Phone Sign-In.</summary>
         public DateTimeOffset? CreatedDateTime {

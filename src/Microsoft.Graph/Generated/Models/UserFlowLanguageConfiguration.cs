@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class UserFlowLanguageConfiguration : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -44,8 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
         {
         }
         /// <summary>
-        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property provisioningPolicies for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0" />
+        /// A collection of Cloud PC provisioning policies.
         /// </summary>
         /// <returns>A <see cref="CloudPcProvisioningPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cloudPcProvisioningPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property provisioningPolicies in deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcProvisioningPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
+        /// Delete navigation property provisioningPolicies for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
+        /// A collection of Cloud PC provisioning policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cloudPcProvisioningPolicy object.
+        /// Update the navigation property provisioningPolicies in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
+        /// A collection of Cloud PC provisioning policies.
         /// </summary>
         public class CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters 
         {

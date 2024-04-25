@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite {
     [Obsolete("This class is obsolete. Use FavoritePostResponse instead.")]
+    #pragma warning disable CS1591
     public class FavoriteResponse : FavoritePostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

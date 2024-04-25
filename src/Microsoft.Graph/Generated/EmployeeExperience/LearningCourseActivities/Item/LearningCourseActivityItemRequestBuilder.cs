@@ -54,8 +54,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0" />
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningCourseActivities.Item {
         {
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from employeeExperience
         /// </summary>
         public class LearningCourseActivityItemRequestBuilderGetQueryParameters 
         {

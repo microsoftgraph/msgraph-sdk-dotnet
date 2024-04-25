@@ -52,8 +52,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
         }
         /// <summary>
-        /// Get a list of the run objects and their properties for a lifecycle workflow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-1.0" />
+        /// Workflow runs.
         /// </summary>
         /// <returns>A <see cref="RunCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +87,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Get a list of the run objects and their properties for a lifecycle workflow.
+        /// Workflow runs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +115,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new RunsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the run objects and their properties for a lifecycle workflow.
+        /// Workflow runs.
         /// </summary>
         public class RunsRequestBuilderGetQueryParameters 
         {

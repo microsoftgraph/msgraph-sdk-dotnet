@@ -32,8 +32,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
         {
         }
         /// <summary>
-        /// Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+        /// Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+        /// Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+        /// Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref 
         {
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

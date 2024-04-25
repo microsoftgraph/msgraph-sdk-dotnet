@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TrainingReminderNotification : BaseEndUserNotification, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.</summary>
         public NotificationDeliveryFrequency? DeliveryFrequency {

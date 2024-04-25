@@ -74,8 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0" />
+        /// Delete navigation property accessPackages for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,8 +96,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0" />
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,8 +119,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackage>(requestInfo, Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing accessPackage object to change one or more of its properties, such as the display name or description.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0" />
+        /// Update the navigation property accessPackages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackage"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackage>(requestInfo, Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
+        /// Delete navigation property accessPackages for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +163,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +182,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+        /// Update the navigation property accessPackages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -223,7 +220,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+        /// Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
         /// </summary>
         public class AccessPackageItemRequestBuilderGetQueryParameters 
         {

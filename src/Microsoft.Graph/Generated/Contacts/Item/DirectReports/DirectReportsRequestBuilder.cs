@@ -64,7 +64,6 @@ namespace Microsoft.Graph.Contacts.Item.DirectReports {
         }
         /// <summary>
         /// The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

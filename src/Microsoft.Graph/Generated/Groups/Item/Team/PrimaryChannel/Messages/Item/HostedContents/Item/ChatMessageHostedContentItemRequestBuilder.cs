@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.HostedCo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0" />
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         /// <returns>A <see cref="ChatMessageHostedContent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.HostedCo
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item.HostedCo
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chatMessageHostedContent object.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         /// </summary>
         public class ChatMessageHostedContentItemRequestBuilderGetQueryParameters 
         {

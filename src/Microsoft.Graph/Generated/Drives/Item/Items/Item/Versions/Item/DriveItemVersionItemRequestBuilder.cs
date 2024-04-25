@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Versions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the metadata for a specific version of a DriveItem.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitemversion-get?view=graph-rest-1.0" />
+        /// The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="DriveItemVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Versions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the metadata for a specific version of a DriveItem.
+        /// The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Versions.Item {
         {
         }
         /// <summary>
-        /// Retrieve the metadata for a specific version of a DriveItem.
+        /// The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
         /// </summary>
         public class DriveItemVersionItemRequestBuilderGetQueryParameters 
         {

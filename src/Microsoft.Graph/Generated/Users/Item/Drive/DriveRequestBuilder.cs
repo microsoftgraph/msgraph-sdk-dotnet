@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Users.Item.Drive {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-get?view=graph-rest-1.0" />
+        /// The user&apos;s OneDrive. Read-only.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Drive"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Users.Item.Drive {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Drive>(requestInfo, Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+        /// The user&apos;s OneDrive. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Drive {
             return new DriveRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+        /// The user&apos;s OneDrive. Read-only.
         /// </summary>
         public class DriveRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class WorkflowVersion : WorkflowBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? VersionNumber {

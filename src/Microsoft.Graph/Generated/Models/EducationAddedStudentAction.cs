@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum EducationAddedStudentAction
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "assignIfOpen")]
+        #pragma warning disable CS1591
         AssignIfOpen,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

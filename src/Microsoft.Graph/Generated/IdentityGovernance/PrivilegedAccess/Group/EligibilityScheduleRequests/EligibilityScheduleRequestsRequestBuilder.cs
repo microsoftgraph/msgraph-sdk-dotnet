@@ -62,8 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0" />
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,8 +85,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0" />
+        /// Create new navigation property to eligibilityScheduleRequests for identityGovernance
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +129,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return requestInfo;
         }
         /// <summary>
-        /// Create a new privilegedAccessGroupEligibilityScheduleRequest object.
+        /// Create new navigation property to eligibilityScheduleRequests for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +160,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new EligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         public class EligibilityScheduleRequestsRequestBuilderGetQueryParameters 
         {

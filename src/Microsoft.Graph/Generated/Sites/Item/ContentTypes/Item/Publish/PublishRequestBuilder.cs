@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.Publish {
         {
         }
         /// <summary>
-        /// Publishes a [contentType][] present in the content type hub site.
+        /// Publishes a contentType present in the content type hub site.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.Publish {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Publishes a [contentType][] present in the content type hub site.
+        /// Publishes a contentType present in the content type hub site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

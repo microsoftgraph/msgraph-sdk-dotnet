@@ -57,8 +57,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
         {
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="HomeRealmDiscoveryPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicyCollectionResponse>(requestInfo, HomeRealmDiscoveryPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
             return new HomeRealmDiscoveryPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters 
         {

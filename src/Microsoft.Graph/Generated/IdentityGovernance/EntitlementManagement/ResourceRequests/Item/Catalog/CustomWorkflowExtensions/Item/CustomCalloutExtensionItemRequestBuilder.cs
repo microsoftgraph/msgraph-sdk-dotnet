@@ -32,8 +32,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         {
         }
         /// <summary>
-        /// Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0" />
+        /// Delete navigation property customWorkflowExtensions for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0" />
+        /// Get customWorkflowExtensions from identityGovernance
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
             return await RequestAdapter.SendAsync<CustomCalloutExtension>(requestInfo, CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0" />
+        /// Update the navigation property customWorkflowExtensions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
             return await RequestAdapter.SendAsync<CustomCalloutExtension>(requestInfo, CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies:
+        /// Delete navigation property customWorkflowExtensions for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Get customWorkflowExtensions from identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
+        /// Update the navigation property customWorkflowExtensions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Get customWorkflowExtensions from identityGovernance
         /// </summary>
         public class CustomCalloutExtensionItemRequestBuilderGetQueryParameters 
         {

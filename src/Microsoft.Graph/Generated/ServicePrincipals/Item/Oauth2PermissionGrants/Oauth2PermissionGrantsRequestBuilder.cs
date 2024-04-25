@@ -51,8 +51,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Oauth2PermissionGrants {
         {
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0" />
+        /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OAuth2PermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Oauth2PermissionGrants {
             return await RequestAdapter.SendAsync<OAuth2PermissionGrantCollectionResponse>(requestInfo, OAuth2PermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.
+        /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Oauth2PermissionGrants {
             return new Oauth2PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.
+        /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         /// </summary>
         public class Oauth2PermissionGrantsRequestBuilderGetQueryParameters 
         {

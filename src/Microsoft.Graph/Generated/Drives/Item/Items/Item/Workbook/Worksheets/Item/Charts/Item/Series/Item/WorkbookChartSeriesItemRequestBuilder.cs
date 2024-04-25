@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartseries object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseries-get?view=graph-rest-1.0" />
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartSeries"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartSeries>(requestInfo, WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartSeries object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseries-update?view=graph-rest-1.0" />
+        /// Update the navigation property series in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartSeries"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartseries object.
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartSeries object.
+        /// Update the navigation property series in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartseries object.
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         public class WorkbookChartSeriesItemRequestBuilderGetQueryParameters 
         {

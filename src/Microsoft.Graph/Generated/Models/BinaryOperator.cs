@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BinaryOperator
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "or")]
+        #pragma warning disable CS1591
         Or,
+        #pragma warning restore CS1591
         [EnumMember(Value = "and")]
+        #pragma warning disable CS1591
         And,
+        #pragma warning restore CS1591
     }
 }

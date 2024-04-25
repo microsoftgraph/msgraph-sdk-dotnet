@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages {
         {
         }
         /// <summary>
-        /// Get a list of pinnedChatMessages in a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-pinnedmessages?view=graph-rest-1.0" />
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="PinnedChatMessageInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages {
             return await RequestAdapter.SendAsync<PinnedChatMessageInfoCollectionResponse>(requestInfo, PinnedChatMessageInfoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-pinnedmessages?view=graph-rest-1.0" />
+        /// Create new navigation property to pinnedMessages for chats
         /// </summary>
         /// <returns>A <see cref="PinnedChatMessageInfo"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages {
             return await RequestAdapter.SendAsync<PinnedChatMessageInfo>(requestInfo, PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of pinnedChatMessages in a chat.
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages {
             return requestInfo;
         }
         /// <summary>
-        /// Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
+        /// Create new navigation property to pinnedMessages for chats
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Chats.Item.PinnedMessages {
             return new PinnedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of pinnedChatMessages in a chat.
+        /// A collection of all the pinned messages in the chat. Nullable.
         /// </summary>
         public class PinnedMessagesRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
         {
         }
         /// <summary>
-        /// Delete the specified bookingCustomer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0" />
+        /// Delete navigation property customers for solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingCustomer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0" />
+        /// All the customers of this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="BookingCustomerBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
             return await RequestAdapter.SendAsync<BookingCustomerBase>(requestInfo, BookingCustomerBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingCustomer object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0" />
+        /// Update the navigation property customers in solutions
         /// </summary>
         /// <returns>A <see cref="BookingCustomerBase"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
             return await RequestAdapter.SendAsync<BookingCustomerBase>(requestInfo, BookingCustomerBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified bookingCustomer object.
+        /// Delete navigation property customers for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingCustomer object.
+        /// All the customers of this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingCustomer object.
+        /// Update the navigation property customers in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingCustomer object.
+        /// All the customers of this business. Read-only. Nullable.
         /// </summary>
         public class BookingCustomerBaseItemRequestBuilderGetQueryParameters 
         {

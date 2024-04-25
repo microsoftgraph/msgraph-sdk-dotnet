@@ -80,8 +80,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
         {
         }
         /// <summary>
-        /// Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-delete?view=graph-rest-1.0" />
+        /// Delete navigation property branding for organization
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,8 +102,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0" />
+        /// Branding for the organization. Nullable.
         /// </summary>
         /// <returns>A <see cref="OrganizationalBranding"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,8 +125,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             return await RequestAdapter.SendAsync<OrganizationalBranding>(requestInfo, OrganizationalBranding.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the default branding object specified by the organizationalBranding resource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-update?view=graph-rest-1.0" />
+        /// Update the navigation property branding in organization
         /// </summary>
         /// <returns>A <see cref="OrganizationalBranding"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +150,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             return await RequestAdapter.SendAsync<OrganizationalBranding>(requestInfo, OrganizationalBranding.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
+        /// Delete navigation property branding for organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,7 +169,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
+        /// Branding for the organization. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +188,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the default branding object specified by the organizationalBranding resource.
+        /// Update the navigation property branding in organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -229,7 +226,7 @@ namespace Microsoft.Graph.Organization.Item.Branding {
         {
         }
         /// <summary>
-        /// Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
+        /// Branding for the organization. Nullable.
         /// </summary>
         public class BrandingRequestBuilderGetQueryParameters 
         {

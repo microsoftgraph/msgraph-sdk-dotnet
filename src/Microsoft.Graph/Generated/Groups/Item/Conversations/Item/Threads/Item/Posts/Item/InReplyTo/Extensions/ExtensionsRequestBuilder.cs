@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         {
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="ExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return await RequestAdapter.SendAsync<Extension>(requestInfo, Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return new ExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
         /// </summary>
         public class ExtensionsRequestBuilderGetQueryParameters 
         {

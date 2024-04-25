@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-get?view=graph-rest-1.0" />
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookNamedItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item {
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of nameditem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-update?view=graph-rest-1.0" />
+        /// Update the navigation property names in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookNamedItem"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object.
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of nameditem object.
+        /// Update the navigation property names in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object.
+        /// Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
         /// </summary>
         public class WorkbookNamedItemItemRequestBuilderGetQueryParameters 
         {

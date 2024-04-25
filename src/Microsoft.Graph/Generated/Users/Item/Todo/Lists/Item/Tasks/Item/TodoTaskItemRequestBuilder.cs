@@ -62,8 +62,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
         {
         }
         /// <summary>
-        /// Deletes a todoTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0" />
+        /// Delete navigation property tasks for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,8 +84,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0" />
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="TodoTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,8 +107,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a todoTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0" />
+        /// Update the navigation property tasks in users
         /// </summary>
         /// <returns>A <see cref="TodoTask"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +132,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a todoTask object.
+        /// Delete navigation property tasks for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +151,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a todoTask object.
+        /// Update the navigation property tasks in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -211,7 +208,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a todoTask object.
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         public class TodoTaskItemRequestBuilderGetQueryParameters 
         {

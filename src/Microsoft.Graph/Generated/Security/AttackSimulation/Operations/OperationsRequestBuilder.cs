@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations {
         {
         }
         /// <summary>
-        /// Get an attack simulation operation to track a long-running operation request for a tenant.
+        /// Represents an attack simulation training operation.
         /// </summary>
         /// <returns>A <see cref="AttackSimulationOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations {
             return await RequestAdapter.SendAsync<AttackSimulationOperation>(requestInfo, AttackSimulationOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an attack simulation operation to track a long-running operation request for a tenant.
+        /// Represents an attack simulation training operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get an attack simulation operation to track a long-running operation request for a tenant.
+        /// Represents an attack simulation training operation.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

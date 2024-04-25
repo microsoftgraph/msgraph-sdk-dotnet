@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Remove an ediscoveryReviewTag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0" />
+        /// Delete navigation property tags for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0" />
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewTag object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0" />
+        /// Update the navigation property tags in security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewTag"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an ediscoveryReviewTag object.
+        /// Delete navigation property tags for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoveryReviewTag object.
+        /// Update the navigation property tags in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewTag object.
+        /// Returns a list of ediscoveryReviewTag objects associated to this case.
         /// </summary>
         public class EdiscoveryReviewTagItemRequestBuilderGetQueryParameters 
         {

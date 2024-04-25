@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceActionItem objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-list?view=graph-rest-1.0" />
+        /// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceActionItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return await RequestAdapter.SendAsync<DeviceComplianceActionItemCollectionResponse>(requestInfo, DeviceComplianceActionItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceComplianceActionItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceactionitem-create?view=graph-rest-1.0" />
+        /// Create new navigation property to scheduledActionConfigurations for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceActionItem"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return await RequestAdapter.SendAsync<DeviceComplianceActionItem>(requestInfo, DeviceComplianceActionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceActionItem objects.
+        /// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceComplianceActionItem object.
+        /// Create new navigation property to scheduledActionConfigurations for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return new ScheduledActionConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceActionItem objects.
+        /// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
         /// </summary>
         public class ScheduledActionConfigurationsRequestBuilderGetQueryParameters 
         {

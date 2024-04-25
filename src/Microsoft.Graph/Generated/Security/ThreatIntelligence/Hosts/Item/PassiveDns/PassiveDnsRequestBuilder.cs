@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns {
         {
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0" />
+        /// Passive DNS retrieval about this host.
         /// </summary>
         /// <returns>A <see cref="PassiveDnsRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns {
             return await RequestAdapter.SendAsync<PassiveDnsRecordCollectionResponse>(requestInfo, PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+        /// Passive DNS retrieval about this host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns {
             return new PassiveDnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources associated with a host. This is a forward DNS lookup which queries the IP address of the specified host using its hostname. 
+        /// Passive DNS retrieval about this host.
         /// </summary>
         public class PassiveDnsRequestBuilderGetQueryParameters 
         {

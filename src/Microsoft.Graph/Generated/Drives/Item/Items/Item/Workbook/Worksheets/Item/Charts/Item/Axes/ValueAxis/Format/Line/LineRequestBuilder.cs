@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartlineformat-get?view=graph-rest-1.0" />
+        /// Represents chart line formatting. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartLineFormat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartLineFormat>(requestInfo, WorkbookChartLineFormat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartlineformat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartlineformat-update?view=graph-rest-1.0" />
+        /// Update the navigation property line in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartLineFormat"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object.
+        /// Represents chart line formatting. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartlineformat object.
+        /// Update the navigation property line in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object.
+        /// Represents chart line formatting. Read-only.
         /// </summary>
         public class LineRequestBuilderGetQueryParameters 
         {

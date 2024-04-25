@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names 
         {
         }
         /// <summary>
-        /// Retrieve a list of named item associated with the worksheet. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-list-names?view=graph-rest-1.0" />
+        /// Returns collection of names that are associated with the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookNamedItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names 
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of named item associated with the worksheet. 
+        /// Returns collection of names that are associated with the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +161,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names 
             return new NamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of named item associated with the worksheet. 
+        /// Returns collection of names that are associated with the worksheet. Read-only.
         /// </summary>
         public class NamesRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AccessPackageResource : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

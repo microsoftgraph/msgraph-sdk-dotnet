@@ -32,8 +32,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
         {
         }
         /// <summary>
-        /// Delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0" />
+        /// Delete navigation property learningCourseActivities for employeeExperience
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a learningCourseActivity object. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0" />
+        /// Update the navigation property learningCourseActivities in employeeExperience
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivity"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a learningCourseActivity object using the course activity ID of either an assignment or a self-initiated activity.
+        /// Delete navigation property learningCourseActivities for employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a learningCourseActivity object. 
+        /// Update the navigation property learningCourseActivities in employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

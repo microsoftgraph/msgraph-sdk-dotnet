@@ -2,31 +2,57 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public enum ServiceSource
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftDefenderForEndpoint")]
+        #pragma warning disable CS1591
         MicrosoftDefenderForEndpoint,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftDefenderForIdentity")]
+        #pragma warning disable CS1591
         MicrosoftDefenderForIdentity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftDefenderForCloudApps")]
+        #pragma warning disable CS1591
         MicrosoftDefenderForCloudApps,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftDefenderForOffice365")]
+        #pragma warning disable CS1591
         MicrosoftDefenderForOffice365,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoft365Defender")]
+        #pragma warning disable CS1591
         Microsoft365Defender,
+        #pragma warning restore CS1591
         [EnumMember(Value = "azureAdIdentityProtection")]
+        #pragma warning disable CS1591
         AzureAdIdentityProtection,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftAppGovernance")]
+        #pragma warning disable CS1591
         MicrosoftAppGovernance,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dataLossPrevention")]
+        #pragma warning disable CS1591
         DataLossPrevention,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftDefenderForCloud")]
+        #pragma warning disable CS1591
         MicrosoftDefenderForCloud,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftSentinel")]
+        #pragma warning disable CS1591
         MicrosoftSentinel,
+        #pragma warning restore CS1591
     }
 }

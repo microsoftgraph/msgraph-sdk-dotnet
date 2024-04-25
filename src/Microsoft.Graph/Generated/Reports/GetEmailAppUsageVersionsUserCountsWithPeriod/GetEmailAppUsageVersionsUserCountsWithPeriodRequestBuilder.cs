@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageVersionsUserCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageVersionsUserCounts
+        /// Get the count of unique users by Outlook desktop version.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getemailappusageversionsusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageVersionsUserCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageVersionsUserCounts
+        /// Get the count of unique users by Outlook desktop version.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

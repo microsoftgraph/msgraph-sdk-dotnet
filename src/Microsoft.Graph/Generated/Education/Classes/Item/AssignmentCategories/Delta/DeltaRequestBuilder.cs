@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationcategory-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a list of newly created or updated educationCategory objects without having to perform a full read of the collection.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

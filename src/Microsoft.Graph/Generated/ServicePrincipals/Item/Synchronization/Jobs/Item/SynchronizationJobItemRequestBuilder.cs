@@ -74,8 +74,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item {
         {
         }
         /// <summary>
-        /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0" />
+        /// Delete navigation property jobs for servicePrincipals
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,8 +96,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the existing synchronization job and its properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0" />
+        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
         /// </summary>
         /// <returns>A <see cref="SynchronizationJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -146,7 +144,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item {
             return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
+        /// Delete navigation property jobs for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +163,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the existing synchronization job and its properties.
+        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -222,7 +220,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item {
         {
         }
         /// <summary>
-        /// Retrieve the existing synchronization job and its properties.
+        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
         /// </summary>
         public class SynchronizationJobItemRequestBuilderGetQueryParameters 
         {

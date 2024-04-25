@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.Ref {
         {
         }
         /// <summary>
-        /// Remove an owner from an application. As a recommended best practice, apps should have at least two owners.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0" />
+        /// Delete ref of navigation property owners for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an owner from an application. As a recommended best practice, apps should have at least two owners.
+        /// Delete ref of navigation property owners for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

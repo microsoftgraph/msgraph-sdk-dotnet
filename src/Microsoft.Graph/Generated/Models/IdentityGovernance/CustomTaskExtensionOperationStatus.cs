@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public enum CustomTaskExtensionOperationStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

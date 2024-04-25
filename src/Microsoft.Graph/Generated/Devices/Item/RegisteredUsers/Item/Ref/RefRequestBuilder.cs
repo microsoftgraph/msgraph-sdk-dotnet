@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredUsers.Item.Ref {
         {
         }
         /// <summary>
-        /// Remove a user as a registered user of the device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0" />
+        /// Delete ref of navigation property registeredUsers for devices
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredUsers.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user as a registered user of the device.
+        /// Delete ref of navigation property registeredUsers for devices
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

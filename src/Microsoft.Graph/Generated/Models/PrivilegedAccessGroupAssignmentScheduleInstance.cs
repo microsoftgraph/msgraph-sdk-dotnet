@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PrivilegedAccessGroupAssignmentScheduleInstance : PrivilegedAccessScheduleInstance, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).</summary>
         public PrivilegedAccessGroupRelationships? AccessId {

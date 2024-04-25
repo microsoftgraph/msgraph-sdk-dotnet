@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
         {
         }
         /// <summary>
-        /// Remove acceptedSender
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0" />
+        /// Delete ref of navigation property acceptedSenders for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0" />
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0" />
+        /// Create new navigation property ref to acceptedSenders for groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove acceptedSender
+        /// Delete ref of navigation property acceptedSenders for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Specify the user or group in @odata.id in the request body. Users in the accepted senders list can post to conversations of the group. Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you&apos;ll get an error.
+        /// Create new navigation property ref to acceptedSenders for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove acceptedSender
+        /// Delete ref of navigation property acceptedSenders for groups
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref {
         {
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

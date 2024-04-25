@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Search.Acronyms {
         {
         }
         /// <summary>
-        /// Get a list of the acronym objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0" />
+        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
         /// </summary>
         /// <returns>A <see cref="AcronymCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Search.Acronyms {
             return await RequestAdapter.SendAsync<AcronymCollectionResponse>(requestInfo, AcronymCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new acronym object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0" />
+        /// Create new navigation property to acronyms for search
         /// </summary>
         /// <returns>A <see cref="Acronym"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Search.Acronyms {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the acronym objects and their properties.
+        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Search.Acronyms {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new acronym object.
+        /// Create new navigation property to acronyms for search
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Search.Acronyms {
             return new AcronymsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the acronym objects and their properties.
+        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
         /// </summary>
         public class AcronymsRequestBuilderGetQueryParameters 
         {

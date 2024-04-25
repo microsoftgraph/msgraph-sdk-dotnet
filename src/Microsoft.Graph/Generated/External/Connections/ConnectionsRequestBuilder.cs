@@ -51,8 +51,7 @@ namespace Microsoft.Graph.External.Connections {
         {
         }
         /// <summary>
-        /// Get a list of the externalConnection objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0" />
+        /// Get connections from external
         /// </summary>
         /// <returns>A <see cref="ExternalConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.External.Connections {
             return await RequestAdapter.SendAsync<ExternalConnectionCollectionResponse>(requestInfo, ExternalConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new externalConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0" />
+        /// Create new navigation property to connections for external
         /// </summary>
         /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.External.Connections {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the externalConnection objects and their properties.
+        /// Get connections from external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.External.Connections {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new externalConnection object.
+        /// Create new navigation property to connections for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.External.Connections {
             return new ConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the externalConnection objects and their properties.
+        /// Get connections from external
         /// </summary>
         public class ConnectionsRequestBuilderGetQueryParameters 
         {

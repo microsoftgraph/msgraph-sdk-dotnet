@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
         {
         }
         /// <summary>
-        /// List properties and relationships of the settingStateDeviceSummary objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-list?view=graph-rest-1.0" />
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         /// <returns>A <see cref="SettingStateDeviceSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return await RequestAdapter.SendAsync<SettingStateDeviceSummaryCollectionResponse>(requestInfo, SettingStateDeviceSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new settingStateDeviceSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-settingstatedevicesummary-create?view=graph-rest-1.0" />
+        /// Create new navigation property to deviceSettingStateSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="SettingStateDeviceSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return await RequestAdapter.SendAsync<SettingStateDeviceSummary>(requestInfo, SettingStateDeviceSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the settingStateDeviceSummary objects.
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return requestInfo;
         }
         /// <summary>
-        /// Create a new settingStateDeviceSummary object.
+        /// Create new navigation property to deviceSettingStateSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.DeviceSetti
             return new DeviceSettingStateSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the settingStateDeviceSummary objects.
+        /// Device Configuration Setting State Device Summary
         /// </summary>
         public class DeviceSettingStateSummariesRequestBuilderGetQueryParameters 
         {

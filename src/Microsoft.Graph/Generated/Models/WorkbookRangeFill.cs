@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WorkbookRangeFill : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (for example &apos;FFA500&apos;) or as a named HTML color (for example &apos;orange&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

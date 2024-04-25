@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class SimulationNotification : BaseEndUserNotification, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.TargettedUserType? TargettedUserType {

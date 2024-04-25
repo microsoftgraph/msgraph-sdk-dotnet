@@ -94,7 +94,6 @@ namespace Microsoft.Graph.Groups.Item.Members {
         }
         /// <summary>
         /// The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens {
         {
         }
         /// <summary>
-        /// List properties and relationships of the vppToken objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-list?view=graph-rest-1.0" />
+        /// List of Vpp tokens for this organization.
         /// </summary>
         /// <returns>A <see cref="VppTokenCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens {
             return await RequestAdapter.SendAsync<VppTokenCollectionResponse>(requestInfo, VppTokenCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new vppToken object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-create?view=graph-rest-1.0" />
+        /// Create new navigation property to vppTokens for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="VppToken"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens {
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the vppToken objects.
+        /// List of Vpp tokens for this organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new vppToken object.
+        /// Create new navigation property to vppTokens for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens {
             return new VppTokensRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the vppToken objects.
+        /// List of Vpp tokens for this organization.
         /// </summary>
         public class VppTokensRequestBuilderGetQueryParameters 
         {

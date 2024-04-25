@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
         {
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0" />
+        /// The task lists in the users mailbox.
         /// </summary>
         /// <returns>A <see cref="TodoTaskListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return await RequestAdapter.SendAsync<TodoTaskListCollectionResponse>(requestInfo, TodoTaskListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new lists object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0" />
+        /// Create new navigation property to lists for users
         /// </summary>
         /// <returns>A <see cref="TodoTaskList"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return await RequestAdapter.SendAsync<TodoTaskList>(requestInfo, TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
+        /// The task lists in the users mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new lists object.
+        /// Create new navigation property to lists for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists {
             return new ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the todoTaskList objects and their properties.
+        /// The task lists in the users mailbox.
         /// </summary>
         public class ListsRequestBuilderGetQueryParameters 
         {

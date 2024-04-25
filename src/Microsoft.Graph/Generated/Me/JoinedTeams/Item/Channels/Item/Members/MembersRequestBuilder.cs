@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members {
         {
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0" />
+        /// A collection of membership records associated with the channel.
         /// </summary>
         /// <returns>A <see cref="ConversationMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMemberCollectionResponse>(requestInfo, ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0" />
+        /// Create new navigation property to members for me
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+        /// A collection of membership records associated with the channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Create new navigation property to members for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+        /// A collection of membership records associated with the channel.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

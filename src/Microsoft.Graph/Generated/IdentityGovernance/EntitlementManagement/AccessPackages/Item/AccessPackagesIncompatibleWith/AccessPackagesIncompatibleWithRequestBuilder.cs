@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0" />
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         /// <returns>A <see cref="AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new AccessPackagesIncompatibleWithRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         public class AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters 
         {

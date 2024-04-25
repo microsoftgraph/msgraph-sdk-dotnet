@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Sites.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls,you can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user&apos;s sites without having to fetch all the sites from the server every time.The application calls the API without specifying any parameters.The service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.Your application should continue making calls using the @odata.nextLink until there&apos;s an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.To monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Sites.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls,you can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user&apos;s sites without having to fetch all the sites from the server every time.The application calls the API without specifying any parameters.The service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.Your application should continue making calls using the @odata.nextLink until there&apos;s an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.To monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Sites.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls,you can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user&apos;s sites without having to fetch all the sites from the server every time.The application calls the API without specifying any parameters.The service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.Your application should continue making calls using the @odata.nextLink until there&apos;s an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.To monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Sites.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted sites without having to perform a full read of the entire sites collection. A delta function call for sites is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls,you can query for incremental changes in the sites. It allows you to maintain and synchronize a local store of a user&apos;s sites without having to fetch all the sites from the server every time.The application calls the API without specifying any parameters.The service begins enumerating sites and returns pages of changes to these sites, accompanied by either an @odata.nextLink or an @odata.deltaLink.Your application should continue making calls using the @odata.nextLink until there&apos;s an @odata.deltaLink  in the response. After you receive all the changes, you can apply them to your local state.To monitor future changes, call the delta API by using the @odata.deltaLink in the previous response. Any resources marked as deleted should be removed from your local state.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

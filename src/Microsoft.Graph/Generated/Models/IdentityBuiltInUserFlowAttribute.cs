@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class IdentityBuiltInUserFlowAttribute : IdentityUserFlowAttribute, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="IdentityBuiltInUserFlowAttribute"/> and sets the default values.

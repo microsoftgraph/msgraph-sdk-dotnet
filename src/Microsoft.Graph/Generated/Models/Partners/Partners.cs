@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Partners {
+    #pragma warning disable CS1591
     public class Partners : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents billing details for billed and unbilled data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

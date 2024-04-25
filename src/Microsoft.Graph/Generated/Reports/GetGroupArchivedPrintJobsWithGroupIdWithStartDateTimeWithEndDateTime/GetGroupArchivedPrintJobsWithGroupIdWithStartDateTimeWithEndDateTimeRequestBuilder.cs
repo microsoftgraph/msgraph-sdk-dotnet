@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
         {
         }
         /// <summary>
-        /// Invoke function getGroupArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
             return await RequestAdapter.SendAsync<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getGroupArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getgrouparchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
             return await RequestAdapter.SendAsync<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse>(requestInfo, GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getGroupArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartD
             return new GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getGroupArchivedPrintJobs
+        /// Get a list of archived print jobs for a particular group.
         /// </summary>
         public class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

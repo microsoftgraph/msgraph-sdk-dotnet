@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations {
         {
         }
         /// <summary>
-        /// Get the different relation of a [term] or [set] from the relations navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0" />
+        /// Indicates which terms have been pinned or reused directly under the set.
         /// </summary>
         /// <returns>A <see cref="RelationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations {
             return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the different relation of a [term] or [set] from the relations navigation property.
+        /// Indicates which terms have been pinned or reused directly under the set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets.Item.Relations {
             return new RelationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the different relation of a [term] or [set] from the relations navigation property.
+        /// Indicates which terms have been pinned or reused directly under the set.
         /// </summary>
         public class RelationsRequestBuilderGetQueryParameters 
         {

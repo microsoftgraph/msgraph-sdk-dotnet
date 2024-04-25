@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations {
         {
         }
         /// <summary>
-        /// Retrieve a list of workforceIntegration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-list?view=graph-rest-1.0" />
+        /// Get workforceIntegrations from teamwork
         /// </summary>
         /// <returns>A <see cref="WorkforceIntegrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations {
             return await RequestAdapter.SendAsync<WorkforceIntegrationCollectionResponse>(requestInfo, WorkforceIntegrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0" />
+        /// Create new navigation property to workforceIntegrations for teamwork
         /// </summary>
         /// <returns>A <see cref="WorkforceIntegration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of workforceIntegration objects.
+        /// Get workforceIntegrations from teamwork
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
+        /// Create new navigation property to workforceIntegrations for teamwork
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations {
             return new WorkforceIntegrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of workforceIntegration objects.
+        /// Get workforceIntegrations from teamwork
         /// </summary>
         public class WorkforceIntegrationsRequestBuilderGetQueryParameters 
         {

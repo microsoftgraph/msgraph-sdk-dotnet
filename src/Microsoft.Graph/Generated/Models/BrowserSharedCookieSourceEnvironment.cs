@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSharedCookieSourceEnvironment
+    #pragma warning restore CS1591
     {
         /// <summary>Share session cookies from Microsoft Edge to Internet Explorer.</summary>
         [EnumMember(Value = "microsoftEdge")]

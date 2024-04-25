@@ -3,15 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum ChatMessagePolicyViolationDlpActionTypes
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notifySender")]
+        #pragma warning disable CS1591
         NotifySender = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "blockAccess")]
+        #pragma warning disable CS1591
         BlockAccess = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "blockAccessExternal")]
+        #pragma warning disable CS1591
         BlockAccessExternal = 8,
+        #pragma warning restore CS1591
     }
 }

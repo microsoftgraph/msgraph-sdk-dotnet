@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
+        /// Default PDF linked to this agreement.
         /// </summary>
         /// <returns>A <see cref="AgreementFile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
+        /// Default PDF linked to this agreement.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace {
         {
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
+        /// Default PDF linked to this agreement.
         /// </summary>
         public class FileRequestBuilderGetQueryParameters 
         {

@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getRelyingPartyDetailedSummary
+        /// Get a summary of AD FS relying parties information.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetRelyingPartyDetailedSummaryWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
             return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodGetResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getRelyingPartyDetailedSummary
+        /// Get a summary of AD FS relying parties information.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetRelyingPartyDetailedSummaryWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
             return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getRelyingPartyDetailedSummary
+        /// Get a summary of AD FS relying parties information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
             return new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getRelyingPartyDetailedSummary
+        /// Get a summary of AD FS relying parties information.
         /// </summary>
         public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0" />
+        /// Get bookingCurrencies from solutions
         /// </summary>
         /// <returns>A <see cref="BookingCurrency"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
+        /// Get bookingCurrencies from solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Solutions.BookingCurrencies.Item {
         {
         }
         /// <summary>
-        /// Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
+        /// Get bookingCurrencies from solutions
         /// </summary>
         public class BookingCurrencyItemRequestBuilderGetQueryParameters 
         {

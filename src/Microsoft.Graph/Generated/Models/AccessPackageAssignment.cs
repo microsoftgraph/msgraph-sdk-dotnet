@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AccessPackageAssignment : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

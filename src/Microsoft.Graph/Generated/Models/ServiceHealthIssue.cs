@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ServiceHealthIssue : ServiceAnnouncementBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The classification property</summary>
         public ServiceHealthClassificationType? Classification {

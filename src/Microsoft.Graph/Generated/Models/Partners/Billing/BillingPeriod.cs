@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Partners.Billing {
+    #pragma warning disable CS1591
     public enum BillingPeriod
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "current")]
+        #pragma warning disable CS1591
         Current,
+        #pragma warning restore CS1591
         [EnumMember(Value = "last")]
+        #pragma warning disable CS1591
         Last,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
         {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0" />
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="Fido2AuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethodCollectionResponse>(requestInfo, Fido2AuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods {
             return new Fido2MethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Represents the FIDO2 security keys registered to a user for authentication.
         /// </summary>
         public class Fido2MethodsRequestBuilderGetQueryParameters 
         {

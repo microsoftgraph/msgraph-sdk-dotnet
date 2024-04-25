@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageAppsUserCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageAppsUserCounts
+        /// Get the count of unique users per email app.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getemailappusageappsusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageAppsUserCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageAppsUserCounts
+        /// Get the count of unique users per email app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

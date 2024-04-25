@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AuthenticationProtocol
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "wsFed")]
+        #pragma warning disable CS1591
         WsFed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "saml")]
+        #pragma warning disable CS1591
         Saml,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

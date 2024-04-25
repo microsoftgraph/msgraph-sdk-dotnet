@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
         {
         }
         /// <summary>
-        /// Delete an identityApiConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0" />
+        /// Delete navigation property apiConnectors for identity
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0" />
+        /// Represents entry point for API connectors.
         /// </summary>
         /// <returns>A <see cref="IdentityApiConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an identityApiConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0" />
+        /// Update the navigation property apiConnectors in identity
         /// </summary>
         /// <returns>A <see cref="IdentityApiConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an identityApiConnector object.
+        /// Delete navigation property apiConnectors for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
+        /// Represents entry point for API connectors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an identityApiConnector object.
+        /// Update the navigation property apiConnectors in identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors.Item {
         {
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object.
+        /// Represents entry point for API connectors.
         /// </summary>
         public class IdentityApiConnectorItemRequestBuilderGetQueryParameters 
         {

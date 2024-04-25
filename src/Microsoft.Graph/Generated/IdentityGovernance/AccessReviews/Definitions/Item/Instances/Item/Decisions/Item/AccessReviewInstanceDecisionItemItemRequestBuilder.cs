@@ -60,8 +60,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
+        /// Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         public class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters 
         {

@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSharedCookieStatus
+    #pragma warning restore CS1591
     {
         /// <summary>A sharedcookie that has been published</summary>
         [EnumMember(Value = "published")]

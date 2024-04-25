@@ -86,8 +86,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         {
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceCompliancePolicies for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,8 +108,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the windowsPhone81CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0" />
+        /// The device compliance policies.
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,8 +131,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a windowsPhone81CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceCompliancePolicies in deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +156,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return await RequestAdapter.SendAsync<DeviceCompliancePolicy>(requestInfo, DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a androidCompliancePolicy.
+        /// Delete navigation property deviceCompliancePolicies for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +175,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the windowsPhone81CompliancePolicy object.
+        /// The device compliance policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +194,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a windowsPhone81CompliancePolicy object.
+        /// Update the navigation property deviceCompliancePolicies in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -235,7 +232,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the windowsPhone81CompliancePolicy object.
+        /// The device compliance policies.
         /// </summary>
         public class DeviceCompliancePolicyItemRequestBuilderGetQueryParameters 
         {

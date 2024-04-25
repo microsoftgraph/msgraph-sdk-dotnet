@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders {
         {
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0" />
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders {
             return new AcceptedSendersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.
         /// </summary>
         public class AcceptedSendersRequestBuilderGetQueryParameters 
         {

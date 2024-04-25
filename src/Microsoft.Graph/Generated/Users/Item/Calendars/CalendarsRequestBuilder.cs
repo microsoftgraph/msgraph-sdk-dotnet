@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
         {
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0" />
+        /// The user&apos;s calendars. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="CalendarCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return await RequestAdapter.SendAsync<CalendarCollectionResponse>(requestInfo, CalendarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new calendar for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0" />
+        /// Create new navigation property to calendars for users
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Calendar"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Calendar>(requestInfo, Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
+        /// The user&apos;s calendars. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new calendar for a user.
+        /// Create new navigation property to calendars for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.Calendars {
             return new CalendarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
+        /// The user&apos;s calendars. Read-only. Nullable.
         /// </summary>
         public class CalendarsRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Initiator : Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
         public Microsoft.Graph.Models.InitiatorType? InitiatorType {

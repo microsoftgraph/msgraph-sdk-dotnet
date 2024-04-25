@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Versions {
         {
         }
         /// <summary>
-        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list-versions?view=graph-rest-1.0" />
+        /// The list of previous versions of the list item.
         /// </summary>
         /// <returns>A <see cref="ListItemVersionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Versions {
             return await RequestAdapter.SendAsync<ListItemVersion>(requestInfo, ListItemVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+        /// The list of previous versions of the list item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item.Versions {
             return new VersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+        /// The list of previous versions of the list item.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters 
         {

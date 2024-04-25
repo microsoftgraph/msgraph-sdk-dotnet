@@ -88,7 +88,6 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMembers {
         }
         /// <summary>
         /// The direct and transitive members of a group. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

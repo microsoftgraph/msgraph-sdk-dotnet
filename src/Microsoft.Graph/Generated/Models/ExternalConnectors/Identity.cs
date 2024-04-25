@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.ExternalConnectors {
+    #pragma warning disable CS1591
     public class Identity : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
         public IdentityType? Type {

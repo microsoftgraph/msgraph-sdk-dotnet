@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Search {
+    #pragma warning disable CS1591
     public class Acronym : SearchAnswer, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>What the acronym stands for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

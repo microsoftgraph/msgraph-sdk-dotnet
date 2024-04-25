@@ -78,8 +78,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-1.0" />
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -146,7 +145,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -203,7 +202,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         public class PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters 
         {

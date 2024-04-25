@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
         {
         }
         /// <summary>
-        /// Invoke function getAuditActivityTypes
+        /// Get audit activity types by tenant ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAuditActivityTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
             return await RequestAdapter.SendAsync<GetAuditActivityTypesGetResponse>(requestInfo, GetAuditActivityTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAuditActivityTypes
+        /// Get audit activity types by tenant ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAuditActivityTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
             return await RequestAdapter.SendAsync<GetAuditActivityTypesResponse>(requestInfo, GetAuditActivityTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAuditActivityTypes
+        /// Get audit activity types by tenant ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditA
             return new GetAuditActivityTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAuditActivityTypes
+        /// Get audit activity types by tenant ID.
         /// </summary>
         public class GetAuditActivityTypesRequestBuilderGetQueryParameters 
         {

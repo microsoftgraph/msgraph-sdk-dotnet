@@ -31,8 +31,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item.Ref {
         {
         }
         /// <summary>
-        /// Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0" />
+        /// Delete ref of navigation property members for directoryRoles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
+        /// Delete ref of navigation property members for directoryRoles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
         {
         }
         /// <summary>
-        /// Remove a user as a registered owner of the device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0" />
+        /// Delete ref of navigation property registeredOwners for devices
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +55,6 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
         }
         /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user as a registered owner of the device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0" />
+        /// Create new navigation property ref to registeredOwners for devices
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user as a registered owner of the device.
+        /// Delete ref of navigation property registeredOwners for devices
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a user as a registered owner of the device.
+        /// Create new navigation property ref to registeredOwners for devices
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a user as a registered owner of the device.
+        /// Delete ref of navigation property registeredOwners for devices
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {

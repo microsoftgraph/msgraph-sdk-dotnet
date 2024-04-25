@@ -84,8 +84,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the instance of an active role assignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentscheduleinstance-get?view=graph-rest-1.0" />
+        /// Instances for active role assignments.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return requestInfo;
         }
         /// <summary>
-        /// Get the instance of an active role assignment.
+        /// Instances for active role assignments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
         {
         }
         /// <summary>
-        /// Get the instance of an active role assignment.
+        /// Instances for active role assignments.
         /// </summary>
         public class UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters 
         {

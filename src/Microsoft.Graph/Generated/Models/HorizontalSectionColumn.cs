@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class HorizontalSectionColumn : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The collection of WebParts in this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

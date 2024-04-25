@@ -50,8 +50,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowVersion object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0" />
+        /// The workflow versions that are available.
         /// </summary>
         /// <returns>A <see cref="WorkflowVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +73,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return await RequestAdapter.SendAsync<WorkflowVersion>(requestInfo, WorkflowVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowVersion object.
+        /// The workflow versions that are available.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new WorkflowVersionVersionNumberItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a workflowVersion object.
+        /// The workflow versions that are available.
         /// </summary>
         public class WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters 
         {

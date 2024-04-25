@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Add {
     [Obsolete("This class is obsolete. Use AddPostResponse instead.")]
+    #pragma warning disable CS1591
     public class AddResponse : AddPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

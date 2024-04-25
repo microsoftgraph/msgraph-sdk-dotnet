@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.
         {
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0" />
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnenoteSectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.
             return await RequestAdapter.SendAsync<OnenoteSectionCollectionResponse>(requestInfo, OnenoteSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new onenoteSection in the specified section group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0" />
+        /// Create new navigation property to sections for groups
         /// </summary>
         /// <returns>A <see cref="OnenoteSection"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Create a new onenoteSection in the specified section group.
+        /// Create new navigation property to sections for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.
             return new SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters 
         {

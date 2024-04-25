@@ -78,8 +78,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartaxis object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartaxis-get?view=graph-rest-1.0" />
+        /// Represents the value axis in an axis. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartAxis"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,8 +101,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartAxis>(requestInfo, WorkbookChartAxis.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartaxis object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartaxis-update?view=graph-rest-1.0" />
+        /// Update the navigation property valueAxis in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartAxis"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +145,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartaxis object.
+        /// Represents the value axis in an axis. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +164,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartaxis object.
+        /// Update the navigation property valueAxis in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -204,7 +202,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartaxis object.
+        /// Represents the value axis in an axis. Read-only.
         /// </summary>
         public class ValueAxisRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class SignInFrequencySessionControl : ConditionalAccessSessionControl, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn&apos;t required when using frequencyInterval with the value of timeBased.</summary>
         public SignInFrequencyAuthenticationType? AuthenticationType {

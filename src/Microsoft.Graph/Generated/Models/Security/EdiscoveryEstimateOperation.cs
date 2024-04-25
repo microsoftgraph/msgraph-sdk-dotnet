@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class EdiscoveryEstimateOperation : CaseOperation, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The estimated count of items for the search that matched the content query.</summary>
         public long? IndexedItemCount {

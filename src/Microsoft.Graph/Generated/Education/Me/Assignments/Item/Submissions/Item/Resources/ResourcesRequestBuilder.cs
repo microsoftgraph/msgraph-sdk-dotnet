@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Resourc
         {
         }
         /// <summary>
-        /// List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0" />
+        /// Get resources from education
         /// </summary>
         /// <returns>A <see cref="EducationSubmissionResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Resourc
             return await RequestAdapter.SendAsync<EducationSubmissionResourceCollectionResponse>(requestInfo, EducationSubmissionResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the allowStudentsToAddResources flag is not set to true. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn&apos;t exist or is not in that folder, the POST request will fail.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0" />
+        /// Create new navigation property to resources for education
         /// </summary>
         /// <returns>A <see cref="EducationSubmissionResource"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Resourc
             return await RequestAdapter.SendAsync<EducationSubmissionResource>(requestInfo, EducationSubmissionResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.
+        /// Get resources from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Resourc
             return requestInfo;
         }
         /// <summary>
-        /// Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the allowStudentsToAddResources flag is not set to true. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn&apos;t exist or is not in that folder, the POST request will fail.
+        /// Create new navigation property to resources for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Submissions.Item.Resourc
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this resource was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that were officially submitted for grading.
+        /// Get resources from education
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters 
         {

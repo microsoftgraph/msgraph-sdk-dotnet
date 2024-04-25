@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AadUserNotificationRecipient : TeamworkNotificationRecipient, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Microsoft Entra user identifier. Use the List users method to get this ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

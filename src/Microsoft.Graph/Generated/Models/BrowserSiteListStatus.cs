@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSiteListStatus
+    #pragma warning restore CS1591
     {
         /// <summary>A site list that has not yet been published</summary>
         [EnumMember(Value = "draft")]

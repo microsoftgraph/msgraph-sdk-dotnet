@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
         {
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0" />
+        /// The connectors that are associated with the printer.
         /// </summary>
         /// <returns>A <see cref="PrintConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
             return await RequestAdapter.SendAsync<PrintConnectorCollectionResponse>(requestInfo, PrintConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
+        /// The connectors that are associated with the printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Connectors {
             return new ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of printConnectors associated with the printer.
+        /// The connectors that are associated with the printer.
         /// </summary>
         public class ConnectorsRequestBuilderGetQueryParameters 
         {

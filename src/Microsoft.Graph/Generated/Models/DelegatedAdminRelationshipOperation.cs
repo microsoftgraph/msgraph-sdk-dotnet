@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DelegatedAdminRelationshipOperation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {

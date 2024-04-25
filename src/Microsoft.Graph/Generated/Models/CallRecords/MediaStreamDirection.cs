@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
+    #pragma warning disable CS1591
     public enum MediaStreamDirection
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "callerToCallee")]
+        #pragma warning disable CS1591
         CallerToCallee,
+        #pragma warning restore CS1591
         [EnumMember(Value = "calleeToCaller")]
+        #pragma warning disable CS1591
         CalleeToCaller,
+        #pragma warning restore CS1591
     }
 }

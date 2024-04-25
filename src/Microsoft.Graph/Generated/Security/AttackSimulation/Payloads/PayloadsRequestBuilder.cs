@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Payloads {
         {
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0" />
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         /// <returns>A <see cref="PayloadCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Payloads {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Payload>(requestInfo, Microsoft.Graph.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Payloads {
             return new PayloadsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         public class PayloadsRequestBuilderGetQueryParameters 
         {

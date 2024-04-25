@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Plans.Item.Tasks.Item.Details {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. More details about the task.
         /// </summary>
         /// <returns>A <see cref="PlannerTaskDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +78,6 @@ namespace Microsoft.Graph.Users.Item.Planner.Plans.Item.Tasks.Item.Details {
         }
         /// <summary>
         /// Update the navigation property details in users
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerTaskDetails"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Plans.Item.Tasks.Item.Details {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object.
+        /// Read-only. Nullable. More details about the task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Users.Item.Planner.Plans.Item.Tasks.Item.Details {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerTaskDetails object.
+        /// Read-only. Nullable. More details about the task.
         /// </summary>
         public class DetailsRequestBuilderGetQueryParameters 
         {

@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum TrainingAvailabilityStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notAvailable")]
+        #pragma warning disable CS1591
         NotAvailable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "available")]
+        #pragma warning disable CS1591
         Available,
+        #pragma warning restore CS1591
         [EnumMember(Value = "archive")]
+        #pragma warning disable CS1591
         Archive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delete")]
+        #pragma warning disable CS1591
         Delete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

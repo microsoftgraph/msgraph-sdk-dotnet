@@ -57,8 +57,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits {
         {
         }
         /// <summary>
-        /// Retrieve a list of administrativeUnit objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0" />
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         /// <returns>A <see cref="AdministrativeUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits {
             return await RequestAdapter.SendAsync<AdministrativeUnitCollectionResponse>(requestInfo, AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new administrativeUnit.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0" />
+        /// Create new navigation property to administrativeUnits for directory
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdministrativeUnit"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of administrativeUnit objects.
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new administrativeUnit.
+        /// Create new navigation property to administrativeUnits for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits {
             return new AdministrativeUnitsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of administrativeUnit objects.
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         public class AdministrativeUnitsRequestBuilderGetQueryParameters 
         {

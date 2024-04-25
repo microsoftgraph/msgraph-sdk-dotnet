@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.Indicators {
         {
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0" />
+        /// Indicators related to this article.
         /// </summary>
         /// <returns>A <see cref="ArticleIndicatorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.Indicators {
             return await RequestAdapter.SendAsync<ArticleIndicatorCollectionResponse>(requestInfo, ArticleIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
+        /// Indicators related to this article.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.Indicators {
             return new IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
+        /// Indicators related to this article.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters 
         {

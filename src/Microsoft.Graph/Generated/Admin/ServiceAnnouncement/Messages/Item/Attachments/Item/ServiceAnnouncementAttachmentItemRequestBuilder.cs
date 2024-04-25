@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0" />
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <returns>A <see cref="ServiceAnnouncementAttachment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments.It
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments.It
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         public class ServiceAnnouncementAttachmentItemRequestBuilderGetQueryParameters 
         {

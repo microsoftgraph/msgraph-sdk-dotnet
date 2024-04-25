@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ScheduleChangeRequest : ChangeTrackedEntity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The assignedTo property</summary>
         public ScheduleChangeRequestActor? AssignedTo {

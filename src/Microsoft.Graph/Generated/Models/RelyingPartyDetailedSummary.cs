@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class RelyingPartyDetailedSummary : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).</summary>
         public long? FailedSignInCount {

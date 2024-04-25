@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceScheduledActionForRule objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-list?view=graph-rest-1.0" />
+        /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceScheduledActionForRuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return await RequestAdapter.SendAsync<DeviceComplianceScheduledActionForRuleCollectionResponse>(requestInfo, DeviceComplianceScheduledActionForRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceComplianceScheduledActionForRule object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancescheduledactionforrule-create?view=graph-rest-1.0" />
+        /// Create new navigation property to scheduledActionsForRule for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceScheduledActionForRule"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return await RequestAdapter.SendAsync<DeviceComplianceScheduledActionForRule>(requestInfo, DeviceComplianceScheduledActionForRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceScheduledActionForRule objects.
+        /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceComplianceScheduledActionForRule object.
+        /// Create new navigation property to scheduledActionsForRule for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Schedul
             return new ScheduledActionsForRuleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceScheduledActionForRule objects.
+        /// The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
         /// </summary>
         public class ScheduledActionsForRuleRequestBuilderGetQueryParameters 
         {

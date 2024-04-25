@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class AdminConsentRequestPolicy : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the admin consent request feature is enabled or disabled. Required.</summary>
         public bool? IsEnabled {

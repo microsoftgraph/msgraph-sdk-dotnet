@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners {
         {
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0" />
+        /// Defines partner-specific configurations for external Microsoft Entra organizations.
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartnerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartnerCollectionResponse>(requestInfo, CrossTenantAccessPolicyConfigurationPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new partner configuration in a cross-tenant access policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0" />
+        /// Create new navigation property to partners for policies
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+        /// Defines partner-specific configurations for external Microsoft Entra organizations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new partner configuration in a cross-tenant access policy.
+        /// Create new navigation property to partners for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners {
             return new PartnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+        /// Defines partner-specific configurations for external Microsoft Entra organizations.
         /// </summary>
         public class PartnersRequestBuilderGetQueryParameters 
         {

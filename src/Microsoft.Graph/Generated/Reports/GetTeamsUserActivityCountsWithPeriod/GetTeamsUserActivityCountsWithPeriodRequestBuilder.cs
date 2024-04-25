@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getTeamsUserActivityCounts
+        /// Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getTeamsUserActivityCounts
+        /// Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

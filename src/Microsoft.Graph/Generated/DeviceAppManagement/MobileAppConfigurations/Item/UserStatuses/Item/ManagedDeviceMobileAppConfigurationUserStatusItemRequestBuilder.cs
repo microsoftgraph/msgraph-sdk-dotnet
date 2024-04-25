@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         {
         }
         /// <summary>
-        /// Deletes a managedDeviceMobileAppConfigurationUserStatus.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property userStatuses for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-get?view=graph-rest-1.0" />
+        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationUserStatus>(requestInfo, ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property userStatuses in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationUserStatus>(requestInfo, ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a managedDeviceMobileAppConfigurationUserStatus.
+        /// Delete navigation property userStatuses for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
+        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
+        /// Update the navigation property userStatuses in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
+        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         public class ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetQueryParameters 
         {

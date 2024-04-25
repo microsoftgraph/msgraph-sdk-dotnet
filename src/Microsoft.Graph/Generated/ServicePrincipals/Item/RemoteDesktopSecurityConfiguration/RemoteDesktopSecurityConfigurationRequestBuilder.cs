@@ -38,8 +38,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         {
         }
         /// <summary>
-        /// Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-remotedesktopsecurityconfiguration?view=graph-rest-1.0" />
+        /// Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-get?view=graph-rest-1.0" />
+        /// The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration>(requestInfo, Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal. Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-update?view=graph-rest-1.0" />
+        /// Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration>(requestInfo, Microsoft.Graph.Models.RemoteDesktopSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal. Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
+        /// Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.
+        /// The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal. Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
+        /// Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal. Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices. Additionally you can view any targetDeviceGroups that have been configured for SSO.
+        /// The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
         /// </summary>
         public class RemoteDesktopSecurityConfigurationRequestBuilderGetQueryParameters 
         {

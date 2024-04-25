@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationMethodsPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0" />
+        /// The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodsPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Models.AuthenticationMethodsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationMethodsPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property authenticationMethodsPolicy in policies
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationMethodsPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationMethodsPolicy object.
+        /// The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationMethodsPolicy object.
+        /// Update the navigation property authenticationMethodsPolicy in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationMethodsPolicy object.
+        /// The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
         /// </summary>
         public class AuthenticationMethodsPolicyRequestBuilderGetQueryParameters 
         {

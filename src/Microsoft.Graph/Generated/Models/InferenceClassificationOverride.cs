@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class InferenceClassificationOverride : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.</summary>
         public InferenceClassificationType? ClassifyAs {

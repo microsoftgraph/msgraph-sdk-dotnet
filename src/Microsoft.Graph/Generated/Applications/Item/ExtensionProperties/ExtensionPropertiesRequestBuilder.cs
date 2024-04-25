@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
         {
         }
         /// <summary>
-        /// Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="ExtensionPropertyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
             return await RequestAdapter.SendAsync<ExtensionPropertyCollectionResponse>(requestInfo, ExtensionPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new directory extension definition, represented by an extensionProperty object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0" />
+        /// Create new navigation property to extensionProperties for applications
         /// </summary>
         /// <returns>A <see cref="ExtensionProperty"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
             return await RequestAdapter.SendAsync<ExtensionProperty>(requestInfo, ExtensionProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new directory extension definition, represented by an extensionProperty object.
+        /// Create new navigation property to extensionProperties for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Applications.Item.ExtensionProperties {
             return new ExtensionPropertiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+        /// Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
         /// </summary>
         public class ExtensionPropertiesRequestBuilderGetQueryParameters 
         {

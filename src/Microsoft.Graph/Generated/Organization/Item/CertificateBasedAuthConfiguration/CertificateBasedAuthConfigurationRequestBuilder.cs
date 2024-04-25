@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration {
         {
         }
         /// <summary>
-        /// Get a list of certificateBasedAuthConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-list?view=graph-rest-1.0" />
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         /// <returns>A <see cref="CertificateBasedAuthConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration {
             return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationCollectionResponse>(requestInfo, CertificateBasedAuthConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new certificateBasedAuthConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-post-certificatebasedauthconfiguration?view=graph-rest-1.0" />
+        /// Create new navigation property to certificateBasedAuthConfiguration for organization
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.CertificateBasedAuthConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CertificateBasedAuthConfiguration>(requestInfo, Microsoft.Graph.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of certificateBasedAuthConfiguration objects.
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new certificateBasedAuthConfiguration object.
+        /// Create new navigation property to certificateBasedAuthConfiguration for organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Organization.Item.CertificateBasedAuthConfiguration {
             return new CertificateBasedAuthConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of certificateBasedAuthConfiguration objects.
+        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         public class CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters 
         {

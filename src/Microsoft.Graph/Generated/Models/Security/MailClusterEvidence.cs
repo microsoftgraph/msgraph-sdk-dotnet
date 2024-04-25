@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class MailClusterEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The clustering logic of the emails inside the cluster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

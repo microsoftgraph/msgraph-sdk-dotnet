@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class CloudAppSecuritySessionControl : ConditionalAccessSessionControl, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.</summary>
         public CloudAppSecuritySessionControlType? CloudAppSecurityType {

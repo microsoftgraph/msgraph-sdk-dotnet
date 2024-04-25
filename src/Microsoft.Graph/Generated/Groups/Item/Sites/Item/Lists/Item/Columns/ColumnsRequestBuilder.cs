@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Columns {
         {
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0" />
+        /// The collection of field definitions for this list.
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0" />
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+        /// The collection of field definitions for this list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Columns {
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+        /// The collection of field definitions for this list.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters 
         {

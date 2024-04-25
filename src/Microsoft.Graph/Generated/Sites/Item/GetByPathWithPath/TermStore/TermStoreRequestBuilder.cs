@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.TermStore {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a store object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0" />
+        /// The default termStore under this site.
         /// </summary>
         /// <returns>A <see cref="Store"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.TermStore {
             return await RequestAdapter.SendAsync<Store>(requestInfo, Store.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a store object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-store-update?view=graph-rest-1.0" />
+        /// Update the navigation property termStore in sites
         /// </summary>
         /// <returns>A <see cref="Store"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.TermStore {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a store object.
+        /// The default termStore under this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.TermStore {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a store object.
+        /// Update the navigation property termStore in sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.TermStore {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a store object.
+        /// The default termStore under this site.
         /// </summary>
         public class TermStoreRequestBuilderGetQueryParameters 
         {

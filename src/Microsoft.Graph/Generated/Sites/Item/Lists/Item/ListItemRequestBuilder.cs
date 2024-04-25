@@ -102,8 +102,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the metadata for a [list][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0" />
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.List"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -170,7 +169,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Returns the metadata for a [list][].
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -227,7 +226,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item {
         {
         }
         /// <summary>
-        /// Returns the metadata for a [list][].
+        /// The collection of lists under this site.
         /// </summary>
         public class ListItemRequestBuilderGetQueryParameters 
         {

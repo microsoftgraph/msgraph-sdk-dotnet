@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of charttitle object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/charttitle-get?view=graph-rest-1.0" />
+        /// Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartTitle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartTitle>(requestInfo, WorkbookChartTitle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of charttitle object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/charttitle-update?view=graph-rest-1.0" />
+        /// Update the navigation property title in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartTitle"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of charttitle object.
+        /// Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of charttitle object.
+        /// Update the navigation property title in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of charttitle object.
+        /// Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
         /// </summary>
         public class TitleRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
         {
         }
         /// <summary>
-        /// Remove a teacher from an educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-delete-teachers?view=graph-rest-1.0" />
+        /// Delete ref of navigation property teachers for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0" />
+        /// All teachers in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a teacher to a class.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-teachers?view=graph-rest-1.0" />
+        /// Create new navigation property ref to teachers for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a teacher from an educationClass.
+        /// Delete ref of navigation property teachers for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+        /// All teachers in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a teacher to a class.
+        /// Create new navigation property ref to teachers for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a teacher from an educationClass.
+        /// Delete ref of navigation property teachers for education
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Ref {
         {
         }
         /// <summary>
-        /// Retrieve a list of teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+        /// All teachers in the class. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

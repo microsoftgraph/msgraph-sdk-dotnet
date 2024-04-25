@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum CloudPcDeviceImageOsStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "supported")]
+        #pragma warning disable CS1591
         Supported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "supportedWithWarning")]
+        #pragma warning disable CS1591
         SupportedWithWarning,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }
