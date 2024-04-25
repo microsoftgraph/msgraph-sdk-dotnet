@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
         {
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-1.0" />
+        /// The workflows in the lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="WorkflowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return await RequestAdapter.SendAsync<WorkflowCollectionResponse>(requestInfo, WorkflowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new workflow object. You can create up to 50 workflows in a tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-1.0" />
+        /// Create new navigation property to workflows for identityGovernance
         /// </summary>
         /// <returns>A <see cref="Workflow"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return await RequestAdapter.SendAsync<Workflow>(requestInfo, Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
+        /// The workflows in the lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new workflow object. You can create up to 50 workflows in a tenant.
+        /// Create new navigation property to workflows for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows {
             return new WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of workflow resources that are associated with lifecycle workflows.
+        /// The workflows in the lifecycle workflows instance.
         /// </summary>
         public class WorkflowsRequestBuilderGetQueryParameters 
         {

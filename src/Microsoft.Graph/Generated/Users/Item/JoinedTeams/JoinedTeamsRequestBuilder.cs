@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams {
         {
         }
         /// <summary>
-        /// Get the teams in Microsoft Teams that the user is a direct member of.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0" />
+        /// Get joinedTeams from users
         /// </summary>
         /// <returns>A <see cref="TeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the teams in Microsoft Teams that the user is a direct member of.
+        /// Get joinedTeams from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams {
             return new JoinedTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the teams in Microsoft Teams that the user is a direct member of.
+        /// Get joinedTeams from users
         /// </summary>
         public class JoinedTeamsRequestBuilderGetQueryParameters 
         {

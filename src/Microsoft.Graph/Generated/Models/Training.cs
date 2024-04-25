@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Training : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
         public TrainingAvailabilityStatus? AvailabilityStatus {

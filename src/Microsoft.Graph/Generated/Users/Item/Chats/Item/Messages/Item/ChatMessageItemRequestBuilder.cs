@@ -90,8 +90,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0" />
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -158,7 +157,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +214,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Messages.Item {
         {
         }
         /// <summary>
-        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         public class ChatMessageItemRequestBuilderGetQueryParameters 
         {

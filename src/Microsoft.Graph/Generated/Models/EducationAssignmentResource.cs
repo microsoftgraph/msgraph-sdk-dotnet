@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class EducationAssignmentResource : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
         public bool? DistributeForStudentWork {

@@ -6,16 +6,18 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ItemReference : IAdditionalDataHolder, IBackedModel, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
-            set { BackingStore?.Set("AdditionalData", value); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.</summary>
+        /// <summary>Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DriveId {
@@ -29,7 +31,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("driveId", value); }
         }
 #endif
-        /// <summary>Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.</summary>
+        /// <summary>Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DriveType {
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("path", value); }
         }
 #endif
-        /// <summary>A unique identifier for a shared resource that can be accessed via the [Shares][] API.</summary>
+        /// <summary>A unique identifier for a shared resource that can be accessed via the Shares API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShareId {
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("sharepointIds", value); }
         }
 #endif
-        /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
+        /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId {

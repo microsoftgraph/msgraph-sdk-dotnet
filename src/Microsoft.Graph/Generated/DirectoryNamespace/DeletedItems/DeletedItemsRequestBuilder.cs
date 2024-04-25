@@ -105,7 +105,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems {
             return new DeletedItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         public class DeletedItemsRequestBuilderGetQueryParameters 
         {

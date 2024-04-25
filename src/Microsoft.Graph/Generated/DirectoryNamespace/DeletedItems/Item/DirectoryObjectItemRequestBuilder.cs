@@ -99,7 +99,6 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Delete navigation property deletedItems for directory
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,8 +120,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0" />
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -164,7 +162,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +197,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters 
         {

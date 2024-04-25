@@ -70,7 +70,6 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
         }
         /// <summary>
         /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

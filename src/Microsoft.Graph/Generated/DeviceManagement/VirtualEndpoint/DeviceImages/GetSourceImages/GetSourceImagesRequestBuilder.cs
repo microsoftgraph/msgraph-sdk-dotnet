@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
         {
         }
         /// <summary>
-        /// Invoke function getSourceImages
+        /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetSourceImagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
             return await RequestAdapter.SendAsync<GetSourceImagesGetResponse>(requestInfo, GetSourceImagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSourceImages
+        /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetSourceImagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
             return await RequestAdapter.SendAsync<GetSourceImagesResponse>(requestInfo, GetSourceImagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSourceImages
+        /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
             return new GetSourceImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getSourceImages
+        /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
         /// </summary>
         public class GetSourceImagesRequestBuilderGetQueryParameters 
         {

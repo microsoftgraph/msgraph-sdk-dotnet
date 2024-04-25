@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-get?view=graph-rest-1.0" />
+        /// The device configuration device state summary for this account.
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationDeviceStateSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
             return await RequestAdapter.SendAsync<DeviceConfigurationDeviceStateSummary>(requestInfo, DeviceConfigurationDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationDeviceStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationdevicestatesummary-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationDeviceStateSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+        /// The device configuration device state summary for this account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceConfigurationDeviceStateSummary object.
+        /// Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurationDeviceStateSummari
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
+        /// The device configuration device state summary for this account.
         /// </summary>
         public class DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters 
         {

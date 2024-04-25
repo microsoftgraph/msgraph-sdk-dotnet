@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
         {
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,8 +86,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return await RequestAdapter.SendAsync<EducationCategoryCollectionResponse>(requestInfo, EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0" />
+        /// Create new navigation property to categories for education
         /// </summary>
         /// <returns>A <see cref="EducationCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return requestInfo;
         }
         /// <summary>
-        /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+        /// Create new navigation property to categories for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +161,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories {
             return new CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type. Read-only. Nullable.
         /// </summary>
         public class CategoriesRequestBuilderGetQueryParameters 
         {

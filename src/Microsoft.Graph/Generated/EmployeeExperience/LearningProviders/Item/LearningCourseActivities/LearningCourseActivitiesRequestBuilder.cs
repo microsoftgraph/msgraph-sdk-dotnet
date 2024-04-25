@@ -74,8 +74,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return await RequestAdapter.SendAsync<LearningCourseActivityCollectionResponse>(requestInfo, LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperienceuser-post-learningcourseactivities?view=graph-rest-1.0" />
+        /// Create new navigation property to learningCourseActivities for employeeExperience
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivity"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCour
             return requestInfo;
         }
         /// <summary>
-        /// Create a new learningCourseActivity object. A learning course activity can be one of two types: - Assignment- Self-initiated Use this method to create either type of activity.
+        /// Create new navigation property to learningCourseActivities for employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

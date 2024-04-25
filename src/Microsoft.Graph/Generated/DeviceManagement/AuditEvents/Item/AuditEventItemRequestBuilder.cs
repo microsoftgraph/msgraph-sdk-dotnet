@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
         {
         }
         /// <summary>
-        /// Deletes a auditEvent.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-delete?view=graph-rest-1.0" />
+        /// Delete navigation property auditEvents for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the auditEvent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-get?view=graph-rest-1.0" />
+        /// The Audit Events
         /// </summary>
         /// <returns>A <see cref="AuditEvent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
             return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a auditEvent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-update?view=graph-rest-1.0" />
+        /// Update the navigation property auditEvents in deviceManagement
         /// </summary>
         /// <returns>A <see cref="AuditEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
             return await RequestAdapter.SendAsync<AuditEvent>(requestInfo, AuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a auditEvent.
+        /// Delete navigation property auditEvents for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the auditEvent object.
+        /// The Audit Events
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a auditEvent object.
+        /// Update the navigation property auditEvents in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.Item {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the auditEvent object.
+        /// The Audit Events
         /// </summary>
         public class AuditEventItemRequestBuilderGetQueryParameters 
         {

@@ -104,8 +104,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
         {
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0" />
+        /// Delete navigation property messages for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +127,6 @@ namespace Microsoft.Graph.Me.Messages.Item {
         }
         /// <summary>
         /// The messages in a mailbox or folder. Read-only. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,8 +149,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0" />
+        /// Update the navigation property messages in me
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -177,7 +174,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
+        /// Delete navigation property messages for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +212,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
+        /// Update the navigation property messages in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

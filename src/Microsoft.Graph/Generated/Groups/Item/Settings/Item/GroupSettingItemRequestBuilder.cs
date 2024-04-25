@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Settings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0" />
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         /// <returns>A <see cref="GroupSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Groups.Item.Settings.Item {
             return await RequestAdapter.SendAsync<GroupSetting>(requestInfo, GroupSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0" />
+        /// Update the navigation property settings in groups
         /// </summary>
         /// <returns>A <see cref="GroupSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Groups.Item.Settings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Groups.Item.Settings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
+        /// Update the navigation property settings in groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Groups.Item.Settings.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         public class GroupSettingItemRequestBuilderGetQueryParameters 
         {

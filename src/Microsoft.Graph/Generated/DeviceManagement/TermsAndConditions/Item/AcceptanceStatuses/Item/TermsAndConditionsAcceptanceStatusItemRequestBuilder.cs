@@ -38,8 +38,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
         {
         }
         /// <summary>
-        /// Deletes a termsAndConditionsAcceptanceStatus.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property acceptanceStatuses for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the termsAndConditionsAcceptanceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-get?view=graph-rest-1.0" />
+        /// The list of acceptance statuses for this T&amp;C policy.
         /// </summary>
         /// <returns>A <see cref="TermsAndConditionsAcceptanceStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
             return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a termsAndConditionsAcceptanceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property acceptanceStatuses in deviceManagement
         /// </summary>
         /// <returns>A <see cref="TermsAndConditionsAcceptanceStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
             return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a termsAndConditionsAcceptanceStatus.
+        /// Delete navigation property acceptanceStatuses for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the termsAndConditionsAcceptanceStatus object.
+        /// The list of acceptance statuses for this T&amp;C policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a termsAndConditionsAcceptanceStatus object.
+        /// Update the navigation property acceptanceStatuses in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.AcceptanceSta
         {
         }
         /// <summary>
-        /// Read properties and relationships of the termsAndConditionsAcceptanceStatus object.
+        /// The list of acceptance statuses for this T&amp;C policy.
         /// </summary>
         public class TermsAndConditionsAcceptanceStatusItemRequestBuilderGetQueryParameters 
         {

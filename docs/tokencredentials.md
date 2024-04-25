@@ -16,8 +16,7 @@ InteractiveBrowserCredential interactiveBrowserCredential = new InteractiveBrows
 
 GraphServiceClient graphClient = new GraphServiceClient(interactiveBrowserCredential, scopes); // you can pass the TokenCredential directly to the GraphServiceClient
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 ## 2. UsernamePasswordCredential
@@ -32,8 +31,7 @@ UsernamePasswordCredential usernamePasswordCredential = new UsernamePasswordCred
 
 GraphServiceClient graphClient = new GraphServiceClient(usernamePasswordCredential, scopes); // you can pass the TokenCredential directly to the GraphServiceClient
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 
@@ -57,8 +55,7 @@ DeviceCodeCredential deviceCodeCredential = new DeviceCodeCredential(deviceCodeC
 
 GraphServiceClient graphClient = new GraphServiceClient(deviceCodeCredential, scopes);
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 ## 4. ClientSecretCredential
@@ -73,8 +70,7 @@ ClientSecretCredential clientSecretCredential = new ClientSecretCredential(tenan
 
 GraphServiceClient graphClient = new GraphServiceClient(clientSecretCredential, scopes);
 
-User me = await graphClient.Users["user-id"].Request()
-                .GetAsync();
+User me = await graphClient.Users["user-id"].GetAsync();
 ```
 
 ## 5. ClientCertificateCredential
@@ -91,8 +87,7 @@ ClientCertificateCredential clientCertificateCredential = new ClientCertificateC
 
 GraphServiceClient graphClient = new GraphServiceClient(clientCertificateCredential, scopes);
 
-User me = await graphClient.Users["user-id"].Request()
-                .GetAsync();
+User me = await graphClient.Users["user-id"].GetAsync();
 ```
 
 ## 6. AuthorizationCodeCredential
@@ -106,8 +101,7 @@ AuthorizationCodeCredential authorizationCodeCredential = new AuthorizationCodeC
 
 GraphServiceClient graphClient = new GraphServiceClient(authorizationCodeCredential, scopes);
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 # Other TokenCredentials
@@ -133,8 +127,7 @@ EnvironmentCredential environmentCredential = new EnvironmentCredential();
 
 GraphServiceClient graphClient = new GraphServiceClient(environmentCredential, scopes);
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 ## 2. ChainedTokenCredential
@@ -157,8 +150,7 @@ ChainedTokenCredential chainedTokenCredential = new ChainedTokenCredential(token
 
 GraphServiceClient graphClient = new GraphServiceClient(chainedTokenCredential, scopes);
 
-User me = await graphClient.Me.Request()
-                .GetAsync();
+User me = await graphClient.Me.GetAsync();
 ```
 
 

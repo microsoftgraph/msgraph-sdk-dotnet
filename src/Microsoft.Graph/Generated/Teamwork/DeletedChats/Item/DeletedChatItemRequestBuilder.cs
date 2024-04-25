@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/deletedchat-get?view=graph-rest-1.0" />
+        /// A collection of deleted chats.
         /// </summary>
         /// <returns>A <see cref="DeletedChat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object.
+        /// A collection of deleted chats.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object.
+        /// A collection of deleted chats.
         /// </summary>
         public class DeletedChatItemRequestBuilderGetQueryParameters 
         {

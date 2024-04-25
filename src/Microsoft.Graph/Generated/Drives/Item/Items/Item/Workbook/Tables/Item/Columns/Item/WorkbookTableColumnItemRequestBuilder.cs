@@ -62,8 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         {
         }
         /// <summary>
-        /// Deletes the column from the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-delete?view=graph-rest-1.0" />
+        /// Delete navigation property columns for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,8 +84,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablecolumn object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-get?view=graph-rest-1.0" />
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookTableColumn"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,8 +107,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of tablecolumn object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-update?view=graph-rest-1.0" />
+        /// Update the navigation property columns in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookTableColumn"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +132,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             return await RequestAdapter.SendAsync<WorkbookTableColumn>(requestInfo, WorkbookTableColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the column from the table.
+        /// Delete navigation property columns for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +151,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablecolumn object.
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of tablecolumn object.
+        /// Update the navigation property columns in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -211,7 +208,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablecolumn object.
+        /// Represents a collection of all the columns in the table. Read-only.
         /// </summary>
         public class WorkbookTableColumnItemRequestBuilderGetQueryParameters 
         {

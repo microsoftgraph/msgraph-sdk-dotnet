@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         }
         /// <summary>
         /// Invoke function reminderView
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,6 +60,7 @@ namespace Microsoft.Graph.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         }
         /// <summary>
         /// Invoke function reminderView
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

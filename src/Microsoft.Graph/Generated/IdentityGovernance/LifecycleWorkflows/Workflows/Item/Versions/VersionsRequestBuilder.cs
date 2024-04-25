@@ -64,8 +64,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.V
         {
         }
         /// <summary>
-        /// Get a list of the workflowVersion objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0" />
+        /// The workflow versions that are available.
         /// </summary>
         /// <returns>A <see cref="WorkflowVersionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +87,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.V
             return await RequestAdapter.SendAsync<WorkflowVersionCollectionResponse>(requestInfo, WorkflowVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the workflowVersion objects and their properties.
+        /// The workflow versions that are available.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +115,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.V
             return new VersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the workflowVersion objects and their properties.
+        /// The workflow versions that are available.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters 
         {

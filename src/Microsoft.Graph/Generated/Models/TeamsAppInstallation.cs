@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamsAppInstallation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The set of resource-specific permissions consented to while installing or upgrading the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

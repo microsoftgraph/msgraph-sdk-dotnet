@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders {
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MailFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to childFolders for me
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Create new navigation property to childFolders for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

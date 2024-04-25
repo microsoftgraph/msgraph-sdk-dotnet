@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class RiskyServicePrincipal : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The globally unique identifier for the associated application (its appId property), if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

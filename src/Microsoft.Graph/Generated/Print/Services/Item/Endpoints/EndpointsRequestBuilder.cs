@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Print.Services.Item.Endpoints {
         {
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0" />
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="PrintServiceEndpointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Print.Services.Item.Endpoints {
             return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, PrintServiceEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Print.Services.Item.Endpoints {
             return new EndpointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         public class EndpointsRequestBuilderGetQueryParameters 
         {

@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
         }
         /// <summary>
         /// The user&apos;s mail folders. Read-only. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MailFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new mail folder in the root folder of the user&apos;s mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to mailFolders for users
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Users.Item.MailFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new mail folder in the root folder of the user&apos;s mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Create new navigation property to mailFolders for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

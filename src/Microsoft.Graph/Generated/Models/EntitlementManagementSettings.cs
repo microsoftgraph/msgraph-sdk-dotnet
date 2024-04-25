@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class EntitlementManagementSettings : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.</summary>
         public TimeSpan? DurationUntilExternalUserDeletedAfterBlocked {

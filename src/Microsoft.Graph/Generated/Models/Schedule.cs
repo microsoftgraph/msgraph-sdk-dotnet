@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Schedule : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
         public bool? Enabled {

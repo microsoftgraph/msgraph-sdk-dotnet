@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Drives.Item.Recent {
         {
         }
         /// <summary>
-        /// Invoke function recent
+        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RecentGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Drives.Item.Recent {
             return await RequestAdapter.SendAsync<RecentGetResponse>(requestInfo, RecentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function recent
+        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RecentResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Drives.Item.Recent {
             return await RequestAdapter.SendAsync<RecentResponse>(requestInfo, RecentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function recent
+        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Drives.Item.Recent {
             return new RecentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function recent
+        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// </summary>
         public class RecentRequestBuilderGetQueryParameters 
         {

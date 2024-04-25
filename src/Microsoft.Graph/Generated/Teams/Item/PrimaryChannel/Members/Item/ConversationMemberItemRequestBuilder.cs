@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
         {
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0" />
+        /// Delete navigation property members for teams
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a conversationMember from a channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0" />
+        /// A collection of membership records associated with the channel.
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team or channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0" />
+        /// Update the navigation property members in teams
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Delete navigation property members for teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a conversationMember from a channel.
+        /// A collection of membership records associated with the channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a team or channel.
+        /// Update the navigation property members in teams
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Members.Item {
         {
         }
         /// <summary>
-        /// Get a conversationMember from a channel.
+        /// A collection of membership records associated with the channel.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters 
         {

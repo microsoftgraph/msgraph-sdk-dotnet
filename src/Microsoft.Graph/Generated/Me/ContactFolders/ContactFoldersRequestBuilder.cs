@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Me.ContactFolders {
         {
         }
         /// <summary>
-        /// Get the contact folder collection in the default Contacts folder of the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0" />
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ContactFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Me.ContactFolders {
             return await RequestAdapter.SendAsync<ContactFolderCollectionResponse>(requestInfo, ContactFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new contactFolder under the user&apos;s default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to contactFolders for me
         /// </summary>
         /// <returns>A <see cref="ContactFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Me.ContactFolders {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the contact folder collection in the default Contacts folder of the signed-in user.
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Me.ContactFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new contactFolder under the user&apos;s default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+        /// Create new navigation property to contactFolders for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Me.ContactFolders {
             return new ContactFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the contact folder collection in the default Contacts folder of the signed-in user.
+        /// The user&apos;s contacts folders. Read-only. Nullable.
         /// </summary>
         public class ContactFoldersRequestBuilderGetQueryParameters 
         {

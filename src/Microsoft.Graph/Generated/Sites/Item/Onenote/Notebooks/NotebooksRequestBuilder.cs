@@ -58,8 +58,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
         {
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0" />
+        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="NotebookCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,8 +91,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
-        /// Create a new OneNote notebook.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0" />
+        /// Create new navigation property to notebooks for sites
         /// </summary>
         /// <returns>A <see cref="Notebook"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +116,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
+        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +135,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new OneNote notebook.
+        /// Create new navigation property to notebooks for sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +166,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks {
             return new NotebooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of notebook objects.
+        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
         /// </summary>
         public class NotebooksRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Print.Services {
         {
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0" />
+        /// The list of available Universal Print service endpoints.
         /// </summary>
         /// <returns>A <see cref="PrintServiceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Print.Services {
             return await RequestAdapter.SendAsync<PrintService>(requestInfo, PrintService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
+        /// The list of available Universal Print service endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Print.Services {
             return new ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of printService objects that represent the services available to your tenant.
+        /// The list of available Universal Print service endpoints.
         /// </summary>
         public class ServicesRequestBuilderGetQueryParameters 
         {

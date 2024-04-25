@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Print.Operations {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object.
+        /// The list of print long running operations.
         /// </summary>
         /// <returns>A <see cref="PrintOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Print.Operations {
             return await RequestAdapter.SendAsync<PrintOperation>(requestInfo, PrintOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object.
+        /// The list of print long running operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Print.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a printOperation object.
+        /// The list of print long running operations.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

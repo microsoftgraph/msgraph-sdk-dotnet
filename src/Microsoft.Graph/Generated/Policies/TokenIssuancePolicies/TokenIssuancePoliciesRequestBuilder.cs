@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies {
         {
         }
         /// <summary>
-        /// Get a list of tokenIssuancePolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0" />
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="TokenIssuancePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies {
             return await RequestAdapter.SendAsync<TokenIssuancePolicyCollectionResponse>(requestInfo, TokenIssuancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new tokenIssuancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0" />
+        /// Create new navigation property to tokenIssuancePolicies for policies
         /// </summary>
         /// <returns>A <see cref="TokenIssuancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of tokenIssuancePolicy objects.
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new tokenIssuancePolicy object.
+        /// Create new navigation property to tokenIssuancePolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Policies.TokenIssuancePolicies {
             return new TokenIssuancePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of tokenIssuancePolicy objects.
+        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
         /// </summary>
         public class TokenIssuancePoliciesRequestBuilderGetQueryParameters 
         {

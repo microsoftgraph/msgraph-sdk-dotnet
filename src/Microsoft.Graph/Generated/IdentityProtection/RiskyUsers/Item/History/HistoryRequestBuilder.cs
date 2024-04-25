@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUserHistoryItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0" />
+        /// The activity related to user risk level change
         /// </summary>
         /// <returns>A <see cref="RiskyUserHistoryItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUserHistoryItem object.
+        /// The activity related to user risk level change
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers.Item.History {
             return new HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a riskyUserHistoryItem object.
+        /// The activity related to user risk level change
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters 
         {

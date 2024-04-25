@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

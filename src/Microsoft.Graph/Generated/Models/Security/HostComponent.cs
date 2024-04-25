@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class HostComponent : Artifact, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of component that was detected (for example, Operating System, Framework, Remote Access, or Server).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

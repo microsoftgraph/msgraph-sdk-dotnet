@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.Favicon 
         }
         /// <summary>
         /// A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

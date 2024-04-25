@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
         /// </summary>
         /// <returns>A <see cref="PlannerBucketTaskBoardTaskFormat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +78,6 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBo
         }
         /// <summary>
         /// Update the navigation property bucketTaskBoardFormat in groups
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucketTaskBoardTaskFormat"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBo
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBo
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
         /// </summary>
         public class BucketTaskBoardFormatRequestBuilderGetQueryParameters 
         {

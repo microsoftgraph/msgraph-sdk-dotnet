@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
         {
         }
         /// <summary>
-        /// Delete a bookingAppointment in the specified bookingBusiness.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property appointments for solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0" />
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="BookingAppointment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingAppointment object in the specified bookingBusiness.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0" />
+        /// Update the navigation property appointments in solutions
         /// </summary>
         /// <returns>A <see cref="BookingAppointment"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a bookingAppointment in the specified bookingBusiness.
+        /// Delete navigation property appointments for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingAppointment object in the specified bookingBusiness.
+        /// Update the navigation property appointments in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         public class BookingAppointmentItemRequestBuilderGetQueryParameters 
         {

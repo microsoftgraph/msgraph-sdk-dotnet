@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0" />
+        /// The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cross-tenant access policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property crossTenantAccessPolicy in policies
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object.
+        /// The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cross-tenant access policy.
+        /// Update the navigation property crossTenantAccessPolicy in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object.
+        /// The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
         /// </summary>
         public class CrossTenantAccessPolicyRequestBuilderGetQueryParameters 
         {

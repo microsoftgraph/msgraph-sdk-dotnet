@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum PersistentBrowserSessionMode
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "always")]
+        #pragma warning disable CS1591
         Always,
+        #pragma warning restore CS1591
         [EnumMember(Value = "never")]
+        #pragma warning disable CS1591
         Never,
+        #pragma warning restore CS1591
     }
 }

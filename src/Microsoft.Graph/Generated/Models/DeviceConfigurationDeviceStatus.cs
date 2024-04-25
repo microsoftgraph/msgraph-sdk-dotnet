@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class DeviceConfigurationDeviceStatus : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {

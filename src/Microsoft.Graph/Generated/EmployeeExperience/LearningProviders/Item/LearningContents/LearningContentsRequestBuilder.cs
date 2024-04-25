@@ -51,8 +51,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         {
         }
         /// <summary>
-        /// Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider&apos;s content in Viva Learning.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-list-learningcontents?view=graph-rest-1.0" />
+        /// Learning catalog items for the provider.
         /// </summary>
         /// <returns>A <see cref="LearningContentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             return await RequestAdapter.SendAsync<LearningContent>(requestInfo, LearningContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider&apos;s content in Viva Learning.
+        /// Learning catalog items for the provider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             return new LearningContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider&apos;s content in Viva Learning.
+        /// Learning catalog items for the provider.
         /// </summary>
         public class LearningContentsRequestBuilderGetQueryParameters 
         {

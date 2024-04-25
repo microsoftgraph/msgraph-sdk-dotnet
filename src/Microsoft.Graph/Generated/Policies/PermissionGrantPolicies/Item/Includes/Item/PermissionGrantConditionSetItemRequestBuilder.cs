@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         {
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0" />
+        /// Delete navigation property includes for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,7 +54,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <returns>A <see cref="PermissionGrantConditionSet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
+        /// Delete navigation property includes for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes.Item {
         {
         }
         /// <summary>
-        /// Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         public class PermissionGrantConditionSetItemRequestBuilderGetQueryParameters 
         {

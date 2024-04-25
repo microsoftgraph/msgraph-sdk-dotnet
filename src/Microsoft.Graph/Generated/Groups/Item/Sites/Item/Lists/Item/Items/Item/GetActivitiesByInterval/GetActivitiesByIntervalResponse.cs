@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval {
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetActivitiesByIntervalResponse : GetActivitiesByIntervalGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

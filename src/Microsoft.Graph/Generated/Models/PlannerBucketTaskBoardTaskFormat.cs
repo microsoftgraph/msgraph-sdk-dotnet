@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class PlannerBucketTaskBoardTaskFormat : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

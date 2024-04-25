@@ -50,8 +50,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         {
         }
         /// <summary>
-        /// Deletes a mdmWindowsInformationProtectionPolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-get?view=graph-rest-1.0" />
+        /// Windows information protection for apps running on devices which are MDM enrolled.
         /// </summary>
         /// <returns>A <see cref="MdmWindowsInformationProtectionPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
             return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a mdmWindowsInformationProtectionPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="MdmWindowsInformationProtectionPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
             return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a mdmWindowsInformationProtectionPolicy.
+        /// Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
+        /// Windows information protection for apps running on devices which are MDM enrolled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a mdmWindowsInformationProtectionPolicy object.
+        /// Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPol
         {
         }
         /// <summary>
-        /// Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
+        /// Windows information protection for apps running on devices which are MDM enrolled.
         /// </summary>
         public class MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters 
         {

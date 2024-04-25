@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class IPv4CidrRange : IpRange, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>IPv4 address in CIDR notation. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.SectionGr
         {
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified section group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0" />
+        /// The section groups in the section. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="SectionGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.SectionGr
             return await RequestAdapter.SendAsync<SectionGroupCollectionResponse>(requestInfo, SectionGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified section group.
+        /// The section groups in the section. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.SectionGroups.Item.SectionGr
             return new SectionGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of section groups from the specified section group.
+        /// The section groups in the section. Read-only. Nullable.
         /// </summary>
         public class SectionGroupsRequestBuilderGetQueryParameters 
         {

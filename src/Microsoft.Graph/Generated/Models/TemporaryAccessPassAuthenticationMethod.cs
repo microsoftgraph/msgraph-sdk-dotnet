@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time when the Temporary Access Pass was created.</summary>
         public DateTimeOffset? CreatedDateTime {

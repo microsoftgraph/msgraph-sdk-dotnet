@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages {
         {
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages {
             return await RequestAdapter.SendAsync<GetAllMessagesGetResponse>(requestInfo, GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages {
             return await RequestAdapter.SendAsync<GetAllMessagesResponse>(requestInfo, GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages {
             return new GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
         /// </summary>
         public class GetAllMessagesRequestBuilderGetQueryParameters 
         {

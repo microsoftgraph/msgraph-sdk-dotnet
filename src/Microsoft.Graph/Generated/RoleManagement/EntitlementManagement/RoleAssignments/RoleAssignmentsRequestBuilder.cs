@@ -51,8 +51,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments {
         {
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra entitlement management)
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0" />
+        /// Resource to grant access to users or groups.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments {
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentCollectionResponse>(requestInfo, UnifiedRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new unifiedRoleAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0" />
+        /// Create new navigation property to roleAssignments for roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments {
             return await RequestAdapter.SendAsync<UnifiedRoleAssignment>(requestInfo, UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra entitlement management)
+        /// Resource to grant access to users or groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new unifiedRoleAssignment object.
+        /// Create new navigation property to roleAssignments for roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignments {
             return new RoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra entitlement management)
+        /// Resource to grant access to users or groups.
         /// </summary>
         public class RoleAssignmentsRequestBuilderGetQueryParameters 
         {

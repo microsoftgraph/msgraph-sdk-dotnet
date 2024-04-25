@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.IsPublished {
         {
         }
         /// <summary>
-        /// Invoke function isPublished
+        /// Check the publishing status of a contentType in a content type hub site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IsPublishedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.IsPublished {
             return await RequestAdapter.SendAsync<IsPublishedGetResponse>(requestInfo, IsPublishedGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function isPublished
+        /// Check the publishing status of a contentType in a content type hub site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IsPublishedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Shares.Item.List.ContentTypes.Item.IsPublished {
             return await RequestAdapter.SendAsync<IsPublishedResponse>(requestInfo, IsPublishedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function isPublished
+        /// Check the publishing status of a contentType in a content type hub site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

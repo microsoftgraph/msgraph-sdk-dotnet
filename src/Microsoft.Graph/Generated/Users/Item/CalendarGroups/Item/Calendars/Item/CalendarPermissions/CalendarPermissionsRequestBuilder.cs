@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
         {
         }
         /// <summary>
-        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0" />
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         /// <returns>A <see cref="CalendarPermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
             return await RequestAdapter.SendAsync<CalendarPermissionCollectionResponse>(requestInfo, CalendarPermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0" />
+        /// Create new navigation property to calendarPermissions for users
         /// </summary>
         /// <returns>A <see cref="CalendarPermission"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
             return requestInfo;
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+        /// Create new navigation property to calendarPermissions for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Calendar
             return new CalendarPermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.
+        /// The permissions of the users with whom the calendar is shared.
         /// </summary>
         public class CalendarPermissionsRequestBuilderGetQueryParameters 
         {

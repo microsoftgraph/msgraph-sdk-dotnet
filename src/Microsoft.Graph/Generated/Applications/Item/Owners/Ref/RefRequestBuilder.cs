@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
         {
         }
         /// <summary>
-        /// Remove an owner from an application. As a recommended best practice, apps should have at least two owners.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0" />
+        /// Delete ref of navigation property owners for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +55,6 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
         }
         /// <summary>
         /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an owner to an application by posting to the owners collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0" />
+        /// Create new navigation property ref to owners for applications
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an owner from an application. As a recommended best practice, apps should have at least two owners.
+        /// Delete ref of navigation property owners for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add an owner to an application by posting to the owners collection.
+        /// Create new navigation property ref to owners for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an owner from an application. As a recommended best practice, apps should have at least two owners.
+        /// Delete ref of navigation property owners for applications
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {

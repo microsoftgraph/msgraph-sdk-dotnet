@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum TitleAreaTextAlignmentType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "left")]
+        #pragma warning disable CS1591
         Left,
+        #pragma warning restore CS1591
         [EnumMember(Value = "center")]
+        #pragma warning disable CS1591
         Center,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

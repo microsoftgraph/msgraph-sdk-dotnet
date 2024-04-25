@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.Settings.Windows {
         {
         }
         /// <summary>
-        /// Get a list of windowsSetting objects and their properties for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-list-windows?view=graph-rest-1.0" />
+        /// Get windows from me
         /// </summary>
         /// <returns>A <see cref="WindowsSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Me.Settings.Windows {
             return await RequestAdapter.SendAsync<WindowsSetting>(requestInfo, WindowsSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of windowsSetting objects and their properties for the signed in user.
+        /// Get windows from me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Me.Settings.Windows {
             return new WindowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of windowsSetting objects and their properties for the signed in user.
+        /// Get windows from me
         /// </summary>
         public class WindowsRequestBuilderGetQueryParameters 
         {

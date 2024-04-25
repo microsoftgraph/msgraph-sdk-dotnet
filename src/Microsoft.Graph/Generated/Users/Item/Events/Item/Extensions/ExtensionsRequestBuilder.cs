@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Extensions {
         {
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the event. Nullable.
         /// </summary>
         /// <returns>A <see cref="ExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Extensions {
             return await RequestAdapter.SendAsync<ExtensionCollectionResponse>(requestInfo, ExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
+        /// Create new navigation property to extensions for users
         /// </summary>
         /// <returns>A <see cref="Extension"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Extensions {
             return await RequestAdapter.SendAsync<Extension>(requestInfo, Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the event. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Extensions {
             return requestInfo;
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+        /// Create new navigation property to extensions for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Extensions {
             return new ExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The collection of open extensions defined for the event. Nullable.
         /// </summary>
         public class ExtensionsRequestBuilderGetQueryParameters 
         {

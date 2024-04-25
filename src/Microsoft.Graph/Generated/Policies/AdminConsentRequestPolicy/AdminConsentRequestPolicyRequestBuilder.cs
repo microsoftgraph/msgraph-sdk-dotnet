@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an adminConsentRequestPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0" />
+        /// The policy by which consent requests are created and managed for the entire tenant.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdminConsentRequestPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AdminConsentRequestPolicy>(requestInfo, Microsoft.Graph.Models.AdminConsentRequestPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an adminConsentRequestPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property adminConsentRequestPolicy in policies
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.AdminConsentRequestPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an adminConsentRequestPolicy object.
+        /// The policy by which consent requests are created and managed for the entire tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an adminConsentRequestPolicy object.
+        /// Update the navigation property adminConsentRequestPolicy in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Policies.AdminConsentRequestPolicy {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an adminConsentRequestPolicy object.
+        /// The policy by which consent requests are created and managed for the entire tenant.
         /// </summary>
         public class AdminConsentRequestPolicyRequestBuilderGetQueryParameters 
         {

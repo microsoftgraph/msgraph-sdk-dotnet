@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
         {
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-list?view=graph-rest-1.0" />
+        /// The list of detected apps associated with a device.
         /// </summary>
         /// <returns>A <see cref="DetectedAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
             return await RequestAdapter.SendAsync<DetectedAppCollectionResponse>(requestInfo, DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new detectedApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-create?view=graph-rest-1.0" />
+        /// Create new navigation property to detectedApps for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DetectedApp"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
             return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
+        /// The list of detected apps associated with a device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new detectedApp object.
+        /// Create new navigation property to detectedApps for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps {
             return new DetectedAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
+        /// The list of detected apps associated with a device.
         /// </summary>
         public class DetectedAppsRequestBuilderGetQueryParameters 
         {

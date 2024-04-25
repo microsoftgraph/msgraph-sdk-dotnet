@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DirectoryRoles.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory roles without having to perform a full read of the entire resource collection. See Using Delta Query for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DirectoryRoles.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory roles without having to perform a full read of the entire resource collection. See Using Delta Query for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.DirectoryRoles.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory roles without having to perform a full read of the entire resource collection. See Using Delta Query for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.DirectoryRoles.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created, updated, or deleted directory roles without having to perform a full read of the entire resource collection. See Using Delta Query for details.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

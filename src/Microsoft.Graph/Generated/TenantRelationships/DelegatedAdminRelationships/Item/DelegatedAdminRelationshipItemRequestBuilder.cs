@@ -50,8 +50,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
         {
         }
         /// <summary>
-        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0" />
+        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationship object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0" />
+        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it&apos;s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0" />
+        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
+        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationship object.
+        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a delegatedAdminRelationship object. You can only update a relationship when it&apos;s in the created status. However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
+        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
         {
         }
         /// <summary>
-        /// Read the properties of a delegatedAdminRelationship object.
+        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
         /// </summary>
         public class DelegatedAdminRelationshipItemRequestBuilderGetQueryParameters 
         {

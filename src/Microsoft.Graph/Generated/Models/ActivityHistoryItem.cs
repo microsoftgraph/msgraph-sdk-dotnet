@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ActivityHistoryItem : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
         public int? ActiveDurationSeconds {

@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
         {
         }
         /// <summary>
-        /// Remove (unpin) a tab from the specified chat. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0" />
+        /// Delete navigation property tabs for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0" />
+        /// A collection of all the tabs in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="TeamsTab"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0" />
+        /// Update the navigation property tabs in me
         /// </summary>
         /// <returns>A <see cref="TeamsTab"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove (unpin) a tab from the specified chat. 
+        /// Delete navigation property tabs for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat. 
+        /// A collection of all the tabs in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+        /// Update the navigation property tabs in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Tabs.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified tab in a chat. 
+        /// A collection of all the tabs in the chat. Nullable.
         /// </summary>
         public class TeamsTabItemRequestBuilderGetQueryParameters 
         {

@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AccessReviewHistoryDecisionFilter
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "approve")]
+        #pragma warning disable CS1591
         Approve,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deny")]
+        #pragma warning disable CS1591
         Deny,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notReviewed")]
+        #pragma warning disable CS1591
         NotReviewed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dontKnow")]
+        #pragma warning disable CS1591
         DontKnow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notNotified")]
+        #pragma warning disable CS1591
         NotNotified,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

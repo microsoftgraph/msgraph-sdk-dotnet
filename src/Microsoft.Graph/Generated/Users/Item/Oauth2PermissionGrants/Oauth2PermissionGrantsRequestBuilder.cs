@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants {
         {
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0" />
+        /// Get oauth2PermissionGrants from users
         /// </summary>
         /// <returns>A <see cref="OAuth2PermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants {
             return await RequestAdapter.SendAsync<OAuth2PermissionGrantCollectionResponse>(requestInfo, OAuth2PermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
+        /// Get oauth2PermissionGrants from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Users.Item.Oauth2PermissionGrants {
             return new Oauth2PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
+        /// Get oauth2PermissionGrants from users
         /// </summary>
         public class Oauth2PermissionGrantsRequestBuilderGetQueryParameters 
         {

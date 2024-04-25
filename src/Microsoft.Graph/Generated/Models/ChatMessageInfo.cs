@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ChatMessageInfo : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn&apos;t return @mentions and attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

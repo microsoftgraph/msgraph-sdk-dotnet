@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
         {
         }
         /// <summary>
-        /// Deletes a iosVppEBookAssignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property assignments for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBookAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-get?view=graph-rest-1.0" />
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <returns>A <see cref="ManagedEBookAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return await RequestAdapter.SendAsync<ManagedEBookAssignment>(requestInfo, ManagedEBookAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedEBookAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-update?view=graph-rest-1.0" />
+        /// Update the navigation property assignments in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedEBookAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return await RequestAdapter.SendAsync<ManagedEBookAssignment>(requestInfo, ManagedEBookAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a iosVppEBookAssignment.
+        /// Delete navigation property assignments for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBookAssignment object.
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedEBookAssignment object.
+        /// Update the navigation property assignments in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.Ite
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBookAssignment object.
+        /// The list of assignments for this eBook.
         /// </summary>
         public class ManagedEBookAssignmentItemRequestBuilderGetQueryParameters 
         {

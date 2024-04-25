@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-list-series?view=graph-rest-1.0" />
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookChartSeriesCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,8 +55,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartSeriesCollectionResponse>(requestInfo, WorkbookChartSeriesCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new ChartSeries.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-post-series?view=graph-rest-1.0" />
+        /// Create new navigation property to series for drives
         /// </summary>
         /// <returns>A <see cref="WorkbookChartSeries"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartSeries>(requestInfo, WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects.
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new ChartSeries.
+        /// Create new navigation property to series for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return new SeriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of chartseries objects.
+        /// Represents either a single series or collection of series in the chart. Read-only.
         /// </summary>
         public class SeriesRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
         {
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-sslcertificates?view=graph-rest-1.0" />
+        /// The hostSslCertificates that are associated with this host.
         /// </summary>
         /// <returns>A <see cref="HostSslCertificateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
             return await RequestAdapter.SendAsync<HostSslCertificateCollectionResponse>(requestInfo, HostSslCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property.
+        /// The hostSslCertificates that are associated with this host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates
             return new SslCertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property.
+        /// The hostSslCertificates that are associated with this host.
         /// </summary>
         public class SslCertificatesRequestBuilderGetQueryParameters 
         {

@@ -62,8 +62,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0" />
+        /// Requests for role eligibilities for principals through PIM.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,8 +85,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequestCollectionResponse>(requestInfo, UnifiedRoleEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0" />
+        /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequest>(requestInfo, UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.
+        /// Requests for role eligibilities for principals through PIM.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +129,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return requestInfo;
         }
         /// <summary>
-        /// In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+        /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +160,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleEligibilitySc
             return new RoleEligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.
+        /// Requests for role eligibilities for principals through PIM.
         /// </summary>
         public class RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         {
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0" />
+        /// Represents queries within the review set.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewSetQueryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQueryCollectionResponse>(requestInfo, EdiscoveryReviewSetQueryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryReviewSetQuery object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0" />
+        /// Create new navigation property to queries for security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewSetQuery"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQuery>(requestInfo, EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
+        /// Represents queries within the review set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryReviewSetQuery object.
+        /// Create new navigation property to queries for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
             return new QueriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of queries associated with an eDiscovery review set.
+        /// Represents queries within the review set.
         /// </summary>
         public class QueriesRequestBuilderGetQueryParameters 
         {

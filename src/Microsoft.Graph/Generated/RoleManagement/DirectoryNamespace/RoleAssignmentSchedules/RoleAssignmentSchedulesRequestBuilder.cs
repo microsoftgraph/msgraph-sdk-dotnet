@@ -62,8 +62,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0" />
+        /// Schedules for active role assignment operations.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
+        /// Schedules for active role assignment operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +160,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentSchedu
             return new RoleAssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
+        /// Schedules for active role assignment operations.
         /// </summary>
         public class RoleAssignmentSchedulesRequestBuilderGetQueryParameters 
         {

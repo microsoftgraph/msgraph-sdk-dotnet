@@ -70,7 +70,6 @@ namespace Microsoft.Graph.Me.RegisteredDevices {
         }
         /// <summary>
         /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

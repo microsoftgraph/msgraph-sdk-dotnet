@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AppLogDecryptionAlgorithm
+    #pragma warning restore CS1591
     {
         /// <summary>decrypting using Aes256.</summary>
         [EnumMember(Value = "aes256")]

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum PageLayoutType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "microsoftReserved")]
+        #pragma warning disable CS1591
         MicrosoftReserved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "article")]
+        #pragma warning disable CS1591
         Article,
+        #pragma warning restore CS1591
         [EnumMember(Value = "home")]
+        #pragma warning disable CS1591
         Home,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

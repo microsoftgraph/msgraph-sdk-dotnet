@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
         {
         }
         /// <summary>
-        /// Deletes a enrollmentConfigurationAssignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property assignments for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the enrollmentConfigurationAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-get?view=graph-rest-1.0" />
+        /// The list of group assignments for the device configuration profile
         /// </summary>
         /// <returns>A <see cref="EnrollmentConfigurationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
             return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a enrollmentConfigurationAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-update?view=graph-rest-1.0" />
+        /// Update the navigation property assignments in deviceManagement
         /// </summary>
         /// <returns>A <see cref="EnrollmentConfigurationAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
             return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a enrollmentConfigurationAssignment.
+        /// Delete navigation property assignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the enrollmentConfigurationAssignment object.
+        /// The list of group assignments for the device configuration profile
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a enrollmentConfigurationAssignment object.
+        /// Update the navigation property assignments in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
         {
         }
         /// <summary>
-        /// Read properties and relationships of the enrollmentConfigurationAssignment object.
+        /// The list of group assignments for the device configuration profile
         /// </summary>
         public class EnrollmentConfigurationAssignmentItemRequestBuilderGetQueryParameters 
         {

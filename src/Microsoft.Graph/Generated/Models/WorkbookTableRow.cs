@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WorkbookTableRow : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index {

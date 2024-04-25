@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Excludes {
         {
         }
         /// <summary>
-        /// Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0" />
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <returns>A <see cref="PermissionGrantConditionSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Excludes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSetCollectionResponse>(requestInfo, PermissionGrantConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0" />
+        /// Create new navigation property to excludes for policies
         /// </summary>
         /// <returns>A <see cref="PermissionGrantConditionSet"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Excludes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Excludes {
             return requestInfo;
         }
         /// <summary>
-        /// Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
+        /// Create new navigation property to excludes for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Excludes {
             return new ExcludesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         public class ExcludesRequestBuilderGetQueryParameters 
         {

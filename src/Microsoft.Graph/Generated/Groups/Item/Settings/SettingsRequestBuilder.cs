@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Settings {
         {
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0" />
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         /// <returns>A <see cref="GroupSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Settings {
             return await RequestAdapter.SendAsync<GroupSettingCollectionResponse>(requestInfo, GroupSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0" />
+        /// Create new navigation property to settings for groups
         /// </summary>
         /// <returns>A <see cref="GroupSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Settings {
             return await RequestAdapter.SendAsync<GroupSetting>(requestInfo, GroupSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+        /// Create new navigation property to settings for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Settings {
             return new SettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tenant-level or group-specific group settings objects.
+        /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners {
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementPartner objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-list?view=graph-rest-1.0" />
+        /// The list of Device Management Partners configured by the tenant.
         /// </summary>
         /// <returns>A <see cref="DeviceManagementPartnerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners {
             return await RequestAdapter.SendAsync<DeviceManagementPartnerCollectionResponse>(requestInfo, DeviceManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceManagementPartner object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-create?view=graph-rest-1.0" />
+        /// Create new navigation property to deviceManagementPartners for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceManagementPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners {
             return await RequestAdapter.SendAsync<DeviceManagementPartner>(requestInfo, DeviceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementPartner objects.
+        /// The list of Device Management Partners configured by the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceManagementPartner object.
+        /// Create new navigation property to deviceManagementPartners for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceManagementPartners {
             return new DeviceManagementPartnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceManagementPartner objects.
+        /// The list of Device Management Partners configured by the tenant.
         /// </summary>
         public class DeviceManagementPartnersRequestBuilderGetQueryParameters 
         {

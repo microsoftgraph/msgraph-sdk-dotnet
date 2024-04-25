@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Sections {
         {
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0" />
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnenoteSectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Sections {
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Sections {
             return new SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters 
         {

@@ -52,7 +52,6 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView {
         }
         /// <summary>
         /// The set of appointments of this business in a specified date range. Read-only. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingAppointmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
         {
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0" />
+        /// The instances of times off in the schedule.
         /// </summary>
         /// <returns>A <see cref="TimeOffCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
             return await RequestAdapter.SendAsync<TimeOffCollectionResponse>(requestInfo, TimeOffCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new timeOff instance in a schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0" />
+        /// Create new navigation property to timesOff for groups
         /// </summary>
         /// <returns>A <see cref="TimeOff"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule.
+        /// The instances of times off in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new timeOff instance in a schedule.
+        /// Create new navigation property to timesOff for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimesOff {
             return new TimesOffRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of timeOff instances in a schedule.
+        /// The instances of times off in the schedule.
         /// </summary>
         public class TimesOffRequestBuilderGetQueryParameters 
         {

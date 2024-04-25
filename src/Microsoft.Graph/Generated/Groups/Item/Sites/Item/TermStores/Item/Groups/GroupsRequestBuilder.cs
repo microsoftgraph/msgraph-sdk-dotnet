@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups {
         {
         }
         /// <summary>
-        /// Get a list of group objects in a term store.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-1.0" />
+        /// Collection of all groups available in the term store.
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new group object in a term store.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-1.0" />
+        /// Create new navigation property to groups for groups
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermStore.Group"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of group objects in a term store.
+        /// Collection of all groups available in the term store.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new group object in a term store.
+        /// Create new navigation property to groups for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.TermStores.Item.Groups {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of group objects in a term store.
+        /// Collection of all groups available in the term store.
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters 
         {

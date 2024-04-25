@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances {
         {
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowssetting-list-instances?view=graph-rest-1.0" />
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         /// <returns>A <see cref="WindowsSettingInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances {
             return await RequestAdapter.SendAsync<WindowsSettingInstance>(requestInfo, WindowsSettingInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item.Instances {
             return new InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of windowsSettingInstance objects and their properties for the signed-in user.
+        /// A collection of setting values for a given windowsSetting.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters 
         {

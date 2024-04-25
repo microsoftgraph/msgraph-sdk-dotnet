@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class CallStartedEventMessageDetail : EventMessageDetail, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
         public TeamworkCallEventType? CallEventType {

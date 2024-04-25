@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookPivotTable object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbookpivottable-get?view=graph-rest-1.0" />
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         /// <returns>A <see cref="WorkbookPivotTable"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookPivotTable object.
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookPivotTable object.
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         public class WorkbookPivotTableItemRequestBuilderGetQueryParameters 
         {

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes {
         {
         }
         /// <summary>
-        /// Invoke function availableProviderTypes
+        /// Retrieves all identity provider types available in a directory.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AvailableProviderTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes {
             return await RequestAdapter.SendAsync<AvailableProviderTypesGetResponse>(requestInfo, AvailableProviderTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function availableProviderTypes
+        /// Retrieves all identity provider types available in a directory.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list-availableprovidertypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AvailableProviderTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes {
             return await RequestAdapter.SendAsync<AvailableProviderTypesResponse>(requestInfo, AvailableProviderTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function availableProviderTypes
+        /// Retrieves all identity provider types available in a directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes {
             return new AvailableProviderTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function availableProviderTypes
+        /// Retrieves all identity provider types available in a directory.
         /// </summary>
         public class AvailableProviderTypesRequestBuilderGetQueryParameters 
         {

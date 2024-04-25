@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivitiesWithExte
         {
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0" />
+        /// Get learningCourseActivities from me
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +57,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivitiesWithExte
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Me.EmployeeExperience.LearningCourseActivitiesWithExte
             return new LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Get learningCourseActivities from me
         /// </summary>
         public class LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderGetQueryParameters 
         {

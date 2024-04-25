@@ -51,8 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         {
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0" />
+        /// Access package resources in this catalog.
         /// </summary>
         /// <returns>A <see cref="AccessPackageResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<AccessPackageResource>(requestInfo, AccessPackageResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
+        /// Access package resources in this catalog.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
+        /// Access package resources in this catalog.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
         {
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0" />
+        /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can&apos;t create custom languages in self-service sign-up user flows.
         /// </summary>
         /// <returns>A <see cref="UserFlowLanguageConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
             return await RequestAdapter.SendAsync<UserFlowLanguageConfiguration>(requestInfo, UserFlowLanguageConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
+        /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can&apos;t create custom languages in self-service sign-up user flows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.Languages {
             return new LanguagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of languages supported for customization in a B2X user flow.
+        /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can&apos;t create custom languages in self-service sign-up user flows.
         /// </summary>
         public class LanguagesRequestBuilderGetQueryParameters 
         {

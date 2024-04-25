@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WindowsUpdateScheduledInstall : WindowsUpdateInstallScheduleType, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Possible values for a weekly schedule.</summary>
         public WeeklySchedule? ScheduledInstallDay {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceUserStatus objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-list?view=graph-rest-1.0" />
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceUserStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatusCollectionResponse>(requestInfo, DeviceComplianceUserStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceComplianceUserStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-create?view=graph-rest-1.0" />
+        /// Create new navigation property to userStatuses for deviceManagement
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceUserStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatus>(requestInfo, DeviceComplianceUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceUserStatus objects.
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceComplianceUserStatus object.
+        /// Create new navigation property to userStatuses for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return new UserStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceComplianceUserStatus objects.
+        /// List of DeviceComplianceUserStatus.
         /// </summary>
         public class UserStatusesRequestBuilderGetQueryParameters 
         {

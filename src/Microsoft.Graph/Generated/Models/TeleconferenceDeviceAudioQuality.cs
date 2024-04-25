@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeleconferenceDeviceAudioQuality : TeleconferenceDeviceMediaQuality, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="TeleconferenceDeviceAudioQuality"/> and sets the default values.

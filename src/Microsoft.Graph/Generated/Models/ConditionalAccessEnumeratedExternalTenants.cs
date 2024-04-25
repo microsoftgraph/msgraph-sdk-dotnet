@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

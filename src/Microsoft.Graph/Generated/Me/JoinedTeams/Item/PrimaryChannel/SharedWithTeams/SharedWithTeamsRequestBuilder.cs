@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams {
         {
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0" />
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <returns>A <see cref="SharedWithChannelTeamInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams {
             return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams {
             return new SharedWithTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         public class SharedWithTeamsRequestBuilderGetQueryParameters 
         {

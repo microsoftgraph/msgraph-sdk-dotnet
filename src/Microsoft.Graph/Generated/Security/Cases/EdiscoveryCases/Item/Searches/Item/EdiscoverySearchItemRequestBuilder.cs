@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
         {
         }
         /// <summary>
-        /// Delete an ediscoverySearch object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-searches?view=graph-rest-1.0" />
+        /// Delete navigation property searches for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,8 +96,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoverySearch object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-get?view=graph-rest-1.0" />
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         /// <returns>A <see cref="EdiscoverySearch"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,8 +119,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
             return await RequestAdapter.SendAsync<EdiscoverySearch>(requestInfo, EdiscoverySearch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoverySearch object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-update?view=graph-rest-1.0" />
+        /// Update the navigation property searches in security
         /// </summary>
         /// <returns>A <see cref="EdiscoverySearch"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +144,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
             return await RequestAdapter.SendAsync<EdiscoverySearch>(requestInfo, EdiscoverySearch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an ediscoverySearch object.
+        /// Delete navigation property searches for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +163,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoverySearch object.
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +182,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoverySearch object.
+        /// Update the navigation property searches in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -223,7 +220,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoverySearch object.
+        /// Returns a list of eDiscoverySearch objects associated with this case.
         /// </summary>
         public class EdiscoverySearchItemRequestBuilderGetQueryParameters 
         {

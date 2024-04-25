@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.TermStore {
+    #pragma warning disable CS1591
     public class Group : Microsoft.Graph.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Date and time of the group creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {

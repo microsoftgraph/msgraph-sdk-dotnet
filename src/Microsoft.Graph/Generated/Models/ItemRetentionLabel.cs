@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ItemRetentionLabel : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</summary>
         public bool? IsLabelAppliedExplicitly {

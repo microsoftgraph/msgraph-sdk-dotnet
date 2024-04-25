@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypes
         {
         }
         /// <summary>
-        /// Invoke function getApplicableContentTypesForList
+        /// Get site contentTypes that can be added to a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypes
             return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdGetResponse>(requestInfo, GetApplicableContentTypesForListWithListIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getApplicableContentTypesForList
+        /// Get site contentTypes that can be added to a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypes
             return await RequestAdapter.SendAsync<GetApplicableContentTypesForListWithListIdResponse>(requestInfo, GetApplicableContentTypesForListWithListIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getApplicableContentTypesForList
+        /// Get site contentTypes that can be added to a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypes
             return new GetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getApplicableContentTypesForList
+        /// Get site contentTypes that can be added to a list.
         /// </summary>
         public class GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters 
         {

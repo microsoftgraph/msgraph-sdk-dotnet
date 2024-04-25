@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites 
         {
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0" />
+        /// The collection of the sub-sites under this site.
         /// </summary>
         /// <returns>A <see cref="SiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites 
             return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
+        /// The collection of the sub-sites under this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetByPathWithPath1.Sites 
             return new SitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of subsites defined for a [site][].
+        /// The collection of the sub-sites under this site.
         /// </summary>
         public class SitesRequestBuilderGetQueryParameters 
         {

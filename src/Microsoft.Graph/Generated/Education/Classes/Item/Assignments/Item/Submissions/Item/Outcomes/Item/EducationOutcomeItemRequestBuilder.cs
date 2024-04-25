@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
         {
         }
         /// <summary>
-        /// Delete a feedback resource from a submission. This can only be done by a teacher.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationfeedbackresourceoutcome-delete?view=graph-rest-1.0" />
+        /// Delete navigation property outcomes for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, EducationOutcome.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationOutcome object. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationoutcome-update?view=graph-rest-1.0" />
+        /// Update the navigation property outcomes in education
         /// </summary>
         /// <returns>A <see cref="EducationOutcome"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, EducationOutcome.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a feedback resource from a submission. This can only be done by a teacher.
+        /// Delete navigation property outcomes for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Submissions.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationOutcome object. Only teachers can perform this operation.
+        /// Update the navigation property outcomes in education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.PermissionGrants {
         {
         }
         /// <summary>
-        /// List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding resource-specific access that each app has.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-permissiongrants?view=graph-rest-1.0" />
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         /// <returns>A <see cref="ResourceSpecificPermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.PermissionGrants {
             return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding resource-specific access that each app has.
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.PermissionGrants {
             return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding resource-specific access that each app has.
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters 
         {

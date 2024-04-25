@@ -2,47 +2,89 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum PrintFinishing
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "staple")]
+        #pragma warning disable CS1591
         Staple,
+        #pragma warning restore CS1591
         [EnumMember(Value = "punch")]
+        #pragma warning disable CS1591
         Punch,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cover")]
+        #pragma warning disable CS1591
         Cover,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bind")]
+        #pragma warning disable CS1591
         Bind,
+        #pragma warning restore CS1591
         [EnumMember(Value = "saddleStitch")]
+        #pragma warning disable CS1591
         SaddleStitch,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stitchEdge")]
+        #pragma warning disable CS1591
         StitchEdge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleTopLeft")]
+        #pragma warning disable CS1591
         StapleTopLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleBottomLeft")]
+        #pragma warning disable CS1591
         StapleBottomLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleTopRight")]
+        #pragma warning disable CS1591
         StapleTopRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleBottomRight")]
+        #pragma warning disable CS1591
         StapleBottomRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stitchLeftEdge")]
+        #pragma warning disable CS1591
         StitchLeftEdge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stitchTopEdge")]
+        #pragma warning disable CS1591
         StitchTopEdge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stitchRightEdge")]
+        #pragma warning disable CS1591
         StitchRightEdge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stitchBottomEdge")]
+        #pragma warning disable CS1591
         StitchBottomEdge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleDualLeft")]
+        #pragma warning disable CS1591
         StapleDualLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleDualTop")]
+        #pragma warning disable CS1591
         StapleDualTop,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleDualRight")]
+        #pragma warning disable CS1591
         StapleDualRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stapleDualBottom")]
+        #pragma warning disable CS1591
         StapleDualBottom,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

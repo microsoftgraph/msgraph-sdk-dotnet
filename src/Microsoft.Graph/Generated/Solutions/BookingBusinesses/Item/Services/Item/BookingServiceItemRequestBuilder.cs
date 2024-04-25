@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
         {
         }
         /// <summary>
-        /// Delete a bookingService object in the specified bookingBusiness.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0" />
+        /// Delete navigation property services for solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0" />
+        /// All the services offered by this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="BookingService"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
             return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0" />
+        /// Update the navigation property services in solutions
         /// </summary>
         /// <returns>A <see cref="BookingService"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
             return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a bookingService object in the specified bookingBusiness.
+        /// Delete navigation property services for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+        /// All the services offered by this business. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+        /// Update the navigation property services in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Services.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+        /// All the services offered by this business. Read-only. Nullable.
         /// </summary>
         public class BookingServiceItemRequestBuilderGetQueryParameters 
         {

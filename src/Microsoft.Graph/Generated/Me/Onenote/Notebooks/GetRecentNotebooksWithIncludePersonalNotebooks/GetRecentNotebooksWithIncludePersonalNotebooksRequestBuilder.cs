@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePers
         {
         }
         /// <summary>
-        /// Invoke function getRecentNotebooks
+        /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetRecentNotebooksWithIncludePersonalNotebooksGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePers
             return await RequestAdapter.SendAsync<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse>(requestInfo, GetRecentNotebooksWithIncludePersonalNotebooksGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getRecentNotebooks
+        /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetRecentNotebooksWithIncludePersonalNotebooksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePers
             return await RequestAdapter.SendAsync<GetRecentNotebooksWithIncludePersonalNotebooksResponse>(requestInfo, GetRecentNotebooksWithIncludePersonalNotebooksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getRecentNotebooks
+        /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePers
             return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getRecentNotebooks
+        /// Get a list of recentNotebook instances that have been accessed by the signed-in user.
         /// </summary>
         public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters 
         {

@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars {
         {
         }
         /// <summary>
-        /// Get the list of all virtualEventWebinar objects created in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0" />
+        /// Get webinars from solutions
         /// </summary>
         /// <returns>A <see cref="VirtualEventWebinarCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +123,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars {
             return await RequestAdapter.SendAsync<VirtualEventWebinar>(requestInfo, VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of all virtualEventWebinar objects created in the tenant.
+        /// Get webinars from solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +173,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars {
             return new WebinarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of all virtualEventWebinar objects created in the tenant.
+        /// Get webinars from solutions
         /// </summary>
         public class WebinarsRequestBuilderGetQueryParameters 
         {

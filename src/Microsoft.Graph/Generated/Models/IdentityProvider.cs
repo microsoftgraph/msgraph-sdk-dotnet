@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class IdentityProvider : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

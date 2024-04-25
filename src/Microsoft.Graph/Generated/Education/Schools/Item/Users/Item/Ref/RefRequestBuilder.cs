@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Item.Ref {
         {
         }
         /// <summary>
-        /// Delete a user from a school.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delete-users?view=graph-rest-1.0" />
+        /// Delete ref of navigation property users for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Users.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a user from a school.
+        /// Delete ref of navigation property users for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
         {
         }
         /// <summary>
-        /// Deletes the row from the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0" />
+        /// Delete navigation property rows for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0" />
+        /// Represents a collection of all the rows in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookTableRow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of tablerow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0" />
+        /// Update the navigation property rows in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookTableRow"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return await RequestAdapter.SendAsync<WorkbookTableRow>(requestInfo, WorkbookTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the row from the table.
+        /// Delete navigation property rows for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object.
+        /// Represents a collection of all the rows in the table. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of tablerow object.
+        /// Update the navigation property rows in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item 
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of tablerow object.
+        /// Represents a collection of all the rows in the table. Read-only.
         /// </summary>
         public class WorkbookTableRowItemRequestBuilderGetQueryParameters 
         {

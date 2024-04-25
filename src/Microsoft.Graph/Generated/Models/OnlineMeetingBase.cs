@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class OnlineMeetingBase : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories {
         {
         }
         /// <summary>
-        /// Get all the categories that have been defined for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0" />
+        /// A list of categories defined for the user.
         /// </summary>
         /// <returns>A <see cref="OutlookCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategoryCollectionResponse>(requestInfo, OutlookCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0" />
+        /// Create new navigation property to masterCategories for users
         /// </summary>
         /// <returns>A <see cref="OutlookCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the categories that have been defined for a user.
+        /// A list of categories defined for the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// Create new navigation property to masterCategories for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.MasterCategories {
             return new MasterCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the categories that have been defined for a user.
+        /// A list of categories defined for the user.
         /// </summary>
         public class MasterCategoriesRequestBuilderGetQueryParameters 
         {

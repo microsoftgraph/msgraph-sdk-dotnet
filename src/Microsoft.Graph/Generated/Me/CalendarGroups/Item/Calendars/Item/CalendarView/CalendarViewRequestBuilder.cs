@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView {
         }
         /// <summary>
         /// The calendar view for the calendar. Navigation property. Read-only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

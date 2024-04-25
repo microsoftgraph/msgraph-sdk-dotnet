@@ -84,8 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a onenoteSection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0" />
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnenoteSection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a onenoteSection object.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.Groups.Item.Onenote.Sections.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a onenoteSection object.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         public class OnenoteSectionItemRequestBuilderGetQueryParameters 
         {

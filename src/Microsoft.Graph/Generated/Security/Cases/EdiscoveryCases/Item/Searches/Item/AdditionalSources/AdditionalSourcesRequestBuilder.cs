@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addi
         {
         }
         /// <summary>
-        /// Get the list of additional sources associated with an eDiscovery search.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0" />
+        /// Adds an additional source to the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="DataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addi
             return await RequestAdapter.SendAsync<DataSourceCollectionResponse>(requestInfo, DataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new additional source associated with an eDiscovery search.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0" />
+        /// Create new navigation property to additionalSources for security
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.DataSource"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addi
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.DataSource>(requestInfo, Microsoft.Graph.Models.Security.DataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of additional sources associated with an eDiscovery search.
+        /// Adds an additional source to the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addi
             return requestInfo;
         }
         /// <summary>
-        /// Create a new additional source associated with an eDiscovery search.
+        /// Create new navigation property to additionalSources for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addi
             return new AdditionalSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of additional sources associated with an eDiscovery search.
+        /// Adds an additional source to the eDiscovery search.
         /// </summary>
         public class AdditionalSourcesRequestBuilderGetQueryParameters 
         {

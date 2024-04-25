@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties {
         {
         }
         /// <summary>
-        /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0" />
+        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
         /// </summary>
         /// <returns>A <see cref="ProfileCardPropertyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties {
             return await RequestAdapter.SendAsync<ProfileCardPropertyCollectionResponse>(requestInfo, ProfileCardPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0" />
+        /// Create new navigation property to profileCardProperties for admin
         /// </summary>
         /// <returns>A <see cref="ProfileCardProperty"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties {
             return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API.
+        /// Create new navigation property to profileCardProperties for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Admin.People.ProfileCardProperties {
             return new ProfileCardPropertiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
         /// </summary>
         public class ProfileCardPropertiesRequestBuilderGetQueryParameters 
         {

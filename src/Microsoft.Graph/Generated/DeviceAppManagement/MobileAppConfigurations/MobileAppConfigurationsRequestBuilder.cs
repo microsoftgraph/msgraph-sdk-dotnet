@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0" />
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosMobileAppConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-create?view=graph-rest-1.0" />
+        /// Create new navigation property to mobileAppConfigurations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosMobileAppConfiguration object.
+        /// Create new navigation property to mobileAppConfigurations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations {
             return new MobileAppConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         public class MobileAppConfigurationsRequestBuilderGetQueryParameters 
         {

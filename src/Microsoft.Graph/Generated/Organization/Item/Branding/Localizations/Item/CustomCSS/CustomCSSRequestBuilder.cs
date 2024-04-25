@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.CustomCS
         }
         /// <summary>
         /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

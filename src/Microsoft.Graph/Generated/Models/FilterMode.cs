@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum FilterMode
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "include")]
+        #pragma warning disable CS1591
         Include,
+        #pragma warning restore CS1591
         [EnumMember(Value = "exclude")]
+        #pragma warning disable CS1591
         Exclude,
+        #pragma warning restore CS1591
     }
 }

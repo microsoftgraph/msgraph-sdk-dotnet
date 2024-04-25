@@ -86,8 +86,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
         {
         }
         /// <summary>
-        /// Delete an ediscoveryCase object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0" />
+        /// Delete navigation property ediscoveryCases for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,8 +108,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCase object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0" />
+        /// Get ediscoveryCases from security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,8 +131,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
             return await RequestAdapter.SendAsync<EdiscoveryCase>(requestInfo, EdiscoveryCase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an ediscoveryCase object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0" />
+        /// Update the navigation property ediscoveryCases in security
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCase"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +156,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
             return await RequestAdapter.SendAsync<EdiscoveryCase>(requestInfo, EdiscoveryCase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an ediscoveryCase object.
+        /// Delete navigation property ediscoveryCases for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +175,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCase object.
+        /// Get ediscoveryCases from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +194,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an ediscoveryCase object.
+        /// Update the navigation property ediscoveryCases in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -235,7 +232,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryCase object.
+        /// Get ediscoveryCases from security
         /// </summary>
         public class EdiscoveryCaseItemRequestBuilderGetQueryParameters 
         {

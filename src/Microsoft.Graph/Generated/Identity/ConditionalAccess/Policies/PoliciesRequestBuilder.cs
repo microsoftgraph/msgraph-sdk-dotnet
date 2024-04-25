@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies {
         {
         }
         /// <summary>
-        /// Retrieve a list of conditionalAccessPolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-policies?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies {
             return await RequestAdapter.SendAsync<ConditionalAccessPolicyCollectionResponse>(requestInfo, ConditionalAccessPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new conditionalAccessPolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0" />
+        /// Create new navigation property to policies for identity
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies {
             return await RequestAdapter.SendAsync<ConditionalAccessPolicy>(requestInfo, ConditionalAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of conditionalAccessPolicy objects.
+        /// Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new conditionalAccessPolicy.
+        /// Create new navigation property to policies for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Policies {
             return new PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of conditionalAccessPolicy objects.
+        /// Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
         /// </summary>
         public class PoliciesRequestBuilderGetQueryParameters 
         {

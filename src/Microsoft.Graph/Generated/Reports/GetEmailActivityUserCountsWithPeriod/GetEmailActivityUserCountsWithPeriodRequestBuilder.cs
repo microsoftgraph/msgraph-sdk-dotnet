@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Reports.GetEmailActivityUserCountsWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getEmailActivityUserCounts
+        /// Enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getemailactivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Reports.GetEmailActivityUserCountsWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEmailActivityUserCounts
+        /// Enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

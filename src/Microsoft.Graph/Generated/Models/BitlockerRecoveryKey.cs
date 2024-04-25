@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class BitlockerRecoveryKey : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.</summary>
         public DateTimeOffset? CreatedDateTime {

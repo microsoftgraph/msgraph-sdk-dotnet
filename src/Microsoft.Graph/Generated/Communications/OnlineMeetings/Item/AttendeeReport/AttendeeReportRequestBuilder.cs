@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.AttendeeReport {
         }
         /// <summary>
         /// Get attendeeReport for the navigation property onlineMeetings from communications
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.La
         {
         }
         /// <summary>
-        /// Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0" />
+        /// Operation entity that represents the latest indexing for the custodian.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryIndexOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.La
             return await RequestAdapter.SendAsync<EdiscoveryIndexOperation>(requestInfo, EdiscoveryIndexOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+        /// Operation entity that represents the latest indexing for the custodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.La
             return new LastIndexOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+        /// Operation entity that represents the latest indexing for the custodian.
         /// </summary>
         public class LastIndexOperationRequestBuilderGetQueryParameters 
         {

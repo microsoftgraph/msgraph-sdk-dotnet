@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a hostPort object.
+        /// Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="HostPortCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts {
             return await RequestAdapter.SendAsync<HostPort>(requestInfo, HostPort.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostPort object.
+        /// Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostPorts {
             return new HostPortsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a hostPort object.
+        /// Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
         /// </summary>
         public class HostPortsRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
         {
         }
         /// <summary>
-        /// Get the list of custodial data sources associated with an eDiscovery search.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0" />
+        /// Custodian sources that are included in the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="DataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
             return await RequestAdapter.SendAsync<DataSourceCollectionResponse>(requestInfo, DataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of custodial data sources associated with an eDiscovery search.
+        /// Custodian sources that are included in the eDiscovery search.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Cust
             return new CustodianSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of custodial data sources associated with an eDiscovery search.
+        /// Custodian sources that are included in the eDiscovery search.
         /// </summary>
         public class CustodianSourcesRequestBuilderGetQueryParameters 
         {

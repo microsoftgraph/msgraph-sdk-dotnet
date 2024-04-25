@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class OrgContact : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

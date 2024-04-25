@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WindowsSettingInstance : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Set by the server. Represents the dateTime in UTC when the object was created on the server.</summary>
         public DateTimeOffset? CreatedDateTime {

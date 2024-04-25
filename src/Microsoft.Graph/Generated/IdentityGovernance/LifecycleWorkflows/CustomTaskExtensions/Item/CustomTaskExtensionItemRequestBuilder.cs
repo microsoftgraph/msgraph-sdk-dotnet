@@ -44,8 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
         {
         }
         /// <summary>
-        /// Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-delete?view=graph-rest-1.0" />
+        /// Delete navigation property customTaskExtensions for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a customTaskExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-get?view=graph-rest-1.0" />
+        /// The customTaskExtension instance.
         /// </summary>
         /// <returns>A <see cref="CustomTaskExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return await RequestAdapter.SendAsync<CustomTaskExtension>(requestInfo, CustomTaskExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a customTaskExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-update?view=graph-rest-1.0" />
+        /// Update the navigation property customTaskExtensions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="CustomTaskExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return await RequestAdapter.SendAsync<CustomTaskExtension>(requestInfo, CustomTaskExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+        /// Delete navigation property customTaskExtensions for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a customTaskExtension object.
+        /// The customTaskExtension instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a customTaskExtension object.
+        /// Update the navigation property customTaskExtensions in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a customTaskExtension object.
+        /// The customTaskExtension instance.
         /// </summary>
         public class CustomTaskExtensionItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="HostCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Host>(requestInfo, Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts {
             return new HostsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
         /// </summary>
         public class HostsRequestBuilderGetQueryParameters 
         {

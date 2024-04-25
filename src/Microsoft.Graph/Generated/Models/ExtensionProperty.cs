@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ExtensionProperty : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

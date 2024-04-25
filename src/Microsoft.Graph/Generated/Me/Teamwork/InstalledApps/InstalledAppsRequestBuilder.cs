@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
         {
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0" />
+        /// The apps installed in the personal scope of this user.
         /// </summary>
         /// <returns>A <see cref="UserScopeTeamsAppInstallationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallationCollectionResponse>(requestInfo, UserScopeTeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Install an app in the personal scope of the specified user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0" />
+        /// Create new navigation property to installedApps for me
         /// </summary>
         /// <returns>A <see cref="UserScopeTeamsAppInstallation"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user.
+        /// The apps installed in the personal scope of this user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return requestInfo;
         }
         /// <summary>
-        /// Install an app in the personal scope of the specified user.
+        /// Create new navigation property to installedApps for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Me.Teamwork.InstalledApps {
             return new InstalledAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of apps installed in the personal scope of the specified user.
+        /// The apps installed in the personal scope of this user.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters 
         {

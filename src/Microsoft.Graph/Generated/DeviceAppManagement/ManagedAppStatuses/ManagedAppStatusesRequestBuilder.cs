@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses {
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedAppStatusRaw objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0" />
+        /// The managed app statuses.
         /// </summary>
         /// <returns>A <see cref="ManagedAppStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses {
             return await RequestAdapter.SendAsync<ManagedAppStatus>(requestInfo, ManagedAppStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppStatusRaw objects.
+        /// The managed app statuses.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppStatuses {
             return new ManagedAppStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppStatusRaw objects.
+        /// The managed app statuses.
         /// </summary>
         public class ManagedAppStatusesRequestBuilderGetQueryParameters 
         {

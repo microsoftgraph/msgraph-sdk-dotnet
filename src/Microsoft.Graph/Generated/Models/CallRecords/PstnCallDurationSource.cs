@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.CallRecords {
+    #pragma warning disable CS1591
     public enum PstnCallDurationSource
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "microsoft")]
+        #pragma warning disable CS1591
         Microsoft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "operator")]
+        #pragma warning disable CS1591
         Operator,
+        #pragma warning restore CS1591
     }
 }

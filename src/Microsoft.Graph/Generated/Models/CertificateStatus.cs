@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum CertificateStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "notProvisioned")]
+        #pragma warning disable CS1591
         NotProvisioned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "provisioned")]
+        #pragma warning disable CS1591
         Provisioned,
+        #pragma warning restore CS1591
     }
 }

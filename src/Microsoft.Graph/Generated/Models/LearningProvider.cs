@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class LearningProvider : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The display name that appears in Viva Learning. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

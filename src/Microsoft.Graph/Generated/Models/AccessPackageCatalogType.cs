@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AccessPackageCatalogType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "userManaged")]
+        #pragma warning disable CS1591
         UserManaged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "serviceDefault")]
+        #pragma warning disable CS1591
         ServiceDefault,
+        #pragma warning restore CS1591
         [EnumMember(Value = "serviceManaged")]
+        #pragma warning disable CS1591
         ServiceManaged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

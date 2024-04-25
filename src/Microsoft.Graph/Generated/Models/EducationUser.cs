@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class EducationUser : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.</summary>
         public bool? AccountEnabled {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups {
         {
         }
         /// <summary>
-        /// Get the list of schedulingGroups in this schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0" />
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         /// <returns>A <see cref="SchedulingGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups {
             return await RequestAdapter.SendAsync<SchedulingGroupCollectionResponse>(requestInfo, SchedulingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new schedulingGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0" />
+        /// Create new navigation property to schedulingGroups for me
         /// </summary>
         /// <returns>A <see cref="SchedulingGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups {
             return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of schedulingGroups in this schedule.
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new schedulingGroup.
+        /// Create new navigation property to schedulingGroups for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.SchedulingGroups {
             return new SchedulingGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of schedulingGroups in this schedule.
+        /// The logical grouping of users in the schedule (usually by role).
         /// </summary>
         public class SchedulingGroupsRequestBuilderGetQueryParameters 
         {

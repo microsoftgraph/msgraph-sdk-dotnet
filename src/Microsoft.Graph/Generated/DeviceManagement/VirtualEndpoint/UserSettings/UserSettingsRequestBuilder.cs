@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings {
         {
         }
         /// <summary>
-        /// Get a list of cloudPcUserSetting objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0" />
+        /// A collection of Cloud PC user settings.
         /// </summary>
         /// <returns>A <see cref="CloudPcUserSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings {
             return await RequestAdapter.SendAsync<CloudPcUserSettingCollectionResponse>(requestInfo, CloudPcUserSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcUserSetting object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0" />
+        /// Create new navigation property to userSettings for deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcUserSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings {
             return await RequestAdapter.SendAsync<CloudPcUserSetting>(requestInfo, CloudPcUserSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of cloudPcUserSetting objects and their properties.
+        /// A collection of Cloud PC user settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcUserSetting object.
+        /// Create new navigation property to userSettings for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings {
             return new UserSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of cloudPcUserSetting objects and their properties.
+        /// A collection of Cloud PC user settings.
         /// </summary>
         public class UserSettingsRequestBuilderGetQueryParameters 
         {

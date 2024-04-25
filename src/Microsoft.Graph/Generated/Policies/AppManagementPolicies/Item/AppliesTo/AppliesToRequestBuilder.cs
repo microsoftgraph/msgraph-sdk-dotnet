@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
         {
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appmanagementpolicy-list-appliesto?view=graph-rest-1.0" />
+        /// Collection of applications and service principals to which the policy is applied.
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
+        /// Collection of applications and service principals to which the policy is applied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Policies.AppManagementPolicies.Item.AppliesTo {
             return new AppliesToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List application and service principal objects that are assigned an appManagementPolicy policy object.
+        /// Collection of applications and service principals to which the policy is applied.
         /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters 
         {

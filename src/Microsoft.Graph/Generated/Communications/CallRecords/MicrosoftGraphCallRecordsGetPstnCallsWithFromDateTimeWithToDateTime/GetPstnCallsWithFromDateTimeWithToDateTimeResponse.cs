@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime {
     [Obsolete("This class is obsolete. Use GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

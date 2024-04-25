@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a manifest object.
+        /// Represents metadata for the exported data.
         /// </summary>
         /// <returns>A <see cref="ManifestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests {
             return await RequestAdapter.SendAsync<Manifest>(requestInfo, Manifest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a manifest object.
+        /// Represents metadata for the exported data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests {
             return new ManifestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a manifest object.
+        /// Represents metadata for the exported data.
         /// </summary>
         public class ManifestsRequestBuilderGetQueryParameters 
         {

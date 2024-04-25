@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ChannelMembershipType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "standard")]
+        #pragma warning disable CS1591
         Standard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "private")]
+        #pragma warning disable CS1591
         Private,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "shared")]
+        #pragma warning disable CS1591
         Shared,
+        #pragma warning restore CS1591
     }
 }

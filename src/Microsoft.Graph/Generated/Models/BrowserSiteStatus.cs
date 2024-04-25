@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum BrowserSiteStatus
+    #pragma warning restore CS1591
     {
         /// <summary>A site that has been published</summary>
         [EnumMember(Value = "published")]

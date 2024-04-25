@@ -54,8 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentAp
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0" />
+        /// A collection of stages in the approval decision.
         /// </summary>
         /// <returns>A <see cref="ApprovalStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentAp
             return await RequestAdapter.SendAsync<ApprovalStage>(requestInfo, ApprovalStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Approve or deny an approvalStage object in an approval.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0" />
+        /// Update the navigation property stages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="ApprovalStage"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentAp
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
+        /// A collection of stages in the approval decision.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentAp
             return requestInfo;
         }
         /// <summary>
-        /// Approve or deny an approvalStage object in an approval.
+        /// Update the navigation property stages in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentAp
         {
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
+        /// A collection of stages in the approval decision.
         /// </summary>
         public class ApprovalStageItemRequestBuilderGetQueryParameters 
         {

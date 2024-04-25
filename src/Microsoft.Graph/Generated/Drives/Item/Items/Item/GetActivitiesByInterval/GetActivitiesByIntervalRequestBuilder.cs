@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval {
         {
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetActivitiesByIntervalGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval {
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalGetResponse>(requestInfo, GetActivitiesByIntervalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetActivitiesByIntervalResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval {
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalResponse>(requestInfo, GetActivitiesByIntervalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval {
             return new GetActivitiesByIntervalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// </summary>
         public class GetActivitiesByIntervalRequestBuilderGetQueryParameters 
         {

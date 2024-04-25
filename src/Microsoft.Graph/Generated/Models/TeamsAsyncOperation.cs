@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamsAsyncOperation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Number of times the operation was attempted before being marked successful or failed.</summary>
         public int? AttemptsCount {

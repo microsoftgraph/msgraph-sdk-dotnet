@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ServiceUpdateCategory
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "preventOrFixIssue")]
+        #pragma warning disable CS1591
         PreventOrFixIssue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "planForChange")]
+        #pragma warning disable CS1591
         PlanForChange,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stayInformed")]
+        #pragma warning disable CS1591
         StayInformed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

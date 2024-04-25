@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
         {
         }
         /// <summary>
-        /// Get a list of namedLocation objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified named locations.
         /// </summary>
         /// <returns>A <see cref="NamedLocationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return await RequestAdapter.SendAsync<NamedLocationCollectionResponse>(requestInfo, NamedLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0" />
+        /// Create new navigation property to namedLocations for identity
         /// </summary>
         /// <returns>A <see cref="NamedLocation"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of namedLocation objects.
+        /// Read-only. Nullable. Returns a collection of the specified named locations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+        /// Create new navigation property to namedLocations for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations {
             return new NamedLocationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of namedLocation objects.
+        /// Read-only. Nullable. Returns a collection of the specified named locations.
         /// </summary>
         public class NamedLocationsRequestBuilderGetQueryParameters 
         {

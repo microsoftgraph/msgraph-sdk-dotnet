@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Education.Schools.Delta {
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Education.Schools.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Education.Schools.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Education.Schools.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get newly created or updated schools without having to perform a full read of the entire school collection. See Use delta query for details.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters 
         {

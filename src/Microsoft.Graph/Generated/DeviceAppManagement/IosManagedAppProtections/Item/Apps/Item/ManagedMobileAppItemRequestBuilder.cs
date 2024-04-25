@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
         {
         }
         /// <summary>
-        /// Deletes a managedMobileApp.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-delete?view=graph-rest-1.0" />
+        /// Delete navigation property apps for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedMobileApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-get?view=graph-rest-1.0" />
+        /// List of apps to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="ManagedMobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return await RequestAdapter.SendAsync<ManagedMobileApp>(requestInfo, ManagedMobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedMobileApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-update?view=graph-rest-1.0" />
+        /// Update the navigation property apps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedMobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return await RequestAdapter.SendAsync<ManagedMobileApp>(requestInfo, ManagedMobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a managedMobileApp.
+        /// Delete navigation property apps for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedMobileApp object.
+        /// List of apps to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedMobileApp object.
+        /// Update the navigation property apps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedMobileApp object.
+        /// List of apps to which the policy is deployed.
         /// </summary>
         public class ManagedMobileAppItemRequestBuilderGetQueryParameters 
         {

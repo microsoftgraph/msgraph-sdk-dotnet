@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum AgreementAcceptanceState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "accepted")]
+        #pragma warning disable CS1591
         Accepted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "declined")]
+        #pragma warning disable CS1591
         Declined,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

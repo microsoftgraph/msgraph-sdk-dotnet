@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class ProfileCardProperty : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

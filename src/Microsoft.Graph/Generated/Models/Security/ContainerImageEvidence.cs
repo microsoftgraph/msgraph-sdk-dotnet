@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class ContainerImageEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The digest image entity, in case this is a tag image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

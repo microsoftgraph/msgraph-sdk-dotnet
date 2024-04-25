@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item {
         {
         }
         /// <summary>
-        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0" />
+        /// Delete navigation property participants for communications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a participant object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-1.0" />
+        /// Get participants from communications
         /// </summary>
         /// <returns>A <see cref="Participant"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +120,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item {
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
+        /// Delete navigation property participants for communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a participant object.
+        /// Get participants from communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -198,7 +196,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a participant object.
+        /// Get participants from communications
         /// </summary>
         public class ParticipantItemRequestBuilderGetQueryParameters 
         {

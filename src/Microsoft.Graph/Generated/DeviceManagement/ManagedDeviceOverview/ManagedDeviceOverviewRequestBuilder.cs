@@ -32,8 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-manageddeviceoverview-get?view=graph-rest-1.0" />
+        /// Device overview
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDeviceOverview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDeviceOverview>(requestInfo, Microsoft.Graph.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
+        /// Device overview
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDeviceOverview {
             return new ManagedDeviceOverviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceOverview object.
+        /// Device overview
         /// </summary>
         public class ManagedDeviceOverviewRequestBuilderGetQueryParameters 
         {

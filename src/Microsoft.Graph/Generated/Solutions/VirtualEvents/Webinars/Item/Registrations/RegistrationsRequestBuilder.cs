@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
         {
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-list-registrations?view=graph-rest-1.0" />
+        /// Registration records of the webinar.
         /// </summary>
         /// <returns>A <see cref="VirtualEventRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
             return await RequestAdapter.SendAsync<VirtualEventRegistration>(requestInfo, VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Registration records of the webinar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Registrations {
             return new RegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all registration records of a webinar.
+        /// Registration records of the webinar.
         /// </summary>
         public class RegistrationsRequestBuilderGetQueryParameters 
         {

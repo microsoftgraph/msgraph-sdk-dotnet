@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.SharedWithTeams.Item {
         {
         }
         /// <summary>
-        /// Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0" />
+        /// Delete navigation property sharedWithTeams for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.SharedWithTeams.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0" />
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <returns>A <see cref="SharedWithChannelTeamInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +114,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.SharedWithTeams.Item {
             return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
+        /// Delete navigation property sharedWithTeams for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.SharedWithTeams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.SharedWithTeams.Item {
         {
         }
         /// <summary>
-        /// Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         public class SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters 
         {

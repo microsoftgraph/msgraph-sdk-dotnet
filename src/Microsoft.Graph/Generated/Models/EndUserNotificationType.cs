@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum EndUserNotificationType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "positiveReinforcement")]
+        #pragma warning disable CS1591
         PositiveReinforcement,
+        #pragma warning restore CS1591
         [EnumMember(Value = "noTraining")]
+        #pragma warning disable CS1591
         NoTraining,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trainingAssignment")]
+        #pragma warning disable CS1591
         TrainingAssignment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trainingReminder")]
+        #pragma warning disable CS1591
         TrainingReminder,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

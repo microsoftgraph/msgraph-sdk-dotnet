@@ -72,8 +72,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSet object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-get?view=graph-rest-1.0" />
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// </summary>
         /// <returns>A <see cref="EdiscoveryReviewSet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSet object.
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +196,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an ediscoveryReviewSet object.
+        /// Returns a list of eDiscoveryReviewSet objects in the case.
         /// </summary>
         public class EdiscoveryReviewSetItemRequestBuilderGetQueryParameters 
         {

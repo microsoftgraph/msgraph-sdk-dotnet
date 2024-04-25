@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class Host : Artifact, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

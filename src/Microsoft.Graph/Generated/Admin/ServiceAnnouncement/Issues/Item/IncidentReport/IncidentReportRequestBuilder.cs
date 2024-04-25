@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.IncidentReport {
         {
         }
         /// <summary>
-        /// Invoke function incidentReport
+        /// Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn&apos;t exist for the tenant or if PIR document does not exist for the issue.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item.IncidentReport {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function incidentReport
+        /// Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn&apos;t exist for the tenant or if PIR document does not exist for the issue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbookcommentreply-get?view=graph-rest-1.0" />
+        /// Get replies from drives
         /// </summary>
         /// <returns>A <see cref="WorkbookCommentReply"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies.
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
+        /// Get replies from drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Comments.Item.Replies.
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookCommentReply object.
+        /// Get replies from drives
         /// </summary>
         public class WorkbookCommentReplyItemRequestBuilderGetQueryParameters 
         {

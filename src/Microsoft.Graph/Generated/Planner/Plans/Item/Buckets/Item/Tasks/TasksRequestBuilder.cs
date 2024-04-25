@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets.Item.Tasks {
         {
         }
         /// <summary>
-        /// Retrieve a list of plannerTask objects associated to a plannerBucket object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0" />
+        /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
         /// <returns>A <see cref="PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets.Item.Tasks {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannerTask objects associated to a plannerBucket object.
+        /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets.Item.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannerTask objects associated to a plannerBucket object.
+        /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

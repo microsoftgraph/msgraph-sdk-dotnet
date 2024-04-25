@@ -44,8 +44,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a run object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0" />
+        /// Workflow runs.
         /// </summary>
         /// <returns>A <see cref="Run"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +67,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return await RequestAdapter.SendAsync<Run>(requestInfo, Run.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a run object.
+        /// Workflow runs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +95,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new RunItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a run object.
+        /// Workflow runs.
         /// </summary>
         public class RunItemRequestBuilderGetQueryParameters 
         {

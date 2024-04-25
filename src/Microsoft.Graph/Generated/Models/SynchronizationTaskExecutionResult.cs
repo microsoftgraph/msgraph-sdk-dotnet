@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum SynchronizationTaskExecutionResult
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Succeeded")]
+        #pragma warning disable CS1591
         Succeeded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EntryLevelErrors")]
+        #pragma warning disable CS1591
         EntryLevelErrors,
+        #pragma warning restore CS1591
     }
 }

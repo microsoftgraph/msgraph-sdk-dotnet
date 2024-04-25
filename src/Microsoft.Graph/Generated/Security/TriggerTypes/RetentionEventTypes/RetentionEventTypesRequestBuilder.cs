@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
         {
         }
         /// <summary>
-        /// Get a list of the retentionEventType objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0" />
+        /// Get retentionEventTypes from security
         /// </summary>
         /// <returns>A <see cref="RetentionEventTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
             return await RequestAdapter.SendAsync<RetentionEventTypeCollectionResponse>(requestInfo, RetentionEventTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new retentionEventType object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0" />
+        /// Create new navigation property to retentionEventTypes for security
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.RetentionEventType"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the retentionEventType objects and their properties.
+        /// Get retentionEventTypes from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new retentionEventType object.
+        /// Create new navigation property to retentionEventTypes for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.TriggerTypes.RetentionEventTypes {
             return new RetentionEventTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the retentionEventType objects and their properties.
+        /// Get retentionEventTypes from security
         /// </summary>
         public class RetentionEventTypesRequestBuilderGetQueryParameters 
         {

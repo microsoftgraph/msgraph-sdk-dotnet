@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
         {
         }
         /// <summary>
-        /// Retrieve a list of workbookpivottable objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbookworksheet-list-pivottables?view=graph-rest-1.0" />
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         /// <returns>A <see cref="WorkbookPivotTableCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
             return await RequestAdapter.SendAsync<WorkbookPivotTable>(requestInfo, WorkbookPivotTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of workbookpivottable objects.
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotT
             return new PivotTablesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of workbookpivottable objects.
+        /// Collection of PivotTables that are part of the worksheet.
         /// </summary>
         public class PivotTablesRequestBuilderGetQueryParameters 
         {

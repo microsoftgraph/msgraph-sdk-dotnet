@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets {
         {
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-list-worksheets?view=graph-rest-1.0" />
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookWorksheetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets {
             return new WorksheetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         public class WorksheetsRequestBuilderGetQueryParameters 
         {

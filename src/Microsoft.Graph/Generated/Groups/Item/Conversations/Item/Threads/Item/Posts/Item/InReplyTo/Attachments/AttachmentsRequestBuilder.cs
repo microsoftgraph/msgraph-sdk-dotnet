@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="AttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to a post.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions {
         {
         }
         /// <summary>
-        /// Get the permission resources from the permissions navigation property on a site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0" />
+        /// The permissions associated with the site. Nullable.
         /// </summary>
         /// <returns>A <see cref="PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions {
             return await RequestAdapter.SendAsync<PermissionCollectionResponse>(requestInfo, PermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new permission object on a site. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0" />
+        /// Create new navigation property to permissions for groups
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Permission>(requestInfo, Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the permission resources from the permissions navigation property on a site.
+        /// The permissions associated with the site. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new permission object on a site. 
+        /// Create new navigation property to permissions for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Permissions {
             return new PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the permission resources from the permissions navigation property on a site.
+        /// The permissions associated with the site. Nullable.
         /// </summary>
         public class PermissionsRequestBuilderGetQueryParameters 
         {

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
         {
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0" />
+        /// All users in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// All users in the class. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the educationUser members of an educationClass.
+        /// All users in the class. Nullable.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

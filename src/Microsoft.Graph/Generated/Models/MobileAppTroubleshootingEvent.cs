@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class MobileAppTroubleshootingEvent : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates collection of App Log Upload Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

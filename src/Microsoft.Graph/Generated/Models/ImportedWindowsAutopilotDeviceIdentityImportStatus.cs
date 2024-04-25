@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public enum ImportedWindowsAutopilotDeviceIdentityImportStatus
+    #pragma warning restore CS1591
     {
         /// <summary>Unknown status.</summary>
         [EnumMember(Value = "unknown")]

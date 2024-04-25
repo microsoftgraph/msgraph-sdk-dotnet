@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies {
         {
         }
         /// <summary>
-        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0" />
+        /// The collection of lifecycle policies for this group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="GroupLifecyclePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+        /// The collection of lifecycle policies for this group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies {
             return new GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+        /// The collection of lifecycle policies for this group. Read-only. Nullable.
         /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters 
         {

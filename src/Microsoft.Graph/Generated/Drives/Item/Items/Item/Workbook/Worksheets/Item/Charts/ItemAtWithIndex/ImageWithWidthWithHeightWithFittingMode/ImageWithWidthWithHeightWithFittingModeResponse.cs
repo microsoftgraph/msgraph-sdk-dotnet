@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemAtWithIndex.ImageWithWidthWithHeightWithFittingMode {
     [Obsolete("This class is obsolete. Use ImageWithWidthWithHeightWithFittingModeGetResponse instead.")]
+    #pragma warning disable CS1591
     public class ImageWithWidthWithHeightWithFittingModeResponse : ImageWithWidthWithHeightWithFittingModeGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

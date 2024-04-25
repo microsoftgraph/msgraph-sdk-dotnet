@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class Invitation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

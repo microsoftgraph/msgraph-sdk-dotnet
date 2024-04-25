@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class EducationAssignmentPointsGradeType : EducationAssignmentGradeType, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Max points possible for this assignment.</summary>
         public float? MaxPoints {

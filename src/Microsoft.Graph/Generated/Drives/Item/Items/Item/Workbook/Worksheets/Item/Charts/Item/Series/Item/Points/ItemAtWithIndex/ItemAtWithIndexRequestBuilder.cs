@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Retrieve a point based on its position within the series.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartpointscollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookChartPoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return await RequestAdapter.SendAsync<WorkbookChartPoint>(requestInfo, WorkbookChartPoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Retrieve a point based on its position within the series.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

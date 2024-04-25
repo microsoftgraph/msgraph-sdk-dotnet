@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
         {
         }
         /// <summary>
-        /// Get the list of attachments associated with a service message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0" />
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <returns>A <see cref="ServiceAnnouncementAttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
             return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, ServiceAnnouncementAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of attachments associated with a service message.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of attachments associated with a service message.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters 
         {

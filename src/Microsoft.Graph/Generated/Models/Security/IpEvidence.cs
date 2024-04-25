@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models.Security {
+    #pragma warning disable CS1591
     public class IpEvidence : AlertEvidence, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

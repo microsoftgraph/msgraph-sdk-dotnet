@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL. This method gets the setting for the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowssetting-get?view=graph-rest-1.0" />
+        /// Get windows from me
         /// </summary>
         /// <returns>A <see cref="WindowsSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL. This method gets the setting for the signed-in user.
+        /// Get windows from me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Me.Settings.Windows.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsSetting object by passing the ID of the setting in the URL. This method gets the setting for the signed-in user.
+        /// Get windows from me
         /// </summary>
         public class WindowsSettingItemRequestBuilderGetQueryParameters 
         {

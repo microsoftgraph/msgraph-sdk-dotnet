@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Item {
         {
         }
         /// <summary>
-        /// Delete an existing category. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationcategory-delete?view=graph-rest-1.0" />
+        /// Delete navigation property assignmentCategories for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationcategory-get?view=graph-rest-1.0" />
+        /// All categories associated with this class. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationCategory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Item {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing category. Only teachers can perform this operation.
+        /// Delete navigation property assignmentCategories for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
+        /// All categories associated with this class. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories.Item {
         {
         }
         /// <summary>
-        /// Retrieve an educationCategory object. Only teachers, students, and applications with application permissions can perform this operation.
+        /// All categories associated with this class. Nullable.
         /// </summary>
         public class EducationCategoryItemRequestBuilderGetQueryParameters 
         {

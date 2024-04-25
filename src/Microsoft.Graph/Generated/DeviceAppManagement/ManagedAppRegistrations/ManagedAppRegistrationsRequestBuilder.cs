@@ -57,8 +57,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
         {
         }
         /// <summary>
-        /// List properties and relationships of the androidManagedAppRegistration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0" />
+        /// The managed app registrations.
         /// </summary>
         /// <returns>A <see cref="ManagedAppRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return await RequestAdapter.SendAsync<ManagedAppRegistrationCollectionResponse>(requestInfo, ManagedAppRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new androidManagedAppRegistration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-create?view=graph-rest-1.0" />
+        /// Create new navigation property to managedAppRegistrations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="ManagedAppRegistration"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the androidManagedAppRegistration objects.
+        /// The managed app registrations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new androidManagedAppRegistration object.
+        /// Create new navigation property to managedAppRegistrations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations {
             return new ManagedAppRegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the androidManagedAppRegistration objects.
+        /// The managed app registrations.
         /// </summary>
         public class ManagedAppRegistrationsRequestBuilderGetQueryParameters 
         {

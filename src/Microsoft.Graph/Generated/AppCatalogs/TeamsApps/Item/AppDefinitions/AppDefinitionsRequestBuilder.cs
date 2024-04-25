@@ -74,8 +74,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions {
             return await RequestAdapter.SendAsync<TeamsAppDefinitionCollectionResponse>(requestInfo, TeamsAppDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0" />
+        /// Create new navigation property to appDefinitions for appCatalogs
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TeamsAppDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps.Item.AppDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Update an app previously published to the Microsoft Teams app catalog. To update an app, the distributionMethod property for the app must be set to organization. This API specifically updates an app published to your organization&apos;s app catalog (the tenant app catalog).
+        /// Create new navigation property to appDefinitions for appCatalogs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes {
         {
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationSchool.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0" />
+        /// Classes taught at the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationClassCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes {
             return await RequestAdapter.SendAsync<EducationClassCollectionResponse>(requestInfo, EducationClassCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationSchool.
+        /// Classes taught at the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes {
             return new ClassesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the educationClass resources owned by an educationSchool.
+        /// Classes taught at the school. Nullable.
         /// </summary>
         public class ClassesRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class WorkbookChartSeriesFormat : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the fill format of a chart series, which includes background formatting information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

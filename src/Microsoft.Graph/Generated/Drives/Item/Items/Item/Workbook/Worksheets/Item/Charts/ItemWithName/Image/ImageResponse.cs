@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.Image {
     [Obsolete("This class is obsolete. Use ImageGetResponse instead.")]
+    #pragma warning disable CS1591
     public class ImageResponse : ImageGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

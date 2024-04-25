@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName {
     [Obsolete("This class is obsolete. Use VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse instead.")]
+    #pragma warning disable CS1591
     public class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse : VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications {
         {
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0" />
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         /// <returns>A <see cref="EndUserNotificationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications {
             return await RequestAdapter.SendAsync<EndUserNotification>(requestInfo, EndUserNotification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications {
             return new EndUserNotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         public class EndUserNotificationsRequestBuilderGetQueryParameters 
         {

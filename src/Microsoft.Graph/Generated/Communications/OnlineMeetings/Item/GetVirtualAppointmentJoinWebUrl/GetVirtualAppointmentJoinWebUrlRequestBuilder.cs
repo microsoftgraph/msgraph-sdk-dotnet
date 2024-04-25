@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.GetVirtualAppointme
         {
         }
         /// <summary>
-        /// Invoke function getVirtualAppointmentJoinWebUrl
+        /// Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetVirtualAppointmentJoinWebUrlGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.GetVirtualAppointme
             return await RequestAdapter.SendAsync<GetVirtualAppointmentJoinWebUrlGetResponse>(requestInfo, GetVirtualAppointmentJoinWebUrlGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getVirtualAppointmentJoinWebUrl
+        /// Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetVirtualAppointmentJoinWebUrlResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Communications.OnlineMeetings.Item.GetVirtualAppointme
             return await RequestAdapter.SendAsync<GetVirtualAppointmentJoinWebUrlResponse>(requestInfo, GetVirtualAppointmentJoinWebUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getVirtualAppointmentJoinWebUrl
+        /// Get a join web URL for a Microsoft Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item {
         {
         }
         /// <summary>
-        /// Delete a version of a document set in a list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0" />
+        /// Delete navigation property documentSetVersions for shares
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a documentSetVersion object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0" />
+        /// Version information for a document set version created by a user.
         /// </summary>
         /// <returns>A <see cref="DocumentSetVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +114,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item {
             return await RequestAdapter.SendAsync<DocumentSetVersion>(requestInfo, DocumentSetVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a version of a document set in a list.
+        /// Delete navigation property documentSetVersions for shares
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a documentSetVersion object.
+        /// Version information for a document set version created by a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Shares.Item.List.Items.Item.DocumentSetVersions.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a documentSetVersion object.
+        /// Version information for a document set version created by a user.
         /// </summary>
         public class DocumentSetVersionItemRequestBuilderGetQueryParameters 
         {

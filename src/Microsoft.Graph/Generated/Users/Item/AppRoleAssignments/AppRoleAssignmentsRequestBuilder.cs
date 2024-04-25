@@ -52,7 +52,6 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments {
         }
         /// <summary>
         /// Represents the app roles a user has been granted for an application. Supports $expand.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments {
             return await RequestAdapter.SendAsync<AppRoleAssignmentCollectionResponse>(requestInfo, AppRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0" />
+        /// Create new navigation property to appRoleAssignments for users
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:
+        /// Create new navigation property to appRoleAssignments for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

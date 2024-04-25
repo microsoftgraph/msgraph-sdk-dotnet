@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Chats.Item.Messages {
         {
         }
         /// <summary>
-        /// Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0" />
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="ChatMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Chats.Item.Messages {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified chat. This API can&apos;t create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0" />
+        /// Create new navigation property to messages for chats
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Chats.Item.Messages {
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Chats.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified chat. This API can&apos;t create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+        /// Create new navigation property to messages for chats
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Chats.Item.Messages {
             return new MessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
+        /// A collection of all the messages in the chat. Nullable.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters 
         {

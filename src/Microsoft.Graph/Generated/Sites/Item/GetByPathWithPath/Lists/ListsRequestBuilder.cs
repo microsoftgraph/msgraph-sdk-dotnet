@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Lists {
         {
         }
         /// <summary>
-        /// Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0" />
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="ListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,8 +55,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Lists {
             return await RequestAdapter.SendAsync<ListCollectionResponse>(requestInfo, ListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new [list][] in a [site][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0" />
+        /// Create new navigation property to lists for sites
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.List"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Lists {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.List>(requestInfo, Microsoft.Graph.Models.List.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Lists {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [list][] in a [site][].
+        /// Create new navigation property to lists for sites
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.Lists {
             return new ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+        /// The collection of lists under this site.
         /// </summary>
         public class ListsRequestBuilderGetQueryParameters 
         {

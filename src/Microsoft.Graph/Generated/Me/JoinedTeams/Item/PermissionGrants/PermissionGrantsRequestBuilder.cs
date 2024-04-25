@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants {
         {
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0" />
+        /// A collection of permissions granted to apps to access the team.
         /// </summary>
         /// <returns>A <see cref="ResourceSpecificPermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants {
             return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
+        /// A collection of permissions granted to apps to access the team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants {
             return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
+        /// A collection of permissions granted to apps to access the team.
         /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters 
         {

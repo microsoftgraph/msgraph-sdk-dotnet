@@ -31,8 +31,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ite
         {
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0" />
+        /// Delete ref of navigation property categories for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +53,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+        /// Delete ref of navigation property categories for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
         {
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0" />
+        /// List of notes associated with the request.
         /// </summary>
         /// <returns>A <see cref="AuthoredNoteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNoteCollectionResponse>(requestInfo, AuthoredNoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authoredNote object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0" />
+        /// Create new navigation property to notes for security
         /// </summary>
         /// <returns>A <see cref="AuthoredNote"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, AuthoredNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
+        /// List of notes associated with the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authoredNote object.
+        /// Create new navigation property to notes for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.Notes {
             return new NotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of authored notes assoicated with a subject rights request. 
+        /// List of notes associated with the request.
         /// </summary>
         public class NotesRequestBuilderGetQueryParameters 
         {

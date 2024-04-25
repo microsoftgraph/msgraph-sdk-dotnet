@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.GetFinalAttachment
         {
         }
         /// <summary>
-        /// Invoke function getFinalAttachment
+        /// Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalattachment?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,7 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.GetFinalAttachment
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getFinalAttachment
+        /// Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

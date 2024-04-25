@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamworkConversationIdentity : Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.</summary>
         public TeamworkConversationIdentityType? ConversationIdentityType {

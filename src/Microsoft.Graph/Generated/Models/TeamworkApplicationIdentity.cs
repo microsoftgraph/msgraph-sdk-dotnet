@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Models {
+    #pragma warning disable CS1591
     public class TeamworkApplicationIdentity : Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.</summary>
         public TeamworkApplicationIdentityType? ApplicationIdentityType {

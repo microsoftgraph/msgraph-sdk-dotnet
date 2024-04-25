@@ -33,6 +33,7 @@ namespace Microsoft.Graph.Reports.DeviceConfigurationDeviceActivity {
         }
         /// <summary>
         /// Metadata for the device configuration device activity report
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-deviceconfigurationdeviceactivity?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Report"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

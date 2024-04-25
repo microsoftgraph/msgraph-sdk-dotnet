@@ -51,8 +51,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
         {
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-devicelocalcredentials?view=graph-rest-1.0" />
+        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="DeviceLocalCredentialInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
             return await RequestAdapter.SendAsync<DeviceLocalCredentialInfo>(requestInfo, DeviceLocalCredentialInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
+        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
             return new DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
+        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
         /// </summary>
         public class DeviceLocalCredentialsRequestBuilderGetQueryParameters 
         {

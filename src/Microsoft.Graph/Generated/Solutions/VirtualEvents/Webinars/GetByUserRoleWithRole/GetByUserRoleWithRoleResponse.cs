@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole {
     [Obsolete("This class is obsolete. Use GetByUserRoleWithRoleGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetByUserRoleWithRoleResponse : GetByUserRoleWithRoleGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

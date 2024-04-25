@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Chats.Item.InstalledApps {
         {
         }
         /// <summary>
-        /// List all app installations within a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0" />
+        /// A collection of all the apps in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="TeamsAppInstallationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Chats.Item.InstalledApps {
             return await RequestAdapter.SendAsync<TeamsAppInstallationCollectionResponse>(requestInfo, TeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Install a teamsApp to the specified chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0" />
+        /// Create new navigation property to installedApps for chats
         /// </summary>
         /// <returns>A <see cref="TeamsAppInstallation"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Chats.Item.InstalledApps {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all app installations within a chat.
+        /// A collection of all the apps in the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Chats.Item.InstalledApps {
             return requestInfo;
         }
         /// <summary>
-        /// Install a teamsApp to the specified chat.
+        /// Create new navigation property to installedApps for chats
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Chats.Item.InstalledApps {
             return new InstalledAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all app installations within a chat.
+        /// A collection of all the apps in the chat. Nullable.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters 
         {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
         {
         }
         /// <summary>
-        /// Delete a federatedIdentityCredential object from an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0" />
+        /// Delete navigation property federatedIdentityCredentials for applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0" />
+        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="FederatedIdentityCredential"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
             return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a federatedIdentityCredential object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0" />
+        /// Update the navigation property federatedIdentityCredentials in applications
         /// </summary>
         /// <returns>A <see cref="FederatedIdentityCredential"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
             return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a federatedIdentityCredential object from an application.
+        /// Delete navigation property federatedIdentityCredentials for applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a federatedIdentityCredential object.
+        /// Update the navigation property federatedIdentityCredentials in applications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         public class FederatedIdentityCredentialItemRequestBuilderGetQueryParameters 
         {

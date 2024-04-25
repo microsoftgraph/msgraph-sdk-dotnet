@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.GetAllMessages {
         {
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.GetAllMessages {
             return await RequestAdapter.SendAsync<GetAllMessagesGetResponse>(requestInfo, GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GetAllMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.GetAllMessages {
             return await RequestAdapter.SendAsync<GetAllMessagesResponse>(requestInfo, GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.GetAllMessages {
             return new GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllMessages
+        /// Retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         public class GetAllMessagesRequestBuilderGetQueryParameters 
         {

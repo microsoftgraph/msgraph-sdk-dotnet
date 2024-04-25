@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages {
         {
         }
         /// <summary>
-        /// Retrieve a list of page objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0" />
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnenotePageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages {
             return await RequestAdapter.SendAsync<OnenotePageCollectionResponse>(requestInfo, OnenotePageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.  
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0" />
+        /// Create new navigation property to pages for groups
         /// </summary>
         /// <returns>A <see cref="OnenotePage"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of page objects.
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user&apos;s default notebook. If you&apos;re targeting other notebooks, you can create pages in a specified section.  
+        /// Create new navigation property to pages for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Pages {
             return new PagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of page objects.
+        /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters 
         {
