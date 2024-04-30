@@ -3,6 +3,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy {
         public PartnersRequestBuilder Partners
         {
             get => new PartnersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the templates property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
+        public TemplatesRequestBuilder Templates
+        {
+            get => new TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CrossTenantAccessPolicyRequestBuilder"/> and sets the default values.

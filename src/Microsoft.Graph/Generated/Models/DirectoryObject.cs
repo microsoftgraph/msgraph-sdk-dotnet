@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Models {
                 "#microsoft.graph.groupSettingTemplate" => new GroupSettingTemplate(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.multiTenantOrganizationMember" => new MultiTenantOrganizationMember(),
                 "#microsoft.graph.organization" => new Organization(),
                 "#microsoft.graph.orgContact" => new OrgContact(),
                 "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),

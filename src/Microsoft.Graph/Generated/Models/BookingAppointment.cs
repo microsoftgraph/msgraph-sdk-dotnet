@@ -38,6 +38,62 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("anonymousJoinWebUrl", value); }
         }
 #endif
+        /// <summary>The customerEmailAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerEmailAddress {
+            get { return BackingStore?.Get<string?>("customerEmailAddress"); }
+            set { BackingStore?.Set("customerEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public string CustomerEmailAddress {
+            get { return BackingStore?.Get<string>("customerEmailAddress"); }
+            set { BackingStore?.Set("customerEmailAddress", value); }
+        }
+#endif
+        /// <summary>The customerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerName {
+            get { return BackingStore?.Get<string?>("customerName"); }
+            set { BackingStore?.Set("customerName", value); }
+        }
+#nullable restore
+#else
+        public string CustomerName {
+            get { return BackingStore?.Get<string>("customerName"); }
+            set { BackingStore?.Set("customerName", value); }
+        }
+#endif
+        /// <summary>Notes from the customer associated with this appointment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerNotes {
+            get { return BackingStore?.Get<string?>("customerNotes"); }
+            set { BackingStore?.Set("customerNotes", value); }
+        }
+#nullable restore
+#else
+        public string CustomerNotes {
+            get { return BackingStore?.Get<string>("customerNotes"); }
+            set { BackingStore?.Set("customerNotes", value); }
+        }
+#endif
+        /// <summary>The customerPhone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerPhone {
+            get { return BackingStore?.Get<string?>("customerPhone"); }
+            set { BackingStore?.Set("customerPhone", value); }
+        }
+#nullable restore
+#else
+        public string CustomerPhone {
+            get { return BackingStore?.Get<string>("customerPhone"); }
+            set { BackingStore?.Set("customerPhone", value); }
+        }
+#endif
         /// <summary>A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,6 +332,10 @@ namespace Microsoft.Graph.Models {
             {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
+                {"customerEmailAddress", n => { CustomerEmailAddress = n.GetStringValue(); } },
+                {"customerName", n => { CustomerName = n.GetStringValue(); } },
+                {"customerNotes", n => { CustomerNotes = n.GetStringValue(); } },
+                {"customerPhone", n => { CustomerPhone = n.GetStringValue(); } },
                 {"customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
                 {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
@@ -310,6 +370,10 @@ namespace Microsoft.Graph.Models {
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("anonymousJoinWebUrl", AnonymousJoinWebUrl);
+            writer.WriteStringValue("customerEmailAddress", CustomerEmailAddress);
+            writer.WriteStringValue("customerName", CustomerName);
+            writer.WriteStringValue("customerNotes", CustomerNotes);
+            writer.WriteStringValue("customerPhone", CustomerPhone);
             writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
