@@ -5,6 +5,7 @@ using Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships;
 using Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameWithDomainName;
 using Microsoft.Graph.TenantRelationships.FindTenantInformationByTenantIdWithTenantId;
+using Microsoft.Graph.TenantRelationships.MultiTenantOrganization;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.TenantRelationships {
         public DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships
         {
             get => new DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.</summary>
+        public MultiTenantOrganizationRequestBuilder MultiTenantOrganization
+        {
+            get => new MultiTenantOrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TenantRelationshipsRequestBuilder"/> and sets the default values.

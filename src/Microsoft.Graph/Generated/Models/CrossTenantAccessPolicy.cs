@@ -51,6 +51,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("partners", value); }
         }
 #endif
+        /// <summary>Represents the base policy in the directory for multitenant organization settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PolicyTemplate? Templates {
+            get { return BackingStore?.Get<PolicyTemplate?>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#nullable restore
+#else
+        public PolicyTemplate Templates {
+            get { return BackingStore?.Get<PolicyTemplate>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="CrossTenantAccessPolicy"/> and sets the default values.
         /// </summary>
@@ -79,6 +93,7 @@ namespace Microsoft.Graph.Models {
                 {"allowedCloudEndpoints", n => { AllowedCloudEndpoints = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"default", n => { Default = n.GetObjectValue<CrossTenantAccessPolicyConfigurationDefault>(CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue); } },
                 {"partners", n => { Partners = n.GetCollectionOfObjectValues<CrossTenantAccessPolicyConfigurationPartner>(CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"templates", n => { Templates = n.GetObjectValue<PolicyTemplate>(PolicyTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -92,6 +107,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("allowedCloudEndpoints", AllowedCloudEndpoints);
             writer.WriteObjectValue<CrossTenantAccessPolicyConfigurationDefault>("default", Default);
             writer.WriteCollectionOfObjectValues<CrossTenantAccessPolicyConfigurationPartner>("partners", Partners);
+            writer.WriteObjectValue<PolicyTemplate>("templates", Templates);
         }
     }
 }

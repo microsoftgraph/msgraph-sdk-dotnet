@@ -107,6 +107,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #endif
+        /// <summary>The subscriptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CompanySubscription>? Subscriptions {
+            get { return BackingStore?.Get<List<CompanySubscription>?>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
+        }
+#nullable restore
+#else
+        public List<CompanySubscription> Subscriptions {
+            get { return BackingStore?.Get<List<CompanySubscription>>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -132,6 +146,7 @@ namespace Microsoft.Graph.Models {
                 {"deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<DeviceLocalCredentialInfo>(DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<OnPremisesDirectorySynchronization>(OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<CompanySubscription>(CompanySubscription.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -149,6 +164,7 @@ namespace Microsoft.Graph.Models {
             writer.WriteCollectionOfObjectValues<DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
             writer.WriteCollectionOfObjectValues<OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
+            writer.WriteCollectionOfObjectValues<CompanySubscription>("subscriptions", Subscriptions);
         }
     }
 }

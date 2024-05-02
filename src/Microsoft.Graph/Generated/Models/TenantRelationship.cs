@@ -45,6 +45,20 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
 #endif
+        /// <summary>Defines an organization with more than one instance of Microsoft Entra ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Models.MultiTenantOrganization? MultiTenantOrganization {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganization?>("multiTenantOrganization"); }
+            set { BackingStore?.Set("multiTenantOrganization", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Models.MultiTenantOrganization MultiTenantOrganization {
+            get { return BackingStore?.Get<Microsoft.Graph.Models.MultiTenantOrganization>("multiTenantOrganization"); }
+            set { BackingStore?.Set("multiTenantOrganization", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +101,7 @@ namespace Microsoft.Graph.Models {
             {
                 {"delegatedAdminCustomers", n => { DelegatedAdminCustomers = n.GetCollectionOfObjectValues<DelegatedAdminCustomer>(DelegatedAdminCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"delegatedAdminRelationships", n => { DelegatedAdminRelationships = n.GetCollectionOfObjectValues<DelegatedAdminRelationship>(DelegatedAdminRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"multiTenantOrganization", n => { MultiTenantOrganization = n.GetObjectValue<Microsoft.Graph.Models.MultiTenantOrganization>(Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -99,6 +114,7 @@ namespace Microsoft.Graph.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<DelegatedAdminCustomer>("delegatedAdminCustomers", DelegatedAdminCustomers);
             writer.WriteCollectionOfObjectValues<DelegatedAdminRelationship>("delegatedAdminRelationships", DelegatedAdminRelationships);
+            writer.WriteObjectValue<Microsoft.Graph.Models.MultiTenantOrganization>("multiTenantOrganization", MultiTenantOrganization);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Type of asynchronous operation. The values can be ForceDelete or Verification</summary>
+        /// <summary>Type of asynchronous operation. The values can be ForceDelete or Verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operation {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models {
             set { BackingStore?.Set("operation", value); }
         }
 #endif
-        /// <summary>Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.</summary>
+        /// <summary>Current status of the operation.  Scheduled - Operation is scheduled but hasn&apos;t started.  InProgress - Task is in progress.  Failed - The operation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {

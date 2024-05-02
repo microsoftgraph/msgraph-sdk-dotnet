@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Users {
         }
         /// <summary>
         /// List properties and relationships of the user objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Users {
         }
         /// <summary>
         /// Create a new user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
