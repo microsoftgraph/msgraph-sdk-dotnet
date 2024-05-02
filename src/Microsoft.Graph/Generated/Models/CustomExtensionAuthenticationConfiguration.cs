@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Models {
             return mappingValue switch
             {
                 "#microsoft.graph.azureAdPopTokenAuthentication" => new AzureAdPopTokenAuthentication(),
+                "#microsoft.graph.azureAdTokenAuthentication" => new AzureAdTokenAuthentication(),
                 _ => new CustomExtensionAuthenticationConfiguration(),
             };
         }

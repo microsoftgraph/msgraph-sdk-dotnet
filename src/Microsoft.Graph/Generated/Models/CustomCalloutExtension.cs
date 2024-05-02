@@ -93,7 +93,9 @@ namespace Microsoft.Graph.Models {
             {
                 "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension" => new AccessPackageAssignmentRequestWorkflowExtension(),
                 "#microsoft.graph.accessPackageAssignmentWorkflowExtension" => new AccessPackageAssignmentWorkflowExtension(),
+                "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
                 "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
+                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 _ => new CustomCalloutExtension(),
             };
         }

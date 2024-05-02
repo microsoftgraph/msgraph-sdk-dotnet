@@ -6,6 +6,8 @@ using Microsoft.Graph.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials;
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations;
 using Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization;
+using Microsoft.Graph.DirectoryNamespace.Subscriptions;
+using Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -56,6 +58,11 @@ namespace Microsoft.Graph.DirectoryNamespace {
         public OnPremisesSynchronizationRequestBuilder OnPremisesSynchronization
         {
             get => new OnPremisesSynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
+        public SubscriptionsRequestBuilder Subscriptions
+        {
+            get => new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryRequestBuilder"/> and sets the default values.
@@ -120,6 +127,16 @@ namespace Microsoft.Graph.DirectoryNamespace {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject1>(requestInfo, DirectoryObject1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+        /// </summary>
+        /// <returns>A <see cref="SubscriptionsWithCommerceSubscriptionIdRequestBuilder"/></returns>
+        /// <param name="commerceSubscriptionId">Alternate key of companySubscription</param>
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder SubscriptionsWithCommerceSubscriptionId(string commerceSubscriptionId)
+        {
+            if(string.IsNullOrEmpty(commerceSubscriptionId)) throw new ArgumentNullException(nameof(commerceSubscriptionId));
+            return new SubscriptionsWithCommerceSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, commerceSubscriptionId);
         }
         /// <summary>
         /// Get directory

@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Domains.Item {
         {
         }
         /// <summary>
-        /// Deletes a domain from a tenant.
+        /// Delete a domain from a tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Domains.Item {
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of domain object.
+        /// Update the properties of domain object. Only verified domains can be updated.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Domain"/></returns>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Domains.Item {
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a domain from a tenant.
+        /// Delete a domain from a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Domains.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of domain object.
+        /// Update the properties of domain object. Only verified domains can be updated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
