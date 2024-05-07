@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
         {
         }
         /// <summary>
-        /// Get operations from communications
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         /// <returns>A <see cref="CommsOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
             return await RequestAdapter.SendAsync<CommsOperation>(requestInfo, CommsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get operations from communications
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get operations from communications
+        /// Get the status of an operation that adds the large gallery view to a call.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

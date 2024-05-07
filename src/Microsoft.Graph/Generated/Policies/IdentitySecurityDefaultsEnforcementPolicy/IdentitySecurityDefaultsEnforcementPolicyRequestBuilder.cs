@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that represents the security defaults that protect against common attacks.
+        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+        /// Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that represents the security defaults that protect against common attacks.
+        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+        /// Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy {
         {
         }
         /// <summary>
-        /// The policy that represents the security defaults that protect against common attacks.
+        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
         /// </summary>
         public class IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters 
         {

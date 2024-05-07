@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
         {
         }
         /// <summary>
-        /// The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="HostPairCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
             return await RequestAdapter.SendAsync<HostPairCollectionResponse>(requestInfo, HostPairCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs 
             return new ChildHostPairsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. 
         /// </summary>
         public class ChildHostPairsRequestBuilderGetQueryParameters 
         {

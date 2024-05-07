@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
         {
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Retrieve a list of page objects from the specified section.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnenotePageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return await RequestAdapter.SendAsync<OnenotePageCollectionResponse>(requestInfo, OnenotePageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to pages for me
+        /// Create a new page in the specified section.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnenotePage"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Retrieve a list of page objects from the specified section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to pages for me
+        /// Create a new page in the specified section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item.Pages {
             return new PagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of pages in the section.  Read-only. Nullable.
+        /// Retrieve a list of page objects from the specified section.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters 
         {

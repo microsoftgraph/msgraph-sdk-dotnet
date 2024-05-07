@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an operation to export the billing data of a partner.
+        /// Read the properties and relationships of an operation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-operation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Operation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents an operation to export the billing data of a partner.
+        /// Read the properties and relationships of an operation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Operations.Item {
         {
         }
         /// <summary>
-        /// Represents an operation to export the billing data of a partner.
+        /// Read the properties and relationships of an operation object.
         /// </summary>
         public class OperationItemRequestBuilderGetQueryParameters 
         {

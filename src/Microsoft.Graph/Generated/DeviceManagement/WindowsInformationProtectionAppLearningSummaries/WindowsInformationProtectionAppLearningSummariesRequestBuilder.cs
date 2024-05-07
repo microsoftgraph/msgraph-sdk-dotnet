@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         {
         }
         /// <summary>
-        /// The windows information protection app learning summaries.
+        /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionAppLearningSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
             return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummaryCollectionResponse>(requestInfo, WindowsInformationProtectionAppLearningSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+        /// Create a new windowsInformationProtectionAppLearningSummary object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionAppLearningSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
             return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummary>(requestInfo, WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The windows information protection app learning summaries.
+        /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+        /// Create a new windowsInformationProtectionAppLearningSummary object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
             return new WindowsInformationProtectionAppLearningSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The windows information protection app learning summaries.
+        /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
         /// </summary>
         public class WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters 
         {

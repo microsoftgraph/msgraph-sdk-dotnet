@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies {
         {
         }
         /// <summary>
-        /// Managed app policies.
+        /// List properties and relationships of the managedAppPolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies {
             return await RequestAdapter.SendAsync<ManagedAppPolicy>(requestInfo, ManagedAppPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Managed app policies.
+        /// List properties and relationships of the managedAppPolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies {
             return new ManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Managed app policies.
+        /// List properties and relationships of the managedAppPolicy objects.
         /// </summary>
         public class ManagedAppPoliciesRequestBuilderGetQueryParameters 
         {

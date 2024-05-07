@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Sites.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of long-running operations on the site.
+        /// Get the status of a rich long-running operation on a site or a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RichLongRunningOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Sites.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of long-running operations on the site.
+        /// Get the status of a rich long-running operation on a site or a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Sites.Item.Operations.Item {
         {
         }
         /// <summary>
-        /// The collection of long-running operations on the site.
+        /// Get the status of a rich long-running operation on a site or a list.
         /// </summary>
         public class RichLongRunningOperationItemRequestBuilderGetQueryParameters 
         {

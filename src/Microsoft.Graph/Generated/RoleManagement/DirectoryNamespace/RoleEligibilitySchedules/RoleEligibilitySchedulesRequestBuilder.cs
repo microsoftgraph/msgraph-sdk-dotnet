@@ -62,7 +62,8 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Schedules for role eligibility operations.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilitySchedule>(requestInfo, UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Schedules for role eligibility operations.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return new RoleEligibilitySchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Schedules for role eligibility operations.
+        /// Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
         /// </summary>
         public class RoleEligibilitySchedulesRequestBuilderGetQueryParameters 
         {

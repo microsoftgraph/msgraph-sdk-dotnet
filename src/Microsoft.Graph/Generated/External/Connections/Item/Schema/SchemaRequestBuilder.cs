@@ -32,7 +32,8 @@ namespace Microsoft.Graph.External.Connections.Item.Schema {
         {
         }
         /// <summary>
-        /// Get schema from external
+        /// Read the properties and relationships of a schema object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.External.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property schema in external
+        /// Create a new schema object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.External.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get schema from external
+        /// Read the properties and relationships of a schema object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.External.Connections.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property schema in external
+        /// Create a new schema object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.External.Connections.Item.Schema {
             return new SchemaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get schema from external
+        /// Read the properties and relationships of a schema object.
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters 
         {

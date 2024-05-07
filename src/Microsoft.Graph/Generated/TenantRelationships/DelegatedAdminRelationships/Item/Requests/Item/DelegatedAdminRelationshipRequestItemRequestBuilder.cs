@@ -54,7 +54,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Read the properties and relationships of a delegatedAdminRelationshipRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationshipRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             return requestInfo;
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Read the properties and relationships of a delegatedAdminRelationshipRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
         {
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Read the properties and relationships of a delegatedAdminRelationshipRequest object.
         /// </summary>
         public class DelegatedAdminRelationshipRequestItemRequestBuilderGetQueryParameters 
         {

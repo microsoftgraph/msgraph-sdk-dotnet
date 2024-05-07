@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
         {
         }
         /// <summary>
-        /// Delete ref of navigation property members for directory
+        /// Use this API to remove a member (user, group, or device) from an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to members for directory
+        /// Use this API to add a member (user, group, or device) to an administrative unit. Currently it&apos;s only possible to add one member at a time to an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property members for directory
+        /// Use this API to remove a member (user, group, or device) from an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             return requestInfo;
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to members for directory
+        /// Use this API to add a member (user, group, or device) to an administrative unit. Currently it&apos;s only possible to add one member at a time to an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property members for directory
+        /// Use this API to remove a member (user, group, or device) from an administrative unit.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.Re
         {
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

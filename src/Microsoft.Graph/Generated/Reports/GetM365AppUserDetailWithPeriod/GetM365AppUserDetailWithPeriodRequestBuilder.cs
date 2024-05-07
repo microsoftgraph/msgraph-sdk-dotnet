@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Reports.GetM365AppUserDetailWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getM365AppUserDetail
+        /// Get a report that provides the details about which apps and platforms users have used.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Reports.GetM365AppUserDetailWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getM365AppUserDetail
+        /// Get a report that provides the details about which apps and platforms users have used.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

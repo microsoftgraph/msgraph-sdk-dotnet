@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
         {
         }
         /// <summary>
-        /// Default managed app policies.
+        /// List properties and relationships of the defaultManagedAppProtection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DefaultManagedAppProtectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return await RequestAdapter.SendAsync<DefaultManagedAppProtectionCollectionResponse>(requestInfo, DefaultManagedAppProtectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+        /// Create a new defaultManagedAppProtection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DefaultManagedAppProtection"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return await RequestAdapter.SendAsync<DefaultManagedAppProtection>(requestInfo, DefaultManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Default managed app policies.
+        /// List properties and relationships of the defaultManagedAppProtection objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+        /// Create a new defaultManagedAppProtection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.DefaultManagedAppProtections {
             return new DefaultManagedAppProtectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Default managed app policies.
+        /// List properties and relationships of the defaultManagedAppProtection objects.
         /// </summary>
         public class DefaultManagedAppProtectionsRequestBuilderGetQueryParameters 
         {

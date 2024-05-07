@@ -147,7 +147,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
         {
         }
         /// <summary>
-        /// The mobile apps.
+        /// List properties and relationships of the androidStoreApp objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-androidstoreapp-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -170,7 +171,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileAppCollectionResponse>(requestInfo, MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to mobileApps for deviceAppManagement
+        /// Create a new windowsWebApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowswebapp-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -195,7 +197,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The mobile apps.
+        /// List properties and relationships of the androidStoreApp objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -214,7 +216,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to mobileApps for deviceAppManagement
+        /// Create a new windowsWebApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -245,7 +247,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps {
             return new MobileAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The mobile apps.
+        /// List properties and relationships of the androidStoreApp objects.
         /// </summary>
         public class MobileAppsRequestBuilderGetQueryParameters 
         {

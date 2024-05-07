@@ -51,7 +51,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants {
         {
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// List the tenants and their properties in the multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-list-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants {
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMemberCollectionResponse>(requestInfo, MultiTenantOrganizationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tenants for tenantRelationships
+        /// Add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-post-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants {
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// List the tenants and their properties in the multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tenants for tenantRelationships
+        /// Add a tenant to a multitenant organization. The administrator of an owner tenant has the permissions to add tenants to the multitenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request. A tenant can be part of only one multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants {
             return new TenantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// List the tenants and their properties in the multitenant organization.
         /// </summary>
         public class TenantsRequestBuilderGetQueryParameters 
         {

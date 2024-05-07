@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Education.Classes {
         {
         }
         /// <summary>
-        /// Get classes from education
+        /// Get a list of the educationClass objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationClassCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Education.Classes {
             return await RequestAdapter.SendAsync<EducationClassCollectionResponse>(requestInfo, EducationClassCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to classes for education
+        /// Create a new educationClass object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationClass"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Education.Classes {
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get classes from education
+        /// Get a list of the educationClass objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Education.Classes {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to classes for education
+        /// Create a new educationClass object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Education.Classes {
             return new ClassesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get classes from education
+        /// Get a list of the educationClass objects and their properties.
         /// </summary>
         public class ClassesRequestBuilderGetQueryParameters 
         {

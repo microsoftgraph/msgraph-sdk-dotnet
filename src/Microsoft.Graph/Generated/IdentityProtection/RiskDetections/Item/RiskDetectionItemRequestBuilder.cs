@@ -54,7 +54,8 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+        /// Read the properties and relationships of a riskDetection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RiskDetection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+        /// Read the properties and relationships of a riskDetection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskDetections.Item {
         {
         }
         /// <summary>
-        /// Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
+        /// Read the properties and relationships of a riskDetection object.
         /// </summary>
         public class RiskDetectionItemRequestBuilderGetQueryParameters 
         {

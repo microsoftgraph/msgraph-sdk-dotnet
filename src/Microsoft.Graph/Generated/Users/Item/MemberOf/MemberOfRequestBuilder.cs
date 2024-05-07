@@ -69,7 +69,8 @@ namespace Microsoft.Graph.Users.Item.MemberOf {
         {
         }
         /// <summary>
-        /// The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn&apos;t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Users.Item.MemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn&apos;t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.MemberOf {
             return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn&apos;t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters 
         {

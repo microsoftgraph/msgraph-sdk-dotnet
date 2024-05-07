@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
         {
         }
         /// <summary>
-        /// Represents all authentication methods registered to a user.
+        /// Retrieve the properties and relationships of an authenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
             return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents all authentication methods registered to a user.
+        /// Retrieve the properties and relationships of an authenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Me.Authentication.Methods.Item {
             return new AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents all authentication methods registered to a user.
+        /// Retrieve the properties and relationships of an authenticationMethod object.
         /// </summary>
         public class AuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

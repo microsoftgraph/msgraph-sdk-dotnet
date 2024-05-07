@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
         {
         }
         /// <summary>
-        /// Delete navigation property customQuestions for solutions
+        /// Delete a bookingCustomQuestion object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingCustomQuestion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property customQuestions in solutions
+        /// Update the properties of a bookingCustomQuestion object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingCustomQuestion"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property customQuestions for solutions
+        /// Delete a bookingCustomQuestion object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return requestInfo;
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customQuestions in solutions
+        /// Update the properties of a bookingCustomQuestion object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CustomQuestions.Item 
         {
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
         /// </summary>
         public class BookingCustomQuestionItemRequestBuilderGetQueryParameters 
         {

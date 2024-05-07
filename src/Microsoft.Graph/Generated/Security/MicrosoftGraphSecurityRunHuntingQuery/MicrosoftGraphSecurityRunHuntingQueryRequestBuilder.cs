@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery {
         {
         }
         /// <summary>
-        /// Invoke action runHuntingQuery
+        /// Queries a specified set of event, activity, or entity data supported by Microsoft 365 Defender to proactively look for specific threats in your environment. This is the method for advanced hunting in Microsoft 365 Defender. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data, and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft 365 Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft 365 Defender.
         /// </summary>
         /// <returns>A <see cref="HuntingQueryResults"/></returns>
         /// <param name="body">The request body</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery {
             return await RequestAdapter.SendAsync<HuntingQueryResults>(requestInfo, HuntingQueryResults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action runHuntingQuery
+        /// Queries a specified set of event, activity, or entity data supported by Microsoft 365 Defender to proactively look for specific threats in your environment. This is the method for advanced hunting in Microsoft 365 Defender. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data, and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft 365 Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft 365 Defender.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

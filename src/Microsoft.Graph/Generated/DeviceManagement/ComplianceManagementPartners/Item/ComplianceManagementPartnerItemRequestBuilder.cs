@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property complianceManagementPartners for deviceManagement
+        /// Deletes a complianceManagementPartner.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of Compliance Management Partners configured by the tenant.
+        /// Read properties and relationships of the complianceManagementPartner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ComplianceManagementPartner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
             return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, ComplianceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property complianceManagementPartners in deviceManagement
+        /// Update the properties of a complianceManagementPartner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ComplianceManagementPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
             return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, ComplianceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property complianceManagementPartners for deviceManagement
+        /// Deletes a complianceManagementPartner.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of Compliance Management Partners configured by the tenant.
+        /// Read properties and relationships of the complianceManagementPartner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property complianceManagementPartners in deviceManagement
+        /// Update the properties of a complianceManagementPartner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.ComplianceManagementPartners.Item {
         {
         }
         /// <summary>
-        /// The list of Compliance Management Partners configured by the tenant.
+        /// Read properties and relationships of the complianceManagementPartner object.
         /// </summary>
         public class ComplianceManagementPartnerItemRequestBuilderGetQueryParameters 
         {

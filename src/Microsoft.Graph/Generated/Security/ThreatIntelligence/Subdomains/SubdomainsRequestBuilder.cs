@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Subdomains {
         {
         }
         /// <summary>
-        /// Retrieve details about the subdomain.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a subdomain object.
         /// </summary>
         /// <returns>A <see cref="SubdomainCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Subdomains {
             return await RequestAdapter.SendAsync<Subdomain>(requestInfo, Subdomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about the subdomain.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a subdomain object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Subdomains {
             return new SubdomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve details about the subdomain.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a subdomain object.
         /// </summary>
         public class SubdomainsRequestBuilderGetQueryParameters 
         {

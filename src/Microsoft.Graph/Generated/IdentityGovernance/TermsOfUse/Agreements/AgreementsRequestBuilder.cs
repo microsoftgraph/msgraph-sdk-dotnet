@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements {
         {
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID Governance.
+        /// Retrieve a list of agreement objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AgreementCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements {
             return await RequestAdapter.SendAsync<AgreementCollectionResponse>(requestInfo, AgreementCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to agreements for identityGovernance
+        /// Create a new agreement object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Agreement"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID Governance.
+        /// Retrieve a list of agreement objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to agreements for identityGovernance
+        /// Create a new agreement object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements {
             return new AgreementsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID Governance.
+        /// Retrieve a list of agreement objects.
         /// </summary>
         public class AgreementsRequestBuilderGetQueryParameters 
         {

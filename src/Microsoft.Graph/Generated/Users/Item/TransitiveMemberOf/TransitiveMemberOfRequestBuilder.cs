@@ -69,7 +69,8 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
         {
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf {
             return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters 
         {

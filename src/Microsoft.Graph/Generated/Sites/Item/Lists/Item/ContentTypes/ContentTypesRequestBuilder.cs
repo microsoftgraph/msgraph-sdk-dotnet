@@ -69,7 +69,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
         {
         }
         /// <summary>
-        /// The collection of content types present in this list.
+        /// Get the collection of contentType resources in a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ContentTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of content types present in this list.
+        /// Get the collection of contentType resources in a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +168,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes {
             return new ContentTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of content types present in this list.
+        /// Get the collection of contentType resources in a list.
         /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters 
         {

@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item.GraphSitePage {
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+        /// Returns the metadata for a sitePage in the site pages list in a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sitepage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SitePage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +80,7 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item.GraphSitePage {
             return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+        /// Returns the metadata for a sitePage in the site pages list in a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item.GraphSitePage {
             return new GraphSitePageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.baseSitePage as microsoft.graph.sitePage
+        /// Returns the metadata for a sitePage in the site pages list in a site.
         /// </summary>
         public class GraphSitePageRequestBuilderGetQueryParameters 
         {

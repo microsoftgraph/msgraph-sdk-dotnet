@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.Labels.Categories {
         {
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Get a list of the categoryTemplate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CategoryTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Security.Labels.Categories {
             return await RequestAdapter.SendAsync<CategoryTemplateCollectionResponse>(requestInfo, CategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to categories for security
+        /// Create a new categoryTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.CategoryTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Security.Labels.Categories {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Get a list of the categoryTemplate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Security.Labels.Categories {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to categories for security
+        /// Create a new categoryTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Security.Labels.Categories {
             return new CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Get a list of the categoryTemplate objects and their properties.
         /// </summary>
         public class CategoriesRequestBuilderGetQueryParameters 
         {

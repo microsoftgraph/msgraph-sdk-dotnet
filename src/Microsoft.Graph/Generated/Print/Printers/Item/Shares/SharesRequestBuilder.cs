@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares {
         {
         }
         /// <summary>
-        /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+        /// Retrieve a list of printer shares associated with the printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-list-shares?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrinterShareCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares {
             return await RequestAdapter.SendAsync<PrinterShareCollectionResponse>(requestInfo, PrinterShareCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+        /// Retrieve a list of printer shares associated with the printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Print.Printers.Item.Shares {
             return new SharesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+        /// Retrieve a list of printer shares associated with the printer.
         /// </summary>
         public class SharesRequestBuilderGetQueryParameters 
         {

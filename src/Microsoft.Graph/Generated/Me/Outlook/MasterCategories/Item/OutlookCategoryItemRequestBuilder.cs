@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property masterCategories for me
+        /// Delete the specified outlookCategory object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OutlookCategory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property masterCategories in me
+        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName property once you have created the category.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OutlookCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property masterCategories for me
+        /// Delete the specified outlookCategory object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property masterCategories in me
+        /// Update the writable property, color, of the specified outlookCategory object. You can&apos;t modify the displayName property once you have created the category.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Me.Outlook.MasterCategories.Item {
         {
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         public class OutlookCategoryItemRequestBuilderGetQueryParameters 
         {

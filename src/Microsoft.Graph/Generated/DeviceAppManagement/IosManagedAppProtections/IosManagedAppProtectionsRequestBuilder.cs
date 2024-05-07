@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
         {
         }
         /// <summary>
-        /// iOS managed app policies.
+        /// List properties and relationships of the iosManagedAppProtection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IosManagedAppProtectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
             return await RequestAdapter.SendAsync<IosManagedAppProtectionCollectionResponse>(requestInfo, IosManagedAppProtectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to iosManagedAppProtections for deviceAppManagement
+        /// Create a new iosManagedAppProtection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IosManagedAppProtection"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
             return await RequestAdapter.SendAsync<IosManagedAppProtection>(requestInfo, IosManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// iOS managed app policies.
+        /// List properties and relationships of the iosManagedAppProtection objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to iosManagedAppProtections for deviceAppManagement
+        /// Create a new iosManagedAppProtection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections {
             return new IosManagedAppProtectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// iOS managed app policies.
+        /// List properties and relationships of the iosManagedAppProtection objects.
         /// </summary>
         public class IosManagedAppProtectionsRequestBuilderGetQueryParameters 
         {

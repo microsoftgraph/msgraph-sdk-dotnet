@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucketTaskBoardTaskFormat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat {
             return await RequestAdapter.SendAsync<PlannerBucketTaskBoardTaskFormat>(requestInfo, PlannerBucketTaskBoardTaskFormat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property bucketTaskBoardFormat in planner
+        /// Update the properties of a plannerBucketTaskBoardTaskFormat object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucketTaskBoardTaskFormat"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property bucketTaskBoardFormat in planner
+        /// Update the properties of a plannerBucketTaskBoardTaskFormat object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Planner.Tasks.Item.BucketTaskBoardFormat {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+        /// Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
         /// </summary>
         public class BucketTaskBoardFormatRequestBuilderGetQueryParameters 
         {

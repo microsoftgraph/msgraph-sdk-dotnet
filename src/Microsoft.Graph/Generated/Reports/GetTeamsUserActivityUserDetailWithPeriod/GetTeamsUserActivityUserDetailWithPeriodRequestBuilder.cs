@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityUserDetailWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getTeamsUserActivityUserDetail
+        /// Get details about Microsoft Teams user activity by user.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityUserDetailWithPeriod {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getTeamsUserActivityUserDetail
+        /// Get details about Microsoft Teams user activity by user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

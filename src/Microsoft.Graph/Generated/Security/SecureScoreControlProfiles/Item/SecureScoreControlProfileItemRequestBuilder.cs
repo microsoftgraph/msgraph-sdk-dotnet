@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get secureScoreControlProfiles from security
+        /// Retrieve the properties and relationships of an securescorecontrolprofile object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SecureScoreControlProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item {
             return await RequestAdapter.SendAsync<SecureScoreControlProfile>(requestInfo, SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property secureScoreControlProfiles in security
+        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SecureScoreControlProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get secureScoreControlProfiles from security
+        /// Retrieve the properties and relationships of an securescorecontrolprofile object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property secureScoreControlProfiles in security
+        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item {
         {
         }
         /// <summary>
-        /// Get secureScoreControlProfiles from security
+        /// Retrieve the properties and relationships of an securescorecontrolprofile object.
         /// </summary>
         public class SecureScoreControlProfileItemRequestBuilderGetQueryParameters 
         {

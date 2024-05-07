@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property emailMethods for users
+        /// Deletes a user&apos;s emailAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property emailMethods in users
+        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EmailAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property emailMethods for users
+        /// Deletes a user&apos;s emailAuthenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property emailMethods in users
+        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

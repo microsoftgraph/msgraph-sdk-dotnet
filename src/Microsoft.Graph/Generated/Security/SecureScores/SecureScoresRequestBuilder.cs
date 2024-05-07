@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.SecureScores {
         {
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve a list of secureScore objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SecureScoreCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Security.SecureScores {
             return await RequestAdapter.SendAsync<SecureScore>(requestInfo, SecureScore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve a list of secureScore objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Security.SecureScores {
             return new SecureScoresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve a list of secureScore objects.
         /// </summary>
         public class SecureScoresRequestBuilderGetQueryParameters 
         {

@@ -93,7 +93,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members {
         {
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +117,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to members for directory
+        /// Use this API to add a member (user, group, or device) to an administrative unit. Currently it&apos;s only possible to add one member at a time to an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +162,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to members for directory
+        /// Use this API to add a member (user, group, or device) to an administrative unit. Currently it&apos;s only possible to add one member at a time to an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -191,7 +193,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Users and groups that are members of this administrative unit. Supports $expand.
+        /// Use this API to get the members list (users, groups, or devices) in an administrative unit.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels {
         {
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Get a list of the retentionLabel objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-retentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RetentionLabelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<RetentionLabelCollectionResponse>(requestInfo, RetentionLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to retentionLabels for security
+        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-retentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.RetentionLabel"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.RetentionLabel>(requestInfo, Microsoft.Graph.Models.Security.RetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Get a list of the retentionLabel objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to retentionLabels for security
+        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels {
             return new RetentionLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Get a list of the retentionLabel objects and their properties.
         /// </summary>
         public class RetentionLabelsRequestBuilderGetQueryParameters 
         {

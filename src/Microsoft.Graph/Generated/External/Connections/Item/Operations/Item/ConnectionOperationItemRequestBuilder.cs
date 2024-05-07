@@ -54,7 +54,8 @@ namespace Microsoft.Graph.External.Connections.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get operations from external
+        /// Read the properties and relationships of a connectionOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConnectionOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.External.Connections.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get operations from external
+        /// Read the properties and relationships of a connectionOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.External.Connections.Item.Operations.Item {
         {
         }
         /// <summary>
-        /// Get operations from external
+        /// Read the properties and relationships of a connectionOperation object.
         /// </summary>
         public class ConnectionOperationItemRequestBuilderGetQueryParameters 
         {

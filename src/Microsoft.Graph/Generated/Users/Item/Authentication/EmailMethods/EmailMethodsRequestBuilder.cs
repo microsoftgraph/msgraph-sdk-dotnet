@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethodCollectionResponse>(requestInfo, EmailAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to emailMethods for users
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EmailAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to emailMethods for users
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

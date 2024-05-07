@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
         {
         }
         /// <summary>
-        /// Get learningCourseActivities from users
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="LearningCourseActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
             return await RequestAdapter.SendAsync<LearningCourseActivityCollectionResponse>(requestInfo, LearningCourseActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get learningCourseActivities from users
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities
             return new LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get learningCourseActivities from users
+        /// Get a list of the learningCourseActivity objects (assigned or self-initiated) for a user.
         /// </summary>
         public class LearningCourseActivitiesRequestBuilderGetQueryParameters 
         {

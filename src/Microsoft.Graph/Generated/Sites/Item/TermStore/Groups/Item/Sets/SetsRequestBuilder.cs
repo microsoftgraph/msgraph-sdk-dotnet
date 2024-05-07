@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets {
         {
         }
         /// <summary>
-        /// All sets under the group in a term [store].
+        /// Get a list of the set objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All sets under the group in a term [store].
+        /// Get a list of the set objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Groups.Item.Sets {
             return new SetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All sets under the group in a term [store].
+        /// Get a list of the set objects and their properties.
         /// </summary>
         public class SetsRequestBuilderGetQueryParameters 
         {

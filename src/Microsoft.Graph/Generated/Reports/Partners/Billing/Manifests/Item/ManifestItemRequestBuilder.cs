@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents metadata for the exported data.
+        /// Read the properties and relationships of a manifest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-manifest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Manifest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents metadata for the exported data.
+        /// Read the properties and relationships of a manifest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Manifests.Item {
         {
         }
         /// <summary>
-        /// Represents metadata for the exported data.
+        /// Read the properties and relationships of a manifest object.
         /// </summary>
         public class ManifestItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.AgreementAcceptances {
         {
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AgreementAcceptanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Me.AgreementAcceptances {
             return await RequestAdapter.SendAsync<AgreementAcceptanceCollectionResponse>(requestInfo, AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Me.AgreementAcceptances {
             return new AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters 
         {

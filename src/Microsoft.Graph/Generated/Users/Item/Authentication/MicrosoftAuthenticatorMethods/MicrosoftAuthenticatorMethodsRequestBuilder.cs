@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethod
         {
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MicrosoftAuthenticatorAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethod
             return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethod
             return new MicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
         /// </summary>
         public class MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
         {
         }
         /// <summary>
-        /// The Resource Operations.
+        /// List properties and relationships of the resourceOperation objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ResourceOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
             return await RequestAdapter.SendAsync<ResourceOperationCollectionResponse>(requestInfo, ResourceOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to resourceOperations for deviceManagement
+        /// Create a new resourceOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ResourceOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
             return await RequestAdapter.SendAsync<ResourceOperation>(requestInfo, ResourceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Resource Operations.
+        /// List properties and relationships of the resourceOperation objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to resourceOperations for deviceManagement
+        /// Create a new resourceOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations {
             return new ResourceOperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The Resource Operations.
+        /// List properties and relationships of the resourceOperation objects.
         /// </summary>
         public class ResourceOperationsRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property acronyms for search
+        /// Delete an acronym object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
+        /// Read the properties and relationships of an acronym object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Acronym"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property acronyms in search
+        /// Update the properties of an acronym object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Acronym"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property acronyms for search
+        /// Delete an acronym object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
+        /// Read the properties and relationships of an acronym object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property acronyms in search
+        /// Update the properties of an acronym object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Search.Acronyms.Item {
         {
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results to define common acronyms in an organization.
+        /// Read the properties and relationships of an acronym object.
         /// </summary>
         public class AcronymItemRequestBuilderGetQueryParameters 
         {

@@ -50,7 +50,8 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
         {
         }
         /// <summary>
-        /// Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+        /// Deletes a windowsAutopilotDeviceIdentity.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Windows autopilot device identities contained collection.
+        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsAutopilotDeviceIdentity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             return await RequestAdapter.SendAsync<WindowsAutopilotDeviceIdentity>(requestInfo, WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+        /// Deletes a windowsAutopilotDeviceIdentity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
             return requestInfo;
         }
         /// <summary>
-        /// The Windows autopilot device identities contained collection.
+        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +198,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
         {
         }
         /// <summary>
-        /// The Windows autopilot device identities contained collection.
+        /// Read properties and relationships of the windowsAutopilotDeviceIdentity object.
         /// </summary>
         public class WindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters 
         {

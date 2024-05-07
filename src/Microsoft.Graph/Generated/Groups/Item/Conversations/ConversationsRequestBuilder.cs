@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Groups.Item.Conversations {
         {
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConversationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<ConversationCollectionResponse>(requestInfo, ConversationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to conversations for groups
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Conversation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<Conversation>(requestInfo, Conversation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to conversations for groups
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations {
             return new ConversationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
         /// </summary>
         public class ConversationsRequestBuilderGetQueryParameters 
         {

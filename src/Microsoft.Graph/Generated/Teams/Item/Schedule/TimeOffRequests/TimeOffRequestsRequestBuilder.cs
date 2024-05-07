@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
         {
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve a list of timeOffRequest objects in the team.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TimeOffRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
             return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve a list of timeOffRequest objects in the team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests {
             return new TimeOffRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve a list of timeOffRequest objects in the team.
         /// </summary>
         public class TimeOffRequestsRequestBuilderGetQueryParameters 
         {

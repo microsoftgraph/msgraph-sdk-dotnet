@@ -86,7 +86,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property channels for teams
+        /// Delete the channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Channel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,7 +133,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property channels in teams
+        /// Update the properties of the specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Channel"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +159,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property channels for teams
+        /// Delete the channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -175,7 +178,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +197,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property channels in teams
+        /// Update the properties of the specified channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -232,7 +235,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item {
         {
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
         /// </summary>
         public class ChannelItemRequestBuilderGetQueryParameters 
         {

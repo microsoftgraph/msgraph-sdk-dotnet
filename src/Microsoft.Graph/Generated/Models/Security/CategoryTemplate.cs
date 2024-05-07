@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models.Security {
     public class CategoryTemplate : FilePlanDescriptorTemplate, IParsable 
     #pragma warning restore CS1591
     {
-        /// <summary>The subcategories property</summary>
+        /// <summary>Represents all subcategories under a particular category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SubcategoryTemplate>? Subcategories {

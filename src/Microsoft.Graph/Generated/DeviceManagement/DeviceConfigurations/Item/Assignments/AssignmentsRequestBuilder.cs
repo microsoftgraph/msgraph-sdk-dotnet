@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         {
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// List properties and relationships of the deviceConfigurationAssignment objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return await RequestAdapter.SendAsync<DeviceConfigurationAssignmentCollectionResponse>(requestInfo, DeviceConfigurationAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to assignments for deviceManagement
+        /// Create a new deviceConfigurationAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return await RequestAdapter.SendAsync<DeviceConfigurationAssignment>(requestInfo, DeviceConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// List properties and relationships of the deviceConfigurationAssignment objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to assignments for deviceManagement
+        /// Create a new deviceConfigurationAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// List properties and relationships of the deviceConfigurationAssignment objects.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters 
         {

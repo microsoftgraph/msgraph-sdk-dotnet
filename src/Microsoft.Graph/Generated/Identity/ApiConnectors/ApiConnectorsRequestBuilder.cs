@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
         {
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IdentityApiConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return await RequestAdapter.SendAsync<IdentityApiConnectorCollectionResponse>(requestInfo, IdentityApiConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to apiConnectors for identity
+        /// Create a new identityApiConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IdentityApiConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to apiConnectors for identity
+        /// Create a new identityApiConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Identity.ApiConnectors {
             return new ApiConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         public class ApiConnectorsRequestBuilderGetQueryParameters 
         {

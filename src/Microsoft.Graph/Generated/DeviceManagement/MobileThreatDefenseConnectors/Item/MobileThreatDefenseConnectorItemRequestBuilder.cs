@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+        /// Deletes a mobileThreatDefenseConnector.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of Mobile threat Defense connectors configured by the tenant.
+        /// Read properties and relationships of the mobileThreatDefenseConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileThreatDefenseConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
             return await RequestAdapter.SendAsync<MobileThreatDefenseConnector>(requestInfo, MobileThreatDefenseConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+        /// Update the properties of a mobileThreatDefenseConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileThreatDefenseConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
             return await RequestAdapter.SendAsync<MobileThreatDefenseConnector>(requestInfo, MobileThreatDefenseConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+        /// Deletes a mobileThreatDefenseConnector.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of Mobile threat Defense connectors configured by the tenant.
+        /// Read properties and relationships of the mobileThreatDefenseConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+        /// Update the properties of a mobileThreatDefenseConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileThreatDefenseConnectors.Item {
         {
         }
         /// <summary>
-        /// The list of Mobile threat Defense connectors configured by the tenant.
+        /// Read properties and relationships of the mobileThreatDefenseConnector object.
         /// </summary>
         public class MobileThreatDefenseConnectorItemRequestBuilderGetQueryParameters 
         {

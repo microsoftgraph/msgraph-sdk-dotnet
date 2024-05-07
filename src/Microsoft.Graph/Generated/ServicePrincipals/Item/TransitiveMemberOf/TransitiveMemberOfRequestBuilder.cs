@@ -69,7 +69,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TransitiveMemberOf {
         {
         }
         /// <summary>
-        /// Get transitiveMemberOf from servicePrincipals
+        /// Get the groups and directory roles that this servicePrincipal is a member of. This operation is transitive and will include all groups that this service principal is a nested member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TransitiveMemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get transitiveMemberOf from servicePrincipals
+        /// Get the groups and directory roles that this servicePrincipal is a member of. This operation is transitive and will include all groups that this service principal is a nested member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TransitiveMemberOf {
             return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get transitiveMemberOf from servicePrincipals
+        /// Get the groups and directory roles that this servicePrincipal is a member of. This operation is transitive and will include all groups that this service principal is a nested member of.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters 
         {

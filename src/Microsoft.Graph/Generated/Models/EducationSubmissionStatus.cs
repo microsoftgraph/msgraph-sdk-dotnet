@@ -30,5 +30,9 @@ namespace Microsoft.Graph.Models {
         #pragma warning disable CS1591
         Reassigned,
         #pragma warning restore CS1591
+        [EnumMember(Value = "excused")]
+        #pragma warning disable CS1591
+        Excused,
+        #pragma warning restore CS1591
     }
 }

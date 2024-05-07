@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Policies.TokenLifetimePolicies {
         {
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
+        /// Get a list of tokenLifetimePolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenlifetimepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TokenLifetimePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Policies.TokenLifetimePolicies {
             return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tokenLifetimePolicies for policies
+        /// Create a new tokenLifetimePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenlifetimepolicy-post-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TokenLifetimePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Policies.TokenLifetimePolicies {
             return await RequestAdapter.SendAsync<TokenLifetimePolicy>(requestInfo, TokenLifetimePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
+        /// Get a list of tokenLifetimePolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Policies.TokenLifetimePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tokenLifetimePolicies for policies
+        /// Create a new tokenLifetimePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Policies.TokenLifetimePolicies {
             return new TokenLifetimePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
+        /// Get a list of tokenLifetimePolicy objects.
         /// </summary>
         public class TokenLifetimePoliciesRequestBuilderGetQueryParameters 
         {

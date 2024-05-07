@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView {
         {
         }
         /// <summary>
-        /// The set of appointments of this business in a specified date range. Read-only. Nullable.
+        /// Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingAppointmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of appointments of this business in a specified date range. Read-only. Nullable.
+        /// Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView {
             return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of appointments of this business in a specified date range. Read-only. Nullable.
+        /// Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
         /// </summary>
         public class CalendarViewRequestBuilderGetQueryParameters 
         {

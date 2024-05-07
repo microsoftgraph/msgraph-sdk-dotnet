@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects {
         {
         }
         /// <summary>
-        /// Invoke action checkMemberObjects
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="CheckMemberObjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects {
             return await RequestAdapter.SendAsync<CheckMemberObjectsPostResponse>(requestInfo, CheckMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action checkMemberObjects
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="CheckMemberObjectsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects {
             return await RequestAdapter.SendAsync<CheckMemberObjectsResponse>(requestInfo, CheckMemberObjectsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action checkMemberObjects
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property softwareOathMethods for users
+        /// Delete a user&apos;s Software OATH token authentication method object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Item {
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethod>(requestInfo, SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property softwareOathMethods for users
+        /// Delete a user&apos;s Software OATH token authentication method object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

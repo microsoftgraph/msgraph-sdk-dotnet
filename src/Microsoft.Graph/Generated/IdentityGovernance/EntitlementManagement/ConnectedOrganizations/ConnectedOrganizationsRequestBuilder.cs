@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// References to a directory or domain of another organization whose users can request access.
+        /// Retrieve a list of connectedOrganization objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConnectedOrganizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<ConnectedOrganizationCollectionResponse>(requestInfo, ConnectedOrganizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to connectedOrganizations for identityGovernance
+        /// Create a new connectedOrganization object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConnectedOrganization"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<ConnectedOrganization>(requestInfo, ConnectedOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// References to a directory or domain of another organization whose users can request access.
+        /// Retrieve a list of connectedOrganization objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to connectedOrganizations for identityGovernance
+        /// Create a new connectedOrganization object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return new ConnectedOrganizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// References to a directory or domain of another organization whose users can request access.
+        /// Retrieve a list of connectedOrganization objects.
         /// </summary>
         public class ConnectedOrganizationsRequestBuilderGetQueryParameters 
         {

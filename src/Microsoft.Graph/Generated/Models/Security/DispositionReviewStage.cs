@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models.Security {
             set { BackingStore?.Set("reviewersEmailAddresses", value); }
         }
 #endif
-        /// <summary>The sequence number for each stage of the disposition review.</summary>
+        /// <summary>The unique sequence number for each stage of the disposition review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StageNumber {

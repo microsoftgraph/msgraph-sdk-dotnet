@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Print.Printers.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property printers for print
+        /// Delete (unregister) a printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +85,8 @@ namespace Microsoft.Graph.Print.Printers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the properties and relationships of a printer object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Printer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +109,8 @@ namespace Microsoft.Graph.Print.Printers.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Printer>(requestInfo, Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property printers in print
+        /// Update the properties of a printer object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Printer"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +135,7 @@ namespace Microsoft.Graph.Print.Printers.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Printer>(requestInfo, Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property printers for print
+        /// Delete (unregister) a printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +154,7 @@ namespace Microsoft.Graph.Print.Printers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the properties and relationships of a printer object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.Print.Printers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property printers in print
+        /// Update the properties of a printer object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -208,7 +211,7 @@ namespace Microsoft.Graph.Print.Printers.Item {
         {
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the properties and relationships of a printer object.
         /// </summary>
         public class PrinterItemRequestBuilderGetQueryParameters 
         {

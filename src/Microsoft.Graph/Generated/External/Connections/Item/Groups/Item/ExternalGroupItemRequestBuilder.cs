@@ -38,7 +38,8 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property groups for external
+        /// Delete an externalGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ExternalGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property groups in external
+        /// Update the properties of an externalGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ExternalGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property groups for external
+        /// Delete an externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property groups in external
+        /// Update the properties of an externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups.Item {
         {
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
         /// </summary>
         public class ExternalGroupItemRequestBuilderGetQueryParameters 
         {

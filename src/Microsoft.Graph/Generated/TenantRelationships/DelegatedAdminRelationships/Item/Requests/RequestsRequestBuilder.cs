@@ -51,7 +51,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
         {
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationshipRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipRequestCollectionResponse>(requestInfo, DelegatedAdminRelationshipRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to requests for tenantRelationships
+        /// Create a new delegatedAdminRelationshipRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationshipRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipRequest>(requestInfo, DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to requests for tenantRelationships
+        /// Create a new delegatedAdminRelationshipRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.R
             return new RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The requests associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
         /// </summary>
         public class RequestsRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
         {
         }
         /// <summary>
-        /// Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="InternalDomainFederationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return await RequestAdapter.SendAsync<InternalDomainFederationCollectionResponse>(requestInfo, InternalDomainFederationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to federationConfiguration for domains
+        /// Create a new internalDomainFederation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="InternalDomainFederation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to federationConfiguration for domains
+        /// Create a new internalDomainFederation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Domains.Item.FederationConfiguration {
             return new FederationConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+        /// Read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
         /// </summary>
         public class FederationConfigurationRequestBuilderGetQueryParameters 
         {

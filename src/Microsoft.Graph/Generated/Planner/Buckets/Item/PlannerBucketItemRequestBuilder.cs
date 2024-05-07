@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property buckets for planner
+        /// Delete plannerBucket.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified buckets
+        /// Retrieve the properties and relationships of a plannerBucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucket"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property buckets in planner
+        /// Update the properties of plannerbucket object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucket"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property buckets for planner
+        /// Delete plannerBucket.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified buckets
+        /// Retrieve the properties and relationships of a plannerBucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property buckets in planner
+        /// Update the properties of plannerbucket object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Planner.Buckets.Item {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified buckets
+        /// Retrieve the properties and relationships of a plannerBucket object.
         /// </summary>
         public class PlannerBucketItemRequestBuilderGetQueryParameters 
         {

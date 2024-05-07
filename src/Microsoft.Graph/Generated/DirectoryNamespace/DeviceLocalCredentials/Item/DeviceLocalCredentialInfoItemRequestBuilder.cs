@@ -54,7 +54,8 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceLocalCredentialInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials.Item {
         {
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
         /// </summary>
         public class DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters 
         {

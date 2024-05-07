@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property workforceIntegrations for teamwork
+        /// Delete an instance of a workforceIntegration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get workforceIntegrations from teamwork
+        /// Retrieve the properties and relationships of a workforceIntegration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkforceIntegration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property workforceIntegrations in teamwork
+        /// Update the properties of a workforceIntegration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkforceIntegration"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property workforceIntegrations for teamwork
+        /// Delete an instance of a workforceIntegration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get workforceIntegrations from teamwork
+        /// Retrieve the properties and relationships of a workforceIntegration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property workforceIntegrations in teamwork
+        /// Update the properties of a workforceIntegration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations.Item {
         {
         }
         /// <summary>
-        /// Get workforceIntegrations from teamwork
+        /// Retrieve the properties and relationships of a workforceIntegration object.
         /// </summary>
         public class WorkforceIntegrationItemRequestBuilderGetQueryParameters 
         {

@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item.Comments {
         {
         }
         /// <summary>
-        /// Sets a new value for the collection of alertComment.
+        /// Create a comment for an existing alert based on the specified alert id property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-post-comments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A List&lt;AlertComment&gt;</returns>
         /// <param name="body">The request body</param>
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.Item.Comments {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Sets a new value for the collection of alertComment.
+        /// Create a comment for an existing alert based on the specified alert id property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

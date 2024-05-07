@@ -51,7 +51,8 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests {
         {
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ThreatAssessmentRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests {
             return await RequestAdapter.SendAsync<ThreatAssessmentRequestCollectionResponse>(requestInfo, ThreatAssessmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to threatAssessmentRequests for informationProtection
+        /// Create a new threat assessment request. A threat assessment request can be one of the following types:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ThreatAssessmentRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests {
             return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to threatAssessmentRequests for informationProtection
+        /// Create a new threat assessment request. A threat assessment request can be one of the following types:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.InformationProtection.ThreatAssessmentRequests {
             return new ThreatAssessmentRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
         /// </summary>
         public class ThreatAssessmentRequestsRequestBuilderGetQueryParameters 
         {

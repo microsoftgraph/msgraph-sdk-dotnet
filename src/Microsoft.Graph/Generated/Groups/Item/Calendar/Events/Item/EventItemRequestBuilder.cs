@@ -143,7 +143,8 @@ namespace Microsoft.Graph.Groups.Item.Calendar.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property events in groups
+        /// Update an event object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="body">The request body</param>
@@ -206,7 +207,7 @@ namespace Microsoft.Graph.Groups.Item.Calendar.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property events in groups
+        /// Update an event object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

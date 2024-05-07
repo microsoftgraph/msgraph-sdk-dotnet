@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.ContentSharingSessions.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get contentSharingSessions from communications
+        /// Retrieve the properties of a contentSharingSession object in a call.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ContentSharingSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ContentSharingSessions.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Get contentSharingSessions from communications
+        /// Retrieve the properties of a contentSharingSession object in a call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.ContentSharingSessions.Item 
         {
         }
         /// <summary>
-        /// Get contentSharingSessions from communications
+        /// Retrieve the properties of a contentSharingSession object in a call.
         /// </summary>
         public class ContentSharingSessionItemRequestBuilderGetQueryParameters 
         {

@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Me.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get settings from me
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.UserSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +90,8 @@ namespace Microsoft.Graph.Me.Settings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserSettings>(requestInfo, Microsoft.Graph.Models.UserSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property settings in me
+        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.UserSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Me.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from me
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Me.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in me
+        /// Update the properties of the userSettings object. Users in the same organization can have different settings based on their preference or on the organization policies. To get the user current settings, see current user settings. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +192,7 @@ namespace Microsoft.Graph.Me.Settings {
         {
         }
         /// <summary>
-        /// Get settings from me
+        /// Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters 
         {

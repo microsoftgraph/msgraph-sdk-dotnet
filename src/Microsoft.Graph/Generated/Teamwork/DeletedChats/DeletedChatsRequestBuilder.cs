@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats {
         {
         }
         /// <summary>
-        /// A collection of deleted chats.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         /// <returns>A <see cref="DeletedChatCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats {
             return await RequestAdapter.SendAsync<DeletedChat>(requestInfo, DeletedChat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of deleted chats.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Teamwork.DeletedChats {
             return new DeletedChatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of deleted chats.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         public class DeletedChatsRequestBuilderGetQueryParameters 
         {

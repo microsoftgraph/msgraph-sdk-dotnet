@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones {
         {
         }
         /// <summary>
-        /// Invoke function supportedTimeZones
+        /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
         /// <returns>A <see cref="SupportedTimeZonesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones {
             return await RequestAdapter.SendAsync<SupportedTimeZonesGetResponse>(requestInfo, SupportedTimeZonesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function supportedTimeZones
+        /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
         /// <returns>A <see cref="SupportedTimeZonesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones {
             return await RequestAdapter.SendAsync<SupportedTimeZonesResponse>(requestInfo, SupportedTimeZonesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function supportedTimeZones
+        /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones {
             return new SupportedTimeZonesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function supportedTimeZones
+        /// Get the list of time zones that are supported for the user, as configured on the user&apos;s mailbox server. You can explicitly specify to have time zones returned in the Windows time zone format or  Internet Assigned Numbers Authority (IANA) time zone (also known as Olson time zone) format. The Windows format is the default. When setting up an Outlook client, the user selects the preferred time zone from this supported list. You can subsequently get the preferred time zone bygetting the user&apos;s mailbox settings.
         /// </summary>
         public class SupportedTimeZonesRequestBuilderGetQueryParameters 
         {

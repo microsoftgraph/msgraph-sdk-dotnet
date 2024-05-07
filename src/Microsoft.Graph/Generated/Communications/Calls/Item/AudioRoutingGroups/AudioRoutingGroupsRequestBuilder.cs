@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
         {
         }
         /// <summary>
-        /// Get audioRoutingGroups from communications
+        /// Retrieve a list of audioRoutingGroup objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AudioRoutingGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
             return await RequestAdapter.SendAsync<AudioRoutingGroupCollectionResponse>(requestInfo, AudioRoutingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to audioRoutingGroups for communications
+        /// Create a new audioRoutingGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AudioRoutingGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get audioRoutingGroups from communications
+        /// Retrieve a list of audioRoutingGroup objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to audioRoutingGroups for communications
+        /// Create a new audioRoutingGroup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.AudioRoutingGroups {
             return new AudioRoutingGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get audioRoutingGroups from communications
+        /// Retrieve a list of audioRoutingGroup objects.
         /// </summary>
         public class AudioRoutingGroupsRequestBuilderGetQueryParameters 
         {

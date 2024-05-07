@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages {
         {
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a list of the loginPage objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-loginpage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="LoginPageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LoginPage>(requestInfo, Microsoft.Graph.Models.LoginPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a list of the loginPage objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages {
             return new LoginPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a list of the loginPage objects and their properties.
         /// </summary>
         public class LoginPagesRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Communications.Presences {
         {
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
         /// </summary>
         /// <returns>A <see cref="PresenceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Communications.Presences {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Presence>(requestInfo, Microsoft.Graph.Models.Presence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Communications.Presences {
             return new PresencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
         /// </summary>
         public class PresencesRequestBuilderGetQueryParameters 
         {

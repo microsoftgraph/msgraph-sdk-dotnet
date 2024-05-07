@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         {
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceManagement
+        /// Deletes a deviceConfigurationAssignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// Read properties and relationships of the deviceConfigurationAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return await RequestAdapter.SendAsync<DeviceConfigurationAssignment>(requestInfo, DeviceConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceManagement
+        /// Update the properties of a deviceConfigurationAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfigurationassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceConfigurationAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return await RequestAdapter.SendAsync<DeviceConfigurationAssignment>(requestInfo, DeviceConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceManagement
+        /// Deletes a deviceConfigurationAssignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// Read properties and relationships of the deviceConfigurationAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceManagement
+        /// Update the properties of a deviceConfigurationAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assignments
         {
         }
         /// <summary>
-        /// The list of assignments for the device configuration profile.
+        /// Read properties and relationships of the deviceConfigurationAssignment object.
         /// </summary>
         public class DeviceConfigurationAssignmentItemRequestBuilderGetQueryParameters 
         {

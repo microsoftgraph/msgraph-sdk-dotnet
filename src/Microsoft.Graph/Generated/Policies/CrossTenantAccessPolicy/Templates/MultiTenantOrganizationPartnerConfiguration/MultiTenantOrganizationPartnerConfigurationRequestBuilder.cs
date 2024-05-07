@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationPartnerConfigurationTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
             return await RequestAdapter.SendAsync<MultiTenantOrganizationPartnerConfigurationTemplate>(requestInfo, MultiTenantOrganizationPartnerConfigurationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganizationPartnerConfiguration in policies
+        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationPartnerConfigurationTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
             return requestInfo;
         }
         /// <summary>
-        /// Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganizationPartnerConfiguration in policies
+        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
         {
         }
         /// <summary>
-        /// Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         public class MultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters 
         {

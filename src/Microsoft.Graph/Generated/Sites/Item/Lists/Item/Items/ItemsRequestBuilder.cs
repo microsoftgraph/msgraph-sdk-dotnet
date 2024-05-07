@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items{?%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items{?%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
             return new DeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Get the collection of items in a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ListItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +86,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
             return await RequestAdapter.SendAsync<ListItemCollectionResponse>(requestInfo, ListItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to items for sites
+        /// Create a new listItem in a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ListItem"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItem>(requestInfo, Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Get the collection of items in a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +131,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to items for sites
+        /// Create a new listItem in a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,10 +162,13 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Get the collection of items in a list.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

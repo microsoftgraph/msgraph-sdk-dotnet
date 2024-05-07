@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Search.Qnas {
         {
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Get a list of the qna objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="QnaCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Search.Qnas {
             return await RequestAdapter.SendAsync<QnaCollectionResponse>(requestInfo, QnaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to qnas for search
+        /// Create a new qna object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Qna"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Search.Qnas {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Get a list of the qna objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Search.Qnas {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to qnas for search
+        /// Create a new qna object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Search.Qnas {
             return new QnasRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Get a list of the qna objects and their properties.
         /// </summary>
         public class QnasRequestBuilderGetQueryParameters 
         {

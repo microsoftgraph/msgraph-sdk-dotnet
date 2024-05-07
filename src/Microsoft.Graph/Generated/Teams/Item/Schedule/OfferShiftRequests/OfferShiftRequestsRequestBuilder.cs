@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests {
         {
         }
         /// <summary>
-        /// The offer requests for shifts in the schedule.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OfferShiftRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests {
             return await RequestAdapter.SendAsync<OfferShiftRequestCollectionResponse>(requestInfo, OfferShiftRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to offerShiftRequests for teams
+        /// Create an instance of an offerShiftRequest.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OfferShiftRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests {
             return await RequestAdapter.SendAsync<OfferShiftRequest>(requestInfo, OfferShiftRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The offer requests for shifts in the schedule.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to offerShiftRequests for teams
+        /// Create an instance of an offerShiftRequest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests {
             return new OfferShiftRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The offer requests for shifts in the schedule.
+        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
         /// </summary>
         public class OfferShiftRequestsRequestBuilderGetQueryParameters 
         {

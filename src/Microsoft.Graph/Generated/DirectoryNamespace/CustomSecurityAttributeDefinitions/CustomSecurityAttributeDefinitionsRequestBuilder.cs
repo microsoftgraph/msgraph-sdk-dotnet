@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions 
         {
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomSecurityAttributeDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions 
             return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionCollectionResponse>(requestInfo, CustomSecurityAttributeDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customSecurityAttributeDefinitions for directory
+        /// Create a new customSecurityAttributeDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomSecurityAttributeDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions 
             return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions 
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customSecurityAttributeDefinitions for directory
+        /// Create a new customSecurityAttributeDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DirectoryNamespace.CustomSecurityAttributeDefinitions 
             return new CustomSecurityAttributeDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
         /// </summary>
         public class CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters 
         {

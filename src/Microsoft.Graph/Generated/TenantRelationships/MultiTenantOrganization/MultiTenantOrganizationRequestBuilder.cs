@@ -44,7 +44,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization {
         {
         }
         /// <summary>
-        /// Defines an organization with more than one instance of Microsoft Entra ID.
+        /// Get properties of the multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +68,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganization in tenantRelationships
+        /// Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +94,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines an organization with more than one instance of Microsoft Entra ID.
+        /// Get properties of the multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganization in tenantRelationships
+        /// Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization {
             return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Defines an organization with more than one instance of Microsoft Entra ID.
+        /// Get properties of the multitenant organization.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters 
         {

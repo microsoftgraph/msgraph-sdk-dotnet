@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Sites.Item.Lists {
         {
         }
         /// <summary>
-        /// The collection of lists under this site.
+        /// Get the collection of lists for a site. Lists with the system facet are hidden by default.To list them, include system in your $select statement.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Sites.Item.Lists {
             return await RequestAdapter.SendAsync<ListCollectionResponse>(requestInfo, ListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to lists for sites
+        /// Create a new list in a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.List"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Sites.Item.Lists {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.List>(requestInfo, Microsoft.Graph.Models.List.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of lists under this site.
+        /// Get the collection of lists for a site. Lists with the system facet are hidden by default.To list them, include system in your $select statement.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Sites.Item.Lists {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to lists for sites
+        /// Create a new list in a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Sites.Item.Lists {
             return new ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of lists under this site.
+        /// Get the collection of lists for a site. Lists with the system facet are hidden by default.To list them, include system in your $select statement.
         /// </summary>
         public class ListsRequestBuilderGetQueryParameters 
         {

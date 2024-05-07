@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
         {
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PassiveDnsRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
             return await RequestAdapter.SendAsync<PassiveDnsRecordCollectionResponse>(requestInfo, PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsRever
             return new PassiveDnsReverseRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
         /// </summary>
         public class PassiveDnsReverseRequestBuilderGetQueryParameters 
         {

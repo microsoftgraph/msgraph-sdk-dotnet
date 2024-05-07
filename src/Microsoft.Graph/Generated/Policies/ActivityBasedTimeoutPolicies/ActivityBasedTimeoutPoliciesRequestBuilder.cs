@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
         {
         }
         /// <summary>
-        /// The policy that controls the idle time out for web sessions for applications.
+        /// Get a list of activityBasedTimeoutPolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ActivityBasedTimeoutPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicyCollectionResponse>(requestInfo, ActivityBasedTimeoutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to activityBasedTimeoutPolicies for policies
+        /// Create a new activityBasedTimeoutPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-post-activitybasedtimeoutpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ActivityBasedTimeoutPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that controls the idle time out for web sessions for applications.
+        /// Get a list of activityBasedTimeoutPolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to activityBasedTimeoutPolicies for policies
+        /// Create a new activityBasedTimeoutPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Policies.ActivityBasedTimeoutPolicies {
             return new ActivityBasedTimeoutPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The policy that controls the idle time out for web sessions for applications.
+        /// Get a list of activityBasedTimeoutPolicy objects.
         /// </summary>
         public class ActivityBasedTimeoutPoliciesRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
         {
         }
         /// <summary>
-        /// Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         /// <returns>A <see cref="PassiveDnsRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
             return await RequestAdapter.SendAsync<PassiveDnsRecord>(requestInfo, PassiveDnsRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords {
             return new PassiveDnsRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         public class PassiveDnsRecordsRequestBuilderGetQueryParameters 
         {

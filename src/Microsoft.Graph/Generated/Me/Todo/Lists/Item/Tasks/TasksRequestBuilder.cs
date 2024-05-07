@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks {
         {
         }
         /// <summary>
-        /// The tasks in this task list. Read-only. Nullable.
+        /// Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TodoTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks {
             return await RequestAdapter.SendAsync<TodoTaskCollectionResponse>(requestInfo, TodoTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tasks for me
+        /// Create a new task object in a specified todoTaskList.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TodoTask"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The tasks in this task list. Read-only. Nullable.
+        /// Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tasks for me
+        /// Create a new task object in a specified todoTaskList.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The tasks in this task list. Read-only. Nullable.
+        /// Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

@@ -87,7 +87,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property items for sites
+        /// Removes an item from a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +124,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item {
             return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an item in a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ListItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,7 +173,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ListItem>(requestInfo, Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property items for sites
+        /// Removes an item from a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +192,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an item in a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -247,7 +249,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item {
         {
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an item in a list.
         /// </summary>
         public class ListItemItemRequestBuilderGetQueryParameters 
         {

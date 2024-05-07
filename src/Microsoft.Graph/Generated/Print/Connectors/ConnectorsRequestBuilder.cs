@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Print.Connectors {
         {
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve a list of print connectors.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Print.Connectors {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve a list of print connectors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Print.Connectors {
             return new ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve a list of print connectors.
         /// </summary>
         public class ConnectorsRequestBuilderGetQueryParameters 
         {

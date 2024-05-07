@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentDefaults {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies class-level defaults respected by new assignments created in the class.
+        /// Read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each assignment creation if they don&apos;t want the default behaviors. Only teachers can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentdefaults-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentDefaults"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentDefaults {
             return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property assignmentDefaults in education
+        /// Update the properties of an educationAssignmentDefaults object. Only teachers can update these settings.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentdefaults-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentDefaults"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentDefaults {
             return requestInfo;
         }
         /// <summary>
-        /// Specifies class-level defaults respected by new assignments created in the class.
+        /// Read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each assignment creation if they don&apos;t want the default behaviors. Only teachers can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentDefaults {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property assignmentDefaults in education
+        /// Update the properties of an educationAssignmentDefaults object. Only teachers can update these settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentDefaults {
         {
         }
         /// <summary>
-        /// Specifies class-level defaults respected by new assignments created in the class.
+        /// Read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each assignment creation if they don&apos;t want the default behaviors. Only teachers can perform this operation.
         /// </summary>
         public class AssignmentDefaultsRequestBuilderGetQueryParameters 
         {

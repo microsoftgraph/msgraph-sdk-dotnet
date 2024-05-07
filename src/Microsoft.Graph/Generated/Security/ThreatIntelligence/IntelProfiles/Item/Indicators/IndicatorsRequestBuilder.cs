@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
         {
         }
         /// <summary>
-        /// Includes an assemblage of high-fidelity network indicators of compromise.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IntelligenceProfileIndicatorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
             return await RequestAdapter.SendAsync<IntelligenceProfileIndicatorCollectionResponse>(requestInfo, IntelligenceProfileIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Includes an assemblage of high-fidelity network indicators of compromise.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item.Indicat
             return new IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Includes an assemblage of high-fidelity network indicators of compromise.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters 
         {
