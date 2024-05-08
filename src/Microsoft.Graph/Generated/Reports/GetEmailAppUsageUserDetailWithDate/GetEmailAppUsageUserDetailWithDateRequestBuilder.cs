@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithDate {
         {
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageUserDetail
+        /// Get details about which activities users performed on the various email apps.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithDate {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEmailAppUsageUserDetail
+        /// Get details about which activities users performed on the various email apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

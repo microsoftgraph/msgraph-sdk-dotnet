@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Education.Me.Classes {
         {
         }
         /// <summary>
-        /// Classes to which the user belongs. Nullable.
+        /// Get the educationClass resources an educationUser is a member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationClassCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Education.Me.Classes {
             return await RequestAdapter.SendAsync<EducationClassCollectionResponse>(requestInfo, EducationClassCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Classes to which the user belongs. Nullable.
+        /// Get the educationClass resources an educationUser is a member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Education.Me.Classes {
             return new ClassesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Classes to which the user belongs. Nullable.
+        /// Get the educationClass resources an educationUser is a member of.
         /// </summary>
         public class ClassesRequestBuilderGetQueryParameters 
         {

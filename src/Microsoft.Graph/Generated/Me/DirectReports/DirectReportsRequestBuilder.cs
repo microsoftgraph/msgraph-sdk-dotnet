@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Me.DirectReports {
         {
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get a user&apos;s direct reports. Returns the users and contacts for whom this user is assigned as manager. This API doesn&apos;t support getting the direct report chain beyond the specified user&apos;s direct reports.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Me.DirectReports {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get a user&apos;s direct reports. Returns the users and contacts for whom this user is assigned as manager. This API doesn&apos;t support getting the direct report chain beyond the specified user&apos;s direct reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Me.DirectReports {
             return new DirectReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get a user&apos;s direct reports. Returns the users and contacts for whom this user is assigned as manager. This API doesn&apos;t support getting the direct report chain beyond the specified user&apos;s direct reports.
         /// </summary>
         public class DirectReportsRequestBuilderGetQueryParameters 
         {

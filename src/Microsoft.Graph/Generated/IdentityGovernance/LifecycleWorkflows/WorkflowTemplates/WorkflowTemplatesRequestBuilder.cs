@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
         {
         }
         /// <summary>
-        /// The workflow templates in the lifecycle workflow instance.
+        /// Get a list of the workflowTemplate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkflowTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
             return await RequestAdapter.SendAsync<WorkflowTemplateCollectionResponse>(requestInfo, WorkflowTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The workflow templates in the lifecycle workflow instance.
+        /// Get a list of the workflowTemplate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.WorkflowTemplate
             return new WorkflowTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The workflow templates in the lifecycle workflow instance.
+        /// Get a list of the workflowTemplate objects and their properties.
         /// </summary>
         public class WorkflowTemplatesRequestBuilderGetQueryParameters 
         {

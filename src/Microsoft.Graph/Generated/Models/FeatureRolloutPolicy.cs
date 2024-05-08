@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models {
     public class FeatureRolloutPolicy : Entity, IParsable 
     #pragma warning restore CS1591
     {
-        /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
+        /// <summary>Nullable. Specifies a list of directoryObject resources that feature is enabled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? AppliesTo {

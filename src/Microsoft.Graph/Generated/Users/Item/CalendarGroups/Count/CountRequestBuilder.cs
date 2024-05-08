@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Count {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/$count{?%24filter}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/$count{?%24filter,%24search}", pathParameters)
         {
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Count {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/$count{?%24filter}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/$count{?%24filter,%24search}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,16 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Count {
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
         }
         /// <summary>

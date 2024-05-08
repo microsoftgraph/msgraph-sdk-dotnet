@@ -54,7 +54,8 @@ namespace Microsoft.Graph.AuditLogs.SignIns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Retrieve a specific Microsoft Entra user sign-in event for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/signin-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SignIn"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.AuditLogs.SignIns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Retrieve a specific Microsoft Entra user sign-in event for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.AuditLogs.SignIns.Item {
         {
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Retrieve a specific Microsoft Entra user sign-in event for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
         /// </summary>
         public class SignInItemRequestBuilderGetQueryParameters 
         {

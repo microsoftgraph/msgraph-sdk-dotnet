@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods {
         {
         }
         /// <summary>
-        /// The phone numbers registered to a user for authentication.
+        /// Retrieve a list of phone authentication method objects for a user. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-phonemethods?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PhoneAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods {
             return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The phone numbers registered to a user for authentication.
+        /// Retrieve a list of phone authentication method objects for a user. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods {
             return new PhoneMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The phone numbers registered to a user for authentication.
+        /// Retrieve a list of phone authentication method objects for a user. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
         /// </summary>
         public class PhoneMethodsRequestBuilderGetQueryParameters 
         {

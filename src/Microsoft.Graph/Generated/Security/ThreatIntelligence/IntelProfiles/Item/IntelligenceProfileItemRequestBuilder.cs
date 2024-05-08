@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of intelligenceProfile objects.
+        /// Read the properties and relationships of a intelligenceProfile object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-intelligenceprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IntelligenceProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A list of intelligenceProfile objects.
+        /// Read the properties and relationships of a intelligenceProfile object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.IntelProfiles.Item {
         {
         }
         /// <summary>
-        /// A list of intelligenceProfile objects.
+        /// Read the properties and relationships of a intelligenceProfile object.
         /// </summary>
         public class IntelligenceProfileItemRequestBuilderGetQueryParameters 
         {

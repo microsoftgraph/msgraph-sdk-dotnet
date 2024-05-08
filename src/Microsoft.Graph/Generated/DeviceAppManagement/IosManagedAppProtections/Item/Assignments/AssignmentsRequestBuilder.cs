@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
         {
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedapppolicyassignment-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetedManagedAppPolicyAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return await RequestAdapter.SendAsync<TargetedManagedAppPolicyAssignment>(requestInfo, TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters 
         {

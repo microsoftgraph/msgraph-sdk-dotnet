@@ -62,7 +62,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// The assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupAssignmentScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentSchedule>(requestInfo, PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new AssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
         /// </summary>
         public class AssignmentSchedulesRequestBuilderGetQueryParameters 
         {

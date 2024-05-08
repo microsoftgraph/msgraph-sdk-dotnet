@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Me.Contacts.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property contacts for me
+        /// Delete a contact.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Contact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property contacts in me
+        /// Update the properties of a contact object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Contact"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property contacts for me
+        /// Delete a contact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property contacts in me
+        /// Update the properties of a contact object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.Me.Contacts.Item {
         {
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
         /// </summary>
         public class ContactItemRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get settings from admin
+        /// Get the tenant-level settings for SharePoint and OneDrive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SharepointSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return await RequestAdapter.SendAsync<SharepointSettings>(requestInfo, SharepointSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property settings in admin
+        /// Update one or more tenant-level settings for SharePoint and OneDrive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SharepointSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from admin
+        /// Get the tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in admin
+        /// Update one or more tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Admin.Sharepoint.Settings {
         {
         }
         /// <summary>
-        /// Get settings from admin
+        /// Get the tenant-level settings for SharePoint and OneDrive.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters 
         {

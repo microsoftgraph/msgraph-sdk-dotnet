@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property resourceOperations for deviceManagement
+        /// Deletes a resourceOperation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Resource Operations.
+        /// Read properties and relationships of the resourceOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ResourceOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
             return await RequestAdapter.SendAsync<ResourceOperation>(requestInfo, ResourceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property resourceOperations in deviceManagement
+        /// Update the properties of a resourceOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ResourceOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
             return await RequestAdapter.SendAsync<ResourceOperation>(requestInfo, ResourceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property resourceOperations for deviceManagement
+        /// Deletes a resourceOperation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Resource Operations.
+        /// Read properties and relationships of the resourceOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property resourceOperations in deviceManagement
+        /// Update the properties of a resourceOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.ResourceOperations.Item {
         {
         }
         /// <summary>
-        /// The Resource Operations.
+        /// Read properties and relationships of the resourceOperation object.
         /// </summary>
         public class ResourceOperationItemRequestBuilderGetQueryParameters 
         {

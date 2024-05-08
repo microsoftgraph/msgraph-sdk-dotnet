@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}{?%24expand,%24select,includeHiddenMessages*}", pathParameters)
+        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
@@ -100,11 +100,12 @@ namespace Microsoft.Graph.Me.Messages.Item {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}{?%24expand,%24select,includeHiddenMessages*}", rawUrl)
+        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete navigation property messages for me
+        /// Delete eventMessage.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,8 @@ namespace Microsoft.Graph.Me.Messages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The messages in a mailbox or folder. Read-only. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -149,7 +151,8 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property messages in me
+        /// Update the properties of an eventMessage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -174,7 +177,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Message>(requestInfo, Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property messages for me
+        /// Delete eventMessage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The messages in a mailbox or folder. Read-only. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -212,7 +215,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property messages in me
+        /// Update the properties of an eventMessage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -250,7 +253,7 @@ namespace Microsoft.Graph.Me.Messages.Item {
         {
         }
         /// <summary>
-        /// The messages in a mailbox or folder. Read-only. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         public class MessageItemRequestBuilderGetQueryParameters 
         {
@@ -263,16 +266,6 @@ namespace Microsoft.Graph.Me.Messages.Item {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
-#endif
-            /// <summary>Include Hidden Messages</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("includeHiddenMessages")]
-            public string? IncludeHiddenMessages { get; set; }
-#nullable restore
-#else
-            [QueryParameter("includeHiddenMessages")]
-            public string IncludeHiddenMessages { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

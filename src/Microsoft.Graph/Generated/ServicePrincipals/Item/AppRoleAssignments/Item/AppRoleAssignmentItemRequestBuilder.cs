@@ -32,7 +32,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignments for servicePrincipals
+        /// Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// App role assignment for another app or service, granted to this service principal. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignments for servicePrincipals
+        /// Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// App role assignment for another app or service, granted to this service principal. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignments.Item {
         {
         }
         /// <summary>
-        /// App role assignment for another app or service, granted to this service principal. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
         /// </summary>
         public class AppRoleAssignmentItemRequestBuilderGetQueryParameters 
         {

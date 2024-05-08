@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property b2xUserFlows for identity
+        /// Delete a b2xIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +85,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents entry point for B2X/self-service sign-up identity userflows.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="B2xIdentityUserFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +134,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, B2xIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property b2xUserFlows for identity
+        /// Delete a b2xIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +153,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for B2X/self-service sign-up identity userflows.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +210,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item {
         {
         }
         /// <summary>
-        /// Represents entry point for B2X/self-service sign-up identity userflows.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         public class B2xIdentityUserFlowItemRequestBuilderGetQueryParameters 
         {

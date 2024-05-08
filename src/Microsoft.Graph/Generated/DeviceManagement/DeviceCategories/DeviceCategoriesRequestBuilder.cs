@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories {
         {
         }
         /// <summary>
-        /// The list of device categories with the tenant.
+        /// List properties and relationships of the deviceCategory objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories {
             return await RequestAdapter.SendAsync<DeviceCategoryCollectionResponse>(requestInfo, DeviceCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to deviceCategories for deviceManagement
+        /// Create a new deviceCategory object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DeviceCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DeviceCategory>(requestInfo, Microsoft.Graph.Models.DeviceCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of device categories with the tenant.
+        /// List properties and relationships of the deviceCategory objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to deviceCategories for deviceManagement
+        /// Create a new deviceCategory object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCategories {
             return new DeviceCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of device categories with the tenant.
+        /// List properties and relationships of the deviceCategory objects.
         /// </summary>
         public class DeviceCategoriesRequestBuilderGetQueryParameters 
         {

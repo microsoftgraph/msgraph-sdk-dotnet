@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Me.Photo {
         {
         }
         /// <summary>
-        /// Delete navigation property photo for me
+        /// Delete the photo for the signed-in user or the specified group. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Me.Photo {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user&apos;s profile photo. Read-only.
+        /// Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they&apos;re stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.If the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ProfilePhoto"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Me.Photo {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property photo in me
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ProfilePhoto"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Me.Photo {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property photo for me
+        /// Delete the photo for the signed-in user or the specified group. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Me.Photo {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s profile photo. Read-only.
+        /// Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they&apos;re stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.If the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Me.Photo {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property photo in me
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Me.Photo {
         {
         }
         /// <summary>
-        /// The user&apos;s profile photo. Read-only.
+        /// Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they&apos;re stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.If the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download.
         /// </summary>
         public class PhotoRequestBuilderGetQueryParameters 
         {

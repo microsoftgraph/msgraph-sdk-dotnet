@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
         {
         }
         /// <summary>
-        /// Delete navigation property deviceStatuses for deviceManagement
+        /// Deletes a deviceComplianceDeviceStatus.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of DeviceComplianceDeviceStatus.
+        /// Read properties and relationships of the deviceComplianceDeviceStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceDeviceStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
             return await RequestAdapter.SendAsync<DeviceComplianceDeviceStatus>(requestInfo, DeviceComplianceDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property deviceStatuses in deviceManagement
+        /// Update the properties of a deviceComplianceDeviceStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancedevicestatus-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceDeviceStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
             return await RequestAdapter.SendAsync<DeviceComplianceDeviceStatus>(requestInfo, DeviceComplianceDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property deviceStatuses for deviceManagement
+        /// Deletes a deviceComplianceDeviceStatus.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
             return requestInfo;
         }
         /// <summary>
-        /// List of DeviceComplianceDeviceStatus.
+        /// Read properties and relationships of the deviceComplianceDeviceStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deviceStatuses in deviceManagement
+        /// Update the properties of a deviceComplianceDeviceStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceS
         {
         }
         /// <summary>
-        /// List of DeviceComplianceDeviceStatus.
+        /// Read properties and relationships of the deviceComplianceDeviceStatus object.
         /// </summary>
         public class DeviceComplianceDeviceStatusItemRequestBuilderGetQueryParameters 
         {

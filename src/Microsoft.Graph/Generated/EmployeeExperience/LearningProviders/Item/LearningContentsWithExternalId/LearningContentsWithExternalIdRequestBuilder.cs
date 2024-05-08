@@ -34,7 +34,8 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         {
         }
         /// <summary>
-        /// Delete navigation property learningContents for employeeExperience
+        /// Delete the specified learningContent resource that represents the metadata of the specified provider&apos;s ingested content.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Learning catalog items for the provider.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="LearningContent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +106,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             return await RequestAdapter.SendAsync<LearningContent>(requestInfo, LearningContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property learningContents for employeeExperience
+        /// Delete the specified learningContent resource that represents the metadata of the specified provider&apos;s ingested content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
             return requestInfo;
         }
         /// <summary>
-        /// Learning catalog items for the provider.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +182,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         {
         }
         /// <summary>
-        /// Learning catalog items for the provider.
+        /// Get the specified learningContent resource which represents the metadata of the specified provider&apos;s ingested content.
         /// </summary>
         public class LearningContentsWithExternalIdRequestBuilderGetQueryParameters 
         {

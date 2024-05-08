@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -47,11 +47,12 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PostCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts {
             return await RequestAdapter.SendAsync<PostCollectionResponse>(requestInfo, PostCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts {
             return new PostsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the posts of the specified thread. You can specify both the parent conversation and the thread, or,you can specify the thread without referencing the parent conversation.
         /// </summary>
         public class PostsRequestBuilderGetQueryParameters 
         {
@@ -138,6 +139,16 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections {
         {
         }
         /// <summary>
-        /// The sections in the notebook. Read-only. Nullable.
+        /// Retrieve a list of onenoteSection objects from the specified notebook.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnenoteSectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections {
             return await RequestAdapter.SendAsync<OnenoteSectionCollectionResponse>(requestInfo, OnenoteSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to sections for me
+        /// Create a new onenoteSection in the specified notebook.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnenoteSection"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections {
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The sections in the notebook. Read-only. Nullable.
+        /// Retrieve a list of onenoteSection objects from the specified notebook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to sections for me
+        /// Create a new onenoteSection in the specified notebook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Me.Onenote.Notebooks.Item.Sections {
             return new SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The sections in the notebook. Read-only. Nullable.
+        /// Retrieve a list of onenoteSection objects from the specified notebook.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters 
         {

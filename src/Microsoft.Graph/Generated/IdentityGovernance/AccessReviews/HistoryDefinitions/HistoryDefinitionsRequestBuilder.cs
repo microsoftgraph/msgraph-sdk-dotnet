@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
         {
         }
         /// <summary>
-        /// Represents a collection of access review history data and the scopes used to collect that data.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewHistoryDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return await RequestAdapter.SendAsync<AccessReviewHistoryDefinitionCollectionResponse>(requestInfo, AccessReviewHistoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to historyDefinitions for identityGovernance
+        /// Create a new accessReviewHistoryDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewHistoryDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return await RequestAdapter.SendAsync<AccessReviewHistoryDefinition>(requestInfo, AccessReviewHistoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a collection of access review history data and the scopes used to collect that data.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to historyDefinitions for identityGovernance
+        /// Create a new accessReviewHistoryDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions {
             return new HistoryDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a collection of access review history data and the scopes used to collect that data.
+        /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
         /// </summary>
         public class HistoryDefinitionsRequestBuilderGetQueryParameters 
         {

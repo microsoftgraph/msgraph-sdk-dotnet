@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations {
         {
         }
         /// <summary>
-        /// Targeted managed app configurations.
+        /// List properties and relationships of the targetedManagedAppConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetedManagedAppConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations {
             return await RequestAdapter.SendAsync<TargetedManagedAppConfigurationCollectionResponse>(requestInfo, TargetedManagedAppConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+        /// Create a new targetedManagedAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetedManagedAppConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations {
             return await RequestAdapter.SendAsync<TargetedManagedAppConfiguration>(requestInfo, TargetedManagedAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Targeted managed app configurations.
+        /// List properties and relationships of the targetedManagedAppConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+        /// Create a new targetedManagedAppConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations {
             return new TargetedManagedAppConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Targeted managed app configurations.
+        /// List properties and relationships of the targetedManagedAppConfiguration objects.
         /// </summary>
         public class TargetedManagedAppConfigurationsRequestBuilderGetQueryParameters 
         {

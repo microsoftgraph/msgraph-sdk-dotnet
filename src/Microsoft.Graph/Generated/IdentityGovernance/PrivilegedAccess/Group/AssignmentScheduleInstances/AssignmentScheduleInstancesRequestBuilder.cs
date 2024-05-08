@@ -62,7 +62,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentscheduleinstances?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupAssignmentScheduleInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleInstance>(requestInfo, PrivilegedAccessGroupAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new AssignmentScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties.
         /// </summary>
         public class AssignmentScheduleInstancesRequestBuilderGetQueryParameters 
         {

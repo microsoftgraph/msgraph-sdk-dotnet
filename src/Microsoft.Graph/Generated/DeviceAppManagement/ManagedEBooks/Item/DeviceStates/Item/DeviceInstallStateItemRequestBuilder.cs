@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
         {
         }
         /// <summary>
-        /// Delete navigation property deviceStates for deviceAppManagement
+        /// Deletes a deviceInstallState.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// Read properties and relationships of the deviceInstallState object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceInstallState"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
             return await RequestAdapter.SendAsync<DeviceInstallState>(requestInfo, DeviceInstallState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property deviceStates in deviceAppManagement
+        /// Update the properties of a deviceInstallState object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceInstallState"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
             return await RequestAdapter.SendAsync<DeviceInstallState>(requestInfo, DeviceInstallState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property deviceStates for deviceAppManagement
+        /// Deletes a deviceInstallState.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
             return requestInfo;
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// Read properties and relationships of the deviceInstallState object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deviceStates in deviceAppManagement
+        /// Update the properties of a deviceInstallState object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates.It
         {
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// Read properties and relationships of the deviceInstallState object.
         /// </summary>
         public class DeviceInstallStateItemRequestBuilderGetQueryParameters 
         {

@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.SimulationAutomations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SimulationAutomation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.SimulationAutomations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.SimulationAutomations.Item {
         {
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
         /// </summary>
         public class SimulationAutomationItemRequestBuilderGetQueryParameters 
         {

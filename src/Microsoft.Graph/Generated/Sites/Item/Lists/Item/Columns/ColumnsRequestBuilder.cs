@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Columns {
         {
         }
         /// <summary>
-        /// The collection of field definitions for this list.
+        /// Get the collection of columns represented as columnDefinition resources in a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to columns for sites
+        /// Create a column for a list with a request that specifies a columnDefinition.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of field definitions for this list.
+        /// Get the collection of columns represented as columnDefinition resources in a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to columns for sites
+        /// Create a column for a list with a request that specifies a columnDefinition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Columns {
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of field definitions for this list.
+        /// Get the collection of columns represented as columnDefinition resources in a list.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters 
         {

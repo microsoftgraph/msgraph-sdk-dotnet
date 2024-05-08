@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers {
         {
         }
         /// <summary>
-        /// All the customers of this business. Read-only. Nullable.
+        /// Get a list of bookingCustomer objects of a business.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingCustomerBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers {
             return await RequestAdapter.SendAsync<BookingCustomerBaseCollectionResponse>(requestInfo, BookingCustomerBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customers for solutions
+        /// Create a new bookingCustomer object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingCustomerBase"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers {
             return await RequestAdapter.SendAsync<BookingCustomerBase>(requestInfo, BookingCustomerBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All the customers of this business. Read-only. Nullable.
+        /// Get a list of bookingCustomer objects of a business.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customers for solutions
+        /// Create a new bookingCustomer object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Customers {
             return new CustomersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All the customers of this business. Read-only. Nullable.
+        /// Get a list of bookingCustomer objects of a business.
         /// </summary>
         public class CustomersRequestBuilderGetQueryParameters 
         {

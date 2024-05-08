@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Children {
         {
         }
         /// <summary>
-        /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DriveItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Children {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Children {
             return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters 
         {

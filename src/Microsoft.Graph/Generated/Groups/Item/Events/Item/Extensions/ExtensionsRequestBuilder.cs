@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExtensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public ExtensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -47,11 +47,11 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExtensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public ExtensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/extensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// The collection of open extensions defined for the event. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="ExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
             return await RequestAdapter.SendAsync<ExtensionCollectionResponse>(requestInfo, ExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to extensions for groups
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Extension"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
             return await RequestAdapter.SendAsync<Extension>(requestInfo, Extension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of open extensions defined for the event. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to extensions for groups
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
             return new ExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of open extensions defined for the event. Nullable.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         public class ExtensionsRequestBuilderGetQueryParameters 
         {
@@ -185,6 +186,16 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.Extensions {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

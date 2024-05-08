@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup {
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Group>(requestInfo, Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup {
             return new GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
         /// </summary>
         public class GraphGroupRequestBuilderGetQueryParameters 
         {

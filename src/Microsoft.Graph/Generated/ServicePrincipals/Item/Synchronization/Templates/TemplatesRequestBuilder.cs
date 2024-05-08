@@ -51,7 +51,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
         {
         }
         /// <summary>
-        /// Preconfigured synchronization settings for a particular application.
+        /// List the synchronization templates associated with a given application or service principal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SynchronizationTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
             return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Preconfigured synchronization settings for a particular application.
+        /// List the synchronization templates associated with a given application or service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates {
             return new TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Preconfigured synchronization settings for a particular application.
+        /// List the synchronization templates associated with a given application or service principal.
         /// </summary>
         public class TemplatesRequestBuilderGetQueryParameters 
         {

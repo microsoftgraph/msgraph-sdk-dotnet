@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Communications.CallRecords {
         {
         }
         /// <summary>
-        /// Get callRecords from communications
+        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
         /// </summary>
         /// <returns>A <see cref="CallRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Communications.CallRecords {
             return await RequestAdapter.SendAsync<CallRecord>(requestInfo, CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get callRecords from communications
+        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Communications.CallRecords {
             return new CallRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get callRecords from communications
+        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
         /// </summary>
         public class CallRecordsRequestBuilderGetQueryParameters 
         {

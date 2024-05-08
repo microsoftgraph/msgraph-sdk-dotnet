@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Groups.Item.Members.Item.GraphUser {
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Item.GraphUser {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Item.GraphUser {
             return new GraphUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
         /// </summary>
         public class GraphUserRequestBuilderGetQueryParameters 
         {

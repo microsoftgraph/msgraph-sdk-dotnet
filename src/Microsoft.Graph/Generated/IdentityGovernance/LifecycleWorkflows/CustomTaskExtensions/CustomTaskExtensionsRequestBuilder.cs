@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
         {
         }
         /// <summary>
-        /// The customTaskExtension instance.
+        /// Get a list of the customTaskExtension objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-customtaskextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomTaskExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return await RequestAdapter.SendAsync<CustomTaskExtensionCollectionResponse>(requestInfo, CustomTaskExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customTaskExtensions for identityGovernance
+        /// Create a new customTaskExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomTaskExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return await RequestAdapter.SendAsync<CustomTaskExtension>(requestInfo, CustomTaskExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The customTaskExtension instance.
+        /// Get a list of the customTaskExtension objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customTaskExtensions for identityGovernance
+        /// Create a new customTaskExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.CustomTaskExtens
             return new CustomTaskExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The customTaskExtension instance.
+        /// Get a list of the customTaskExtension objects and their properties.
         /// </summary>
         public class CustomTaskExtensionsRequestBuilderGetQueryParameters 
         {

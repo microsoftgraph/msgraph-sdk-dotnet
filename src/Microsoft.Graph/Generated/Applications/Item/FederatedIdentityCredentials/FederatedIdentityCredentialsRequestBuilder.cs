@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials {
         {
         }
         /// <summary>
-        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+        /// Get a list of the federatedIdentityCredential objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FederatedIdentityCredentialCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials {
             return await RequestAdapter.SendAsync<FederatedIdentityCredentialCollectionResponse>(requestInfo, FederatedIdentityCredentialCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to federatedIdentityCredentials for applications
+        /// Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FederatedIdentityCredential"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials {
             return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+        /// Get a list of the federatedIdentityCredential objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to federatedIdentityCredentials for applications
+        /// Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials {
             return new FederatedIdentityCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+        /// Get a list of the federatedIdentityCredential objects and their properties.
         /// </summary>
         public class FederatedIdentityCredentialsRequestBuilderGetQueryParameters 
         {

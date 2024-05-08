@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
         {
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceAppManagement
+        /// Deletes a targetedManagedAppPolicyAssignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedapppolicyassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// Read properties and relationships of the targetedManagedAppPolicyAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedapppolicyassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetedManagedAppPolicyAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return await RequestAdapter.SendAsync<TargetedManagedAppPolicyAssignment>(requestInfo, TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceAppManagement
+        /// Update the properties of a targetedManagedAppPolicyAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedapppolicyassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetedManagedAppPolicyAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return await RequestAdapter.SendAsync<TargetedManagedAppPolicyAssignment>(requestInfo, TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceAppManagement
+        /// Deletes a targetedManagedAppPolicyAssignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return requestInfo;
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// Read properties and relationships of the targetedManagedAppPolicyAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceAppManagement
+        /// Update the properties of a targetedManagedAppPolicyAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
         {
         }
         /// <summary>
-        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+        /// Read properties and relationships of the targetedManagedAppPolicyAssignment object.
         /// </summary>
         public class TargetedManagedAppPolicyAssignmentItemRequestBuilderGetQueryParameters 
         {

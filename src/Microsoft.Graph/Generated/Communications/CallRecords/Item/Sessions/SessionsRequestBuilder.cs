@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Communications.CallRecords.Item.Sessions {
         {
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Communications.CallRecords.Item.Sessions {
             return await RequestAdapter.SendAsync<Session>(requestInfo, Session.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Communications.CallRecords.Item.Sessions {
             return new SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
         /// </summary>
         public class SessionsRequestBuilderGetQueryParameters 
         {

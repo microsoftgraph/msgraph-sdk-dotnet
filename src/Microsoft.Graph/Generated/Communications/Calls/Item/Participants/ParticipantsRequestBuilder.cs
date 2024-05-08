@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants {
         {
         }
         /// <summary>
-        /// Get participants from communications
+        /// Retrieve a list of participant objects in the call.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ParticipantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants {
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get participants from communications
+        /// Retrieve a list of participant objects in the call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants {
             return new ParticipantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get participants from communications
+        /// Retrieve a list of participant objects in the call.
         /// </summary>
         public class ParticipantsRequestBuilderGetQueryParameters 
         {

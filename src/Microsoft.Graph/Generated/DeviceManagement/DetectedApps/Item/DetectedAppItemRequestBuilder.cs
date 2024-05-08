@@ -38,7 +38,8 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property detectedApps for deviceManagement
+        /// Deletes a detectedApp.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of detected apps associated with a device.
+        /// Read properties and relationships of the detectedApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DetectedApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
             return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property detectedApps in deviceManagement
+        /// Update the properties of a detectedApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DetectedApp"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
             return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property detectedApps for deviceManagement
+        /// Deletes a detectedApp.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of detected apps associated with a device.
+        /// Read properties and relationships of the detectedApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property detectedApps in deviceManagement
+        /// Update the properties of a detectedApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps.Item {
         {
         }
         /// <summary>
-        /// The list of detected apps associated with a device.
+        /// Read properties and relationships of the detectedApp object.
         /// </summary>
         public class DetectedAppItemRequestBuilderGetQueryParameters 
         {

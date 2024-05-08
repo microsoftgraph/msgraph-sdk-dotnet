@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public PhotosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -41,11 +41,12 @@ namespace Microsoft.Graph.Groups.Item.Photos {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ProfilePhotoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,10 +97,13 @@ namespace Microsoft.Graph.Groups.Item.Photos {
             return new PhotosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
         /// </summary>
         public class PhotosRequestBuilderGetQueryParameters 
         {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +123,16 @@ namespace Microsoft.Graph.Groups.Item.Photos {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

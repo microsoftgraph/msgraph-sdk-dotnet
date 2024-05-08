@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Search.Qnas.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property qnas for search
+        /// Delete a qna object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Search.Qnas.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Qna"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Search.Qnas.Item {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property qnas in search
+        /// Update the properties of a qna object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Qna"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Search.Qnas.Item {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property qnas for search
+        /// Delete a qna object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Search.Qnas.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Search.Qnas.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property qnas in search
+        /// Update the properties of a qna object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Search.Qnas.Item {
         {
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results that provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         public class QnaItemRequestBuilderGetQueryParameters 
         {

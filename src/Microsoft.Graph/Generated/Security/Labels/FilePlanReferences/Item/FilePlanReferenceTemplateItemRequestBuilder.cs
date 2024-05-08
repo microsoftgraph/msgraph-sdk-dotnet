@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Security.Labels.FilePlanReferences.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property filePlanReferences for security
+        /// Delete a filePlanReferenceTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-fileplanreferences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Security.Labels.FilePlanReferences.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+        /// Read the properties and relationships of a filePlanReferenceTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.FilePlanReferenceTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Security.Labels.FilePlanReferences.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.FilePlanReferenceTemplate>(requestInfo, Microsoft.Graph.Models.Security.FilePlanReferenceTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property filePlanReferences for security
+        /// Delete a filePlanReferenceTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Security.Labels.FilePlanReferences.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+        /// Read the properties and relationships of a filePlanReferenceTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Security.Labels.FilePlanReferences.Item {
         {
         }
         /// <summary>
-        /// Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+        /// Read the properties and relationships of a filePlanReferenceTemplate object.
         /// </summary>
         public class FilePlanReferenceTemplateItemRequestBuilderGetQueryParameters 
         {

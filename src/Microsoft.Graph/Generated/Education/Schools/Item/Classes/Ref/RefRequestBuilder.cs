@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property classes for education
+        /// Delete a class from a school.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Get the educationClass resources owned by an educationSchool.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to classes for education
+        /// Add a class to a school.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-post-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property classes for education
+        /// Delete a class from a school.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Get the educationClass resources owned by an educationSchool.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to classes for education
+        /// Add a class to a school.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property classes for education
+        /// Delete a class from a school.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref {
         {
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Get the educationClass resources owned by an educationSchool.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

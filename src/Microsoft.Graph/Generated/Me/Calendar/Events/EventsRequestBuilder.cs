@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Me.Calendar.Events {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -53,11 +53,12 @@ namespace Microsoft.Graph.Me.Calendar.Events {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// The events in the calendar. Navigation property. Read-only.
+        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Me.Calendar.Events {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The events in the calendar. Navigation property. Read-only.
+        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Me.Calendar.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The events in the calendar. Navigation property. Read-only.
+        /// Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {
@@ -191,6 +192,16 @@ namespace Microsoft.Graph.Me.Calendar.Events {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

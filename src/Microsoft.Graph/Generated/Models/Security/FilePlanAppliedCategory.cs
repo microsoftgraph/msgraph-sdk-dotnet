@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models.Security {
     public class FilePlanAppliedCategory : FilePlanDescriptorBase, IParsable 
     #pragma warning restore CS1591
     {
-        /// <summary>The subcategory property</summary>
+        /// <summary>Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public FilePlanSubcategory? Subcategory {

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.It
         {
         }
         /// <summary>
-        /// Delete ref of navigation property members for directory
+        /// Use this API to remove a member (user, group, or device) from an administrative unit.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item.Members.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property members for directory
+        /// Use this API to remove a member (user, group, or device) from an administrative unit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

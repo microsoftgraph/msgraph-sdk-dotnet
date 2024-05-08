@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property appliesTo for policies
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to appliesTo for policies
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +103,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property appliesTo for policies
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to appliesTo for policies
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +172,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property appliesTo for policies
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -193,7 +195,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref {
         {
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

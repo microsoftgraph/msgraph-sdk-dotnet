@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
         {
         }
         /// <summary>
-        /// Delete navigation property userStatuses for deviceManagement
+        /// Deletes a deviceComplianceUserStatus.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of DeviceComplianceUserStatus.
+        /// Read properties and relationships of the deviceComplianceUserStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceUserStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatus>(requestInfo, DeviceComplianceUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property userStatuses in deviceManagement
+        /// Update the properties of a deviceComplianceUserStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecomplianceuserstatus-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceUserStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return await RequestAdapter.SendAsync<DeviceComplianceUserStatus>(requestInfo, DeviceComplianceUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property userStatuses for deviceManagement
+        /// Deletes a deviceComplianceUserStatus.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return requestInfo;
         }
         /// <summary>
-        /// List of DeviceComplianceUserStatus.
+        /// Read properties and relationships of the deviceComplianceUserStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property userStatuses in deviceManagement
+        /// Update the properties of a deviceComplianceUserStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.UserSta
         {
         }
         /// <summary>
-        /// List of DeviceComplianceUserStatus.
+        /// Read properties and relationships of the deviceComplianceUserStatus object.
         /// </summary>
         public class DeviceComplianceUserStatusItemRequestBuilderGetQueryParameters 
         {

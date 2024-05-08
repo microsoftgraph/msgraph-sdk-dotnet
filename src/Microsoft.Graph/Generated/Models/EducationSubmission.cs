@@ -9,6 +9,25 @@ namespace Microsoft.Graph.Models {
     public class EducationSubmission : Entity, IParsable 
     #pragma warning restore CS1591
     {
+        /// <summary>The excusedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IdentitySet? ExcusedBy {
+            get { return BackingStore?.Get<IdentitySet?>("excusedBy"); }
+            set { BackingStore?.Set("excusedBy", value); }
+        }
+#nullable restore
+#else
+        public IdentitySet ExcusedBy {
+            get { return BackingStore?.Get<IdentitySet>("excusedBy"); }
+            set { BackingStore?.Set("excusedBy", value); }
+        }
+#endif
+        /// <summary>The excusedDateTime property</summary>
+        public DateTimeOffset? ExcusedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("excusedDateTime"); }
+            set { BackingStore?.Set("excusedDateTime", value); }
+        }
         /// <summary>The outcomes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +211,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"excusedBy", n => { ExcusedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"excusedDateTime", n => { ExcusedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"outcomes", n => { Outcomes = n.GetCollectionOfObjectValues<EducationOutcome>(EducationOutcome.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reassignedBy", n => { ReassignedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"reassignedDateTime", n => { ReassignedDateTime = n.GetDateTimeOffsetValue(); } },

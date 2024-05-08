@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Devices.Item.TransitiveMemberOf.GraphGroup {
         {
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Devices.Item.TransitiveMemberOf.GraphGroup {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Devices.Item.TransitiveMemberOf.GraphGroup {
             return new GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Get the groups and administrative units that the device is a member of. This API request is transitive, and will also return all groups and administrative units the device is a nested member of.
         /// </summary>
         public class GraphGroupRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Tags {
         {
         }
         /// <summary>
-        /// The tags associated with the team.
+        /// Get a list of the tag objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TeamworkTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Teams.Item.Tags {
             return await RequestAdapter.SendAsync<TeamworkTagCollectionResponse>(requestInfo, TeamworkTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tags for teams
+        /// Create a standard tag for members in a team.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TeamworkTag"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Teams.Item.Tags {
             return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The tags associated with the team.
+        /// Get a list of the tag objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tags for teams
+        /// Create a standard tag for members in a team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Teams.Item.Tags {
             return new TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The tags associated with the team.
+        /// Get a list of the tag objects and their properties.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters 
         {

@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// Read the properties and relationships of a virtualEventSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// Read the properties and relationships of a virtualEventSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item {
         {
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// Read the properties and relationships of a virtualEventSession object.
         /// </summary>
         public class VirtualEventSessionItemRequestBuilderGetQueryParameters 
         {

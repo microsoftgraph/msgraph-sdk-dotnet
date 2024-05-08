@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections
         {
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
+        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnectionCollectionResponse>(requestInfo, CloudPcOnPremisesConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to onPremisesConnections for deviceManagement
+        /// Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
+        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to onPremisesConnections for deviceManagement
+        /// Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections
             return new OnPremisesConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.
+        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
         /// </summary>
         public class OnPremisesConnectionsRequestBuilderGetQueryParameters 
         {

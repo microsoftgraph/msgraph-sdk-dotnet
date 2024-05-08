@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of article objects.
+        /// Read the properties and relationships of an article object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Article"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A list of article objects.
+        /// Read the properties and relationships of an article object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles.Item {
         {
         }
         /// <summary>
-        /// A list of article objects.
+        /// Read the properties and relationships of an article object.
         /// </summary>
         public class ArticleItemRequestBuilderGetQueryParameters 
         {

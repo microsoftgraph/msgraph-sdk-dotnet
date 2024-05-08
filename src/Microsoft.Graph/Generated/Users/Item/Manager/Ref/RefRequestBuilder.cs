@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property manager for users
+        /// Remove a user&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user or contact that is this user&apos;s manager. Read-only. Supports $expand.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the ref of navigation property manager in users
+        /// Assign a user&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property manager for users
+        /// Remove a user&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// The user or contact that is this user&apos;s manager. Read-only. Supports $expand.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Update the ref of navigation property manager in users
+        /// Assign a user&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

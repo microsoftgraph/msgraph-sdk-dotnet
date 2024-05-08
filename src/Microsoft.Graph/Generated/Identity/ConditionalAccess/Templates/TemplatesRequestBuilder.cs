@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Templates {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Templates {
             return await RequestAdapter.SendAsync<ConditionalAccessTemplateCollectionResponse>(requestInfo, ConditionalAccessTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.Templates {
             return new TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
         /// </summary>
         public class TemplatesRequestBuilderGetQueryParameters 
         {

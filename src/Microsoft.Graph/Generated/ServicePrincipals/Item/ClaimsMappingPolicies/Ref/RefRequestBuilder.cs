@@ -32,7 +32,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+        /// Remove a claimsMappingPolicy from a servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+        /// Assign a claimsMappingPolicy to a servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+        /// Remove a claimsMappingPolicy from a servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+        /// Assign a claimsMappingPolicy to a servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+        /// Remove a claimsMappingPolicy from a servicePrincipal.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref {
         {
         }
         /// <summary>
-        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
+        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.I
         {
         }
         /// <summary>
-        /// Delete navigation property temporaryAccessPassMethods for users
+        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TemporaryAccessPassAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.I
             return await RequestAdapter.SendAsync<TemporaryAccessPassAuthenticationMethod>(requestInfo, TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property temporaryAccessPassMethods for users
+        /// Delete a users&apos;s temporaryAccessPassAuthenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +98,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.I
             return requestInfo;
         }
         /// <summary>
-        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +133,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.I
         {
         }
         /// <summary>
-        /// Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+        /// Retrieve a user&apos;s single temporaryAccessPassAuthenticationMethod object.
         /// </summary>
         public class TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies {
         {
         }
         /// <summary>
-        /// Get tokenIssuancePolicies from applications
+        /// List the tokenIssuancePolicy objects that are assigned to an application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TokenIssuancePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies {
             return await RequestAdapter.SendAsync<TokenIssuancePolicyCollectionResponse>(requestInfo, TokenIssuancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tokenIssuancePolicies from applications
+        /// List the tokenIssuancePolicy objects that are assigned to an application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies {
             return new TokenIssuancePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get tokenIssuancePolicies from applications
+        /// List the tokenIssuancePolicy objects that are assigned to an application.
         /// </summary>
         public class TokenIssuancePoliciesRequestBuilderGetQueryParameters 
         {

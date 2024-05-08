@@ -72,7 +72,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupAssignmentScheduleInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return requestInfo;
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         {
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         public class PrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters 
         {

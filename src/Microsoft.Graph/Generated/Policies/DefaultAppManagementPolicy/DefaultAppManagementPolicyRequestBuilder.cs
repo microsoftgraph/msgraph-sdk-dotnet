@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+        /// Read the properties of a tenantAppManagementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TenantAppManagementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
             return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property defaultAppManagementPolicy in policies
+        /// Update the properties of a tenantAppManagementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TenantAppManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+        /// Read the properties of a tenantAppManagementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property defaultAppManagementPolicy in policies
+        /// Update the properties of a tenantAppManagementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Policies.DefaultAppManagementPolicy {
         {
         }
         /// <summary>
-        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+        /// Read the properties of a tenantAppManagementPolicy object.
         /// </summary>
         public class DefaultAppManagementPolicyRequestBuilderGetQueryParameters 
         {

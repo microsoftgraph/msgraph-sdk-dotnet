@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property simulations for security
+        /// Delete an attack simulation campaign for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get an attack simulation campaign for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Simulation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +97,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
             return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property simulations in security
+        /// Update an attack simulation campaign for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Simulation"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
             return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property simulations for security
+        /// Delete an attack simulation campaign for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get an attack simulation campaign for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +161,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property simulations in security
+        /// Update an attack simulation campaign for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -196,7 +199,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item {
         {
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get an attack simulation campaign for a tenant.
         /// </summary>
         public class SimulationItemRequestBuilderGetQueryParameters 
         {

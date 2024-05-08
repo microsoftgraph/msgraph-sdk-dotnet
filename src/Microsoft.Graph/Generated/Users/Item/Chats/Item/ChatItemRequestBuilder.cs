@@ -126,7 +126,8 @@ namespace Microsoft.Graph.Users.Item.Chats.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get chats from users
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Chat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -193,7 +194,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get chats from users
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -250,7 +251,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item {
         {
         }
         /// <summary>
-        /// Get chats from users
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
         /// </summary>
         public class ChatItemRequestBuilderGetQueryParameters 
         {

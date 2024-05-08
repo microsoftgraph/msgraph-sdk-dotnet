@@ -60,7 +60,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminCustomer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item {
         {
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
         /// </summary>
         public class DelegatedAdminCustomerItemRequestBuilderGetQueryParameters 
         {

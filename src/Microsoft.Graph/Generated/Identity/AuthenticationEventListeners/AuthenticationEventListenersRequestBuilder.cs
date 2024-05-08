@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Identity.AuthenticationEventListeners {
         {
         }
         /// <summary>
-        /// Represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+        /// Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationEventListenerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Identity.AuthenticationEventListeners {
             return await RequestAdapter.SendAsync<AuthenticationEventListenerCollectionResponse>(requestInfo, AuthenticationEventListenerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to authenticationEventListeners for identity
+        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationEventListener"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventListeners {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+        /// Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventListeners {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to authenticationEventListeners for identity
+        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventListeners {
             return new AuthenticationEventListenersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents listeners for custom authentication extension events in Azure AD for workforce and customers.
+        /// Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:
         /// </summary>
         public class AuthenticationEventListenersRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a calculated reputation of this host.
+        /// Get the properties and relationships of a hostReputation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-get-reputation?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="HostReputation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a calculated reputation of this host.
+        /// Get the properties and relationships of a hostReputation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation {
         {
         }
         /// <summary>
-        /// Represents a calculated reputation of this host.
+        /// Get the properties and relationships of a hostReputation object.
         /// </summary>
         public class ReputationRequestBuilderGetQueryParameters 
         {

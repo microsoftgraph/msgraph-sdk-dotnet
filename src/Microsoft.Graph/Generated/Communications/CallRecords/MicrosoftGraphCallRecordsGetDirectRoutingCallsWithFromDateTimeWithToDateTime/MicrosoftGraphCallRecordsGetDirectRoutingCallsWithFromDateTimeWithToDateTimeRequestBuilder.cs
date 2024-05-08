@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
         {
         }
         /// <summary>
-        /// Invoke function getDirectRoutingCalls
+        /// Get a log of direct routing calls as a collection of directRoutingLogRow entries.
         /// </summary>
         /// <returns>A <see cref="GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
             return await RequestAdapter.SendAsync<GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse>(requestInfo, GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDirectRoutingCalls
+        /// Get a log of direct routing calls as a collection of directRoutingLogRow entries.
         /// </summary>
         /// <returns>A <see cref="GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
             return await RequestAdapter.SendAsync<GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse>(requestInfo, GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDirectRoutingCalls
+        /// Get a log of direct routing calls as a collection of directRoutingLogRow entries.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGe
             return new MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getDirectRoutingCalls
+        /// Get a log of direct routing calls as a collection of directRoutingLogRow entries.
         /// </summary>
         public class MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters 
         {

@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property installedApps for users
+        /// Uninstall an app from the personal scope of the specified user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The apps installed in the personal scope of this user.
+        /// Retrieve the app installed in the personal scope of the specified user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserScopeTeamsAppInstallation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property installedApps for users
+        /// Uninstall an app from the personal scope of the specified user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The apps installed in the personal scope of this user.
+        /// Retrieve the app installed in the personal scope of the specified user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +198,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item {
         {
         }
         /// <summary>
-        /// The apps installed in the personal scope of this user.
+        /// Retrieve the app installed in the personal scope of the specified user.
         /// </summary>
         public class UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters 
         {

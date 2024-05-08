@@ -51,7 +51,8 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions {
         {
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra Entitlement Management)
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions {
             return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra Entitlement Management)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions {
             return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:- directory (Microsoft Entra ID)- entitlement management (Microsoft Entra Entitlement Management)
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters 
         {

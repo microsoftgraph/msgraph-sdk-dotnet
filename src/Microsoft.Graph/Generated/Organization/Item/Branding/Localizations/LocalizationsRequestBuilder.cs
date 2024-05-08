@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations {
         {
         }
         /// <summary>
-        /// Add different branding based on a locale.
+        /// Retrieve all localization branding objects, including the default branding.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OrganizationalBrandingLocalizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations {
             return await RequestAdapter.SendAsync<OrganizationalBrandingLocalizationCollectionResponse>(requestInfo, OrganizationalBrandingLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to localizations for organization
+        /// Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn&apos;t exist. The default branding is created only once. It&apos;s loaded when a localized branding isn&apos;t configured for the user&apos;s browser language. To retrieve the default branding, see Get branding.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OrganizationalBrandingLocalization"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations {
             return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add different branding based on a locale.
+        /// Retrieve all localization branding objects, including the default branding.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to localizations for organization
+        /// Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn&apos;t exist. The default branding is created only once. It&apos;s loaded when a localized branding isn&apos;t configured for the user&apos;s browser language. To retrieve the default branding, see Get branding.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations {
             return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Add different branding based on a locale.
+        /// Retrieve all localization branding objects, including the default branding.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters 
         {

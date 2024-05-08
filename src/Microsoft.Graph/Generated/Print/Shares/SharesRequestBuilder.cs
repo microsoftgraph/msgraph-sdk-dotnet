@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Print.Shares {
         {
         }
         /// <summary>
-        /// The list of printer shares registered in the tenant.
+        /// Retrieve a list of printerShares.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrinterShareCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Print.Shares {
             return await RequestAdapter.SendAsync<PrinterShareCollectionResponse>(requestInfo, PrinterShareCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to shares for print
+        /// Create a new printerShare for the specified printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrinterShare"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Print.Shares {
             return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of printer shares registered in the tenant.
+        /// Retrieve a list of printerShares.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Print.Shares {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to shares for print
+        /// Create a new printerShare for the specified printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Print.Shares {
             return new SharesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of printer shares registered in the tenant.
+        /// Retrieve a list of printerShares.
         /// </summary>
         public class SharesRequestBuilderGetQueryParameters 
         {

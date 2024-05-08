@@ -32,7 +32,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
         {
         }
         /// <summary>
-        /// Delete navigation property delegatedPermissionClassifications for servicePrincipals
+        /// Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.DelegatedPermissionClassificati
             return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property delegatedPermissionClassifications for servicePrincipals
+        /// Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

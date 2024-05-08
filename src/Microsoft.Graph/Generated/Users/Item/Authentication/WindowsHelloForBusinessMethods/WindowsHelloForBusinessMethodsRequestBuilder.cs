@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
         {
         }
         /// <summary>
-        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
+        /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsHelloForBusinessAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
             return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethodCollectionResponse>(requestInfo, WindowsHelloForBusinessAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
+        /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMetho
             return new WindowsHelloForBusinessMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the Windows Hello for Business authentication method registered to a user for authentication.
+        /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
         /// </summary>
         public class WindowsHelloForBusinessMethodsRequestBuilderGetQueryParameters 
         {

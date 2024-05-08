@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners {
         {
         }
         /// <summary>
-        /// The telecom expense management partners.
+        /// List properties and relationships of the telecomExpenseManagementPartner objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TelecomExpenseManagementPartnerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners {
             return await RequestAdapter.SendAsync<TelecomExpenseManagementPartnerCollectionResponse>(requestInfo, TelecomExpenseManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to telecomExpenseManagementPartners for deviceManagement
+        /// Create a new telecomExpenseManagementPartner object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TelecomExpenseManagementPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners {
             return await RequestAdapter.SendAsync<TelecomExpenseManagementPartner>(requestInfo, TelecomExpenseManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The telecom expense management partners.
+        /// List properties and relationships of the telecomExpenseManagementPartner objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to telecomExpenseManagementPartners for deviceManagement
+        /// Create a new telecomExpenseManagementPartner object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners {
             return new TelecomExpenseManagementPartnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The telecom expense management partners.
+        /// List properties and relationships of the telecomExpenseManagementPartner objects.
         /// </summary>
         public class TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters 
         {

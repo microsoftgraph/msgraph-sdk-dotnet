@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
         {
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Get the list of timeOffReasons in a schedule.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReasonCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return await RequestAdapter.SendAsync<TimeOffReasonCollectionResponse>(requestInfo, TimeOffReasonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to timeOffReasons for teams
+        /// Create a new timeOffReason.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReason"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Get the list of timeOffReasons in a schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to timeOffReasons for teams
+        /// Create a new timeOffReason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons {
             return new TimeOffReasonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Get the list of timeOffReasons in a schedule.
         /// </summary>
         public class TimeOffReasonsRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// App configuration device status summary.
+        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationDeviceSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationDeviceSummary>(requestInfo, ManagedDeviceMobileAppConfigurationDeviceSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property deviceStatusSummary in deviceAppManagement
+        /// Update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationDeviceSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return requestInfo;
         }
         /// <summary>
-        /// App configuration device status summary.
+        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deviceStatusSummary in deviceAppManagement
+        /// Update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
         {
         }
         /// <summary>
-        /// App configuration device status summary.
+        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
         /// </summary>
         public class DeviceStatusSummaryRequestBuilderGetQueryParameters 
         {

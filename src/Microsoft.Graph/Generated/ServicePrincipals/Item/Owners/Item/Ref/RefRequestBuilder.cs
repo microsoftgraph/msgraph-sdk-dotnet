@@ -31,7 +31,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Owners.Item.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property owners for servicePrincipals
+        /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Owners.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property owners for servicePrincipals
+        /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

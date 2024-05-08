@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments {
         {
         }
         /// <summary>
-        /// Represents the app roles a group has been granted for an application. Supports $expand.
+        /// Retrieve the list of appRoleAssignment that have been granted to a group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments {
             return await RequestAdapter.SendAsync<AppRoleAssignmentCollectionResponse>(requestInfo, AppRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to appRoleAssignments for groups
+        /// Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the app roles a group has been granted for an application. Supports $expand.
+        /// Retrieve the list of appRoleAssignment that have been granted to a group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to appRoleAssignments for groups
+        /// Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Groups.Item.AppRoleAssignments {
             return new AppRoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the app roles a group has been granted for an application. Supports $expand.
+        /// Retrieve the list of appRoleAssignment that have been granted to a group.
         /// </summary>
         public class AppRoleAssignmentsRequestBuilderGetQueryParameters 
         {

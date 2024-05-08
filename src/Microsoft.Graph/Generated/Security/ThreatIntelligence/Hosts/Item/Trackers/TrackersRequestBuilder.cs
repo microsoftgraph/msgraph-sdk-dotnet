@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
         {
         }
         /// <summary>
-        /// The hostTrackers that are associated with this host.
+        /// Get a list of hostTracker resources.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="HostTrackerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
             return await RequestAdapter.SendAsync<HostTrackerCollectionResponse>(requestInfo, HostTrackerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The hostTrackers that are associated with this host.
+        /// Get a list of hostTracker resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers {
             return new TrackersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The hostTrackers that are associated with this host.
+        /// Get a list of hostTracker resources.
         /// </summary>
         public class TrackersRequestBuilderGetQueryParameters 
         {

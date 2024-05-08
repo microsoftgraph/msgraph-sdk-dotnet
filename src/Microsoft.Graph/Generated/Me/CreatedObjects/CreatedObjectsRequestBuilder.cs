@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Me.CreatedObjects {
         {
         }
         /// <summary>
-        /// Directory objects that the user created. Read-only. Nullable.
+        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects that the user created. Read-only. Nullable.
+        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Me.CreatedObjects {
             return new CreatedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects that the user created. Read-only. Nullable.
+        /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
         /// </summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters 
         {

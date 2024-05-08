@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings {
         {
         }
         /// <summary>
-        /// The recordings of an online meeting. Read-only.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         /// <returns>A <see cref="CallRecordingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings {
             return await RequestAdapter.SendAsync<CallRecording>(requestInfo, CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The recordings of an online meeting. Read-only.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings {
             return new RecordingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The recordings of an online meeting. Read-only.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
         public class RecordingsRequestBuilderGetQueryParameters 
         {

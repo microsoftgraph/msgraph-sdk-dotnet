@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
         {
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Get a list of subjectRightsRequest objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SubjectRightsRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return await RequestAdapter.SendAsync<SubjectRightsRequestCollectionResponse>(requestInfo, SubjectRightsRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to subjectRightsRequests for privacy
+        /// Create a new subjectRightsRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SubjectRightsRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Get a list of subjectRightsRequest objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to subjectRightsRequests for privacy
+        /// Create a new subjectRightsRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests {
             return new SubjectRightsRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Get a list of subjectRightsRequest objects and their properties.
         /// </summary>
         public class SubjectRightsRequestsRequestBuilderGetQueryParameters 
         {

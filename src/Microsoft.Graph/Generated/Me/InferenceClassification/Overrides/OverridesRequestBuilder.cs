@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverridesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/inferenceClassification/overrides{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters)
+        public OverridesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/inferenceClassification/overrides{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -47,11 +47,12 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverridesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/inferenceClassification/overrides{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl)
+        public OverridesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/inferenceClassification/overrides{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="InferenceClassificationOverrideCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
             return await RequestAdapter.SendAsync<InferenceClassificationOverrideCollectionResponse>(requestInfo, InferenceClassificationOverrideCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to overrides for me
+        /// Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. Note
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="InferenceClassificationOverride"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
             return await RequestAdapter.SendAsync<InferenceClassificationOverride>(requestInfo, InferenceClassificationOverride.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to overrides for me
+        /// Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. Note
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
             return new OverridesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
         /// </summary>
         public class OverridesRequestBuilderGetQueryParameters 
         {
@@ -175,6 +177,16 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides {
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

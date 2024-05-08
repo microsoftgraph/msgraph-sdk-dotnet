@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children {
         {
         }
         /// <summary>
-        /// Children terms of set in term [store].
+        /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TermCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children {
             return await RequestAdapter.SendAsync<TermCollectionResponse>(requestInfo, TermCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to children for sites
+        /// Create a new term object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Term"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children {
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Children terms of set in term [store].
+        /// Get the first level children of a [set] or [term] resource using the children navigation property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to children for sites
+        /// Create a new term object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Sites.Item.TermStore.Sets.Item.Children {
             return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Children terms of set in term [store].
+        /// Get the first level children of a [set] or [term] resource using the children navigation property.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters 
         {

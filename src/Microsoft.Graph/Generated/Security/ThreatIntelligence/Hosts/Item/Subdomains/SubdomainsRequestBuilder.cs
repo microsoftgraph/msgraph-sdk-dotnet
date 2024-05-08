@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
         {
         }
         /// <summary>
-        /// The subdomains that are associated with this host.
+        /// Get the list of subdomain resources associated with a host.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SubdomainCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
             return await RequestAdapter.SendAsync<SubdomainCollectionResponse>(requestInfo, SubdomainCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The subdomains that are associated with this host.
+        /// Get the list of subdomain resources associated with a host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains {
             return new SubdomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The subdomains that are associated with this host.
+        /// Get the list of subdomain resources associated with a host.
         /// </summary>
         public class SubdomainsRequestBuilderGetQueryParameters 
         {

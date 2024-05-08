@@ -90,7 +90,8 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Requests for role eligibilities for principals through PIM.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -157,7 +158,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
             return requestInfo;
         }
         /// <summary>
-        /// Requests for role eligibilities for principals through PIM.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -214,7 +215,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleEligibilitySched
         {
         }
         /// <summary>
-        /// Requests for role eligibilities for principals through PIM.
+        /// In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
         /// </summary>
         public class UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters 
         {

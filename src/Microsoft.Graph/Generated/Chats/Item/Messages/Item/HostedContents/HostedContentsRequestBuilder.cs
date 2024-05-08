@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Chats.Item.Messages.Item.HostedContents {
         {
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ChatMessageHostedContentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Chats.Item.Messages.Item.HostedContents {
             return await RequestAdapter.SendAsync<ChatMessageHostedContent>(requestInfo, ChatMessageHostedContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Chats.Item.Messages.Item.HostedContents {
             return new HostedContentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content.
         /// </summary>
         public class HostedContentsRequestBuilderGetQueryParameters 
         {

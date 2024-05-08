@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphUser {
         {
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphUser {
             return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Groups.Item.Members.GraphUser {
             return new GraphUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+        /// Get a list of the group&apos;s direct members. A group can have users, organizational contacts, devices, service principals and other groups as members. This operation is not transitive.
         /// </summary>
         public class GraphUserRequestBuilderGetQueryParameters 
         {

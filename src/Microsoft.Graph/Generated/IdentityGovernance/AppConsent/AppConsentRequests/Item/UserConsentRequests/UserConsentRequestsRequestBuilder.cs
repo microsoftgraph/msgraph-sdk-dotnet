@@ -62,7 +62,8 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Retrieve a collection of userConsentRequest objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserConsentRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return await RequestAdapter.SendAsync<UserConsentRequest>(requestInfo, UserConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Retrieve a collection of userConsentRequest objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequests.Item.
             return new UserConsentRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Retrieve a collection of userConsentRequest objects and their properties.
         /// </summary>
         public class UserConsentRequestsRequestBuilderGetQueryParameters 
         {

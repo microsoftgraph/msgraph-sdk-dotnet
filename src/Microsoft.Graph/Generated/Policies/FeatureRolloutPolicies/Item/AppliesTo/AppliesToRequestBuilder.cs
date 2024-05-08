@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         {
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,8 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to appliesTo for policies
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to appliesTo for policies
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return new AppliesToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters 
         {

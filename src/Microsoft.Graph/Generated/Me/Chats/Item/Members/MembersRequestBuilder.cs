@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
         {
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ConversationMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Me.Chats.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

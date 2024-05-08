@@ -38,7 +38,8 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Delete navigation property roleDefinitions for roleManagement
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property roleDefinitions in roleManagement
+        /// Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property roleDefinitions for roleManagement
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property roleDefinitions in roleManagement
+        /// Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
         /// </summary>
         public class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters 
         {

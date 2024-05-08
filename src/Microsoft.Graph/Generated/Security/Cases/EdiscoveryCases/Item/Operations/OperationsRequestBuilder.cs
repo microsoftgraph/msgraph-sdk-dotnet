@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Operations {
         {
         }
         /// <summary>
-        /// Returns a list of case caseOperation objects for this case.
+        /// Get a list of the caseOperation objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CaseOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Operations {
             return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, CaseOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of case caseOperation objects for this case.
+        /// Get a list of the caseOperation objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of case caseOperation objects for this case.
+        /// Get a list of the caseOperation objects and their properties.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

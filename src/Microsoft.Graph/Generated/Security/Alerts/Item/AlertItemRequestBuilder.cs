@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Security.Alerts.Item {
         {
         }
         /// <summary>
-        /// Get alerts from security
+        /// Retrieve the properties and relationships of an alert object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Alert"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Security.Alerts.Item {
             return await RequestAdapter.SendAsync<Alert>(requestInfo, Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property alerts in security
+        /// Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Alert"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Security.Alerts.Item {
             return await RequestAdapter.SendAsync<Alert>(requestInfo, Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get alerts from security
+        /// Retrieve the properties and relationships of an alert object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Security.Alerts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property alerts in security
+        /// Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +137,7 @@ namespace Microsoft.Graph.Security.Alerts.Item {
             return new AlertItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get alerts from security
+        /// Retrieve the properties and relationships of an alert object.
         /// </summary>
         public class AlertItemRequestBuilderGetQueryParameters 
         {

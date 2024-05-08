@@ -51,7 +51,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
         {
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
         /// </summary>
         /// <returns>A <see cref="ExternalGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,8 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroupCollectionResponse>(requestInfo, ExternalGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to groups for external
+        /// Create a new externalGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ExternalGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroup>(requestInfo, ExternalGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to groups for external
+        /// Create a new externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.External.Connections.Item.Groups {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get groups from external
+        /// Get an externalGroup object.
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters 
         {

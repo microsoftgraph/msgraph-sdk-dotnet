@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
         {
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AgreementFileLocalizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return await RequestAdapter.SendAsync<AgreementFileLocalization>(requestInfo, AgreementFileLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Agreements.Item.FileNamespace.Localizations {
             return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The localized version of the terms of use agreement files attached to the agreement.
+        /// Get a list of the default and localized agreement files.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters 
         {

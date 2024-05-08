@@ -90,7 +90,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// Retrieve a single message or a message reply in a channel or a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +114,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property messages in teams
+        /// Update a chatMessage object. Except for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation fails. This method doesn&apos;t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +159,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// Retrieve a single message or a message reply in a channel or a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -176,7 +178,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property messages in teams
+        /// Update a chatMessage object. Except for the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation fails. This method doesn&apos;t support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -214,7 +216,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item {
         {
         }
         /// <summary>
-        /// A collection of all the messages in the channel. A navigation property. Nullable.
+        /// Retrieve a single message or a message reply in a channel or a chat.
         /// </summary>
         public class ChatMessageItemRequestBuilderGetQueryParameters 
         {

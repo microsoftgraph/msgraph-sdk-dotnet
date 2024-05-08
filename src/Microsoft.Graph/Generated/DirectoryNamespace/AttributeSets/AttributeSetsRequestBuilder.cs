@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AttributeSets {
         {
         }
         /// <summary>
-        /// Group of related custom security attribute definitions.
+        /// Get a list of the attributeSet objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AttributeSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DirectoryNamespace.AttributeSets {
             return await RequestAdapter.SendAsync<AttributeSetCollectionResponse>(requestInfo, AttributeSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to attributeSets for directory
+        /// Create a new attributeSet object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AttributeSet"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AttributeSets {
             return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Group of related custom security attribute definitions.
+        /// Get a list of the attributeSet objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AttributeSets {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to attributeSets for directory
+        /// Create a new attributeSet object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AttributeSets {
             return new AttributeSetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Group of related custom security attribute definitions.
+        /// Get a list of the attributeSet objects and their properties.
         /// </summary>
         public class AttributeSetsRequestBuilderGetQueryParameters 
         {

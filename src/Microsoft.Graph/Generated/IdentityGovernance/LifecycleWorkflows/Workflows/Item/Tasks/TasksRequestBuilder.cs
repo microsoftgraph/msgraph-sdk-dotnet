@@ -51,7 +51,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         {
         }
         /// <summary>
-        /// The tasks in the workflow.
+        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-task?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
             return await RequestAdapter.SendAsync<TaskObject>(requestInfo, TaskObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The tasks in the workflow.
+        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The tasks in the workflow.
+        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

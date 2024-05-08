@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property tokenIssuancePolicies for applications
+        /// Remove a tokenIssuancePolicy from an application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property tokenIssuancePolicies for applications
+        /// Remove a tokenIssuancePolicy from an application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

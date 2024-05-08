@@ -63,7 +63,8 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
         {
         }
         /// <summary>
-        /// Microsoft Entra service principals that are at risk.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RiskyServicePrincipalCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
             return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Microsoft Entra service principals that are at risk.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyServicePrincipals {
             return new RiskyServicePrincipalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Microsoft Entra service principals that are at risk.
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
         /// </summary>
         public class RiskyServicePrincipalsRequestBuilderGetQueryParameters 
         {

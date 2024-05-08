@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.ArticleIndicators {
         {
         }
         /// <summary>
-        /// Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of an articleIndicator object.
         /// </summary>
         /// <returns>A <see cref="ArticleIndicatorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.ArticleIndicators {
             return await RequestAdapter.SendAsync<ArticleIndicator>(requestInfo, ArticleIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of an articleIndicator object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.ArticleIndicators {
             return new ArticleIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of an articleIndicator object.
         /// </summary>
         public class ArticleIndicatorsRequestBuilderGetQueryParameters 
         {

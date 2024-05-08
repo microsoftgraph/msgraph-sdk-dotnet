@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property taskTriggers for print
+        /// Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintTaskTrigger"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item {
             return await RequestAdapter.SendAsync<PrintTaskTrigger>(requestInfo, PrintTaskTrigger.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property taskTriggers for print
+        /// Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers.Item {
         {
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         public class PrintTaskTriggerItemRequestBuilderGetQueryParameters 
         {

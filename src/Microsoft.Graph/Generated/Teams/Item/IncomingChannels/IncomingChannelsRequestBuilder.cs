@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels {
         {
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ChannelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels {
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Teams.Item.IncomingChannels {
             return new IncomingChannelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
         public class IncomingChannelsRequestBuilderGetQueryParameters 
         {

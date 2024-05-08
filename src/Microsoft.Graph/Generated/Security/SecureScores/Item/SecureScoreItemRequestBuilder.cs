@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.SecureScores.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve the properties and relationships of a secureScore object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SecureScore"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Security.SecureScores.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve the properties and relationships of a secureScore object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Security.SecureScores.Item {
         {
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Retrieve the properties and relationships of a secureScore object.
         /// </summary>
         public class SecureScoreItemRequestBuilderGetQueryParameters 
         {

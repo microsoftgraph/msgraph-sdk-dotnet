@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property customAuthenticationExtensions for identity
+        /// Delete a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property customAuthenticationExtensions in identity
+        /// Update the properties of a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property customAuthenticationExtensions for identity
+        /// Delete a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customAuthenticationExtensions in identity
+        /// Update the properties of a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates {
         {
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// List properties and relationships of the deviceInstallState objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceInstallStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates {
             return await RequestAdapter.SendAsync<DeviceInstallStateCollectionResponse>(requestInfo, DeviceInstallStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to deviceStates for deviceAppManagement
+        /// Create a new deviceInstallState object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-deviceinstallstate-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceInstallState"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates {
             return await RequestAdapter.SendAsync<DeviceInstallState>(requestInfo, DeviceInstallState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// List properties and relationships of the deviceInstallState objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to deviceStates for deviceAppManagement
+        /// Create a new deviceInstallState object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.DeviceStates {
             return new DeviceStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of installation states for this eBook.
+        /// List properties and relationships of the deviceInstallState objects.
         /// </summary>
         public class DeviceStatesRequestBuilderGetQueryParameters 
         {

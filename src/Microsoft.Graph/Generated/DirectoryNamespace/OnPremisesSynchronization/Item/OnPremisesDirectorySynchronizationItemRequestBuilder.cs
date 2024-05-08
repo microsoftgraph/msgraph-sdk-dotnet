@@ -54,7 +54,8 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container for on-premises directory synchronization functionalities that are available for the organization.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnPremisesDirectorySynchronization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property onPremisesSynchronization in directory
+        /// Update the properties of an onPremisesDirectorySynchronization object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnPremisesDirectorySynchronization"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A container for on-premises directory synchronization functionalities that are available for the organization.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property onPremisesSynchronization in directory
+        /// Update the properties of an onPremisesDirectorySynchronization object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.Item {
         {
         }
         /// <summary>
-        /// A container for on-premises directory synchronization functionalities that are available for the organization.
+        /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
         public class OnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters 
         {

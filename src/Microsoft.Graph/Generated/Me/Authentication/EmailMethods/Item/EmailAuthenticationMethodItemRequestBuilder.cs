@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The email address registered to a user for authentication.
+        /// Retrieve a user&apos;s single email authentication method object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EmailAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The email address registered to a user for authentication.
+        /// Retrieve a user&apos;s single email authentication method object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Me.Authentication.EmailMethods.Item {
         {
         }
         /// <summary>
-        /// The email address registered to a user for authentication.
+        /// Retrieve a user&apos;s single email authentication method object.
         /// </summary>
         public class EmailAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

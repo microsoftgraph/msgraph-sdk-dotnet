@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
         {
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingAppointmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointmentCollectionResponse>(requestInfo, BookingAppointmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to appointments for solutions
+        /// Create a new bookingAppointment for the specified bookingBusiness.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookingAppointment"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to appointments for solutions
+        /// Create a new bookingAppointment for the specified bookingBusiness.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Appointments {
             return new AppointmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
         /// </summary>
         public class AppointmentsRequestBuilderGetQueryParameters 
         {

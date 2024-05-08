@@ -32,7 +32,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         {
         }
         /// <summary>
-        /// Delete navigation property targetDeviceGroups for servicePrincipals
+        /// Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that&apos;s in the removed targetDeviceGroup doesn&apos;t get SSO prompts.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-targetdevicegroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+        /// Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/targetdevicegroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetDeviceGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return await RequestAdapter.SendAsync<TargetDeviceGroup>(requestInfo, TargetDeviceGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property targetDeviceGroups in servicePrincipals
+        /// Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/targetdevicegroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TargetDeviceGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return await RequestAdapter.SendAsync<TargetDeviceGroup>(requestInfo, TargetDeviceGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property targetDeviceGroups for servicePrincipals
+        /// Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that&apos;s in the removed targetDeviceGroup doesn&apos;t get SSO prompts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return requestInfo;
         }
         /// <summary>
-        /// The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+        /// Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property targetDeviceGroups in servicePrincipals
+        /// Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal. You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
         {
         }
         /// <summary>
-        /// The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+        /// Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
         /// </summary>
         public class TargetDeviceGroupItemRequestBuilderGetQueryParameters 
         {

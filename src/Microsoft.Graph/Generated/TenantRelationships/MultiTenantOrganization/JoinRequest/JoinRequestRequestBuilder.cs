@@ -32,7 +32,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinReques
         {
         }
         /// <summary>
-        /// Defines the status of a tenant joining a multitenant organization.
+        /// Get the status of a tenant joining a multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationJoinRequestRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinReques
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property joinRequest in tenantRelationships
+        /// Join a multitenant organization, after the owner of the multitenant organization has added your tenant to the multitenant organization as pending. Before a tenant added to a multitenant organization can participate in the multitenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait up to 2 hours before joining a multitenant organization is completed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationJoinRequestRecord"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinReques
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines the status of a tenant joining a multitenant organization.
+        /// Get the status of a tenant joining a multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinReques
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property joinRequest in tenantRelationships
+        /// Join a multitenant organization, after the owner of the multitenant organization has added your tenant to the multitenant organization as pending. Before a tenant added to a multitenant organization can participate in the multitenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait up to 2 hours before joining a multitenant organization is completed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinReques
             return new JoinRequestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Defines the status of a tenant joining a multitenant organization.
+        /// Get the status of a tenant joining a multitenant organization.
         /// </summary>
         public class JoinRequestRequestBuilderGetQueryParameters 
         {

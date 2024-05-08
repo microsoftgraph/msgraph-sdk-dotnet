@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Print.Services.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve the properties and relationships of a print service.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintService"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Print.Services.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve the properties and relationships of a print service.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Print.Services.Item {
         {
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve the properties and relationships of a print service.
         /// </summary>
         public class PrintServiceItemRequestBuilderGetQueryParameters 
         {

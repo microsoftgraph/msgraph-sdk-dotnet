@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Education.Classes.Item.Schools {
         {
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-schools?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationSchoolCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Schools {
             return await RequestAdapter.SendAsync<EducationSchoolCollectionResponse>(requestInfo, EducationSchoolCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Schools {
             return new SchoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
         /// </summary>
         public class SchoolsRequestBuilderGetQueryParameters 
         {
