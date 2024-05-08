@@ -51,7 +51,8 @@ namespace Microsoft.Graph.AuditLogs.Provisioning {
         {
         }
         /// <summary>
-        /// Get provisioning from auditLogs
+        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ProvisioningObjectSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning {
             return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get provisioning from auditLogs
+        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning {
             return new ProvisioningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get provisioning from auditLogs
+        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// </summary>
         public class ProvisioningRequestBuilderGetQueryParameters 
         {

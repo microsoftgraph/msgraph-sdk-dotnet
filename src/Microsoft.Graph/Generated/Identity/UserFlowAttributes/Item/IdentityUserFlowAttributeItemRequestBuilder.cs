@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property userFlowAttributes for identity
+        /// Delete a custom identityUserFlowAttribute.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents entry point for identity userflow attributes.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlowAttribute"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property userFlowAttributes in identity
+        /// Update the properties of a custom identityUserFlowAttribute object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlowAttribute"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property userFlowAttributes for identity
+        /// Delete a custom identityUserFlowAttribute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for identity userflow attributes.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property userFlowAttributes in identity
+        /// Update the properties of a custom identityUserFlowAttribute object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Identity.UserFlowAttributes.Item {
         {
         }
         /// <summary>
-        /// Represents entry point for identity userflow attributes.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
         /// </summary>
         public class IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters 
         {

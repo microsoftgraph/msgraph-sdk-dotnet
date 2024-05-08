@@ -69,7 +69,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf {
         {
         }
         /// <summary>
-        /// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+        /// Get the groups and directory roles that this servicePrincipal is a direct member of. This operation is not transitive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+        /// Get the groups and directory roles that this servicePrincipal is a direct member of. This operation is not transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.MemberOf {
             return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+        /// Get the groups and directory roles that this servicePrincipal is a direct member of. This operation is not transitive.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters 
         {

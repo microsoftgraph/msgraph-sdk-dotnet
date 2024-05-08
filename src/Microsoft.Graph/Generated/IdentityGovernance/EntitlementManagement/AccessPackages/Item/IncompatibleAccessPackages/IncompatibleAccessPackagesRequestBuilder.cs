@@ -57,7 +57,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// The access packages whose assigned users are ineligible to be assigned this access package.
+        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The access packages whose assigned users are ineligible to be assigned this access package.
+        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new IncompatibleAccessPackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The access packages whose assigned users are ineligible to be assigned this access package.
+        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
         /// </summary>
         public class IncompatibleAccessPackagesRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents {
         {
         }
         /// <summary>
-        /// A collection of Cloud PC audit events.
+        /// List all the cloudPcAuditEvent objects for the tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcAuditEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents {
             return await RequestAdapter.SendAsync<CloudPcAuditEvent>(requestInfo, CloudPcAuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of Cloud PC audit events.
+        /// List all the cloudPcAuditEvent objects for the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.AuditEvents {
             return new AuditEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of Cloud PC audit events.
+        /// List all the cloudPcAuditEvent objects for the tenant.
         /// </summary>
         public class AuditEventsRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property exportJobs for deviceManagement
+        /// Deletes a deviceManagementExportJob.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Read properties and relationships of the deviceManagementExportJob object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceManagementExportJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
             return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, DeviceManagementExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property exportJobs in deviceManagement
+        /// Update the properties of a deviceManagementExportJob object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceManagementExportJob"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
             return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, DeviceManagementExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property exportJobs for deviceManagement
+        /// Deletes a deviceManagementExportJob.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Read properties and relationships of the deviceManagementExportJob object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property exportJobs in deviceManagement
+        /// Update the properties of a deviceManagementExportJob object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.ExportJobs.Item {
         {
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Read properties and relationships of the deviceManagementExportJob object.
         /// </summary>
         public class DeviceManagementExportJobItemRequestBuilderGetQueryParameters 
         {

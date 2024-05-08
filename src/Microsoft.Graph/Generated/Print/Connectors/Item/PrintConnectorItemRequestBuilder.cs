@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Print.Connectors.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property connectors for print
+        /// Delete (unregister) a printConnector.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve the properties and relationships of a printConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property connectors in print
+        /// Update the properties of a printConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property connectors for print
+        /// Delete (unregister) a printConnector.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property connectors in print
+        /// Update the properties of a printConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Print.Connectors.Item {
         {
         }
         /// <summary>
-        /// The list of available print connectors.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         public class PrintConnectorItemRequestBuilderGetQueryParameters 
         {

@@ -44,7 +44,8 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property notificationMessageTemplates for deviceManagement
+        /// Deletes a notificationMessageTemplate.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Notification Message Templates.
+        /// Read properties and relationships of the notificationMessageTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="NotificationMessageTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
             return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, NotificationMessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property notificationMessageTemplates in deviceManagement
+        /// Update the properties of a notificationMessageTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="NotificationMessageTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
             return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, NotificationMessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property notificationMessageTemplates for deviceManagement
+        /// Deletes a notificationMessageTemplate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Notification Message Templates.
+        /// Read properties and relationships of the notificationMessageTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property notificationMessageTemplates in deviceManagement
+        /// Update the properties of a notificationMessageTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item {
         {
         }
         /// <summary>
-        /// The Notification Message Templates.
+        /// Read properties and relationships of the notificationMessageTemplate object.
         /// </summary>
         public class NotificationMessageTemplateItemRequestBuilderGetQueryParameters 
         {

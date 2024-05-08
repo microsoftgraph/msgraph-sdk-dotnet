@@ -32,7 +32,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignedTo for servicePrincipals
+        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approleassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppRoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignedTo for servicePrincipals
+        /// Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
             return requestInfo;
         }
         /// <summary>
-        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AppRoleAssignedTo.Item {
         {
         }
         /// <summary>
-        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
+        /// Read the properties and relationships of an appRoleAssignment object.
         /// </summary>
         public class AppRoleAssignmentItemRequestBuilderGetQueryParameters 
         {

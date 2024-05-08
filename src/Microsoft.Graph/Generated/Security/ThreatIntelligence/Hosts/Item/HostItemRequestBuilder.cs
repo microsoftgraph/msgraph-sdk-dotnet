@@ -132,7 +132,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.Host"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -199,7 +200,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -256,7 +257,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item {
         {
         }
         /// <summary>
-        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
         /// </summary>
         public class HostItemRequestBuilderGetQueryParameters 
         {

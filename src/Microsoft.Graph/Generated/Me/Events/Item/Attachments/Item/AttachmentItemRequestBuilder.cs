@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property attachments for me
+        /// Delete an attachment from a user calendar event, mail message, or group post.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments.Item {
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property attachments for me
+        /// Delete an attachment from a user calendar event, mail message, or group post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

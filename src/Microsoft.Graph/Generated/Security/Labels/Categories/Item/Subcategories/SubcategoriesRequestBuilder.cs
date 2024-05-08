@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item.Subcategories {
         {
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Get a list of subcategories subcategoryTemplate associated with a category template.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-list-subcategories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SubcategoryTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item.Subcategories {
             return await RequestAdapter.SendAsync<SubcategoryTemplateCollectionResponse>(requestInfo, SubcategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to subcategories for security
+        /// Create a new subcategoryTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-post-subcategories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SubcategoryTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item.Subcategories {
             return await RequestAdapter.SendAsync<SubcategoryTemplate>(requestInfo, SubcategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Get a list of subcategories subcategoryTemplate associated with a category template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item.Subcategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to subcategories for security
+        /// Create a new subcategoryTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item.Subcategories {
             return new SubcategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Get a list of subcategories subcategoryTemplate associated with a category template.
         /// </summary>
         public class SubcategoriesRequestBuilderGetQueryParameters 
         {

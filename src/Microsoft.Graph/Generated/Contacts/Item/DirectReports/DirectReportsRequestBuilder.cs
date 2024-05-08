@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Contacts.Item.DirectReports {
         {
         }
         /// <summary>
-        /// The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
+        /// Get the direct reports for this organizational contact.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Contacts.Item.DirectReports {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
+        /// Get the direct reports for this organizational contact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Contacts.Item.DirectReports {
             return new DirectReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
+        /// Get the direct reports for this organizational contact.
         /// </summary>
         public class DirectReportsRequestBuilderGetQueryParameters 
         {

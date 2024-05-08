@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
         {
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly or through nested membership. Nullable.
+        /// Get groups that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly or through nested membership. Nullable.
+        /// Get groups that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Groups.Item.TransitiveMemberOf {
             return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly or through nested membership. Nullable.
+        /// Get groups that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters 
         {

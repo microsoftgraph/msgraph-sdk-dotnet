@@ -46,7 +46,8 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property learningProviders for employeeExperience
+        /// Delete a learningProvider resource and remove its registration in Viva Learning for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperience-delete-learningproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +69,8 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Read the properties and relationships of a learningProvider object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="LearningProvider"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,8 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return new LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(PathParameters, RequestAdapter, externalcourseActivityId);
         }
         /// <summary>
-        /// Update the navigation property learningProviders in employeeExperience
+        /// Update the properties of a learningProvider object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="LearningProvider"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +139,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property learningProviders for employeeExperience
+        /// Delete a learningProvider resource and remove its registration in Viva Learning for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +158,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Read the properties and relationships of a learningProvider object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +177,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property learningProviders in employeeExperience
+        /// Update the properties of a learningProvider object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -212,7 +215,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item {
         {
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Read the properties and relationships of a learningProvider object.
         /// </summary>
         public class LearningProviderItemRequestBuilderGetQueryParameters 
         {

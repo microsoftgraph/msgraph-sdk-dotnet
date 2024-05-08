@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property categories for security
+        /// Delete a categoryTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Read the properties and relationships of a categoryTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.CategoryTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property categories for security
+        /// Delete a categoryTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Read the properties and relationships of a categoryTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Security.Labels.Categories.Item {
         {
         }
         /// <summary>
-        /// Specifies a group of similar types of content in a particular department.
+        /// Read the properties and relationships of a categoryTemplate object.
         /// </summary>
         public class CategoryTemplateItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
         {
         }
         /// <summary>
-        /// Zero or more long running operations triggered on the app registration.
+        /// List properties and relationships of the managedAppOperation objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return await RequestAdapter.SendAsync<ManagedAppOperationCollectionResponse>(requestInfo, ManagedAppOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to operations for deviceAppManagement
+        /// Create a new managedAppOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return await RequestAdapter.SendAsync<ManagedAppOperation>(requestInfo, ManagedAppOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Zero or more long running operations triggered on the app registration.
+        /// List properties and relationships of the managedAppOperation objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to operations for deviceAppManagement
+        /// Create a new managedAppOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Zero or more long running operations triggered on the app registration.
+        /// List properties and relationships of the managedAppOperation objects.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

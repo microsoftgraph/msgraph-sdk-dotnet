@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports {
         {
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MeetingAttendanceReportCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports {
             return await RequestAdapter.SendAsync<MeetingAttendanceReport>(requestInfo, MeetingAttendanceReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings.Item.AttendanceReports {
             return new AttendanceReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
         /// </summary>
         public class AttendanceReportsRequestBuilderGetQueryParameters 
         {

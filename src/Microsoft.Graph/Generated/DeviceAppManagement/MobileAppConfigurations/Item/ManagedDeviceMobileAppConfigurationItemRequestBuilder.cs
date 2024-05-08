@@ -68,7 +68,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property mobileAppConfigurations for deviceAppManagement
+        /// Deletes a iosMobileAppConfiguration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +91,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Managed Device Mobile Application Configurations.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +115,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property mobileAppConfigurations in deviceAppManagement
+        /// Update the properties of a iosMobileAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -138,7 +141,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfiguration>(requestInfo, ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mobileAppConfigurations for deviceAppManagement
+        /// Deletes a iosMobileAppConfiguration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +160,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Managed Device Mobile Application Configurations.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -176,7 +179,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mobileAppConfigurations in deviceAppManagement
+        /// Update the properties of a iosMobileAppConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -214,7 +217,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item {
         {
         }
         /// <summary>
-        /// The Managed Device Mobile Application Configurations.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         public class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters 
         {

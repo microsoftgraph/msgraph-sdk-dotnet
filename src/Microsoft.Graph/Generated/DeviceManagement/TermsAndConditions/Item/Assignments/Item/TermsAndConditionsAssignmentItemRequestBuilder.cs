@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
         {
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceManagement
+        /// Deletes a termsAndConditionsAssignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of assignments for this T&amp;C policy.
+        /// Read properties and relationships of the termsAndConditionsAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TermsAndConditionsAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
             return await RequestAdapter.SendAsync<TermsAndConditionsAssignment>(requestInfo, TermsAndConditionsAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceManagement
+        /// Update the properties of a termsAndConditionsAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TermsAndConditionsAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
             return await RequestAdapter.SendAsync<TermsAndConditionsAssignment>(requestInfo, TermsAndConditionsAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property assignments for deviceManagement
+        /// Deletes a termsAndConditionsAssignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
             return requestInfo;
         }
         /// <summary>
-        /// The list of assignments for this T&amp;C policy.
+        /// Read properties and relationships of the termsAndConditionsAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property assignments in deviceManagement
+        /// Update the properties of a termsAndConditionsAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.I
         {
         }
         /// <summary>
-        /// The list of assignments for this T&amp;C policy.
+        /// Read properties and relationships of the termsAndConditionsAssignment object.
         /// </summary>
         public class TermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters 
         {

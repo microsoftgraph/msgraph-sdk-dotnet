@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
         {
         }
         /// <summary>
-        /// Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostCookie object.
         /// </summary>
         /// <returns>A <see cref="HostCookieCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
             return await RequestAdapter.SendAsync<HostCookie>(requestInfo, HostCookie.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostCookie object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostCookies {
             return new HostCookiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostCookie object.
         /// </summary>
         public class HostCookiesRequestBuilderGetQueryParameters 
         {

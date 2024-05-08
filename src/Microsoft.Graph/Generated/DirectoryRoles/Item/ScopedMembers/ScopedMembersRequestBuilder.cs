@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers {
         {
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ScopedRoleMembershipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers {
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.ScopedMembers {
             return new ScopedMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
         /// </summary>
         public class ScopedMembersRequestBuilderGetQueryParameters 
         {

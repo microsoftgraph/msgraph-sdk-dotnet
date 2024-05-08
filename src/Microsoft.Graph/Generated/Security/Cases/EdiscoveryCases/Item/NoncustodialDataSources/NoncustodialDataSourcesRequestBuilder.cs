@@ -86,7 +86,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSourceCollectionResponse>(requestInfo, EdiscoveryNoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to noncustodialDataSources for security
+        /// Create a new ediscoveryNoncustodialDataSource object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EdiscoveryNoncustodialDataSource"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSo
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to noncustodialDataSources for security
+        /// Create a new ediscoveryNoncustodialDataSource object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get shiftPreferences from users
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ShiftPreferences"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ShiftPreferences>(requestInfo, Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property shiftPreferences in users
+        /// Update the properties and relationships of a shiftPreferences object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.ShiftPreferences"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Get shiftPreferences from users
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property shiftPreferences in users
+        /// Update the properties and relationships of a shiftPreferences object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Users.Item.Settings.ShiftPreferences {
         {
         }
         /// <summary>
-        /// Get shiftPreferences from users
+        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
         /// </summary>
         public class ShiftPreferencesRequestBuilderGetQueryParameters 
         {

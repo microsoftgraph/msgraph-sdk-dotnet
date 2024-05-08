@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests {
         {
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve a list of openShiftChangeRequest objects in a team.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OpenShiftChangeRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests {
             return await RequestAdapter.SendAsync<OpenShiftChangeRequestCollectionResponse>(requestInfo, OpenShiftChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to openShiftChangeRequests for teams
+        /// Create instance of an openShiftChangeRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshiftchangerequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OpenShiftChangeRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests {
             return await RequestAdapter.SendAsync<OpenShiftChangeRequest>(requestInfo, OpenShiftChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve a list of openShiftChangeRequest objects in a team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to openShiftChangeRequests for teams
+        /// Create instance of an openShiftChangeRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests {
             return new OpenShiftChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve a list of openShiftChangeRequest objects in a team.
         /// </summary>
         public class OpenShiftChangeRequestsRequestBuilderGetQueryParameters 
         {

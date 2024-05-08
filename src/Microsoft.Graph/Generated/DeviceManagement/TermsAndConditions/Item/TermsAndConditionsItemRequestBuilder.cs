@@ -44,7 +44,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property termsAndConditions for deviceManagement
+        /// Deletes a termsAndConditions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The terms and conditions associated with device management of the company.
+        /// Read properties and relationships of the termsAndConditions object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermsAndConditions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property termsAndConditions in deviceManagement
+        /// Update the properties of a termsAndConditions object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.TermsAndConditions"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property termsAndConditions for deviceManagement
+        /// Deletes a termsAndConditions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The terms and conditions associated with device management of the company.
+        /// Read properties and relationships of the termsAndConditions object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property termsAndConditions in deviceManagement
+        /// Update the properties of a termsAndConditions object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item {
         {
         }
         /// <summary>
-        /// The terms and conditions associated with device management of the company.
+        /// Read properties and relationships of the termsAndConditions object.
         /// </summary>
         public class TermsAndConditionsItemRequestBuilderGetQueryParameters 
         {

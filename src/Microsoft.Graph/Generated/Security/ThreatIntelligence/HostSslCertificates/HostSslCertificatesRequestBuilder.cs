@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates {
         {
         }
         /// <summary>
-        /// Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         /// <returns>A <see cref="HostSslCertificateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates {
             return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostSslCertificates {
             return new HostSslCertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         public class HostSslCertificatesRequestBuilderGetQueryParameters 
         {

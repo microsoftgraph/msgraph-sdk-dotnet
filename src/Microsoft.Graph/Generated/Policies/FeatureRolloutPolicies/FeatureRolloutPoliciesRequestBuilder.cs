@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
         {
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve a list of featureRolloutPolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FeatureRolloutPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicyCollectionResponse>(requestInfo, FeatureRolloutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to featureRolloutPolicies for policies
+        /// Create a new featureRolloutPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="FeatureRolloutPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve a list of featureRolloutPolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to featureRolloutPolicies for policies
+        /// Create a new featureRolloutPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Policies.FeatureRolloutPolicies {
             return new FeatureRolloutPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve a list of featureRolloutPolicy objects.
         /// </summary>
         public class FeatureRolloutPoliciesRequestBuilderGetQueryParameters 
         {

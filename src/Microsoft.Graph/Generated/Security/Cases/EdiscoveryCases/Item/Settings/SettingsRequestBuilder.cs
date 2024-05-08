@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of eDIscoverySettings objects in the case.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCaseSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +84,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return await RequestAdapter.SendAsync<EdiscoveryCaseSettings>(requestInfo, EdiscoveryCaseSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property settings in security
+        /// Update the properties of an ediscoveryCaseSettings object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EdiscoveryCaseSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of eDIscoverySettings objects in the case.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +148,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in security
+        /// Update the properties of an ediscoveryCaseSettings object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Settings {
         {
         }
         /// <summary>
-        /// Returns a list of eDIscoverySettings objects in the case.
+        /// Read the properties and relationships of an ediscoveryCaseSettings object.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters 
         {

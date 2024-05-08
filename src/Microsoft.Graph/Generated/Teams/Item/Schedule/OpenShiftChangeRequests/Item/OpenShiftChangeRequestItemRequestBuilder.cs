@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OpenShiftChangeRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests.Item {
         {
         }
         /// <summary>
-        /// The open shift requests in the schedule.
+        /// Retrieve the properties and relationships of an openShiftChangeRequest object.
         /// </summary>
         public class OpenShiftChangeRequestItemRequestBuilderGetQueryParameters 
         {

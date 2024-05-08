@@ -83,7 +83,8 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property templates in applications
+        /// Update (override) the synchronization template associated with a given application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SynchronizationTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +147,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property templates in applications
+        /// Update (override) the synchronization template associated with a given application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups {
         {
         }
         /// <summary>
-        /// The logical grouping of users in the schedule (usually by role).
+        /// Get the list of schedulingGroups in this schedule.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SchedulingGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups {
             return await RequestAdapter.SendAsync<SchedulingGroupCollectionResponse>(requestInfo, SchedulingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to schedulingGroups for teams
+        /// Create a new schedulingGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SchedulingGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups {
             return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The logical grouping of users in the schedule (usually by role).
+        /// Get the list of schedulingGroups in this schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to schedulingGroups for teams
+        /// Create a new schedulingGroup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups {
             return new SchedulingGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The logical grouping of users in the schedule (usually by role).
+        /// Get the list of schedulingGroups in this schedule.
         /// </summary>
         public class SchedulingGroupsRequestBuilderGetQueryParameters 
         {

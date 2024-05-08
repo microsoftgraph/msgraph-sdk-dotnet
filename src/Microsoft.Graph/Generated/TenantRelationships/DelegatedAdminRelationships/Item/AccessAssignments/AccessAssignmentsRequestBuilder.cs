@@ -51,7 +51,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         {
         }
         /// <summary>
-        /// The access assignments associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminAccessAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
             return await RequestAdapter.SendAsync<DelegatedAdminAccessAssignmentCollectionResponse>(requestInfo, DelegatedAdminAccessAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to accessAssignments for tenantRelationships
+        /// Create a new delegatedAdminAccessAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminAccessAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
             return await RequestAdapter.SendAsync<DelegatedAdminAccessAssignment>(requestInfo, DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The access assignments associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to accessAssignments for tenantRelationships
+        /// Create a new delegatedAdminAccessAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
             return new AccessAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The access assignments associated with the delegated admin relationship.
+        /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
         /// </summary>
         public class AccessAssignmentsRequestBuilderGetQueryParameters 
         {

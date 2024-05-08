@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Contacts.Item.MemberOf {
         {
         }
         /// <summary>
-        /// Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+        /// List the groups that this organizational contact is a member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Contacts.Item.MemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+        /// List the groups that this organizational contact is a member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Contacts.Item.MemberOf {
             return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
+        /// List the groups that this organizational contact is a member of.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters 
         {

@@ -78,7 +78,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The assignment of an access package to a subject for a period of time.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.I
             return requestInfo;
         }
         /// <summary>
-        /// The assignment of an access package to a subject for a period of time.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +203,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.I
         {
         }
         /// <summary>
-        /// The assignment of an access package to a subject for a period of time.
+        /// In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
         /// </summary>
         public class AccessPackageAssignmentItemRequestBuilderGetQueryParameters 
         {

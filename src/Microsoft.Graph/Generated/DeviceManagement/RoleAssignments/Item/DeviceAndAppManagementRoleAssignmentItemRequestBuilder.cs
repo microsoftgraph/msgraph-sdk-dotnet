@@ -38,7 +38,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property roleAssignments for deviceManagement
+        /// Deletes a deviceAndAppManagementRoleAssignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Role Assignments.
+        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceAndAppManagementRoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property roleAssignments in deviceManagement
+        /// Update the properties of a deviceAndAppManagementRoleAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceAndAppManagementRoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property roleAssignments for deviceManagement
+        /// Deletes a deviceAndAppManagementRoleAssignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Role Assignments.
+        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property roleAssignments in deviceManagement
+        /// Update the properties of a deviceAndAppManagementRoleAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item {
         {
         }
         /// <summary>
-        /// The Role Assignments.
+        /// Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
         /// </summary>
         public class DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters 
         {

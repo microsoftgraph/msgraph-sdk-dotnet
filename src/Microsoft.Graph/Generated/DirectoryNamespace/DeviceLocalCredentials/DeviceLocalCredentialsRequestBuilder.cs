@@ -39,7 +39,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLocalCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24top}", pathParameters)
+        public DeviceLocalCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -47,11 +47,12 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLocalCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24top}", rawUrl)
+        public DeviceLocalCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-devicelocalcredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceLocalCredentialInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
             return await RequestAdapter.SendAsync<DeviceLocalCredentialInfo>(requestInfo, DeviceLocalCredentialInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
             return new DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties, excluding the credentials property. 
         /// </summary>
         public class DeviceLocalCredentialsRequestBuilderGetQueryParameters 
         {
@@ -196,6 +197,9 @@ namespace Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
 #endif
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

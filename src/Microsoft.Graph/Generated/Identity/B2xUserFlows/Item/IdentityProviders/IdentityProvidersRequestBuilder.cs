@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.IdentityProviders {
         {
         }
         /// <summary>
-        /// The identity providers included in the user flow.
+        /// Get the identity providers in a b2xIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IdentityProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The identity providers included in the user flow.
+        /// Get the identity providers in a b2xIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.IdentityProviders {
             return new IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The identity providers included in the user flow.
+        /// Get the identity providers in a b2xIdentityUserFlow object.
         /// </summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters 
         {

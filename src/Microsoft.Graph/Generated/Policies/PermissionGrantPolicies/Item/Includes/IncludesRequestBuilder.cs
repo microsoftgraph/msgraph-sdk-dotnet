@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
         {
         }
         /// <summary>
-        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PermissionGrantConditionSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSetCollectionResponse>(requestInfo, PermissionGrantConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to includes for policies
+        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PermissionGrantConditionSet"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to includes for policies
+        /// Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item.Includes {
             return new IncludesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Condition sets that are included in this permission grant policy. Automatically expanded on GET.
+        /// Retrieve the condition sets which are *included* in a permissionGrantPolicy.
         /// </summary>
         public class IncludesRequestBuilderGetQueryParameters 
         {

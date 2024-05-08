@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolici
         {
         }
         /// <summary>
-        /// Another way to input exempt apps through xml files
+        /// List properties and relationships of the windowsInformationProtectionAppLockerFile objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionapplockerfile-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionAppLockerFileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolici
             return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFileCollectionResponse>(requestInfo, WindowsInformationProtectionAppLockerFileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to exemptAppLockerFiles for deviceAppManagement
+        /// Create a new windowsInformationProtectionAppLockerFile object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotectionapplockerfile-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionAppLockerFile"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolici
             return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFile>(requestInfo, WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Another way to input exempt apps through xml files
+        /// List properties and relationships of the windowsInformationProtectionAppLockerFile objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolici
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to exemptAppLockerFiles for deviceAppManagement
+        /// Create a new windowsInformationProtectionAppLockerFile object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.WindowsInformationProtectionPolici
             return new ExemptAppLockerFilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Another way to input exempt apps through xml files
+        /// List properties and relationships of the windowsInformationProtectionAppLockerFile objects.
         /// </summary>
         public class ExemptAppLockerFilesRequestBuilderGetQueryParameters 
         {

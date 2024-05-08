@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Education.Me.Rubrics {
         {
         }
         /// <summary>
-        /// When set, the grading rubric attached to the assignment.
+        /// Retrieve a list of educationRubric objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationRubricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Education.Me.Rubrics {
             return await RequestAdapter.SendAsync<EducationRubricCollectionResponse>(requestInfo, EducationRubricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to rubrics for education
+        /// Create a new educationRubric object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationRubric"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Education.Me.Rubrics {
             return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// When set, the grading rubric attached to the assignment.
+        /// Retrieve a list of educationRubric objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Education.Me.Rubrics {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to rubrics for education
+        /// Create a new educationRubric object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Education.Me.Rubrics {
             return new RubricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// When set, the grading rubric attached to the assignment.
+        /// Retrieve a list of educationRubric objects.
         /// </summary>
         public class RubricsRequestBuilderGetQueryParameters 
         {

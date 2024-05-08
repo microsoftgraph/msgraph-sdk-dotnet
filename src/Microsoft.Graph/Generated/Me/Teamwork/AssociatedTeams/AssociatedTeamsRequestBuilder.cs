@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.Teamwork.AssociatedTeams {
         {
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/associatedteaminfo-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AssociatedTeamInfoCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Me.Teamwork.AssociatedTeams {
             return await RequestAdapter.SendAsync<AssociatedTeamInfo>(requestInfo, AssociatedTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Me.Teamwork.AssociatedTeams {
             return new AssociatedTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:
         /// </summary>
         public class AssociatedTeamsRequestBuilderGetQueryParameters 
         {

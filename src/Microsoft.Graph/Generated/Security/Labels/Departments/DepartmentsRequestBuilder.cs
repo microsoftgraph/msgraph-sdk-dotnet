@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.Labels.Departments {
         {
         }
         /// <summary>
-        /// Specifies the department or business unit of an organization to which a label belongs.
+        /// Get a list of the departmentTemplate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DepartmentTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Security.Labels.Departments {
             return await RequestAdapter.SendAsync<DepartmentTemplateCollectionResponse>(requestInfo, DepartmentTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to departments for security
+        /// Create a new departmentTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-departments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.DepartmentTemplate"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Security.Labels.Departments {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.DepartmentTemplate>(requestInfo, Microsoft.Graph.Models.Security.DepartmentTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies the department or business unit of an organization to which a label belongs.
+        /// Get a list of the departmentTemplate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Security.Labels.Departments {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to departments for security
+        /// Create a new departmentTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Security.Labels.Departments {
             return new DepartmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Specifies the department or business unit of an organization to which a label belongs.
+        /// Get a list of the departmentTemplate objects and their properties.
         /// </summary>
         public class DepartmentsRequestBuilderGetQueryParameters 
         {

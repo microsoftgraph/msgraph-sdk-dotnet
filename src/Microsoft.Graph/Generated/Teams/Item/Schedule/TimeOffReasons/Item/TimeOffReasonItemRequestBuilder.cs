@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property timeOffReasons for teams
+        /// Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method doesn&apos;t remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Retrieve the properties and relationships of a timeOffReason object by ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReason"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property timeOffReasons in teams
+        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns 404 Not found.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReason"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property timeOffReasons for teams
+        /// Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method doesn&apos;t remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Retrieve the properties and relationships of a timeOffReason object by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property timeOffReasons in teams
+        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns 404 Not found.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.Item {
         {
         }
         /// <summary>
-        /// The set of reasons for a time off in the schedule.
+        /// Retrieve the properties and relationships of a timeOffReason object by ID.
         /// </summary>
         public class TimeOffReasonItemRequestBuilderGetQueryParameters 
         {

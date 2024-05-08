@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
         {
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintTaskTriggerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
             return await RequestAdapter.SendAsync<PrintTaskTriggerCollectionResponse>(requestInfo, PrintTaskTriggerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to taskTriggers for print
+        /// Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrintTaskTrigger"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
             return await RequestAdapter.SendAsync<PrintTaskTrigger>(requestInfo, PrintTaskTrigger.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to taskTriggers for print
+        /// Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Print.Printers.Item.TaskTriggers {
             return new TaskTriggersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A list of task triggers that are associated with the printer.
+        /// Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         public class TaskTriggersRequestBuilderGetQueryParameters 
         {

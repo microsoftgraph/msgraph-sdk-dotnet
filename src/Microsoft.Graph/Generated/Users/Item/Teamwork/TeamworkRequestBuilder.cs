@@ -72,7 +72,8 @@ namespace Microsoft.Graph.Users.Item.Teamwork {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UserTeamwork"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork {
             return requestInfo;
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork {
         {
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
         /// </summary>
         public class TeamworkRequestBuilderGetQueryParameters 
         {

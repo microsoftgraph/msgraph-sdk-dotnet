@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Collection of buckets in the plan.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucketCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Collection of buckets in the plan.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Buckets {
             return new BucketsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Collection of buckets in the plan.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
         /// </summary>
         public class BucketsRequestBuilderGetQueryParameters 
         {

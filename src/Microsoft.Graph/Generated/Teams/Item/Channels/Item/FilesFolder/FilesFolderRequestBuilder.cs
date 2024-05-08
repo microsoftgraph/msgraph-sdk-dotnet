@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.FilesFolder {
         {
         }
         /// <summary>
-        /// Metadata for the location where the channel&apos;s files are stored.
+        /// Get the metadata for the location where the files of a channel are stored. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.DriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.FilesFolder {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DriveItem>(requestInfo, Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Metadata for the location where the channel&apos;s files are stored.
+        /// Get the metadata for the location where the files of a channel are stored. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.FilesFolder {
             return new FilesFolderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Metadata for the location where the channel&apos;s files are stored.
+        /// Get the metadata for the location where the files of a channel are stored. 
         /// </summary>
         public class FilesFolderRequestBuilderGetQueryParameters 
         {

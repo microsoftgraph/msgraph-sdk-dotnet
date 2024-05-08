@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property pages for sites
+        /// Delete a baseSitePage from the site pages list in a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/basesitepage-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of pages in the baseSitePages list in this site.
+        /// Get the metadata for a baseSitePage in the site pages list in a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BaseSitePage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item {
             return await RequestAdapter.SendAsync<BaseSitePage>(requestInfo, BaseSitePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property pages for sites
+        /// Delete a baseSitePage from the site pages list in a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of pages in the baseSitePages list in this site.
+        /// Get the metadata for a baseSitePage in the site pages list in a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +198,7 @@ namespace Microsoft.Graph.Sites.Item.Pages.Item {
         {
         }
         /// <summary>
-        /// The collection of pages in the baseSitePages list in this site.
+        /// Get the metadata for a baseSitePage in the site pages list in a site.
         /// </summary>
         public class BaseSitePageItemRequestBuilderGetQueryParameters 
         {

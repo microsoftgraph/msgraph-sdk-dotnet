@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf {
         {
         }
         /// <summary>
-        /// Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
+        /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
+        /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Contacts.Item.TransitiveMemberOf {
             return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Groups that this contact is a member of, including groups that the contact is nested under. Read-only. Nullable.
+        /// Get groups that this organizational contact is a member of. The API request is transitive, and returns all groups the organizational contact is a nested member of.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters 
         {

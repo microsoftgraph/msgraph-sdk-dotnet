@@ -32,7 +32,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
         {
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
             return requestInfo;
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
         {
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multitenant organization.
         /// </summary>
         public class MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters 
         {

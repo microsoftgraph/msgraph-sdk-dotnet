@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Me.OnlineMeetings {
         {
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnlineMeetingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Me.OnlineMeetings {
             return await RequestAdapter.SendAsync<OnlineMeetingCollectionResponse>(requestInfo, OnlineMeetingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to onlineMeetings for me
+        /// Create an online meeting on behalf of a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="OnlineMeeting"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to onlineMeetings for me
+        /// Create an online meeting on behalf of a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Me.OnlineMeetings {
             return new OnlineMeetingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+        /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) is an online meeting artifact. For details, see Online meeting artifacts and permissions.
         /// </summary>
         public class OnlineMeetingsRequestBuilderGetQueryParameters 
         {

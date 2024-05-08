@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions {
         {
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-customauthenticationextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtensionCollectionResponse>(requestInfo, CustomAuthenticationExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customAuthenticationExtensions for identity
+        /// Create a new customAuthenticationExtension object. The following derived types are currently supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-customauthenticationextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customAuthenticationExtensions for identity
+        /// Create a new customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions {
             return new CustomAuthenticationExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents custom extensions to authentication flows in Azure AD for workforce and customers.
+        /// Get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
         /// </summary>
         public class CustomAuthenticationExtensionsRequestBuilderGetQueryParameters 
         {

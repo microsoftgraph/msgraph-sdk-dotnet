@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property partners for policies
+        /// Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines partner-specific configurations for external Microsoft Entra organizations.
+        /// Read the properties and relationships of a partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property partners in policies
+        /// Update the properties of a partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessPolicyConfigurationPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationPartner>(requestInfo, CrossTenantAccessPolicyConfigurationPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property partners for policies
+        /// Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Defines partner-specific configurations for external Microsoft Entra organizations.
+        /// Read the properties and relationships of a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property partners in policies
+        /// Update the properties of a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item {
         {
         }
         /// <summary>
-        /// Defines partner-specific configurations for external Microsoft Entra organizations.
+        /// Read the properties and relationships of a partner-specific configuration.
         /// </summary>
         public class CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetQueryParameters 
         {

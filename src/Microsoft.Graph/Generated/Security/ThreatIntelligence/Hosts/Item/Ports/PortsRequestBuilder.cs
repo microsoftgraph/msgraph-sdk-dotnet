@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports {
         {
         }
         /// <summary>
-        /// The hostPorts associated with a host.
+        /// Get the list of hostPort resources associated with a host.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="HostPortCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports {
             return await RequestAdapter.SendAsync<HostPortCollectionResponse>(requestInfo, HostPortCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The hostPorts associated with a host.
+        /// Get the list of hostPort resources associated with a host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports {
             return new PortsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The hostPorts associated with a host.
+        /// Get the list of hostPort resources associated with a host.
         /// </summary>
         public class PortsRequestBuilderGetQueryParameters 
         {

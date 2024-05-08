@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois {
         {
         }
         /// <summary>
-        /// The most recent whoisRecord for this host.
+        /// Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:- Identify a host and get its current whoisRecord. - Specify an id value to get the corresponding whoisRecord.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WhoisRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois {
             return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The most recent whoisRecord for this host.
+        /// Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:- Identify a host and get its current whoisRecord. - Specify an id value to get the corresponding whoisRecord.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois {
             return new WhoisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The most recent whoisRecord for this host.
+        /// Get the specified whoisRecord resource.  Specify the desired whoisRecord in one of the following two ways:- Identify a host and get its current whoisRecord. - Specify an id value to get the corresponding whoisRecord.
         /// </summary>
         public class WhoisRequestBuilderGetQueryParameters 
         {

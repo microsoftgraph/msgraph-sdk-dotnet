@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Search.Bookmarks {
         {
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Get a list of bookmark objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="BookmarkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Search.Bookmarks {
             return await RequestAdapter.SendAsync<BookmarkCollectionResponse>(requestInfo, BookmarkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to bookmarks for search
+        /// Create a new bookmark object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Bookmark"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Search.Bookmarks {
             return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Get a list of bookmark objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Search.Bookmarks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to bookmarks for search
+        /// Create a new bookmark object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Search.Bookmarks {
             return new BookmarksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Get a list of bookmark objects and their properties.
         /// </summary>
         public class BookmarksRequestBuilderGetQueryParameters 
         {

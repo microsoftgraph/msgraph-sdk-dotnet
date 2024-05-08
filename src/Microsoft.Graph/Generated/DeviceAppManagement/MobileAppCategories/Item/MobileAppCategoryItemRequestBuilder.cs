@@ -32,7 +32,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property mobileAppCategories for deviceAppManagement
+        /// Deletes a mobileAppCategory.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The mobile app categories.
+        /// Read properties and relationships of the mobileAppCategory object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileAppCategory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
             return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property mobileAppCategories in deviceAppManagement
+        /// Update the properties of a mobileAppCategory object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-mobileappcategory-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MobileAppCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
             return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mobileAppCategories for deviceAppManagement
+        /// Deletes a mobileAppCategory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The mobile app categories.
+        /// Read properties and relationships of the mobileAppCategory object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mobileAppCategories in deviceAppManagement
+        /// Update the properties of a mobileAppCategory object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppCategories.Item {
         {
         }
         /// <summary>
-        /// The mobile app categories.
+        /// Read properties and relationships of the mobileAppCategory object.
         /// </summary>
         public class MobileAppCategoryItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
         {
         }
         /// <summary>
-        /// The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="HostPairCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
             return await RequestAdapter.SendAsync<HostPairCollectionResponse>(requestInfo, HostPairCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs {
             return new HostPairsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+        /// Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.
         /// </summary>
         public class HostPairsRequestBuilderGetQueryParameters 
         {

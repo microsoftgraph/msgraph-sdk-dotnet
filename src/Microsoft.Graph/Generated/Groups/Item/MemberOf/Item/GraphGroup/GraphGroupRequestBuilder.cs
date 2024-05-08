@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.Item.GraphGroup {
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.Item.GraphGroup {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Group>(requestInfo, Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.Item.GraphGroup {
             return new GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
         /// </summary>
         public class GraphGroupRequestBuilderGetQueryParameters 
         {

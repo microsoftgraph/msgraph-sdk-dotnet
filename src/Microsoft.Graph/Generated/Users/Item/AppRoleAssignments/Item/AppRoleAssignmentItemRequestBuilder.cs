@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignments for users
+        /// Delete an appRoleAssignment that has been granted to a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Users.Item.AppRoleAssignments.Item {
             return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property appRoleAssignments for users
+        /// Delete an appRoleAssignment that has been granted to a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

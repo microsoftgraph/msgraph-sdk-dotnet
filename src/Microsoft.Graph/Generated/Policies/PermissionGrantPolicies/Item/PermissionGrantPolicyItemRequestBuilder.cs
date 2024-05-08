@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property permissionGrantPolicies for policies
+        /// Delete a permissionGrantPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PermissionGrantPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property permissionGrantPolicies in policies
+        /// Update properties of a  permissionGrantPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PermissionGrantPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property permissionGrantPolicies for policies
+        /// Delete a permissionGrantPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property permissionGrantPolicies in policies
+        /// Update properties of a  permissionGrantPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.Policies.PermissionGrantPolicies.Item {
         {
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
         /// </summary>
         public class PermissionGrantPolicyItemRequestBuilderGetQueryParameters 
         {

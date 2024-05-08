@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of an sslCertificate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Models.Security.SslCertificate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.SslCertificates.Item {
         {
         }
         /// <summary>
-        /// Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         public class SslCertificateItemRequestBuilderGetQueryParameters 
         {

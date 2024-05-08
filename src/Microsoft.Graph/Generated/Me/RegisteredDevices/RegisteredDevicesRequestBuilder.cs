@@ -69,7 +69,8 @@ namespace Microsoft.Graph.Me.RegisteredDevices {
         {
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
+        /// Get the list of user&apos;s registered devices.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Me.RegisteredDevices {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
+        /// Get the list of user&apos;s registered devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.Me.RegisteredDevices {
             return new RegisteredDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
+        /// Get the list of user&apos;s registered devices.
         /// </summary>
         public class RegisteredDevicesRequestBuilderGetQueryParameters 
         {

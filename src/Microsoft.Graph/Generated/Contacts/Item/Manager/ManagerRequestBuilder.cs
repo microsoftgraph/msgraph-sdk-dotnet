@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
         {
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get this organizational contact&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get this organizational contact&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Contacts.Item.Manager {
             return new ManagerRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get this organizational contact&apos;s manager.
         /// </summary>
         public class ManagerRequestBuilderGetQueryParameters 
         {

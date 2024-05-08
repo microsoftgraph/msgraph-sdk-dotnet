@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Devices.Item.MemberOf {
         {
         }
         /// <summary>
-        /// Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups and administrative units that this device is a direct member of. This operation is not transitive.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Devices.Item.MemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups and administrative units that this device is a direct member of. This operation is not transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Devices.Item.MemberOf {
             return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+        /// Get groups and administrative units that this device is a direct member of. This operation is not transitive.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters 
         {

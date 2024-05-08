@@ -50,7 +50,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
+        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +97,8 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:- You can update this relationship when its status property is created.- You can update the autoExtendDuration property when status is either created or active.- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DelegatedAdminRelationship"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
+        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +161,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// Update the properties of a delegatedAdminRelationship object.  The following restrictions apply:- You can update this relationship when its status property is created.- You can update the autoExtendDuration property when status is either created or active.- You can only remove the Microsoft Entra Global Administrator role when the status property is active, which indicates a long-running operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -196,7 +199,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item {
         {
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
         /// </summary>
         public class DelegatedAdminRelationshipItemRequestBuilderGetQueryParameters 
         {

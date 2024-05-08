@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Me.Planner.Plans {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
+        /// Retrieve a list of plannerplan objects shared with a user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Me.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
+        /// Retrieve a list of plannerplan objects shared with a user object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Me.Planner.Plans {
             return new PlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
+        /// Retrieve a list of plannerplan objects shared with a user object.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters 
         {

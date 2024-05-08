@@ -66,7 +66,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PrivilegedAccessGroupEligibilityScheduleInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,7 +134,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return requestInfo;
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +191,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
         /// </summary>
         public class PrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilderGetQueryParameters 
         {

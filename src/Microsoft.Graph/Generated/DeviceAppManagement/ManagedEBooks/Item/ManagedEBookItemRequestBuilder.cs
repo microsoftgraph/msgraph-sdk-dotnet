@@ -62,7 +62,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property managedEBooks for deviceAppManagement
+        /// Deletes a iosVppEBook.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +85,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Managed eBook.
+        /// Read properties and relationships of the managedEBook object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedEBook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +109,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
             return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property managedEBooks in deviceAppManagement
+        /// Update the properties of a iosVppEBook object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedEBook"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +135,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
             return await RequestAdapter.SendAsync<ManagedEBook>(requestInfo, ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property managedEBooks for deviceAppManagement
+        /// Deletes a iosVppEBook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +154,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Managed eBook.
+        /// Read properties and relationships of the managedEBook object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property managedEBooks in deviceAppManagement
+        /// Update the properties of a iosVppEBook object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -208,7 +211,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item {
         {
         }
         /// <summary>
-        /// The Managed eBook.
+        /// Read properties and relationships of the managedEBook object.
         /// </summary>
         public class ManagedEBookItemRequestBuilderGetQueryParameters 
         {

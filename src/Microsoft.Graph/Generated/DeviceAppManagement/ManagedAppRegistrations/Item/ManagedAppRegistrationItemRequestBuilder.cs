@@ -72,7 +72,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The managed app registrations.
+        /// Read properties and relationships of the iosManagedAppRegistration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The managed app registrations.
+        /// Read properties and relationships of the iosManagedAppRegistration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item {
         {
         }
         /// <summary>
-        /// The managed app registrations.
+        /// Read properties and relationships of the iosManagedAppRegistration object.
         /// </summary>
         public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters 
         {

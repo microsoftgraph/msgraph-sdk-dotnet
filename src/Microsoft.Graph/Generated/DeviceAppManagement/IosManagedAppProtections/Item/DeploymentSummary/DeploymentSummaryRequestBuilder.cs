@@ -54,7 +54,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Depl
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Navigation property to deployment summary of the configuration.
+        /// Read properties and relationships of the managedAppPolicyDeploymentSummary object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppPolicyDeploymentSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Depl
             return await RequestAdapter.SendAsync<ManagedAppPolicyDeploymentSummary>(requestInfo, ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property deploymentSummary in deviceAppManagement
+        /// Update the properties of a managedAppPolicyDeploymentSummary object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedAppPolicyDeploymentSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Depl
             return requestInfo;
         }
         /// <summary>
-        /// Navigation property to deployment summary of the configuration.
+        /// Read properties and relationships of the managedAppPolicyDeploymentSummary object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Depl
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deploymentSummary in deviceAppManagement
+        /// Update the properties of a managedAppPolicyDeploymentSummary object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Depl
         {
         }
         /// <summary>
-        /// Navigation property to deployment summary of the configuration.
+        /// Read properties and relationships of the managedAppPolicyDeploymentSummary object.
         /// </summary>
         public class DeploymentSummaryRequestBuilderGetQueryParameters 
         {

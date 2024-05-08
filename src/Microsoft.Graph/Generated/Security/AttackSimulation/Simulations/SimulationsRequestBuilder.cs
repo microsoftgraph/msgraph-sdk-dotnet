@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations {
         {
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SimulationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations {
             return await RequestAdapter.SendAsync<SimulationCollectionResponse>(requestInfo, SimulationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to simulations for security
+        /// Create an attack simulation campaign for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Simulation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations {
             return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to simulations for security
+        /// Create an attack simulation campaign for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations {
             return new SimulationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
         /// </summary>
         public class SimulationsRequestBuilderGetQueryParameters 
         {

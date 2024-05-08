@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an attack simulation training operation.
+        /// Get an attack simulation operation to track a long-running operation request for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AttackSimulationOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents an attack simulation training operation.
+        /// Get an attack simulation operation to track a long-running operation request for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Operations.Item {
         {
         }
         /// <summary>
-        /// Represents an attack simulation training operation.
+        /// Get an attack simulation operation to track a long-running operation request for a tenant.
         /// </summary>
         public class AttackSimulationOperationItemRequestBuilderGetQueryParameters 
         {

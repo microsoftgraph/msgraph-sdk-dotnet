@@ -51,7 +51,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
         {
         }
         /// <summary>
-        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
+        /// List properties and relationships of the managedDeviceMobileAppConfigurationUserStatus objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationUserStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to userStatuses for deviceAppManagement
+        /// Create a new managedDeviceMobileAppConfigurationUserStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationUserStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationUserStatus>(requestInfo, ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
+        /// List properties and relationships of the managedDeviceMobileAppConfigurationUserStatus objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to userStatuses for deviceAppManagement
+        /// Create a new managedDeviceMobileAppConfigurationUserStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.UserS
             return new UserStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of ManagedDeviceMobileAppConfigurationUserStatus.
+        /// List properties and relationships of the managedDeviceMobileAppConfigurationUserStatus objects.
         /// </summary>
         public class UserStatusesRequestBuilderGetQueryParameters 
         {

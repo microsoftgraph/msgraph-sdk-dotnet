@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostComponents {
         {
         }
         /// <summary>
-        /// Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostComponent object.
         /// </summary>
         /// <returns>A <see cref="HostComponentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostComponents {
             return await RequestAdapter.SendAsync<HostComponent>(requestInfo, HostComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostComponent object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.HostComponents {
             return new HostComponentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a hostComponent object.
         /// </summary>
         public class HostComponentsRequestBuilderGetQueryParameters 
         {

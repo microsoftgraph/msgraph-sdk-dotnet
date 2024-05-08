@@ -57,7 +57,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages {
         {
         }
         /// <summary>
-        /// A collection of device image resources on Cloud PC.
+        /// List the properties and relationships of cloudPcDeviceImage objects (operating system images) uploaded to Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcDeviceImageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages {
             return await RequestAdapter.SendAsync<CloudPcDeviceImageCollectionResponse>(requestInfo, CloudPcDeviceImageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to deviceImages for deviceManagement
+        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcDeviceImage"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages {
             return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of device image resources on Cloud PC.
+        /// List the properties and relationships of cloudPcDeviceImage objects (operating system images) uploaded to Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to deviceImages for deviceManagement
+        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages {
             return new DeviceImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of device image resources on Cloud PC.
+        /// List the properties and relationships of cloudPcDeviceImage objects (operating system images) uploaded to Cloud PC.
         /// </summary>
         public class DeviceImagesRequestBuilderGetQueryParameters 
         {

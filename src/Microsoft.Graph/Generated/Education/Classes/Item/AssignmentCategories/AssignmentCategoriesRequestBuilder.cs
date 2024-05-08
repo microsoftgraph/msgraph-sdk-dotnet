@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
         {
         }
         /// <summary>
-        /// All categories associated with this class. Nullable.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return await RequestAdapter.SendAsync<EducationCategoryCollectionResponse>(requestInfo, EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to assignmentCategories for education
+        /// Create a new educationCategory on an educationClass. Only teachers can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationCategory"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All categories associated with this class. Nullable.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to assignmentCategories for education
+        /// Create a new educationCategory on an educationClass. Only teachers can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Education.Classes.Item.AssignmentCategories {
             return new AssignmentCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All categories associated with this class. Nullable.
+        /// Retrieve a list of educationCategory objects. Only teachers can perform this operation.
         /// </summary>
         public class AssignmentCategoriesRequestBuilderGetQueryParameters 
         {

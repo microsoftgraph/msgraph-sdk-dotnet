@@ -38,7 +38,8 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property vppTokens for deviceAppManagement
+        /// Deletes a vppToken.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of Vpp tokens for this organization.
+        /// Read properties and relationships of the vppToken object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="VppToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property vppTokens in deviceAppManagement
+        /// Update the properties of a vppToken object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="VppToken"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property vppTokens for deviceAppManagement
+        /// Deletes a vppToken.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return requestInfo;
         }
         /// <summary>
-        /// List of Vpp tokens for this organization.
+        /// Read properties and relationships of the vppToken object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property vppTokens in deviceAppManagement
+        /// Update the properties of a vppToken object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item {
         {
         }
         /// <summary>
-        /// List of Vpp tokens for this organization.
+        /// Read properties and relationships of the vppToken object.
         /// </summary>
         public class VppTokenItemRequestBuilderGetQueryParameters 
         {

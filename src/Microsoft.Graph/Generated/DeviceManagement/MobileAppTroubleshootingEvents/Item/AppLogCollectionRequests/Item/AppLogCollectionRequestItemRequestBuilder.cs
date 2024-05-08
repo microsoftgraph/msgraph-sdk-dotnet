@@ -38,7 +38,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
         {
         }
         /// <summary>
-        /// Delete navigation property appLogCollectionRequests for deviceManagement
+        /// Deletes a appLogCollectionRequest.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// Read properties and relationships of the appLogCollectionRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppLogCollectionRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property appLogCollectionRequests in deviceManagement
+        /// Update the properties of a appLogCollectionRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AppLogCollectionRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property appLogCollectionRequests for deviceManagement
+        /// Deletes a appLogCollectionRequest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// Read properties and relationships of the appLogCollectionRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property appLogCollectionRequests in deviceManagement
+        /// Update the properties of a appLogCollectionRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
         {
         }
         /// <summary>
-        /// Indicates collection of App Log Upload Request.
+        /// Read properties and relationships of the appLogCollectionRequest object.
         /// </summary>
         public class AppLogCollectionRequestItemRequestBuilderGetQueryParameters 
         {

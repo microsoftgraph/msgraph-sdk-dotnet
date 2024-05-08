@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules {
         {
         }
         /// <summary>
-        /// All modules in the class. Nullable.
+        /// Retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-modules?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationModuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules {
             return await RequestAdapter.SendAsync<EducationModuleCollectionResponse>(requestInfo, EducationModuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to modules for education
+        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students can&apos;t see the modules until publication.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-module?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationModule"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules {
             return await RequestAdapter.SendAsync<EducationModule>(requestInfo, EducationModule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All modules in the class. Nullable.
+        /// Retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to modules for education
+        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students can&apos;t see the modules until publication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules {
             return new ModulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All modules in the class. Nullable.
+        /// Retrieve a list of module objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can see all module objects for the class. Students can only see published modules.
         /// </summary>
         public class ModulesRequestBuilderGetQueryParameters 
         {

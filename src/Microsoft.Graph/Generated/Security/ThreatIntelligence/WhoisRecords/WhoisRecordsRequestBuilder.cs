@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords {
         {
         }
         /// <summary>
-        /// A list of whoisRecord objects.
+        /// Get a list of whoisRecord objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-threatintelligence-list-whoisrecords?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WhoisRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords {
             return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A list of whoisRecord objects.
+        /// Get a list of whoisRecord objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.WhoisRecords {
             return new WhoisRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A list of whoisRecord objects.
+        /// Get a list of whoisRecord objects.
         /// </summary>
         public class WhoisRecordsRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
         {
         }
         /// <summary>
-        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+        /// List existing jobs for a given application instance (service principal).
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SynchronizationJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return await RequestAdapter.SendAsync<SynchronizationJobCollectionResponse>(requestInfo, SynchronizationJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to jobs for servicePrincipals
+        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="SynchronizationJob"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+        /// List existing jobs for a given application instance (service principal).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to jobs for servicePrincipals
+        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs {
             return new JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+        /// List existing jobs for a given application instance (service principal).
         /// </summary>
         public class JobsRequestBuilderGetQueryParameters 
         {

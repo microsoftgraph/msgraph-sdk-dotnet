@@ -60,7 +60,8 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="AgreementFile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
             return requestInfo;
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item.FileName
         {
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
         /// </summary>
         public class FileRequestBuilderGetQueryParameters 
         {
