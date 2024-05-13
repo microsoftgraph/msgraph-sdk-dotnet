@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChannelAddedEventMessageDetail : EventMessageDetail, IParsable 
+    public class ChannelAddedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChannelDisplayName {
+        public string? ChannelDisplayName
+        {
             get { return BackingStore?.Get<string?>("channelDisplayName"); }
             set { BackingStore?.Set("channelDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ChannelDisplayName {
+        public string ChannelDisplayName
+        {
             get { return BackingStore?.Get<string>("channelDisplayName"); }
             set { BackingStore?.Set("channelDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChannelId {
+        public string? ChannelId
+        {
             get { return BackingStore?.Get<string?>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
 #nullable restore
 #else
-        public string ChannelId {
+        public string ChannelId
+        {
             get { return BackingStore?.Get<string>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"channelDisplayName", n => { ChannelDisplayName = n.GetStringValue(); } },
-                {"channelId", n => { ChannelId = n.GetStringValue(); } },
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "channelDisplayName", n => { ChannelDisplayName = n.GetStringValue(); } },
+                { "channelId", n => { ChannelId = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

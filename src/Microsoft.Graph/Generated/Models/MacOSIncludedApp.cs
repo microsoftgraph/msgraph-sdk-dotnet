@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties of an included .app in a MacOS app.
     /// </summary>
-    public class MacOSIncludedApp : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSIncludedApp : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The bundleId of the app. This maps to the CFBundleIdentifier in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version of the app. This maps to the CFBundleShortVersion in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleVersion {
+        public string? BundleVersion
+        {
             get { return BackingStore?.Get<string?>("bundleVersion"); }
             set { BackingStore?.Set("bundleVersion", value); }
         }
 #nullable restore
 #else
-        public string BundleVersion {
+        public string BundleVersion
+        {
             get { return BackingStore?.Get<string>("bundleVersion"); }
             set { BackingStore?.Set("bundleVersion", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"bundleVersion", n => { BundleVersion = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "bundleVersion", n => { BundleVersion = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

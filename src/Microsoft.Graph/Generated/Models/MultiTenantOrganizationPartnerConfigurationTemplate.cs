@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationPartnerConfigurationTemplate : Entity, IParsable 
+    public class MultiTenantOrganizationPartnerConfigurationTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InboundOutboundPolicyConfiguration? AutomaticUserConsentSettings {
+        public InboundOutboundPolicyConfiguration? AutomaticUserConsentSettings
+        {
             get { return BackingStore?.Get<InboundOutboundPolicyConfiguration?>("automaticUserConsentSettings"); }
             set { BackingStore?.Set("automaticUserConsentSettings", value); }
         }
 #nullable restore
 #else
-        public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings {
+        public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings
+        {
             get { return BackingStore?.Get<InboundOutboundPolicyConfiguration>("automaticUserConsentSettings"); }
             set { BackingStore?.Set("automaticUserConsentSettings", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationInbound {
+        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationInbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationInbound"); }
             set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {
+        public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound"); }
             set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationOutbound {
+        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationOutbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationOutbound"); }
             set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound {
+        public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound"); }
             set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectInbound {
+        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectInbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectInbound"); }
             set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound {
+        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound"); }
             set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectOutbound {
+        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectOutbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectOutbound"); }
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound {
+        public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound"); }
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
@@ -82,19 +93,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantAccessPolicyInboundTrust? InboundTrust {
+        public CrossTenantAccessPolicyInboundTrust? InboundTrust
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust?>("inboundTrust"); }
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #nullable restore
 #else
-        public CrossTenantAccessPolicyInboundTrust InboundTrust {
+        public CrossTenantAccessPolicyInboundTrust InboundTrust
+        {
             get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>("inboundTrust"); }
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #endif
         /// <summary>The templateApplicationLevel property</summary>
-        public Microsoft.Graph.Models.TemplateApplicationLevel? TemplateApplicationLevel {
+        public Microsoft.Graph.Models.TemplateApplicationLevel? TemplateApplicationLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TemplateApplicationLevel?>("templateApplicationLevel"); }
             set { BackingStore?.Set("templateApplicationLevel", value); }
         }
@@ -116,13 +130,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"automaticUserConsentSettings", n => { AutomaticUserConsentSettings = n.GetObjectValue<InboundOutboundPolicyConfiguration>(InboundOutboundPolicyConfiguration.CreateFromDiscriminatorValue); } },
-                {"b2bCollaborationInbound", n => { B2bCollaborationInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
-                {"b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
-                {"b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
-                {"b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
-                {"inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
-                {"templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<TemplateApplicationLevel>(); } },
+                { "automaticUserConsentSettings", n => { AutomaticUserConsentSettings = n.GetObjectValue<InboundOutboundPolicyConfiguration>(InboundOutboundPolicyConfiguration.CreateFromDiscriminatorValue); } },
+                { "b2bCollaborationInbound", n => { B2bCollaborationInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                { "inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
+                { "templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<TemplateApplicationLevel>(); } },
             };
         }
         /// <summary>

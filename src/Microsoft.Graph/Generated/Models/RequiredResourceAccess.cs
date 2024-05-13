@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RequiredResourceAccess : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RequiredResourceAccess : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.ResourceAccess>? ResourceAccess {
+        public List<Microsoft.Graph.Models.ResourceAccess>? ResourceAccess
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceAccess>?>("resourceAccess"); }
             set { BackingStore?.Set("resourceAccess", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.ResourceAccess> ResourceAccess {
+        public List<Microsoft.Graph.Models.ResourceAccess> ResourceAccess
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ResourceAccess>>("resourceAccess"); }
             set { BackingStore?.Set("resourceAccess", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceAppId {
+        public string? ResourceAppId
+        {
             get { return BackingStore?.Get<string?>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
 #nullable restore
 #else
-        public string ResourceAppId {
+        public string ResourceAppId
+        {
             get { return BackingStore?.Get<string>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceAccess", n => { ResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ResourceAccess>(Microsoft.Graph.Models.ResourceAccess.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceAccess", n => { ResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ResourceAccess>(Microsoft.Graph.Models.ResourceAccess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

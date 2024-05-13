@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item {
+namespace Microsoft.Graph.Applications.Item.TokenIssuancePolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies\{tokenIssuancePolicy-id}
     /// </summary>
-    public class TokenIssuancePolicyItemRequestBuilder : BaseRequestBuilder 
+    public class TokenIssuancePolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of application entities.</summary>
         public RefRequestBuilder Ref

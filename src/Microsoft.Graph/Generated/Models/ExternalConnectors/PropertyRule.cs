@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class PropertyRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PropertyRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The operation property</summary>
-        public RuleOperation? Operation {
+        public RuleOperation? Operation
+        {
             get { return BackingStore?.Get<RuleOperation?>("operation"); }
             set { BackingStore?.Set("operation", value); }
         }
         /// <summary>The property from the externalItem schema. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Property {
+        public string? Property
+        {
             get { return BackingStore?.Get<string?>("property"); }
             set { BackingStore?.Set("property", value); }
         }
 #nullable restore
 #else
-        public string Property {
+        public string Property
+        {
             get { return BackingStore?.Get<string>("property"); }
             set { BackingStore?.Set("property", value); }
         }
@@ -53,19 +60,22 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values {
+        public List<string>? Values
+        {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<string> Values {
+        public List<string> Values
+        {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #endif
         /// <summary>The valuesJoinedBy property</summary>
-        public BinaryOperator? ValuesJoinedBy {
+        public BinaryOperator? ValuesJoinedBy
+        {
             get { return BackingStore?.Get<BinaryOperator?>("valuesJoinedBy"); }
             set { BackingStore?.Set("valuesJoinedBy", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
-                {"property", n => { Property = n.GetStringValue(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
+                { "property", n => { Property = n.GetStringValue(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
             };
         }
         /// <summary>

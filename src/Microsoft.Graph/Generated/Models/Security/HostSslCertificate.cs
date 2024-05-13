@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HostSslCertificate : Artifact, IParsable 
+    public class HostSslCertificate : Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The host for this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.Host? Host {
+        public Microsoft.Graph.Models.Security.Host? Host
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.Host Host {
+        public Microsoft.Graph.Models.Security.Host Host
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #endif
         /// <summary>The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The ports related with this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HostSslCertificatePort>? Ports {
+        public List<HostSslCertificatePort>? Ports
+        {
             get { return BackingStore?.Get<List<HostSslCertificatePort>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<HostSslCertificatePort> Ports {
+        public List<HostSslCertificatePort> Ports
+        {
             get { return BackingStore?.Get<List<HostSslCertificatePort>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The sslCertificate for this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.SslCertificate? SslCertificate {
+        public Microsoft.Graph.Models.Security.SslCertificate? SslCertificate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificate?>("sslCertificate"); }
             set { BackingStore?.Set("sslCertificate", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.SslCertificate SslCertificate {
+        public Microsoft.Graph.Models.Security.SslCertificate SslCertificate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.SslCertificate>("sslCertificate"); }
             set { BackingStore?.Set("sslCertificate", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ports", n => { Ports = n.GetCollectionOfObjectValues<HostSslCertificatePort>(HostSslCertificatePort.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sslCertificate", n => { SslCertificate = n.GetObjectValue<Microsoft.Graph.Models.Security.SslCertificate>(Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "ports", n => { Ports = n.GetCollectionOfObjectValues<HostSslCertificatePort>(HostSslCertificatePort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sslCertificate", n => { SslCertificate = n.GetObjectValue<Microsoft.Graph.Models.Security.SslCertificate>(Microsoft.Graph.Models.Security.SslCertificate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

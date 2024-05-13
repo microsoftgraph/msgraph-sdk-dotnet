@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RichLongRunningOperation : LongRunningOperation, IParsable 
+    public class RichLongRunningOperation : LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Error that caused the operation to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error {
+        public PublicError? Error
+        {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error {
+        public PublicError Error
+        {
             get { return BackingStore?.Get<PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>A value between 0 and 100 that indicates the progress of the operation.</summary>
-        public int? PercentageComplete {
+        public int? PercentageComplete
+        {
             get { return BackingStore?.Get<int?>("percentageComplete"); }
             set { BackingStore?.Set("percentageComplete", value); }
         }
         /// <summary>The unique identifier for the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
-                {"percentageComplete", n => { PercentageComplete = n.GetIntValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "percentageComplete", n => { PercentageComplete = n.GetIntValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

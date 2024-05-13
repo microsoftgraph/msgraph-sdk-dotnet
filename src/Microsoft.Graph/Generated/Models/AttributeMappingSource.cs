@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttributeMappingSource : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttributeMappingSource : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Equivalent expression representation of this attributeMappingSource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression {
+        public string? Expression
+        {
             get { return BackingStore?.Get<string?>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
 #nullable restore
 #else
-        public string Expression {
+        public string Expression
+        {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn&apos;t Function, this property is null/empty array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StringKeyAttributeMappingSourceValuePair>? Parameters {
+        public List<StringKeyAttributeMappingSourceValuePair>? Parameters
+        {
             get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<StringKeyAttributeMappingSourceValuePair> Parameters {
+        public List<StringKeyAttributeMappingSourceValuePair> Parameters
+        {
             get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public AttributeMappingSourceType? Type {
+        public AttributeMappingSourceType? Type
+        {
             get { return BackingStore?.Get<AttributeMappingSourceType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expression", n => { Expression = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"type", n => { Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "type", n => { Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
             };
         }
         /// <summary>

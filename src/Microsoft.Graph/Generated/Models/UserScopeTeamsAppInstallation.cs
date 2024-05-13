@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable 
+    public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The chat between the user and Teams app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Chat? Chat {
+        public Microsoft.Graph.Models.Chat? Chat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Chat?>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Chat Chat {
+        public Microsoft.Graph.Models.Chat Chat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Chat>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"chat", n => { Chat = n.GetObjectValue<Microsoft.Graph.Models.Chat>(Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue); } },
+                { "chat", n => { Chat = n.GetObjectValue<Microsoft.Graph.Models.Chat>(Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -6,31 +6,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps {
+namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps
+{
     #pragma warning disable CS1591
-    public class TargetAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TargetAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appGroupType property</summary>
-        public TargetedManagedAppGroupType? AppGroupType {
+        public TargetedManagedAppGroupType? AppGroupType
+        {
             get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
             set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>The apps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps {
+        public List<ManagedMobileApp>? Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps {
+        public List<ManagedMobileApp> Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

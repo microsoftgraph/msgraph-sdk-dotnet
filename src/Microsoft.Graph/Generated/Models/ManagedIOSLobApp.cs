@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Managed iOS Line Of Business apps.
     /// </summary>
-    public class ManagedIOSLobApp : ManagedMobileLobApp, IParsable 
+    public class ManagedIOSLobApp : ManagedMobileLobApp, IParsable
     {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosDeviceType? ApplicableDeviceType {
+        public IosDeviceType? ApplicableDeviceType
+        {
             get { return BackingStore?.Get<IosDeviceType?>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
 #nullable restore
 #else
-        public IosDeviceType ApplicableDeviceType {
+        public IosDeviceType ApplicableDeviceType
+        {
             get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The build number of managed iOS Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildNumber {
+        public string? BuildNumber
+        {
             get { return BackingStore?.Get<string?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
 #nullable restore
 #else
-        public string BuildNumber {
+        public string BuildNumber
+        {
             get { return BackingStore?.Get<string>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
@@ -41,32 +46,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #endif
         /// <summary>The expiration time.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public IosMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<IosMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public IosMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version number of managed iOS Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionNumber {
+        public string? VersionNumber
+        {
             get { return BackingStore?.Get<string?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
 #nullable restore
 #else
-        public string VersionNumber {
+        public string VersionNumber
+        {
             get { return BackingStore?.Get<string>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
-                {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<IosMinimumOperatingSystem>(IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"versionNumber", n => { VersionNumber = n.GetStringValue(); } },
+                { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
+                { "buildNumber", n => { BuildNumber = n.GetStringValue(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<IosMinimumOperatingSystem>(IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "versionNumber", n => { VersionNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

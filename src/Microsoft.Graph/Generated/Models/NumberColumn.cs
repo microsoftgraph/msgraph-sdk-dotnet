@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class NumberColumn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NumberColumn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>How many decimal places to display. See below for information about the possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DecimalPlaces {
+        public string? DecimalPlaces
+        {
             get { return BackingStore?.Get<string?>("decimalPlaces"); }
             set { BackingStore?.Set("decimalPlaces", value); }
         }
 #nullable restore
 #else
-        public string DecimalPlaces {
+        public string DecimalPlaces
+        {
             get { return BackingStore?.Get<string>("decimalPlaces"); }
             set { BackingStore?.Set("decimalPlaces", value); }
         }
@@ -34,37 +38,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayAs {
+        public string? DisplayAs
+        {
             get { return BackingStore?.Get<string?>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
 #nullable restore
 #else
-        public string DisplayAs {
+        public string DisplayAs
+        {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
 #endif
         /// <summary>The maximum permitted value.</summary>
-        public double? Maximum {
+        public double? Maximum
+        {
             get { return BackingStore?.Get<double?>("maximum"); }
             set { BackingStore?.Set("maximum", value); }
         }
         /// <summary>The minimum permitted value.</summary>
-        public double? Minimum {
+        public double? Minimum
+        {
             get { return BackingStore?.Get<double?>("minimum"); }
             set { BackingStore?.Set("minimum", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"decimalPlaces", n => { DecimalPlaces = n.GetStringValue(); } },
-                {"displayAs", n => { DisplayAs = n.GetStringValue(); } },
-                {"maximum", n => { Maximum = n.GetDoubleValue(); } },
-                {"minimum", n => { Minimum = n.GetDoubleValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "decimalPlaces", n => { DecimalPlaces = n.GetStringValue(); } },
+                { "displayAs", n => { DisplayAs = n.GetStringValue(); } },
+                { "maximum", n => { Maximum = n.GetDoubleValue(); } },
+                { "minimum", n => { Minimum = n.GetDoubleValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

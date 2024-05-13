@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DirectoryRoles.Item.GetMemberObjects {
+namespace Microsoft.Graph.DirectoryRoles.Item.GetMemberObjects
+{
     [Obsolete("This class is obsolete. Use GetMemberObjectsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetMemberObjectsResponse : GetMemberObjectsPostResponse, IParsable 
+    public class GetMemberObjectsResponse : GetMemberObjectsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

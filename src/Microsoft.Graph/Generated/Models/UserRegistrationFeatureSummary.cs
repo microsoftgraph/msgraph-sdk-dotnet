@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserRegistrationFeatureSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserRegistrationFeatureSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,43 +22,50 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total number of users accounts, excluding those that are blocked.</summary>
-        public long? TotalUserCount {
+        public long? TotalUserCount
+        {
             get { return BackingStore?.Get<long?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRegistrationFeatureCount>? UserRegistrationFeatureCounts {
+        public List<UserRegistrationFeatureCount>? UserRegistrationFeatureCounts
+        {
             get { return BackingStore?.Get<List<UserRegistrationFeatureCount>?>("userRegistrationFeatureCounts"); }
             set { BackingStore?.Set("userRegistrationFeatureCounts", value); }
         }
 #nullable restore
 #else
-        public List<UserRegistrationFeatureCount> UserRegistrationFeatureCounts {
+        public List<UserRegistrationFeatureCount> UserRegistrationFeatureCounts
+        {
             get { return BackingStore?.Get<List<UserRegistrationFeatureCount>>("userRegistrationFeatureCounts"); }
             set { BackingStore?.Set("userRegistrationFeatureCounts", value); }
         }
 #endif
         /// <summary>The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
-        public IncludedUserRoles? UserRoles {
+        public IncludedUserRoles? UserRoles
+        {
             get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }
             set { BackingStore?.Set("userRoles", value); }
         }
         /// <summary>User type. Possible values are: all, member, guest, unknownFutureValue.</summary>
-        public IncludedUserTypes? UserTypes {
+        public IncludedUserTypes? UserTypes
+        {
             get { return BackingStore?.Get<IncludedUserTypes?>("userTypes"); }
             set { BackingStore?.Set("userTypes", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
-                {"userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userRoles", n => { UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
-                {"userTypes", n => { UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
+                { "userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userRoles", n => { UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
+                { "userTypes", n => { UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
             };
         }
         /// <summary>

@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LocationConstraint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LocationConstraint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes won&apos;t return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>Constraint information for one or more locations that the client requests for the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocationConstraintItem>? Locations {
+        public List<LocationConstraintItem>? Locations
+        {
             get { return BackingStore?.Get<List<LocationConstraintItem>?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
 #nullable restore
 #else
-        public List<LocationConstraintItem> Locations {
+        public List<LocationConstraintItem> Locations
+        {
             get { return BackingStore?.Get<List<LocationConstraintItem>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
@@ -39,19 +44,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The client requests the service to suggest one or more meeting locations.</summary>
-        public bool? SuggestLocation {
+        public bool? SuggestLocation
+        {
             get { return BackingStore?.Get<bool?>("suggestLocation"); }
             set { BackingStore?.Set("suggestLocation", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"locations", n => { Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"suggestLocation", n => { SuggestLocation = n.GetBoolValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "locations", n => { Locations = n.GetCollectionOfObjectValues<LocationConstraintItem>(LocationConstraintItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "suggestLocation", n => { SuggestLocation = n.GetBoolValue(); } },
             };
         }
         /// <summary>

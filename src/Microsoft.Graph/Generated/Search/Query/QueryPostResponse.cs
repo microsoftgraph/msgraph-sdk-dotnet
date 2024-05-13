@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Search.Query {
+namespace Microsoft.Graph.Search.Query
+{
     #pragma warning disable CS1591
-    public class QueryPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class QueryPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchResponse>? Value {
+        public List<SearchResponse>? Value
+        {
             get { return BackingStore?.Get<List<SearchResponse>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<SearchResponse> Value {
+        public List<SearchResponse> Value
+        {
             get { return BackingStore?.Get<List<SearchResponse>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Search.Query {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<SearchResponse>(SearchResponse.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<SearchResponse>(SearchResponse.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

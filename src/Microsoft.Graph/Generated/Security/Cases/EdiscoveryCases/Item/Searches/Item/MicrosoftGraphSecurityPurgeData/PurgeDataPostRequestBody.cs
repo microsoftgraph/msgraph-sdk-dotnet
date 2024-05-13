@@ -6,25 +6,29 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData {
+namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData
+{
     #pragma warning disable CS1591
-    public class PurgeDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PurgeDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The purgeAreas property</summary>
-        public Microsoft.Graph.Models.Security.PurgeAreas? PurgeAreas {
+        public Microsoft.Graph.Models.Security.PurgeAreas? PurgeAreas
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.PurgeAreas?>("purgeAreas"); }
             set { BackingStore?.Set("purgeAreas", value); }
         }
         /// <summary>The purgeType property</summary>
-        public Microsoft.Graph.Models.Security.PurgeType? PurgeType {
+        public Microsoft.Graph.Models.Security.PurgeType? PurgeType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.PurgeType?>("purgeType"); }
             set { BackingStore?.Set("purgeType", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Micr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"purgeAreas", n => { PurgeAreas = n.GetEnumValue<PurgeAreas>(); } },
-                {"purgeType", n => { PurgeType = n.GetEnumValue<PurgeType>(); } },
+                { "purgeAreas", n => { PurgeAreas = n.GetEnumValue<PurgeAreas>(); } },
+                { "purgeType", n => { PurgeType = n.GetEnumValue<PurgeType>(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
+namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId
+{
     [Obsolete("This class is obsolete. Use GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable 
+    public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

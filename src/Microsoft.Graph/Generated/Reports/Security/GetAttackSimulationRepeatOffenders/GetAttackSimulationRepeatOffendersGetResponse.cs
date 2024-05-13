@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
+namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders
+{
     #pragma warning disable CS1591
-    public class GetAttackSimulationRepeatOffendersGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetAttackSimulationRepeatOffendersGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttackSimulationRepeatOffender>? Value {
+        public List<AttackSimulationRepeatOffender>? Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationRepeatOffender>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttackSimulationRepeatOffender> Value {
+        public List<AttackSimulationRepeatOffender> Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationRepeatOffender>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationRepeatOffenders {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationRepeatOffender>(AttackSimulationRepeatOffender.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationRepeatOffender>(AttackSimulationRepeatOffender.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookFilter : Entity, IParsable 
+    public class WorkbookFilter : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The currently applied filter on the given column. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookFilterCriteria? Criteria {
+        public WorkbookFilterCriteria? Criteria
+        {
             get { return BackingStore?.Get<WorkbookFilterCriteria?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public WorkbookFilterCriteria Criteria {
+        public WorkbookFilterCriteria Criteria
+        {
             get { return BackingStore?.Get<WorkbookFilterCriteria>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"criteria", n => { Criteria = n.GetObjectValue<WorkbookFilterCriteria>(WorkbookFilterCriteria.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<WorkbookFilterCriteria>(WorkbookFilterCriteria.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

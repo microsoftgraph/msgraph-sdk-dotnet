@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallRoute : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CallRoute : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The final property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Final {
+        public IdentitySet? Final
+        {
             get { return BackingStore?.Get<IdentitySet?>("final"); }
             set { BackingStore?.Set("final", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Final {
+        public IdentitySet Final
+        {
             get { return BackingStore?.Get<IdentitySet>("final"); }
             set { BackingStore?.Set("final", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The original property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Original {
+        public IdentitySet? Original
+        {
             get { return BackingStore?.Get<IdentitySet?>("original"); }
             set { BackingStore?.Set("original", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Original {
+        public IdentitySet Original
+        {
             get { return BackingStore?.Get<IdentitySet>("original"); }
             set { BackingStore?.Set("original", value); }
         }
 #endif
         /// <summary>The routingType property</summary>
-        public Microsoft.Graph.Models.RoutingType? RoutingType {
+        public Microsoft.Graph.Models.RoutingType? RoutingType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingType?>("routingType"); }
             set { BackingStore?.Set("routingType", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"final", n => { Final = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"original", n => { Original = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"routingType", n => { RoutingType = n.GetEnumValue<RoutingType>(); } },
+                { "final", n => { Final = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "original", n => { Original = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "routingType", n => { RoutingType = n.GetEnumValue<RoutingType>(); } },
             };
         }
         /// <summary>

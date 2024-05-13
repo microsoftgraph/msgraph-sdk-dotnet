@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A class that represents a contained app of a WindowsUniversalAppX app.
     /// </summary>
-    public class WindowsUniversalAppXContainedApp : MobileContainedApp, IParsable 
+    public class WindowsUniversalAppXContainedApp : MobileContainedApp, IParsable
     {
         /// <summary>The app user model ID of the contained app of a WindowsUniversalAppX app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUserModelId {
+        public string? AppUserModelId
+        {
             get { return BackingStore?.Get<string?>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
 #nullable restore
 #else
-        public string AppUserModelId {
+        public string AppUserModelId
+        {
             get { return BackingStore?.Get<string>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appUserModelId", n => { AppUserModelId = n.GetStringValue(); } },
+                { "appUserModelId", n => { AppUserModelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

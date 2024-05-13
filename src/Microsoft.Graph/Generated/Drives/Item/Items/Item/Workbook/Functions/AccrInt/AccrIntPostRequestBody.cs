@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt
+{
     #pragma warning disable CS1591
-    public class AccrIntPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccrIntPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The basis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Basis {
+        public Json? Basis
+        {
             get { return BackingStore?.Get<Json?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public Json Basis {
+        public Json Basis
+        {
             get { return BackingStore?.Get<Json>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The calcMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? CalcMethod {
+        public Json? CalcMethod
+        {
             get { return BackingStore?.Get<Json?>("calcMethod"); }
             set { BackingStore?.Set("calcMethod", value); }
         }
 #nullable restore
 #else
-        public Json CalcMethod {
+        public Json CalcMethod
+        {
             get { return BackingStore?.Get<Json>("calcMethod"); }
             set { BackingStore?.Set("calcMethod", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The firstInterest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FirstInterest {
+        public Json? FirstInterest
+        {
             get { return BackingStore?.Get<Json?>("firstInterest"); }
             set { BackingStore?.Set("firstInterest", value); }
         }
 #nullable restore
 #else
-        public Json FirstInterest {
+        public Json FirstInterest
+        {
             get { return BackingStore?.Get<Json>("firstInterest"); }
             set { BackingStore?.Set("firstInterest", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The frequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Frequency {
+        public Json? Frequency
+        {
             get { return BackingStore?.Get<Json?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
 #nullable restore
 #else
-        public Json Frequency {
+        public Json Frequency
+        {
             get { return BackingStore?.Get<Json>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Issue {
+        public Json? Issue
+        {
             get { return BackingStore?.Get<Json?>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
 #nullable restore
 #else
-        public Json Issue {
+        public Json Issue
+        {
             get { return BackingStore?.Get<Json>("issue"); }
             set { BackingStore?.Set("issue", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The par property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Par {
+        public Json? Par
+        {
             get { return BackingStore?.Get<Json?>("par"); }
             set { BackingStore?.Set("par", value); }
         }
 #nullable restore
 #else
-        public Json Par {
+        public Json Par
+        {
             get { return BackingStore?.Get<Json>("par"); }
             set { BackingStore?.Set("par", value); }
         }
@@ -105,13 +119,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Rate {
+        public Json? Rate
+        {
             get { return BackingStore?.Get<Json?>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
 #nullable restore
 #else
-        public Json Rate {
+        public Json Rate
+        {
             get { return BackingStore?.Get<Json>("rate"); }
             set { BackingStore?.Set("rate", value); }
         }
@@ -119,13 +135,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         /// <summary>The settlement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Settlement {
+        public Json? Settlement
+        {
             get { return BackingStore?.Get<Json?>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
 #nullable restore
 #else
-        public Json Settlement {
+        public Json Settlement
+        {
             get { return BackingStore?.Get<Json>("settlement"); }
             set { BackingStore?.Set("settlement", value); }
         }
@@ -156,14 +174,14 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AccrInt {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"calcMethod", n => { CalcMethod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"firstInterest", n => { FirstInterest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"frequency", n => { Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"par", n => { Par = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "basis", n => { Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "calcMethod", n => { CalcMethod = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "firstInterest", n => { FirstInterest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "par", n => { Par = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "settlement", n => { Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

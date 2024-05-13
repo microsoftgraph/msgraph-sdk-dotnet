@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class GoogleCloudResourceEvidence : AlertEvidence, IParsable 
+    public class GoogleCloudResourceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fullResourceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullResourceName {
+        public string? FullResourceName
+        {
             get { return BackingStore?.Get<string?>("fullResourceName"); }
             set { BackingStore?.Set("fullResourceName", value); }
         }
 #nullable restore
 #else
-        public string FullResourceName {
+        public string FullResourceName
+        {
             get { return BackingStore?.Get<string>("fullResourceName"); }
             set { BackingStore?.Set("fullResourceName", value); }
         }
@@ -26,51 +29,59 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The zone or region where the resource is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location {
+        public string? Location
+        {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public string Location {
+        public string Location
+        {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
         /// <summary>The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.</summary>
-        public GoogleCloudLocationType? LocationType {
+        public GoogleCloudLocationType? LocationType
+        {
             get { return BackingStore?.Get<GoogleCloudLocationType?>("locationType"); }
             set { BackingStore?.Set("locationType", value); }
         }
         /// <summary>The Google project ID as defined by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId {
+        public string? ProjectId
+        {
             get { return BackingStore?.Get<string?>("projectId"); }
             set { BackingStore?.Set("projectId", value); }
         }
 #nullable restore
 #else
-        public string ProjectId {
+        public string ProjectId
+        {
             get { return BackingStore?.Get<string>("projectId"); }
             set { BackingStore?.Set("projectId", value); }
         }
 #endif
         /// <summary>The project number assigned by Google.</summary>
-        public long? ProjectNumber {
+        public long? ProjectNumber
+        {
             get { return BackingStore?.Get<long?>("projectNumber"); }
             set { BackingStore?.Set("projectNumber", value); }
         }
         /// <summary>The name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceName {
+        public string? ResourceName
+        {
             get { return BackingStore?.Get<string?>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
 #nullable restore
 #else
-        public string ResourceName {
+        public string ResourceName
+        {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The type of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fullResourceName", n => { FullResourceName = n.GetStringValue(); } },
-                {"location", n => { Location = n.GetStringValue(); } },
-                {"locationType", n => { LocationType = n.GetEnumValue<GoogleCloudLocationType>(); } },
-                {"projectId", n => { ProjectId = n.GetStringValue(); } },
-                {"projectNumber", n => { ProjectNumber = n.GetLongValue(); } },
-                {"resourceName", n => { ResourceName = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "fullResourceName", n => { FullResourceName = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "locationType", n => { LocationType = n.GetEnumValue<GoogleCloudLocationType>(); } },
+                { "projectId", n => { ProjectId = n.GetStringValue(); } },
+                { "projectNumber", n => { ProjectNumber = n.GetLongValue(); } },
+                { "resourceName", n => { ResourceName = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookRangeBorder : Entity, IParsable 
+    public class WorkbookRangeBorder : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (for example &apos;FFA500&apos;) or as a named HTML color (for example &apos;orange&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color {
+        public string? Color
+        {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public string Color {
+        public string Color
+        {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SideIndex {
+        public string? SideIndex
+        {
             get { return BackingStore?.Get<string?>("sideIndex"); }
             set { BackingStore?.Set("sideIndex", value); }
         }
 #nullable restore
 #else
-        public string SideIndex {
+        public string SideIndex
+        {
             get { return BackingStore?.Get<string>("sideIndex"); }
             set { BackingStore?.Set("sideIndex", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Style {
+        public string? Style
+        {
             get { return BackingStore?.Get<string?>("style"); }
             set { BackingStore?.Set("style", value); }
         }
 #nullable restore
 #else
-        public string Style {
+        public string Style
+        {
             get { return BackingStore?.Get<string>("style"); }
             set { BackingStore?.Set("style", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Weight {
+        public string? Weight
+        {
             get { return BackingStore?.Get<string?>("weight"); }
             set { BackingStore?.Set("weight", value); }
         }
 #nullable restore
 #else
-        public string Weight {
+        public string Weight
+        {
             get { return BackingStore?.Get<string>("weight"); }
             set { BackingStore?.Set("weight", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"sideIndex", n => { SideIndex = n.GetStringValue(); } },
-                {"style", n => { Style = n.GetStringValue(); } },
-                {"weight", n => { Weight = n.GetStringValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "sideIndex", n => { SideIndex = n.GetStringValue(); } },
+                { "style", n => { Style = n.GetStringValue(); } },
+                { "weight", n => { Weight = n.GetStringValue(); } },
             };
         }
         /// <summary>

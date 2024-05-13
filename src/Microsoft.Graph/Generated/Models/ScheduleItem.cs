@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ScheduleItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ScheduleItem : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time, and time zone that the corresponding event ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? End {
+        public DateTimeTimeZone? End
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone End {
+        public DateTimeTimeZone End
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #endif
         /// <summary>The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.</summary>
-        public bool? IsPrivate {
+        public bool? IsPrivate
+        {
             get { return BackingStore?.Get<bool?>("isPrivate"); }
             set { BackingStore?.Set("isPrivate", value); }
         }
         /// <summary>The location where the corresponding event is held or attended from. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location {
+        public string? Location
+        {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public string Location {
+        public string Location
+        {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,32 +76,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time, and time zone that the corresponding event starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? Start {
+        public DateTimeTimeZone? Start
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone Start {
+        public DateTimeTimeZone Start
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #endif
         /// <summary>The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? Status {
+        public FreeBusyStatus? Status
+        {
             get { return BackingStore?.Get<FreeBusyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
-                {"location", n => { Location = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<FreeBusyStatus>(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<FreeBusyStatus>(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

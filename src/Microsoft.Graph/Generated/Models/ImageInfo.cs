@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ImageInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImageInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image</summary>
-        public bool? AddImageQuery {
+        public bool? AddImageQuery
+        {
             get { return BackingStore?.Get<bool?>("addImageQuery"); }
             set { BackingStore?.Set("addImageQuery", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Optional; alt-text accessible content for the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternateText {
+        public string? AlternateText
+        {
             get { return BackingStore?.Get<string?>("alternateText"); }
             set { BackingStore?.Set("alternateText", value); }
         }
 #nullable restore
 #else
-        public string AlternateText {
+        public string AlternateText
+        {
             get { return BackingStore?.Get<string>("alternateText"); }
             set { BackingStore?.Set("alternateText", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The alternativeText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternativeText {
+        public string? AlternativeText
+        {
             get { return BackingStore?.Get<string?>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
 #nullable restore
 #else
-        public string AlternativeText {
+        public string AlternativeText
+        {
             get { return BackingStore?.Get<string>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional; URI that points to an icon which represents the application used to generate the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IconUrl {
+        public string? IconUrl
+        {
             get { return BackingStore?.Get<string?>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
 #nullable restore
 #else
-        public string IconUrl {
+        public string IconUrl
+        {
             get { return BackingStore?.Get<string>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addImageQuery", n => { AddImageQuery = n.GetBoolValue(); } },
-                {"alternateText", n => { AlternateText = n.GetStringValue(); } },
-                {"alternativeText", n => { AlternativeText = n.GetStringValue(); } },
-                {"iconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "addImageQuery", n => { AddImageQuery = n.GetBoolValue(); } },
+                { "alternateText", n => { AlternateText = n.GetStringValue(); } },
+                { "alternativeText", n => { AlternativeText = n.GetStringValue(); } },
+                { "iconUrl", n => { IconUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

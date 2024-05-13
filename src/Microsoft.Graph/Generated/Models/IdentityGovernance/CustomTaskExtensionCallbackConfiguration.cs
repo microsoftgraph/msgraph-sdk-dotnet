@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class CustomTaskExtensionCallbackConfiguration : Microsoft.Graph.Models.CustomExtensionCallbackConfiguration, IParsable 
+    public class CustomTaskExtensionCallbackConfiguration : Microsoft.Graph.Models.CustomExtensionCallbackConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorizedApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.Application>? AuthorizedApps {
+        public List<Microsoft.Graph.Models.Application>? AuthorizedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Application>?>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.Application> AuthorizedApps {
+        public List<Microsoft.Graph.Models.Application> AuthorizedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Application>>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorizedApps", n => { AuthorizedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Application>(Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authorizedApps", n => { AuthorizedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Application>(Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

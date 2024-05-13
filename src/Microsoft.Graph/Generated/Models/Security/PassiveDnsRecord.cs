@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class PassiveDnsRecord : Artifact, IParsable 
+    public class PassiveDnsRecord : Artifact, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The artifact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.Artifact? Artifact {
+        public Microsoft.Graph.Models.Security.Artifact? Artifact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Artifact?>("artifact"); }
             set { BackingStore?.Set("artifact", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.Artifact Artifact {
+        public Microsoft.Graph.Models.Security.Artifact Artifact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Artifact>("artifact"); }
             set { BackingStore?.Set("artifact", value); }
         }
 #endif
         /// <summary>The date and time that this passiveDnsRecord entry was collected by Microsoft. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CollectedDateTime {
+        public DateTimeOffset? CollectedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("collectedDateTime"); }
             set { BackingStore?.Set("collectedDateTime", value); }
         }
         /// <summary>The date and time when this passiveDnsRecord entry was first seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The date and time when this passiveDnsRecord entry was most recently seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The parentHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Host? ParentHost {
+        public Host? ParentHost
+        {
             get { return BackingStore?.Get<Host?>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #nullable restore
 #else
-        public Host ParentHost {
+        public Host ParentHost
+        {
             get { return BackingStore?.Get<Host>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The DNS record type for this passiveDnsRecord entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordType {
+        public string? RecordType
+        {
             get { return BackingStore?.Get<string?>("recordType"); }
             set { BackingStore?.Set("recordType", value); }
         }
 #nullable restore
 #else
-        public string RecordType {
+        public string RecordType
+        {
             get { return BackingStore?.Get<string>("recordType"); }
             set { BackingStore?.Set("recordType", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"artifact", n => { Artifact = n.GetObjectValue<Microsoft.Graph.Models.Security.Artifact>(Microsoft.Graph.Models.Security.Artifact.CreateFromDiscriminatorValue); } },
-                {"collectedDateTime", n => { CollectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
-                {"recordType", n => { RecordType = n.GetStringValue(); } },
+                { "artifact", n => { Artifact = n.GetObjectValue<Microsoft.Graph.Models.Security.Artifact>(Microsoft.Graph.Models.Security.Artifact.CreateFromDiscriminatorValue); } },
+                { "collectedDateTime", n => { CollectedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "parentHost", n => { ParentHost = n.GetObjectValue<Host>(Host.CreateFromDiscriminatorValue); } },
+                { "recordType", n => { RecordType = n.GetStringValue(); } },
             };
         }
         /// <summary>

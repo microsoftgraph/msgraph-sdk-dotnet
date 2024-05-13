@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SingleServicePrincipal : SubjectSet, IParsable 
+    public class SingleServicePrincipal : SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description of this service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the servicePrincipal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalId {
+        public string? ServicePrincipalId
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalId {
+        public string ServicePrincipalId
+        {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

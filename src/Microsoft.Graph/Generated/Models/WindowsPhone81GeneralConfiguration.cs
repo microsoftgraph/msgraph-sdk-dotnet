@@ -4,163 +4,194 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81GeneralConfiguration resource.
     /// </summary>
-    public class WindowsPhone81GeneralConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsPhone81GeneralConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.</summary>
-        public bool? ApplyOnlyToWindowsPhone81 {
+        public bool? ApplyOnlyToWindowsPhone81
+        {
             get { return BackingStore?.Get<bool?>("applyOnlyToWindowsPhone81"); }
             set { BackingStore?.Set("applyOnlyToWindowsPhone81", value); }
         }
         /// <summary>Indicates whether or not to block copy paste.</summary>
-        public bool? AppsBlockCopyPaste {
+        public bool? AppsBlockCopyPaste
+        {
             get { return BackingStore?.Get<bool?>("appsBlockCopyPaste"); }
             set { BackingStore?.Set("appsBlockCopyPaste", value); }
         }
         /// <summary>Indicates whether or not to block bluetooth.</summary>
-        public bool? BluetoothBlocked {
+        public bool? BluetoothBlocked
+        {
             get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
             set { BackingStore?.Set("bluetoothBlocked", value); }
         }
         /// <summary>Indicates whether or not to block camera.</summary>
-        public bool? CameraBlocked {
+        public bool? CameraBlocked
+        {
             get { return BackingStore?.Get<bool?>("cameraBlocked"); }
             set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.</summary>
-        public bool? CellularBlockWifiTethering {
+        public bool? CellularBlockWifiTethering
+        {
             get { return BackingStore?.Get<bool?>("cellularBlockWifiTethering"); }
             set { BackingStore?.Set("cellularBlockWifiTethering", value); }
         }
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType {
+        public AppListType? CompliantAppListType
+        {
             get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList {
+        public List<AppListItem>? CompliantAppsList
+        {
             get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList {
+        public List<AppListItem> CompliantAppsList
+        {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
-        public bool? DiagnosticDataBlockSubmission {
+        public bool? DiagnosticDataBlockSubmission
+        {
             get { return BackingStore?.Get<bool?>("diagnosticDataBlockSubmission"); }
             set { BackingStore?.Set("diagnosticDataBlockSubmission", value); }
         }
         /// <summary>Indicates whether or not to block custom email accounts.</summary>
-        public bool? EmailBlockAddingAccounts {
+        public bool? EmailBlockAddingAccounts
+        {
             get { return BackingStore?.Get<bool?>("emailBlockAddingAccounts"); }
             set { BackingStore?.Set("emailBlockAddingAccounts", value); }
         }
         /// <summary>Indicates whether or not to block location services.</summary>
-        public bool? LocationServicesBlocked {
+        public bool? LocationServicesBlocked
+        {
             get { return BackingStore?.Get<bool?>("locationServicesBlocked"); }
             set { BackingStore?.Set("locationServicesBlocked", value); }
         }
         /// <summary>Indicates whether or not to block using a Microsoft Account.</summary>
-        public bool? MicrosoftAccountBlocked {
+        public bool? MicrosoftAccountBlocked
+        {
             get { return BackingStore?.Get<bool?>("microsoftAccountBlocked"); }
             set { BackingStore?.Set("microsoftAccountBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Near-Field Communication.</summary>
-        public bool? NfcBlocked {
+        public bool? NfcBlocked
+        {
             get { return BackingStore?.Get<bool?>("nfcBlocked"); }
             set { BackingStore?.Set("nfcBlocked", value); }
         }
         /// <summary>Indicates whether or not to block syncing the calendar.</summary>
-        public bool? PasswordBlockSimple {
+        public bool? PasswordBlockSimple
+        {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
             set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>Number of days before the password expires.</summary>
-        public int? PasswordExpirationDays {
+        public int? PasswordExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>Number of character sets a password must contain.</summary>
-        public int? PasswordMinimumCharacterSetCount {
+        public int? PasswordMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>Minimum length of passwords.</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before screen timeout.</summary>
-        public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
+        public int? PasswordMinutesOfInactivityBeforeScreenTimeout
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Number of previous passwords to block. Valid values 0 to 24</summary>
-        public int? PasswordPreviousPasswordBlockCount {
+        public int? PasswordPreviousPasswordBlockCount
+        {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Indicates whether or not to require a password.</summary>
-        public bool? PasswordRequired {
+        public bool? PasswordRequired
+        {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType {
+        public RequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign in failures allowed before factory reset.</summary>
-        public int? PasswordSignInFailureCountBeforeFactoryReset {
+        public int? PasswordSignInFailureCountBeforeFactoryReset
+        {
             get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to block screenshots.</summary>
-        public bool? ScreenCaptureBlocked {
+        public bool? ScreenCaptureBlocked
+        {
             get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Indicates whether or not to block removable storage.</summary>
-        public bool? StorageBlockRemovableStorage {
+        public bool? StorageBlockRemovableStorage
+        {
             get { return BackingStore?.Get<bool?>("storageBlockRemovableStorage"); }
             set { BackingStore?.Set("storageBlockRemovableStorage", value); }
         }
         /// <summary>Indicates whether or not to require encryption.</summary>
-        public bool? StorageRequireEncryption {
+        public bool? StorageRequireEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>Indicates whether or not to block the web browser.</summary>
-        public bool? WebBrowserBlocked {
+        public bool? WebBrowserBlocked
+        {
             get { return BackingStore?.Get<bool?>("webBrowserBlocked"); }
             set { BackingStore?.Set("webBrowserBlocked", value); }
         }
         /// <summary>Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.</summary>
-        public bool? WifiBlockAutomaticConnectHotspots {
+        public bool? WifiBlockAutomaticConnectHotspots
+        {
             get { return BackingStore?.Get<bool?>("wifiBlockAutomaticConnectHotspots"); }
             set { BackingStore?.Set("wifiBlockAutomaticConnectHotspots", value); }
         }
         /// <summary>Indicates whether or not to block Wi-Fi.</summary>
-        public bool? WifiBlocked {
+        public bool? WifiBlocked
+        {
             get { return BackingStore?.Get<bool?>("wifiBlocked"); }
             set { BackingStore?.Set("wifiBlocked", value); }
         }
         /// <summary>Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.</summary>
-        public bool? WifiBlockHotspotReporting {
+        public bool? WifiBlockHotspotReporting
+        {
             get { return BackingStore?.Get<bool?>("wifiBlockHotspotReporting"); }
             set { BackingStore?.Set("wifiBlockHotspotReporting", value); }
         }
         /// <summary>Indicates whether or not to block the Windows Store.</summary>
-        public bool? WindowsStoreBlocked {
+        public bool? WindowsStoreBlocked
+        {
             get { return BackingStore?.Get<bool?>("windowsStoreBlocked"); }
             set { BackingStore?.Set("windowsStoreBlocked", value); }
         }
@@ -189,35 +220,35 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applyOnlyToWindowsPhone81", n => { ApplyOnlyToWindowsPhone81 = n.GetBoolValue(); } },
-                {"appsBlockCopyPaste", n => { AppsBlockCopyPaste = n.GetBoolValue(); } },
-                {"bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
-                {"cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
-                {"cellularBlockWifiTethering", n => { CellularBlockWifiTethering = n.GetBoolValue(); } },
-                {"compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                {"compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"diagnosticDataBlockSubmission", n => { DiagnosticDataBlockSubmission = n.GetBoolValue(); } },
-                {"emailBlockAddingAccounts", n => { EmailBlockAddingAccounts = n.GetBoolValue(); } },
-                {"locationServicesBlocked", n => { LocationServicesBlocked = n.GetBoolValue(); } },
-                {"microsoftAccountBlocked", n => { MicrosoftAccountBlocked = n.GetBoolValue(); } },
-                {"nfcBlocked", n => { NfcBlocked = n.GetBoolValue(); } },
-                {"passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
-                {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
-                {"passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
-                {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
-                {"storageBlockRemovableStorage", n => { StorageBlockRemovableStorage = n.GetBoolValue(); } },
-                {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
-                {"webBrowserBlocked", n => { WebBrowserBlocked = n.GetBoolValue(); } },
-                {"wifiBlockAutomaticConnectHotspots", n => { WifiBlockAutomaticConnectHotspots = n.GetBoolValue(); } },
-                {"wifiBlockHotspotReporting", n => { WifiBlockHotspotReporting = n.GetBoolValue(); } },
-                {"wifiBlocked", n => { WifiBlocked = n.GetBoolValue(); } },
-                {"windowsStoreBlocked", n => { WindowsStoreBlocked = n.GetBoolValue(); } },
+                { "applyOnlyToWindowsPhone81", n => { ApplyOnlyToWindowsPhone81 = n.GetBoolValue(); } },
+                { "appsBlockCopyPaste", n => { AppsBlockCopyPaste = n.GetBoolValue(); } },
+                { "bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
+                { "cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
+                { "cellularBlockWifiTethering", n => { CellularBlockWifiTethering = n.GetBoolValue(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "diagnosticDataBlockSubmission", n => { DiagnosticDataBlockSubmission = n.GetBoolValue(); } },
+                { "emailBlockAddingAccounts", n => { EmailBlockAddingAccounts = n.GetBoolValue(); } },
+                { "locationServicesBlocked", n => { LocationServicesBlocked = n.GetBoolValue(); } },
+                { "microsoftAccountBlocked", n => { MicrosoftAccountBlocked = n.GetBoolValue(); } },
+                { "nfcBlocked", n => { NfcBlocked = n.GetBoolValue(); } },
+                { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
+                { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
+                { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
+                { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
+                { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
+                { "storageBlockRemovableStorage", n => { StorageBlockRemovableStorage = n.GetBoolValue(); } },
+                { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                { "webBrowserBlocked", n => { WebBrowserBlocked = n.GetBoolValue(); } },
+                { "wifiBlockAutomaticConnectHotspots", n => { WifiBlockAutomaticConnectHotspots = n.GetBoolValue(); } },
+                { "wifiBlockHotspotReporting", n => { WifiBlockHotspotReporting = n.GetBoolValue(); } },
+                { "wifiBlocked", n => { WifiBlocked = n.GetBoolValue(); } },
+                { "windowsStoreBlocked", n => { WindowsStoreBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

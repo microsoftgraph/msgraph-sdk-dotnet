@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Singleton entity that acts as a container for all reports functionality.
     /// </summary>
-    public class DeviceManagementReports : Entity, IParsable 
+    public class DeviceManagementReports : Entity, IParsable
     {
         /// <summary>Entity representing a job to export a report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementExportJob>? ExportJobs {
+        public List<DeviceManagementExportJob>? ExportJobs
+        {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>?>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementExportJob> ExportJobs {
+        public List<DeviceManagementExportJob> ExportJobs
+        {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<DeviceManagementExportJob>(DeviceManagementExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<DeviceManagementExportJob>(DeviceManagementExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

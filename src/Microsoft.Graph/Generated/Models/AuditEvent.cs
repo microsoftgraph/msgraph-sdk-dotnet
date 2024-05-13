@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A class containing the properties for Audit Event.
     /// </summary>
-    public class AuditEvent : Entity, IParsable 
+    public class AuditEvent : Entity, IParsable
     {
         /// <summary>Friendly name of the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activity {
+        public string? Activity
+        {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public string Activity {
+        public string Activity
+        {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>The date time in UTC when the activity was performed.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The HTTP operation type of the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityOperationType {
+        public string? ActivityOperationType
+        {
             get { return BackingStore?.Get<string?>("activityOperationType"); }
             set { BackingStore?.Set("activityOperationType", value); }
         }
 #nullable restore
 #else
-        public string ActivityOperationType {
+        public string ActivityOperationType
+        {
             get { return BackingStore?.Get<string>("activityOperationType"); }
             set { BackingStore?.Set("activityOperationType", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The result of the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityResult {
+        public string? ActivityResult
+        {
             get { return BackingStore?.Get<string?>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
 #nullable restore
 #else
-        public string ActivityResult {
+        public string ActivityResult
+        {
             get { return BackingStore?.Get<string>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of activity that was being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityType {
+        public string? ActivityType
+        {
             get { return BackingStore?.Get<string?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
 #nullable restore
 #else
-        public string ActivityType {
+        public string ActivityType
+        {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>AAD user and application that are associated with the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditActor? Actor {
+        public AuditActor? Actor
+        {
             get { return BackingStore?.Get<AuditActor?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public AuditActor Actor {
+        public AuditActor Actor
+        {
             get { return BackingStore?.Get<AuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Audit category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -102,32 +116,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Component name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComponentName {
+        public string? ComponentName
+        {
             get { return BackingStore?.Get<string?>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
 #nullable restore
 #else
-        public string ComponentName {
+        public string ComponentName
+        {
             get { return BackingStore?.Get<string>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
 #endif
         /// <summary>The client request Id that is used to correlate activity within the system.</summary>
-        public Guid? CorrelationId {
+        public Guid? CorrelationId
+        {
             get { return BackingStore?.Get<Guid?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Event display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -135,13 +154,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Resources being modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditResource>? Resources {
+        public List<AuditResource>? Resources
+        {
             get { return BackingStore?.Get<List<AuditResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AuditResource> Resources {
+        public List<AuditResource> Resources
+        {
             get { return BackingStore?.Get<List<AuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -164,17 +185,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetStringValue(); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityOperationType", n => { ActivityOperationType = n.GetStringValue(); } },
-                {"activityResult", n => { ActivityResult = n.GetStringValue(); } },
-                {"activityType", n => { ActivityType = n.GetStringValue(); } },
-                {"actor", n => { Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"componentName", n => { ComponentName = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetGuidValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activity", n => { Activity = n.GetStringValue(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activityOperationType", n => { ActivityOperationType = n.GetStringValue(); } },
+                { "activityResult", n => { ActivityResult = n.GetStringValue(); } },
+                { "activityType", n => { ActivityType = n.GetStringValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "componentName", n => { ComponentName = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetGuidValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

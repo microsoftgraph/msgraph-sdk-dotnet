@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable 
+    public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppId {
+        public string? ClientAppId
+        {
             get { return BackingStore?.Get<string?>("clientAppId"); }
             set { BackingStore?.Set("clientAppId", value); }
         }
 #nullable restore
 #else
-        public string ClientAppId {
+        public string ClientAppId
+        {
             get { return BackingStore?.Get<string>("clientAppId"); }
             set { BackingStore?.Set("clientAppId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the Microsoft Entra app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId {
+        public string? ClientId
+        {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
 #nullable restore
 #else
-        public string ClientId {
+        public string ClientId
+        {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the resource-specific permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Permission {
+        public string? Permission
+        {
             get { return BackingStore?.Get<string?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
 #nullable restore
 #else
-        public string Permission {
+        public string Permission
+        {
             get { return BackingStore?.Get<string>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionType {
+        public string? PermissionType
+        {
             get { return BackingStore?.Get<string?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
 #nullable restore
 #else
-        public string PermissionType {
+        public string PermissionType
+        {
             get { return BackingStore?.Get<string>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the Microsoft Entra app that is hosting the resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceAppId {
+        public string? ResourceAppId
+        {
             get { return BackingStore?.Get<string?>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
 #nullable restore
 #else
-        public string ResourceAppId {
+        public string ResourceAppId
+        {
             get { return BackingStore?.Get<string>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientAppId", n => { ClientAppId = n.GetStringValue(); } },
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"permission", n => { Permission = n.GetStringValue(); } },
-                {"permissionType", n => { PermissionType = n.GetStringValue(); } },
-                {"resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
+                { "clientAppId", n => { ClientAppId = n.GetStringValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
+                { "permissionType", n => { PermissionType = n.GetStringValue(); } },
+                { "resourceAppId", n => { ResourceAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

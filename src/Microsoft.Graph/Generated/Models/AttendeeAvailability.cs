@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttendeeAvailability : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttendeeAvailability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The email address and type of attendee - whether it&apos;s a person or a resource, and whether required or optional if it&apos;s a person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttendeeBase? Attendee {
+        public AttendeeBase? Attendee
+        {
             get { return BackingStore?.Get<AttendeeBase?>("attendee"); }
             set { BackingStore?.Set("attendee", value); }
         }
 #nullable restore
 #else
-        public AttendeeBase Attendee {
+        public AttendeeBase Attendee
+        {
             get { return BackingStore?.Get<AttendeeBase>("attendee"); }
             set { BackingStore?.Set("attendee", value); }
         }
 #endif
         /// <summary>The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
-        public FreeBusyStatus? Availability {
+        public FreeBusyStatus? Availability
+        {
             get { return BackingStore?.Get<FreeBusyStatus?>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attendee", n => { Attendee = n.GetObjectValue<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue); } },
-                {"availability", n => { Availability = n.GetEnumValue<FreeBusyStatus>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "attendee", n => { Attendee = n.GetObjectValue<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue); } },
+                { "availability", n => { Availability = n.GetEnumValue<FreeBusyStatus>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

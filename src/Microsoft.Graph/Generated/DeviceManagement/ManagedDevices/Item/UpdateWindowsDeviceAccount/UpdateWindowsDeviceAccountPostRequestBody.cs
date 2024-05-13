@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount {
+namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.UpdateWindowsDeviceAccount
+{
     #pragma warning disable CS1591
-    public class UpdateWindowsDeviceAccountPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateWindowsDeviceAccountPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.UpdateWindowsDevi
         /// <summary>The updateWindowsDeviceAccountActionParameter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter? UpdateWindowsDeviceAccountActionParameter {
+        public Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter? UpdateWindowsDeviceAccountActionParameter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter?>("updateWindowsDeviceAccountActionParameter"); }
             set { BackingStore?.Set("updateWindowsDeviceAccountActionParameter", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter {
+        public Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter"); }
             set { BackingStore?.Set("updateWindowsDeviceAccountActionParameter", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.UpdateWindowsDevi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"updateWindowsDeviceAccountActionParameter", n => { UpdateWindowsDeviceAccountActionParameter = n.GetObjectValue<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter>(Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter.CreateFromDiscriminatorValue); } },
+                { "updateWindowsDeviceAccountActionParameter", n => { UpdateWindowsDeviceAccountActionParameter = n.GetObjectValue<Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter>(Microsoft.Graph.Models.UpdateWindowsDeviceAccountActionParameter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

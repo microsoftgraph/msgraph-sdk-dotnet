@@ -6,39 +6,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BookingWorkTimeSlot : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BookingWorkTimeSlot : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time of the day when work stops. For example, 17:00:00.0000000.</summary>
-        public Time? EndTime {
+        public Time? EndTime
+        {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The time of the day when work starts. For example, 08:00:00.0000000.</summary>
-        public Time? StartTime {
+        public Time? StartTime
+        {
             get { return BackingStore?.Get<Time?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endTime", n => { EndTime = n.GetTimeValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startTime", n => { StartTime = n.GetTimeValue(); } },
+                { "endTime", n => { EndTime = n.GetTimeValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startTime", n => { StartTime = n.GetTimeValue(); } },
             };
         }
         /// <summary>

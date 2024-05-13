@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties of a macOS .app in the package
     /// </summary>
-    public class MacOSLobChildApp : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSLobChildApp : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The build number of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildNumber {
+        public string? BuildNumber
+        {
             get { return BackingStore?.Get<string?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
 #nullable restore
 #else
-        public string BuildNumber {
+        public string BuildNumber
+        {
             get { return BackingStore?.Get<string>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The bundleId of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version number of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionNumber {
+        public string? VersionNumber
+        {
             get { return BackingStore?.Get<string?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
 #nullable restore
 #else
-        public string VersionNumber {
+        public string VersionNumber
+        {
             get { return BackingStore?.Get<string>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"versionNumber", n => { VersionNumber = n.GetStringValue(); } },
+                { "buildNumber", n => { BuildNumber = n.GetStringValue(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "versionNumber", n => { VersionNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

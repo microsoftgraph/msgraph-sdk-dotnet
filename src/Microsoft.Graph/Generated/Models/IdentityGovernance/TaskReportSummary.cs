@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class TaskReportSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TaskReportSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of failed tasks in a report.</summary>
-        public int? FailedTasks {
+        public int? FailedTasks
+        {
             get { return BackingStore?.Get<int?>("failedTasks"); }
             set { BackingStore?.Set("failedTasks", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The total number of successful tasks in a report.</summary>
-        public int? SuccessfulTasks {
+        public int? SuccessfulTasks
+        {
             get { return BackingStore?.Get<int?>("successfulTasks"); }
             set { BackingStore?.Set("successfulTasks", value); }
         }
         /// <summary>The total number of tasks in a report.</summary>
-        public int? TotalTasks {
+        public int? TotalTasks
+        {
             get { return BackingStore?.Get<int?>("totalTasks"); }
             set { BackingStore?.Set("totalTasks", value); }
         }
         /// <summary>The number of unprocessed tasks in a report.</summary>
-        public int? UnprocessedTasks {
+        public int? UnprocessedTasks
+        {
             get { return BackingStore?.Get<int?>("unprocessedTasks"); }
             set { BackingStore?.Set("unprocessedTasks", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedTasks", n => { FailedTasks = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"successfulTasks", n => { SuccessfulTasks = n.GetIntValue(); } },
-                {"totalTasks", n => { TotalTasks = n.GetIntValue(); } },
-                {"unprocessedTasks", n => { UnprocessedTasks = n.GetIntValue(); } },
+                { "failedTasks", n => { FailedTasks = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "successfulTasks", n => { SuccessfulTasks = n.GetIntValue(); } },
+                { "totalTasks", n => { TotalTasks = n.GetIntValue(); } },
+                { "unprocessedTasks", n => { UnprocessedTasks = n.GetIntValue(); } },
             };
         }
         /// <summary>

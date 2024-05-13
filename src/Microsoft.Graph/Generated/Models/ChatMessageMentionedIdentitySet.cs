@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatMessageMentionedIdentitySet : IdentitySet, IParsable 
+    public class ChatMessageMentionedIdentitySet : IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If present, represents a conversation (for example, team or channel) @mentioned in a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConversationIdentity? Conversation {
+        public TeamworkConversationIdentity? Conversation
+        {
             get { return BackingStore?.Get<TeamworkConversationIdentity?>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
 #nullable restore
 #else
-        public TeamworkConversationIdentity Conversation {
+        public TeamworkConversationIdentity Conversation
+        {
             get { return BackingStore?.Get<TeamworkConversationIdentity>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conversation", n => { Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
+                { "conversation", n => { Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

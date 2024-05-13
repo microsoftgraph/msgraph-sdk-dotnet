@@ -5,68 +5,81 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookWorksheetProtectionOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkbookWorksheetProtectionOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing using auto filter feature.</summary>
-        public bool? AllowAutoFilter {
+        public bool? AllowAutoFilter
+        {
             get { return BackingStore?.Get<bool?>("allowAutoFilter"); }
             set { BackingStore?.Set("allowAutoFilter", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing deleting columns.</summary>
-        public bool? AllowDeleteColumns {
+        public bool? AllowDeleteColumns
+        {
             get { return BackingStore?.Get<bool?>("allowDeleteColumns"); }
             set { BackingStore?.Set("allowDeleteColumns", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing deleting rows.</summary>
-        public bool? AllowDeleteRows {
+        public bool? AllowDeleteRows
+        {
             get { return BackingStore?.Get<bool?>("allowDeleteRows"); }
             set { BackingStore?.Set("allowDeleteRows", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing formatting cells.</summary>
-        public bool? AllowFormatCells {
+        public bool? AllowFormatCells
+        {
             get { return BackingStore?.Get<bool?>("allowFormatCells"); }
             set { BackingStore?.Set("allowFormatCells", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing formatting columns.</summary>
-        public bool? AllowFormatColumns {
+        public bool? AllowFormatColumns
+        {
             get { return BackingStore?.Get<bool?>("allowFormatColumns"); }
             set { BackingStore?.Set("allowFormatColumns", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing formatting rows.</summary>
-        public bool? AllowFormatRows {
+        public bool? AllowFormatRows
+        {
             get { return BackingStore?.Get<bool?>("allowFormatRows"); }
             set { BackingStore?.Set("allowFormatRows", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing inserting columns.</summary>
-        public bool? AllowInsertColumns {
+        public bool? AllowInsertColumns
+        {
             get { return BackingStore?.Get<bool?>("allowInsertColumns"); }
             set { BackingStore?.Set("allowInsertColumns", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing inserting hyperlinks.</summary>
-        public bool? AllowInsertHyperlinks {
+        public bool? AllowInsertHyperlinks
+        {
             get { return BackingStore?.Get<bool?>("allowInsertHyperlinks"); }
             set { BackingStore?.Set("allowInsertHyperlinks", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing inserting rows.</summary>
-        public bool? AllowInsertRows {
+        public bool? AllowInsertRows
+        {
             get { return BackingStore?.Get<bool?>("allowInsertRows"); }
             set { BackingStore?.Set("allowInsertRows", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing using pivot table feature.</summary>
-        public bool? AllowPivotTables {
+        public bool? AllowPivotTables
+        {
             get { return BackingStore?.Get<bool?>("allowPivotTables"); }
             set { BackingStore?.Set("allowPivotTables", value); }
         }
         /// <summary>Represents the worksheet protection option of allowing using sort feature.</summary>
-        public bool? AllowSort {
+        public bool? AllowSort
+        {
             get { return BackingStore?.Get<bool?>("allowSort"); }
             set { BackingStore?.Set("allowSort", value); }
         }
@@ -75,13 +88,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -112,18 +127,18 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowAutoFilter", n => { AllowAutoFilter = n.GetBoolValue(); } },
-                {"allowDeleteColumns", n => { AllowDeleteColumns = n.GetBoolValue(); } },
-                {"allowDeleteRows", n => { AllowDeleteRows = n.GetBoolValue(); } },
-                {"allowFormatCells", n => { AllowFormatCells = n.GetBoolValue(); } },
-                {"allowFormatColumns", n => { AllowFormatColumns = n.GetBoolValue(); } },
-                {"allowFormatRows", n => { AllowFormatRows = n.GetBoolValue(); } },
-                {"allowInsertColumns", n => { AllowInsertColumns = n.GetBoolValue(); } },
-                {"allowInsertHyperlinks", n => { AllowInsertHyperlinks = n.GetBoolValue(); } },
-                {"allowInsertRows", n => { AllowInsertRows = n.GetBoolValue(); } },
-                {"allowPivotTables", n => { AllowPivotTables = n.GetBoolValue(); } },
-                {"allowSort", n => { AllowSort = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowAutoFilter", n => { AllowAutoFilter = n.GetBoolValue(); } },
+                { "allowDeleteColumns", n => { AllowDeleteColumns = n.GetBoolValue(); } },
+                { "allowDeleteRows", n => { AllowDeleteRows = n.GetBoolValue(); } },
+                { "allowFormatCells", n => { AllowFormatCells = n.GetBoolValue(); } },
+                { "allowFormatColumns", n => { AllowFormatColumns = n.GetBoolValue(); } },
+                { "allowFormatRows", n => { AllowFormatRows = n.GetBoolValue(); } },
+                { "allowInsertColumns", n => { AllowInsertColumns = n.GetBoolValue(); } },
+                { "allowInsertHyperlinks", n => { AllowInsertHyperlinks = n.GetBoolValue(); } },
+                { "allowInsertRows", n => { AllowInsertRows = n.GetBoolValue(); } },
+                { "allowPivotTables", n => { AllowPivotTables = n.GetBoolValue(); } },
+                { "allowSort", n => { AllowSort = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

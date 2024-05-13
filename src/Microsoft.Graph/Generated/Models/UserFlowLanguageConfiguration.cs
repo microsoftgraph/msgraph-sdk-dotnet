@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserFlowLanguageConfiguration : Entity, IParsable 
+    public class UserFlowLanguageConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFlowLanguagePage>? DefaultPages {
+        public List<UserFlowLanguagePage>? DefaultPages
+        {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>?>("defaultPages"); }
             set { BackingStore?.Set("defaultPages", value); }
         }
 #nullable restore
 #else
-        public List<UserFlowLanguagePage> DefaultPages {
+        public List<UserFlowLanguagePage> DefaultPages
+        {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>>("defaultPages"); }
             set { BackingStore?.Set("defaultPages", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The language name to display. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the language is enabled within the user flow.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn&apos;t allowed (creation or deletion of pages).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFlowLanguagePage>? OverridesPages {
+        public List<UserFlowLanguagePage>? OverridesPages
+        {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>?>("overridesPages"); }
             set { BackingStore?.Set("overridesPages", value); }
         }
 #nullable restore
 #else
-        public List<UserFlowLanguagePage> OverridesPages {
+        public List<UserFlowLanguagePage> OverridesPages
+        {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>>("overridesPages"); }
             set { BackingStore?.Set("overridesPages", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultPages", n => { DefaultPages = n.GetCollectionOfObjectValues<UserFlowLanguagePage>(UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"overridesPages", n => { OverridesPages = n.GetCollectionOfObjectValues<UserFlowLanguagePage>(UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultPages", n => { DefaultPages = n.GetCollectionOfObjectValues<UserFlowLanguagePage>(UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "overridesPages", n => { OverridesPages = n.GetCollectionOfObjectValues<UserFlowLanguagePage>(UserFlowLanguagePage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

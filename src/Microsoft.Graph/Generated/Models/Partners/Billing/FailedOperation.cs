@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class FailedOperation : Operation, IParsable 
+    public class FailedOperation : Operation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PublicError? Error {
+        public Microsoft.Graph.Models.PublicError? Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PublicError Error {
+        public Microsoft.Graph.Models.PublicError Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

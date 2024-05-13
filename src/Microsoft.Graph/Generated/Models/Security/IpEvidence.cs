@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class IpEvidence : AlertEvidence, IParsable 
+    public class IpEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryLetterCode {
+        public string? CountryLetterCode
+        {
             get { return BackingStore?.Get<string?>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
 #nullable restore
 #else
-        public string CountryLetterCode {
+        public string CountryLetterCode
+        {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GeoLocation? Location {
+        public GeoLocation? Location
+        {
             get { return BackingStore?.Get<GeoLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public GeoLocation Location {
+        public GeoLocation Location
+        {
             get { return BackingStore?.Get<GeoLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StreamObject? Stream {
+        public StreamObject? Stream
+        {
             get { return BackingStore?.Get<StreamObject?>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
 #nullable restore
 #else
-        public StreamObject Stream {
+        public StreamObject Stream
+        {
             get { return BackingStore?.Get<StreamObject>("stream"); }
             set { BackingStore?.Set("stream", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"location", n => { Location = n.GetObjectValue<GeoLocation>(GeoLocation.CreateFromDiscriminatorValue); } },
-                {"stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
+                { "countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetObjectValue<GeoLocation>(GeoLocation.CreateFromDiscriminatorValue); } },
+                { "stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

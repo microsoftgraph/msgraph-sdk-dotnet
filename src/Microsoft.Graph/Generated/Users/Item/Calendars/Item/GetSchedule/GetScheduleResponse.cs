@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule {
+namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
+{
     [Obsolete("This class is obsolete. Use GetSchedulePostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetScheduleResponse : GetSchedulePostResponse, IParsable 
+    public class GetScheduleResponse : GetSchedulePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

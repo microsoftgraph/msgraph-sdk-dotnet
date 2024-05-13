@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ {
+namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ
+{
     [Obsolete("This class is obsolete. Use SearchWithQGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SearchWithQResponse : SearchWithQGetResponse, IParsable 
+    public class SearchWithQResponse : SearchWithQGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

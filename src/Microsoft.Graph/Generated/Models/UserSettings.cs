@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserSettings : Entity, IParsable 
+    public class UserSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn&apos;t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
-        public bool? ContributionToContentDiscoveryAsOrganizationDisabled {
+        public bool? ContributionToContentDiscoveryAsOrganizationDisabled
+        {
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryAsOrganizationDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryAsOrganizationDisabled", value); }
         }
         /// <summary>When set to true, the delegate access to the user&apos;s trending API is disabled. When set to true, documents in the user&apos;s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.</summary>
-        public bool? ContributionToContentDiscoveryDisabled {
+        public bool? ContributionToContentDiscoveryDisabled
+        {
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryDisabled", value); }
         }
         /// <summary>The shiftPreferences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ShiftPreferences? ShiftPreferences {
+        public Microsoft.Graph.Models.ShiftPreferences? ShiftPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftPreferences?>("shiftPreferences"); }
             set { BackingStore?.Set("shiftPreferences", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ShiftPreferences ShiftPreferences {
+        public Microsoft.Graph.Models.ShiftPreferences ShiftPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ShiftPreferences>("shiftPreferences"); }
             set { BackingStore?.Set("shiftPreferences", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The windows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsSetting>? Windows {
+        public List<WindowsSetting>? Windows
+        {
             get { return BackingStore?.Get<List<WindowsSetting>?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public List<WindowsSetting> Windows {
+        public List<WindowsSetting> Windows
+        {
             get { return BackingStore?.Get<List<WindowsSetting>>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
-                {"contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
-                {"shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Models.ShiftPreferences>(Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
-                {"windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
+                { "contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
+                { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Models.ShiftPreferences>(Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
+                { "windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

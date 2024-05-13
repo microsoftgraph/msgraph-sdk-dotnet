@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Invite {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Invite
+{
     [Obsolete("This class is obsolete. Use InvitePostResponse instead.")]
     #pragma warning disable CS1591
-    public class InviteResponse : InvitePostResponse, IParsable 
+    public class InviteResponse : InvitePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

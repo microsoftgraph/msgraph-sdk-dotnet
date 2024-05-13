@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2
+{
     #pragma warning disable CS1591
-    public class Atan2PostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Atan2PostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         /// <summary>The xNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? XNum {
+        public Json? XNum
+        {
             get { return BackingStore?.Get<Json?>("xNum"); }
             set { BackingStore?.Set("xNum", value); }
         }
 #nullable restore
 #else
-        public Json XNum {
+        public Json XNum
+        {
             get { return BackingStore?.Get<Json>("xNum"); }
             set { BackingStore?.Set("xNum", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         /// <summary>The yNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? YNum {
+        public Json? YNum
+        {
             get { return BackingStore?.Get<Json?>("yNum"); }
             set { BackingStore?.Set("yNum", value); }
         }
 #nullable restore
 #else
-        public Json YNum {
+        public Json YNum
+        {
             get { return BackingStore?.Get<Json>("yNum"); }
             set { BackingStore?.Set("yNum", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Atan2 {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"xNum", n => { XNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"yNum", n => { YNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "xNum", n => { XNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "yNum", n => { YNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

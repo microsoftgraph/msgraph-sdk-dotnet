@@ -5,23 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LookupColumn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LookupColumn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether multiple values can be selected from the source.</summary>
-        public bool? AllowMultipleValues {
+        public bool? AllowMultipleValues
+        {
             get { return BackingStore?.Get<bool?>("allowMultipleValues"); }
             set { BackingStore?.Set("allowMultipleValues", value); }
         }
         /// <summary>Indicates whether values in the column should be able to exceed the standard limit of 255 characters.</summary>
-        public bool? AllowUnlimitedLength {
+        public bool? AllowUnlimitedLength
+        {
             get { return BackingStore?.Get<bool?>("allowUnlimitedLength"); }
             set { BackingStore?.Set("allowUnlimitedLength", value); }
         }
@@ -30,13 +34,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the lookup source column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColumnName {
+        public string? ColumnName
+        {
             get { return BackingStore?.Get<string?>("columnName"); }
             set { BackingStore?.Set("columnName", value); }
         }
 #nullable restore
 #else
-        public string ColumnName {
+        public string ColumnName
+        {
             get { return BackingStore?.Get<string>("columnName"); }
             set { BackingStore?.Set("columnName", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the lookup source list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListId {
+        public string? ListId
+        {
             get { return BackingStore?.Get<string?>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
 #nullable restore
 #else
-        public string ListId {
+        public string ListId
+        {
             get { return BackingStore?.Get<string>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryLookupColumnId {
+        public string? PrimaryLookupColumnId
+        {
             get { return BackingStore?.Get<string?>("primaryLookupColumnId"); }
             set { BackingStore?.Set("primaryLookupColumnId", value); }
         }
 #nullable restore
 #else
-        public string PrimaryLookupColumnId {
+        public string PrimaryLookupColumnId
+        {
             get { return BackingStore?.Get<string>("primaryLookupColumnId"); }
             set { BackingStore?.Set("primaryLookupColumnId", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
-                {"allowUnlimitedLength", n => { AllowUnlimitedLength = n.GetBoolValue(); } },
-                {"columnName", n => { ColumnName = n.GetStringValue(); } },
-                {"listId", n => { ListId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"primaryLookupColumnId", n => { PrimaryLookupColumnId = n.GetStringValue(); } },
+                { "allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
+                { "allowUnlimitedLength", n => { AllowUnlimitedLength = n.GetBoolValue(); } },
+                { "columnName", n => { ColumnName = n.GetStringValue(); } },
+                { "listId", n => { ListId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "primaryLookupColumnId", n => { PrimaryLookupColumnId = n.GetStringValue(); } },
             };
         }
         /// <summary>

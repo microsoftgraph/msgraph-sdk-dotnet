@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PlannerPlan : Entity, IParsable 
+    public class PlannerPlan : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Collection of buckets in the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerBucket>? Buckets {
+        public List<PlannerBucket>? Buckets
+        {
             get { return BackingStore?.Get<List<PlannerBucket>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
 #nullable restore
 #else
-        public List<PlannerBucket> Buckets {
+        public List<PlannerBucket> Buckets
+        {
             get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it&apos;s set, this property can’t be updated. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerPlanContainer? Container {
+        public PlannerPlanContainer? Container
+        {
             get { return BackingStore?.Get<PlannerPlanContainer?>("container"); }
             set { BackingStore?.Set("container", value); }
         }
 #nullable restore
 #else
-        public PlannerPlanContainer Container {
+        public PlannerPlanContainer Container
+        {
             get { return BackingStore?.Get<PlannerPlanContainer>("container"); }
             set { BackingStore?.Set("container", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. The user who created the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Read-only. Nullable. Extra details about the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerPlanDetails? Details {
+        public PlannerPlanDetails? Details
+        {
             get { return BackingStore?.Get<PlannerPlanDetails?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public PlannerPlanDetails Details {
+        public PlannerPlanDetails Details
+        {
             get { return BackingStore?.Get<PlannerPlanDetails>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner {
+        public string? Owner
+        {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public string Owner {
+        public string Owner
+        {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. Nullable. Collection of tasks in the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? Tasks {
+        public List<PlannerTask>? Tasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> Tasks {
+        public List<PlannerTask> Tasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Required. Title of the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -130,14 +146,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerBucket>(PlannerBucket.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"container", n => { Container = n.GetObjectValue<PlannerPlanContainer>(PlannerPlanContainer.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"details", n => { Details = n.GetObjectValue<PlannerPlanDetails>(PlannerPlanDetails.CreateFromDiscriminatorValue); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerBucket>(PlannerBucket.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "container", n => { Container = n.GetObjectValue<PlannerPlanContainer>(PlannerPlanContainer.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "details", n => { Details = n.GetObjectValue<PlannerPlanDetails>(PlannerPlanDetails.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

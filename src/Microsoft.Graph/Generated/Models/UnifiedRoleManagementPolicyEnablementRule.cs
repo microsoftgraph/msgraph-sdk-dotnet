@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule, IParsable 
+    public class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnabledRules {
+        public List<string>? EnabledRules
+        {
             get { return BackingStore?.Get<List<string>?>("enabledRules"); }
             set { BackingStore?.Set("enabledRules", value); }
         }
 #nullable restore
 #else
-        public List<string> EnabledRules {
+        public List<string> EnabledRules
+        {
             get { return BackingStore?.Get<List<string>>("enabledRules"); }
             set { BackingStore?.Set("enabledRules", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enabledRules", n => { EnabledRules = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "enabledRules", n => { EnabledRules = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

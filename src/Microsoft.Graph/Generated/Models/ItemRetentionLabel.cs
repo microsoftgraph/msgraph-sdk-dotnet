@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemRetentionLabel : Entity, IParsable 
+    public class ItemRetentionLabel : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</summary>
-        public bool? IsLabelAppliedExplicitly {
+        public bool? IsLabelAppliedExplicitly
+        {
             get { return BackingStore?.Get<bool?>("isLabelAppliedExplicitly"); }
             set { BackingStore?.Set("isLabelAppliedExplicitly", value); }
         }
         /// <summary>Identity of the user who applied the label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LabelAppliedBy {
+        public IdentitySet? LabelAppliedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("labelAppliedBy"); }
             set { BackingStore?.Set("labelAppliedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LabelAppliedBy {
+        public IdentitySet LabelAppliedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("labelAppliedBy"); }
             set { BackingStore?.Set("labelAppliedBy", value); }
         }
 #endif
         /// <summary>The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LabelAppliedDateTime {
+        public DateTimeOffset? LabelAppliedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("labelAppliedDateTime"); }
             set { BackingStore?.Set("labelAppliedDateTime", value); }
         }
         /// <summary>The retention label on the document. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The retention settings enforced on the item. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RetentionLabelSettings? RetentionSettings {
+        public RetentionLabelSettings? RetentionSettings
+        {
             get { return BackingStore?.Get<RetentionLabelSettings?>("retentionSettings"); }
             set { BackingStore?.Set("retentionSettings", value); }
         }
 #nullable restore
 #else
-        public RetentionLabelSettings RetentionSettings {
+        public RetentionLabelSettings RetentionSettings
+        {
             get { return BackingStore?.Get<RetentionLabelSettings>("retentionSettings"); }
             set { BackingStore?.Set("retentionSettings", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isLabelAppliedExplicitly", n => { IsLabelAppliedExplicitly = n.GetBoolValue(); } },
-                {"labelAppliedBy", n => { LabelAppliedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"labelAppliedDateTime", n => { LabelAppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"retentionSettings", n => { RetentionSettings = n.GetObjectValue<RetentionLabelSettings>(RetentionLabelSettings.CreateFromDiscriminatorValue); } },
+                { "isLabelAppliedExplicitly", n => { IsLabelAppliedExplicitly = n.GetBoolValue(); } },
+                { "labelAppliedBy", n => { LabelAppliedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "labelAppliedDateTime", n => { LabelAppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "retentionSettings", n => { RetentionSettings = n.GetObjectValue<RetentionLabelSettings>(RetentionLabelSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

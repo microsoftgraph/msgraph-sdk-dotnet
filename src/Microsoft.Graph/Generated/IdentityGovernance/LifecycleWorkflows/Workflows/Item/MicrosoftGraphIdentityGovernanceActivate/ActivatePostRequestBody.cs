@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate {
+namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate
+{
     #pragma warning disable CS1591
-    public class ActivatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ActivatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.M
         /// <summary>The subjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.User>? Subjects {
+        public List<Microsoft.Graph.Models.User>? Subjects
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.User>?>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.User> Subjects {
+        public List<Microsoft.Graph.Models.User> Subjects
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.User>>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.M
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

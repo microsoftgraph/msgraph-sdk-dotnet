@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class RuleBasedSubjectSet : Microsoft.Graph.Models.SubjectSet, IParsable 
+    public class RuleBasedSubjectSet : Microsoft.Graph.Models.SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The rule for the subject set. Lifecycle Workflows supports a rich set of user properties for configuring the rules using $filter query expressions. For more information, see supported user and query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rule {
+        public string? Rule
+        {
             get { return BackingStore?.Get<string?>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
 #nullable restore
 #else
-        public string Rule {
+        public string Rule
+        {
             get { return BackingStore?.Get<string>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"rule", n => { Rule = n.GetStringValue(); } },
+                { "rule", n => { Rule = n.GetStringValue(); } },
             };
         }
         /// <summary>

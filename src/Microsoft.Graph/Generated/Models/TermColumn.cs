@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TermColumn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TermColumn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Specifies whether the column allows more than one value.</summary>
-        public bool? AllowMultipleValues {
+        public bool? AllowMultipleValues
+        {
             get { return BackingStore?.Get<bool?>("allowMultipleValues"); }
             set { BackingStore?.Set("allowMultipleValues", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The parentTerm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Term? ParentTerm {
+        public Term? ParentTerm
+        {
             get { return BackingStore?.Get<Term?>("parentTerm"); }
             set { BackingStore?.Set("parentTerm", value); }
         }
 #nullable restore
 #else
-        public Term ParentTerm {
+        public Term ParentTerm
+        {
             get { return BackingStore?.Get<Term>("parentTerm"); }
             set { BackingStore?.Set("parentTerm", value); }
         }
 #endif
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
-        public bool? ShowFullyQualifiedName {
+        public bool? ShowFullyQualifiedName
+        {
             get { return BackingStore?.Get<bool?>("showFullyQualifiedName"); }
             set { BackingStore?.Set("showFullyQualifiedName", value); }
         }
         /// <summary>The termSet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TermStore.Set? TermSet {
+        public Microsoft.Graph.Models.TermStore.Set? TermSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set?>("termSet"); }
             set { BackingStore?.Set("termSet", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TermStore.Set TermSet {
+        public Microsoft.Graph.Models.TermStore.Set TermSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set>("termSet"); }
             set { BackingStore?.Set("termSet", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parentTerm", n => { ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
-                {"showFullyQualifiedName", n => { ShowFullyQualifiedName = n.GetBoolValue(); } },
-                {"termSet", n => { TermSet = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
+                { "allowMultipleValues", n => { AllowMultipleValues = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "parentTerm", n => { ParentTerm = n.GetObjectValue<Term>(Term.CreateFromDiscriminatorValue); } },
+                { "showFullyQualifiedName", n => { ShowFullyQualifiedName = n.GetBoolValue(); } },
+                { "termSet", n => { TermSet = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

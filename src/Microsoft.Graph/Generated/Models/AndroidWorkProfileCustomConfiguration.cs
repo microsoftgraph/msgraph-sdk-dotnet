@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Android Work Profile custom configuration
     /// </summary>
-    public class AndroidWorkProfileCustomConfiguration : DeviceConfiguration, IParsable 
+    public class AndroidWorkProfileCustomConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>OMA settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OmaSetting>? OmaSettings {
+        public List<OmaSetting>? OmaSettings
+        {
             get { return BackingStore?.Get<List<OmaSetting>?>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
 #nullable restore
 #else
-        public List<OmaSetting> OmaSettings {
+        public List<OmaSetting> OmaSettings
+        {
             get { return BackingStore?.Get<List<OmaSetting>>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"omaSettings", n => { OmaSettings = n.GetCollectionOfObjectValues<OmaSetting>(OmaSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "omaSettings", n => { OmaSettings = n.GetCollectionOfObjectValues<OmaSetting>(OmaSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

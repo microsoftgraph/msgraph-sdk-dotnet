@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn
+{
     [Obsolete("This class is obsolete. Use FilterByCurrentUserWithOnGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FilterByCurrentUserWithOnResponse : FilterByCurrentUserWithOnGetResponse, IParsable 
+    public class FilterByCurrentUserWithOnResponse : FilterByCurrentUserWithOnGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

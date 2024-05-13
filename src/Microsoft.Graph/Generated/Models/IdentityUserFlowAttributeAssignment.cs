@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IdentityUserFlowAttributeAssignment : Entity, IParsable 
+    public class IdentityUserFlowAttributeAssignment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user can&apos;t complete sign-up without providing a value.</summary>
-        public bool? IsOptional {
+        public bool? IsOptional
+        {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user&apos;s phone number or email address.</summary>
-        public bool? RequiresVerification {
+        public bool? RequiresVerification
+        {
             get { return BackingStore?.Get<bool?>("requiresVerification"); }
             set { BackingStore?.Set("requiresVerification", value); }
         }
         /// <summary>The user attribute that you want to add to your user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityUserFlowAttribute? UserAttribute {
+        public IdentityUserFlowAttribute? UserAttribute
+        {
             get { return BackingStore?.Get<IdentityUserFlowAttribute?>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
 #nullable restore
 #else
-        public IdentityUserFlowAttribute UserAttribute {
+        public IdentityUserFlowAttribute UserAttribute
+        {
             get { return BackingStore?.Get<IdentityUserFlowAttribute>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
@@ -50,19 +57,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserAttributeValuesItem>? UserAttributeValues {
+        public List<UserAttributeValuesItem>? UserAttributeValues
+        {
             get { return BackingStore?.Get<List<UserAttributeValuesItem>?>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
 #nullable restore
 #else
-        public List<UserAttributeValuesItem> UserAttributeValues {
+        public List<UserAttributeValuesItem> UserAttributeValues
+        {
             get { return BackingStore?.Get<List<UserAttributeValuesItem>>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
 #endif
         /// <summary>The userInputType property</summary>
-        public IdentityUserFlowAttributeInputType? UserInputType {
+        public IdentityUserFlowAttributeInputType? UserInputType
+        {
             get { return BackingStore?.Get<IdentityUserFlowAttributeInputType?>("userInputType"); }
             set { BackingStore?.Set("userInputType", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
-                {"requiresVerification", n => { RequiresVerification = n.GetBoolValue(); } },
-                {"userAttribute", n => { UserAttribute = n.GetObjectValue<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
-                {"userAttributeValues", n => { UserAttributeValues = n.GetCollectionOfObjectValues<UserAttributeValuesItem>(UserAttributeValuesItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userInputType", n => { UserInputType = n.GetEnumValue<IdentityUserFlowAttributeInputType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                { "requiresVerification", n => { RequiresVerification = n.GetBoolValue(); } },
+                { "userAttribute", n => { UserAttribute = n.GetObjectValue<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue); } },
+                { "userAttributeValues", n => { UserAttributeValues = n.GetCollectionOfObjectValues<UserAttributeValuesItem>(UserAttributeValuesItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userInputType", n => { UserInputType = n.GetEnumValue<IdentityUserFlowAttributeInputType>(); } },
             };
         }
         /// <summary>

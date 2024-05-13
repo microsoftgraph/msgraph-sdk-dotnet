@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MailAssessmentRequest : ThreatAssessmentRequest, IParsable 
+    public class MailAssessmentRequest : ThreatAssessmentRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
-        public MailDestinationRoutingReason? DestinationRoutingReason {
+        public MailDestinationRoutingReason? DestinationRoutingReason
+        {
             get { return BackingStore?.Get<MailDestinationRoutingReason?>("destinationRoutingReason"); }
             set { BackingStore?.Set("destinationRoutingReason", value); }
         }
         /// <summary>The resource URI of the mail message for assessment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageUri {
+        public string? MessageUri
+        {
             get { return BackingStore?.Get<string?>("messageUri"); }
             set { BackingStore?.Set("messageUri", value); }
         }
 #nullable restore
 #else
-        public string MessageUri {
+        public string MessageUri
+        {
             get { return BackingStore?.Get<string>("messageUri"); }
             set { BackingStore?.Set("messageUri", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientEmail {
+        public string? RecipientEmail
+        {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
 #nullable restore
 #else
-        public string RecipientEmail {
+        public string RecipientEmail
+        {
             get { return BackingStore?.Get<string>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"destinationRoutingReason", n => { DestinationRoutingReason = n.GetEnumValue<MailDestinationRoutingReason>(); } },
-                {"messageUri", n => { MessageUri = n.GetStringValue(); } },
-                {"recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
+                { "destinationRoutingReason", n => { DestinationRoutingReason = n.GetEnumValue<MailDestinationRoutingReason>(); } },
+                { "messageUri", n => { MessageUri = n.GetStringValue(); } },
+                { "recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
             };
         }
         /// <summary>

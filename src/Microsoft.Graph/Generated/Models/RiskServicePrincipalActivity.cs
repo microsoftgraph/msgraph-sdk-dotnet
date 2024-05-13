@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RiskServicePrincipalActivity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RiskServicePrincipalActivity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
-        public RiskDetail? Detail {
+        public RiskDetail? Detail
+        {
             get { return BackingStore?.Get<RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RiskEventTypes {
+        public List<string>? RiskEventTypes
+        {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> RiskEventTypes {
+        public List<string> RiskEventTypes
+        {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

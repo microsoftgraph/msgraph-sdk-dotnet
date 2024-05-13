@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class ParticipantEndpoint : Endpoint, IParsable 
+    public class ParticipantEndpoint : Endpoint, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>CPU number of cores used by the media endpoint.</summary>
-        public int? CpuCoresCount {
+        public int? CpuCoresCount
+        {
             get { return BackingStore?.Get<int?>("cpuCoresCount"); }
             set { BackingStore?.Set("cpuCoresCount", value); }
         }
         /// <summary>CPU name used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CpuName {
+        public string? CpuName
+        {
             get { return BackingStore?.Get<string?>("cpuName"); }
             set { BackingStore?.Set("cpuName", value); }
         }
 #nullable restore
 #else
-        public string CpuName {
+        public string CpuName
+        {
             get { return BackingStore?.Get<string>("cpuName"); }
             set { BackingStore?.Set("cpuName", value); }
         }
 #endif
         /// <summary>CPU processor speed used by the media endpoint.</summary>
-        public int? CpuProcessorSpeedInMhz {
+        public int? CpuProcessorSpeedInMhz
+        {
             get { return BackingStore?.Get<int?>("cpuProcessorSpeedInMhz"); }
             set { BackingStore?.Set("cpuProcessorSpeedInMhz", value); }
         }
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserFeedback? Feedback {
+        public UserFeedback? Feedback
+        {
             get { return BackingStore?.Get<UserFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public UserFeedback Feedback {
+        public UserFeedback Feedback
+        {
             get { return BackingStore?.Get<UserFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Identity associated with the endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? Identity {
+        public Microsoft.Graph.Models.IdentitySet? Identity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet Identity {
+        public Microsoft.Graph.Models.IdentitySet Identity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Name of the device used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
-                {"cpuName", n => { CpuName = n.GetStringValue(); } },
-                {"cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
-                {"feedback", n => { Feedback = n.GetObjectValue<UserFeedback>(UserFeedback.CreateFromDiscriminatorValue); } },
-                {"identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
+                { "cpuName", n => { CpuName = n.GetStringValue(); } },
+                { "cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<UserFeedback>(UserFeedback.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

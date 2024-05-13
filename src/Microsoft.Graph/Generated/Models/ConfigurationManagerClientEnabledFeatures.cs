@@ -5,60 +5,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// configuration Manager client enabled features
     /// </summary>
-    public class ConfigurationManagerClientEnabledFeatures : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConfigurationManagerClientEnabledFeatures : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether compliance policy is managed by Intune</summary>
-        public bool? CompliancePolicy {
+        public bool? CompliancePolicy
+        {
             get { return BackingStore?.Get<bool?>("compliancePolicy"); }
             set { BackingStore?.Set("compliancePolicy", value); }
         }
         /// <summary>Whether device configuration is managed by Intune</summary>
-        public bool? DeviceConfiguration {
+        public bool? DeviceConfiguration
+        {
             get { return BackingStore?.Get<bool?>("deviceConfiguration"); }
             set { BackingStore?.Set("deviceConfiguration", value); }
         }
         /// <summary>Whether inventory is managed by Intune</summary>
-        public bool? Inventory {
+        public bool? Inventory
+        {
             get { return BackingStore?.Get<bool?>("inventory"); }
             set { BackingStore?.Set("inventory", value); }
         }
         /// <summary>Whether modern application is managed by Intune</summary>
-        public bool? ModernApps {
+        public bool? ModernApps
+        {
             get { return BackingStore?.Get<bool?>("modernApps"); }
             set { BackingStore?.Set("modernApps", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Whether resource access is managed by Intune</summary>
-        public bool? ResourceAccess {
+        public bool? ResourceAccess
+        {
             get { return BackingStore?.Get<bool?>("resourceAccess"); }
             set { BackingStore?.Set("resourceAccess", value); }
         }
         /// <summary>Whether Windows Update for Business is managed by Intune</summary>
-        public bool? WindowsUpdateForBusiness {
+        public bool? WindowsUpdateForBusiness
+        {
             get { return BackingStore?.Get<bool?>("windowsUpdateForBusiness"); }
             set { BackingStore?.Set("windowsUpdateForBusiness", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"compliancePolicy", n => { CompliancePolicy = n.GetBoolValue(); } },
-                {"deviceConfiguration", n => { DeviceConfiguration = n.GetBoolValue(); } },
-                {"inventory", n => { Inventory = n.GetBoolValue(); } },
-                {"modernApps", n => { ModernApps = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceAccess", n => { ResourceAccess = n.GetBoolValue(); } },
-                {"windowsUpdateForBusiness", n => { WindowsUpdateForBusiness = n.GetBoolValue(); } },
+                { "compliancePolicy", n => { CompliancePolicy = n.GetBoolValue(); } },
+                { "deviceConfiguration", n => { DeviceConfiguration = n.GetBoolValue(); } },
+                { "inventory", n => { Inventory = n.GetBoolValue(); } },
+                { "modernApps", n => { ModernApps = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceAccess", n => { ResourceAccess = n.GetBoolValue(); } },
+                { "windowsUpdateForBusiness", n => { WindowsUpdateForBusiness = n.GetBoolValue(); } },
             };
         }
         /// <summary>

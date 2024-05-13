@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class X509CertificateAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class X509CertificateAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public X509CertificateAuthenticationModeConfiguration? AuthenticationModeConfiguration {
+        public X509CertificateAuthenticationModeConfiguration? AuthenticationModeConfiguration
+        {
             get { return BackingStore?.Get<X509CertificateAuthenticationModeConfiguration?>("authenticationModeConfiguration"); }
             set { BackingStore?.Set("authenticationModeConfiguration", value); }
         }
 #nullable restore
 #else
-        public X509CertificateAuthenticationModeConfiguration AuthenticationModeConfiguration {
+        public X509CertificateAuthenticationModeConfiguration AuthenticationModeConfiguration
+        {
             get { return BackingStore?.Get<X509CertificateAuthenticationModeConfiguration>("authenticationModeConfiguration"); }
             set { BackingStore?.Set("authenticationModeConfiguration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<X509CertificateUserBinding>? CertificateUserBindings {
+        public List<X509CertificateUserBinding>? CertificateUserBindings
+        {
             get { return BackingStore?.Get<List<X509CertificateUserBinding>?>("certificateUserBindings"); }
             set { BackingStore?.Set("certificateUserBindings", value); }
         }
 #nullable restore
 #else
-        public List<X509CertificateUserBinding> CertificateUserBindings {
+        public List<X509CertificateUserBinding> CertificateUserBindings
+        {
             get { return BackingStore?.Get<List<X509CertificateUserBinding>>("certificateUserBindings"); }
             set { BackingStore?.Set("certificateUserBindings", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets {
+        public List<AuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets {
+        public List<AuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationModeConfiguration", n => { AuthenticationModeConfiguration = n.GetObjectValue<X509CertificateAuthenticationModeConfiguration>(X509CertificateAuthenticationModeConfiguration.CreateFromDiscriminatorValue); } },
-                {"certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<X509CertificateUserBinding>(X509CertificateUserBinding.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationModeConfiguration", n => { AuthenticationModeConfiguration = n.GetObjectValue<X509CertificateAuthenticationModeConfiguration>(X509CertificateAuthenticationModeConfiguration.CreateFromDiscriminatorValue); } },
+                { "certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<X509CertificateUserBinding>(X509CertificateUserBinding.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

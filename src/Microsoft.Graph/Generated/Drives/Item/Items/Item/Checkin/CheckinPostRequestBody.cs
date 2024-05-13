@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Checkin {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Checkin
+{
     #pragma warning disable CS1591
-    public class CheckinPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CheckinPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Checkin {
         /// <summary>The checkInAs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckInAs {
+        public string? CheckInAs
+        {
             get { return BackingStore?.Get<string?>("checkInAs"); }
             set { BackingStore?.Set("checkInAs", value); }
         }
 #nullable restore
 #else
-        public string CheckInAs {
+        public string CheckInAs
+        {
             get { return BackingStore?.Get<string>("checkInAs"); }
             set { BackingStore?.Set("checkInAs", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Checkin {
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Checkin {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"checkInAs", n => { CheckInAs = n.GetStringValue(); } },
-                {"comment", n => { Comment = n.GetStringValue(); } },
+                { "checkInAs", n => { CheckInAs = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators {
+namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators
+{
     [Obsolete("This class is obsolete. Use FilterOperatorsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FilterOperatorsResponse : FilterOperatorsGetResponse, IParsable 
+    public class FilterOperatorsResponse : FilterOperatorsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

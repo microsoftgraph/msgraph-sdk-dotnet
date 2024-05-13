@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Color in RGB.
     /// </summary>
-    public class RgbColor : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RgbColor : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Blue value</summary>
-        public byte? B {
+        public byte? B
+        {
             get { return BackingStore?.Get<byte?>("b"); }
             set { BackingStore?.Set("b", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Green value</summary>
-        public byte? G {
+        public byte? G
+        {
             get { return BackingStore?.Get<byte?>("g"); }
             set { BackingStore?.Set("g", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Red value</summary>
-        public byte? R {
+        public byte? R
+        {
             get { return BackingStore?.Get<byte?>("r"); }
             set { BackingStore?.Set("r", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"b", n => { B = n.GetByteValue(); } },
-                {"g", n => { G = n.GetByteValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"r", n => { R = n.GetByteValue(); } },
+                { "b", n => { B = n.GetByteValue(); } },
+                { "g", n => { G = n.GetByteValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "r", n => { R = n.GetByteValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserSimulationEventInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserSimulationEventInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Browser {
+        public string? Browser
+        {
             get { return BackingStore?.Get<string?>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
 #nullable restore
 #else
-        public string Browser {
+        public string Browser
+        {
             get { return BackingStore?.Get<string>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
 #endif
         /// <summary>Date and time of the simulation event by a user in an attack simulation and training campaign.</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Name of the simulation event by a user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName {
+        public string? EventName
+        {
             get { return BackingStore?.Get<string?>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
 #nullable restore
 #else
-        public string EventName {
+        public string EventName
+        {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsPlatformDeviceDetails {
+        public string? OsPlatformDeviceDetails
+        {
             get { return BackingStore?.Get<string?>("osPlatformDeviceDetails"); }
             set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
 #nullable restore
 #else
-        public string OsPlatformDeviceDetails {
+        public string OsPlatformDeviceDetails
+        {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
             set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"browser", n => { Browser = n.GetStringValue(); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventName", n => { EventName = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
+                { "browser", n => { Browser = n.GetStringValue(); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "eventName", n => { EventName = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
             };
         }
         /// <summary>

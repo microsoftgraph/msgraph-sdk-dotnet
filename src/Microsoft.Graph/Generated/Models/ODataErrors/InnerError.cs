@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ODataErrors {
+namespace Microsoft.Graph.Models.ODataErrors
+{
     #pragma warning disable CS1591
-    public class InnerError : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InnerError : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// <summary>Client request Id as sent by the client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientRequestId {
+        public string? ClientRequestId
+        {
             get { return BackingStore?.Get<string?>("client-request-id"); }
             set { BackingStore?.Set("client-request-id", value); }
         }
 #nullable restore
 #else
-        public string ClientRequestId {
+        public string ClientRequestId
+        {
             get { return BackingStore?.Get<string>("client-request-id"); }
             set { BackingStore?.Set("client-request-id", value); }
         }
 #endif
         /// <summary>Date when the error occured.</summary>
-        public DateTimeOffset? Date {
+        public DateTimeOffset? Date
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models.ODataErrors {
         /// <summary>Request Id as tracked internally by the service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId {
+        public string? RequestId
+        {
             get { return BackingStore?.Get<string?>("request-id"); }
             set { BackingStore?.Set("request-id", value); }
         }
 #nullable restore
 #else
-        public string RequestId {
+        public string RequestId
+        {
             get { return BackingStore?.Get<string>("request-id"); }
             set { BackingStore?.Set("request-id", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.ODataErrors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
-                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"request-id", n => { RequestId = n.GetStringValue(); } },
+                { "client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
+                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "request-id", n => { RequestId = n.GetStringValue(); } },
             };
         }
         /// <summary>

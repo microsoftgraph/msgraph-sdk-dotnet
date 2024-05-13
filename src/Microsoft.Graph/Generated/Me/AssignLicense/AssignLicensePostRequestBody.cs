@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.AssignLicense {
+namespace Microsoft.Graph.Me.AssignLicense
+{
     #pragma warning disable CS1591
-    public class AssignLicensePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignLicensePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The addLicenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLicense>? AddLicenses {
+        public List<AssignedLicense>? AddLicenses
+        {
             get { return BackingStore?.Get<List<AssignedLicense>?>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLicense> AddLicenses {
+        public List<AssignedLicense> AddLicenses
+        {
             get { return BackingStore?.Get<List<AssignedLicense>>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Me.AssignLicense {
         /// <summary>The removeLicenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? RemoveLicenses {
+        public List<Guid?>? RemoveLicenses
+        {
             get { return BackingStore?.Get<List<Guid?>?>("removeLicenses"); }
             set { BackingStore?.Set("removeLicenses", value); }
         }
 #nullable restore
 #else
-        public List<Guid?> RemoveLicenses {
+        public List<Guid?> RemoveLicenses
+        {
             get { return BackingStore?.Get<List<Guid?>>("removeLicenses"); }
             set { BackingStore?.Set("removeLicenses", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Me.AssignLicense {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
             };
         }
         /// <summary>

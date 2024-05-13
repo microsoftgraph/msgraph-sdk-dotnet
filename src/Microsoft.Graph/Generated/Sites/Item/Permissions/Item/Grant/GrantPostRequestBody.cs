@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
+namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant
+{
     #pragma warning disable CS1591
-    public class GrantPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GrantPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Recipients {
+        public List<DriveRecipient>? Recipients
+        {
             get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Recipients {
+        public List<DriveRecipient> Recipients
+        {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles {
+        public List<string>? Roles
+        {
             get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<string> Roles {
+        public List<string> Roles
+        {
             get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

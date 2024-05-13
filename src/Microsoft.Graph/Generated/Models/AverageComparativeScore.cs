@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AverageComparativeScore : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AverageComparativeScore : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Average score within specified basis.</summary>
-        public double? AverageScore {
+        public double? AverageScore
+        {
             get { return BackingStore?.Get<double?>("averageScore"); }
             set { BackingStore?.Set("averageScore", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Basis {
+        public string? Basis
+        {
             get { return BackingStore?.Get<string?>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
 #nullable restore
 #else
-        public string Basis {
+        public string Basis
+        {
             get { return BackingStore?.Get<string>("basis"); }
             set { BackingStore?.Set("basis", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"averageScore", n => { AverageScore = n.GetDoubleValue(); } },
-                {"basis", n => { Basis = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "averageScore", n => { AverageScore = n.GetDoubleValue(); } },
+                { "basis", n => { Basis = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

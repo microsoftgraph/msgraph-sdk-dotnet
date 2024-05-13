@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class Schema : Microsoft.Graph.Models.Entity, IParsable 
+    public class Schema : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Must be set to microsoft.graph.externalConnector.externalItem. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseType {
+        public string? BaseType
+        {
             get { return BackingStore?.Get<string?>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
 #nullable restore
 #else
-        public string BaseType {
+        public string BaseType
+        {
             get { return BackingStore?.Get<string>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Property>? Properties {
+        public List<Property>? Properties
+        {
             get { return BackingStore?.Get<List<Property>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<Property> Properties {
+        public List<Property> Properties
+        {
             get { return BackingStore?.Get<List<Property>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"baseType", n => { BaseType = n.GetStringValue(); } },
-                {"properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "baseType", n => { BaseType = n.GetStringValue(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

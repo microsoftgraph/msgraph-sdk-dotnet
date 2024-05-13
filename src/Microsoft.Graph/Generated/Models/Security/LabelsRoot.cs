@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class LabelsRoot : Microsoft.Graph.Models.Entity, IParsable 
+    public class LabelsRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the underlying authority that describes the type of content to be retained and its retention schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorityTemplate>? Authorities {
+        public List<AuthorityTemplate>? Authorities
+        {
             get { return BackingStore?.Get<List<AuthorityTemplate>?>("authorities"); }
             set { BackingStore?.Set("authorities", value); }
         }
 #nullable restore
 #else
-        public List<AuthorityTemplate> Authorities {
+        public List<AuthorityTemplate> Authorities
+        {
             get { return BackingStore?.Get<List<AuthorityTemplate>>("authorities"); }
             set { BackingStore?.Set("authorities", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Specifies a group of similar types of content in a particular department.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CategoryTemplate>? Categories {
+        public List<CategoryTemplate>? Categories
+        {
             get { return BackingStore?.Get<List<CategoryTemplate>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<CategoryTemplate> Categories {
+        public List<CategoryTemplate> Categories
+        {
             get { return BackingStore?.Get<List<CategoryTemplate>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CitationTemplate>? Citations {
+        public List<CitationTemplate>? Citations
+        {
             get { return BackingStore?.Get<List<CitationTemplate>?>("citations"); }
             set { BackingStore?.Set("citations", value); }
         }
 #nullable restore
 #else
-        public List<CitationTemplate> Citations {
+        public List<CitationTemplate> Citations
+        {
             get { return BackingStore?.Get<List<CitationTemplate>>("citations"); }
             set { BackingStore?.Set("citations", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Specifies the department or business unit of an organization to which a label belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DepartmentTemplate>? Departments {
+        public List<DepartmentTemplate>? Departments
+        {
             get { return BackingStore?.Get<List<DepartmentTemplate>?>("departments"); }
             set { BackingStore?.Set("departments", value); }
         }
 #nullable restore
 #else
-        public List<DepartmentTemplate> Departments {
+        public List<DepartmentTemplate> Departments
+        {
             get { return BackingStore?.Get<List<DepartmentTemplate>>("departments"); }
             set { BackingStore?.Set("departments", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Specifies a unique alpha-numeric identifier for an organization’s retention schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilePlanReferenceTemplate>? FilePlanReferences {
+        public List<FilePlanReferenceTemplate>? FilePlanReferences
+        {
             get { return BackingStore?.Get<List<FilePlanReferenceTemplate>?>("filePlanReferences"); }
             set { BackingStore?.Set("filePlanReferences", value); }
         }
 #nullable restore
 #else
-        public List<FilePlanReferenceTemplate> FilePlanReferences {
+        public List<FilePlanReferenceTemplate> FilePlanReferences
+        {
             get { return BackingStore?.Get<List<FilePlanReferenceTemplate>>("filePlanReferences"); }
             set { BackingStore?.Set("filePlanReferences", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Represents how customers can manage their data, whether and for how long to retain or delete it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RetentionLabel>? RetentionLabels {
+        public List<RetentionLabel>? RetentionLabels
+        {
             get { return BackingStore?.Get<List<RetentionLabel>?>("retentionLabels"); }
             set { BackingStore?.Set("retentionLabels", value); }
         }
 #nullable restore
 #else
-        public List<RetentionLabel> RetentionLabels {
+        public List<RetentionLabel> RetentionLabels
+        {
             get { return BackingStore?.Get<List<RetentionLabel>>("retentionLabels"); }
             set { BackingStore?.Set("retentionLabels", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorities", n => { Authorities = n.GetCollectionOfObjectValues<AuthorityTemplate>(AuthorityTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<CategoryTemplate>(CategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"citations", n => { Citations = n.GetCollectionOfObjectValues<CitationTemplate>(CitationTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"departments", n => { Departments = n.GetCollectionOfObjectValues<DepartmentTemplate>(DepartmentTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"filePlanReferences", n => { FilePlanReferences = n.GetCollectionOfObjectValues<FilePlanReferenceTemplate>(FilePlanReferenceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"retentionLabels", n => { RetentionLabels = n.GetCollectionOfObjectValues<RetentionLabel>(RetentionLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authorities", n => { Authorities = n.GetCollectionOfObjectValues<AuthorityTemplate>(AuthorityTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<CategoryTemplate>(CategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "citations", n => { Citations = n.GetCollectionOfObjectValues<CitationTemplate>(CitationTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "departments", n => { Departments = n.GetCollectionOfObjectValues<DepartmentTemplate>(DepartmentTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "filePlanReferences", n => { FilePlanReferences = n.GetCollectionOfObjectValues<FilePlanReferenceTemplate>(FilePlanReferenceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "retentionLabels", n => { RetentionLabels = n.GetCollectionOfObjectValues<RetentionLabel>(RetentionLabel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

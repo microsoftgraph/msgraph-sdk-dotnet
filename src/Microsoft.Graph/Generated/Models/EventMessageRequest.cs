@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EventMessageRequest : EventMessage, IParsable 
+    public class EventMessageRequest : EventMessage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.</summary>
-        public bool? AllowNewTimeProposals {
+        public bool? AllowNewTimeProposals
+        {
             get { return BackingStore?.Get<bool?>("allowNewTimeProposals"); }
             set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
         /// <summary>The meetingRequestType property</summary>
-        public Microsoft.Graph.Models.MeetingRequestType? MeetingRequestType {
+        public Microsoft.Graph.Models.MeetingRequestType? MeetingRequestType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MeetingRequestType?>("meetingRequestType"); }
             set { BackingStore?.Set("meetingRequestType", value); }
         }
         /// <summary>If the meeting update changes the meeting end time, this property specifies the previous meeting end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? PreviousEndDateTime {
+        public DateTimeTimeZone? PreviousEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("previousEndDateTime"); }
             set { BackingStore?.Set("previousEndDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone PreviousEndDateTime {
+        public DateTimeTimeZone PreviousEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousEndDateTime"); }
             set { BackingStore?.Set("previousEndDateTime", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the meeting update changes the meeting location, this property specifies the previous meeting location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? PreviousLocation {
+        public Location? PreviousLocation
+        {
             get { return BackingStore?.Get<Location?>("previousLocation"); }
             set { BackingStore?.Set("previousLocation", value); }
         }
 #nullable restore
 #else
-        public Location PreviousLocation {
+        public Location PreviousLocation
+        {
             get { return BackingStore?.Get<Location>("previousLocation"); }
             set { BackingStore?.Set("previousLocation", value); }
         }
@@ -50,19 +57,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the meeting update changes the meeting start time, this property specifies the previous meeting start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? PreviousStartDateTime {
+        public DateTimeTimeZone? PreviousStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("previousStartDateTime"); }
             set { BackingStore?.Set("previousStartDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone PreviousStartDateTime {
+        public DateTimeTimeZone PreviousStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousStartDateTime"); }
             set { BackingStore?.Set("previousStartDateTime", value); }
         }
 #endif
         /// <summary>Set to true if the sender would like the invitee to send a response to the requested meeting.</summary>
-        public bool? ResponseRequested {
+        public bool? ResponseRequested
+        {
             get { return BackingStore?.Get<bool?>("responseRequested"); }
             set { BackingStore?.Set("responseRequested", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowNewTimeProposals", n => { AllowNewTimeProposals = n.GetBoolValue(); } },
-                {"meetingRequestType", n => { MeetingRequestType = n.GetEnumValue<MeetingRequestType>(); } },
-                {"previousEndDateTime", n => { PreviousEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"previousLocation", n => { PreviousLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
-                {"previousStartDateTime", n => { PreviousStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"responseRequested", n => { ResponseRequested = n.GetBoolValue(); } },
+                { "allowNewTimeProposals", n => { AllowNewTimeProposals = n.GetBoolValue(); } },
+                { "meetingRequestType", n => { MeetingRequestType = n.GetEnumValue<MeetingRequestType>(); } },
+                { "previousEndDateTime", n => { PreviousEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "previousLocation", n => { PreviousLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "previousStartDateTime", n => { PreviousStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "responseRequested", n => { ResponseRequested = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemActivity : Entity, IParsable 
+    public class ItemActivity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An item was accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessAction? Access {
+        public AccessAction? Access
+        {
             get { return BackingStore?.Get<AccessAction?>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #nullable restore
 #else
-        public AccessAction Access {
+        public AccessAction Access
+        {
             get { return BackingStore?.Get<AccessAction>("access"); }
             set { BackingStore?.Set("access", value); }
         }
 #endif
         /// <summary>Details about when the activity took place. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Identity of who performed the action. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Actor {
+        public IdentitySet? Actor
+        {
             get { return BackingStore?.Get<IdentitySet?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Actor {
+        public IdentitySet Actor
+        {
             get { return BackingStore?.Get<IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Exposes the driveItem that was the target of this activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DriveItem? DriveItem {
+        public Microsoft.Graph.Models.DriveItem? DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DriveItem DriveItem {
+        public Microsoft.Graph.Models.DriveItem DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"access", n => { Access = n.GetObjectValue<AccessAction>(AccessAction.CreateFromDiscriminatorValue); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "access", n => { Access = n.GetObjectValue<AccessAction>(AccessAction.CreateFromDiscriminatorValue); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

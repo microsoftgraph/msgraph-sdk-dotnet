@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class SasTokenEvidence : AlertEvidence, IParsable 
+    public class SasTokenEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowedIpAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowedIpAddresses {
+        public string? AllowedIpAddresses
+        {
             get { return BackingStore?.Get<string?>("allowedIpAddresses"); }
             set { BackingStore?.Set("allowedIpAddresses", value); }
         }
 #nullable restore
 #else
-        public string AllowedIpAddresses {
+        public string AllowedIpAddresses
+        {
             get { return BackingStore?.Get<string>("allowedIpAddresses"); }
             set { BackingStore?.Set("allowedIpAddresses", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The allowedResourceTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedResourceTypes {
+        public List<string>? AllowedResourceTypes
+        {
             get { return BackingStore?.Get<List<string>?>("allowedResourceTypes"); }
             set { BackingStore?.Set("allowedResourceTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedResourceTypes {
+        public List<string> AllowedResourceTypes
+        {
             get { return BackingStore?.Get<List<string>>("allowedResourceTypes"); }
             set { BackingStore?.Set("allowedResourceTypes", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The allowedServices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedServices {
+        public List<string>? AllowedServices
+        {
             get { return BackingStore?.Get<List<string>?>("allowedServices"); }
             set { BackingStore?.Set("allowedServices", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedServices {
+        public List<string> AllowedServices
+        {
             get { return BackingStore?.Get<List<string>>("allowedServices"); }
             set { BackingStore?.Set("allowedServices", value); }
         }
 #endif
         /// <summary>The expiryDateTime property</summary>
-        public DateTimeOffset? ExpiryDateTime {
+        public DateTimeOffset? ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions {
+        public List<string>? Permissions
+        {
             get { return BackingStore?.Get<List<string>?>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
 #nullable restore
 #else
-        public List<string> Permissions {
+        public List<string> Permissions
+        {
             get { return BackingStore?.Get<List<string>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Protocol {
+        public string? Protocol
+        {
             get { return BackingStore?.Get<string?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
 #nullable restore
 #else
-        public string Protocol {
+        public string Protocol
+        {
             get { return BackingStore?.Get<string>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The signatureHash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatureHash {
+        public string? SignatureHash
+        {
             get { return BackingStore?.Get<string?>("signatureHash"); }
             set { BackingStore?.Set("signatureHash", value); }
         }
 #nullable restore
 #else
-        public string SignatureHash {
+        public string SignatureHash
+        {
             get { return BackingStore?.Get<string>("signatureHash"); }
             set { BackingStore?.Set("signatureHash", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The signedWith property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignedWith {
+        public string? SignedWith
+        {
             get { return BackingStore?.Get<string?>("signedWith"); }
             set { BackingStore?.Set("signedWith", value); }
         }
 #nullable restore
 #else
-        public string SignedWith {
+        public string SignedWith
+        {
             get { return BackingStore?.Get<string>("signedWith"); }
             set { BackingStore?.Set("signedWith", value); }
         }
 #endif
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The storageResource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureResourceEvidence? StorageResource {
+        public AzureResourceEvidence? StorageResource
+        {
             get { return BackingStore?.Get<AzureResourceEvidence?>("storageResource"); }
             set { BackingStore?.Set("storageResource", value); }
         }
 #nullable restore
 #else
-        public AzureResourceEvidence StorageResource {
+        public AzureResourceEvidence StorageResource
+        {
             get { return BackingStore?.Get<AzureResourceEvidence>("storageResource"); }
             set { BackingStore?.Set("storageResource", value); }
         }
@@ -156,16 +175,16 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedIpAddresses", n => { AllowedIpAddresses = n.GetStringValue(); } },
-                {"allowedResourceTypes", n => { AllowedResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"allowedServices", n => { AllowedServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"signatureHash", n => { SignatureHash = n.GetStringValue(); } },
-                {"signedWith", n => { SignedWith = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"storageResource", n => { StorageResource = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
+                { "allowedIpAddresses", n => { AllowedIpAddresses = n.GetStringValue(); } },
+                { "allowedResourceTypes", n => { AllowedResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedServices", n => { AllowedServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "signatureHash", n => { SignatureHash = n.GetStringValue(); } },
+                { "signedWith", n => { SignedWith = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "storageResource", n => { StorageResource = n.GetObjectValue<AzureResourceEvidence>(AzureResourceEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

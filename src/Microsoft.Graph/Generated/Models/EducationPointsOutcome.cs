@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationPointsOutcome : EducationOutcome, IParsable 
+    public class EducationPointsOutcome : EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The numeric grade the teacher has given the student for this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationAssignmentPointsGrade? Points {
+        public EducationAssignmentPointsGrade? Points
+        {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade?>("points"); }
             set { BackingStore?.Set("points", value); }
         }
 #nullable restore
 #else
-        public EducationAssignmentPointsGrade Points {
+        public EducationAssignmentPointsGrade Points
+        {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade>("points"); }
             set { BackingStore?.Set("points", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A copy of the points property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationAssignmentPointsGrade? PublishedPoints {
+        public EducationAssignmentPointsGrade? PublishedPoints
+        {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade?>("publishedPoints"); }
             set { BackingStore?.Set("publishedPoints", value); }
         }
 #nullable restore
 #else
-        public EducationAssignmentPointsGrade PublishedPoints {
+        public EducationAssignmentPointsGrade PublishedPoints
+        {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade>("publishedPoints"); }
             set { BackingStore?.Set("publishedPoints", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"points", n => { Points = n.GetObjectValue<EducationAssignmentPointsGrade>(EducationAssignmentPointsGrade.CreateFromDiscriminatorValue); } },
-                {"publishedPoints", n => { PublishedPoints = n.GetObjectValue<EducationAssignmentPointsGrade>(EducationAssignmentPointsGrade.CreateFromDiscriminatorValue); } },
+                { "points", n => { Points = n.GetObjectValue<EducationAssignmentPointsGrade>(EducationAssignmentPointsGrade.CreateFromDiscriminatorValue); } },
+                { "publishedPoints", n => { PublishedPoints = n.GetObjectValue<EducationAssignmentPointsGrade>(EducationAssignmentPointsGrade.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

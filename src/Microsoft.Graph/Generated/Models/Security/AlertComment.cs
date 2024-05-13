@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class AlertComment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertComment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The comment text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The person or app name that submitted the comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByDisplayName {
+        public string? CreatedByDisplayName
+        {
             get { return BackingStore?.Get<string?>("createdByDisplayName"); }
             set { BackingStore?.Set("createdByDisplayName", value); }
         }
 #nullable restore
 #else
-        public string CreatedByDisplayName {
+        public string CreatedByDisplayName
+        {
             get { return BackingStore?.Get<string>("createdByDisplayName"); }
             set { BackingStore?.Set("createdByDisplayName", value); }
         }
 #endif
         /// <summary>The time when the comment was submitted.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"createdByDisplayName", n => { CreatedByDisplayName = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "createdByDisplayName", n => { CreatedByDisplayName = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

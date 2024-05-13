@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId
+{
     #pragma warning disable CS1591
-    public class GetApplicableContentTypesForListWithListIdGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetApplicableContentTypesForListWithListIdGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? Value {
+        public List<ContentType>? Value
+        {
             get { return BackingStore?.Get<List<ContentType>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> Value {
+        public List<ContentType> Value
+        {
             get { return BackingStore?.Get<List<ContentType>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForLis
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

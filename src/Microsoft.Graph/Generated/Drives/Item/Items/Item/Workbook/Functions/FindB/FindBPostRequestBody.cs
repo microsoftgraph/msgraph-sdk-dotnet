@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB
+{
     #pragma warning disable CS1591
-    public class FindBPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FindBPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         /// <summary>The findText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FindText {
+        public Json? FindText
+        {
             get { return BackingStore?.Get<Json?>("findText"); }
             set { BackingStore?.Set("findText", value); }
         }
 #nullable restore
 #else
-        public Json FindText {
+        public Json FindText
+        {
             get { return BackingStore?.Get<Json>("findText"); }
             set { BackingStore?.Set("findText", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         /// <summary>The startNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartNum {
+        public Json? StartNum
+        {
             get { return BackingStore?.Get<Json?>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
 #nullable restore
 #else
-        public Json StartNum {
+        public Json StartNum
+        {
             get { return BackingStore?.Get<Json>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         /// <summary>The withinText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? WithinText {
+        public Json? WithinText
+        {
             get { return BackingStore?.Get<Json?>("withinText"); }
             set { BackingStore?.Set("withinText", value); }
         }
 #nullable restore
 #else
-        public Json WithinText {
+        public Json WithinText
+        {
             get { return BackingStore?.Get<Json>("withinText"); }
             set { BackingStore?.Set("withinText", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.FindB {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"findText", n => { FindText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"withinText", n => { WithinText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "findText", n => { FindText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "withinText", n => { WithinText = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

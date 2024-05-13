@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrintService : Entity, IParsable 
+    public class PrintService : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintServiceEndpoint>? Endpoints {
+        public List<PrintServiceEndpoint>? Endpoints
+        {
             get { return BackingStore?.Get<List<PrintServiceEndpoint>?>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
 #nullable restore
 #else
-        public List<PrintServiceEndpoint> Endpoints {
+        public List<PrintServiceEndpoint> Endpoints
+        {
             get { return BackingStore?.Get<List<PrintServiceEndpoint>>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<PrintServiceEndpoint>(PrintServiceEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<PrintServiceEndpoint>(PrintServiceEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartGridlinesFormat : Entity, IParsable 
+    public class WorkbookChartGridlinesFormat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents chart line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartLineFormat? Line {
+        public WorkbookChartLineFormat? Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartLineFormat Line {
+        public WorkbookChartLineFormat Line
+        {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
+                { "line", n => { Line = n.GetObjectValue<WorkbookChartLineFormat>(WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

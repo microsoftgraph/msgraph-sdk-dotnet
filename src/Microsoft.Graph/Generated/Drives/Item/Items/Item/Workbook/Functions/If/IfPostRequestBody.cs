@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If
+{
     #pragma warning disable CS1591
-    public class IfPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IfPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If {
         /// <summary>The logicalTest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LogicalTest {
+        public Json? LogicalTest
+        {
             get { return BackingStore?.Get<Json?>("logicalTest"); }
             set { BackingStore?.Set("logicalTest", value); }
         }
 #nullable restore
 #else
-        public Json LogicalTest {
+        public Json LogicalTest
+        {
             get { return BackingStore?.Get<Json>("logicalTest"); }
             set { BackingStore?.Set("logicalTest", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If {
         /// <summary>The valueIfFalse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ValueIfFalse {
+        public Json? ValueIfFalse
+        {
             get { return BackingStore?.Get<Json?>("valueIfFalse"); }
             set { BackingStore?.Set("valueIfFalse", value); }
         }
 #nullable restore
 #else
-        public Json ValueIfFalse {
+        public Json ValueIfFalse
+        {
             get { return BackingStore?.Get<Json>("valueIfFalse"); }
             set { BackingStore?.Set("valueIfFalse", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If {
         /// <summary>The valueIfTrue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ValueIfTrue {
+        public Json? ValueIfTrue
+        {
             get { return BackingStore?.Get<Json?>("valueIfTrue"); }
             set { BackingStore?.Set("valueIfTrue", value); }
         }
 #nullable restore
 #else
-        public Json ValueIfTrue {
+        public Json ValueIfTrue
+        {
             get { return BackingStore?.Get<Json>("valueIfTrue"); }
             set { BackingStore?.Set("valueIfTrue", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.If {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"logicalTest", n => { LogicalTest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"valueIfFalse", n => { ValueIfFalse = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"valueIfTrue", n => { ValueIfTrue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "logicalTest", n => { LogicalTest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "valueIfFalse", n => { ValueIfFalse = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "valueIfTrue", n => { ValueIfTrue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

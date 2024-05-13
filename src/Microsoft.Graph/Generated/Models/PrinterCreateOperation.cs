@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrinterCreateOperation : PrintOperation, IParsable 
+    public class PrinterCreateOperation : PrintOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The signed certificate created during the registration process. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Certificate {
+        public string? Certificate
+        {
             get { return BackingStore?.Get<string?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #nullable restore
 #else
-        public string Certificate {
+        public string Certificate
+        {
             get { return BackingStore?.Get<string>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The created printer entity. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Printer? Printer {
+        public Microsoft.Graph.Models.Printer? Printer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Printer?>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Printer Printer {
+        public Microsoft.Graph.Models.Printer Printer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Printer>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificate", n => { Certificate = n.GetStringValue(); } },
-                {"printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Models.Printer>(Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "printer", n => { Printer = n.GetObjectValue<Microsoft.Graph.Models.Printer>(Microsoft.Graph.Models.Printer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HostLogonSessionEvidence : AlertEvidence, IParsable 
+    public class HostLogonSessionEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserEvidence? Account {
+        public UserEvidence? Account
+        {
             get { return BackingStore?.Get<UserEvidence?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #nullable restore
 #else
-        public UserEvidence Account {
+        public UserEvidence Account
+        {
             get { return BackingStore?.Get<UserEvidence>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #endif
         /// <summary>The endUtcDateTime property</summary>
-        public DateTimeOffset? EndUtcDateTime {
+        public DateTimeOffset? EndUtcDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endUtcDateTime"); }
             set { BackingStore?.Set("endUtcDateTime", value); }
         }
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEvidence? Host {
+        public DeviceEvidence? Host
+        {
             get { return BackingStore?.Get<DeviceEvidence?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #nullable restore
 #else
-        public DeviceEvidence Host {
+        public DeviceEvidence Host
+        {
             get { return BackingStore?.Get<DeviceEvidence>("host"); }
             set { BackingStore?.Set("host", value); }
         }
@@ -45,19 +51,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId {
+        public string? SessionId
+        {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #nullable restore
 #else
-        public string SessionId {
+        public string SessionId
+        {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #endif
         /// <summary>The startUtcDateTime property</summary>
-        public DateTimeOffset? StartUtcDateTime {
+        public DateTimeOffset? StartUtcDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startUtcDateTime"); }
             set { BackingStore?.Set("startUtcDateTime", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"account", n => { Account = n.GetObjectValue<UserEvidence>(UserEvidence.CreateFromDiscriminatorValue); } },
-                {"endUtcDateTime", n => { EndUtcDateTime = n.GetDateTimeOffsetValue(); } },
-                {"host", n => { Host = n.GetObjectValue<DeviceEvidence>(DeviceEvidence.CreateFromDiscriminatorValue); } },
-                {"sessionId", n => { SessionId = n.GetStringValue(); } },
-                {"startUtcDateTime", n => { StartUtcDateTime = n.GetDateTimeOffsetValue(); } },
+                { "account", n => { Account = n.GetObjectValue<UserEvidence>(UserEvidence.CreateFromDiscriminatorValue); } },
+                { "endUtcDateTime", n => { EndUtcDateTime = n.GetDateTimeOffsetValue(); } },
+                { "host", n => { Host = n.GetObjectValue<DeviceEvidence>(DeviceEvidence.CreateFromDiscriminatorValue); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "startUtcDateTime", n => { StartUtcDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

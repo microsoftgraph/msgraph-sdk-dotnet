@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply {
+namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply
+{
     #pragma warning disable CS1591
-    public class ReplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         /// <summary>The Post property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Post? Post {
+        public Microsoft.Graph.Models.Post? Post
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Post?>("Post"); }
             set { BackingStore?.Set("Post", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Post Post {
+        public Microsoft.Graph.Models.Post Post
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Post>("Post"); }
             set { BackingStore?.Set("Post", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Post", n => { Post = n.GetObjectValue<Microsoft.Graph.Models.Post>(Microsoft.Graph.Models.Post.CreateFromDiscriminatorValue); } },
+                { "Post", n => { Post = n.GetObjectValue<Microsoft.Graph.Models.Post>(Microsoft.Graph.Models.Post.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

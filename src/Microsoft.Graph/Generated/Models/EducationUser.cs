@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationUser : Entity, IParsable 
+    public class EducationUser : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.</summary>
-        public bool? AccountEnabled {
+        public bool? AccountEnabled
+        {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
         /// <summary>The licenses that are assigned to the user. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedLicense>? AssignedLicenses {
+        public List<AssignedLicense>? AssignedLicenses
+        {
             get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #nullable restore
 #else
-        public List<AssignedLicense> AssignedLicenses {
+        public List<AssignedLicense> AssignedLicenses
+        {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedPlan>? AssignedPlans {
+        public List<AssignedPlan>? AssignedPlans
+        {
             get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #nullable restore
 #else
-        public List<AssignedPlan> AssignedPlans {
+        public List<AssignedPlan> AssignedPlans
+        {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Assignments belonging to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationAssignment>? Assignments {
+        public List<EducationAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<EducationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<EducationAssignment> Assignments {
+        public List<EducationAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<EducationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BusinessPhones {
+        public List<string>? BusinessPhones
+        {
             get { return BackingStore?.Get<List<string>?>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
 #nullable restore
 #else
-        public List<string> BusinessPhones {
+        public List<string> BusinessPhones
+        {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Classes to which the user belongs. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationClass>? Classes {
+        public List<EducationClass>? Classes
+        {
             get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
 #nullable restore
 #else
-        public List<EducationClass> Classes {
+        public List<EducationClass> Classes
+        {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The entity who created the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name for the department in which the user works. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Department {
+        public string? Department
+        {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #nullable restore
 #else
-        public string Department {
+        public string Department
+        {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
@@ -115,32 +131,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Where this user was created from. Possible values are: sis, manual.</summary>
-        public EducationExternalSource? ExternalSource {
+        public EducationExternalSource? ExternalSource
+        {
             get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resource was generated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalSourceDetail {
+        public string? ExternalSourceDetail
+        {
             get { return BackingStore?.Get<string?>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
 #nullable restore
 #else
-        public string ExternalSourceDetail {
+        public string ExternalSourceDetail
+        {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The given name (first name) of the user. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GivenName {
+        public string? GivenName
+        {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #nullable restore
 #else
-        public string GivenName {
+        public string GivenName
+        {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
@@ -162,13 +185,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mail {
+        public string? Mail
+        {
             get { return BackingStore?.Get<string?>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
 #nullable restore
 #else
-        public string Mail {
+        public string Mail
+        {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
@@ -176,13 +201,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The mail address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? MailingAddress {
+        public PhysicalAddress? MailingAddress
+        {
             get { return BackingStore?.Get<PhysicalAddress?>("mailingAddress"); }
             set { BackingStore?.Set("mailingAddress", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress MailingAddress {
+        public PhysicalAddress MailingAddress
+        {
             get { return BackingStore?.Get<PhysicalAddress>("mailingAddress"); }
             set { BackingStore?.Set("mailingAddress", value); }
         }
@@ -190,13 +217,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailNickname {
+        public string? MailNickname
+        {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
 #nullable restore
 #else
-        public string MailNickname {
+        public string MailNickname
+        {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
@@ -204,13 +233,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The middle name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName {
+        public string? MiddleName
+        {
             get { return BackingStore?.Get<string?>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
 #nullable restore
 #else
-        public string MiddleName {
+        public string MiddleName
+        {
             get { return BackingStore?.Get<string>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
@@ -218,13 +249,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The primary cellular telephone number for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobilePhone {
+        public string? MobilePhone
+        {
             get { return BackingStore?.Get<string?>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #nullable restore
 #else
-        public string MobilePhone {
+        public string MobilePhone
+        {
             get { return BackingStore?.Get<string>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
@@ -232,13 +265,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The officeLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfficeLocation {
+        public string? OfficeLocation
+        {
             get { return BackingStore?.Get<string?>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
 #nullable restore
 #else
-        public string OfficeLocation {
+        public string OfficeLocation
+        {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
@@ -246,13 +281,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationOnPremisesInfo? OnPremisesInfo {
+        public EducationOnPremisesInfo? OnPremisesInfo
+        {
             get { return BackingStore?.Get<EducationOnPremisesInfo?>("onPremisesInfo"); }
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
 #nullable restore
 #else
-        public EducationOnPremisesInfo OnPremisesInfo {
+        public EducationOnPremisesInfo OnPremisesInfo
+        {
             get { return BackingStore?.Get<EducationOnPremisesInfo>("onPremisesInfo"); }
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
@@ -260,13 +297,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PasswordPolicies {
+        public string? PasswordPolicies
+        {
             get { return BackingStore?.Get<string?>("passwordPolicies"); }
             set { BackingStore?.Set("passwordPolicies", value); }
         }
 #nullable restore
 #else
-        public string PasswordPolicies {
+        public string PasswordPolicies
+        {
             get { return BackingStore?.Get<string>("passwordPolicies"); }
             set { BackingStore?.Set("passwordPolicies", value); }
         }
@@ -274,13 +313,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PasswordProfile? PasswordProfile {
+        public Microsoft.Graph.Models.PasswordProfile? PasswordProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordProfile?>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PasswordProfile PasswordProfile {
+        public Microsoft.Graph.Models.PasswordProfile PasswordProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordProfile>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
@@ -288,51 +329,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredLanguage {
+        public string? PreferredLanguage
+        {
             get { return BackingStore?.Get<string?>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
 #nullable restore
 #else
-        public string PreferredLanguage {
+        public string PreferredLanguage
+        {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
 #endif
         /// <summary>The primaryRole property</summary>
-        public EducationUserRole? PrimaryRole {
+        public EducationUserRole? PrimaryRole
+        {
             get { return BackingStore?.Get<EducationUserRole?>("primaryRole"); }
             set { BackingStore?.Set("primaryRole", value); }
         }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisionedPlan>? ProvisionedPlans {
+        public List<ProvisionedPlan>? ProvisionedPlans
+        {
             get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #nullable restore
 #else
-        public List<ProvisionedPlan> ProvisionedPlans {
+        public List<ProvisionedPlan> ProvisionedPlans
+        {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
         /// <summary>The refreshTokensValidFromDateTime property</summary>
-        public DateTimeOffset? RefreshTokensValidFromDateTime {
+        public DateTimeOffset? RefreshTokensValidFromDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }
             set { BackingStore?.Set("refreshTokensValidFromDateTime", value); }
         }
         /// <summary>Related records associated with the user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedContact>? RelatedContacts {
+        public List<RelatedContact>? RelatedContacts
+        {
             get { return BackingStore?.Get<List<RelatedContact>?>("relatedContacts"); }
             set { BackingStore?.Set("relatedContacts", value); }
         }
 #nullable restore
 #else
-        public List<RelatedContact> RelatedContacts {
+        public List<RelatedContact> RelatedContacts
+        {
             get { return BackingStore?.Get<List<RelatedContact>>("relatedContacts"); }
             set { BackingStore?.Set("relatedContacts", value); }
         }
@@ -340,13 +389,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The address where the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? ResidenceAddress {
+        public PhysicalAddress? ResidenceAddress
+        {
             get { return BackingStore?.Get<PhysicalAddress?>("residenceAddress"); }
             set { BackingStore?.Set("residenceAddress", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress ResidenceAddress {
+        public PhysicalAddress ResidenceAddress
+        {
             get { return BackingStore?.Get<PhysicalAddress>("residenceAddress"); }
             set { BackingStore?.Set("residenceAddress", value); }
         }
@@ -354,13 +405,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>When set, the grading rubric attached to the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationRubric>? Rubrics {
+        public List<EducationRubric>? Rubrics
+        {
             get { return BackingStore?.Get<List<EducationRubric>?>("rubrics"); }
             set { BackingStore?.Set("rubrics", value); }
         }
 #nullable restore
 #else
-        public List<EducationRubric> Rubrics {
+        public List<EducationRubric> Rubrics
+        {
             get { return BackingStore?.Get<List<EducationRubric>>("rubrics"); }
             set { BackingStore?.Set("rubrics", value); }
         }
@@ -368,32 +421,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Schools to which the user belongs. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSchool>? Schools {
+        public List<EducationSchool>? Schools
+        {
             get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #nullable restore
 #else
-        public List<EducationSchool> Schools {
+        public List<EducationSchool> Schools
+        {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
 #endif
         /// <summary>True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.</summary>
-        public bool? ShowInAddressList {
+        public bool? ShowInAddressList
+        {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
         /// <summary>If the primary role is student, this block will contain student specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationStudent? Student {
+        public EducationStudent? Student
+        {
             get { return BackingStore?.Get<EducationStudent?>("student"); }
             set { BackingStore?.Set("student", value); }
         }
 #nullable restore
 #else
-        public EducationStudent Student {
+        public EducationStudent Student
+        {
             get { return BackingStore?.Get<EducationStudent>("student"); }
             set { BackingStore?.Set("student", value); }
         }
@@ -401,13 +459,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user&apos;s surname (family name or last name). Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Surname {
+        public string? Surname
+        {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
 #nullable restore
 #else
-        public string Surname {
+        public string Surname
+        {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
@@ -415,13 +475,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Classes for which the user is a teacher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationClass>? TaughtClasses {
+        public List<EducationClass>? TaughtClasses
+        {
             get { return BackingStore?.Get<List<EducationClass>?>("taughtClasses"); }
             set { BackingStore?.Set("taughtClasses", value); }
         }
 #nullable restore
 #else
-        public List<EducationClass> TaughtClasses {
+        public List<EducationClass> TaughtClasses
+        {
             get { return BackingStore?.Get<List<EducationClass>>("taughtClasses"); }
             set { BackingStore?.Set("taughtClasses", value); }
         }
@@ -429,13 +491,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the primary role is teacher, this block will contain teacher specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationTeacher? Teacher {
+        public EducationTeacher? Teacher
+        {
             get { return BackingStore?.Get<EducationTeacher?>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
 #nullable restore
 #else
-        public EducationTeacher Teacher {
+        public EducationTeacher Teacher
+        {
             get { return BackingStore?.Get<EducationTeacher>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
@@ -443,13 +507,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsageLocation {
+        public string? UsageLocation
+        {
             get { return BackingStore?.Get<string?>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
 #nullable restore
 #else
-        public string UsageLocation {
+        public string UsageLocation
+        {
             get { return BackingStore?.Get<string>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
@@ -457,13 +523,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The directory user that corresponds to this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.User? User {
+        public Microsoft.Graph.Models.User? User
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.User User {
+        public Microsoft.Graph.Models.User User
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User>("user"); }
             set { BackingStore?.Set("user", value); }
         }
@@ -471,13 +539,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant&apos;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -485,13 +555,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserType {
+        public string? UserType
+        {
             get { return BackingStore?.Get<string?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
 #nullable restore
 #else
-        public string UserType {
+        public string UserType
+        {
             get { return BackingStore?.Get<string>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
@@ -514,44 +586,44 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
-                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"classes", n => { Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"department", n => { Department = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
-                {"externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
-                {"givenName", n => { GivenName = n.GetStringValue(); } },
-                {"mail", n => { Mail = n.GetStringValue(); } },
-                {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                {"mailingAddress", n => { MailingAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"middleName", n => { MiddleName = n.GetStringValue(); } },
-                {"mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
-                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
-                {"onPremisesInfo", n => { OnPremisesInfo = n.GetObjectValue<EducationOnPremisesInfo>(EducationOnPremisesInfo.CreateFromDiscriminatorValue); } },
-                {"passwordPolicies", n => { PasswordPolicies = n.GetStringValue(); } },
-                {"passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Models.PasswordProfile>(Microsoft.Graph.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
-                {"preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
-                {"primaryRole", n => { PrimaryRole = n.GetEnumValue<EducationUserRole>(); } },
-                {"provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"refreshTokensValidFromDateTime", n => { RefreshTokensValidFromDateTime = n.GetDateTimeOffsetValue(); } },
-                {"relatedContacts", n => { RelatedContacts = n.GetCollectionOfObjectValues<RelatedContact>(RelatedContact.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"residenceAddress", n => { ResidenceAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"rubrics", n => { Rubrics = n.GetCollectionOfObjectValues<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
-                {"student", n => { Student = n.GetObjectValue<EducationStudent>(EducationStudent.CreateFromDiscriminatorValue); } },
-                {"surname", n => { Surname = n.GetStringValue(); } },
-                {"taughtClasses", n => { TaughtClasses = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"teacher", n => { Teacher = n.GetObjectValue<EducationTeacher>(EducationTeacher.CreateFromDiscriminatorValue); } },
-                {"usageLocation", n => { UsageLocation = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"userType", n => { UserType = n.GetStringValue(); } },
+                { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
+                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<EducationAssignment>(EducationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "classes", n => { Classes = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "department", n => { Department = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalSource", n => { ExternalSource = n.GetEnumValue<EducationExternalSource>(); } },
+                { "externalSourceDetail", n => { ExternalSourceDetail = n.GetStringValue(); } },
+                { "givenName", n => { GivenName = n.GetStringValue(); } },
+                { "mail", n => { Mail = n.GetStringValue(); } },
+                { "mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                { "mailingAddress", n => { MailingAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "middleName", n => { MiddleName = n.GetStringValue(); } },
+                { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
+                { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                { "onPremisesInfo", n => { OnPremisesInfo = n.GetObjectValue<EducationOnPremisesInfo>(EducationOnPremisesInfo.CreateFromDiscriminatorValue); } },
+                { "passwordPolicies", n => { PasswordPolicies = n.GetStringValue(); } },
+                { "passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Models.PasswordProfile>(Microsoft.Graph.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
+                { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
+                { "primaryRole", n => { PrimaryRole = n.GetEnumValue<EducationUserRole>(); } },
+                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "refreshTokensValidFromDateTime", n => { RefreshTokensValidFromDateTime = n.GetDateTimeOffsetValue(); } },
+                { "relatedContacts", n => { RelatedContacts = n.GetCollectionOfObjectValues<RelatedContact>(RelatedContact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "residenceAddress", n => { ResidenceAddress = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "rubrics", n => { Rubrics = n.GetCollectionOfObjectValues<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "showInAddressList", n => { ShowInAddressList = n.GetBoolValue(); } },
+                { "student", n => { Student = n.GetObjectValue<EducationStudent>(EducationStudent.CreateFromDiscriminatorValue); } },
+                { "surname", n => { Surname = n.GetStringValue(); } },
+                { "taughtClasses", n => { TaughtClasses = n.GetCollectionOfObjectValues<EducationClass>(EducationClass.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teacher", n => { Teacher = n.GetObjectValue<EducationTeacher>(EducationTeacher.CreateFromDiscriminatorValue); } },
+                { "usageLocation", n => { UsageLocation = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "userType", n => { UserType = n.GetStringValue(); } },
             };
         }
         /// <summary>

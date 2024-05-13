@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable 
+    public class SmsAuthenticationMethodTarget : AuthenticationMethodTarget, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.</summary>
-        public bool? IsUsableForSignIn {
+        public bool? IsUsableForSignIn
+        {
             get { return BackingStore?.Get<bool?>("isUsableForSignIn"); }
             set { BackingStore?.Set("isUsableForSignIn", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isUsableForSignIn", n => { IsUsableForSignIn = n.GetBoolValue(); } },
+                { "isUsableForSignIn", n => { IsUsableForSignIn = n.GetBoolValue(); } },
             };
         }
         /// <summary>

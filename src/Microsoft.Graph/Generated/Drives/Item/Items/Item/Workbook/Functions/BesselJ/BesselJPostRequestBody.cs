@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ
+{
     #pragma warning disable CS1591
-    public class BesselJPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BesselJPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ {
         /// <summary>The n property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? N {
+        public Json? N
+        {
             get { return BackingStore?.Get<Json?>("n"); }
             set { BackingStore?.Set("n", value); }
         }
 #nullable restore
 #else
-        public Json N {
+        public Json N
+        {
             get { return BackingStore?.Get<Json>("n"); }
             set { BackingStore?.Set("n", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ {
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X {
+        public Json? X
+        {
             get { return BackingStore?.Get<Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X {
+        public Json X
+        {
             get { return BackingStore?.Get<Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.BesselJ {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"n", n => { N = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "n", n => { N = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

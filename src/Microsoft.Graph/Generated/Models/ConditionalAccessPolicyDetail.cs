@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessPolicyDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessPolicyDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessConditionSet? Conditions {
+        public ConditionalAccessConditionSet? Conditions
+        {
             get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessConditionSet Conditions {
+        public ConditionalAccessConditionSet Conditions
+        {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents grant controls that must be fulfilled for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessGrantControls? GrantControls {
+        public ConditionalAccessGrantControls? GrantControls
+        {
             get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessGrantControls GrantControls {
+        public ConditionalAccessGrantControls GrantControls
+        {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a complex type of session controls that is enforced after sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessSessionControls? SessionControls {
+        public ConditionalAccessSessionControls? SessionControls
+        {
             get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessSessionControls SessionControls {
+        public ConditionalAccessSessionControls SessionControls
+        {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"conditions", n => { Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
-                {"grantControls", n => { GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<ConditionalAccessConditionSet>(ConditionalAccessConditionSet.CreateFromDiscriminatorValue); } },
+                { "grantControls", n => { GrantControls = n.GetObjectValue<ConditionalAccessGrantControls>(ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sessionControls", n => { SessionControls = n.GetObjectValue<ConditionalAccessSessionControls>(ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

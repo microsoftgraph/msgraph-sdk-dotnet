@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The identifier for an Android app.
     /// </summary>
-    public class AndroidMobileAppIdentifier : MobileAppIdentifier, IParsable 
+    public class AndroidMobileAppIdentifier : MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the play store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId {
+        public string? PackageId
+        {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #nullable restore
 #else
-        public string PackageId {
+        public string PackageId
+        {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"packageId", n => { PackageId = n.GetStringValue(); } },
+                { "packageId", n => { PackageId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEndpoint : Entity, IParsable 
+    public class VirtualEndpoint : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of Cloud PC audit events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcAuditEvent>? AuditEvents {
+        public List<CloudPcAuditEvent>? AuditEvents
+        {
             get { return BackingStore?.Get<List<CloudPcAuditEvent>?>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcAuditEvent> AuditEvents {
+        public List<CloudPcAuditEvent> AuditEvents
+        {
             get { return BackingStore?.Get<List<CloudPcAuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of cloud-managed virtual desktops.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPC>? CloudPCs {
+        public List<CloudPC>? CloudPCs
+        {
             get { return BackingStore?.Get<List<CloudPC>?>("cloudPCs"); }
             set { BackingStore?.Set("cloudPCs", value); }
         }
 #nullable restore
 #else
-        public List<CloudPC> CloudPCs {
+        public List<CloudPC> CloudPCs
+        {
             get { return BackingStore?.Get<List<CloudPC>>("cloudPCs"); }
             set { BackingStore?.Set("cloudPCs", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of device image resources on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcDeviceImage>? DeviceImages {
+        public List<CloudPcDeviceImage>? DeviceImages
+        {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>?>("deviceImages"); }
             set { BackingStore?.Set("deviceImages", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcDeviceImage> DeviceImages {
+        public List<CloudPcDeviceImage> DeviceImages
+        {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>>("deviceImages"); }
             set { BackingStore?.Set("deviceImages", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of gallery image resources on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcGalleryImage>? GalleryImages {
+        public List<CloudPcGalleryImage>? GalleryImages
+        {
             get { return BackingStore?.Get<List<CloudPcGalleryImage>?>("galleryImages"); }
             set { BackingStore?.Set("galleryImages", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcGalleryImage> GalleryImages {
+        public List<CloudPcGalleryImage> GalleryImages
+        {
             get { return BackingStore?.Get<List<CloudPcGalleryImage>>("galleryImages"); }
             set { BackingStore?.Set("galleryImages", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A defined collection of Azure resource information that can be used to establish Azure network connections for Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcOnPremisesConnection>? OnPremisesConnections {
+        public List<CloudPcOnPremisesConnection>? OnPremisesConnections
+        {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>?>("onPremisesConnections"); }
             set { BackingStore?.Set("onPremisesConnections", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcOnPremisesConnection> OnPremisesConnections {
+        public List<CloudPcOnPremisesConnection> OnPremisesConnections
+        {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>("onPremisesConnections"); }
             set { BackingStore?.Set("onPremisesConnections", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of Cloud PC provisioning policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcProvisioningPolicy>? ProvisioningPolicies {
+        public List<CloudPcProvisioningPolicy>? ProvisioningPolicies
+        {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>?>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcProvisioningPolicy> ProvisioningPolicies {
+        public List<CloudPcProvisioningPolicy> ProvisioningPolicies
+        {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of Cloud PC user settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserSetting>? UserSettings {
+        public List<CloudPcUserSetting>? UserSettings
+        {
             get { return BackingStore?.Get<List<CloudPcUserSetting>?>("userSettings"); }
             set { BackingStore?.Set("userSettings", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserSetting> UserSettings {
+        public List<CloudPcUserSetting> UserSettings
+        {
             get { return BackingStore?.Get<List<CloudPcUserSetting>>("userSettings"); }
             set { BackingStore?.Set("userSettings", value); }
         }
@@ -125,13 +140,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>(CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userSettings", n => { UserSettings = n.GetCollectionOfObjectValues<CloudPcUserSetting>(CloudPcUserSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>(CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSettings", n => { UserSettings = n.GetCollectionOfObjectValues<CloudPcUserSetting>(CloudPcUserSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable 
+    public class ChatMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the chat whose members should receive the notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId {
+        public string? ChatId
+        {
             get { return BackingStore?.Get<string?>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
 #nullable restore
 #else
-        public string ChatId {
+        public string ChatId
+        {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"chatId", n => { ChatId = n.GetStringValue(); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class HorizontalSectionColumn : Entity, IParsable 
+    public class HorizontalSectionColumn : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of WebParts in this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebPart>? Webparts {
+        public List<WebPart>? Webparts
+        {
             get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
 #nullable restore
 #else
-        public List<WebPart> Webparts {
+        public List<WebPart> Webparts
+        {
             get { return BackingStore?.Get<List<WebPart>>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
 #endif
         /// <summary>Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.</summary>
-        public int? Width {
+        public int? Width
+        {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"webparts", n => { Webparts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"width", n => { Width = n.GetIntValue(); } },
+                { "webparts", n => { Webparts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

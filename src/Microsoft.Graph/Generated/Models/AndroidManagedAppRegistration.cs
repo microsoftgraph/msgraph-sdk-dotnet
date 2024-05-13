@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents the synchronization details of an android app, with management capabilities, for a specific user.
     /// </summary>
-    public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable 
+    public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AndroidManagedAppRegistration"/> and sets the default values.

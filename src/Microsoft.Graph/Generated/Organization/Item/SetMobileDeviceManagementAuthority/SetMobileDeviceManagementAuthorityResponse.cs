@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority {
+namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
+{
     [Obsolete("This class is obsolete. Use SetMobileDeviceManagementAuthorityPostResponse instead.")]
     #pragma warning disable CS1591
-    public class SetMobileDeviceManagementAuthorityResponse : SetMobileDeviceManagementAuthorityPostResponse, IParsable 
+    public class SetMobileDeviceManagementAuthorityResponse : SetMobileDeviceManagementAuthorityPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

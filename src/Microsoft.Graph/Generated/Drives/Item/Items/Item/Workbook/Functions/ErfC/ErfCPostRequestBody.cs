@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC
+{
     #pragma warning disable CS1591
-    public class ErfCPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ErfCPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC {
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X {
+        public Json? X
+        {
             get { return BackingStore?.Get<Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X {
+        public Json X
+        {
             get { return BackingStore?.Get<Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ErfC {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

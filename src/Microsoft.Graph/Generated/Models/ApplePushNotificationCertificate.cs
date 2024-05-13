@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Apple push notification certificate.
     /// </summary>
-    public class ApplePushNotificationCertificate : Entity, IParsable 
+    public class ApplePushNotificationCertificate : Entity, IParsable
     {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppleIdentifier {
+        public string? AppleIdentifier
+        {
             get { return BackingStore?.Get<string?>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
 #nullable restore
 #else
-        public string AppleIdentifier {
+        public string AppleIdentifier
+        {
             get { return BackingStore?.Get<string>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Certificate {
+        public string? Certificate
+        {
             get { return BackingStore?.Get<string?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #nullable restore
 #else
-        public string Certificate {
+        public string Certificate
+        {
             get { return BackingStore?.Get<string>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Certificate serial number. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateSerialNumber {
+        public string? CertificateSerialNumber
+        {
             get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
 #nullable restore
 #else
-        public string CertificateSerialNumber {
+        public string CertificateSerialNumber
+        {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The reason the certificate upload failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateUploadFailureReason {
+        public string? CertificateUploadFailureReason
+        {
             get { return BackingStore?.Get<string?>("certificateUploadFailureReason"); }
             set { BackingStore?.Set("certificateUploadFailureReason", value); }
         }
 #nullable restore
 #else
-        public string CertificateUploadFailureReason {
+        public string CertificateUploadFailureReason
+        {
             get { return BackingStore?.Get<string>("certificateUploadFailureReason"); }
             set { BackingStore?.Set("certificateUploadFailureReason", value); }
         }
@@ -69,37 +78,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The certificate upload status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateUploadStatus {
+        public string? CertificateUploadStatus
+        {
             get { return BackingStore?.Get<string?>("certificateUploadStatus"); }
             set { BackingStore?.Set("certificateUploadStatus", value); }
         }
 #nullable restore
 #else
-        public string CertificateUploadStatus {
+        public string CertificateUploadStatus
+        {
             get { return BackingStore?.Get<string>("certificateUploadStatus"); }
             set { BackingStore?.Set("certificateUploadStatus", value); }
         }
 #endif
         /// <summary>The expiration date and time for Apple push notification certificate.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Last modified date and time for Apple push notification certificate.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Topic Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TopicIdentifier {
+        public string? TopicIdentifier
+        {
             get { return BackingStore?.Get<string?>("topicIdentifier"); }
             set { BackingStore?.Set("topicIdentifier", value); }
         }
 #nullable restore
 #else
-        public string TopicIdentifier {
+        public string TopicIdentifier
+        {
             get { return BackingStore?.Get<string>("topicIdentifier"); }
             set { BackingStore?.Set("topicIdentifier", value); }
         }
@@ -122,14 +137,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appleIdentifier", n => { AppleIdentifier = n.GetStringValue(); } },
-                {"certificate", n => { Certificate = n.GetStringValue(); } },
-                {"certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
-                {"certificateUploadFailureReason", n => { CertificateUploadFailureReason = n.GetStringValue(); } },
-                {"certificateUploadStatus", n => { CertificateUploadStatus = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"topicIdentifier", n => { TopicIdentifier = n.GetStringValue(); } },
+                { "appleIdentifier", n => { AppleIdentifier = n.GetStringValue(); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
+                { "certificateUploadFailureReason", n => { CertificateUploadFailureReason = n.GetStringValue(); } },
+                { "certificateUploadStatus", n => { CertificateUploadStatus = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "topicIdentifier", n => { TopicIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class HostReputationRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HostReputationRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The description of the rule that gives more context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The name of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Link to a web page with details related to this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelatedDetailsUrl {
+        public string? RelatedDetailsUrl
+        {
             get { return BackingStore?.Get<string?>("relatedDetailsUrl"); }
             set { BackingStore?.Set("relatedDetailsUrl", value); }
         }
 #nullable restore
 #else
-        public string RelatedDetailsUrl {
+        public string RelatedDetailsUrl
+        {
             get { return BackingStore?.Get<string>("relatedDetailsUrl"); }
             set { BackingStore?.Set("relatedDetailsUrl", value); }
         }
 #endif
         /// <summary>The severity property</summary>
-        public HostReputationRuleSeverity? Severity {
+        public HostReputationRuleSeverity? Severity
+        {
             get { return BackingStore?.Get<HostReputationRuleSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"relatedDetailsUrl", n => { RelatedDetailsUrl = n.GetStringValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<HostReputationRuleSeverity>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "relatedDetailsUrl", n => { RelatedDetailsUrl = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<HostReputationRuleSeverity>(); } },
             };
         }
         /// <summary>

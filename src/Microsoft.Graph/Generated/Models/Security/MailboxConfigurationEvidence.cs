@@ -4,59 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class MailboxConfigurationEvidence : AlertEvidence, IParsable 
+    public class MailboxConfigurationEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configurationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationId {
+        public string? ConfigurationId
+        {
             get { return BackingStore?.Get<string?>("configurationId"); }
             set { BackingStore?.Set("configurationId", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationId {
+        public string ConfigurationId
+        {
             get { return BackingStore?.Get<string>("configurationId"); }
             set { BackingStore?.Set("configurationId", value); }
         }
 #endif
         /// <summary>The configurationType property</summary>
-        public MailboxConfigurationType? ConfigurationType {
+        public MailboxConfigurationType? ConfigurationType
+        {
             get { return BackingStore?.Get<MailboxConfigurationType?>("configurationType"); }
             set { BackingStore?.Set("configurationType", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The externalDirectoryObjectId property</summary>
-        public Guid? ExternalDirectoryObjectId {
+        public Guid? ExternalDirectoryObjectId
+        {
             get { return BackingStore?.Get<Guid?>("externalDirectoryObjectId"); }
             set { BackingStore?.Set("externalDirectoryObjectId", value); }
         }
         /// <summary>The mailboxPrimaryAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailboxPrimaryAddress {
+        public string? MailboxPrimaryAddress
+        {
             get { return BackingStore?.Get<string?>("mailboxPrimaryAddress"); }
             set { BackingStore?.Set("mailboxPrimaryAddress", value); }
         }
 #nullable restore
 #else
-        public string MailboxPrimaryAddress {
+        public string MailboxPrimaryAddress
+        {
             get { return BackingStore?.Get<string>("mailboxPrimaryAddress"); }
             set { BackingStore?.Set("mailboxPrimaryAddress", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The upn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Upn {
+        public string? Upn
+        {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
 #nullable restore
 #else
-        public string Upn {
+        public string Upn
+        {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationId", n => { ConfigurationId = n.GetStringValue(); } },
-                {"configurationType", n => { ConfigurationType = n.GetEnumValue<MailboxConfigurationType>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalDirectoryObjectId", n => { ExternalDirectoryObjectId = n.GetGuidValue(); } },
-                {"mailboxPrimaryAddress", n => { MailboxPrimaryAddress = n.GetStringValue(); } },
-                {"upn", n => { Upn = n.GetStringValue(); } },
+                { "configurationId", n => { ConfigurationId = n.GetStringValue(); } },
+                { "configurationType", n => { ConfigurationType = n.GetEnumValue<MailboxConfigurationType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalDirectoryObjectId", n => { ExternalDirectoryObjectId = n.GetGuidValue(); } },
+                { "mailboxPrimaryAddress", n => { MailboxPrimaryAddress = n.GetStringValue(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
             };
         }
         /// <summary>

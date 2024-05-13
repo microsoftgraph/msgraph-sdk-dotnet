@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.AssignSensitivityLabel {
+namespace Microsoft.Graph.Drives.Item.Items.Item.AssignSensitivityLabel
+{
     #pragma warning disable CS1591
-    public class AssignSensitivityLabelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignSensitivityLabelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignmentMethod property</summary>
-        public SensitivityLabelAssignmentMethod? AssignmentMethod {
+        public SensitivityLabelAssignmentMethod? AssignmentMethod
+        {
             get { return BackingStore?.Get<SensitivityLabelAssignmentMethod?>("assignmentMethod"); }
             set { BackingStore?.Set("assignmentMethod", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.AssignSensitivityLabel {
         /// <summary>The justificationText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JustificationText {
+        public string? JustificationText
+        {
             get { return BackingStore?.Get<string?>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
 #nullable restore
 #else
-        public string JustificationText {
+        public string JustificationText
+        {
             get { return BackingStore?.Get<string>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.AssignSensitivityLabel {
         /// <summary>The sensitivityLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensitivityLabelId {
+        public string? SensitivityLabelId
+        {
             get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
 #nullable restore
 #else
-        public string SensitivityLabelId {
+        public string SensitivityLabelId
+        {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.AssignSensitivityLabel {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
-                {"justificationText", n => { JustificationText = n.GetStringValue(); } },
-                {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
+                { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
+                { "justificationText", n => { JustificationText = n.GetStringValue(); } },
+                { "sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

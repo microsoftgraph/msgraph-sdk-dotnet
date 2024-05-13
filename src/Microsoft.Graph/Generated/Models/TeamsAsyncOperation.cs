@@ -4,60 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAsyncOperation : Entity, IParsable 
+    public class TeamsAsyncOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of times the operation was attempted before being marked successful or failed.</summary>
-        public int? AttemptsCount {
+        public int? AttemptsCount
+        {
             get { return BackingStore?.Get<int?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
         /// <summary>Time when the operation was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Any error that causes the async operation to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OperationError? Error {
+        public OperationError? Error
+        {
             get { return BackingStore?.Get<OperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OperationError Error {
+        public OperationError Error
+        {
             get { return BackingStore?.Get<OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>Time when the async operation was last updated.</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The operationType property</summary>
-        public TeamsAsyncOperationType? OperationType {
+        public TeamsAsyncOperationType? OperationType
+        {
             get { return BackingStore?.Get<TeamsAsyncOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The status property</summary>
-        public TeamsAsyncOperationStatus? Status {
+        public TeamsAsyncOperationStatus? Status
+        {
             get { return BackingStore?.Get<TeamsAsyncOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The ID of the object that&apos;s created or modified as result of this async operation, typically a team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetResourceId {
+        public string? TargetResourceId
+        {
             get { return BackingStore?.Get<string?>("targetResourceId"); }
             set { BackingStore?.Set("targetResourceId", value); }
         }
 #nullable restore
 #else
-        public string TargetResourceId {
+        public string TargetResourceId
+        {
             get { return BackingStore?.Get<string>("targetResourceId"); }
             set { BackingStore?.Set("targetResourceId", value); }
         }
@@ -65,13 +75,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The location of the object that&apos;s created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetResourceLocation {
+        public string? TargetResourceLocation
+        {
             get { return BackingStore?.Get<string?>("targetResourceLocation"); }
             set { BackingStore?.Set("targetResourceLocation", value); }
         }
 #nullable restore
 #else
-        public string TargetResourceLocation {
+        public string TargetResourceLocation
+        {
             get { return BackingStore?.Get<string>("targetResourceLocation"); }
             set { BackingStore?.Set("targetResourceLocation", value); }
         }
@@ -94,14 +106,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attemptsCount", n => { AttemptsCount = n.GetIntValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<TeamsAsyncOperationType>(); } },
-                {"status", n => { Status = n.GetEnumValue<TeamsAsyncOperationStatus>(); } },
-                {"targetResourceId", n => { TargetResourceId = n.GetStringValue(); } },
-                {"targetResourceLocation", n => { TargetResourceLocation = n.GetStringValue(); } },
+                { "attemptsCount", n => { AttemptsCount = n.GetIntValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<TeamsAsyncOperationType>(); } },
+                { "status", n => { Status = n.GetEnumValue<TeamsAsyncOperationStatus>(); } },
+                { "targetResourceId", n => { TargetResourceId = n.GetStringValue(); } },
+                { "targetResourceLocation", n => { TargetResourceLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

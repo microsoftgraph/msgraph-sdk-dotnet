@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable 
+    public class IdentitySecurityDefaultsEnforcementPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If set to true, Microsoft Entra security defaults are enabled for the tenant.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

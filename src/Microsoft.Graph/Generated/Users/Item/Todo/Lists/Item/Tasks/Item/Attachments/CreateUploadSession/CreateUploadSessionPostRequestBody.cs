@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.CreateUploadSession {
+namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.CreateUploadSession
+{
     #pragma warning disable CS1591
-    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The attachmentInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AttachmentInfo? AttachmentInfo {
+        public Microsoft.Graph.Models.AttachmentInfo? AttachmentInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttachmentInfo?>("attachmentInfo"); }
             set { BackingStore?.Set("attachmentInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AttachmentInfo AttachmentInfo {
+        public Microsoft.Graph.Models.AttachmentInfo AttachmentInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttachmentInfo>("attachmentInfo"); }
             set { BackingStore?.Set("attachmentInfo", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments.Crea
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attachmentInfo", n => { AttachmentInfo = n.GetObjectValue<Microsoft.Graph.Models.AttachmentInfo>(Microsoft.Graph.Models.AttachmentInfo.CreateFromDiscriminatorValue); } },
+                { "attachmentInfo", n => { AttachmentInfo = n.GetObjectValue<Microsoft.Graph.Models.AttachmentInfo>(Microsoft.Graph.Models.AttachmentInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

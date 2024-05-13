@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharedDriveItem : BaseItem, IParsable 
+    public class SharedDriveItem : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Used to access the underlying driveItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DriveItem? DriveItem {
+        public Microsoft.Graph.Models.DriveItem? DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DriveItem DriveItem {
+        public Microsoft.Graph.Models.DriveItem DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.DriveItem>? Items {
+        public List<Microsoft.Graph.Models.DriveItem>? Items
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.DriveItem> Items {
+        public List<Microsoft.Graph.Models.DriveItem> Items
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to access the underlying list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.List? List {
+        public Microsoft.Graph.Models.List? List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.List?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.List List {
+        public Microsoft.Graph.Models.List List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.List>("list"); }
             set { BackingStore?.Set("list", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to access the underlying listItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ListItem? ListItem {
+        public Microsoft.Graph.Models.ListItem? ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem?>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ListItem ListItem {
+        public Microsoft.Graph.Models.ListItem ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ListItem>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about the owner of the shared item being referenced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Owner {
+        public IdentitySet? Owner
+        {
             get { return BackingStore?.Get<IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Owner {
+        public IdentitySet Owner
+        {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Permission? Permission {
+        public Microsoft.Graph.Models.Permission? Permission
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Permission?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Permission Permission {
+        public Microsoft.Graph.Models.Permission Permission
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Permission>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to access the underlying driveItem. Deprecated -- use driveItem instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DriveItem? Root {
+        public Microsoft.Graph.Models.DriveItem? Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DriveItem Root {
+        public Microsoft.Graph.Models.DriveItem Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItem>("root"); }
             set { BackingStore?.Set("root", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to access the underlying site</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Site? Site {
+        public Microsoft.Graph.Models.Site? Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Site?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Site Site {
+        public Microsoft.Graph.Models.Site Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Site>("site"); }
             set { BackingStore?.Set("site", value); }
         }
@@ -146,14 +163,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"list", n => { List = n.GetObjectValue<Microsoft.Graph.Models.List>(Microsoft.Graph.Models.List.CreateFromDiscriminatorValue); } },
-                {"listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Models.ListItem>(Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue); } },
-                {"owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"permission", n => { Permission = n.GetObjectValue<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue); } },
-                {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                {"site", n => { Site = n.GetObjectValue<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue); } },
+                { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "list", n => { List = n.GetObjectValue<Microsoft.Graph.Models.List>(Microsoft.Graph.Models.List.CreateFromDiscriminatorValue); } },
+                { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Models.ListItem>(Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "permission", n => { Permission = n.GetObjectValue<Microsoft.Graph.Models.Permission>(Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue); } },
+                { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "site", n => { Site = n.GetObjectValue<Microsoft.Graph.Models.Site>(Microsoft.Graph.Models.Site.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

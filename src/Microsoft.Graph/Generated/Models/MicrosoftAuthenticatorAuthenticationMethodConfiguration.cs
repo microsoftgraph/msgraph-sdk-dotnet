@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftAuthenticatorAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class MicrosoftAuthenticatorAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MicrosoftAuthenticatorFeatureSettings? FeatureSettings {
+        public MicrosoftAuthenticatorFeatureSettings? FeatureSettings
+        {
             get { return BackingStore?.Get<MicrosoftAuthenticatorFeatureSettings?>("featureSettings"); }
             set { BackingStore?.Set("featureSettings", value); }
         }
 #nullable restore
 #else
-        public MicrosoftAuthenticatorFeatureSettings FeatureSettings {
+        public MicrosoftAuthenticatorFeatureSettings FeatureSettings
+        {
             get { return BackingStore?.Get<MicrosoftAuthenticatorFeatureSettings>("featureSettings"); }
             set { BackingStore?.Set("featureSettings", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of groups that are enabled to use the authentication method. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MicrosoftAuthenticatorAuthenticationMethodTarget>? IncludeTargets {
+        public List<MicrosoftAuthenticatorAuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<MicrosoftAuthenticatorAuthenticationMethodTarget> IncludeTargets {
+        public List<MicrosoftAuthenticatorAuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
         /// <summary>The isSoftwareOathEnabled property</summary>
-        public bool? IsSoftwareOathEnabled {
+        public bool? IsSoftwareOathEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSoftwareOathEnabled"); }
             set { BackingStore?.Set("isSoftwareOathEnabled", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"featureSettings", n => { FeatureSettings = n.GetObjectValue<MicrosoftAuthenticatorFeatureSettings>(MicrosoftAuthenticatorFeatureSettings.CreateFromDiscriminatorValue); } },
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<MicrosoftAuthenticatorAuthenticationMethodTarget>(MicrosoftAuthenticatorAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isSoftwareOathEnabled", n => { IsSoftwareOathEnabled = n.GetBoolValue(); } },
+                { "featureSettings", n => { FeatureSettings = n.GetObjectValue<MicrosoftAuthenticatorFeatureSettings>(MicrosoftAuthenticatorFeatureSettings.CreateFromDiscriminatorValue); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<MicrosoftAuthenticatorAuthenticationMethodTarget>(MicrosoftAuthenticatorAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isSoftwareOathEnabled", n => { IsSoftwareOathEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

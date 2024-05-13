@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentTypeHub {
+namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentTypeHub
+{
     #pragma warning disable CS1591
-    public class AddCopyFromContentTypeHubPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddCopyFromContentTypeHubPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentT
         /// <summary>The contentTypeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentTypeId {
+        public string? ContentTypeId
+        {
             get { return BackingStore?.Get<string?>("contentTypeId"); }
             set { BackingStore?.Set("contentTypeId", value); }
         }
 #nullable restore
 #else
-        public string ContentTypeId {
+        public string ContentTypeId
+        {
             get { return BackingStore?.Get<string>("contentTypeId"); }
             set { BackingStore?.Set("contentTypeId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentT
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentTypeId", n => { ContentTypeId = n.GetStringValue(); } },
+                { "contentTypeId", n => { ContentTypeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

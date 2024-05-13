@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServiceUpdateMessageViewpoint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ServiceUpdateMessageViewpoint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the user archived the message.</summary>
-        public bool? IsArchived {
+        public bool? IsArchived
+        {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
         /// <summary>Indicates whether the user marked the message as favorite.</summary>
-        public bool? IsFavorited {
+        public bool? IsFavorited
+        {
             get { return BackingStore?.Get<bool?>("isFavorited"); }
             set { BackingStore?.Set("isFavorited", value); }
         }
         /// <summary>Indicates whether the user read the message.</summary>
-        public bool? IsRead {
+        public bool? IsRead
+        {
             get { return BackingStore?.Get<bool?>("isRead"); }
             set { BackingStore?.Set("isRead", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
-                {"isFavorited", n => { IsFavorited = n.GetBoolValue(); } },
-                {"isRead", n => { IsRead = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isFavorited", n => { IsFavorited = n.GetBoolValue(); } },
+                { "isRead", n => { IsRead = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

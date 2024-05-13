@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Audio : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Audio : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The title of the album for this audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Album {
+        public string? Album
+        {
             get { return BackingStore?.Get<string?>("album"); }
             set { BackingStore?.Set("album", value); }
         }
 #nullable restore
 #else
-        public string Album {
+        public string Album
+        {
             get { return BackingStore?.Get<string>("album"); }
             set { BackingStore?.Set("album", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The artist named on the album for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlbumArtist {
+        public string? AlbumArtist
+        {
             get { return BackingStore?.Get<string?>("albumArtist"); }
             set { BackingStore?.Set("albumArtist", value); }
         }
 #nullable restore
 #else
-        public string AlbumArtist {
+        public string AlbumArtist
+        {
             get { return BackingStore?.Get<string>("albumArtist"); }
             set { BackingStore?.Set("albumArtist", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The performing artist for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Artist {
+        public string? Artist
+        {
             get { return BackingStore?.Get<string?>("artist"); }
             set { BackingStore?.Set("artist", value); }
         }
 #nullable restore
 #else
-        public string Artist {
+        public string Artist
+        {
             get { return BackingStore?.Get<string>("artist"); }
             set { BackingStore?.Set("artist", value); }
         }
@@ -60,20 +68,23 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Bitrate expressed in kbps.</summary>
-        public long? Bitrate {
+        public long? Bitrate
+        {
             get { return BackingStore?.Get<long?>("bitrate"); }
             set { BackingStore?.Set("bitrate", value); }
         }
         /// <summary>The name of the composer of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Composers {
+        public string? Composers
+        {
             get { return BackingStore?.Get<string?>("composers"); }
             set { BackingStore?.Set("composers", value); }
         }
 #nullable restore
 #else
-        public string Composers {
+        public string Composers
+        {
             get { return BackingStore?.Get<string>("composers"); }
             set { BackingStore?.Set("composers", value); }
         }
@@ -81,66 +92,77 @@ namespace Microsoft.Graph.Models {
         /// <summary>Copyright information for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Copyright {
+        public string? Copyright
+        {
             get { return BackingStore?.Get<string?>("copyright"); }
             set { BackingStore?.Set("copyright", value); }
         }
 #nullable restore
 #else
-        public string Copyright {
+        public string Copyright
+        {
             get { return BackingStore?.Get<string>("copyright"); }
             set { BackingStore?.Set("copyright", value); }
         }
 #endif
         /// <summary>The number of the disc this audio file came from.</summary>
-        public int? Disc {
+        public int? Disc
+        {
             get { return BackingStore?.Get<int?>("disc"); }
             set { BackingStore?.Set("disc", value); }
         }
         /// <summary>The total number of discs in this album.</summary>
-        public int? DiscCount {
+        public int? DiscCount
+        {
             get { return BackingStore?.Get<int?>("discCount"); }
             set { BackingStore?.Set("discCount", value); }
         }
         /// <summary>Duration of the audio file, expressed in milliseconds</summary>
-        public long? Duration {
+        public long? Duration
+        {
             get { return BackingStore?.Get<long?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>The genre of this audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Genre {
+        public string? Genre
+        {
             get { return BackingStore?.Get<string?>("genre"); }
             set { BackingStore?.Set("genre", value); }
         }
 #nullable restore
 #else
-        public string Genre {
+        public string Genre
+        {
             get { return BackingStore?.Get<string>("genre"); }
             set { BackingStore?.Set("genre", value); }
         }
 #endif
         /// <summary>Indicates if the file is protected with digital rights management.</summary>
-        public bool? HasDrm {
+        public bool? HasDrm
+        {
             get { return BackingStore?.Get<bool?>("hasDrm"); }
             set { BackingStore?.Set("hasDrm", value); }
         }
         /// <summary>Indicates if the file is encoded with a variable bitrate.</summary>
-        public bool? IsVariableBitrate {
+        public bool? IsVariableBitrate
+        {
             get { return BackingStore?.Get<bool?>("isVariableBitrate"); }
             set { BackingStore?.Set("isVariableBitrate", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -148,29 +170,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The title of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #endif
         /// <summary>The number of the track on the original disc for this audio file.</summary>
-        public int? Track {
+        public int? Track
+        {
             get { return BackingStore?.Get<int?>("track"); }
             set { BackingStore?.Set("track", value); }
         }
         /// <summary>The total number of tracks on the original disc for this audio file.</summary>
-        public int? TrackCount {
+        public int? TrackCount
+        {
             get { return BackingStore?.Get<int?>("trackCount"); }
             set { BackingStore?.Set("trackCount", value); }
         }
         /// <summary>The year the audio file was recorded.</summary>
-        public int? Year {
+        public int? Year
+        {
             get { return BackingStore?.Get<int?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
@@ -200,23 +227,23 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"album", n => { Album = n.GetStringValue(); } },
-                {"albumArtist", n => { AlbumArtist = n.GetStringValue(); } },
-                {"artist", n => { Artist = n.GetStringValue(); } },
-                {"bitrate", n => { Bitrate = n.GetLongValue(); } },
-                {"composers", n => { Composers = n.GetStringValue(); } },
-                {"copyright", n => { Copyright = n.GetStringValue(); } },
-                {"disc", n => { Disc = n.GetIntValue(); } },
-                {"discCount", n => { DiscCount = n.GetIntValue(); } },
-                {"duration", n => { Duration = n.GetLongValue(); } },
-                {"genre", n => { Genre = n.GetStringValue(); } },
-                {"hasDrm", n => { HasDrm = n.GetBoolValue(); } },
-                {"isVariableBitrate", n => { IsVariableBitrate = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"track", n => { Track = n.GetIntValue(); } },
-                {"trackCount", n => { TrackCount = n.GetIntValue(); } },
-                {"year", n => { Year = n.GetIntValue(); } },
+                { "album", n => { Album = n.GetStringValue(); } },
+                { "albumArtist", n => { AlbumArtist = n.GetStringValue(); } },
+                { "artist", n => { Artist = n.GetStringValue(); } },
+                { "bitrate", n => { Bitrate = n.GetLongValue(); } },
+                { "composers", n => { Composers = n.GetStringValue(); } },
+                { "copyright", n => { Copyright = n.GetStringValue(); } },
+                { "disc", n => { Disc = n.GetIntValue(); } },
+                { "discCount", n => { DiscCount = n.GetIntValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
+                { "genre", n => { Genre = n.GetStringValue(); } },
+                { "hasDrm", n => { HasDrm = n.GetBoolValue(); } },
+                { "isVariableBitrate", n => { IsVariableBitrate = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "track", n => { Track = n.GetIntValue(); } },
+                { "trackCount", n => { TrackCount = n.GetIntValue(); } },
+                { "year", n => { Year = n.GetIntValue(); } },
             };
         }
         /// <summary>

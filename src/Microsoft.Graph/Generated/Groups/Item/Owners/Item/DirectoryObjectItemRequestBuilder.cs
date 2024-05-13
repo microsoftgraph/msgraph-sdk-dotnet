@@ -12,11 +12,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Groups.Item.Owners.Item {
+namespace Microsoft.Graph.Groups.Item.Owners.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \groups\{group-id}\owners\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>
         public GraphApplicationRequestBuilder GraphApplication

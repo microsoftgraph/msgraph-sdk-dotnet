@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class VmMetadata : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VmMetadata : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudProvider property</summary>
-        public VmCloudProvider? CloudProvider {
+        public VmCloudProvider? CloudProvider
+        {
             get { return BackingStore?.Get<VmCloudProvider?>("cloudProvider"); }
             set { BackingStore?.Set("cloudProvider", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Unique identifier of the Azure resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Unique identifier of the Azure subscription the customer tenant belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Unique identifier of the virtual machine instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VmId {
+        public string? VmId
+        {
             get { return BackingStore?.Get<string?>("vmId"); }
             set { BackingStore?.Set("vmId", value); }
         }
 #nullable restore
 #else
-        public string VmId {
+        public string VmId
+        {
             get { return BackingStore?.Get<string>("vmId"); }
             set { BackingStore?.Set("vmId", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cloudProvider", n => { CloudProvider = n.GetEnumValue<VmCloudProvider>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"vmId", n => { VmId = n.GetStringValue(); } },
+                { "cloudProvider", n => { CloudProvider = n.GetEnumValue<VmCloudProvider>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "vmId", n => { VmId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationJob : Entity, IParsable 
+    public class SynchronizationJob : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bulk upload operation for the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.BulkUpload? BulkUpload {
+        public Microsoft.Graph.Models.BulkUpload? BulkUpload
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.BulkUpload?>("bulkUpload"); }
             set { BackingStore?.Set("bulkUpload", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.BulkUpload BulkUpload {
+        public Microsoft.Graph.Models.BulkUpload BulkUpload
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.BulkUpload>("bulkUpload"); }
             set { BackingStore?.Set("bulkUpload", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Schedule used to run the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchedule? Schedule {
+        public SynchronizationSchedule? Schedule
+        {
             get { return BackingStore?.Get<SynchronizationSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchedule Schedule {
+        public SynchronizationSchedule Schedule
+        {
             get { return BackingStore?.Get<SynchronizationSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The synchronization schema configured for the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchema? Schema {
+        public SynchronizationSchema? Schema
+        {
             get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchema Schema {
+        public SynchronizationSchema Schema
+        {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationStatus? Status {
+        public SynchronizationStatus? Status
+        {
             get { return BackingStore?.Get<SynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SynchronizationStatus Status {
+        public SynchronizationStatus Status
+        {
             get { return BackingStore?.Get<SynchronizationStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? SynchronizationJobSettings {
+        public List<KeyValuePair>? SynchronizationJobSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> SynchronizationJobSettings {
+        public List<KeyValuePair> SynchronizationJobSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bulkUpload", n => { BulkUpload = n.GetObjectValue<Microsoft.Graph.Models.BulkUpload>(Microsoft.Graph.Models.BulkUpload.CreateFromDiscriminatorValue); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<SynchronizationSchedule>(SynchronizationSchedule.CreateFromDiscriminatorValue); } },
-                {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetObjectValue<SynchronizationStatus>(SynchronizationStatus.CreateFromDiscriminatorValue); } },
-                {"synchronizationJobSettings", n => { SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "bulkUpload", n => { BulkUpload = n.GetObjectValue<Microsoft.Graph.Models.BulkUpload>(Microsoft.Graph.Models.BulkUpload.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<SynchronizationSchedule>(SynchronizationSchedule.CreateFromDiscriminatorValue); } },
+                { "schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<SynchronizationStatus>(SynchronizationStatus.CreateFromDiscriminatorValue); } },
+                { "synchronizationJobSettings", n => { SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class ServicePrincipalEvidence : AlertEvidence, IParsable 
+    public class ServicePrincipalEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The appOwnerTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppOwnerTenantId {
+        public string? AppOwnerTenantId
+        {
             get { return BackingStore?.Get<string?>("appOwnerTenantId"); }
             set { BackingStore?.Set("appOwnerTenantId", value); }
         }
 #nullable restore
 #else
-        public string AppOwnerTenantId {
+        public string AppOwnerTenantId
+        {
             get { return BackingStore?.Get<string>("appOwnerTenantId"); }
             set { BackingStore?.Set("appOwnerTenantId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The servicePrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalName {
+        public string? ServicePrincipalName
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalName {
+        public string ServicePrincipalName
+        {
             get { return BackingStore?.Get<string>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The servicePrincipalObjectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalObjectId {
+        public string? ServicePrincipalObjectId
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalObjectId"); }
             set { BackingStore?.Set("servicePrincipalObjectId", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalObjectId {
+        public string ServicePrincipalObjectId
+        {
             get { return BackingStore?.Get<string>("servicePrincipalObjectId"); }
             set { BackingStore?.Set("servicePrincipalObjectId", value); }
         }
 #endif
         /// <summary>The servicePrincipalType property</summary>
-        public Microsoft.Graph.Models.Security.ServicePrincipalType? ServicePrincipalType {
+        public Microsoft.Graph.Models.Security.ServicePrincipalType? ServicePrincipalType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ServicePrincipalType?>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"appOwnerTenantId", n => { AppOwnerTenantId = n.GetStringValue(); } },
-                {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
-                {"servicePrincipalObjectId", n => { ServicePrincipalObjectId = n.GetStringValue(); } },
-                {"servicePrincipalType", n => { ServicePrincipalType = n.GetEnumValue<ServicePrincipalType>(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appOwnerTenantId", n => { AppOwnerTenantId = n.GetStringValue(); } },
+                { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
+                { "servicePrincipalObjectId", n => { ServicePrincipalObjectId = n.GetStringValue(); } },
+                { "servicePrincipalType", n => { ServicePrincipalType = n.GetEnumValue<ServicePrincipalType>(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

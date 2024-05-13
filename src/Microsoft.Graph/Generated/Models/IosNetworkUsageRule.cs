@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Network Usage Rules allow enterprises to specify how managed apps use networks, such as cellular data networks.
     /// </summary>
-    public class IosNetworkUsageRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosNetworkUsageRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If set to true, corresponding managed apps will not be allowed to use cellular data at any time.</summary>
-        public bool? CellularDataBlocked {
+        public bool? CellularDataBlocked
+        {
             get { return BackingStore?.Get<bool?>("cellularDataBlocked"); }
             set { BackingStore?.Set("cellularDataBlocked", value); }
         }
         /// <summary>If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.</summary>
-        public bool? CellularDataBlockWhenRoaming {
+        public bool? CellularDataBlockWhenRoaming
+        {
             get { return BackingStore?.Get<bool?>("cellularDataBlockWhenRoaming"); }
             set { BackingStore?.Set("cellularDataBlockWhenRoaming", value); }
         }
         /// <summary>Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? ManagedApps {
+        public List<AppListItem>? ManagedApps
+        {
             get { return BackingStore?.Get<List<AppListItem>?>("managedApps"); }
             set { BackingStore?.Set("managedApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> ManagedApps {
+        public List<AppListItem> ManagedApps
+        {
             get { return BackingStore?.Get<List<AppListItem>>("managedApps"); }
             set { BackingStore?.Set("managedApps", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -82,10 +90,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cellularDataBlockWhenRoaming", n => { CellularDataBlockWhenRoaming = n.GetBoolValue(); } },
-                {"cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
-                {"managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "cellularDataBlockWhenRoaming", n => { CellularDataBlockWhenRoaming = n.GetBoolValue(); } },
+                { "cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
+                { "managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

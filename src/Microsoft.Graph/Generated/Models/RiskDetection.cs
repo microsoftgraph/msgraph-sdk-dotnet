@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RiskDetection : Entity, IParsable 
+    public class RiskDetection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.</summary>
-        public ActivityType? Activity {
+        public ActivityType? Activity
+        {
             get { return BackingStore?.Get<ActivityType?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Additional information associated with the risk detection in JSON format. For example, &apos;[{/&apos;Key/&apos;:/&apos;userAgent/&apos;,/&apos;Value/&apos;:/&apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36/&apos;}]&apos;. Possible keys in the additionalInfo JSON string are: userAgent, alertUrl, relatedEventTimeInUtc, relatedUserAgent, deviceInformation, relatedLocation, requestId, correlationId, lastActivityTimeInUtc, malwareName, clientLocation, clientIp, riskReasons. For more information about riskReasons and possible values, see riskReasons values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalInfo {
+        public string? AdditionalInfo
+        {
             get { return BackingStore?.Get<string?>("additionalInfo"); }
             set { BackingStore?.Set("additionalInfo", value); }
         }
 #nullable restore
 #else
-        public string AdditionalInfo {
+        public string AdditionalInfo
+        {
             get { return BackingStore?.Get<string>("additionalInfo"); }
             set { BackingStore?.Set("additionalInfo", value); }
         }
@@ -36,56 +41,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #endif
         /// <summary>Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? DetectedDateTime {
+        public DateTimeOffset? DetectedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
         /// <summary>Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
-        public RiskDetectionTimingType? DetectionTimingType {
+        public RiskDetectionTimingType? DetectionTimingType
+        {
             get { return BackingStore?.Get<RiskDetectionTimingType?>("detectionTimingType"); }
             set { BackingStore?.Set("detectionTimingType", value); }
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
         /// <summary>Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Location of the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInLocation? Location {
+        public SignInLocation? Location
+        {
             get { return BackingStore?.Get<SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public SignInLocation Location {
+        public SignInLocation Location
+        {
             get { return BackingStore?.Get<SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -93,75 +107,87 @@ namespace Microsoft.Graph.Models {
         /// <summary>Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId {
+        public string? RequestId
+        {
             get { return BackingStore?.Get<string?>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
 #nullable restore
 #else
-        public string RequestId {
+        public string RequestId
+        {
             get { return BackingStore?.Get<string>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
 #endif
         /// <summary>Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.</summary>
-        public Microsoft.Graph.Models.RiskDetail? RiskDetail {
+        public Microsoft.Graph.Models.RiskDetail? RiskDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The type of risk event detected. The possible values are adminConfirmedUserCompromised, anomalousToken, anomalousUserActivity, anonymizedIPAddress, generic, impossibleTravel, investigationsThreatIntelligence, suspiciousSendingPatterns, leakedCredentials, maliciousIPAddress,malwareInfectedIPAddress, mcasSuspiciousInboxManipulationRules, newCountry, passwordSpray,riskyIPAddress, suspiciousAPITraffic, suspiciousBrowser,suspiciousInboxForwarding, suspiciousIPAddress, tokenIssuerAnomaly, unfamiliarFeatures, unlikelyTravel. If the risk detection is a premium detection, will show generic. For more information about each value, see Risk types and detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskEventType {
+        public string? RiskEventType
+        {
             get { return BackingStore?.Get<string?>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
 #nullable restore
 #else
-        public string RiskEventType {
+        public string RiskEventType
+        {
             get { return BackingStore?.Get<string>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
 #endif
         /// <summary>Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.RiskLevel? RiskLevel {
+        public Microsoft.Graph.Models.RiskLevel? RiskLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
         /// <summary>The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.RiskState? RiskState {
+        public Microsoft.Graph.Models.RiskState? RiskState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Source of the risk detection. For example, activeDirectory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source {
+        public string? Source
+        {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public string Source {
+        public string Source
+        {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.</summary>
-        public Microsoft.Graph.Models.TokenIssuerType? TokenIssuerType {
+        public Microsoft.Graph.Models.TokenIssuerType? TokenIssuerType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
         /// <summary>The user principal name (UPN) of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -169,13 +195,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -183,13 +211,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user principal name (UPN) of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -212,25 +242,25 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetEnumValue<ActivityType>(); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
-                {"requestId", n => { RequestId = n.GetStringValue(); } },
-                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventType", n => { RiskEventType = n.GetStringValue(); } },
-                {"riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
-                {"source", n => { Source = n.GetStringValue(); } },
-                {"tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "activity", n => { Activity = n.GetEnumValue<ActivityType>(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "additionalInfo", n => { AdditionalInfo = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                { "requestId", n => { RequestId = n.GetStringValue(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskEventType", n => { RiskEventType = n.GetStringValue(); } },
+                { "riskLevel", n => { RiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

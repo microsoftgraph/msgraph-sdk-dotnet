@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class OnDemandExecutionOnly : WorkflowExecutionConditions, IParsable 
+    public class OnDemandExecutionOnly : WorkflowExecutionConditions, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

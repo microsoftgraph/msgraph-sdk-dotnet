@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class KubernetesNamespaceEvidence : AlertEvidence, IParsable 
+    public class KubernetesNamespaceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The namespace cluster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesClusterEvidence? Cluster {
+        public KubernetesClusterEvidence? Cluster
+        {
             get { return BackingStore?.Get<KubernetesClusterEvidence?>("cluster"); }
             set { BackingStore?.Set("cluster", value); }
         }
 #nullable restore
 #else
-        public KubernetesClusterEvidence Cluster {
+        public KubernetesClusterEvidence Cluster
+        {
             get { return BackingStore?.Get<KubernetesClusterEvidence>("cluster"); }
             set { BackingStore?.Set("cluster", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The labels for the Kubernetes pod.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? Labels {
+        public Dictionary? Labels
+        {
             get { return BackingStore?.Get<Dictionary?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public Dictionary Labels {
+        public Dictionary Labels
+        {
             get { return BackingStore?.Get<Dictionary>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The namespace name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cluster", n => { Cluster = n.GetObjectValue<KubernetesClusterEvidence>(KubernetesClusterEvidence.CreateFromDiscriminatorValue); } },
-                {"labels", n => { Labels = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "cluster", n => { Cluster = n.GetObjectValue<KubernetesClusterEvidence>(KubernetesClusterEvidence.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

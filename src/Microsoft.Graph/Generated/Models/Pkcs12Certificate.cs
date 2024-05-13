@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Pkcs12Certificate : ApiAuthenticationConfigurationBase, IParsable 
+    public class Pkcs12Certificate : ApiAuthenticationConfigurationBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The password for the pfx file. Required. If no password is used, you must still provide a value of &apos;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password {
+        public string? Password
+        {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #nullable restore
 #else
-        public string Password {
+        public string Password
+        {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pkcs12Value {
+        public string? Pkcs12Value
+        {
             get { return BackingStore?.Get<string?>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
 #nullable restore
 #else
-        public string Pkcs12Value {
+        public string Pkcs12Value
+        {
             get { return BackingStore?.Get<string>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"pkcs12Value", n => { Pkcs12Value = n.GetStringValue(); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "pkcs12Value", n => { Pkcs12Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

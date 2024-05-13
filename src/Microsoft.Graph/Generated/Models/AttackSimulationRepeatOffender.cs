@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttackSimulationRepeatOffender : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttackSimulationRepeatOffender : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AttackSimulationUser? AttackSimulationUser {
+        public Microsoft.Graph.Models.AttackSimulationUser? AttackSimulationUser
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttackSimulationUser?>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AttackSimulationUser AttackSimulationUser {
+        public Microsoft.Graph.Models.AttackSimulationUser AttackSimulationUser
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttackSimulationUser>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Number of repeat offences of the user in attack simulation and training campaigns.</summary>
-        public int? RepeatOffenceCount {
+        public int? RepeatOffenceCount
+        {
             get { return BackingStore?.Get<int?>("repeatOffenceCount"); }
             set { BackingStore?.Set("repeatOffenceCount", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationUser>(Microsoft.Graph.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"repeatOffenceCount", n => { RepeatOffenceCount = n.GetIntValue(); } },
+                { "attackSimulationUser", n => { AttackSimulationUser = n.GetObjectValue<Microsoft.Graph.Models.AttackSimulationUser>(Microsoft.Graph.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "repeatOffenceCount", n => { RepeatOffenceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

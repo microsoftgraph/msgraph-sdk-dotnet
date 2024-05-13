@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class FilePlanAppliedCategory : FilePlanDescriptorBase, IParsable 
+    public class FilePlanAppliedCategory : FilePlanDescriptorBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanSubcategory? Subcategory {
+        public FilePlanSubcategory? Subcategory
+        {
             get { return BackingStore?.Get<FilePlanSubcategory?>("subcategory"); }
             set { BackingStore?.Set("subcategory", value); }
         }
 #nullable restore
 #else
-        public FilePlanSubcategory Subcategory {
+        public FilePlanSubcategory Subcategory
+        {
             get { return BackingStore?.Get<FilePlanSubcategory>("subcategory"); }
             set { BackingStore?.Set("subcategory", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"subcategory", n => { Subcategory = n.GetObjectValue<FilePlanSubcategory>(FilePlanSubcategory.CreateFromDiscriminatorValue); } },
+                { "subcategory", n => { Subcategory = n.GetObjectValue<FilePlanSubcategory>(FilePlanSubcategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

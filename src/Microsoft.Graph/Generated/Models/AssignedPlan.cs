@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AssignedPlan : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignedPlan : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? AssignedDateTime {
+        public DateTimeOffset? AssignedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("assignedDateTime"); }
             set { BackingStore?.Set("assignedDateTime", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CapabilityStatus {
+        public string? CapabilityStatus
+        {
             get { return BackingStore?.Get<string?>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
 #nullable restore
 #else
-        public string CapabilityStatus {
+        public string CapabilityStatus
+        {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,19 +60,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the service; for example, exchange.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #endif
         /// <summary>A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.</summary>
-        public Guid? ServicePlanId {
+        public Guid? ServicePlanId
+        {
             get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
+                { "assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

@@ -5,36 +5,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationAssignmentDefaults : Entity, IParsable 
+    public class EducationAssignmentDefaults : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.</summary>
-        public EducationAddedStudentAction? AddedStudentAction {
+        public EducationAddedStudentAction? AddedStudentAction
+        {
             get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
             set { BackingStore?.Set("addedStudentAction", value); }
         }
         /// <summary>Optional field to control adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
-        public EducationAddToCalendarOptions? AddToCalendarAction {
+        public EducationAddToCalendarOptions? AddToCalendarAction
+        {
             get { return BackingStore?.Get<EducationAddToCalendarOptions?>("addToCalendarAction"); }
             set { BackingStore?.Set("addToCalendarAction", value); }
         }
         /// <summary>Class-level default value for due time field. Default value is 23:59:00.</summary>
-        public Time? DueTime {
+        public Time? DueTime
+        {
             get { return BackingStore?.Get<Time?>("dueTime"); }
             set { BackingStore?.Set("dueTime", value); }
         }
         /// <summary>Default Teams channel to which notifications are sent. Default value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationChannelUrl {
+        public string? NotificationChannelUrl
+        {
             get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
 #nullable restore
 #else
-        public string NotificationChannelUrl {
+        public string NotificationChannelUrl
+        {
             get { return BackingStore?.Get<string>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
@@ -57,10 +63,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
-                {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
-                {"dueTime", n => { DueTime = n.GetTimeValue(); } },
-                {"notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
+                { "addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
+                { "addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
+                { "dueTime", n => { DueTime = n.GetTimeValue(); } },
+                { "notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Device Enrollment Configuration that restricts the types of devices a user can enroll
     /// </summary>
-    public class DeviceEnrollmentPlatformRestrictionsConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    public class DeviceEnrollmentPlatformRestrictionsConfiguration : DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Android restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? AndroidRestriction {
+        public DeviceEnrollmentPlatformRestriction? AndroidRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("androidRestriction"); }
             set { BackingStore?.Set("androidRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction AndroidRestriction {
+        public DeviceEnrollmentPlatformRestriction AndroidRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("androidRestriction"); }
             set { BackingStore?.Set("androidRestriction", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Ios restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? IosRestriction {
+        public DeviceEnrollmentPlatformRestriction? IosRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("iosRestriction"); }
             set { BackingStore?.Set("iosRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction IosRestriction {
+        public DeviceEnrollmentPlatformRestriction IosRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("iosRestriction"); }
             set { BackingStore?.Set("iosRestriction", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? MacOSRestriction {
+        public DeviceEnrollmentPlatformRestriction? MacOSRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("macOSRestriction"); }
             set { BackingStore?.Set("macOSRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction MacOSRestriction {
+        public DeviceEnrollmentPlatformRestriction MacOSRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("macOSRestriction"); }
             set { BackingStore?.Set("macOSRestriction", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Windows mobile restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? WindowsMobileRestriction {
+        public DeviceEnrollmentPlatformRestriction? WindowsMobileRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("windowsMobileRestriction"); }
             set { BackingStore?.Set("windowsMobileRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction {
+        public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("windowsMobileRestriction"); }
             set { BackingStore?.Set("windowsMobileRestriction", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Windows restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? WindowsRestriction {
+        public DeviceEnrollmentPlatformRestriction? WindowsRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("windowsRestriction"); }
             set { BackingStore?.Set("windowsRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction WindowsRestriction {
+        public DeviceEnrollmentPlatformRestriction WindowsRestriction
+        {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("windowsRestriction"); }
             set { BackingStore?.Set("windowsRestriction", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"androidRestriction", n => { AndroidRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
-                {"iosRestriction", n => { IosRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
-                {"macOSRestriction", n => { MacOSRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
-                {"windowsMobileRestriction", n => { WindowsMobileRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
-                {"windowsRestriction", n => { WindowsRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "androidRestriction", n => { AndroidRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "iosRestriction", n => { IosRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "macOSRestriction", n => { MacOSRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "windowsMobileRestriction", n => { WindowsMobileRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "windowsRestriction", n => { WindowsRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

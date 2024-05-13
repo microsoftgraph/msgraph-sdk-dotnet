@@ -4,51 +4,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnlineMeetingBase : Entity, IParsable 
+    public class OnlineMeetingBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
-        public bool? AllowAttendeeToEnableCamera {
+        public bool? AllowAttendeeToEnableCamera
+        {
             get { return BackingStore?.Get<bool?>("allowAttendeeToEnableCamera"); }
             set { BackingStore?.Set("allowAttendeeToEnableCamera", value); }
         }
         /// <summary>Indicates whether attendees can turn on their microphone.</summary>
-        public bool? AllowAttendeeToEnableMic {
+        public bool? AllowAttendeeToEnableMic
+        {
             get { return BackingStore?.Get<bool?>("allowAttendeeToEnableMic"); }
             set { BackingStore?.Set("allowAttendeeToEnableMic", value); }
         }
         /// <summary>Specifies who can be a presenter in a meeting.</summary>
-        public OnlineMeetingPresenters? AllowedPresenters {
+        public OnlineMeetingPresenters? AllowedPresenters
+        {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>Specifies the mode of the meeting chat.</summary>
-        public MeetingChatMode? AllowMeetingChat {
+        public MeetingChatMode? AllowMeetingChat
+        {
             get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
             set { BackingStore?.Set("allowMeetingChat", value); }
         }
         /// <summary>Specifies if participants are allowed to rename themselves in an instance of the meeting.</summary>
-        public bool? AllowParticipantsToChangeName {
+        public bool? AllowParticipantsToChangeName
+        {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
         }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
-        public bool? AllowTeamworkReactions {
+        public bool? AllowTeamworkReactions
+        {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
             set { BackingStore?.Set("allowTeamworkReactions", value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingAttendanceReport>? AttendanceReports {
+        public List<MeetingAttendanceReport>? AttendanceReports
+        {
             get { return BackingStore?.Get<List<MeetingAttendanceReport>?>("attendanceReports"); }
             set { BackingStore?.Set("attendanceReports", value); }
         }
 #nullable restore
 #else
-        public List<MeetingAttendanceReport> AttendanceReports {
+        public List<MeetingAttendanceReport> AttendanceReports
+        {
             get { return BackingStore?.Get<List<MeetingAttendanceReport>>("attendanceReports"); }
             set { BackingStore?.Set("attendanceReports", value); }
         }
@@ -56,13 +65,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The phone access (dial-in) information for an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AudioConferencing? AudioConferencing {
+        public Microsoft.Graph.Models.AudioConferencing? AudioConferencing
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AudioConferencing?>("audioConferencing"); }
             set { BackingStore?.Set("audioConferencing", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AudioConferencing AudioConferencing {
+        public Microsoft.Graph.Models.AudioConferencing AudioConferencing
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AudioConferencing>("audioConferencing"); }
             set { BackingStore?.Set("audioConferencing", value); }
         }
@@ -70,32 +81,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The chat information associated with this online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ChatInfo? ChatInfo {
+        public Microsoft.Graph.Models.ChatInfo? ChatInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo?>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ChatInfo ChatInfo {
+        public Microsoft.Graph.Models.ChatInfo ChatInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChatInfo>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
 #endif
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
-        public bool? IsEntryExitAnnounced {
+        public bool? IsEntryExitAnnounced
+        {
             get { return BackingStore?.Get<bool?>("isEntryExitAnnounced"); }
             set { BackingStore?.Set("isEntryExitAnnounced", value); }
         }
         /// <summary>The join information in the language and locale variant specified in &apos;Accept-Language&apos; request HTTP header. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? JoinInformation {
+        public ItemBody? JoinInformation
+        {
             get { return BackingStore?.Get<ItemBody?>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
 #nullable restore
 #else
-        public ItemBody JoinInformation {
+        public ItemBody JoinInformation
+        {
             get { return BackingStore?.Get<ItemBody>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
@@ -103,13 +119,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings can&apos;t be modified. To make any changes to this property, you must cancel this meeting and create a new one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.JoinMeetingIdSettings? JoinMeetingIdSettings {
+        public Microsoft.Graph.Models.JoinMeetingIdSettings? JoinMeetingIdSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.JoinMeetingIdSettings?>("joinMeetingIdSettings"); }
             set { BackingStore?.Set("joinMeetingIdSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.JoinMeetingIdSettings JoinMeetingIdSettings {
+        public Microsoft.Graph.Models.JoinMeetingIdSettings JoinMeetingIdSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.JoinMeetingIdSettings>("joinMeetingIdSettings"); }
             set { BackingStore?.Set("joinMeetingIdSettings", value); }
         }
@@ -117,13 +135,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The join URL of the online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinWebUrl {
+        public string? JoinWebUrl
+        {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #nullable restore
 #else
-        public string JoinWebUrl {
+        public string JoinWebUrl
+        {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
@@ -131,37 +151,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies which participants can bypass the meeting lobby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.LobbyBypassSettings? LobbyBypassSettings {
+        public Microsoft.Graph.Models.LobbyBypassSettings? LobbyBypassSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.LobbyBypassSettings?>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.LobbyBypassSettings LobbyBypassSettings {
+        public Microsoft.Graph.Models.LobbyBypassSettings LobbyBypassSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #endif
         /// <summary>Indicates whether to record the meeting automatically.</summary>
-        public bool? RecordAutomatically {
+        public bool? RecordAutomatically
+        {
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
         /// <summary>The shareMeetingChatHistoryDefault property</summary>
-        public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault {
+        public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
+        {
             get { return BackingStore?.Get<MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
             set { BackingStore?.Set("shareMeetingChatHistoryDefault", value); }
         }
         /// <summary>The subject of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -169,13 +195,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The video teleconferencing ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VideoTeleconferenceId {
+        public string? VideoTeleconferenceId
+        {
             get { return BackingStore?.Get<string?>("videoTeleconferenceId"); }
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
 #nullable restore
 #else
-        public string VideoTeleconferenceId {
+        public string VideoTeleconferenceId
+        {
             get { return BackingStore?.Get<string>("videoTeleconferenceId"); }
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
@@ -183,13 +211,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies whether the client application should apply a watermark to a content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WatermarkProtectionValues? WatermarkProtection {
+        public WatermarkProtectionValues? WatermarkProtection
+        {
             get { return BackingStore?.Get<WatermarkProtectionValues?>("watermarkProtection"); }
             set { BackingStore?.Set("watermarkProtection", value); }
         }
 #nullable restore
 #else
-        public WatermarkProtectionValues WatermarkProtection {
+        public WatermarkProtectionValues WatermarkProtection
+        {
             get { return BackingStore?.Get<WatermarkProtectionValues>("watermarkProtection"); }
             set { BackingStore?.Set("watermarkProtection", value); }
         }
@@ -218,25 +248,25 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
-                {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
-                {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
-                {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
-                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
-                {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<MeetingAttendanceReport>(MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Models.AudioConferencing>(Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
-                {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Models.ChatInfo>(Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
-                {"isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
-                {"joinInformation", n => { JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Models.JoinMeetingIdSettings>(Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
-                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
-                {"lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Models.LobbyBypassSettings>(Microsoft.Graph.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
-                {"recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
-                {"shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
-                {"watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
+                { "allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
+                { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
+                { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
+                { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
+                { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
+                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<MeetingAttendanceReport>(MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Models.AudioConferencing>(Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
+                { "chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Models.ChatInfo>(Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
+                { "joinInformation", n => { JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Models.JoinMeetingIdSettings>(Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
+                { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Models.LobbyBypassSettings>(Microsoft.Graph.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
+                { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
+                { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
+                { "watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

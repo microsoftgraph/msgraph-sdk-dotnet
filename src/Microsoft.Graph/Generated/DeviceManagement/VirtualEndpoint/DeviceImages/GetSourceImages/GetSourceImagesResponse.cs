@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
+namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages
+{
     [Obsolete("This class is obsolete. Use GetSourceImagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSourceImagesResponse : GetSourceImagesGetResponse, IParsable 
+    public class GetSourceImagesResponse : GetSourceImagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

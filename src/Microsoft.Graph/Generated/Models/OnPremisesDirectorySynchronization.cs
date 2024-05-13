@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesDirectorySynchronization : Entity, IParsable 
+    public class OnPremisesDirectorySynchronization : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesDirectorySynchronizationConfiguration? Configuration {
+        public OnPremisesDirectorySynchronizationConfiguration? Configuration
+        {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public OnPremisesDirectorySynchronizationConfiguration Configuration {
+        public OnPremisesDirectorySynchronizationConfiguration Configuration
+        {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesDirectorySynchronizationFeature? Features {
+        public OnPremisesDirectorySynchronizationFeature? Features
+        {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature?>("features"); }
             set { BackingStore?.Set("features", value); }
         }
 #nullable restore
 #else
-        public OnPremisesDirectorySynchronizationFeature Features {
+        public OnPremisesDirectorySynchronizationFeature Features
+        {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature>("features"); }
             set { BackingStore?.Set("features", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<OnPremisesDirectorySynchronizationConfiguration>(OnPremisesDirectorySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
-                {"features", n => { Features = n.GetObjectValue<OnPremisesDirectorySynchronizationFeature>(OnPremisesDirectorySynchronizationFeature.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<OnPremisesDirectorySynchronizationConfiguration>(OnPremisesDirectorySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                { "features", n => { Features = n.GetObjectValue<OnPremisesDirectorySynchronizationFeature>(OnPremisesDirectorySynchronizationFeature.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

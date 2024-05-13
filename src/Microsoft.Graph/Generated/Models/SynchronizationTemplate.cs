@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationTemplate : Entity, IParsable 
+    public class SynchronizationTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identifier of the application this template belongs to.</summary>
-        public Guid? ApplicationId {
+        public Guid? ApplicationId
+        {
             get { return BackingStore?.Get<Guid?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
         /// <summary>true if this template is recommended to be the default for the application.</summary>
-        public bool? Default {
+        public bool? Default
+        {
             get { return BackingStore?.Get<bool?>("default"); }
             set { BackingStore?.Set("default", value); }
         }
         /// <summary>Description of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>true if this template should appear in the collection of templates available for the application instance (service principal).</summary>
-        public bool? Discoverable {
+        public bool? Discoverable
+        {
             get { return BackingStore?.Get<bool?>("discoverable"); }
             set { BackingStore?.Set("discoverable", value); }
         }
         /// <summary>One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FactoryTag {
+        public string? FactoryTag
+        {
             get { return BackingStore?.Get<string?>("factoryTag"); }
             set { BackingStore?.Set("factoryTag", value); }
         }
 #nullable restore
 #else
-        public string FactoryTag {
+        public string FactoryTag
+        {
             get { return BackingStore?.Get<string>("factoryTag"); }
             set { BackingStore?.Set("factoryTag", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationMetadataEntry>? Metadata {
+        public List<SynchronizationMetadataEntry>? Metadata
+        {
             get { return BackingStore?.Get<List<SynchronizationMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationMetadataEntry> Metadata {
+        public List<SynchronizationMetadataEntry> Metadata
+        {
             get { return BackingStore?.Get<List<SynchronizationMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Default synchronization schema for the jobs based on this template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SynchronizationSchema? Schema {
+        public SynchronizationSchema? Schema
+        {
             get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public SynchronizationSchema Schema {
+        public SynchronizationSchema Schema
+        {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
@@ -98,13 +110,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationId", n => { ApplicationId = n.GetGuidValue(); } },
-                {"default", n => { Default = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"discoverable", n => { Discoverable = n.GetBoolValue(); } },
-                {"factoryTag", n => { FactoryTag = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<SynchronizationMetadataEntry>(SynchronizationMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
+                { "applicationId", n => { ApplicationId = n.GetGuidValue(); } },
+                { "default", n => { Default = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "discoverable", n => { Discoverable = n.GetBoolValue(); } },
+                { "factoryTag", n => { FactoryTag = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<SynchronizationMetadataEntry>(SynchronizationMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

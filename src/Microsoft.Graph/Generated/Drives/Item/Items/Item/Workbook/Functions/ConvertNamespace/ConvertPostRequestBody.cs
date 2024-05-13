@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNamespace {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNamespace
+{
     #pragma warning disable CS1591
-    public class ConvertPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConvertPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNames
         /// <summary>The fromUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FromUnit {
+        public Json? FromUnit
+        {
             get { return BackingStore?.Get<Json?>("fromUnit"); }
             set { BackingStore?.Set("fromUnit", value); }
         }
 #nullable restore
 #else
-        public Json FromUnit {
+        public Json FromUnit
+        {
             get { return BackingStore?.Get<Json>("fromUnit"); }
             set { BackingStore?.Set("fromUnit", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNames
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number {
+        public Json? Number
+        {
             get { return BackingStore?.Get<Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number {
+        public Json Number
+        {
             get { return BackingStore?.Get<Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNames
         /// <summary>The toUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ToUnit {
+        public Json? ToUnit
+        {
             get { return BackingStore?.Get<Json?>("toUnit"); }
             set { BackingStore?.Set("toUnit", value); }
         }
 #nullable restore
 #else
-        public Json ToUnit {
+        public Json ToUnit
+        {
             get { return BackingStore?.Get<Json>("toUnit"); }
             set { BackingStore?.Set("toUnit", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.ConvertNames
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fromUnit", n => { FromUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"toUnit", n => { ToUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "fromUnit", n => { FromUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "toUnit", n => { ToUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

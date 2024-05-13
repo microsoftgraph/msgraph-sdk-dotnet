@@ -4,47 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class DataSourceContainer : Microsoft.Graph.Models.Entity, IParsable 
+    public class DataSourceContainer : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Created date and time of the dataSourceContainer entity.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial</summary>
-        public DataSourceHoldStatus? HoldStatus {
+        public DataSourceHoldStatus? HoldStatus
+        {
             get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Date and time that the dataSourceContainer was released from the case.</summary>
-        public DateTimeOffset? ReleasedDateTime {
+        public DateTimeOffset? ReleasedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("releasedDateTime"); }
             set { BackingStore?.Set("releasedDateTime", value); }
         }
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
-        public DataSourceContainerStatus? Status {
+        public DataSourceContainerStatus? Status
+        {
             get { return BackingStore?.Get<DataSourceContainerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -72,12 +80,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"releasedDateTime", n => { ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "holdStatus", n => { HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "releasedDateTime", n => { ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DataSourceContainerStatus>(); } },
             };
         }
         /// <summary>

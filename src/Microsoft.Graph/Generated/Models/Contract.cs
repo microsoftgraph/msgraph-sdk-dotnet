@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Contract : DirectoryObject, IParsable 
+    public class Contract : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractType {
+        public string? ContractType
+        {
             get { return BackingStore?.Get<string?>("contractType"); }
             set { BackingStore?.Set("contractType", value); }
         }
 #nullable restore
 #else
-        public string ContractType {
+        public string ContractType
+        {
             get { return BackingStore?.Get<string>("contractType"); }
             set { BackingStore?.Set("contractType", value); }
         }
 #endif
         /// <summary>The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant&apos;s organization resource.</summary>
-        public Guid? CustomerId {
+        public Guid? CustomerId
+        {
             get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>A copy of the customer tenant&apos;s default domain name. The copy is made when the partnership with the customer is established. It isn&apos;t automatically updated if the customer tenant&apos;s default domain name changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultDomainName {
+        public string? DefaultDomainName
+        {
             get { return BackingStore?.Get<string?>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
 #nullable restore
 #else
-        public string DefaultDomainName {
+        public string DefaultDomainName
+        {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A copy of the customer tenant&apos;s display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s display name changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contractType", n => { ContractType = n.GetStringValue(); } },
-                {"customerId", n => { CustomerId = n.GetGuidValue(); } },
-                {"defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "contractType", n => { ContractType = n.GetStringValue(); } },
+                { "customerId", n => { CustomerId = n.GetGuidValue(); } },
+                { "defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

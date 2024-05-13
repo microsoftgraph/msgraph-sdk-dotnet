@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken {
+namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken
+{
     #pragma warning disable CS1591
-    public class DeltaWithTokenGetResponse : BaseDeltaFunctionResponse, IParsable 
+    public class DeltaWithTokenGetResponse : BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.DriveItem>? Value {
+        public List<Microsoft.Graph.Models.DriveItem>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.DriveItem> Value {
+        public List<Microsoft.Graph.Models.DriveItem> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.DriveItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.DriveItem>(Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

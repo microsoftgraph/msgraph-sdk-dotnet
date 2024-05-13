@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedAccessGroupEligibilityScheduleRequest : PrivilegedAccessScheduleRequest, IParsable 
+    public class PrivilegedAccessGroupEligibilityScheduleRequest : PrivilegedAccessScheduleRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.</summary>
-        public PrivilegedAccessGroupRelationships? AccessId {
+        public PrivilegedAccessGroupRelationships? AccessId
+        {
             get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
         /// <summary>References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand and $select nested in $expand for select properties like id, displayName, and mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Group? Group {
+        public Microsoft.Graph.Models.Group? Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Group?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Group Group {
+        public Microsoft.Graph.Models.Group Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Group>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the group representing the scope of the membership and ownership eligibility through PIM for groups. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>References the principal that&apos;s in the scope of the membership or ownership eligibility request through the group that&apos;s governed by PIM. Supports $expand and $select nested in $expand for id only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal {
+        public DirectoryObject? Principal
+        {
             get { return BackingStore?.Get<DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal {
+        public DirectoryObject Principal
+        {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrincipalId {
+        public string? PrincipalId
+        {
             get { return BackingStore?.Get<string?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
 #nullable restore
 #else
-        public string PrincipalId {
+        public string PrincipalId
+        {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Schedule created by this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedAccessGroupEligibilitySchedule? TargetSchedule {
+        public PrivilegedAccessGroupEligibilitySchedule? TargetSchedule
+        {
             get { return BackingStore?.Get<PrivilegedAccessGroupEligibilitySchedule?>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
 #nullable restore
 #else
-        public PrivilegedAccessGroupEligibilitySchedule TargetSchedule {
+        public PrivilegedAccessGroupEligibilitySchedule TargetSchedule
+        {
             get { return BackingStore?.Get<PrivilegedAccessGroupEligibilitySchedule>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the schedule that&apos;s created from the eligibility request. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetScheduleId {
+        public string? TargetScheduleId
+        {
             get { return BackingStore?.Get<string?>("targetScheduleId"); }
             set { BackingStore?.Set("targetScheduleId", value); }
         }
 #nullable restore
 #else
-        public string TargetScheduleId {
+        public string TargetScheduleId
+        {
             get { return BackingStore?.Get<string>("targetScheduleId"); }
             set { BackingStore?.Set("targetScheduleId", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessId", n => { AccessId = n.GetEnumValue<PrivilegedAccessGroupRelationships>(); } },
-                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
-                {"targetSchedule", n => { TargetSchedule = n.GetObjectValue<PrivilegedAccessGroupEligibilitySchedule>(PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue); } },
-                {"targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
+                { "accessId", n => { AccessId = n.GetEnumValue<PrivilegedAccessGroupRelationships>(); } },
+                { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Models.Group>(Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "targetSchedule", n => { TargetSchedule = n.GetObjectValue<PrivilegedAccessGroupEligibilitySchedule>(PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                { "targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
             };
         }
         /// <summary>

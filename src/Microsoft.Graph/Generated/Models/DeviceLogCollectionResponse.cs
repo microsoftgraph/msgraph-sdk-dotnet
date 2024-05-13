@@ -4,67 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Log Collection request entity.
     /// </summary>
-    public class DeviceLogCollectionResponse : Entity, IParsable 
+    public class DeviceLogCollectionResponse : Entity, IParsable
     {
         /// <summary>The User Principal Name (UPN) of the user that enrolled the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrolledByUser {
+        public string? EnrolledByUser
+        {
             get { return BackingStore?.Get<string?>("enrolledByUser"); }
             set { BackingStore?.Set("enrolledByUser", value); }
         }
 #nullable restore
 #else
-        public string EnrolledByUser {
+        public string EnrolledByUser
+        {
             get { return BackingStore?.Get<string>("enrolledByUser"); }
             set { BackingStore?.Set("enrolledByUser", value); }
         }
 #endif
         /// <summary>The DateTime of the expiration of the logs.</summary>
-        public DateTimeOffset? ExpirationDateTimeUTC {
+        public DateTimeOffset? ExpirationDateTimeUTC
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTimeUTC"); }
             set { BackingStore?.Set("expirationDateTimeUTC", value); }
         }
         /// <summary>The UPN for who initiated the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedByUserPrincipalName {
+        public string? InitiatedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string InitiatedByUserPrincipalName {
+        public string InitiatedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
 #endif
         /// <summary>Indicates Intune device unique identifier.</summary>
-        public Guid? ManagedDeviceId {
+        public Guid? ManagedDeviceId
+        {
             get { return BackingStore?.Get<Guid?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The DateTime the request was received.</summary>
-        public DateTimeOffset? ReceivedDateTimeUTC {
+        public DateTimeOffset? ReceivedDateTimeUTC
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTimeUTC"); }
             set { BackingStore?.Set("receivedDateTimeUTC", value); }
         }
         /// <summary>The DateTime of the request.</summary>
-        public DateTimeOffset? RequestedDateTimeUTC {
+        public DateTimeOffset? RequestedDateTimeUTC
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTimeUTC"); }
             set { BackingStore?.Set("requestedDateTimeUTC", value); }
         }
         /// <summary>The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? SizeInKB {
+        public double? SizeInKB
+        {
             get { return BackingStore?.Get<double?>("sizeInKB"); }
             set { BackingStore?.Set("sizeInKB", value); }
         }
         /// <summary>AppLogUploadStatus</summary>
-        public AppLogUploadState? Status {
+        public AppLogUploadState? Status
+        {
             get { return BackingStore?.Get<AppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -86,14 +97,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enrolledByUser", n => { EnrolledByUser = n.GetStringValue(); } },
-                {"expirationDateTimeUTC", n => { ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetGuidValue(); } },
-                {"receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
-                {"sizeInKB", n => { SizeInKB = n.GetDoubleValue(); } },
-                {"status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
+                { "enrolledByUser", n => { EnrolledByUser = n.GetStringValue(); } },
+                { "expirationDateTimeUTC", n => { ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                { "initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetGuidValue(); } },
+                { "receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                { "requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
+                { "sizeInKB", n => { SizeInKB = n.GetDoubleValue(); } },
+                { "status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
             };
         }
         /// <summary>

@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient
+{
     #pragma warning disable CS1591
-    public class QuotientPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class QuotientPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient {
         /// <summary>The denominator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Denominator {
+        public Json? Denominator
+        {
             get { return BackingStore?.Get<Json?>("denominator"); }
             set { BackingStore?.Set("denominator", value); }
         }
 #nullable restore
 #else
-        public Json Denominator {
+        public Json Denominator
+        {
             get { return BackingStore?.Get<Json>("denominator"); }
             set { BackingStore?.Set("denominator", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient {
         /// <summary>The numerator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Numerator {
+        public Json? Numerator
+        {
             get { return BackingStore?.Get<Json?>("numerator"); }
             set { BackingStore?.Set("numerator", value); }
         }
 #nullable restore
 #else
-        public Json Numerator {
+        public Json Numerator
+        {
             get { return BackingStore?.Get<Json>("numerator"); }
             set { BackingStore?.Set("numerator", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Quotient {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"denominator", n => { Denominator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"numerator", n => { Numerator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "denominator", n => { Denominator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numerator", n => { Numerator = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

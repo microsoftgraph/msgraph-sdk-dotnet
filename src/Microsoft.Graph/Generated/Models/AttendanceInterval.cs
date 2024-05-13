@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttendanceInterval : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttendanceInterval : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.</summary>
-        public int? DurationInSeconds {
+        public int? DurationInSeconds
+        {
             get { return BackingStore?.Get<int?>("durationInSeconds"); }
             set { BackingStore?.Set("durationInSeconds", value); }
         }
         /// <summary>The time the attendee joined in UTC.</summary>
-        public DateTimeOffset? JoinDateTime {
+        public DateTimeOffset? JoinDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("joinDateTime"); }
             set { BackingStore?.Set("joinDateTime", value); }
         }
         /// <summary>The time the attendee left in UTC.</summary>
-        public DateTimeOffset? LeaveDateTime {
+        public DateTimeOffset? LeaveDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("leaveDateTime"); }
             set { BackingStore?.Set("leaveDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"durationInSeconds", n => { DurationInSeconds = n.GetIntValue(); } },
-                {"joinDateTime", n => { JoinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"leaveDateTime", n => { LeaveDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "durationInSeconds", n => { DurationInSeconds = n.GetIntValue(); } },
+                { "joinDateTime", n => { JoinDateTime = n.GetDateTimeOffsetValue(); } },
+                { "leaveDateTime", n => { LeaveDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class WorkflowTemplate : Microsoft.Graph.Models.Entity, IParsable 
+    public class WorkflowTemplate : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The category property</summary>
-        public LifecycleWorkflowCategory? Category {
+        public LifecycleWorkflowCategory? Category
+        {
             get { return BackingStore?.Get<LifecycleWorkflowCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description of the workflowTemplate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkflowExecutionConditions? ExecutionConditions {
+        public WorkflowExecutionConditions? ExecutionConditions
+        {
             get { return BackingStore?.Get<WorkflowExecutionConditions?>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
 #nullable restore
 #else
-        public WorkflowExecutionConditions ExecutionConditions {
+        public WorkflowExecutionConditions ExecutionConditions
+        {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskObject>? Tasks {
+        public List<TaskObject>? Tasks
+        {
             get { return BackingStore?.Get<List<TaskObject>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<TaskObject> Tasks {
+        public List<TaskObject> Tasks
+        {
             get { return BackingStore?.Get<List<TaskObject>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"category", n => { Category = n.GetEnumValue<LifecycleWorkflowCategory>(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"executionConditions", n => { ExecutionConditions = n.GetObjectValue<WorkflowExecutionConditions>(WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<TaskObject>(TaskObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetEnumValue<LifecycleWorkflowCategory>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "executionConditions", n => { ExecutionConditions = n.GetObjectValue<WorkflowExecutionConditions>(WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<TaskObject>(TaskObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

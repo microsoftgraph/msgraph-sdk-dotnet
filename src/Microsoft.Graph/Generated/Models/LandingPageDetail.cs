@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LandingPageDetail : Entity, IParsable 
+    public class LandingPageDetail : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Landing page detail content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content {
+        public string? Content
+        {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public string Content {
+        public string Content
+        {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>Indicates whether this language detail is default for the landing page.</summary>
-        public bool? IsDefaultLangauge {
+        public bool? IsDefaultLangauge
+        {
             get { return BackingStore?.Get<bool?>("isDefaultLangauge"); }
             set { BackingStore?.Set("isDefaultLangauge", value); }
         }
         /// <summary>The content language for the landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"isDefaultLangauge", n => { IsDefaultLangauge = n.GetBoolValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "isDefaultLangauge", n => { IsDefaultLangauge = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
             };
         }
         /// <summary>

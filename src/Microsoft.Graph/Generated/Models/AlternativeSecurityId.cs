@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AlternativeSecurityId : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlternativeSecurityId : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>For internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProvider {
+        public string? IdentityProvider
+        {
             get { return BackingStore?.Get<string?>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
 #nullable restore
 #else
-        public string IdentityProvider {
+        public string IdentityProvider
+        {
             get { return BackingStore?.Get<string>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>For internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Key {
+        public byte[]? Key
+        {
             get { return BackingStore?.Get<byte[]?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
 #nullable restore
 #else
-        public byte[] Key {
+        public byte[] Key
+        {
             get { return BackingStore?.Get<byte[]>("key"); }
             set { BackingStore?.Set("key", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>For internal use only.</summary>
-        public int? Type {
+        public int? Type
+        {
             get { return BackingStore?.Get<int?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
-                {"key", n => { Key = n.GetByteArrayValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetIntValue(); } },
+                { "identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetByteArrayValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetIntValue(); } },
             };
         }
         /// <summary>

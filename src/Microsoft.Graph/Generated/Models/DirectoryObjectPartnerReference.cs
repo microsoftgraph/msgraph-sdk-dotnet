@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DirectoryObjectPartnerReference : DirectoryObject, IParsable 
+    public class DirectoryObjectPartnerReference : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description of the object returned. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of directory object being returned, like group or application. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The tenant identifier for the partner tenant. Read-only.</summary>
-        public Guid? ExternalPartnerTenantId {
+        public Guid? ExternalPartnerTenantId
+        {
             get { return BackingStore?.Get<Guid?>("externalPartnerTenantId"); }
             set { BackingStore?.Set("externalPartnerTenantId", value); }
         }
         /// <summary>The type of the referenced object in the partner tenant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectType {
+        public string? ObjectType
+        {
             get { return BackingStore?.Get<string?>("objectType"); }
             set { BackingStore?.Set("objectType", value); }
         }
 #nullable restore
 #else
-        public string ObjectType {
+        public string ObjectType
+        {
             get { return BackingStore?.Get<string>("objectType"); }
             set { BackingStore?.Set("objectType", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalPartnerTenantId", n => { ExternalPartnerTenantId = n.GetGuidValue(); } },
-                {"objectType", n => { ObjectType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalPartnerTenantId", n => { ExternalPartnerTenantId = n.GetGuidValue(); } },
+                { "objectType", n => { ObjectType = n.GetStringValue(); } },
             };
         }
         /// <summary>

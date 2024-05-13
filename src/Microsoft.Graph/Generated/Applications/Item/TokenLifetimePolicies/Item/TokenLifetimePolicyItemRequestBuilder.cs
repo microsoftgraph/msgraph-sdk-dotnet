@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Item {
+namespace Microsoft.Graph.Applications.Item.TokenLifetimePolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\tokenLifetimePolicies\{tokenLifetimePolicy-id}
     /// </summary>
-    public class TokenLifetimePolicyItemRequestBuilder : BaseRequestBuilder 
+    public class TokenLifetimePolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of application entities.</summary>
         public RefRequestBuilder Ref

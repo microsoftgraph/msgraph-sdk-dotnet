@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.CalendarView.Item.TentativelyAccept {
+namespace Microsoft.Graph.Me.CalendarView.Item.TentativelyAccept
+{
     #pragma warning disable CS1591
-    public class TentativelyAcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TentativelyAcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Me.CalendarView.Item.TentativelyAccept {
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Me.CalendarView.Item.TentativelyAccept {
         /// <summary>The ProposedNewTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? ProposedNewTime {
+        public TimeSlot? ProposedNewTime
+        {
             get { return BackingStore?.Get<TimeSlot?>("ProposedNewTime"); }
             set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #nullable restore
 #else
-        public TimeSlot ProposedNewTime {
+        public TimeSlot ProposedNewTime
+        {
             get { return BackingStore?.Get<TimeSlot>("ProposedNewTime"); }
             set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
-        public bool? SendResponse {
+        public bool? SendResponse
+        {
             get { return BackingStore?.Get<bool?>("SendResponse"); }
             set { BackingStore?.Set("SendResponse", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Me.CalendarView.Item.TentativelyAccept {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                { "Comment", n => { Comment = n.GetStringValue(); } },
+                { "ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                { "SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>

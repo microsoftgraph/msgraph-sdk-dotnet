@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv
+{
     #pragma warning disable CS1591
-    public class LogNorm_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LogNorm_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv 
         /// <summary>The mean property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Mean {
+        public Json? Mean
+        {
             get { return BackingStore?.Get<Json?>("mean"); }
             set { BackingStore?.Set("mean", value); }
         }
 #nullable restore
 #else
-        public Json Mean {
+        public Json Mean
+        {
             get { return BackingStore?.Get<Json>("mean"); }
             set { BackingStore?.Set("mean", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv 
         /// <summary>The probability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Probability {
+        public Json? Probability
+        {
             get { return BackingStore?.Get<Json?>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
 #nullable restore
 #else
-        public Json Probability {
+        public Json Probability
+        {
             get { return BackingStore?.Get<Json>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv 
         /// <summary>The standardDev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StandardDev {
+        public Json? StandardDev
+        {
             get { return BackingStore?.Get<Json?>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
 #nullable restore
 #else
-        public Json StandardDev {
+        public Json StandardDev
+        {
             get { return BackingStore?.Get<Json>("standardDev"); }
             set { BackingStore?.Set("standardDev", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.LogNorm_Inv 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"mean", n => { Mean = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"standardDev", n => { StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "mean", n => { Mean = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "standardDev", n => { StandardDev = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

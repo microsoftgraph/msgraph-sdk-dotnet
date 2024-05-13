@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FileAssessmentRequest : ThreatAssessmentRequest, IParsable 
+    public class FileAssessmentRequest : ThreatAssessmentRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Base64 encoded file content. The file content can&apos;t fetch back because it isn&apos;t stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentData {
+        public string? ContentData
+        {
             get { return BackingStore?.Get<string?>("contentData"); }
             set { BackingStore?.Set("contentData", value); }
         }
 #nullable restore
 #else
-        public string ContentData {
+        public string ContentData
+        {
             get { return BackingStore?.Get<string>("contentData"); }
             set { BackingStore?.Set("contentData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentData", n => { ContentData = n.GetStringValue(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
+                { "contentData", n => { ContentData = n.GetStringValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
             };
         }
         /// <summary>

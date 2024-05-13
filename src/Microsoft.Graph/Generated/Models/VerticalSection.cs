@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VerticalSection : Entity, IParsable 
+    public class VerticalSection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.</summary>
-        public SectionEmphasisType? Emphasis {
+        public SectionEmphasisType? Emphasis
+        {
             get { return BackingStore?.Get<SectionEmphasisType?>("emphasis"); }
             set { BackingStore?.Set("emphasis", value); }
         }
         /// <summary>The set of web parts in this section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebPart>? Webparts {
+        public List<WebPart>? Webparts
+        {
             get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
 #nullable restore
 #else
-        public List<WebPart> Webparts {
+        public List<WebPart> Webparts
+        {
             get { return BackingStore?.Get<List<WebPart>>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"emphasis", n => { Emphasis = n.GetEnumValue<SectionEmphasisType>(); } },
-                {"webparts", n => { Webparts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emphasis", n => { Emphasis = n.GetEnumValue<SectionEmphasisType>(); } },
+                { "webparts", n => { Webparts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

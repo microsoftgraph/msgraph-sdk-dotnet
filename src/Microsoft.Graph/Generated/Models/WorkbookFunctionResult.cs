@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookFunctionResult : Entity, IParsable 
+    public class WorkbookFunctionResult : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error {
+        public string? Error
+        {
             get { return BackingStore?.Get<string?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public string Error {
+        public string Error
+        {
             get { return BackingStore?.Get<string>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Value {
+        public Json? Value
+        {
             get { return BackingStore?.Get<Json?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public Json Value {
+        public Json Value
+        {
             get { return BackingStore?.Get<Json>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

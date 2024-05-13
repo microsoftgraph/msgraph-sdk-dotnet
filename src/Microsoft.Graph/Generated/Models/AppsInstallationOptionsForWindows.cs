@@ -5,48 +5,56 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppsInstallationOptionsForWindows : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AppsInstallationOptionsForWindows : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether users can install Microsoft 365 apps, including Skype for Business, on their Windows devices. The default value is true.</summary>
-        public bool? IsMicrosoft365AppsEnabled {
+        public bool? IsMicrosoft365AppsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isMicrosoft365AppsEnabled"); }
             set { BackingStore?.Set("isMicrosoft365AppsEnabled", value); }
         }
         /// <summary>Specifies whether users can install Microsoft Project on their Windows devices. The default value is true.</summary>
-        public bool? IsProjectEnabled {
+        public bool? IsProjectEnabled
+        {
             get { return BackingStore?.Get<bool?>("isProjectEnabled"); }
             set { BackingStore?.Set("isProjectEnabled", value); }
         }
         /// <summary>Specifies whether users can install Skype for Business (standalone) on their Windows devices. The default value is true.</summary>
-        public bool? IsSkypeForBusinessEnabled {
+        public bool? IsSkypeForBusinessEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSkypeForBusinessEnabled"); }
             set { BackingStore?.Set("isSkypeForBusinessEnabled", value); }
         }
         /// <summary>Specifies whether users can install Visio on their Windows devices. The default value is true.</summary>
-        public bool? IsVisioEnabled {
+        public bool? IsVisioEnabled
+        {
             get { return BackingStore?.Get<bool?>("isVisioEnabled"); }
             set { BackingStore?.Set("isVisioEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isMicrosoft365AppsEnabled", n => { IsMicrosoft365AppsEnabled = n.GetBoolValue(); } },
-                {"isProjectEnabled", n => { IsProjectEnabled = n.GetBoolValue(); } },
-                {"isSkypeForBusinessEnabled", n => { IsSkypeForBusinessEnabled = n.GetBoolValue(); } },
-                {"isVisioEnabled", n => { IsVisioEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isMicrosoft365AppsEnabled", n => { IsMicrosoft365AppsEnabled = n.GetBoolValue(); } },
+                { "isProjectEnabled", n => { IsProjectEnabled = n.GetBoolValue(); } },
+                { "isSkypeForBusinessEnabled", n => { IsSkypeForBusinessEnabled = n.GetBoolValue(); } },
+                { "isVisioEnabled", n => { IsVisioEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

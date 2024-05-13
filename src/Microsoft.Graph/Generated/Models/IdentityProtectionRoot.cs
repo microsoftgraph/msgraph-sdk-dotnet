@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IdentityProtectionRoot : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IdentityProtectionRoot : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Risk detection in Microsoft Entra ID Protection and the associated information about the detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskDetection>? RiskDetections {
+        public List<RiskDetection>? RiskDetections
+        {
             get { return BackingStore?.Get<List<RiskDetection>?>("riskDetections"); }
             set { BackingStore?.Set("riskDetections", value); }
         }
 #nullable restore
 #else
-        public List<RiskDetection> RiskDetections {
+        public List<RiskDetection> RiskDetections
+        {
             get { return BackingStore?.Get<List<RiskDetection>>("riskDetections"); }
             set { BackingStore?.Set("riskDetections", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Microsoft Entra service principals that are at risk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskyServicePrincipal>? RiskyServicePrincipals {
+        public List<RiskyServicePrincipal>? RiskyServicePrincipals
+        {
             get { return BackingStore?.Get<List<RiskyServicePrincipal>?>("riskyServicePrincipals"); }
             set { BackingStore?.Set("riskyServicePrincipals", value); }
         }
 #nullable restore
 #else
-        public List<RiskyServicePrincipal> RiskyServicePrincipals {
+        public List<RiskyServicePrincipal> RiskyServicePrincipals
+        {
             get { return BackingStore?.Get<List<RiskyServicePrincipal>>("riskyServicePrincipals"); }
             set { BackingStore?.Set("riskyServicePrincipals", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Users that are flagged as at-risk by Microsoft Entra ID Protection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskyUser>? RiskyUsers {
+        public List<RiskyUser>? RiskyUsers
+        {
             get { return BackingStore?.Get<List<RiskyUser>?>("riskyUsers"); }
             set { BackingStore?.Set("riskyUsers", value); }
         }
 #nullable restore
 #else
-        public List<RiskyUser> RiskyUsers {
+        public List<RiskyUser> RiskyUsers
+        {
             get { return BackingStore?.Get<List<RiskyUser>>("riskyUsers"); }
             set { BackingStore?.Set("riskyUsers", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents information about detected at-risk service principals in a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalRiskDetection>? ServicePrincipalRiskDetections {
+        public List<ServicePrincipalRiskDetection>? ServicePrincipalRiskDetections
+        {
             get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>?>("servicePrincipalRiskDetections"); }
             set { BackingStore?.Set("servicePrincipalRiskDetections", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalRiskDetection> ServicePrincipalRiskDetections {
+        public List<ServicePrincipalRiskDetection> ServicePrincipalRiskDetections
+        {
             get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>>("servicePrincipalRiskDetections"); }
             set { BackingStore?.Set("servicePrincipalRiskDetections", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"riskDetections", n => { RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"riskyServicePrincipals", n => { RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>(RiskyServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"riskyUsers", n => { RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>(RiskyUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"servicePrincipalRiskDetections", n => { ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>(ServicePrincipalRiskDetection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskDetections", n => { RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "riskyServicePrincipals", n => { RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>(RiskyServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "riskyUsers", n => { RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>(RiskyUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePrincipalRiskDetections", n => { ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>(ServicePrincipalRiskDetection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

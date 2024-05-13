@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileHashEvidence : AlertEvidence, IParsable 
+    public class FileHashEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The algorithm property</summary>
-        public FileHashAlgorithm? Algorithm {
+        public FileHashAlgorithm? Algorithm
+        {
             get { return BackingStore?.Get<FileHashAlgorithm?>("algorithm"); }
             set { BackingStore?.Set("algorithm", value); }
         }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"algorithm", n => { Algorithm = n.GetEnumValue<FileHashAlgorithm>(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "algorithm", n => { Algorithm = n.GetEnumValue<FileHashAlgorithm>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

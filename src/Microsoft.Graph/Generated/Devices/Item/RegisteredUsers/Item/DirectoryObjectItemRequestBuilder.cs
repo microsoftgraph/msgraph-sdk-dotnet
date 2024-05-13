@@ -10,11 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Devices.Item.RegisteredUsers.Item {
+namespace Microsoft.Graph.Devices.Item.RegisteredUsers.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \devices\{device-id}\registeredUsers\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
         public GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment

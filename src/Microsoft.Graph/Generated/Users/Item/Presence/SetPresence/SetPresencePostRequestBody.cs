@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Presence.SetPresence {
+namespace Microsoft.Graph.Users.Item.Presence.SetPresence
+{
     #pragma warning disable CS1591
-    public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activity {
+        public string? Activity
+        {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public string Activity {
+        public string Activity
+        {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The availability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Availability {
+        public string? Availability
+        {
             get { return BackingStore?.Get<string?>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
 #nullable restore
 #else
-        public string Availability {
+        public string Availability
+        {
             get { return BackingStore?.Get<string>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
@@ -46,20 +52,23 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDuration property</summary>
-        public TimeSpan? ExpirationDuration {
+        public TimeSpan? ExpirationDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("expirationDuration"); }
             set { BackingStore?.Set("expirationDuration", value); }
         }
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId {
+        public string? SessionId
+        {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #nullable restore
 #else
-        public string SessionId {
+        public string SessionId
+        {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activity", n => { Activity = n.GetStringValue(); } },
-                {"availability", n => { Availability = n.GetStringValue(); } },
-                {"expirationDuration", n => { ExpirationDuration = n.GetTimeSpanValue(); } },
-                {"sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "activity", n => { Activity = n.GetStringValue(); } },
+                { "availability", n => { Availability = n.GetStringValue(); } },
+                { "expirationDuration", n => { ExpirationDuration = n.GetTimeSpanValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CalendarSharingMessage : Message, IParsable 
+    public class CalendarSharingMessage : Message, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The canAccept property</summary>
-        public bool? CanAccept {
+        public bool? CanAccept
+        {
             get { return BackingStore?.Get<bool?>("canAccept"); }
             set { BackingStore?.Set("canAccept", value); }
         }
         /// <summary>The sharingMessageAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CalendarSharingMessageAction? SharingMessageAction {
+        public CalendarSharingMessageAction? SharingMessageAction
+        {
             get { return BackingStore?.Get<CalendarSharingMessageAction?>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
 #nullable restore
 #else
-        public CalendarSharingMessageAction SharingMessageAction {
+        public CalendarSharingMessageAction SharingMessageAction
+        {
             get { return BackingStore?.Get<CalendarSharingMessageAction>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sharingMessageActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CalendarSharingMessageAction>? SharingMessageActions {
+        public List<CalendarSharingMessageAction>? SharingMessageActions
+        {
             get { return BackingStore?.Get<List<CalendarSharingMessageAction>?>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
 #nullable restore
 #else
-        public List<CalendarSharingMessageAction> SharingMessageActions {
+        public List<CalendarSharingMessageAction> SharingMessageActions
+        {
             get { return BackingStore?.Get<List<CalendarSharingMessageAction>>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The suggestedCalendarName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuggestedCalendarName {
+        public string? SuggestedCalendarName
+        {
             get { return BackingStore?.Get<string?>("suggestedCalendarName"); }
             set { BackingStore?.Set("suggestedCalendarName", value); }
         }
 #nullable restore
 #else
-        public string SuggestedCalendarName {
+        public string SuggestedCalendarName
+        {
             get { return BackingStore?.Get<string>("suggestedCalendarName"); }
             set { BackingStore?.Set("suggestedCalendarName", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"canAccept", n => { CanAccept = n.GetBoolValue(); } },
-                {"sharingMessageAction", n => { SharingMessageAction = n.GetObjectValue<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue); } },
-                {"sharingMessageActions", n => { SharingMessageActions = n.GetCollectionOfObjectValues<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"suggestedCalendarName", n => { SuggestedCalendarName = n.GetStringValue(); } },
+                { "canAccept", n => { CanAccept = n.GetBoolValue(); } },
+                { "sharingMessageAction", n => { SharingMessageAction = n.GetObjectValue<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue); } },
+                { "sharingMessageActions", n => { SharingMessageActions = n.GetCollectionOfObjectValues<CalendarSharingMessageAction>(CalendarSharingMessageAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "suggestedCalendarName", n => { SuggestedCalendarName = n.GetStringValue(); } },
             };
         }
         /// <summary>

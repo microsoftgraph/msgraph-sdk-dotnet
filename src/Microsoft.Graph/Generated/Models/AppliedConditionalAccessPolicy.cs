@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppliedConditionalAccessPolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AppliedConditionalAccessPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Refers to the Name of the conditional access policy (example: &apos;Require MFA for Salesforce&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Refers to the grant controls enforced by the conditional access policy (example: &apos;Require multifactor authentication&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnforcedGrantControls {
+        public List<string>? EnforcedGrantControls
+        {
             get { return BackingStore?.Get<List<string>?>("enforcedGrantControls"); }
             set { BackingStore?.Set("enforcedGrantControls", value); }
         }
 #nullable restore
 #else
-        public List<string> EnforcedGrantControls {
+        public List<string> EnforcedGrantControls
+        {
             get { return BackingStore?.Get<List<string>>("enforcedGrantControls"); }
             set { BackingStore?.Set("enforcedGrantControls", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Refers to the session controls enforced by the conditional access policy (example: &apos;Require app enforced controls&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnforcedSessionControls {
+        public List<string>? EnforcedSessionControls
+        {
             get { return BackingStore?.Get<List<string>?>("enforcedSessionControls"); }
             set { BackingStore?.Set("enforcedSessionControls", value); }
         }
 #nullable restore
 #else
-        public List<string> EnforcedSessionControls {
+        public List<string> EnforcedSessionControls
+        {
             get { return BackingStore?.Get<List<string>>("enforcedSessionControls"); }
             set { BackingStore?.Set("enforcedSessionControls", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>An identifier of the conditional access policy. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -76,19 +86,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn&apos;t applied because policy conditions weren&apos;t met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.</summary>
-        public AppliedConditionalAccessPolicyResult? Result {
+        public AppliedConditionalAccessPolicyResult? Result
+        {
             get { return BackingStore?.Get<AppliedConditionalAccessPolicyResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
             };
         }
         /// <summary>

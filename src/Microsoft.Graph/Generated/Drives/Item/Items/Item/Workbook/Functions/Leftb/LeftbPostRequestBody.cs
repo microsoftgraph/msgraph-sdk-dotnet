@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb
+{
     #pragma warning disable CS1591
-    public class LeftbPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LeftbPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb {
         /// <summary>The numBytes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumBytes {
+        public Json? NumBytes
+        {
             get { return BackingStore?.Get<Json?>("numBytes"); }
             set { BackingStore?.Set("numBytes", value); }
         }
 #nullable restore
 #else
-        public Json NumBytes {
+        public Json NumBytes
+        {
             get { return BackingStore?.Get<Json>("numBytes"); }
             set { BackingStore?.Set("numBytes", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb {
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text {
+        public Json? Text
+        {
             get { return BackingStore?.Get<Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text {
+        public Json Text
+        {
             get { return BackingStore?.Get<Json>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Leftb {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"numBytes", n => { NumBytes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numBytes", n => { NumBytes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

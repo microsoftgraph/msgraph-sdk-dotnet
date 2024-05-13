@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OfficeGraphInsights : Entity, IParsable 
+    public class OfficeGraphInsights : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedInsight>? Shared {
+        public List<SharedInsight>? Shared
+        {
             get { return BackingStore?.Get<List<SharedInsight>?>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
 #nullable restore
 #else
-        public List<SharedInsight> Shared {
+        public List<SharedInsight> Shared
+        {
             get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user&apos;s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.Trending>? Trending {
+        public List<Microsoft.Graph.Models.Trending>? Trending
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Trending>?>("trending"); }
             set { BackingStore?.Set("trending", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.Trending> Trending {
+        public List<Microsoft.Graph.Models.Trending> Trending
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.Trending>>("trending"); }
             set { BackingStore?.Set("trending", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UsedInsight>? Used {
+        public List<UsedInsight>? Used
+        {
             get { return BackingStore?.Get<List<UsedInsight>?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
 #nullable restore
 #else
-        public List<UsedInsight> Used {
+        public List<UsedInsight> Used
+        {
             get { return BackingStore?.Get<List<UsedInsight>>("used"); }
             set { BackingStore?.Set("used", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"shared", n => { Shared = n.GetCollectionOfObjectValues<SharedInsight>(SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"trending", n => { Trending = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Trending>(Microsoft.Graph.Models.Trending.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"used", n => { Used = n.GetCollectionOfObjectValues<UsedInsight>(UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shared", n => { Shared = n.GetCollectionOfObjectValues<SharedInsight>(SharedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trending", n => { Trending = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.Trending>(Microsoft.Graph.Models.Trending.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "used", n => { Used = n.GetCollectionOfObjectValues<UsedInsight>(UsedInsight.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

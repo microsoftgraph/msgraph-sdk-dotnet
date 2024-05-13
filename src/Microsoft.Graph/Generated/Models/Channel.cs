@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Channel : Entity, IParsable 
+    public class Channel : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional textual description for the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The email address for sending messages to the channel. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -59,51 +67,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItem? FilesFolder {
+        public DriveItem? FilesFolder
+        {
             get { return BackingStore?.Get<DriveItem?>("filesFolder"); }
             set { BackingStore?.Set("filesFolder", value); }
         }
 #nullable restore
 #else
-        public DriveItem FilesFolder {
+        public DriveItem FilesFolder
+        {
             get { return BackingStore?.Get<DriveItem>("filesFolder"); }
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
         /// <summary>Indicates whether the channel should automatically be marked &apos;favorite&apos; for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
-        public bool? IsFavoriteByDefault {
+        public bool? IsFavoriteByDefault
+        {
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? Members {
+        public List<ConversationMember>? Members
+        {
             get { return BackingStore?.Get<List<ConversationMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> Members {
+        public List<ConversationMember> Members
+        {
             get { return BackingStore?.Get<List<ConversationMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #endif
         /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
-        public ChannelMembershipType? MembershipType {
+        public ChannelMembershipType? MembershipType
+        {
             get { return BackingStore?.Get<ChannelMembershipType?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
         /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Messages {
+        public List<ChatMessage>? Messages
+        {
             get { return BackingStore?.Get<List<ChatMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Messages {
+        public List<ChatMessage> Messages
+        {
             get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of teams with which a channel is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedWithChannelTeamInfo>? SharedWithTeams {
+        public List<SharedWithChannelTeamInfo>? SharedWithTeams
+        {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>?>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
 #nullable restore
 #else
-        public List<SharedWithChannelTeamInfo> SharedWithTeams {
+        public List<SharedWithChannelTeamInfo> SharedWithTeams
+        {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChannelSummary? Summary {
+        public ChannelSummary? Summary
+        {
             get { return BackingStore?.Get<ChannelSummary?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public ChannelSummary Summary {
+        public ChannelSummary Summary
+        {
             get { return BackingStore?.Get<ChannelSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsTab>? Tabs {
+        public List<TeamsTab>? Tabs
+        {
             get { return BackingStore?.Get<List<TeamsTab>?>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
 #nullable restore
 #else
-        public List<TeamsTab> Tabs {
+        public List<TeamsTab> Tabs
+        {
             get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -196,20 +222,20 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"filesFolder", n => { FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
-                {"isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
-                {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"membershipType", n => { MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
-                {"messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"summary", n => { Summary = n.GetObjectValue<ChannelSummary>(ChannelSummary.CreateFromDiscriminatorValue); } },
-                {"tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "filesFolder", n => { FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
+                { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "membershipType", n => { MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "summary", n => { Summary = n.GetObjectValue<ChannelSummary>(ChannelSummary.CreateFromDiscriminatorValue); } },
+                { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

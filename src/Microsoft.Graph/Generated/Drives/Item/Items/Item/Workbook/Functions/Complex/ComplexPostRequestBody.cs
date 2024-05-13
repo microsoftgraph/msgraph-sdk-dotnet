@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex
+{
     #pragma warning disable CS1591
-    public class ComplexPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ComplexPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex {
         /// <summary>The iNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? INum {
+        public Json? INum
+        {
             get { return BackingStore?.Get<Json?>("iNum"); }
             set { BackingStore?.Set("iNum", value); }
         }
 #nullable restore
 #else
-        public Json INum {
+        public Json INum
+        {
             get { return BackingStore?.Get<Json>("iNum"); }
             set { BackingStore?.Set("iNum", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex {
         /// <summary>The realNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? RealNum {
+        public Json? RealNum
+        {
             get { return BackingStore?.Get<Json?>("realNum"); }
             set { BackingStore?.Set("realNum", value); }
         }
 #nullable restore
 #else
-        public Json RealNum {
+        public Json RealNum
+        {
             get { return BackingStore?.Get<Json>("realNum"); }
             set { BackingStore?.Set("realNum", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex {
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Suffix {
+        public Json? Suffix
+        {
             get { return BackingStore?.Get<Json?>("suffix"); }
             set { BackingStore?.Set("suffix", value); }
         }
 #nullable restore
 #else
-        public Json Suffix {
+        public Json Suffix
+        {
             get { return BackingStore?.Get<Json>("suffix"); }
             set { BackingStore?.Set("suffix", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Complex {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"iNum", n => { INum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"realNum", n => { RealNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"suffix", n => { Suffix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "iNum", n => { INum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "realNum", n => { RealNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "suffix", n => { Suffix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TabUpdatedEventMessageDetail : EventMessageDetail, IParsable 
+    public class TabUpdatedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the tab.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TabId {
+        public string? TabId
+        {
             get { return BackingStore?.Get<string?>("tabId"); }
             set { BackingStore?.Set("tabId", value); }
         }
 #nullable restore
 #else
-        public string TabId {
+        public string TabId
+        {
             get { return BackingStore?.Get<string>("tabId"); }
             set { BackingStore?.Set("tabId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"tabId", n => { TabId = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "tabId", n => { TabId = n.GetStringValue(); } },
             };
         }
         /// <summary>

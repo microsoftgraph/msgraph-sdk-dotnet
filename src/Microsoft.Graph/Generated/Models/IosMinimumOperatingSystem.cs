@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties of the minimum operating system required for an iOS mobile app.
     /// </summary>
-    public class IosMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,54 +23,64 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V100 {
+        public bool? V100
+        {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V110 {
+        public bool? V110
+        {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
         /// <summary>When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V120 {
+        public bool? V120
+        {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
         }
         /// <summary>When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V130 {
+        public bool? V130
+        {
             get { return BackingStore?.Get<bool?>("v13_0"); }
             set { BackingStore?.Set("v13_0", value); }
         }
         /// <summary>When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V140 {
+        public bool? V140
+        {
             get { return BackingStore?.Get<bool?>("v14_0"); }
             set { BackingStore?.Set("v14_0", value); }
         }
         /// <summary>When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V150 {
+        public bool? V150
+        {
             get { return BackingStore?.Get<bool?>("v15_0"); }
             set { BackingStore?.Set("v15_0", value); }
         }
         /// <summary>When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V80 {
+        public bool? V80
+        {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V90 {
+        public bool? V90
+        {
             get { return BackingStore?.Get<bool?>("v9_0"); }
             set { BackingStore?.Set("v9_0", value); }
         }
@@ -98,15 +110,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"v10_0", n => { V100 = n.GetBoolValue(); } },
-                {"v11_0", n => { V110 = n.GetBoolValue(); } },
-                {"v12_0", n => { V120 = n.GetBoolValue(); } },
-                {"v13_0", n => { V130 = n.GetBoolValue(); } },
-                {"v14_0", n => { V140 = n.GetBoolValue(); } },
-                {"v15_0", n => { V150 = n.GetBoolValue(); } },
-                {"v8_0", n => { V80 = n.GetBoolValue(); } },
-                {"v9_0", n => { V90 = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "v10_0", n => { V100 = n.GetBoolValue(); } },
+                { "v11_0", n => { V110 = n.GetBoolValue(); } },
+                { "v12_0", n => { V120 = n.GetBoolValue(); } },
+                { "v13_0", n => { V130 = n.GetBoolValue(); } },
+                { "v14_0", n => { V140 = n.GetBoolValue(); } },
+                { "v15_0", n => { V150 = n.GetBoolValue(); } },
+                { "v8_0", n => { V80 = n.GetBoolValue(); } },
+                { "v9_0", n => { V90 = n.GetBoolValue(); } },
             };
         }
         /// <summary>

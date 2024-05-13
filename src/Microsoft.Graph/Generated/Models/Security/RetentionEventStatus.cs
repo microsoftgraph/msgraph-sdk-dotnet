@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class RetentionEventStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RetentionEventStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The error if the status isn&apos;t successful.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PublicError? Error {
+        public Microsoft.Graph.Models.PublicError? Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PublicError Error {
+        public Microsoft.Graph.Models.PublicError Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status of the distribution. The possible values are: pending, error, success, notAvaliable.</summary>
-        public EventStatusType? Status {
+        public EventStatusType? Status
+        {
             get { return BackingStore?.Get<EventStatusType?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<EventStatusType>(); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Models.PublicError>(Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<EventStatusType>(); } },
             };
         }
         /// <summary>

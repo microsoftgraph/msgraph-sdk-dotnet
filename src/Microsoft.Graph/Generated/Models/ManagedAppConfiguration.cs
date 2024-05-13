@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
     /// </summary>
-    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable 
+    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable
     {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings {
+        public List<KeyValuePair>? CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings {
+        public List<KeyValuePair> CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

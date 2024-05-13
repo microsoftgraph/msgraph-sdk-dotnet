@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal
+{
     #pragma warning disable CS1591
-    public class NominalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NominalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal {
         /// <summary>The effectRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? EffectRate {
+        public Json? EffectRate
+        {
             get { return BackingStore?.Get<Json?>("effectRate"); }
             set { BackingStore?.Set("effectRate", value); }
         }
 #nullable restore
 #else
-        public Json EffectRate {
+        public Json EffectRate
+        {
             get { return BackingStore?.Get<Json>("effectRate"); }
             set { BackingStore?.Set("effectRate", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal {
         /// <summary>The npery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Npery {
+        public Json? Npery
+        {
             get { return BackingStore?.Get<Json?>("npery"); }
             set { BackingStore?.Set("npery", value); }
         }
 #nullable restore
 #else
-        public Json Npery {
+        public Json Npery
+        {
             get { return BackingStore?.Get<Json>("npery"); }
             set { BackingStore?.Set("npery", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Nominal {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"effectRate", n => { EffectRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"npery", n => { Npery = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "effectRate", n => { EffectRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "npery", n => { Npery = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

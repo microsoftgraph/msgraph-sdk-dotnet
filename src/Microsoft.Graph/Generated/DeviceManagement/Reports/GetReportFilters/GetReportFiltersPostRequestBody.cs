@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
+namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters
+{
     #pragma warning disable CS1591
-    public class GetReportFiltersPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetReportFiltersPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filter {
+        public string? Filter
+        {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #nullable restore
 #else
-        public string Filter {
+        public string Filter
+        {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The groupBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupBy {
+        public List<string>? GroupBy
+        {
             get { return BackingStore?.Get<List<string>?>("groupBy"); }
             set { BackingStore?.Set("groupBy", value); }
         }
 #nullable restore
 #else
-        public List<string> GroupBy {
+        public List<string> GroupBy
+        {
             get { return BackingStore?.Get<List<string>>("groupBy"); }
             set { BackingStore?.Set("groupBy", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The orderBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OrderBy {
+        public List<string>? OrderBy
+        {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
 #nullable restore
 #else
-        public List<string> OrderBy {
+        public List<string> OrderBy
+        {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Search {
+        public string? Search
+        {
             get { return BackingStore?.Get<string?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public string Search {
+        public string Search
+        {
             get { return BackingStore?.Get<string>("search"); }
             set { BackingStore?.Set("search", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Select {
+        public List<string>? Select
+        {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
 #nullable restore
 #else
-        public List<string> Select {
+        public List<string> Select
+        {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
@@ -104,24 +118,28 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId {
+        public string? SessionId
+        {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #nullable restore
 #else
-        public string SessionId {
+        public string SessionId
+        {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #endif
         /// <summary>The skip property</summary>
-        public int? Skip {
+        public int? Skip
+        {
             get { return BackingStore?.Get<int?>("skip"); }
             set { BackingStore?.Set("skip", value); }
         }
         /// <summary>The top property</summary>
-        public int? Top {
+        public int? Top
+        {
             get { return BackingStore?.Get<int?>("top"); }
             set { BackingStore?.Set("top", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetReportFilters {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"filter", n => { Filter = n.GetStringValue(); } },
-                {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"search", n => { Search = n.GetStringValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sessionId", n => { SessionId = n.GetStringValue(); } },
-                {"skip", n => { Skip = n.GetIntValue(); } },
-                {"top", n => { Top = n.GetIntValue(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "search", n => { Search = n.GetStringValue(); } },
+                { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "skip", n => { Skip = n.GetIntValue(); } },
+                { "top", n => { Top = n.GetIntValue(); } },
             };
         }
         /// <summary>

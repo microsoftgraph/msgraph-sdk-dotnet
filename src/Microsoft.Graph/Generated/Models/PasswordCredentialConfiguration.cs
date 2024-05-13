@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PasswordCredentialConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PasswordCredentialConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The maxLifetime property</summary>
-        public TimeSpan? MaxLifetime {
+        public TimeSpan? MaxLifetime
+        {
             get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }
             set { BackingStore?.Set("maxLifetime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.</summary>
-        public DateTimeOffset? RestrictForAppsCreatedAfterDateTime {
+        public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
         /// <summary>The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
-        public AppCredentialRestrictionType? RestrictionType {
+        public AppCredentialRestrictionType? RestrictionType
+        {
             get { return BackingStore?.Get<AppCredentialRestrictionType?>("restrictionType"); }
             set { BackingStore?.Set("restrictionType", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
-                {"restrictionType", n => { RestrictionType = n.GetEnumValue<AppCredentialRestrictionType>(); } },
+                { "maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restrictionType", n => { RestrictionType = n.GetEnumValue<AppCredentialRestrictionType>(); } },
             };
         }
         /// <summary>

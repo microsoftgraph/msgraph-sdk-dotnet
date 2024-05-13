@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Sharepoint : Entity, IParsable 
+    public class Sharepoint : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharepointSettings? Settings {
+        public SharepointSettings? Settings
+        {
             get { return BackingStore?.Get<SharepointSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public SharepointSettings Settings {
+        public SharepointSettings Settings
+        {
             get { return BackingStore?.Get<SharepointSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"settings", n => { Settings = n.GetObjectValue<SharepointSettings>(SharepointSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<SharepointSettings>(SharepointSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

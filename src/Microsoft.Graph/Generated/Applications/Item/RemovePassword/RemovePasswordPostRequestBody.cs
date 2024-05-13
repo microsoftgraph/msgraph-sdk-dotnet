@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.RemovePassword {
+namespace Microsoft.Graph.Applications.Item.RemovePassword
+{
     #pragma warning disable CS1591
-    public class RemovePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RemovePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyId property</summary>
-        public Guid? KeyId {
+        public Guid? KeyId
+        {
             get { return BackingStore?.Get<Guid?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Applications.Item.RemovePassword {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keyId", n => { KeyId = n.GetGuidValue(); } },
+                { "keyId", n => { KeyId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

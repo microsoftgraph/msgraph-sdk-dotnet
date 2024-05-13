@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Bitlocker : Entity, IParsable 
+    public class Bitlocker : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BitlockerRecoveryKey>? RecoveryKeys {
+        public List<BitlockerRecoveryKey>? RecoveryKeys
+        {
             get { return BackingStore?.Get<List<BitlockerRecoveryKey>?>("recoveryKeys"); }
             set { BackingStore?.Set("recoveryKeys", value); }
         }
 #nullable restore
 #else
-        public List<BitlockerRecoveryKey> RecoveryKeys {
+        public List<BitlockerRecoveryKey> RecoveryKeys
+        {
             get { return BackingStore?.Get<List<BitlockerRecoveryKey>>("recoveryKeys"); }
             set { BackingStore?.Set("recoveryKeys", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"recoveryKeys", n => { RecoveryKeys = n.GetCollectionOfObjectValues<BitlockerRecoveryKey>(BitlockerRecoveryKey.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recoveryKeys", n => { RecoveryKeys = n.GetCollectionOfObjectValues<BitlockerRecoveryKey>(BitlockerRecoveryKey.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

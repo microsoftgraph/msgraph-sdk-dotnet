@@ -12,11 +12,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item {
+namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>
         public GraphApplicationRequestBuilder GraphApplication

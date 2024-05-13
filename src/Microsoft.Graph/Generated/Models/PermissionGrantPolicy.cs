@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PermissionGrantPolicy : PolicyBase, IParsable 
+    public class PermissionGrantPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Excludes {
+        public List<PermissionGrantConditionSet>? Excludes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Excludes {
+        public List<PermissionGrantConditionSet> Excludes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Condition sets that are included in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Includes {
+        public List<PermissionGrantConditionSet>? Includes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Includes {
+        public List<PermissionGrantConditionSet> Includes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

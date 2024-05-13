@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base
+{
     #pragma warning disable CS1591
-    public class BasePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BasePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base {
         /// <summary>The minLength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? MinLength {
+        public Json? MinLength
+        {
             get { return BackingStore?.Get<Json?>("minLength"); }
             set { BackingStore?.Set("minLength", value); }
         }
 #nullable restore
 #else
-        public Json MinLength {
+        public Json MinLength
+        {
             get { return BackingStore?.Get<Json>("minLength"); }
             set { BackingStore?.Set("minLength", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base {
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Number {
+        public Json? Number
+        {
             get { return BackingStore?.Get<Json?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public Json Number {
+        public Json Number
+        {
             get { return BackingStore?.Get<Json>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base {
         /// <summary>The radix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Radix {
+        public Json? Radix
+        {
             get { return BackingStore?.Get<Json?>("radix"); }
             set { BackingStore?.Set("radix", value); }
         }
 #nullable restore
 #else
-        public Json Radix {
+        public Json Radix
+        {
             get { return BackingStore?.Get<Json>("radix"); }
             set { BackingStore?.Set("radix", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Base {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"minLength", n => { MinLength = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"radix", n => { Radix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "minLength", n => { MinLength = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "radix", n => { Radix = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

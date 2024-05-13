@@ -5,50 +5,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcDeviceImage : Entity, IParsable 
+    public class CloudPcDeviceImage : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the associated device image. The device image display name and the version are used to uniquely identify the Cloud PC device image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.</summary>
-        public CloudPcDeviceImageErrorCode? ErrorCode {
+        public CloudPcDeviceImageErrorCode? ErrorCode
+        {
             get { return BackingStore?.Get<CloudPcDeviceImageErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>The date when the image became unavailable. Read-only.</summary>
-        public Date? ExpirationDate {
+        public Date? ExpirationDate
+        {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>The data and time when the image was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The operating system (OS) of the image. For example, Windows 10 Enterprise. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -56,51 +64,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OS build version of the image. For example, 1909. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsBuildNumber {
+        public string? OsBuildNumber
+        {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #nullable restore
 #else
-        public string OsBuildNumber {
+        public string OsBuildNumber
+        {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #endif
         /// <summary>The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.</summary>
-        public CloudPcDeviceImageOsStatus? OsStatus {
+        public CloudPcDeviceImageOsStatus? OsStatus
+        {
             get { return BackingStore?.Get<CloudPcDeviceImageOsStatus?>("osStatus"); }
             set { BackingStore?.Set("osStatus", value); }
         }
         /// <summary>The unique identifier (ID) of the source image resource on Azure. The required ID format is: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceImageResourceId {
+        public string? SourceImageResourceId
+        {
             get { return BackingStore?.Get<string?>("sourceImageResourceId"); }
             set { BackingStore?.Set("sourceImageResourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceImageResourceId {
+        public string SourceImageResourceId
+        {
             get { return BackingStore?.Get<string>("sourceImageResourceId"); }
             set { BackingStore?.Set("sourceImageResourceId", value); }
         }
 #endif
         /// <summary>The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.</summary>
-        public CloudPcDeviceImageStatus? Status {
+        public CloudPcDeviceImageStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcDeviceImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The image version. For example, 0.0.1 and 1.5.13. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -123,16 +139,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetEnumValue<CloudPcDeviceImageErrorCode>(); } },
-                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
-                {"osStatus", n => { OsStatus = n.GetEnumValue<CloudPcDeviceImageOsStatus>(); } },
-                {"sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcDeviceImageStatus>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<CloudPcDeviceImageErrorCode>(); } },
+                { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
+                { "osStatus", n => { OsStatus = n.GetEnumValue<CloudPcDeviceImageOsStatus>(); } },
+                { "sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcDeviceImageStatus>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,53 +5,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OutlookGeoCoordinates : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OutlookGeoCoordinates : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.</summary>
-        public double? Accuracy {
+        public double? Accuracy
+        {
             get { return BackingStore?.Get<double?>("accuracy"); }
             set { BackingStore?.Set("accuracy", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The altitude of the location.</summary>
-        public double? Altitude {
+        public double? Altitude
+        {
             get { return BackingStore?.Get<double?>("altitude"); }
             set { BackingStore?.Set("altitude", value); }
         }
         /// <summary>The accuracy of the altitude.</summary>
-        public double? AltitudeAccuracy {
+        public double? AltitudeAccuracy
+        {
             get { return BackingStore?.Get<double?>("altitudeAccuracy"); }
             set { BackingStore?.Set("altitudeAccuracy", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The latitude of the location.</summary>
-        public double? Latitude {
+        public double? Latitude
+        {
             get { return BackingStore?.Get<double?>("latitude"); }
             set { BackingStore?.Set("latitude", value); }
         }
         /// <summary>The longitude of the location.</summary>
-        public double? Longitude {
+        public double? Longitude
+        {
             get { return BackingStore?.Get<double?>("longitude"); }
             set { BackingStore?.Set("longitude", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -82,12 +91,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accuracy", n => { Accuracy = n.GetDoubleValue(); } },
-                {"altitude", n => { Altitude = n.GetDoubleValue(); } },
-                {"altitudeAccuracy", n => { AltitudeAccuracy = n.GetDoubleValue(); } },
-                {"latitude", n => { Latitude = n.GetDoubleValue(); } },
-                {"longitude", n => { Longitude = n.GetDoubleValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "accuracy", n => { Accuracy = n.GetDoubleValue(); } },
+                { "altitude", n => { Altitude = n.GetDoubleValue(); } },
+                { "altitudeAccuracy", n => { AltitudeAccuracy = n.GetDoubleValue(); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

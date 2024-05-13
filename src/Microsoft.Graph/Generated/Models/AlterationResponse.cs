@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AlterationResponse : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlterationResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines the original user query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalQueryString {
+        public string? OriginalQueryString
+        {
             get { return BackingStore?.Get<string?>("originalQueryString"); }
             set { BackingStore?.Set("originalQueryString", value); }
         }
 #nullable restore
 #else
-        public string OriginalQueryString {
+        public string OriginalQueryString
+        {
             get { return BackingStore?.Get<string>("originalQueryString"); }
             set { BackingStore?.Set("originalQueryString", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines the details of the alteration information for the spelling correction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SearchAlteration? QueryAlteration {
+        public SearchAlteration? QueryAlteration
+        {
             get { return BackingStore?.Get<SearchAlteration?>("queryAlteration"); }
             set { BackingStore?.Set("queryAlteration", value); }
         }
 #nullable restore
 #else
-        public SearchAlteration QueryAlteration {
+        public SearchAlteration QueryAlteration
+        {
             get { return BackingStore?.Get<SearchAlteration>("queryAlteration"); }
             set { BackingStore?.Set("queryAlteration", value); }
         }
 #endif
         /// <summary>Defines the type of the spelling correction. Possible values are: suggestion, modification.</summary>
-        public SearchAlterationType? QueryAlterationType {
+        public SearchAlterationType? QueryAlterationType
+        {
             get { return BackingStore?.Get<SearchAlterationType?>("queryAlterationType"); }
             set { BackingStore?.Set("queryAlterationType", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"originalQueryString", n => { OriginalQueryString = n.GetStringValue(); } },
-                {"queryAlteration", n => { QueryAlteration = n.GetObjectValue<SearchAlteration>(SearchAlteration.CreateFromDiscriminatorValue); } },
-                {"queryAlterationType", n => { QueryAlterationType = n.GetEnumValue<SearchAlterationType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "originalQueryString", n => { OriginalQueryString = n.GetStringValue(); } },
+                { "queryAlteration", n => { QueryAlteration = n.GetObjectValue<SearchAlteration>(SearchAlteration.CreateFromDiscriminatorValue); } },
+                { "queryAlterationType", n => { QueryAlterationType = n.GetEnumValue<SearchAlterationType>(); } },
             };
         }
         /// <summary>

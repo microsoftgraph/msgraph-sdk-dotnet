@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OutlookCategory : Entity, IParsable 
+    public class OutlookCategory : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.</summary>
-        public CategoryColor? Color {
+        public CategoryColor? Color
+        {
             get { return BackingStore?.Get<CategoryColor?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
         /// <summary>A unique name that identifies a category in the user&apos;s mailbox. After a category is created, the name cannot be changed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"color", n => { Color = n.GetEnumValue<CategoryColor>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "color", n => { Color = n.GetEnumValue<CategoryColor>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

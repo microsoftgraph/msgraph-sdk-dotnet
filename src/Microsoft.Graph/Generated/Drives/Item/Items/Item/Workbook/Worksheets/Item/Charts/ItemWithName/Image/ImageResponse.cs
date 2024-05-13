@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.Image {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.Image
+{
     [Obsolete("This class is obsolete. Use ImageGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ImageResponse : ImageGetResponse, IParsable 
+    public class ImageResponse : ImageGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

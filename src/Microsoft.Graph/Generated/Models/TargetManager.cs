@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TargetManager : SubjectSet, IParsable 
+    public class TargetManager : SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Manager level, between 1 and 4. The direct manager is 1.</summary>
-        public int? ManagerLevel {
+        public int? ManagerLevel
+        {
             get { return BackingStore?.Get<int?>("managerLevel"); }
             set { BackingStore?.Set("managerLevel", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"managerLevel", n => { ManagerLevel = n.GetIntValue(); } },
+                { "managerLevel", n => { ManagerLevel = n.GetIntValue(); } },
             };
         }
         /// <summary>

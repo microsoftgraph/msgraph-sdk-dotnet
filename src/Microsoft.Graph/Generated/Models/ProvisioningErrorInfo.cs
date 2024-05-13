@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProvisioningErrorInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ProvisioningErrorInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Additional details if there&apos;s error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalDetails {
+        public string? AdditionalDetails
+        {
             get { return BackingStore?.Get<string?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public string AdditionalDetails {
+        public string AdditionalDetails
+        {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -32,20 +36,23 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue</summary>
-        public ProvisioningStatusErrorCategory? ErrorCategory {
+        public ProvisioningStatusErrorCategory? ErrorCategory
+        {
             get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>("errorCategory"); }
             set { BackingStore?.Set("errorCategory", value); }
         }
         /// <summary>Unique error code if any occurred. Learn more</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode {
+        public string? ErrorCode
+        {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #nullable restore
 #else
-        public string ErrorCode {
+        public string ErrorCode
+        {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Summarizes the status and describes why the status happened.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides the resolution for the corresponding error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedAction {
+        public string? RecommendedAction
+        {
             get { return BackingStore?.Get<string?>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
 #nullable restore
 #else
-        public string RecommendedAction {
+        public string RecommendedAction
+        {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
-                {"errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
-                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                { "errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
             };
         }
         /// <summary>

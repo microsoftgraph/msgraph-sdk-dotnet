@@ -4,55 +4,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class RetentionLabel : Microsoft.Graph.Models.Entity, IParsable 
+    public class RetentionLabel : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the action to take on the labeled document after the period specified by the retentionDuration property expires. The possible values are: none, delete, startDispositionReview, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod {
+        public Microsoft.Graph.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.ActionAfterRetentionPeriod?>("actionAfterRetentionPeriod"); }
             set { BackingStore?.Set("actionAfterRetentionPeriod", value); }
         }
         /// <summary>Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod {
+        public Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod?>("behaviorDuringRetentionPeriod"); }
             set { BackingStore?.Set("behaviorDuringRetentionPeriod", value); }
         }
         /// <summary>Represents the user who created the retentionLabel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? CreatedBy {
+        public Microsoft.Graph.Models.IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet CreatedBy {
+        public Microsoft.Graph.Models.IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Represents the date and time in which the retentionLabel is created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.DefaultRecordBehavior? DefaultRecordBehavior {
+        public Microsoft.Graph.Models.Security.DefaultRecordBehavior? DefaultRecordBehavior
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DefaultRecordBehavior?>("defaultRecordBehavior"); }
             set { BackingStore?.Set("defaultRecordBehavior", value); }
         }
         /// <summary>Provides label information for the admin. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionForAdmins {
+        public string? DescriptionForAdmins
+        {
             get { return BackingStore?.Get<string?>("descriptionForAdmins"); }
             set { BackingStore?.Set("descriptionForAdmins", value); }
         }
 #nullable restore
 #else
-        public string DescriptionForAdmins {
+        public string DescriptionForAdmins
+        {
             get { return BackingStore?.Get<string>("descriptionForAdmins"); }
             set { BackingStore?.Set("descriptionForAdmins", value); }
         }
@@ -60,13 +69,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Provides the label information for the user. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionForUsers {
+        public string? DescriptionForUsers
+        {
             get { return BackingStore?.Get<string?>("descriptionForUsers"); }
             set { BackingStore?.Set("descriptionForUsers", value); }
         }
 #nullable restore
 #else
-        public string DescriptionForUsers {
+        public string DescriptionForUsers
+        {
             get { return BackingStore?.Get<string>("descriptionForUsers"); }
             set { BackingStore?.Set("descriptionForUsers", value); }
         }
@@ -74,13 +85,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FilePlanDescriptor? Descriptors {
+        public FilePlanDescriptor? Descriptors
+        {
             get { return BackingStore?.Get<FilePlanDescriptor?>("descriptors"); }
             set { BackingStore?.Set("descriptors", value); }
         }
 #nullable restore
 #else
-        public FilePlanDescriptor Descriptors {
+        public FilePlanDescriptor Descriptors
+        {
             get { return BackingStore?.Get<FilePlanDescriptor>("descriptors"); }
             set { BackingStore?.Set("descriptors", value); }
         }
@@ -88,13 +101,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Unique string that defines a label name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -102,32 +117,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DispositionReviewStage>? DispositionReviewStages {
+        public List<DispositionReviewStage>? DispositionReviewStages
+        {
             get { return BackingStore?.Get<List<DispositionReviewStage>?>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
 #nullable restore
 #else
-        public List<DispositionReviewStage> DispositionReviewStages {
+        public List<DispositionReviewStage> DispositionReviewStages
+        {
             get { return BackingStore?.Get<List<DispositionReviewStage>>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
 #endif
         /// <summary>Specifies whether the label is currently being used.</summary>
-        public bool? IsInUse {
+        public bool? IsInUse
+        {
             get { return BackingStore?.Get<bool?>("isInUse"); }
             set { BackingStore?.Set("isInUse", value); }
         }
         /// <summary>Specifies the replacement label to be applied automatically after the retention period of the current label ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LabelToBeApplied {
+        public string? LabelToBeApplied
+        {
             get { return BackingStore?.Get<string?>("labelToBeApplied"); }
             set { BackingStore?.Set("labelToBeApplied", value); }
         }
 #nullable restore
 #else
-        public string LabelToBeApplied {
+        public string LabelToBeApplied
+        {
             get { return BackingStore?.Get<string>("labelToBeApplied"); }
             set { BackingStore?.Set("labelToBeApplied", value); }
         }
@@ -135,32 +155,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The user who last modified the retentionLabel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy {
+        public Microsoft.Graph.Models.IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet LastModifiedBy {
+        public Microsoft.Graph.Models.IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The latest date time when the retentionLabel was modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Specifies the number of days to retain the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.RetentionDuration? RetentionDuration {
+        public Microsoft.Graph.Models.Security.RetentionDuration? RetentionDuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionDuration?>("retentionDuration"); }
             set { BackingStore?.Set("retentionDuration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.RetentionDuration RetentionDuration {
+        public Microsoft.Graph.Models.Security.RetentionDuration RetentionDuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionDuration>("retentionDuration"); }
             set { BackingStore?.Set("retentionDuration", value); }
         }
@@ -168,19 +193,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Represents the type associated with a retention event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.RetentionEventType? RetentionEventType {
+        public Microsoft.Graph.Models.Security.RetentionEventType? RetentionEventType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionEventType?>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.RetentionEventType RetentionEventType {
+        public Microsoft.Graph.Models.Security.RetentionEventType RetentionEventType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionEventType>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
 #endif
         /// <summary>Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.RetentionTrigger? RetentionTrigger {
+        public Microsoft.Graph.Models.Security.RetentionTrigger? RetentionTrigger
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.RetentionTrigger?>("retentionTrigger"); }
             set { BackingStore?.Set("retentionTrigger", value); }
         }
@@ -202,23 +230,23 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionAfterRetentionPeriod", n => { ActionAfterRetentionPeriod = n.GetEnumValue<ActionAfterRetentionPeriod>(); } },
-                {"behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"defaultRecordBehavior", n => { DefaultRecordBehavior = n.GetEnumValue<DefaultRecordBehavior>(); } },
-                {"descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
-                {"descriptionForUsers", n => { DescriptionForUsers = n.GetStringValue(); } },
-                {"descriptors", n => { Descriptors = n.GetObjectValue<FilePlanDescriptor>(FilePlanDescriptor.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isInUse", n => { IsInUse = n.GetBoolValue(); } },
-                {"labelToBeApplied", n => { LabelToBeApplied = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"retentionDuration", n => { RetentionDuration = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionDuration>(Microsoft.Graph.Models.Security.RetentionDuration.CreateFromDiscriminatorValue); } },
-                {"retentionEventType", n => { RetentionEventType = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionEventType>(Microsoft.Graph.Models.Security.RetentionEventType.CreateFromDiscriminatorValue); } },
-                {"retentionTrigger", n => { RetentionTrigger = n.GetEnumValue<RetentionTrigger>(); } },
+                { "actionAfterRetentionPeriod", n => { ActionAfterRetentionPeriod = n.GetEnumValue<ActionAfterRetentionPeriod>(); } },
+                { "behaviorDuringRetentionPeriod", n => { BehaviorDuringRetentionPeriod = n.GetEnumValue<BehaviorDuringRetentionPeriod>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "defaultRecordBehavior", n => { DefaultRecordBehavior = n.GetEnumValue<DefaultRecordBehavior>(); } },
+                { "descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
+                { "descriptionForUsers", n => { DescriptionForUsers = n.GetStringValue(); } },
+                { "descriptors", n => { Descriptors = n.GetObjectValue<FilePlanDescriptor>(FilePlanDescriptor.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isInUse", n => { IsInUse = n.GetBoolValue(); } },
+                { "labelToBeApplied", n => { LabelToBeApplied = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "retentionDuration", n => { RetentionDuration = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionDuration>(Microsoft.Graph.Models.Security.RetentionDuration.CreateFromDiscriminatorValue); } },
+                { "retentionEventType", n => { RetentionEventType = n.GetObjectValue<Microsoft.Graph.Models.Security.RetentionEventType>(Microsoft.Graph.Models.Security.RetentionEventType.CreateFromDiscriminatorValue); } },
+                { "retentionTrigger", n => { RetentionTrigger = n.GetEnumValue<RetentionTrigger>(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Device protection status entity.
     /// </summary>
-    public class WindowsProtectionState : Entity, IParsable 
+    public class WindowsProtectionState : Entity, IParsable
     {
         /// <summary>Current anti malware version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AntiMalwareVersion {
+        public string? AntiMalwareVersion
+        {
             get { return BackingStore?.Get<string?>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
 #nullable restore
 #else
-        public string AntiMalwareVersion {
+        public string AntiMalwareVersion
+        {
             get { return BackingStore?.Get<string>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
@@ -27,145 +30,170 @@ namespace Microsoft.Graph.Models {
         /// <summary>Device malware list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDeviceMalwareState>? DetectedMalwareState {
+        public List<WindowsDeviceMalwareState>? DetectedMalwareState
+        {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDeviceMalwareState> DetectedMalwareState {
+        public List<WindowsDeviceMalwareState> DetectedMalwareState
+        {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
 #endif
         /// <summary>Indicates device&apos;s health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
-        public WindowsDeviceHealthState? DeviceState {
+        public WindowsDeviceHealthState? DeviceState
+        {
             get { return BackingStore?.Get<WindowsDeviceHealthState?>("deviceState"); }
             set { BackingStore?.Set("deviceState", value); }
         }
         /// <summary>Current endpoint protection engine&apos;s version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EngineVersion {
+        public string? EngineVersion
+        {
             get { return BackingStore?.Get<string?>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
 #nullable restore
 #else
-        public string EngineVersion {
+        public string EngineVersion
+        {
             get { return BackingStore?.Get<string>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
 #endif
         /// <summary>When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.</summary>
-        public bool? FullScanOverdue {
+        public bool? FullScanOverdue
+        {
             get { return BackingStore?.Get<bool?>("fullScanOverdue"); }
             set { BackingStore?.Set("fullScanOverdue", value); }
         }
         /// <summary>When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.</summary>
-        public bool? FullScanRequired {
+        public bool? FullScanRequired
+        {
             get { return BackingStore?.Get<bool?>("fullScanRequired"); }
             set { BackingStore?.Set("fullScanRequired", value); }
         }
         /// <summary>When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.</summary>
-        public bool? IsVirtualMachine {
+        public bool? IsVirtualMachine
+        {
             get { return BackingStore?.Get<bool?>("isVirtualMachine"); }
             set { BackingStore?.Set("isVirtualMachine", value); }
         }
         /// <summary>Last quick scan datetime</summary>
-        public DateTimeOffset? LastFullScanDateTime {
+        public DateTimeOffset? LastFullScanDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastFullScanDateTime"); }
             set { BackingStore?.Set("lastFullScanDateTime", value); }
         }
         /// <summary>Last full scan signature version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastFullScanSignatureVersion {
+        public string? LastFullScanSignatureVersion
+        {
             get { return BackingStore?.Get<string?>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
 #nullable restore
 #else
-        public string LastFullScanSignatureVersion {
+        public string LastFullScanSignatureVersion
+        {
             get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
 #endif
         /// <summary>Last quick scan datetime</summary>
-        public DateTimeOffset? LastQuickScanDateTime {
+        public DateTimeOffset? LastQuickScanDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastQuickScanDateTime"); }
             set { BackingStore?.Set("lastQuickScanDateTime", value); }
         }
         /// <summary>Last quick scan signature version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastQuickScanSignatureVersion {
+        public string? LastQuickScanSignatureVersion
+        {
             get { return BackingStore?.Get<string?>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
 #nullable restore
 #else
-        public string LastQuickScanSignatureVersion {
+        public string LastQuickScanSignatureVersion
+        {
             get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
 #endif
         /// <summary>Last device health status reported time</summary>
-        public DateTimeOffset? LastReportedDateTime {
+        public DateTimeOffset? LastReportedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.</summary>
-        public bool? MalwareProtectionEnabled {
+        public bool? MalwareProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("malwareProtectionEnabled"); }
             set { BackingStore?.Set("malwareProtectionEnabled", value); }
         }
         /// <summary>When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.</summary>
-        public bool? NetworkInspectionSystemEnabled {
+        public bool? NetworkInspectionSystemEnabled
+        {
             get { return BackingStore?.Get<bool?>("networkInspectionSystemEnabled"); }
             set { BackingStore?.Set("networkInspectionSystemEnabled", value); }
         }
         /// <summary>Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.</summary>
-        public WindowsDefenderProductStatus? ProductStatus {
+        public WindowsDefenderProductStatus? ProductStatus
+        {
             get { return BackingStore?.Get<WindowsDefenderProductStatus?>("productStatus"); }
             set { BackingStore?.Set("productStatus", value); }
         }
         /// <summary>When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.</summary>
-        public bool? QuickScanOverdue {
+        public bool? QuickScanOverdue
+        {
             get { return BackingStore?.Get<bool?>("quickScanOverdue"); }
             set { BackingStore?.Set("quickScanOverdue", value); }
         }
         /// <summary>When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.</summary>
-        public bool? RealTimeProtectionEnabled {
+        public bool? RealTimeProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("realTimeProtectionEnabled"); }
             set { BackingStore?.Set("realTimeProtectionEnabled", value); }
         }
         /// <summary>When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.</summary>
-        public bool? RebootRequired {
+        public bool? RebootRequired
+        {
             get { return BackingStore?.Get<bool?>("rebootRequired"); }
             set { BackingStore?.Set("rebootRequired", value); }
         }
         /// <summary>When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.</summary>
-        public bool? SignatureUpdateOverdue {
+        public bool? SignatureUpdateOverdue
+        {
             get { return BackingStore?.Get<bool?>("signatureUpdateOverdue"); }
             set { BackingStore?.Set("signatureUpdateOverdue", value); }
         }
         /// <summary>Current malware definitions version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatureVersion {
+        public string? SignatureVersion
+        {
             get { return BackingStore?.Get<string?>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
 #nullable restore
 #else
-        public string SignatureVersion {
+        public string SignatureVersion
+        {
             get { return BackingStore?.Get<string>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
 #endif
         /// <summary>When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.</summary>
-        public bool? TamperProtectionEnabled {
+        public bool? TamperProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("tamperProtectionEnabled"); }
             set { BackingStore?.Set("tamperProtectionEnabled", value); }
         }
@@ -187,27 +215,27 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
-                {"detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceState", n => { DeviceState = n.GetEnumValue<WindowsDeviceHealthState>(); } },
-                {"engineVersion", n => { EngineVersion = n.GetStringValue(); } },
-                {"fullScanOverdue", n => { FullScanOverdue = n.GetBoolValue(); } },
-                {"fullScanRequired", n => { FullScanRequired = n.GetBoolValue(); } },
-                {"isVirtualMachine", n => { IsVirtualMachine = n.GetBoolValue(); } },
-                {"lastFullScanDateTime", n => { LastFullScanDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastFullScanSignatureVersion", n => { LastFullScanSignatureVersion = n.GetStringValue(); } },
-                {"lastQuickScanDateTime", n => { LastQuickScanDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastQuickScanSignatureVersion", n => { LastQuickScanSignatureVersion = n.GetStringValue(); } },
-                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"malwareProtectionEnabled", n => { MalwareProtectionEnabled = n.GetBoolValue(); } },
-                {"networkInspectionSystemEnabled", n => { NetworkInspectionSystemEnabled = n.GetBoolValue(); } },
-                {"productStatus", n => { ProductStatus = n.GetEnumValue<WindowsDefenderProductStatus>(); } },
-                {"quickScanOverdue", n => { QuickScanOverdue = n.GetBoolValue(); } },
-                {"realTimeProtectionEnabled", n => { RealTimeProtectionEnabled = n.GetBoolValue(); } },
-                {"rebootRequired", n => { RebootRequired = n.GetBoolValue(); } },
-                {"signatureUpdateOverdue", n => { SignatureUpdateOverdue = n.GetBoolValue(); } },
-                {"signatureVersion", n => { SignatureVersion = n.GetStringValue(); } },
-                {"tamperProtectionEnabled", n => { TamperProtectionEnabled = n.GetBoolValue(); } },
+                { "antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
+                { "detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceState", n => { DeviceState = n.GetEnumValue<WindowsDeviceHealthState>(); } },
+                { "engineVersion", n => { EngineVersion = n.GetStringValue(); } },
+                { "fullScanOverdue", n => { FullScanOverdue = n.GetBoolValue(); } },
+                { "fullScanRequired", n => { FullScanRequired = n.GetBoolValue(); } },
+                { "isVirtualMachine", n => { IsVirtualMachine = n.GetBoolValue(); } },
+                { "lastFullScanDateTime", n => { LastFullScanDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastFullScanSignatureVersion", n => { LastFullScanSignatureVersion = n.GetStringValue(); } },
+                { "lastQuickScanDateTime", n => { LastQuickScanDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastQuickScanSignatureVersion", n => { LastQuickScanSignatureVersion = n.GetStringValue(); } },
+                { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "malwareProtectionEnabled", n => { MalwareProtectionEnabled = n.GetBoolValue(); } },
+                { "networkInspectionSystemEnabled", n => { NetworkInspectionSystemEnabled = n.GetBoolValue(); } },
+                { "productStatus", n => { ProductStatus = n.GetEnumValue<WindowsDefenderProductStatus>(); } },
+                { "quickScanOverdue", n => { QuickScanOverdue = n.GetBoolValue(); } },
+                { "realTimeProtectionEnabled", n => { RealTimeProtectionEnabled = n.GetBoolValue(); } },
+                { "rebootRequired", n => { RebootRequired = n.GetBoolValue(); } },
+                { "signatureUpdateOverdue", n => { SignatureUpdateOverdue = n.GetBoolValue(); } },
+                { "signatureVersion", n => { SignatureVersion = n.GetStringValue(); } },
+                { "tamperProtectionEnabled", n => { TamperProtectionEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

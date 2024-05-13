@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SynchronizationJobApplicationParameters : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleId {
+        public string? RuleId
+        {
             get { return BackingStore?.Get<string?>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
 #nullable restore
 #else
-        public string RuleId {
+        public string RuleId
+        {
             get { return BackingStore?.Get<string>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationJobSubject>? Subjects {
+        public List<SynchronizationJobSubject>? Subjects
+        {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>?>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationJobSubject> Subjects {
+        public List<SynchronizationJobSubject> Subjects
+        {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleId", n => { RuleId = n.GetStringValue(); } },
-                {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<SynchronizationJobSubject>(SynchronizationJobSubject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleId", n => { RuleId = n.GetStringValue(); } },
+                { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<SynchronizationJobSubject>(SynchronizationJobSubject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

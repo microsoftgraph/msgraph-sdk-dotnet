@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageQuestion : Entity, IParsable 
+    public class AccessPackageQuestion : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.</summary>
-        public bool? IsAnswerEditable {
+        public bool? IsAnswerEditable
+        {
             get { return BackingStore?.Get<bool?>("isAnswerEditable"); }
             set { BackingStore?.Set("isAnswerEditable", value); }
         }
         /// <summary>Whether the requestor is required to supply an answer or not.</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The text of the question represented in a format for a specific locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageLocalizedText>? Localizations {
+        public List<AccessPackageLocalizedText>? Localizations
+        {
             get { return BackingStore?.Get<List<AccessPackageLocalizedText>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageLocalizedText> Localizations {
+        public List<AccessPackageLocalizedText> Localizations
+        {
             get { return BackingStore?.Get<List<AccessPackageLocalizedText>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
         /// <summary>Relative position of this question when displaying a list of questions to the requestor.</summary>
-        public int? Sequence {
+        public int? Sequence
+        {
             get { return BackingStore?.Get<int?>("sequence"); }
             set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>The text of the question to show to the requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -76,11 +84,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"localizations", n => { Localizations = n.GetCollectionOfObjectValues<AccessPackageLocalizedText>(AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sequence", n => { Sequence = n.GetIntValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<AccessPackageLocalizedText>(AccessPackageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sequence", n => { Sequence = n.GetIntValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

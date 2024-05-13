@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessApplications : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessApplications : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The applicationFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? ApplicationFilter {
+        public ConditionalAccessFilter? ApplicationFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter?>("applicationFilter"); }
             set { BackingStore?.Set("applicationFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter ApplicationFilter {
+        public ConditionalAccessFilter ApplicationFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter>("applicationFilter"); }
             set { BackingStore?.Set("applicationFilter", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeApplications {
+        public List<string>? ExcludeApplications
+        {
             get { return BackingStore?.Get<List<string>?>("excludeApplications"); }
             set { BackingStore?.Set("excludeApplications", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeApplications {
+        public List<string> ExcludeApplications
+        {
             get { return BackingStore?.Get<List<string>>("excludeApplications"); }
             set { BackingStore?.Set("excludeApplications", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeApplications {
+        public List<string>? IncludeApplications
+        {
             get { return BackingStore?.Get<List<string>?>("includeApplications"); }
             set { BackingStore?.Set("includeApplications", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeApplications {
+        public List<string> IncludeApplications
+        {
             get { return BackingStore?.Get<List<string>>("includeApplications"); }
             set { BackingStore?.Set("includeApplications", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The includeAuthenticationContextClassReferences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeAuthenticationContextClassReferences {
+        public List<string>? IncludeAuthenticationContextClassReferences
+        {
             get { return BackingStore?.Get<List<string>?>("includeAuthenticationContextClassReferences"); }
             set { BackingStore?.Set("includeAuthenticationContextClassReferences", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeAuthenticationContextClassReferences {
+        public List<string> IncludeAuthenticationContextClassReferences
+        {
             get { return BackingStore?.Get<List<string>>("includeAuthenticationContextClassReferences"); }
             set { BackingStore?.Set("includeAuthenticationContextClassReferences", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeUserActions {
+        public List<string>? IncludeUserActions
+        {
             get { return BackingStore?.Get<List<string>?>("includeUserActions"); }
             set { BackingStore?.Set("includeUserActions", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeUserActions {
+        public List<string> IncludeUserActions
+        {
             get { return BackingStore?.Get<List<string>>("includeUserActions"); }
             set { BackingStore?.Set("includeUserActions", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationFilter", n => { ApplicationFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
-                {"excludeApplications", n => { ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeAuthenticationContextClassReferences", n => { IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeUserActions", n => { IncludeUserActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applicationFilter", n => { ApplicationFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "excludeApplications", n => { ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeAuthenticationContextClassReferences", n => { IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeUserActions", n => { IncludeUserActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

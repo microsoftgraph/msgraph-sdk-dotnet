@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChecklistItem : Entity, IParsable 
+    public class ChecklistItem : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the checklistItem was finished.</summary>
-        public DateTimeOffset? CheckedDateTime {
+        public DateTimeOffset? CheckedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("checkedDateTime"); }
             set { BackingStore?.Set("checkedDateTime", value); }
         }
         /// <summary>The date and time when the checklistItem was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Indicates the title of the checklistItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>State that indicates whether the item is checked off or not.</summary>
-        public bool? IsChecked {
+        public bool? IsChecked
+        {
             get { return BackingStore?.Get<bool?>("isChecked"); }
             set { BackingStore?.Set("isChecked", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"checkedDateTime", n => { CheckedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isChecked", n => { IsChecked = n.GetBoolValue(); } },
+                { "checkedDateTime", n => { CheckedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isChecked", n => { IsChecked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -5,57 +5,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SynchronizationProgress : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SynchronizationProgress : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The numerator of a progress ratio; the number of units of changes already processed.</summary>
-        public long? CompletedUnits {
+        public long? CompletedUnits
+        {
             get { return BackingStore?.Get<long?>("completedUnits"); }
             set { BackingStore?.Set("completedUnits", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
-        public DateTimeOffset? ProgressObservationDateTime {
+        public DateTimeOffset? ProgressObservationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("progressObservationDateTime"); }
             set { BackingStore?.Set("progressObservationDateTime", value); }
         }
         /// <summary>The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.</summary>
-        public long? TotalUnits {
+        public long? TotalUnits
+        {
             get { return BackingStore?.Get<long?>("totalUnits"); }
             set { BackingStore?.Set("totalUnits", value); }
         }
         /// <summary>An optional description of the units.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Units {
+        public string? Units
+        {
             get { return BackingStore?.Get<string?>("units"); }
             set { BackingStore?.Set("units", value); }
         }
 #nullable restore
 #else
-        public string Units {
+        public string Units
+        {
             get { return BackingStore?.Get<string>("units"); }
             set { BackingStore?.Set("units", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"completedUnits", n => { CompletedUnits = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"progressObservationDateTime", n => { ProgressObservationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalUnits", n => { TotalUnits = n.GetLongValue(); } },
-                {"units", n => { Units = n.GetStringValue(); } },
+                { "completedUnits", n => { CompletedUnits = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "progressObservationDateTime", n => { ProgressObservationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "totalUnits", n => { TotalUnits = n.GetLongValue(); } },
+                { "units", n => { Units = n.GetStringValue(); } },
             };
         }
         /// <summary>

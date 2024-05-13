@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PersistentBrowserSessionControl : ConditionalAccessSessionControl, IParsable 
+    public class PersistentBrowserSessionControl : ConditionalAccessSessionControl, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible values are: always, never.</summary>
-        public PersistentBrowserSessionMode? Mode {
+        public PersistentBrowserSessionMode? Mode
+        {
             get { return BackingStore?.Get<PersistentBrowserSessionMode?>("mode"); }
             set { BackingStore?.Set("mode", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"mode", n => { Mode = n.GetEnumValue<PersistentBrowserSessionMode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<PersistentBrowserSessionMode>(); } },
             };
         }
         /// <summary>

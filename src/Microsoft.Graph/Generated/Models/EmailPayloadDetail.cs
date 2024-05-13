@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EmailPayloadDetail : PayloadDetail, IParsable 
+    public class EmailPayloadDetail : PayloadDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromEmail {
+        public string? FromEmail
+        {
             get { return BackingStore?.Get<string?>("fromEmail"); }
             set { BackingStore?.Set("fromEmail", value); }
         }
 #nullable restore
 #else
-        public string FromEmail {
+        public string FromEmail
+        {
             get { return BackingStore?.Get<string>("fromEmail"); }
             set { BackingStore?.Set("fromEmail", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromName {
+        public string? FromName
+        {
             get { return BackingStore?.Get<string?>("fromName"); }
             set { BackingStore?.Set("fromName", value); }
         }
 #nullable restore
 #else
-        public string FromName {
+        public string FromName
+        {
             get { return BackingStore?.Get<string>("fromName"); }
             set { BackingStore?.Set("fromName", value); }
         }
 #endif
         /// <summary>Indicates whether the sender isn&apos;t from the user&apos;s organization.</summary>
-        public bool? IsExternalSender {
+        public bool? IsExternalSender
+        {
             get { return BackingStore?.Get<bool?>("isExternalSender"); }
             set { BackingStore?.Set("isExternalSender", value); }
         }
         /// <summary>The subject of the email address sent to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fromEmail", n => { FromEmail = n.GetStringValue(); } },
-                {"fromName", n => { FromName = n.GetStringValue(); } },
-                {"isExternalSender", n => { IsExternalSender = n.GetBoolValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "fromEmail", n => { FromEmail = n.GetStringValue(); } },
+                { "fromName", n => { FromName = n.GetStringValue(); } },
+                { "isExternalSender", n => { IsExternalSender = n.GetBoolValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

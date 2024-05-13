@@ -4,42 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedAdminRelationshipOperation : Entity, IParsable 
+    public class DelegatedAdminRelationshipOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The data (payload) for the operation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Data {
+        public string? Data
+        {
             get { return BackingStore?.Get<string?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #nullable restore
 #else
-        public string Data {
+        public string Data
+        {
             get { return BackingStore?.Get<string>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #endif
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The operationType property</summary>
-        public DelegatedAdminRelationshipOperationType? OperationType {
+        public DelegatedAdminRelationshipOperationType? OperationType
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The status property</summary>
-        public LongRunningOperationStatus? Status {
+        public LongRunningOperationStatus? Status
+        {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -61,11 +68,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"data", n => { Data = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<DelegatedAdminRelationshipOperationType>(); } },
-                {"status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "data", n => { Data = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<DelegatedAdminRelationshipOperationType>(); } },
+                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
             };
         }
         /// <summary>

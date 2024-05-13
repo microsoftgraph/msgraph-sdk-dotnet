@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class Billing : Microsoft.Graph.Models.Entity, IParsable 
+    public class Billing : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents metadata for the exported data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Manifest>? Manifests {
+        public List<Manifest>? Manifests
+        {
             get { return BackingStore?.Get<List<Manifest>?>("manifests"); }
             set { BackingStore?.Set("manifests", value); }
         }
 #nullable restore
 #else
-        public List<Manifest> Manifests {
+        public List<Manifest> Manifests
+        {
             get { return BackingStore?.Get<List<Manifest>>("manifests"); }
             set { BackingStore?.Set("manifests", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// <summary>Represents an operation to export the billing data of a partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Operation>? Operations {
+        public List<Operation>? Operations
+        {
             get { return BackingStore?.Get<List<Operation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<Operation> Operations {
+        public List<Operation> Operations
+        {
             get { return BackingStore?.Get<List<Operation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// <summary>The reconciliation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BillingReconciliation? Reconciliation {
+        public BillingReconciliation? Reconciliation
+        {
             get { return BackingStore?.Get<BillingReconciliation?>("reconciliation"); }
             set { BackingStore?.Set("reconciliation", value); }
         }
 #nullable restore
 #else
-        public BillingReconciliation Reconciliation {
+        public BillingReconciliation Reconciliation
+        {
             get { return BackingStore?.Get<BillingReconciliation>("reconciliation"); }
             set { BackingStore?.Set("reconciliation", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureUsage? Usage {
+        public AzureUsage? Usage
+        {
             get { return BackingStore?.Get<AzureUsage?>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
 #nullable restore
 #else
-        public AzureUsage Usage {
+        public AzureUsage Usage
+        {
             get { return BackingStore?.Get<AzureUsage>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"manifests", n => { Manifests = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<Operation>(Operation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reconciliation", n => { Reconciliation = n.GetObjectValue<BillingReconciliation>(BillingReconciliation.CreateFromDiscriminatorValue); } },
-                {"usage", n => { Usage = n.GetObjectValue<AzureUsage>(AzureUsage.CreateFromDiscriminatorValue); } },
+                { "manifests", n => { Manifests = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Operation>(Operation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reconciliation", n => { Reconciliation = n.GetObjectValue<BillingReconciliation>(BillingReconciliation.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetObjectValue<AzureUsage>(AzureUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,63 +5,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrintUsage : Entity, IParsable 
+    public class PrintUsage : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The blackAndWhitePageCount property</summary>
-        public long? BlackAndWhitePageCount {
+        public long? BlackAndWhitePageCount
+        {
             get { return BackingStore?.Get<long?>("blackAndWhitePageCount"); }
             set { BackingStore?.Set("blackAndWhitePageCount", value); }
         }
         /// <summary>The colorPageCount property</summary>
-        public long? ColorPageCount {
+        public long? ColorPageCount
+        {
             get { return BackingStore?.Get<long?>("colorPageCount"); }
             set { BackingStore?.Set("colorPageCount", value); }
         }
         /// <summary>The completedBlackAndWhiteJobCount property</summary>
-        public long? CompletedBlackAndWhiteJobCount {
+        public long? CompletedBlackAndWhiteJobCount
+        {
             get { return BackingStore?.Get<long?>("completedBlackAndWhiteJobCount"); }
             set { BackingStore?.Set("completedBlackAndWhiteJobCount", value); }
         }
         /// <summary>The completedColorJobCount property</summary>
-        public long? CompletedColorJobCount {
+        public long? CompletedColorJobCount
+        {
             get { return BackingStore?.Get<long?>("completedColorJobCount"); }
             set { BackingStore?.Set("completedColorJobCount", value); }
         }
         /// <summary>The completedJobCount property</summary>
-        public long? CompletedJobCount {
+        public long? CompletedJobCount
+        {
             get { return BackingStore?.Get<long?>("completedJobCount"); }
             set { BackingStore?.Set("completedJobCount", value); }
         }
         /// <summary>The doubleSidedSheetCount property</summary>
-        public long? DoubleSidedSheetCount {
+        public long? DoubleSidedSheetCount
+        {
             get { return BackingStore?.Get<long?>("doubleSidedSheetCount"); }
             set { BackingStore?.Set("doubleSidedSheetCount", value); }
         }
         /// <summary>The incompleteJobCount property</summary>
-        public long? IncompleteJobCount {
+        public long? IncompleteJobCount
+        {
             get { return BackingStore?.Get<long?>("incompleteJobCount"); }
             set { BackingStore?.Set("incompleteJobCount", value); }
         }
         /// <summary>The mediaSheetCount property</summary>
-        public long? MediaSheetCount {
+        public long? MediaSheetCount
+        {
             get { return BackingStore?.Get<long?>("mediaSheetCount"); }
             set { BackingStore?.Set("mediaSheetCount", value); }
         }
         /// <summary>The pageCount property</summary>
-        public long? PageCount {
+        public long? PageCount
+        {
             get { return BackingStore?.Get<long?>("pageCount"); }
             set { BackingStore?.Set("pageCount", value); }
         }
         /// <summary>The singleSidedSheetCount property</summary>
-        public long? SingleSidedSheetCount {
+        public long? SingleSidedSheetCount
+        {
             get { return BackingStore?.Get<long?>("singleSidedSheetCount"); }
             set { BackingStore?.Set("singleSidedSheetCount", value); }
         }
         /// <summary>The usageDate property</summary>
-        public Date? UsageDate {
+        public Date? UsageDate
+        {
             get { return BackingStore?.Get<Date?>("usageDate"); }
             set { BackingStore?.Set("usageDate", value); }
         }
@@ -89,17 +101,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"blackAndWhitePageCount", n => { BlackAndWhitePageCount = n.GetLongValue(); } },
-                {"colorPageCount", n => { ColorPageCount = n.GetLongValue(); } },
-                {"completedBlackAndWhiteJobCount", n => { CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
-                {"completedColorJobCount", n => { CompletedColorJobCount = n.GetLongValue(); } },
-                {"completedJobCount", n => { CompletedJobCount = n.GetLongValue(); } },
-                {"doubleSidedSheetCount", n => { DoubleSidedSheetCount = n.GetLongValue(); } },
-                {"incompleteJobCount", n => { IncompleteJobCount = n.GetLongValue(); } },
-                {"mediaSheetCount", n => { MediaSheetCount = n.GetLongValue(); } },
-                {"pageCount", n => { PageCount = n.GetLongValue(); } },
-                {"singleSidedSheetCount", n => { SingleSidedSheetCount = n.GetLongValue(); } },
-                {"usageDate", n => { UsageDate = n.GetDateValue(); } },
+                { "blackAndWhitePageCount", n => { BlackAndWhitePageCount = n.GetLongValue(); } },
+                { "colorPageCount", n => { ColorPageCount = n.GetLongValue(); } },
+                { "completedBlackAndWhiteJobCount", n => { CompletedBlackAndWhiteJobCount = n.GetLongValue(); } },
+                { "completedColorJobCount", n => { CompletedColorJobCount = n.GetLongValue(); } },
+                { "completedJobCount", n => { CompletedJobCount = n.GetLongValue(); } },
+                { "doubleSidedSheetCount", n => { DoubleSidedSheetCount = n.GetLongValue(); } },
+                { "incompleteJobCount", n => { IncompleteJobCount = n.GetLongValue(); } },
+                { "mediaSheetCount", n => { MediaSheetCount = n.GetLongValue(); } },
+                { "pageCount", n => { PageCount = n.GetLongValue(); } },
+                { "singleSidedSheetCount", n => { SingleSidedSheetCount = n.GetLongValue(); } },
+                { "usageDate", n => { UsageDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

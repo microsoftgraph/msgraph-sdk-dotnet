@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist
+{
     #pragma warning disable CS1591
-    public class Gamma_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Gamma_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha {
+        public Json? Alpha
+        {
             get { return BackingStore?.Get<Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha {
+        public Json Alpha
+        {
             get { return BackingStore?.Get<Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist {
         /// <summary>The beta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Beta {
+        public Json? Beta
+        {
             get { return BackingStore?.Get<Json?>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
 #nullable restore
 #else
-        public Json Beta {
+        public Json Beta
+        {
             get { return BackingStore?.Get<Json>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist {
         /// <summary>The cumulative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cumulative {
+        public Json? Cumulative
+        {
             get { return BackingStore?.Get<Json?>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #nullable restore
 #else
-        public Json Cumulative {
+        public Json Cumulative
+        {
             get { return BackingStore?.Get<Json>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist {
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X {
+        public Json? X
+        {
             get { return BackingStore?.Get<Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X {
+        public Json X
+        {
             get { return BackingStore?.Get<Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Dist {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

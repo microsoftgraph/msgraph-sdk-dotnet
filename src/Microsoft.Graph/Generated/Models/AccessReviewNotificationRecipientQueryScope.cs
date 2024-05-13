@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewNotificationRecipientQueryScope : AccessReviewNotificationRecipientScope, IParsable 
+    public class AccessReviewNotificationRecipientQueryScope : AccessReviewNotificationRecipientScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the query for who the recipients are. For example, /groups/{group id}/members for group members and /users/{user id} for a specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query {
+        public string? Query
+        {
             get { return BackingStore?.Get<string?>("query"); }
             set { BackingStore?.Set("query", value); }
         }
 #nullable restore
 #else
-        public string Query {
+        public string Query
+        {
             get { return BackingStore?.Get<string>("query"); }
             set { BackingStore?.Set("query", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryRoot {
+        public string? QueryRoot
+        {
             get { return BackingStore?.Get<string?>("queryRoot"); }
             set { BackingStore?.Set("queryRoot", value); }
         }
 #nullable restore
 #else
-        public string QueryRoot {
+        public string QueryRoot
+        {
             get { return BackingStore?.Get<string>("queryRoot"); }
             set { BackingStore?.Set("queryRoot", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the type of query. Allowed value is MicrosoftGraph.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryType {
+        public string? QueryType
+        {
             get { return BackingStore?.Get<string?>("queryType"); }
             set { BackingStore?.Set("queryType", value); }
         }
 #nullable restore
 #else
-        public string QueryType {
+        public string QueryType
+        {
             get { return BackingStore?.Get<string>("queryType"); }
             set { BackingStore?.Set("queryType", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"query", n => { Query = n.GetStringValue(); } },
-                {"queryRoot", n => { QueryRoot = n.GetStringValue(); } },
-                {"queryType", n => { QueryType = n.GetStringValue(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
+                { "queryRoot", n => { QueryRoot = n.GetStringValue(); } },
+                { "queryType", n => { QueryType = n.GetStringValue(); } },
             };
         }
         /// <summary>

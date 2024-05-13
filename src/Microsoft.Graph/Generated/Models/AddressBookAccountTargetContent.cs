@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AddressBookAccountTargetContent : AccountTargetContent, IParsable 
+    public class AddressBookAccountTargetContent : AccountTargetContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of user emails targeted for an attack simulation training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountTargetEmails {
+        public List<string>? AccountTargetEmails
+        {
             get { return BackingStore?.Get<List<string>?>("accountTargetEmails"); }
             set { BackingStore?.Set("accountTargetEmails", value); }
         }
 #nullable restore
 #else
-        public List<string> AccountTargetEmails {
+        public List<string> AccountTargetEmails
+        {
             get { return BackingStore?.Get<List<string>>("accountTargetEmails"); }
             set { BackingStore?.Set("accountTargetEmails", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountTargetEmails", n => { AccountTargetEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "accountTargetEmails", n => { AccountTargetEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

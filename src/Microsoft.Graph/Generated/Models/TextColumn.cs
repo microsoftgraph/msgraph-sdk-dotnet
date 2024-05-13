@@ -5,48 +5,56 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TextColumn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TextColumn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Whether to allow multiple lines of text.</summary>
-        public bool? AllowMultipleLines {
+        public bool? AllowMultipleLines
+        {
             get { return BackingStore?.Get<bool?>("allowMultipleLines"); }
             set { BackingStore?.Set("allowMultipleLines", value); }
         }
         /// <summary>Whether updates to this column should replace existing text, or append to it.</summary>
-        public bool? AppendChangesToExistingText {
+        public bool? AppendChangesToExistingText
+        {
             get { return BackingStore?.Get<bool?>("appendChangesToExistingText"); }
             set { BackingStore?.Set("appendChangesToExistingText", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The size of the text box.</summary>
-        public int? LinesForEditing {
+        public int? LinesForEditing
+        {
             get { return BackingStore?.Get<int?>("linesForEditing"); }
             set { BackingStore?.Set("linesForEditing", value); }
         }
         /// <summary>The maximum number of characters for the value.</summary>
-        public int? MaxLength {
+        public int? MaxLength
+        {
             get { return BackingStore?.Get<int?>("maxLength"); }
             set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -54,13 +62,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of text being stored. Must be one of plain or richText</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextType {
+        public string? TextType
+        {
             get { return BackingStore?.Get<string?>("textType"); }
             set { BackingStore?.Set("textType", value); }
         }
 #nullable restore
 #else
-        public string TextType {
+        public string TextType
+        {
             get { return BackingStore?.Get<string>("textType"); }
             set { BackingStore?.Set("textType", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowMultipleLines", n => { AllowMultipleLines = n.GetBoolValue(); } },
-                {"appendChangesToExistingText", n => { AppendChangesToExistingText = n.GetBoolValue(); } },
-                {"linesForEditing", n => { LinesForEditing = n.GetIntValue(); } },
-                {"maxLength", n => { MaxLength = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"textType", n => { TextType = n.GetStringValue(); } },
+                { "allowMultipleLines", n => { AllowMultipleLines = n.GetBoolValue(); } },
+                { "appendChangesToExistingText", n => { AppendChangesToExistingText = n.GetBoolValue(); } },
+                { "linesForEditing", n => { LinesForEditing = n.GetIntValue(); } },
+                { "maxLength", n => { MaxLength = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "textType", n => { TextType = n.GetStringValue(); } },
             };
         }
         /// <summary>

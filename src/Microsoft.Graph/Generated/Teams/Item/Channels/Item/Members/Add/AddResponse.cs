@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Teams.Item.Channels.Item.Members.Add {
+namespace Microsoft.Graph.Teams.Item.Channels.Item.Members.Add
+{
     [Obsolete("This class is obsolete. Use AddPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AddResponse : AddPostResponse, IParsable 
+    public class AddResponse : AddPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

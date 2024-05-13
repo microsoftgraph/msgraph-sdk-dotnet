@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy {
+namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy
+{
     [Obsolete("This class is obsolete. Use AsHierarchyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AsHierarchyResponse : AsHierarchyGetResponse, IParsable 
+    public class AsHierarchyResponse : AsHierarchyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

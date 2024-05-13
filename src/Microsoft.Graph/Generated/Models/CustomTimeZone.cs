@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CustomTimeZone : TimeZoneBase, IParsable 
+    public class CustomTimeZone : TimeZoneBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time offset of the time zone from Coordinated Universal Time (UTC). This value is in minutes. Time zones that are ahead of UTC have a positive offset; time zones that are behind UTC have a negative offset.</summary>
-        public int? Bias {
+        public int? Bias
+        {
             get { return BackingStore?.Get<int?>("bias"); }
             set { BackingStore?.Set("bias", value); }
         }
         /// <summary>Specifies when the time zone switches from standard time to daylight saving time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DaylightTimeZoneOffset? DaylightOffset {
+        public DaylightTimeZoneOffset? DaylightOffset
+        {
             get { return BackingStore?.Get<DaylightTimeZoneOffset?>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
 #nullable restore
 #else
-        public DaylightTimeZoneOffset DaylightOffset {
+        public DaylightTimeZoneOffset DaylightOffset
+        {
             get { return BackingStore?.Get<DaylightTimeZoneOffset>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specifies when the time zone switches from daylight saving time to standard time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StandardTimeZoneOffset? StandardOffset {
+        public StandardTimeZoneOffset? StandardOffset
+        {
             get { return BackingStore?.Get<StandardTimeZoneOffset?>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
 #nullable restore
 #else
-        public StandardTimeZoneOffset StandardOffset {
+        public StandardTimeZoneOffset StandardOffset
+        {
             get { return BackingStore?.Get<StandardTimeZoneOffset>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bias", n => { Bias = n.GetIntValue(); } },
-                {"daylightOffset", n => { DaylightOffset = n.GetObjectValue<DaylightTimeZoneOffset>(DaylightTimeZoneOffset.CreateFromDiscriminatorValue); } },
-                {"standardOffset", n => { StandardOffset = n.GetObjectValue<StandardTimeZoneOffset>(StandardTimeZoneOffset.CreateFromDiscriminatorValue); } },
+                { "bias", n => { Bias = n.GetIntValue(); } },
+                { "daylightOffset", n => { DaylightOffset = n.GetObjectValue<DaylightTimeZoneOffset>(DaylightTimeZoneOffset.CreateFromDiscriminatorValue); } },
+                { "standardOffset", n => { StandardOffset = n.GetObjectValue<StandardTimeZoneOffset>(StandardTimeZoneOffset.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

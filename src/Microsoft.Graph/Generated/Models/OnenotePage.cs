@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable 
+    public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The page&apos;s HTML content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl {
+        public string? ContentUrl
+        {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
 #nullable restore
 #else
-        public string ContentUrl {
+        public string ContentUrl
+        {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
@@ -40,56 +45,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByAppId {
+        public string? CreatedByAppId
+        {
             get { return BackingStore?.Get<string?>("createdByAppId"); }
             set { BackingStore?.Set("createdByAppId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByAppId {
+        public string CreatedByAppId
+        {
             get { return BackingStore?.Get<string>("createdByAppId"); }
             set { BackingStore?.Set("createdByAppId", value); }
         }
 #endif
         /// <summary>The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The indentation level of the page. Read-only.</summary>
-        public int? Level {
+        public int? Level
+        {
             get { return BackingStore?.Get<int?>("level"); }
             set { BackingStore?.Set("level", value); }
         }
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PageLinks? Links {
+        public PageLinks? Links
+        {
             get { return BackingStore?.Get<PageLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public PageLinks Links {
+        public PageLinks Links
+        {
             get { return BackingStore?.Get<PageLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #endif
         /// <summary>The order of the page within its parent section. Read-only.</summary>
-        public int? Order {
+        public int? Order
+        {
             get { return BackingStore?.Get<int?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
         /// <summary>The notebook that contains the page.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Notebook? ParentNotebook {
+        public Notebook? ParentNotebook
+        {
             get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #nullable restore
 #else
-        public Notebook ParentNotebook {
+        public Notebook ParentNotebook
+        {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The section that contains the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnenoteSection? ParentSection {
+        public OnenoteSection? ParentSection
+        {
             get { return BackingStore?.Get<OnenoteSection?>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
 #nullable restore
 #else
-        public OnenoteSection ParentSection {
+        public OnenoteSection ParentSection
+        {
             get { return BackingStore?.Get<OnenoteSection>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The title of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The userTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserTags {
+        public List<string>? UserTags
+        {
             get { return BackingStore?.Get<List<string>?>("userTags"); }
             set { BackingStore?.Set("userTags", value); }
         }
 #nullable restore
 #else
-        public List<string> UserTags {
+        public List<string> UserTags
+        {
             get { return BackingStore?.Get<List<string>>("userTags"); }
             set { BackingStore?.Set("userTags", value); }
         }
@@ -161,17 +181,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
-                {"createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"level", n => { Level = n.GetIntValue(); } },
-                {"links", n => { Links = n.GetObjectValue<PageLinks>(PageLinks.CreateFromDiscriminatorValue); } },
-                {"order", n => { Order = n.GetIntValue(); } },
-                {"parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
-                {"parentSection", n => { ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "level", n => { Level = n.GetIntValue(); } },
+                { "links", n => { Links = n.GetObjectValue<PageLinks>(PageLinks.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetIntValue(); } },
+                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
+                { "parentSection", n => { ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

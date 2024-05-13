@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationPowerPointResource : EducationResource, IParsable 
+    public class EducationPowerPointResource : EducationResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Location of the file on disk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileUrl {
+        public string? FileUrl
+        {
             get { return BackingStore?.Get<string?>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
 #nullable restore
 #else
-        public string FileUrl {
+        public string FileUrl
+        {
             get { return BackingStore?.Get<string>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fileUrl", n => { FileUrl = n.GetStringValue(); } },
+                { "fileUrl", n => { FileUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PolicyTemplate : Entity, IParsable 
+    public class PolicyTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines an optional cross-tenant access policy template with user synchronization settings for a multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationIdentitySyncPolicyTemplate? MultiTenantOrganizationIdentitySynchronization {
+        public MultiTenantOrganizationIdentitySyncPolicyTemplate? MultiTenantOrganizationIdentitySynchronization
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationIdentitySyncPolicyTemplate?>("multiTenantOrganizationIdentitySynchronization"); }
             set { BackingStore?.Set("multiTenantOrganizationIdentitySynchronization", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationIdentitySyncPolicyTemplate MultiTenantOrganizationIdentitySynchronization {
+        public MultiTenantOrganizationIdentitySyncPolicyTemplate MultiTenantOrganizationIdentitySynchronization
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationIdentitySyncPolicyTemplate>("multiTenantOrganizationIdentitySynchronization"); }
             set { BackingStore?.Set("multiTenantOrganizationIdentitySynchronization", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultiTenantOrganizationPartnerConfigurationTemplate? MultiTenantOrganizationPartnerConfiguration {
+        public MultiTenantOrganizationPartnerConfigurationTemplate? MultiTenantOrganizationPartnerConfiguration
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationPartnerConfigurationTemplate?>("multiTenantOrganizationPartnerConfiguration"); }
             set { BackingStore?.Set("multiTenantOrganizationPartnerConfiguration", value); }
         }
 #nullable restore
 #else
-        public MultiTenantOrganizationPartnerConfigurationTemplate MultiTenantOrganizationPartnerConfiguration {
+        public MultiTenantOrganizationPartnerConfigurationTemplate MultiTenantOrganizationPartnerConfiguration
+        {
             get { return BackingStore?.Get<MultiTenantOrganizationPartnerConfigurationTemplate>("multiTenantOrganizationPartnerConfiguration"); }
             set { BackingStore?.Set("multiTenantOrganizationPartnerConfiguration", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"multiTenantOrganizationIdentitySynchronization", n => { MultiTenantOrganizationIdentitySynchronization = n.GetObjectValue<MultiTenantOrganizationIdentitySyncPolicyTemplate>(MultiTenantOrganizationIdentitySyncPolicyTemplate.CreateFromDiscriminatorValue); } },
-                {"multiTenantOrganizationPartnerConfiguration", n => { MultiTenantOrganizationPartnerConfiguration = n.GetObjectValue<MultiTenantOrganizationPartnerConfigurationTemplate>(MultiTenantOrganizationPartnerConfigurationTemplate.CreateFromDiscriminatorValue); } },
+                { "multiTenantOrganizationIdentitySynchronization", n => { MultiTenantOrganizationIdentitySynchronization = n.GetObjectValue<MultiTenantOrganizationIdentitySyncPolicyTemplate>(MultiTenantOrganizationIdentitySyncPolicyTemplate.CreateFromDiscriminatorValue); } },
+                { "multiTenantOrganizationPartnerConfiguration", n => { MultiTenantOrganizationPartnerConfiguration = n.GetObjectValue<MultiTenantOrganizationPartnerConfigurationTemplate>(MultiTenantOrganizationPartnerConfigurationTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

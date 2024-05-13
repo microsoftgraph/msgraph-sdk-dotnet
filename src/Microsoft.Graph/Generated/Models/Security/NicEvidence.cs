@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class NicEvidence : AlertEvidence, IParsable 
+    public class NicEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? IpAddress {
+        public IpEvidence? IpAddress
+        {
             get { return BackingStore?.Get<IpEvidence?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence IpAddress {
+        public IpEvidence IpAddress
+        {
             get { return BackingStore?.Get<IpEvidence>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The macAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MacAddress {
+        public string? MacAddress
+        {
             get { return BackingStore?.Get<string?>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
 #nullable restore
 #else
-        public string MacAddress {
+        public string MacAddress
+        {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The vlans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Vlans {
+        public List<string>? Vlans
+        {
             get { return BackingStore?.Get<List<string>?>("vlans"); }
             set { BackingStore?.Set("vlans", value); }
         }
 #nullable restore
 #else
-        public List<string> Vlans {
+        public List<string> Vlans
+        {
             get { return BackingStore?.Get<List<string>>("vlans"); }
             set { BackingStore?.Set("vlans", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ipAddress", n => { IpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
-                {"vlans", n => { Vlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ipAddress", n => { IpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "macAddress", n => { MacAddress = n.GetStringValue(); } },
+                { "vlans", n => { Vlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

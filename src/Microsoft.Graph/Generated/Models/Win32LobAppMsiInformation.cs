@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains MSI app properties for a Win32 App.
     /// </summary>
-    public class Win32LobAppMsiInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Win32LobAppMsiInformation : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
-        public Win32LobAppMsiPackageType? PackageType {
+        public Win32LobAppMsiPackageType? PackageType
+        {
             get { return BackingStore?.Get<Win32LobAppMsiPackageType?>("packageType"); }
             set { BackingStore?.Set("packageType", value); }
         }
         /// <summary>The MSI product code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductCode {
+        public string? ProductCode
+        {
             get { return BackingStore?.Get<string?>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
 #nullable restore
 #else
-        public string ProductCode {
+        public string ProductCode
+        {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The MSI product name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName {
+        public string? ProductName
+        {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #nullable restore
 #else
-        public string ProductName {
+        public string ProductName
+        {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The MSI product version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductVersion {
+        public string? ProductVersion
+        {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #nullable restore
 #else
-        public string ProductVersion {
+        public string ProductVersion
+        {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
@@ -82,32 +93,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The MSI publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
         /// <summary>Whether the MSI app requires the machine to reboot to complete installation.</summary>
-        public bool? RequiresReboot {
+        public bool? RequiresReboot
+        {
             get { return BackingStore?.Get<bool?>("requiresReboot"); }
             set { BackingStore?.Set("requiresReboot", value); }
         }
         /// <summary>The MSI upgrade code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpgradeCode {
+        public string? UpgradeCode
+        {
             get { return BackingStore?.Get<string?>("upgradeCode"); }
             set { BackingStore?.Set("upgradeCode", value); }
         }
 #nullable restore
 #else
-        public string UpgradeCode {
+        public string UpgradeCode
+        {
             get { return BackingStore?.Get<string>("upgradeCode"); }
             set { BackingStore?.Set("upgradeCode", value); }
         }
@@ -138,14 +154,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"packageType", n => { PackageType = n.GetEnumValue<Win32LobAppMsiPackageType>(); } },
-                {"productCode", n => { ProductCode = n.GetStringValue(); } },
-                {"productName", n => { ProductName = n.GetStringValue(); } },
-                {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"requiresReboot", n => { RequiresReboot = n.GetBoolValue(); } },
-                {"upgradeCode", n => { UpgradeCode = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "packageType", n => { PackageType = n.GetEnumValue<Win32LobAppMsiPackageType>(); } },
+                { "productCode", n => { ProductCode = n.GetStringValue(); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
+                { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "requiresReboot", n => { RequiresReboot = n.GetBoolValue(); } },
+                { "upgradeCode", n => { UpgradeCode = n.GetStringValue(); } },
             };
         }
         /// <summary>

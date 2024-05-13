@@ -5,43 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamMemberSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamMemberSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>If set to true, members can add and remove apps.</summary>
-        public bool? AllowAddRemoveApps {
+        public bool? AllowAddRemoveApps
+        {
             get { return BackingStore?.Get<bool?>("allowAddRemoveApps"); }
             set { BackingStore?.Set("allowAddRemoveApps", value); }
         }
         /// <summary>If set to true, members can add and update private channels.</summary>
-        public bool? AllowCreatePrivateChannels {
+        public bool? AllowCreatePrivateChannels
+        {
             get { return BackingStore?.Get<bool?>("allowCreatePrivateChannels"); }
             set { BackingStore?.Set("allowCreatePrivateChannels", value); }
         }
         /// <summary>If set to true, members can add and update channels.</summary>
-        public bool? AllowCreateUpdateChannels {
+        public bool? AllowCreateUpdateChannels
+        {
             get { return BackingStore?.Get<bool?>("allowCreateUpdateChannels"); }
             set { BackingStore?.Set("allowCreateUpdateChannels", value); }
         }
         /// <summary>If set to true, members can add, update, and remove connectors.</summary>
-        public bool? AllowCreateUpdateRemoveConnectors {
+        public bool? AllowCreateUpdateRemoveConnectors
+        {
             get { return BackingStore?.Get<bool?>("allowCreateUpdateRemoveConnectors"); }
             set { BackingStore?.Set("allowCreateUpdateRemoveConnectors", value); }
         }
         /// <summary>If set to true, members can add, update, and remove tabs.</summary>
-        public bool? AllowCreateUpdateRemoveTabs {
+        public bool? AllowCreateUpdateRemoveTabs
+        {
             get { return BackingStore?.Get<bool?>("allowCreateUpdateRemoveTabs"); }
             set { BackingStore?.Set("allowCreateUpdateRemoveTabs", value); }
         }
         /// <summary>If set to true, members can delete channels.</summary>
-        public bool? AllowDeleteChannels {
+        public bool? AllowDeleteChannels
+        {
             get { return BackingStore?.Get<bool?>("allowDeleteChannels"); }
             set { BackingStore?.Set("allowDeleteChannels", value); }
         }
@@ -50,13 +58,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -87,13 +97,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowAddRemoveApps", n => { AllowAddRemoveApps = n.GetBoolValue(); } },
-                {"allowCreatePrivateChannels", n => { AllowCreatePrivateChannels = n.GetBoolValue(); } },
-                {"allowCreateUpdateChannels", n => { AllowCreateUpdateChannels = n.GetBoolValue(); } },
-                {"allowCreateUpdateRemoveConnectors", n => { AllowCreateUpdateRemoveConnectors = n.GetBoolValue(); } },
-                {"allowCreateUpdateRemoveTabs", n => { AllowCreateUpdateRemoveTabs = n.GetBoolValue(); } },
-                {"allowDeleteChannels", n => { AllowDeleteChannels = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowAddRemoveApps", n => { AllowAddRemoveApps = n.GetBoolValue(); } },
+                { "allowCreatePrivateChannels", n => { AllowCreatePrivateChannels = n.GetBoolValue(); } },
+                { "allowCreateUpdateChannels", n => { AllowCreateUpdateChannels = n.GetBoolValue(); } },
+                { "allowCreateUpdateRemoveConnectors", n => { AllowCreateUpdateRemoveConnectors = n.GetBoolValue(); } },
+                { "allowCreateUpdateRemoveTabs", n => { AllowCreateUpdateRemoveTabs = n.GetBoolValue(); } },
+                { "allowDeleteChannels", n => { AllowDeleteChannels = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

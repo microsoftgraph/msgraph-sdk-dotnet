@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups
     /// </summary>
-    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable 
+    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable
     {
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments {
+        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments {
+        public List<TargetedManagedAppPolicyAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
-        public bool? IsAssigned {
+        public bool? IsAssigned
+        {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
         }
@@ -60,8 +64,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
             };
         }
         /// <summary>

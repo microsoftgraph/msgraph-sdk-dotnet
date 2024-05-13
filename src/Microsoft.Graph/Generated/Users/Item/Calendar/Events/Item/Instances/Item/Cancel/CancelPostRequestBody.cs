@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Instances.Item.Cancel {
+namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Instances.Item.Cancel
+{
     #pragma warning disable CS1591
-    public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Instances.Item.Cancel 
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Users.Item.Calendar.Events.Item.Instances.Item.Cancel 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
+                { "Comment", n => { Comment = n.GetStringValue(); } },
             };
         }
         /// <summary>

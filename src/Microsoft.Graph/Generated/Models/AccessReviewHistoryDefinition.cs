@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewHistoryDefinition : Entity, IParsable 
+    public class AccessReviewHistoryDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy {
+        public UserIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy {
+        public UserIdentity CreatedBy
+        {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Timestamp when the access review definition was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryDecisionFilter?>? Decisions {
+        public List<AccessReviewHistoryDecisionFilter?>? Decisions
+        {
             get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryDecisionFilter?> Decisions {
+        public List<AccessReviewHistoryDecisionFilter?> Decisions
+        {
             get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name for the access review history data collection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -59,37 +67,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn&apos;t recur will have exactly one instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewHistoryInstance>? Instances {
+        public List<AccessReviewHistoryInstance>? Instances
+        {
             get { return BackingStore?.Get<List<AccessReviewHistoryInstance>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewHistoryInstance> Instances {
+        public List<AccessReviewHistoryInstance> Instances
+        {
             get { return BackingStore?.Get<List<AccessReviewHistoryInstance>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
 #endif
         /// <summary>A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn&apos;t defined.</summary>
-        public DateTimeOffset? ReviewHistoryPeriodEndDateTime {
+        public DateTimeOffset? ReviewHistoryPeriodEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodEndDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodEndDateTime", value); }
         }
         /// <summary>A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn&apos;t defined.</summary>
-        public DateTimeOffset? ReviewHistoryPeriodStartDateTime {
+        public DateTimeOffset? ReviewHistoryPeriodStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodStartDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodStartDateTime", value); }
         }
         /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren&apos;t defined. Not supported yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewHistoryScheduleSettings? ScheduleSettings {
+        public AccessReviewHistoryScheduleSettings? ScheduleSettings
+        {
             get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings?>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
 #nullable restore
 #else
-        public AccessReviewHistoryScheduleSettings ScheduleSettings {
+        public AccessReviewHistoryScheduleSettings ScheduleSettings
+        {
             get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
@@ -97,19 +111,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewScope>? Scopes {
+        public List<AccessReviewScope>? Scopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewScope> Scopes {
+        public List<AccessReviewScope> Scopes
+        {
             get { return BackingStore?.Get<List<AccessReviewScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #endif
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.</summary>
-        public AccessReviewHistoryStatus? Status {
+        public AccessReviewHistoryStatus? Status
+        {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -131,16 +148,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"decisions", n => { Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>()?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"scheduleSettings", n => { ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
-                {"scopes", n => { Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>()?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "instances", n => { Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewHistoryPeriodStartDateTime", n => { ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "scheduleSettings", n => { ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
             };
         }
         /// <summary>

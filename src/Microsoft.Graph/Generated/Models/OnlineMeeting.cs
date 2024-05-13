@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnlineMeeting : OnlineMeetingBase, IParsable 
+    public class OnlineMeeting : OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The attendeeReport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? AttendeeReport {
+        public byte[]? AttendeeReport
+        {
             get { return BackingStore?.Get<byte[]?>("attendeeReport"); }
             set { BackingStore?.Set("attendeeReport", value); }
         }
 #nullable restore
 #else
-        public byte[] AttendeeReport {
+        public byte[] AttendeeReport
+        {
             get { return BackingStore?.Get<byte[]>("attendeeReport"); }
             set { BackingStore?.Set("attendeeReport", value); }
         }
@@ -26,56 +29,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>The broadcastSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BroadcastMeetingSettings? BroadcastSettings {
+        public BroadcastMeetingSettings? BroadcastSettings
+        {
             get { return BackingStore?.Get<BroadcastMeetingSettings?>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #nullable restore
 #else
-        public BroadcastMeetingSettings BroadcastSettings {
+        public BroadcastMeetingSettings BroadcastSettings
+        {
             get { return BackingStore?.Get<BroadcastMeetingSettings>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
 #endif
         /// <summary>The meeting creation time in UTC. Read-only.</summary>
-        public DateTimeOffset? CreationDateTime {
+        public DateTimeOffset? CreationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The meeting end time in UTC. Required when you create an online meeting.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The externalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
         /// <summary>The isBroadcast property</summary>
-        public bool? IsBroadcast {
+        public bool? IsBroadcast
+        {
             get { return BackingStore?.Get<bool?>("isBroadcast"); }
             set { BackingStore?.Set("isBroadcast", value); }
         }
         /// <summary>The participants associated with the online meeting.  This includes the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MeetingParticipants? Participants {
+        public MeetingParticipants? Participants
+        {
             get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public MeetingParticipants Participants {
+        public MeetingParticipants Participants
+        {
             get { return BackingStore?.Get<MeetingParticipants>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -83,32 +95,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The recordings of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRecording>? Recordings {
+        public List<CallRecording>? Recordings
+        {
             get { return BackingStore?.Get<List<CallRecording>?>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #nullable restore
 #else
-        public List<CallRecording> Recordings {
+        public List<CallRecording> Recordings
+        {
             get { return BackingStore?.Get<List<CallRecording>>("recordings"); }
             set { BackingStore?.Set("recordings", value); }
         }
 #endif
         /// <summary>The meeting start time in UTC. Required when you create an online meeting.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The transcripts of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallTranscript>? Transcripts {
+        public List<CallTranscript>? Transcripts
+        {
             get { return BackingStore?.Get<List<CallTranscript>?>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
 #nullable restore
 #else
-        public List<CallTranscript> Transcripts {
+        public List<CallTranscript> Transcripts
+        {
             get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
@@ -138,16 +155,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
-                {"broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
-                {"participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
-                {"recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
+                { "broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
+                { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
+                { "participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
+                { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

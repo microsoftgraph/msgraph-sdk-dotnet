@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class ExternalItem : Microsoft.Graph.Models.Entity, IParsable 
+    public class ExternalItem : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.ExternalConnectors.Acl>? Acl {
+        public List<Microsoft.Graph.Models.ExternalConnectors.Acl>? Acl
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Acl>?>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.ExternalConnectors.Acl> Acl {
+        public List<Microsoft.Graph.Models.ExternalConnectors.Acl> Acl
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.ExternalConnectors.Acl>>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>Returns a list of activities performed on the item. Write-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalActivity>? Activities {
+        public List<ExternalActivity>? Activities
+        {
             get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ExternalActivity> Activities {
+        public List<ExternalActivity> Activities
+        {
             get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalItemContent? Content {
+        public ExternalItemContent? Content
+        {
             get { return BackingStore?.Get<ExternalItemContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public ExternalItemContent Content {
+        public ExternalItemContent Content
+        {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ExternalConnectors.Properties? Properties {
+        public Microsoft.Graph.Models.ExternalConnectors.Properties? Properties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Properties?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ExternalConnectors.Properties Properties {
+        public Microsoft.Graph.Models.ExternalConnectors.Properties Properties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.Acl>(Microsoft.Graph.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
-                {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Properties>(Microsoft.Graph.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
+                { "acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.ExternalConnectors.Acl>(Microsoft.Graph.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Properties>(Microsoft.Graph.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

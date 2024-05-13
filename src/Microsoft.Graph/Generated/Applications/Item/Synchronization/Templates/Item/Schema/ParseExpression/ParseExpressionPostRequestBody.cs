@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.ParseExpression {
+namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.ParseExpression
+{
     #pragma warning disable CS1591
-    public class ParseExpressionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ParseExpressionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>The expression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression {
+        public string? Expression
+        {
             get { return BackingStore?.Get<string?>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
 #nullable restore
 #else
-        public string Expression {
+        public string Expression
+        {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>The targetAttributeDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttributeDefinition? TargetAttributeDefinition {
+        public AttributeDefinition? TargetAttributeDefinition
+        {
             get { return BackingStore?.Get<AttributeDefinition?>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
 #nullable restore
 #else
-        public AttributeDefinition TargetAttributeDefinition {
+        public AttributeDefinition TargetAttributeDefinition
+        {
             get { return BackingStore?.Get<AttributeDefinition>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         /// <summary>The testInputObject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpressionInputObject? TestInputObject {
+        public ExpressionInputObject? TestInputObject
+        {
             get { return BackingStore?.Get<ExpressionInputObject?>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
 #nullable restore
 #else
-        public ExpressionInputObject TestInputObject {
+        public ExpressionInputObject TestInputObject
+        {
             get { return BackingStore?.Get<ExpressionInputObject>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schem
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expression", n => { Expression = n.GetStringValue(); } },
-                {"targetAttributeDefinition", n => { TargetAttributeDefinition = n.GetObjectValue<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue); } },
-                {"testInputObject", n => { TestInputObject = n.GetObjectValue<ExpressionInputObject>(ExpressionInputObject.CreateFromDiscriminatorValue); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
+                { "targetAttributeDefinition", n => { TargetAttributeDefinition = n.GetObjectValue<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue); } },
+                { "testInputObject", n => { TestInputObject = n.GetObjectValue<ExpressionInputObject>(ExpressionInputObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

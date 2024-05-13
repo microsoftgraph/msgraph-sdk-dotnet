@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationStrengthPolicy : Entity, IParsable 
+    public class AuthenticationStrengthPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? AllowedCombinations {
+        public List<AuthenticationMethodModes?>? AllowedCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> AllowedCombinations {
+        public List<AuthenticationMethodModes?> AllowedCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationCombinationConfiguration>? CombinationConfigurations {
+        public List<AuthenticationCombinationConfiguration>? CombinationConfigurations
+        {
             get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>?>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationCombinationConfiguration> CombinationConfigurations {
+        public List<AuthenticationCombinationConfiguration> CombinationConfigurations
+        {
             get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
 #endif
         /// <summary>The datetime when this policy was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The human-readable description of this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -59,29 +67,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The datetime when this policy was last modified.</summary>
-        public DateTimeOffset? ModifiedDateTime {
+        public DateTimeOffset? ModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The policyType property</summary>
-        public AuthenticationStrengthPolicyType? PolicyType {
+        public AuthenticationStrengthPolicyType? PolicyType
+        {
             get { return BackingStore?.Get<AuthenticationStrengthPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The requirementsSatisfied property</summary>
-        public AuthenticationStrengthRequirements? RequirementsSatisfied {
+        public AuthenticationStrengthRequirements? RequirementsSatisfied
+        {
             get { return BackingStore?.Get<AuthenticationStrengthRequirements?>("requirementsSatisfied"); }
             set { BackingStore?.Set("requirementsSatisfied", value); }
         }
@@ -103,14 +116,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
-                {"combinationConfigurations", n => { CombinationConfigurations = n.GetCollectionOfObjectValues<AuthenticationCombinationConfiguration>(AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"policyType", n => { PolicyType = n.GetEnumValue<AuthenticationStrengthPolicyType>(); } },
-                {"requirementsSatisfied", n => { RequirementsSatisfied = n.GetEnumValue<AuthenticationStrengthRequirements>(); } },
+                { "allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "combinationConfigurations", n => { CombinationConfigurations = n.GetCollectionOfObjectValues<AuthenticationCombinationConfiguration>(AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<AuthenticationStrengthPolicyType>(); } },
+                { "requirementsSatisfied", n => { RequirementsSatisfied = n.GetEnumValue<AuthenticationStrengthRequirements>(); } },
             };
         }
         /// <summary>

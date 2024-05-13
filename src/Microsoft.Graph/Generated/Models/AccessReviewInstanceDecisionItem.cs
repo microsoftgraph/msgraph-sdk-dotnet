@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewInstanceDecisionItem : Entity, IParsable 
+    public class AccessReviewInstanceDecisionItem : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessReviewId {
+        public string? AccessReviewId
+        {
             get { return BackingStore?.Get<string?>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
 #nullable restore
 #else
-        public string AccessReviewId {
+        public string AccessReviewId
+        {
             get { return BackingStore?.Get<string>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the user who applied the decision. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AppliedBy {
+        public UserIdentity? AppliedBy
+        {
             get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AppliedBy {
+        public UserIdentity AppliedBy
+        {
             get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #endif
         /// <summary>The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.</summary>
-        public DateTimeOffset? AppliedDateTime {
+        public DateTimeOffset? AppliedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
             set { BackingStore?.Set("appliedDateTime", value); }
         }
         /// <summary>The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplyResult {
+        public string? ApplyResult
+        {
             get { return BackingStore?.Get<string?>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
 #nullable restore
 #else
-        public string ApplyResult {
+        public string ApplyResult
+        {
             get { return BackingStore?.Get<string>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Decision {
+        public string? Decision
+        {
             get { return BackingStore?.Get<string?>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
 #nullable restore
 #else
-        public string Decision {
+        public string Decision
+        {
             get { return BackingStore?.Get<string>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceInsight>? Insights {
+        public List<GovernanceInsight>? Insights
+        {
             get { return BackingStore?.Get<List<GovernanceInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceInsight> Insights {
+        public List<GovernanceInsight> Insights
+        {
             get { return BackingStore?.Get<List<GovernanceInsight>>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Justification left by the reviewer when they made the decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Principal {
+        public Identity? Principal
+        {
             get { return BackingStore?.Get<Identity?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public Identity Principal {
+        public Identity Principal
+        {
             get { return BackingStore?.Get<Identity>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrincipalLink {
+        public string? PrincipalLink
+        {
             get { return BackingStore?.Get<string?>("principalLink"); }
             set { BackingStore?.Set("principalLink", value); }
         }
 #nullable restore
 #else
-        public string PrincipalLink {
+        public string PrincipalLink
+        {
             get { return BackingStore?.Get<string>("principalLink"); }
             set { BackingStore?.Set("principalLink", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Recommendation {
+        public string? Recommendation
+        {
             get { return BackingStore?.Get<string?>("recommendation"); }
             set { BackingStore?.Set("recommendation", value); }
         }
 #nullable restore
 #else
-        public string Recommendation {
+        public string Recommendation
+        {
             get { return BackingStore?.Get<string>("recommendation"); }
             set { BackingStore?.Set("recommendation", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the resource. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is Bob and the resource is &apos;Sales&apos;. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewInstanceDecisionItemResource? Resource {
+        public AccessReviewInstanceDecisionItemResource? Resource
+        {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AccessReviewInstanceDecisionItemResource Resource {
+        public AccessReviewInstanceDecisionItemResource Resource
+        {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceLink {
+        public string? ResourceLink
+        {
             get { return BackingStore?.Get<string?>("resourceLink"); }
             set { BackingStore?.Set("resourceLink", value); }
         }
 #nullable restore
 #else
-        public string ResourceLink {
+        public string ResourceLink
+        {
             get { return BackingStore?.Get<string>("resourceLink"); }
             set { BackingStore?.Set("resourceLink", value); }
         }
@@ -171,19 +195,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? ReviewedBy {
+        public UserIdentity? ReviewedBy
+        {
             get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity ReviewedBy {
+        public UserIdentity ReviewedBy
+        {
             get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
         /// <summary>The timestamp when the review decision occurred. Supports $select. Read-only.</summary>
-        public DateTimeOffset? ReviewedDateTime {
+        public DateTimeOffset? ReviewedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
             set { BackingStore?.Set("reviewedDateTime", value); }
         }
@@ -205,20 +232,20 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
-                {"appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"applyResult", n => { ApplyResult = n.GetStringValue(); } },
-                {"decision", n => { Decision = n.GetStringValue(); } },
-                {"insights", n => { Insights = n.GetCollectionOfObjectValues<GovernanceInsight>(GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"principal", n => { Principal = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"principalLink", n => { PrincipalLink = n.GetStringValue(); } },
-                {"recommendation", n => { Recommendation = n.GetStringValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<AccessReviewInstanceDecisionItemResource>(AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
-                {"resourceLink", n => { ResourceLink = n.GetStringValue(); } },
-                {"reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
+                { "appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
+                { "decision", n => { Decision = n.GetStringValue(); } },
+                { "insights", n => { Insights = n.GetCollectionOfObjectValues<GovernanceInsight>(GovernanceInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "principal", n => { Principal = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
+                { "recommendation", n => { Recommendation = n.GetStringValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<AccessReviewInstanceDecisionItemResource>(AccessReviewInstanceDecisionItemResource.CreateFromDiscriminatorValue); } },
+                { "resourceLink", n => { ResourceLink = n.GetStringValue(); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

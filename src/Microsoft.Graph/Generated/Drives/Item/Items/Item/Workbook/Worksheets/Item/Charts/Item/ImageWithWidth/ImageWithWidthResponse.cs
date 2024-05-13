@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth
+{
     [Obsolete("This class is obsolete. Use ImageWithWidthGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ImageWithWidthResponse : ImageWithWidthGetResponse, IParsable 
+    public class ImageWithWidthResponse : ImageWithWidthGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

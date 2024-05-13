@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AggregationOption : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AggregationOption : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The bucketDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BucketAggregationDefinition? BucketDefinition {
+        public BucketAggregationDefinition? BucketDefinition
+        {
             get { return BackingStore?.Get<BucketAggregationDefinition?>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
 #nullable restore
 #else
-        public BucketAggregationDefinition BucketDefinition {
+        public BucketAggregationDefinition BucketDefinition
+        {
             get { return BackingStore?.Get<BucketAggregationDefinition>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Computes aggregation on the field while the field exists in the current entity type. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field {
+        public string? Field
+        {
             get { return BackingStore?.Get<string?>("field"); }
             set { BackingStore?.Set("field", value); }
         }
 #nullable restore
 #else
-        public string Field {
+        public string Field
+        {
             get { return BackingStore?.Get<string>("field"); }
             set { BackingStore?.Set("field", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of searchBucket resources to be returned. This isn&apos;t required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.</summary>
-        public int? Size {
+        public int? Size
+        {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bucketDefinition", n => { BucketDefinition = n.GetObjectValue<BucketAggregationDefinition>(BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
-                {"field", n => { Field = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetIntValue(); } },
+                { "bucketDefinition", n => { BucketDefinition = n.GetObjectValue<BucketAggregationDefinition>(BucketAggregationDefinition.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetIntValue(); } },
             };
         }
         /// <summary>

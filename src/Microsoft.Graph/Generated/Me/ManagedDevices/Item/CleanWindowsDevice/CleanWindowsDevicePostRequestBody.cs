@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice {
+namespace Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice
+{
     #pragma warning disable CS1591
-    public class CleanWindowsDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CleanWindowsDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keepUserData property</summary>
-        public bool? KeepUserData {
+        public bool? KeepUserData
+        {
             get { return BackingStore?.Get<bool?>("keepUserData"); }
             set { BackingStore?.Set("keepUserData", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
+                { "keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
             };
         }
         /// <summary>

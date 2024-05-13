@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcOnPremisesConnection : Entity, IParsable 
+    public class CloudPcOnPremisesConnection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Maximum length is 255. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdDomainName {
+        public string? AdDomainName
+        {
             get { return BackingStore?.Get<string?>("adDomainName"); }
             set { BackingStore?.Set("adDomainName", value); }
         }
 #nullable restore
 #else
-        public string AdDomainName {
+        public string AdDomainName
+        {
             get { return BackingStore?.Get<string>("adDomainName"); }
             set { BackingStore?.Set("adDomainName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The password associated with the username of an Active Directory account (adDomainUsername).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdDomainPassword {
+        public string? AdDomainPassword
+        {
             get { return BackingStore?.Get<string?>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
 #nullable restore
 #else
-        public string AdDomainPassword {
+        public string AdDomainPassword
+        {
             get { return BackingStore?.Get<string>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The username of an Active Directory account (user or service account) that has permission to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdDomainUsername {
+        public string? AdDomainUsername
+        {
             get { return BackingStore?.Get<string?>("adDomainUsername"); }
             set { BackingStore?.Set("adDomainUsername", value); }
         }
 #nullable restore
 #else
-        public string AdDomainUsername {
+        public string AdDomainUsername
+        {
             get { return BackingStore?.Get<string>("adDomainUsername"); }
             set { BackingStore?.Set("adDomainUsername", value); }
         }
@@ -54,70 +61,81 @@ namespace Microsoft.Graph.Models {
         /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternateResourceUrl {
+        public string? AlternateResourceUrl
+        {
             get { return BackingStore?.Get<string?>("alternateResourceUrl"); }
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #nullable restore
 #else
-        public string AlternateResourceUrl {
+        public string AlternateResourceUrl
+        {
             get { return BackingStore?.Get<string>("alternateResourceUrl"); }
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
         /// <summary>Specifies how the provisioned Cloud PC joins to Microsoft Entra. It includes different types, one is Microsoft Entra ID join, which means there&apos;s no on-premises Active Directory (AD) in the current tenant, and the Cloud PC device is joined by Microsoft Entra. Another one is hybridAzureADJoin, which means there&apos;s also an on-premises Active Directory (AD) in the current tenant and the Cloud PC device joins to on-premises Active Directory (AD) and Microsoft Entra. The type also determines which types of users can be assigned and can sign into a Cloud PC. The azureADJoin type indicates that cloud-only and hybrid users can be assigned and signed into the Cloud PC. hybridAzureADJoin indicates only hybrid users can be assigned and signed into the Cloud PC. The default value is hybridAzureADJoin.</summary>
-        public CloudPcOnPremisesConnectionType? ConnectionType {
+        public CloudPcOnPremisesConnectionType? ConnectionType
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>The display name for the Azure network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The healthCheckStatus property</summary>
-        public CloudPcOnPremisesConnectionStatus? HealthCheckStatus {
+        public CloudPcOnPremisesConnectionStatus? HealthCheckStatus
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
         /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail {
+        public CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail?>("healthCheckStatusDetail"); }
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #nullable restore
 #else
-        public CloudPcOnPremisesConnectionStatusDetail HealthCheckStatusDetail {
+        public CloudPcOnPremisesConnectionStatusDetail HealthCheckStatusDetail
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail"); }
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
         /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
-        public bool? InUse {
+        public bool? InUse
+        {
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
         }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in the tenant&apos;s Active Directory domain (OU) is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnit {
+        public string? OrganizationalUnit
+        {
             get { return BackingStore?.Get<string?>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
 #nullable restore
 #else
-        public string OrganizationalUnit {
+        public string OrganizationalUnit
+        {
             get { return BackingStore?.Get<string>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the target resource group used associated with the on-premises network connectivity for Cloud PCs. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceGroupId {
+        public string? ResourceGroupId
+        {
             get { return BackingStore?.Get<string?>("resourceGroupId"); }
             set { BackingStore?.Set("resourceGroupId", value); }
         }
 #nullable restore
 #else
-        public string ResourceGroupId {
+        public string ResourceGroupId
+        {
             get { return BackingStore?.Get<string>("resourceGroupId"); }
             set { BackingStore?.Set("resourceGroupId", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the target subnet used associated with the on-premises network connectivity for Cloud PCs. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubnetId {
+        public string? SubnetId
+        {
             get { return BackingStore?.Get<string?>("subnetId"); }
             set { BackingStore?.Set("subnetId", value); }
         }
 #nullable restore
 #else
-        public string SubnetId {
+        public string SubnetId
+        {
             get { return BackingStore?.Get<string>("subnetId"); }
             set { BackingStore?.Set("subnetId", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the Azure subscription associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the Azure subscription is used to create an Azure network connection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionName {
+        public string? SubscriptionName
+        {
             get { return BackingStore?.Get<string?>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionName {
+        public string SubscriptionName
+        {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
@@ -181,13 +207,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier of the target virtual network used associated with the on-premises network connectivity for Cloud PCs. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VirtualNetworkId {
+        public string? VirtualNetworkId
+        {
             get { return BackingStore?.Get<string?>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
 #nullable restore
 #else
-        public string VirtualNetworkId {
+        public string VirtualNetworkId
+        {
             get { return BackingStore?.Get<string>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
@@ -195,13 +223,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the resource location of the target virtual network. For example, the location can be eastus2, westeurope, etc. Read-only (computed value).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VirtualNetworkLocation {
+        public string? VirtualNetworkLocation
+        {
             get { return BackingStore?.Get<string?>("virtualNetworkLocation"); }
             set { BackingStore?.Set("virtualNetworkLocation", value); }
         }
 #nullable restore
 #else
-        public string VirtualNetworkLocation {
+        public string VirtualNetworkLocation
+        {
             get { return BackingStore?.Get<string>("virtualNetworkLocation"); }
             set { BackingStore?.Set("virtualNetworkLocation", value); }
         }
@@ -224,22 +254,22 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"adDomainName", n => { AdDomainName = n.GetStringValue(); } },
-                {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
-                {"adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
-                {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
-                {"connectionType", n => { ConnectionType = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
-                {"healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetail>(CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
-                {"inUse", n => { InUse = n.GetBoolValue(); } },
-                {"organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
-                {"resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
-                {"subnetId", n => { SubnetId = n.GetStringValue(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
-                {"virtualNetworkId", n => { VirtualNetworkId = n.GetStringValue(); } },
-                {"virtualNetworkLocation", n => { VirtualNetworkLocation = n.GetStringValue(); } },
+                { "adDomainName", n => { AdDomainName = n.GetStringValue(); } },
+                { "adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
+                { "adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
+                { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+                { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetail>(CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
+                { "inUse", n => { InUse = n.GetBoolValue(); } },
+                { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
+                { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
+                { "subnetId", n => { SubnetId = n.GetStringValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
+                { "virtualNetworkId", n => { VirtualNetworkId = n.GetStringValue(); } },
+                { "virtualNetworkLocation", n => { VirtualNetworkLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

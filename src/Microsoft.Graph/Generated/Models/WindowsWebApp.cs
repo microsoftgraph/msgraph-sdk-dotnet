@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Windows web apps.
     /// </summary>
-    public class WindowsWebApp : MobileApp, IParsable 
+    public class WindowsWebApp : MobileApp, IParsable
     {
         /// <summary>Indicates the Windows web app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUrl {
+        public string? AppUrl
+        {
             get { return BackingStore?.Get<string?>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
 #nullable restore
 #else
-        public string AppUrl {
+        public string AppUrl
+        {
             get { return BackingStore?.Get<string>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appUrl", n => { AppUrl = n.GetStringValue(); } },
+                { "appUrl", n => { AppUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

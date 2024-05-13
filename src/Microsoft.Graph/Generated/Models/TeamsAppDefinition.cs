@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppDefinition : Entity, IParsable 
+    public class TeamsAppDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Authorization requirements specified in the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppAuthorization? Authorization {
+        public TeamsAppAuthorization? Authorization
+        {
             get { return BackingStore?.Get<TeamsAppAuthorization?>("authorization"); }
             set { BackingStore?.Set("authorization", value); }
         }
 #nullable restore
 #else
-        public TeamsAppAuthorization Authorization {
+        public TeamsAppAuthorization Authorization
+        {
             get { return BackingStore?.Get<TeamsAppAuthorization>("authorization"); }
             set { BackingStore?.Set("authorization", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkBot? Bot {
+        public TeamworkBot? Bot
+        {
             get { return BackingStore?.Get<TeamworkBot?>("bot"); }
             set { BackingStore?.Set("bot", value); }
         }
 #nullable restore
 #else
-        public TeamworkBot Bot {
+        public TeamworkBot Bot
+        {
             get { return BackingStore?.Get<TeamworkBot>("bot"); }
             set { BackingStore?.Set("bot", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Verbose description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -68,37 +77,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the app provided by the app developer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.</summary>
-        public TeamsAppPublishingState? PublishingState {
+        public TeamsAppPublishingState? PublishingState
+        {
             get { return BackingStore?.Get<TeamsAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
         /// <summary>Short description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShortDescription {
+        public string? ShortDescription
+        {
             get { return BackingStore?.Get<string?>("shortDescription"); }
             set { BackingStore?.Set("shortDescription", value); }
         }
 #nullable restore
 #else
-        public string ShortDescription {
+        public string ShortDescription
+        {
             get { return BackingStore?.Get<string>("shortDescription"); }
             set { BackingStore?.Set("shortDescription", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID from the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsAppId {
+        public string? TeamsAppId
+        {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
 #nullable restore
 #else
-        public string TeamsAppId {
+        public string TeamsAppId
+        {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The version number of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -149,16 +168,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorization", n => { Authorization = n.GetObjectValue<TeamsAppAuthorization>(TeamsAppAuthorization.CreateFromDiscriminatorValue); } },
-                {"bot", n => { Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"publishingState", n => { PublishingState = n.GetEnumValue<TeamsAppPublishingState>(); } },
-                {"shortDescription", n => { ShortDescription = n.GetStringValue(); } },
-                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "authorization", n => { Authorization = n.GetObjectValue<TeamsAppAuthorization>(TeamsAppAuthorization.CreateFromDiscriminatorValue); } },
+                { "bot", n => { Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "publishingState", n => { PublishingState = n.GetEnumValue<TeamsAppPublishingState>(); } },
+                { "shortDescription", n => { ShortDescription = n.GetStringValue(); } },
+                { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

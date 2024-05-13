@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MultiTenantOrganizationIdentitySyncPolicyTemplate : Entity, IParsable 
+    public class MultiTenantOrganizationIdentitySyncPolicyTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The templateApplicationLevel property</summary>
-        public Microsoft.Graph.Models.TemplateApplicationLevel? TemplateApplicationLevel {
+        public Microsoft.Graph.Models.TemplateApplicationLevel? TemplateApplicationLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TemplateApplicationLevel?>("templateApplicationLevel"); }
             set { BackingStore?.Set("templateApplicationLevel", value); }
         }
         /// <summary>Defines whether users can be synchronized from the partner tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CrossTenantUserSyncInbound? UserSyncInbound {
+        public CrossTenantUserSyncInbound? UserSyncInbound
+        {
             get { return BackingStore?.Get<CrossTenantUserSyncInbound?>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
 #nullable restore
 #else
-        public CrossTenantUserSyncInbound UserSyncInbound {
+        public CrossTenantUserSyncInbound UserSyncInbound
+        {
             get { return BackingStore?.Get<CrossTenantUserSyncInbound>("userSyncInbound"); }
             set { BackingStore?.Set("userSyncInbound", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<TemplateApplicationLevel>(); } },
-                {"userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<CrossTenantUserSyncInbound>(CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
+                { "templateApplicationLevel", n => { TemplateApplicationLevel = n.GetEnumValue<TemplateApplicationLevel>(); } },
+                { "userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<CrossTenantUserSyncInbound>(CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

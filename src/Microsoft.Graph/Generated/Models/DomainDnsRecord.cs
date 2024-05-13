@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DomainDnsRecord : Entity, IParsable 
+    public class DomainDnsRecord : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
-        public bool? IsOptional {
+        public bool? IsOptional
+        {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>Value used when configuring the name of the DNS record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
+        public string? Label
+        {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #nullable restore
 #else
-        public string Label {
+        public string Label
+        {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordType {
+        public string? RecordType
+        {
             get { return BackingStore?.Get<string?>("recordType"); }
             set { BackingStore?.Set("recordType", value); }
         }
 #nullable restore
 #else
-        public string RecordType {
+        public string RecordType
+        {
             get { return BackingStore?.Get<string>("recordType"); }
             set { BackingStore?.Set("recordType", value); }
         }
@@ -45,19 +51,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportedService {
+        public string? SupportedService
+        {
             get { return BackingStore?.Get<string?>("supportedService"); }
             set { BackingStore?.Set("supportedService", value); }
         }
 #nullable restore
 #else
-        public string SupportedService {
+        public string SupportedService
+        {
             get { return BackingStore?.Get<string>("supportedService"); }
             set { BackingStore?.Set("supportedService", value); }
         }
 #endif
         /// <summary>Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.</summary>
-        public int? Ttl {
+        public int? Ttl
+        {
             get { return BackingStore?.Get<int?>("ttl"); }
             set { BackingStore?.Set("ttl", value); }
         }
@@ -88,11 +97,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"recordType", n => { RecordType = n.GetStringValue(); } },
-                {"supportedService", n => { SupportedService = n.GetStringValue(); } },
-                {"ttl", n => { Ttl = n.GetIntValue(); } },
+                { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "recordType", n => { RecordType = n.GetStringValue(); } },
+                { "supportedService", n => { SupportedService = n.GetStringValue(); } },
+                { "ttl", n => { Ttl = n.GetIntValue(); } },
             };
         }
         /// <summary>

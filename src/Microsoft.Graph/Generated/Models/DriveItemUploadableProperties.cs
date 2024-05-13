@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DriveItemUploadableProperties : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DriveItemUploadableProperties : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DriveItemSource? DriveItemSource {
+        public Microsoft.Graph.Models.DriveItemSource? DriveItemSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItemSource?>("driveItemSource"); }
             set { BackingStore?.Set("driveItemSource", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DriveItemSource DriveItemSource {
+        public Microsoft.Graph.Models.DriveItemSource DriveItemSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DriveItemSource>("driveItemSource"); }
             set { BackingStore?.Set("driveItemSource", value); }
         }
 #endif
         /// <summary>Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.</summary>
-        public long? FileSize {
+        public long? FileSize
+        {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>File system information on client. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.FileSystemInfo? FileSystemInfo {
+        public Microsoft.Graph.Models.FileSystemInfo? FileSystemInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.FileSystemInfo?>("fileSystemInfo"); }
             set { BackingStore?.Set("fileSystemInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.FileSystemInfo FileSystemInfo {
+        public Microsoft.Graph.Models.FileSystemInfo FileSystemInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.FileSystemInfo>("fileSystemInfo"); }
             set { BackingStore?.Set("fileSystemInfo", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Media source information. Read-write. Only on OneDrive for Business and SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.MediaSource? MediaSource {
+        public Microsoft.Graph.Models.MediaSource? MediaSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaSource?>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.MediaSource MediaSource {
+        public Microsoft.Graph.Models.MediaSource MediaSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaSource>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the item (filename and extension). Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"driveItemSource", n => { DriveItemSource = n.GetObjectValue<Microsoft.Graph.Models.DriveItemSource>(Microsoft.Graph.Models.DriveItemSource.CreateFromDiscriminatorValue); } },
-                {"fileSize", n => { FileSize = n.GetLongValue(); } },
-                {"fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Models.FileSystemInfo>(Microsoft.Graph.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
-                {"mediaSource", n => { MediaSource = n.GetObjectValue<Microsoft.Graph.Models.MediaSource>(Microsoft.Graph.Models.MediaSource.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "driveItemSource", n => { DriveItemSource = n.GetObjectValue<Microsoft.Graph.Models.DriveItemSource>(Microsoft.Graph.Models.DriveItemSource.CreateFromDiscriminatorValue); } },
+                { "fileSize", n => { FileSize = n.GetLongValue(); } },
+                { "fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Models.FileSystemInfo>(Microsoft.Graph.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
+                { "mediaSource", n => { MediaSource = n.GetObjectValue<Microsoft.Graph.Models.MediaSource>(Microsoft.Graph.Models.MediaSource.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

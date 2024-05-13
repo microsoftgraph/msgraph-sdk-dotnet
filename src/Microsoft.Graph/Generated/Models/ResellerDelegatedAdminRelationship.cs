@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ResellerDelegatedAdminRelationship : DelegatedAdminRelationship, IParsable 
+    public class ResellerDelegatedAdminRelationship : DelegatedAdminRelationship, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndirectProviderTenantId {
+        public string? IndirectProviderTenantId
+        {
             get { return BackingStore?.Get<string?>("indirectProviderTenantId"); }
             set { BackingStore?.Set("indirectProviderTenantId", value); }
         }
 #nullable restore
 #else
-        public string IndirectProviderTenantId {
+        public string IndirectProviderTenantId
+        {
             get { return BackingStore?.Get<string>("indirectProviderTenantId"); }
             set { BackingStore?.Set("indirectProviderTenantId", value); }
         }
 #endif
         /// <summary>Indicates the indirect reseller partner consent status. true indicates that the partner has yet to review the relationship; false indicates that the partner has already provided consent by approving or rejecting the relationship.</summary>
-        public bool? IsPartnerConsentPending {
+        public bool? IsPartnerConsentPending
+        {
             get { return BackingStore?.Get<bool?>("isPartnerConsentPending"); }
             set { BackingStore?.Set("isPartnerConsentPending", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"indirectProviderTenantId", n => { IndirectProviderTenantId = n.GetStringValue(); } },
-                {"isPartnerConsentPending", n => { IsPartnerConsentPending = n.GetBoolValue(); } },
+                { "indirectProviderTenantId", n => { IndirectProviderTenantId = n.GetStringValue(); } },
+                { "isPartnerConsentPending", n => { IsPartnerConsentPending = n.GetBoolValue(); } },
             };
         }
         /// <summary>

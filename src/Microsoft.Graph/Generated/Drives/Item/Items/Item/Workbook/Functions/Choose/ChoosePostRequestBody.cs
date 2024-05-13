@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose
+{
     #pragma warning disable CS1591
-    public class ChoosePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChoosePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose {
         /// <summary>The indexNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? IndexNum {
+        public Json? IndexNum
+        {
             get { return BackingStore?.Get<Json?>("indexNum"); }
             set { BackingStore?.Set("indexNum", value); }
         }
 #nullable restore
 #else
-        public Json IndexNum {
+        public Json IndexNum
+        {
             get { return BackingStore?.Get<Json>("indexNum"); }
             set { BackingStore?.Set("indexNum", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose {
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Values {
+        public Json? Values
+        {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public Json Values {
+        public Json Values
+        {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Choose {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"indexNum", n => { IndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "indexNum", n => { IndexNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

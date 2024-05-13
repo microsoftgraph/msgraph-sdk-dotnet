@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationAssignmentSettings : Entity, IParsable 
+    public class EducationAssignmentSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationGradingCategory>? GradingCategories {
+        public List<EducationGradingCategory>? GradingCategories
+        {
             get { return BackingStore?.Get<List<EducationGradingCategory>?>("gradingCategories"); }
             set { BackingStore?.Set("gradingCategories", value); }
         }
 #nullable restore
 #else
-        public List<EducationGradingCategory> GradingCategories {
+        public List<EducationGradingCategory> GradingCategories
+        {
             get { return BackingStore?.Get<List<EducationGradingCategory>>("gradingCategories"); }
             set { BackingStore?.Set("gradingCategories", value); }
         }
 #endif
         /// <summary>Indicates whether to show the turn-in celebration animation. If true, indicates to skip the animation. The default value is false.</summary>
-        public bool? SubmissionAnimationDisabled {
+        public bool? SubmissionAnimationDisabled
+        {
             get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }
             set { BackingStore?.Set("submissionAnimationDisabled", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<EducationGradingCategory>(EducationGradingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
+                { "gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<EducationGradingCategory>(EducationGradingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

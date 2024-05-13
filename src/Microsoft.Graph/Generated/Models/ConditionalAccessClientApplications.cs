@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessClientApplications : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessClientApplications : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Service principal IDs excluded from the policy scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeServicePrincipals {
+        public List<string>? ExcludeServicePrincipals
+        {
             get { return BackingStore?.Get<List<string>?>("excludeServicePrincipals"); }
             set { BackingStore?.Set("excludeServicePrincipals", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeServicePrincipals {
+        public List<string> ExcludeServicePrincipals
+        {
             get { return BackingStore?.Get<List<string>>("excludeServicePrincipals"); }
             set { BackingStore?.Set("excludeServicePrincipals", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeServicePrincipals {
+        public List<string>? IncludeServicePrincipals
+        {
             get { return BackingStore?.Get<List<string>?>("includeServicePrincipals"); }
             set { BackingStore?.Set("includeServicePrincipals", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeServicePrincipals {
+        public List<string> IncludeServicePrincipals
+        {
             get { return BackingStore?.Get<List<string>>("includeServicePrincipals"); }
             set { BackingStore?.Set("includeServicePrincipals", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The servicePrincipalFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? ServicePrincipalFilter {
+        public ConditionalAccessFilter? ServicePrincipalFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter?>("servicePrincipalFilter"); }
             set { BackingStore?.Set("servicePrincipalFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter ServicePrincipalFilter {
+        public ConditionalAccessFilter ServicePrincipalFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter>("servicePrincipalFilter"); }
             set { BackingStore?.Set("servicePrincipalFilter", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludeServicePrincipals", n => { ExcludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeServicePrincipals", n => { IncludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "excludeServicePrincipals", n => { ExcludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeServicePrincipals", n => { IncludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

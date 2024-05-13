@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets {
+        public List<AuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets {
+        public List<AuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
-        public bool? IsAttestationEnforced {
+        public bool? IsAttestationEnforced
+        {
             get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
             set { BackingStore?.Set("isAttestationEnforced", value); }
         }
         /// <summary>Determines if users can register new FIDO2 security keys.</summary>
-        public bool? IsSelfServiceRegistrationAllowed {
+        public bool? IsSelfServiceRegistrationAllowed
+        {
             get { return BackingStore?.Get<bool?>("isSelfServiceRegistrationAllowed"); }
             set { BackingStore?.Set("isSelfServiceRegistrationAllowed", value); }
         }
         /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Fido2KeyRestrictions? KeyRestrictions {
+        public Fido2KeyRestrictions? KeyRestrictions
+        {
             get { return BackingStore?.Get<Fido2KeyRestrictions?>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
         }
 #nullable restore
 #else
-        public Fido2KeyRestrictions KeyRestrictions {
+        public Fido2KeyRestrictions KeyRestrictions
+        {
             get { return BackingStore?.Get<Fido2KeyRestrictions>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
-                {"isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
-                {"keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
+                { "isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
+                { "keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

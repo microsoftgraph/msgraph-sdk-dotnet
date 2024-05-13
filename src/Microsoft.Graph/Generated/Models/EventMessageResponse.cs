@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EventMessageResponse : EventMessage, IParsable 
+    public class EventMessageResponse : EventMessage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeSlot? ProposedNewTime {
+        public TimeSlot? ProposedNewTime
+        {
             get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #nullable restore
 #else
-        public TimeSlot ProposedNewTime {
+        public TimeSlot ProposedNewTime
+        {
             get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #endif
         /// <summary>Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.</summary>
-        public Microsoft.Graph.Models.ResponseType? ResponseType {
+        public Microsoft.Graph.Models.ResponseType? ResponseType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResponseType?>("responseType"); }
             set { BackingStore?.Set("responseType", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"responseType", n => { ResponseType = n.GetEnumValue<ResponseType>(); } },
+                { "proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                { "responseType", n => { ResponseType = n.GetEnumValue<ResponseType>(); } },
             };
         }
         /// <summary>

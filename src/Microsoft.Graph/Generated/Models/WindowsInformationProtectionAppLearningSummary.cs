@@ -4,33 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Information Protection AppLearning Summary entity.
     /// </summary>
-    public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable 
+    public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable
     {
         /// <summary>Application Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationName {
+        public string? ApplicationName
+        {
             get { return BackingStore?.Get<string?>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
 #nullable restore
 #else
-        public string ApplicationName {
+        public string ApplicationName
+        {
             get { return BackingStore?.Get<string>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
 #endif
         /// <summary>Possible types of Application</summary>
-        public Microsoft.Graph.Models.ApplicationType? ApplicationType {
+        public Microsoft.Graph.Models.ApplicationType? ApplicationType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ApplicationType?>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
         /// <summary>Device Count</summary>
-        public int? DeviceCount {
+        public int? DeviceCount
+        {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
@@ -52,9 +57,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationName", n => { ApplicationName = n.GetStringValue(); } },
-                {"applicationType", n => { ApplicationType = n.GetEnumValue<ApplicationType>(); } },
-                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                { "applicationName", n => { ApplicationName = n.GetStringValue(); } },
+                { "applicationType", n => { ApplicationType = n.GetEnumValue<ApplicationType>(); } },
+                { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

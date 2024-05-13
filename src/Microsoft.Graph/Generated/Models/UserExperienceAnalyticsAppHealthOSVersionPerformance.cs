@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics device OS version performance entity contains OS version performance details.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity, IParsable
     {
         /// <summary>The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? ActiveDeviceCount {
+        public int? ActiveDeviceCount
+        {
             get { return BackingStore?.Get<int?>("activeDeviceCount"); }
             set { BackingStore?.Set("activeDeviceCount", value); }
         }
         /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? MeanTimeToFailureInMinutes {
+        public int? MeanTimeToFailureInMinutes
+        {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsBuildNumber {
+        public string? OsBuildNumber
+        {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #nullable restore
 #else
-        public string OsBuildNumber {
+        public string OsBuildNumber
+        {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
@@ -37,19 +42,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OS version installed on the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
         /// <summary>The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? OsVersionAppHealthScore {
+        public double? OsVersionAppHealthScore
+        {
             get { return BackingStore?.Get<double?>("osVersionAppHealthScore"); }
             set { BackingStore?.Set("osVersionAppHealthScore", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeDeviceCount", n => { ActiveDeviceCount = n.GetIntValue(); } },
-                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"osVersionAppHealthScore", n => { OsVersionAppHealthScore = n.GetDoubleValue(); } },
+                { "activeDeviceCount", n => { ActiveDeviceCount = n.GetIntValue(); } },
+                { "meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "osVersionAppHealthScore", n => { OsVersionAppHealthScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

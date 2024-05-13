@@ -4,65 +4,76 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class TaskReport : Microsoft.Graph.Models.Entity, IParsable 
+    public class TaskReport : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public int? FailedUsersCount {
+        public int? FailedUsersCount
+        {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
         }
         /// <summary>The date and time that the task report was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The processingStatus property</summary>
-        public LifecycleWorkflowProcessingStatus? ProcessingStatus {
+        public LifecycleWorkflowProcessingStatus? ProcessingStatus
+        {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The unique identifier of the associated run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RunId {
+        public string? RunId
+        {
             get { return BackingStore?.Get<string?>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
 #nullable restore
 #else
-        public string RunId {
+        public string RunId
+        {
             get { return BackingStore?.Get<string>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
 #endif
         /// <summary>The date time that the associated run started. Value is null if the run has not started.</summary>
-        public DateTimeOffset? StartedDateTime {
+        public DateTimeOffset? StartedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public int? SuccessfulUsersCount {
+        public int? SuccessfulUsersCount
+        {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TaskObject? Task {
+        public TaskObject? Task
+        {
             get { return BackingStore?.Get<TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public TaskObject Task {
+        public TaskObject Task
+        {
             get { return BackingStore?.Get<TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
@@ -70,13 +81,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The taskDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentityGovernance.TaskDefinition? TaskDefinition {
+        public Microsoft.Graph.Models.IdentityGovernance.TaskDefinition? TaskDefinition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition?>("taskDefinition"); }
             set { BackingStore?.Set("taskDefinition", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentityGovernance.TaskDefinition TaskDefinition {
+        public Microsoft.Graph.Models.IdentityGovernance.TaskDefinition TaskDefinition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>("taskDefinition"); }
             set { BackingStore?.Set("taskDefinition", value); }
         }
@@ -84,24 +97,28 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskProcessingResult>? TaskProcessingResults {
+        public List<TaskProcessingResult>? TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #nullable restore
 #else
-        public List<TaskProcessingResult> TaskProcessingResults {
+        public List<TaskProcessingResult> TaskProcessingResults
+        {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
 #endif
         /// <summary>The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public int? TotalUsersCount {
+        public int? TotalUsersCount
+        {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
         }
         /// <summary>The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public int? UnprocessedUsersCount {
+        public int? UnprocessedUsersCount
+        {
             get { return BackingStore?.Get<int?>("unprocessedUsersCount"); }
             set { BackingStore?.Set("unprocessedUsersCount", value); }
         }
@@ -123,18 +140,18 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
-                {"runId", n => { RunId = n.GetStringValue(); } },
-                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
-                {"task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
-                {"taskDefinition", n => { TaskDefinition = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
-                {"unprocessedUsersCount", n => { UnprocessedUsersCount = n.GetIntValue(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
+                { "runId", n => { RunId = n.GetStringValue(); } },
+                { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
+                { "task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
+                { "taskDefinition", n => { TaskDefinition = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue); } },
+                { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
+                { "unprocessedUsersCount", n => { UnprocessedUsersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

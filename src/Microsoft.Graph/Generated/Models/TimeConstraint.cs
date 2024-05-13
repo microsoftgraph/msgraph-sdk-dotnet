@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TimeConstraint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TimeConstraint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>
-        public Microsoft.Graph.Models.ActivityDomain? ActivityDomain {
+        public Microsoft.Graph.Models.ActivityDomain? ActivityDomain
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ActivityDomain?>("activityDomain"); }
             set { BackingStore?.Set("activityDomain", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The timeSlots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeSlot>? TimeSlots {
+        public List<TimeSlot>? TimeSlots
+        {
             get { return BackingStore?.Get<List<TimeSlot>?>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
 #nullable restore
 #else
-        public List<TimeSlot> TimeSlots {
+        public List<TimeSlot> TimeSlots
+        {
             get { return BackingStore?.Get<List<TimeSlot>>("timeSlots"); }
             set { BackingStore?.Set("timeSlots", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activityDomain", n => { ActivityDomain = n.GetEnumValue<ActivityDomain>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activityDomain", n => { ActivityDomain = n.GetEnumValue<ActivityDomain>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

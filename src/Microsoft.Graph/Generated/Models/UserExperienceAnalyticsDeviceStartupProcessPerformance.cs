@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics device startup process performance.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable
     {
         /// <summary>The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.</summary>
-        public long? DeviceCount {
+        public long? DeviceCount
+        {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
-        public long? MedianImpactInMs {
+        public long? MedianImpactInMs
+        {
             get { return BackingStore?.Get<long?>("medianImpactInMs"); }
             set { BackingStore?.Set("medianImpactInMs", value); }
         }
         /// <summary>The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessName {
+        public string? ProcessName
+        {
             get { return BackingStore?.Get<string?>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
 #nullable restore
 #else
-        public string ProcessName {
+        public string ProcessName
+        {
             get { return BackingStore?.Get<string>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName {
+        public string? ProductName
+        {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #nullable restore
 #else
-        public string ProductName {
+        public string ProductName
+        {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
@@ -51,19 +58,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
         /// <summary>The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
-        public long? TotalImpactInMs {
+        public long? TotalImpactInMs
+        {
             get { return BackingStore?.Get<long?>("totalImpactInMs"); }
             set { BackingStore?.Set("totalImpactInMs", value); }
         }
@@ -85,12 +95,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
-                {"medianImpactInMs", n => { MedianImpactInMs = n.GetLongValue(); } },
-                {"processName", n => { ProcessName = n.GetStringValue(); } },
-                {"productName", n => { ProductName = n.GetStringValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"totalImpactInMs", n => { TotalImpactInMs = n.GetLongValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                { "medianImpactInMs", n => { MedianImpactInMs = n.GetLongValue(); } },
+                { "processName", n => { ProcessName = n.GetStringValue(); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "totalImpactInMs", n => { TotalImpactInMs = n.GetLongValue(); } },
             };
         }
         /// <summary>

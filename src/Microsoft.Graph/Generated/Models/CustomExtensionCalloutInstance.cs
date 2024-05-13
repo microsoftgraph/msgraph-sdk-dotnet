@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CustomExtensionCalloutInstance : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CustomExtensionCalloutInstance : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identification of the custom extension that was triggered at this instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomExtensionId {
+        public string? CustomExtensionId
+        {
             get { return BackingStore?.Get<string?>("customExtensionId"); }
             set { BackingStore?.Set("customExtensionId", value); }
         }
 #nullable restore
 #else
-        public string CustomExtensionId {
+        public string CustomExtensionId
+        {
             get { return BackingStore?.Get<string>("customExtensionId"); }
             set { BackingStore?.Set("customExtensionId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details provided by the logic app during the callback of the request instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail {
+        public string? Detail
+        {
             get { return BackingStore?.Get<string?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public string Detail {
+        public string Detail
+        {
             get { return BackingStore?.Get<string>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique run identifier for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalCorrelationId {
+        public string? ExternalCorrelationId
+        {
             get { return BackingStore?.Get<string?>("externalCorrelationId"); }
             set { BackingStore?.Set("externalCorrelationId", value); }
         }
 #nullable restore
 #else
-        public string ExternalCorrelationId {
+        public string ExternalCorrelationId
+        {
             get { return BackingStore?.Get<string>("externalCorrelationId"); }
             set { BackingStore?.Set("externalCorrelationId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier for the callout instance. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -76,19 +86,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status of the request to the custom extension. The possible values are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut, waitingForCallback, unknownFutureValue.</summary>
-        public CustomExtensionCalloutInstanceStatus? Status {
+        public CustomExtensionCalloutInstanceStatus? Status
+        {
             get { return BackingStore?.Get<CustomExtensionCalloutInstanceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"customExtensionId", n => { CustomExtensionId = n.GetStringValue(); } },
-                {"detail", n => { Detail = n.GetStringValue(); } },
-                {"externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CustomExtensionCalloutInstanceStatus>(); } },
+                { "customExtensionId", n => { CustomExtensionId = n.GetStringValue(); } },
+                { "detail", n => { Detail = n.GetStringValue(); } },
+                { "externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CustomExtensionCalloutInstanceStatus>(); } },
             };
         }
         /// <summary>

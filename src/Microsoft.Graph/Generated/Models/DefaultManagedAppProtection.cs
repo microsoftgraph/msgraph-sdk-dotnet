@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
     /// </summary>
-    public class DefaultManagedAppProtection : ManagedAppProtection, IParsable 
+    public class DefaultManagedAppProtection : ManagedAppProtection, IParsable
     {
         /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-        public ManagedAppDataEncryptionType? AppDataEncryptionType {
+        public ManagedAppDataEncryptionType? AppDataEncryptionType
+        {
             get { return BackingStore?.Get<ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
             set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps {
+        public List<ManagedMobileApp>? Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps {
+        public List<ManagedMobileApp> Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
@@ -32,61 +36,71 @@ namespace Microsoft.Graph.Models {
         /// <summary>A set of string key and string value pairs to be sent to the affected users, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings {
+        public List<KeyValuePair>? CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings {
+        public List<KeyValuePair> CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
         /// <summary>Count of apps to which the current policy is deployed.</summary>
-        public int? DeployedAppCount {
+        public int? DeployedAppCount
+        {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
         /// <summary>When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)</summary>
-        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled {
+        public bool? DisableAppEncryptionIfDeviceEncryptionIsEnabled
+        {
             get { return BackingStore?.Get<bool?>("disableAppEncryptionIfDeviceEncryptionIsEnabled"); }
             set { BackingStore?.Set("disableAppEncryptionIfDeviceEncryptionIsEnabled", value); }
         }
         /// <summary>Indicates whether managed-app data should be encrypted. (Android only)</summary>
-        public bool? EncryptAppData {
+        public bool? EncryptAppData
+        {
             get { return BackingStore?.Get<bool?>("encryptAppData"); }
             set { BackingStore?.Set("encryptAppData", value); }
         }
         /// <summary>Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)</summary>
-        public bool? FaceIdBlocked {
+        public bool? FaceIdBlocked
+        {
             get { return BackingStore?.Get<bool?>("faceIdBlocked"); }
             set { BackingStore?.Set("faceIdBlocked", value); }
         }
         /// <summary>Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumRequiredPatchVersion {
+        public string? MinimumRequiredPatchVersion
+        {
             get { return BackingStore?.Get<string?>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumRequiredPatchVersion {
+        public string MinimumRequiredPatchVersion
+        {
             get { return BackingStore?.Get<string>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
@@ -94,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. (iOS Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumRequiredSdkVersion {
+        public string? MinimumRequiredSdkVersion
+        {
             get { return BackingStore?.Get<string?>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumRequiredSdkVersion {
+        public string MinimumRequiredSdkVersion
+        {
             get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
@@ -108,19 +124,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWarningPatchVersion {
+        public string? MinimumWarningPatchVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWarningPatchVersion {
+        public string MinimumWarningPatchVersion
+        {
             get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
 #endif
         /// <summary>Indicates whether screen capture is blocked. (Android only)</summary>
-        public bool? ScreenCaptureBlocked {
+        public bool? ScreenCaptureBlocked
+        {
             get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
@@ -149,18 +168,18 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
-                {"encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
-                {"faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
-                {"minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
-                {"minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
-                {"minimumWarningPatchVersion", n => { MinimumWarningPatchVersion = n.GetStringValue(); } },
-                {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
+                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "disableAppEncryptionIfDeviceEncryptionIsEnabled", n => { DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
+                { "encryptAppData", n => { EncryptAppData = n.GetBoolValue(); } },
+                { "faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
+                { "minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
+                { "minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
+                { "minimumWarningPatchVersion", n => { MinimumWarningPatchVersion = n.GetStringValue(); } },
+                { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

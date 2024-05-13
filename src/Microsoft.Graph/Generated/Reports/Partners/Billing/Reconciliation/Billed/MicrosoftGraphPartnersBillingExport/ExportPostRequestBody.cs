@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Billed.MicrosoftGraphPartnersBillingExport {
+namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Billed.MicrosoftGraphPartnersBillingExport
+{
     #pragma warning disable CS1591
-    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The attributeSet property</summary>
-        public Microsoft.Graph.Models.Partners.Billing.AttributeSet? AttributeSet {
+        public Microsoft.Graph.Models.Partners.Billing.AttributeSet? AttributeSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.AttributeSet?>("attributeSet"); }
             set { BackingStore?.Set("attributeSet", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Billed.Microso
         /// <summary>The invoiceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InvoiceId {
+        public string? InvoiceId
+        {
             get { return BackingStore?.Get<string?>("invoiceId"); }
             set { BackingStore?.Set("invoiceId", value); }
         }
 #nullable restore
 #else
-        public string InvoiceId {
+        public string InvoiceId
+        {
             get { return BackingStore?.Get<string>("invoiceId"); }
             set { BackingStore?.Set("invoiceId", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Billed.Microso
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
-                {"invoiceId", n => { InvoiceId = n.GetStringValue(); } },
+                { "attributeSet", n => { AttributeSet = n.GetEnumValue<AttributeSet>(); } },
+                { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SensitivityLabelAssignment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SensitivityLabelAssignment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignmentMethod property</summary>
-        public SensitivityLabelAssignmentMethod? AssignmentMethod {
+        public SensitivityLabelAssignmentMethod? AssignmentMethod
+        {
             get { return BackingStore?.Get<SensitivityLabelAssignmentMethod?>("assignmentMethod"); }
             set { BackingStore?.Set("assignmentMethod", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the sensitivity label assigned to the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensitivityLabelId {
+        public string? SensitivityLabelId
+        {
             get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
 #nullable restore
 #else
-        public string SensitivityLabelId {
+        public string SensitivityLabelId
+        {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the tenant that hosts the file when this label is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

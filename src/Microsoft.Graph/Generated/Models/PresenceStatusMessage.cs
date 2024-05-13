@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PresenceStatusMessage : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PresenceStatusMessage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Time in which the status message expires.If not provided, the status message doesn&apos;t expire.expiryDateTime.dateTime shouldn&apos;t include time zone.expiryDateTime isn&apos;t available when you request the presence of another user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ExpiryDateTime {
+        public DateTimeTimeZone? ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ExpiryDateTime {
+        public DateTimeTimeZone ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Status message item. The only supported format currently is message.contentType = &apos;text&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Message {
+        public ItemBody? Message
+        {
             get { return BackingStore?.Get<ItemBody?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public ItemBody Message {
+        public ItemBody Message
+        {
             get { return BackingStore?.Get<ItemBody>("message"); }
             set { BackingStore?.Set("message", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Time in which the status message was published.Read-only.publishedDateTime isn&apos;t available when you request the presence of another user.</summary>
-        public DateTimeOffset? PublishedDateTime {
+        public DateTimeOffset? PublishedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
             set { BackingStore?.Set("publishedDateTime", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expiryDateTime", n => { ExpiryDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"message", n => { Message = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

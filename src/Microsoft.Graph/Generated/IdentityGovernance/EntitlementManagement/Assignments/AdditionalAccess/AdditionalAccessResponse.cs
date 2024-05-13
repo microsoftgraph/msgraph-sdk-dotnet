@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccess {
+namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccess
+{
     [Obsolete("This class is obsolete. Use AdditionalAccessGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AdditionalAccessResponse : AdditionalAccessGetResponse, IParsable 
+    public class AdditionalAccessResponse : AdditionalAccessGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

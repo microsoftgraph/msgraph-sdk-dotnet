@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class CustomTaskExtensionCalloutData : Microsoft.Graph.Models.CustomExtensionData, IParsable 
+    public class CustomTaskExtensionCalloutData : Microsoft.Graph.Models.CustomExtensionData, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.User? Subject {
+        public Microsoft.Graph.Models.User? Subject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.User Subject {
+        public Microsoft.Graph.Models.User Subject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TaskObject? Task {
+        public TaskObject? Task
+        {
             get { return BackingStore?.Get<TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public TaskObject Task {
+        public TaskObject Task
+        {
             get { return BackingStore?.Get<TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The taskProcessingresult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult? TaskProcessingresult {
+        public Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult? TaskProcessingresult
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult?>("taskProcessingresult"); }
             set { BackingStore?.Set("taskProcessingresult", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult TaskProcessingresult {
+        public Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult TaskProcessingresult
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult"); }
             set { BackingStore?.Set("taskProcessingresult", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentityGovernance.Workflow? Workflow {
+        public Microsoft.Graph.Models.IdentityGovernance.Workflow? Workflow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.Workflow?>("workflow"); }
             set { BackingStore?.Set("workflow", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentityGovernance.Workflow Workflow {
+        public Microsoft.Graph.Models.IdentityGovernance.Workflow Workflow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentityGovernance.Workflow>("workflow"); }
             set { BackingStore?.Set("workflow", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
-                {"task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
-                {"taskProcessingresult", n => { TaskProcessingresult = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>(Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue); } },
-                {"workflow", n => { Workflow = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.Workflow>(Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Models.User>(Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
+                { "taskProcessingresult", n => { TaskProcessingresult = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>(Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<Microsoft.Graph.Models.IdentityGovernance.Workflow>(Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

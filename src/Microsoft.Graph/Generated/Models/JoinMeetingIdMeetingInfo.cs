@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class JoinMeetingIdMeetingInfo : MeetingInfo, IParsable 
+    public class JoinMeetingIdMeetingInfo : MeetingInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID used to join the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinMeetingId {
+        public string? JoinMeetingId
+        {
             get { return BackingStore?.Get<string?>("joinMeetingId"); }
             set { BackingStore?.Set("joinMeetingId", value); }
         }
 #nullable restore
 #else
-        public string JoinMeetingId {
+        public string JoinMeetingId
+        {
             get { return BackingStore?.Get<string>("joinMeetingId"); }
             set { BackingStore?.Set("joinMeetingId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The passcode used to join the meeting. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Passcode {
+        public string? Passcode
+        {
             get { return BackingStore?.Get<string?>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
 #nullable restore
 #else
-        public string Passcode {
+        public string Passcode
+        {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"joinMeetingId", n => { JoinMeetingId = n.GetStringValue(); } },
-                {"passcode", n => { Passcode = n.GetStringValue(); } },
+                { "joinMeetingId", n => { JoinMeetingId = n.GetStringValue(); } },
+                { "passcode", n => { Passcode = n.GetStringValue(); } },
             };
         }
         /// <summary>

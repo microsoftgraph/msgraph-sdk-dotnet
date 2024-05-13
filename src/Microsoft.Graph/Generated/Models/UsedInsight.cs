@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UsedInsight : Entity, IParsable 
+    public class UsedInsight : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UsageDetails? LastUsed {
+        public UsageDetails? LastUsed
+        {
             get { return BackingStore?.Get<UsageDetails?>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
 #nullable restore
 #else
-        public UsageDetails LastUsed {
+        public UsageDetails LastUsed
+        {
             get { return BackingStore?.Get<UsageDetails>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource {
+        public Entity? Resource
+        {
             get { return BackingStore?.Get<Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource {
+        public Entity Resource
+        {
             get { return BackingStore?.Get<Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Reference properties of the used document, such as the url and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ResourceReference? ResourceReference {
+        public Microsoft.Graph.Models.ResourceReference? ResourceReference
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResourceReference?>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ResourceReference ResourceReference {
+        public Microsoft.Graph.Models.ResourceReference ResourceReference
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResourceReference>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Properties that you can use to visualize the document in your experience. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ResourceVisualization? ResourceVisualization {
+        public Microsoft.Graph.Models.ResourceVisualization? ResourceVisualization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResourceVisualization?>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ResourceVisualization ResourceVisualization {
+        public Microsoft.Graph.Models.ResourceVisualization ResourceVisualization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ResourceVisualization>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastUsed", n => { LastUsed = n.GetObjectValue<UsageDetails>(UsageDetails.CreateFromDiscriminatorValue); } },
-                {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                {"resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Models.ResourceReference>(Microsoft.Graph.Models.ResourceReference.CreateFromDiscriminatorValue); } },
-                {"resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Models.ResourceVisualization>(Microsoft.Graph.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
+                { "lastUsed", n => { LastUsed = n.GetObjectValue<UsageDetails>(UsageDetails.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Models.ResourceReference>(Microsoft.Graph.Models.ResourceReference.CreateFromDiscriminatorValue); } },
+                { "resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Models.ResourceVisualization>(Microsoft.Graph.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     /// </summary>
-    public class IntuneBrand : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IntuneBrand : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Email address of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactITEmailAddress {
+        public string? ContactITEmailAddress
+        {
             get { return BackingStore?.Get<string?>("contactITEmailAddress"); }
             set { BackingStore?.Set("contactITEmailAddress", value); }
         }
 #nullable restore
 #else
-        public string ContactITEmailAddress {
+        public string ContactITEmailAddress
+        {
             get { return BackingStore?.Get<string>("contactITEmailAddress"); }
             set { BackingStore?.Set("contactITEmailAddress", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactITName {
+        public string? ContactITName
+        {
             get { return BackingStore?.Get<string?>("contactITName"); }
             set { BackingStore?.Set("contactITName", value); }
         }
 #nullable restore
 #else
-        public string ContactITName {
+        public string ContactITName
+        {
             get { return BackingStore?.Get<string>("contactITName"); }
             set { BackingStore?.Set("contactITName", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Text comments regarding the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactITNotes {
+        public string? ContactITNotes
+        {
             get { return BackingStore?.Get<string?>("contactITNotes"); }
             set { BackingStore?.Set("contactITNotes", value); }
         }
 #nullable restore
 #else
-        public string ContactITNotes {
+        public string ContactITNotes
+        {
             get { return BackingStore?.Get<string>("contactITNotes"); }
             set { BackingStore?.Set("contactITNotes", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Phone number of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactITPhoneNumber {
+        public string? ContactITPhoneNumber
+        {
             get { return BackingStore?.Get<string?>("contactITPhoneNumber"); }
             set { BackingStore?.Set("contactITPhoneNumber", value); }
         }
 #nullable restore
 #else
-        public string ContactITPhoneNumber {
+        public string ContactITPhoneNumber
+        {
             get { return BackingStore?.Get<string>("contactITPhoneNumber"); }
             set { BackingStore?.Set("contactITPhoneNumber", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Logo image displayed in Company Portal apps which have a dark background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? DarkBackgroundLogo {
+        public MimeContent? DarkBackgroundLogo
+        {
             get { return BackingStore?.Get<MimeContent?>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent DarkBackgroundLogo {
+        public MimeContent DarkBackgroundLogo
+        {
             get { return BackingStore?.Get<MimeContent>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Company/organization name that is displayed to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -105,13 +119,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LightBackgroundLogo {
+        public MimeContent? LightBackgroundLogo
+        {
             get { return BackingStore?.Get<MimeContent?>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
 #nullable restore
 #else
-        public MimeContent LightBackgroundLogo {
+        public MimeContent LightBackgroundLogo
+        {
             get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
@@ -119,13 +135,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -133,13 +151,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the company/organization’s IT helpdesk site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnlineSupportSiteName {
+        public string? OnlineSupportSiteName
+        {
             get { return BackingStore?.Get<string?>("onlineSupportSiteName"); }
             set { BackingStore?.Set("onlineSupportSiteName", value); }
         }
 #nullable restore
 #else
-        public string OnlineSupportSiteName {
+        public string OnlineSupportSiteName
+        {
             get { return BackingStore?.Get<string>("onlineSupportSiteName"); }
             set { BackingStore?.Set("onlineSupportSiteName", value); }
         }
@@ -147,13 +167,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL to the company/organization’s IT helpdesk site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnlineSupportSiteUrl {
+        public string? OnlineSupportSiteUrl
+        {
             get { return BackingStore?.Get<string?>("onlineSupportSiteUrl"); }
             set { BackingStore?.Set("onlineSupportSiteUrl", value); }
         }
 #nullable restore
 #else
-        public string OnlineSupportSiteUrl {
+        public string OnlineSupportSiteUrl
+        {
             get { return BackingStore?.Get<string>("onlineSupportSiteUrl"); }
             set { BackingStore?.Set("onlineSupportSiteUrl", value); }
         }
@@ -161,42 +183,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>URL to the company/organization’s privacy policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyUrl {
+        public string? PrivacyUrl
+        {
             get { return BackingStore?.Get<string?>("privacyUrl"); }
             set { BackingStore?.Set("privacyUrl", value); }
         }
 #nullable restore
 #else
-        public string PrivacyUrl {
+        public string PrivacyUrl
+        {
             get { return BackingStore?.Get<string>("privacyUrl"); }
             set { BackingStore?.Set("privacyUrl", value); }
         }
 #endif
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.</summary>
-        public bool? ShowDisplayNameNextToLogo {
+        public bool? ShowDisplayNameNextToLogo
+        {
             get { return BackingStore?.Get<bool?>("showDisplayNameNextToLogo"); }
             set { BackingStore?.Set("showDisplayNameNextToLogo", value); }
         }
         /// <summary>Boolean that represents whether the administrator-supplied logo images are shown or not shown.</summary>
-        public bool? ShowLogo {
+        public bool? ShowLogo
+        {
             get { return BackingStore?.Get<bool?>("showLogo"); }
             set { BackingStore?.Set("showLogo", value); }
         }
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.</summary>
-        public bool? ShowNameNextToLogo {
+        public bool? ShowNameNextToLogo
+        {
             get { return BackingStore?.Get<bool?>("showNameNextToLogo"); }
             set { BackingStore?.Set("showNameNextToLogo", value); }
         }
         /// <summary>Primary theme color used in the Company Portal applications and web portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RgbColor? ThemeColor {
+        public RgbColor? ThemeColor
+        {
             get { return BackingStore?.Get<RgbColor?>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
 #nullable restore
 #else
-        public RgbColor ThemeColor {
+        public RgbColor ThemeColor
+        {
             get { return BackingStore?.Get<RgbColor>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
@@ -227,21 +256,21 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contactITEmailAddress", n => { ContactITEmailAddress = n.GetStringValue(); } },
-                {"contactITName", n => { ContactITName = n.GetStringValue(); } },
-                {"contactITNotes", n => { ContactITNotes = n.GetStringValue(); } },
-                {"contactITPhoneNumber", n => { ContactITPhoneNumber = n.GetStringValue(); } },
-                {"darkBackgroundLogo", n => { DarkBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"onlineSupportSiteName", n => { OnlineSupportSiteName = n.GetStringValue(); } },
-                {"onlineSupportSiteUrl", n => { OnlineSupportSiteUrl = n.GetStringValue(); } },
-                {"privacyUrl", n => { PrivacyUrl = n.GetStringValue(); } },
-                {"showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
-                {"showLogo", n => { ShowLogo = n.GetBoolValue(); } },
-                {"showNameNextToLogo", n => { ShowNameNextToLogo = n.GetBoolValue(); } },
-                {"themeColor", n => { ThemeColor = n.GetObjectValue<RgbColor>(RgbColor.CreateFromDiscriminatorValue); } },
+                { "contactITEmailAddress", n => { ContactITEmailAddress = n.GetStringValue(); } },
+                { "contactITName", n => { ContactITName = n.GetStringValue(); } },
+                { "contactITNotes", n => { ContactITNotes = n.GetStringValue(); } },
+                { "contactITPhoneNumber", n => { ContactITPhoneNumber = n.GetStringValue(); } },
+                { "darkBackgroundLogo", n => { DarkBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lightBackgroundLogo", n => { LightBackgroundLogo = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "onlineSupportSiteName", n => { OnlineSupportSiteName = n.GetStringValue(); } },
+                { "onlineSupportSiteUrl", n => { OnlineSupportSiteUrl = n.GetStringValue(); } },
+                { "privacyUrl", n => { PrivacyUrl = n.GetStringValue(); } },
+                { "showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
+                { "showLogo", n => { ShowLogo = n.GetBoolValue(); } },
+                { "showNameNextToLogo", n => { ShowNameNextToLogo = n.GetBoolValue(); } },
+                { "themeColor", n => { ThemeColor = n.GetObjectValue<RgbColor>(RgbColor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

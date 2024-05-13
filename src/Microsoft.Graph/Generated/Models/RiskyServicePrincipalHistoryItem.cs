@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable 
+    public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity related to service principal risk level change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskServicePrincipalActivity? Activity {
+        public RiskServicePrincipalActivity? Activity
+        {
             get { return BackingStore?.Get<RiskServicePrincipalActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public RiskServicePrincipalActivity Activity {
+        public RiskServicePrincipalActivity Activity
+        {
             get { return BackingStore?.Get<RiskServicePrincipalActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the actor of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedBy {
+        public string? InitiatedBy
+        {
             get { return BackingStore?.Get<string?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public string InitiatedBy {
+        public string InitiatedBy
+        {
             get { return BackingStore?.Get<string>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
-                {"initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
+                { "activity", n => { Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>

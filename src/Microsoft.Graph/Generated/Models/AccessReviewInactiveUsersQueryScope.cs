@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewInactiveUsersQueryScope : AccessReviewQueryScope, IParsable 
+    public class AccessReviewInactiveUsersQueryScope : AccessReviewQueryScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance&apos;s start date. If this property is not specified, it&apos;s assigned the default value PT0S.</summary>
-        public TimeSpan? InactiveDuration {
+        public TimeSpan? InactiveDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("inactiveDuration"); }
             set { BackingStore?.Set("inactiveDuration", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"inactiveDuration", n => { InactiveDuration = n.GetTimeSpanValue(); } },
+                { "inactiveDuration", n => { InactiveDuration = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>
