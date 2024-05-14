@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SignIn : Entity, IParsable 
+    public class SignIn : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies {
+        public List<AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies
+        {
             get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies {
+        public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies
+        {
             get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
@@ -54,51 +61,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppUsed {
+        public string? ClientAppUsed
+        {
             get { return BackingStore?.Get<string?>("clientAppUsed"); }
             set { BackingStore?.Set("clientAppUsed", value); }
         }
 #nullable restore
 #else
-        public string ClientAppUsed {
+        public string ClientAppUsed
+        {
             get { return BackingStore?.Get<string>("clientAppUsed"); }
             set { BackingStore?.Set("clientAppUsed", value); }
         }
 #endif
         /// <summary>Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).</summary>
-        public Microsoft.Graph.Models.ConditionalAccessStatus? ConditionalAccessStatus {
+        public Microsoft.Graph.Models.ConditionalAccessStatus? ConditionalAccessStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ConditionalAccessStatus?>("conditionalAccessStatus"); }
             set { BackingStore?.Set("conditionalAccessStatus", value); }
         }
         /// <summary>The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #endif
         /// <summary>Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Device information from where the sign-in occurred; includes device ID, operating system, and browser.  Supports $filter (eq, startsWith) on browser and operatingSytem properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DeviceDetail? DeviceDetail {
+        public Microsoft.Graph.Models.DeviceDetail? DeviceDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceDetail?>("deviceDetail"); }
             set { BackingStore?.Set("deviceDetail", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DeviceDetail DeviceDetail {
+        public Microsoft.Graph.Models.DeviceDetail DeviceDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeviceDetail>("deviceDetail"); }
             set { BackingStore?.Set("deviceDetail", value); }
         }
@@ -106,32 +121,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>IP address of the client used to sign in.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
         /// <summary>Indicates whether a sign-in is interactive.</summary>
-        public bool? IsInteractive {
+        public bool? IsInteractive
+        {
             get { return BackingStore?.Get<bool?>("isInteractive"); }
             set { BackingStore?.Set("isInteractive", value); }
         }
         /// <summary>Provides the city, state, and country code where the sign-in originated.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInLocation? Location {
+        public SignInLocation? Location
+        {
             get { return BackingStore?.Get<SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public SignInLocation Location {
+        public SignInLocation Location
+        {
             get { return BackingStore?.Get<SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the resource the user signed into.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceDisplayName {
+        public string? ResourceDisplayName
+        {
             get { return BackingStore?.Get<string?>("resourceDisplayName"); }
             set { BackingStore?.Set("resourceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ResourceDisplayName {
+        public string ResourceDisplayName
+        {
             get { return BackingStore?.Get<string>("resourceDisplayName"); }
             set { BackingStore?.Set("resourceDisplayName", value); }
         }
@@ -153,32 +175,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the resource that the user signed into.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
         /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.The value none means that Microsoft Entra risk detection did not flag the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public Microsoft.Graph.Models.RiskDetail? RiskDetail {
+        public Microsoft.Graph.Models.RiskDetail? RiskDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskEventType?>? RiskEventTypes {
+        public List<RiskEventType?>? RiskEventTypes
+        {
             get { return BackingStore?.Get<List<RiskEventType?>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<RiskEventType?> RiskEventTypes {
+        public List<RiskEventType?> RiskEventTypes
+        {
             get { return BackingStore?.Get<List<RiskEventType?>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
@@ -186,42 +213,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic, or unknownFutureValue.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RiskEventTypesV2 {
+        public List<string>? RiskEventTypesV2
+        {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes_v2"); }
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
 #nullable restore
 #else
-        public List<string> RiskEventTypesV2 {
+        public List<string> RiskEventTypesV2
+        {
             get { return BackingStore?.Get<List<string>>("riskEventTypes_v2"); }
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
 #endif
         /// <summary>Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelAggregated {
+        public RiskLevel? RiskLevelAggregated
+        {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
         }
         /// <summary>Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
-        public RiskLevel? RiskLevelDuringSignIn {
+        public RiskLevel? RiskLevelDuringSignIn
+        {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelDuringSignIn"); }
             set { BackingStore?.Set("riskLevelDuringSignIn", value); }
         }
         /// <summary>Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).</summary>
-        public Microsoft.Graph.Models.RiskState? RiskState {
+        public Microsoft.Graph.Models.RiskState? RiskState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInStatus? Status {
+        public SignInStatus? Status
+        {
             get { return BackingStore?.Get<SignInStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SignInStatus Status {
+        public SignInStatus Status
+        {
             get { return BackingStore?.Get<SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -229,13 +263,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -243,13 +279,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the user that initiated the sign-in.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -257,13 +295,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User principal name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -286,29 +326,29 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
-                {"conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<ConditionalAccessStatus>(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceDetail", n => { DeviceDetail = n.GetObjectValue<Microsoft.Graph.Models.DeviceDetail>(Microsoft.Graph.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
-                {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
-                {"resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
-                {"riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
-                {"riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
-                {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
-                {"status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
+                { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<ConditionalAccessStatus>(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceDetail", n => { DeviceDetail = n.GetObjectValue<Microsoft.Graph.Models.DeviceDetail>(Microsoft.Graph.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
+                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
+                { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
+                { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
+                { "riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
+                { "status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

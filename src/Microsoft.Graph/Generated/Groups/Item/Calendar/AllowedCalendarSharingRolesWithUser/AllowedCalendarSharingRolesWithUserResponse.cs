@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser {
+namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser
+{
     [Obsolete("This class is obsolete. Use AllowedCalendarSharingRolesWithUserGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AllowedCalendarSharingRolesWithUserResponse : AllowedCalendarSharingRolesWithUserGetResponse, IParsable 
+    public class AllowedCalendarSharingRolesWithUserResponse : AllowedCalendarSharingRolesWithUserGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SecureScoreControlStateUpdate : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SecureScoreControlStateUpdate : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Assigns the control to the user who will take the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides optional comment about the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -76,19 +86,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID of the user who updated tenant state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedBy {
+        public string? UpdatedBy
+        {
             get { return BackingStore?.Get<string?>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
 #nullable restore
 #else
-        public string UpdatedBy {
+        public string UpdatedBy
+        {
             get { return BackingStore?.Get<string>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
 #endif
         /// <summary>Time at which the control state was updated.</summary>
-        public DateTimeOffset? UpdatedDateTime {
+        public DateTimeOffset? UpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
-                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EventQuery : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EventQuery : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Represents unique identification for the  query. &apos;Asset ID&apos; for SharePoint Online and OneDrive for Business, &apos;keywords&apos; for Exchange Online.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query {
+        public string? Query
+        {
             get { return BackingStore?.Get<string?>("query"); }
             set { BackingStore?.Set("query", value); }
         }
 #nullable restore
 #else
-        public string Query {
+        public string Query
+        {
             get { return BackingStore?.Get<string>("query"); }
             set { BackingStore?.Set("query", value); }
         }
 #endif
         /// <summary>Represents the type of query associated with an event. &apos;files&apos; for SPO and ODB and &apos;messages&apos; for EXO.The possible values are: files, messages, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.QueryType? QueryType {
+        public Microsoft.Graph.Models.Security.QueryType? QueryType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.QueryType?>("queryType"); }
             set { BackingStore?.Set("queryType", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"query", n => { Query = n.GetStringValue(); } },
-                {"queryType", n => { QueryType = n.GetEnumValue<QueryType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
+                { "queryType", n => { QueryType = n.GetEnumValue<QueryType>(); } },
             };
         }
         /// <summary>

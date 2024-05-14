@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CustomExtensionStageSetting : Entity, IParsable 
+    public class CustomExtensionStageSetting : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomCalloutExtension? CustomExtension {
+        public CustomCalloutExtension? CustomExtension
+        {
             get { return BackingStore?.Get<CustomCalloutExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public CustomCalloutExtension CustomExtension {
+        public CustomCalloutExtension CustomExtension
+        {
             get { return BackingStore?.Get<CustomCalloutExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #endif
         /// <summary>The stage property</summary>
-        public AccessPackageCustomExtensionStage? Stage {
+        public AccessPackageCustomExtensionStage? Stage
+        {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customExtension", n => { CustomExtension = n.GetObjectValue<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue); } },
-                {"stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue); } },
+                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
             };
         }
         /// <summary>

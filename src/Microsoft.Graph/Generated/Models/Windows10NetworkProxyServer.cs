@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Network Proxy Server Policy.
     /// </summary>
-    public class Windows10NetworkProxyServer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Windows10NetworkProxyServer : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Address to the proxy server. Specify an address in the format [&apos;:&apos;]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address {
+        public string? Address
+        {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public string Address {
+        public string Address
+        {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Exceptions {
+        public List<string>? Exceptions
+        {
             get { return BackingStore?.Get<List<string>?>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
 #nullable restore
 #else
-        public List<string> Exceptions {
+        public List<string> Exceptions
+        {
             get { return BackingStore?.Get<List<string>>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
@@ -49,19 +55,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Specifies whether the proxy server should be used for local (intranet) addresses.</summary>
-        public bool? UseForLocalAddresses {
+        public bool? UseForLocalAddresses
+        {
             get { return BackingStore?.Get<bool?>("useForLocalAddresses"); }
             set { BackingStore?.Set("useForLocalAddresses", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetStringValue(); } },
-                {"exceptions", n => { Exceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"useForLocalAddresses", n => { UseForLocalAddresses = n.GetBoolValue(); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "exceptions", n => { Exceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "useForLocalAddresses", n => { UseForLocalAddresses = n.GetBoolValue(); } },
             };
         }
         /// <summary>

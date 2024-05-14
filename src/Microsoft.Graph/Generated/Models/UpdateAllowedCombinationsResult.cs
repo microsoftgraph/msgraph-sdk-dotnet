@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UpdateAllowedCombinationsResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateAllowedCombinationsResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Information about why the updateAllowedCombinations action was successful or failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalInformation {
+        public string? AdditionalInformation
+        {
             get { return BackingStore?.Get<string?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public string AdditionalInformation {
+        public string AdditionalInformation
+        {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>References to existing Conditional Access policies that use this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConditionalAccessReferences {
+        public List<string>? ConditionalAccessReferences
+        {
             get { return BackingStore?.Get<List<string>?>("conditionalAccessReferences"); }
             set { BackingStore?.Set("conditionalAccessReferences", value); }
         }
 #nullable restore
 #else
-        public List<string> ConditionalAccessReferences {
+        public List<string> ConditionalAccessReferences
+        {
             get { return BackingStore?.Get<List<string>>("conditionalAccessReferences"); }
             set { BackingStore?.Set("conditionalAccessReferences", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of current authentication method combinations allowed by the authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? CurrentCombinations {
+        public List<AuthenticationMethodModes?>? CurrentCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> CurrentCombinations {
+        public List<AuthenticationMethodModes?> CurrentCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? PreviousCombinations {
+        public List<AuthenticationMethodModes?>? PreviousCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> PreviousCombinations {
+        public List<AuthenticationMethodModes?> PreviousCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
-                {"conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"currentCombinations", n => { CurrentCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previousCombinations", n => { PreviousCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
+                { "conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "currentCombinations", n => { CurrentCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "previousCombinations", n => { PreviousCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>

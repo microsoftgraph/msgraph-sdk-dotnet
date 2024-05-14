@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcRestorePointSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcRestorePointSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
-        public CloudPcRestorePointFrequencyType? FrequencyType {
+        public CloudPcRestorePointFrequencyType? FrequencyType
+        {
             get { return BackingStore?.Get<CloudPcRestorePointFrequencyType?>("frequencyType"); }
             set { BackingStore?.Set("frequencyType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can&apos;t use snapshots to restore the Cloud PC.</summary>
-        public bool? UserRestoreEnabled {
+        public bool? UserRestoreEnabled
+        {
             get { return BackingStore?.Get<bool?>("userRestoreEnabled"); }
             set { BackingStore?.Set("userRestoreEnabled", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"frequencyType", n => { FrequencyType = n.GetEnumValue<CloudPcRestorePointFrequencyType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
+                { "frequencyType", n => { FrequencyType = n.GetEnumValue<CloudPcRestorePointFrequencyType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

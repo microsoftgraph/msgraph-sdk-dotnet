@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DriveItemVersion : BaseItemVersion, IParsable 
+    public class DriveItemVersion : BaseItemVersion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content stream for this version of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>Indicates the size of the content stream for this version of the item.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>

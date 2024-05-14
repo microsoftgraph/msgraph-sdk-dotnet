@@ -5,23 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ItemActionStat : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ItemActionStat : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of times the action took place. Read-only.</summary>
-        public int? ActionCount {
+        public int? ActionCount
+        {
             get { return BackingStore?.Get<int?>("actionCount"); }
             set { BackingStore?.Set("actionCount", value); }
         }
         /// <summary>The number of distinct actors that performed the action. Read-only.</summary>
-        public int? ActorCount {
+        public int? ActorCount
+        {
             get { return BackingStore?.Get<int?>("actorCount"); }
             set { BackingStore?.Set("actorCount", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -30,13 +34,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionCount", n => { ActionCount = n.GetIntValue(); } },
-                {"actorCount", n => { ActorCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "actionCount", n => { ActionCount = n.GetIntValue(); } },
+                { "actorCount", n => { ActorCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

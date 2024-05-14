@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallTranscriptEventMessageDetail : EventMessageDetail, IParsable 
+    public class CallTranscriptEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId {
+        public string? CallId
+        {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
 #nullable restore
 #else
-        public string CallId {
+        public string CallId
+        {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier for a call transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallTranscriptICalUid {
+        public string? CallTranscriptICalUid
+        {
             get { return BackingStore?.Get<string?>("callTranscriptICalUid"); }
             set { BackingStore?.Set("callTranscriptICalUid", value); }
         }
 #nullable restore
 #else
-        public string CallTranscriptICalUid {
+        public string CallTranscriptICalUid
+        {
             get { return BackingStore?.Get<string>("callTranscriptICalUid"); }
             set { BackingStore?.Set("callTranscriptICalUid", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer {
+        public IdentitySet? MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer {
+        public IdentitySet MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callId", n => { CallId = n.GetStringValue(); } },
-                {"callTranscriptICalUid", n => { CallTranscriptICalUid = n.GetStringValue(); } },
-                {"meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "callId", n => { CallId = n.GetStringValue(); } },
+                { "callTranscriptICalUid", n => { CallTranscriptICalUid = n.GetStringValue(); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

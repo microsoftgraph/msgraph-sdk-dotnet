@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LicenseUnitsDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LicenseUnitsDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of units that are enabled for the active subscription of the service SKU.</summary>
-        public int? Enabled {
+        public int? Enabled
+        {
             get { return BackingStore?.Get<int?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The number of units that are locked out because the customer canceled their subscription of the service SKU.</summary>
-        public int? LockedOut {
+        public int? LockedOut
+        {
             get { return BackingStore?.Get<int?>("lockedOut"); }
             set { BackingStore?.Set("lockedOut", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of units that are suspended because the subscription of the service SKU has been canceled. The units can&apos;t be assigned but can still be reactivated before they&apos;re deleted.</summary>
-        public int? Suspended {
+        public int? Suspended
+        {
             get { return BackingStore?.Get<int?>("suspended"); }
             set { BackingStore?.Set("suspended", value); }
         }
         /// <summary>The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it&apos;s canceled (moved to a suspended state).</summary>
-        public int? Warning {
+        public int? Warning
+        {
             get { return BackingStore?.Get<int?>("warning"); }
             set { BackingStore?.Set("warning", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enabled", n => { Enabled = n.GetIntValue(); } },
-                {"lockedOut", n => { LockedOut = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"suspended", n => { Suspended = n.GetIntValue(); } },
-                {"warning", n => { Warning = n.GetIntValue(); } },
+                { "enabled", n => { Enabled = n.GetIntValue(); } },
+                { "lockedOut", n => { LockedOut = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "suspended", n => { Suspended = n.GetIntValue(); } },
+                { "warning", n => { Warning = n.GetIntValue(); } },
             };
         }
         /// <summary>

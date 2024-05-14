@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationMethodFeatureConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationMethodFeatureConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A single entity that is excluded from this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FeatureTarget? ExcludeTarget {
+        public FeatureTarget? ExcludeTarget
+        {
             get { return BackingStore?.Get<FeatureTarget?>("excludeTarget"); }
             set { BackingStore?.Set("excludeTarget", value); }
         }
 #nullable restore
 #else
-        public FeatureTarget ExcludeTarget {
+        public FeatureTarget ExcludeTarget
+        {
             get { return BackingStore?.Get<FeatureTarget>("excludeTarget"); }
             set { BackingStore?.Set("excludeTarget", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A single entity that is included in this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FeatureTarget? IncludeTarget {
+        public FeatureTarget? IncludeTarget
+        {
             get { return BackingStore?.Get<FeatureTarget?>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
 #nullable restore
 #else
-        public FeatureTarget IncludeTarget {
+        public FeatureTarget IncludeTarget
+        {
             get { return BackingStore?.Get<FeatureTarget>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.</summary>
-        public AdvancedConfigState? State {
+        public AdvancedConfigState? State
+        {
             get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludeTarget", n => { ExcludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
-                {"includeTarget", n => { IncludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
+                { "excludeTarget", n => { ExcludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
+                { "includeTarget", n => { IncludeTarget = n.GetObjectValue<FeatureTarget>(FeatureTarget.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookTableSort : Entity, IParsable 
+    public class WorkbookTableSort : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the current conditions used to last sort the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookSortField>? Fields {
+        public List<WorkbookSortField>? Fields
+        {
             get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookSortField> Fields {
+        public List<WorkbookSortField> Fields
+        {
             get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
         /// <summary>Represents whether the casing impacted the last sort of the table. Read-only.</summary>
-        public bool? MatchCase {
+        public bool? MatchCase
+        {
             get { return BackingStore?.Get<bool?>("matchCase"); }
             set { BackingStore?.Set("matchCase", value); }
         }
         /// <summary>Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method {
+        public string? Method
+        {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
 #nullable restore
 #else
-        public string Method {
+        public string Method
+        {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"matchCase", n => { MatchCase = n.GetBoolValue(); } },
-                {"method", n => { Method = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchCase", n => { MatchCase = n.GetBoolValue(); } },
+                { "method", n => { Method = n.GetStringValue(); } },
             };
         }
         /// <summary>

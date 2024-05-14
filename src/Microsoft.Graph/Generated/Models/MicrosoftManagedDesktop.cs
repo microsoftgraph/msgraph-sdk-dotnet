@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftManagedDesktop : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MicrosoftManagedDesktop : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.</summary>
-        public MicrosoftManagedDesktopType? ManagedType {
+        public MicrosoftManagedDesktopType? ManagedType
+        {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("managedType"); }
             set { BackingStore?.Set("managedType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Profile {
+        public string? Profile
+        {
             get { return BackingStore?.Get<string?>("profile"); }
             set { BackingStore?.Set("profile", value); }
         }
 #nullable restore
 #else
-        public string Profile {
+        public string Profile
+        {
             get { return BackingStore?.Get<string>("profile"); }
             set { BackingStore?.Set("profile", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managedType", n => { ManagedType = n.GetEnumValue<MicrosoftManagedDesktopType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"profile", n => { Profile = n.GetStringValue(); } },
+                { "managedType", n => { ManagedType = n.GetEnumValue<MicrosoftManagedDesktopType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "profile", n => { Profile = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AttributeMappingFunctionSchema : Entity, IParsable 
+    public class AttributeMappingFunctionSchema : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of function parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeMappingParameterSchema>? Parameters {
+        public List<AttributeMappingParameterSchema>? Parameters
+        {
             get { return BackingStore?.Get<List<AttributeMappingParameterSchema>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<AttributeMappingParameterSchema> Parameters {
+        public List<AttributeMappingParameterSchema> Parameters
+        {
             get { return BackingStore?.Get<List<AttributeMappingParameterSchema>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<AttributeMappingParameterSchema>(AttributeMappingParameterSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<AttributeMappingParameterSchema>(AttributeMappingParameterSchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

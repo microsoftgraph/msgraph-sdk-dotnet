@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Teams.Item.Archive {
+namespace Microsoft.Graph.Teams.Item.Archive
+{
     #pragma warning disable CS1591
-    public class ArchivePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ArchivePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The shouldSetSpoSiteReadOnlyForMembers property</summary>
-        public bool? ShouldSetSpoSiteReadOnlyForMembers {
+        public bool? ShouldSetSpoSiteReadOnlyForMembers
+        {
             get { return BackingStore?.Get<bool?>("shouldSetSpoSiteReadOnlyForMembers"); }
             set { BackingStore?.Set("shouldSetSpoSiteReadOnlyForMembers", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Teams.Item.Archive {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"shouldSetSpoSiteReadOnlyForMembers", n => { ShouldSetSpoSiteReadOnlyForMembers = n.GetBoolValue(); } },
+                { "shouldSetSpoSiteReadOnlyForMembers", n => { ShouldSetSpoSiteReadOnlyForMembers = n.GetBoolValue(); } },
             };
         }
         /// <summary>

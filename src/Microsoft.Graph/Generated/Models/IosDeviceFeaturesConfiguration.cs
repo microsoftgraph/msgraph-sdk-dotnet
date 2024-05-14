@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// iOS Device Features Configuration Profile.
     /// </summary>
-    public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable 
+    public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable
     {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetTagTemplate {
+        public string? AssetTagTemplate
+        {
             get { return BackingStore?.Get<string?>("assetTagTemplate"); }
             set { BackingStore?.Set("assetTagTemplate", value); }
         }
 #nullable restore
 #else
-        public string AssetTagTemplate {
+        public string AssetTagTemplate
+        {
             get { return BackingStore?.Get<string>("assetTagTemplate"); }
             set { BackingStore?.Set("assetTagTemplate", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenItem>? HomeScreenDockIcons {
+        public List<IosHomeScreenItem>? HomeScreenDockIcons
+        {
             get { return BackingStore?.Get<List<IosHomeScreenItem>?>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenItem> HomeScreenDockIcons {
+        public List<IosHomeScreenItem> HomeScreenDockIcons
+        {
             get { return BackingStore?.Get<List<IosHomeScreenItem>>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenPage>? HomeScreenPages {
+        public List<IosHomeScreenPage>? HomeScreenPages
+        {
             get { return BackingStore?.Get<List<IosHomeScreenPage>?>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenPage> HomeScreenPages {
+        public List<IosHomeScreenPage> HomeScreenPages
+        {
             get { return BackingStore?.Get<List<IosHomeScreenPage>>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockScreenFootnote {
+        public string? LockScreenFootnote
+        {
             get { return BackingStore?.Get<string?>("lockScreenFootnote"); }
             set { BackingStore?.Set("lockScreenFootnote", value); }
         }
 #nullable restore
 #else
-        public string LockScreenFootnote {
+        public string LockScreenFootnote
+        {
             get { return BackingStore?.Get<string>("lockScreenFootnote"); }
             set { BackingStore?.Set("lockScreenFootnote", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosNotificationSettings>? NotificationSettings {
+        public List<IosNotificationSettings>? NotificationSettings
+        {
             get { return BackingStore?.Get<List<IosNotificationSettings>?>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
 #nullable restore
 #else
-        public List<IosNotificationSettings> NotificationSettings {
+        public List<IosNotificationSettings> NotificationSettings
+        {
             get { return BackingStore?.Get<List<IosNotificationSettings>>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assetTagTemplate", n => { AssetTagTemplate = n.GetStringValue(); } },
-                {"homeScreenDockIcons", n => { HomeScreenDockIcons = n.GetCollectionOfObjectValues<IosHomeScreenItem>(IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"homeScreenPages", n => { HomeScreenPages = n.GetCollectionOfObjectValues<IosHomeScreenPage>(IosHomeScreenPage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lockScreenFootnote", n => { LockScreenFootnote = n.GetStringValue(); } },
-                {"notificationSettings", n => { NotificationSettings = n.GetCollectionOfObjectValues<IosNotificationSettings>(IosNotificationSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assetTagTemplate", n => { AssetTagTemplate = n.GetStringValue(); } },
+                { "homeScreenDockIcons", n => { HomeScreenDockIcons = n.GetCollectionOfObjectValues<IosHomeScreenItem>(IosHomeScreenItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "homeScreenPages", n => { HomeScreenPages = n.GetCollectionOfObjectValues<IosHomeScreenPage>(IosHomeScreenPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lockScreenFootnote", n => { LockScreenFootnote = n.GetStringValue(); } },
+                { "notificationSettings", n => { NotificationSettings = n.GetCollectionOfObjectValues<IosNotificationSettings>(IosNotificationSettings.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.TermStore {
+namespace Microsoft.Graph.Models.TermStore
+{
     #pragma warning disable CS1591
-    public class Term : Microsoft.Graph.Models.Entity, IParsable 
+    public class Term : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Children of current term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Term>? Children {
+        public List<Term>? Children
+        {
             get { return BackingStore?.Get<List<Term>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<Term> Children {
+        public List<Term> Children
+        {
             get { return BackingStore?.Get<List<Term>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #endif
         /// <summary>Date and time of term creation. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description about term that is dependent on the languageTag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocalizedDescription>? Descriptions {
+        public List<LocalizedDescription>? Descriptions
+        {
             get { return BackingStore?.Get<List<LocalizedDescription>?>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
 #nullable restore
 #else
-        public List<LocalizedDescription> Descriptions {
+        public List<LocalizedDescription> Descriptions
+        {
             get { return BackingStore?.Get<List<LocalizedDescription>>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
@@ -45,32 +51,37 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>Label metadata for a term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocalizedLabel>? Labels {
+        public List<LocalizedLabel>? Labels
+        {
             get { return BackingStore?.Get<List<LocalizedLabel>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public List<LocalizedLabel> Labels {
+        public List<LocalizedLabel> Labels
+        {
             get { return BackingStore?.Get<List<LocalizedLabel>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #endif
         /// <summary>Last date and time of term modification. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Collection of properties on the term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.KeyValue>? Properties {
+        public List<Microsoft.Graph.Models.KeyValue>? Properties
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.KeyValue> Properties {
+        public List<Microsoft.Graph.Models.KeyValue> Properties
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValue>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Relation>? Relations {
+        public List<Relation>? Relations
+        {
             get { return BackingStore?.Get<List<Relation>?>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
 #nullable restore
 #else
-        public List<Relation> Relations {
+        public List<Relation> Relations
+        {
             get { return BackingStore?.Get<List<Relation>>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Models.TermStore {
         /// <summary>The [set] in which the term is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TermStore.Set? Set {
+        public Microsoft.Graph.Models.TermStore.Set? Set
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set?>("set"); }
             set { BackingStore?.Set("set", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TermStore.Set Set {
+        public Microsoft.Graph.Models.TermStore.Set Set
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermStore.Set>("set"); }
             set { BackingStore?.Set("set", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Models.TermStore {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"children", n => { Children = n.GetCollectionOfObjectValues<Term>(Term.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<LocalizedDescription>(LocalizedDescription.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"labels", n => { Labels = n.GetCollectionOfObjectValues<LocalizedLabel>(LocalizedLabel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"relations", n => { Relations = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"set", n => { Set = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<Term>(Term.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<LocalizedDescription>(LocalizedDescription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labels", n => { Labels = n.GetCollectionOfObjectValues<LocalizedLabel>(LocalizedLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValue>(Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "relations", n => { Relations = n.GetCollectionOfObjectValues<Relation>(Relation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "set", n => { Set = n.GetObjectValue<Microsoft.Graph.Models.TermStore.Set>(Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

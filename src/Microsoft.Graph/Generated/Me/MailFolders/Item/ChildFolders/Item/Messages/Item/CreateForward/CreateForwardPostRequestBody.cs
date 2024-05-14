@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward {
+namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateForward
+{
     #pragma warning disable CS1591
-    public class CreateForwardPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateForwardPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Cr
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("Comment"); }
             set { BackingStore?.Set("Comment", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Cr
         /// <summary>The Message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Message? Message {
+        public Microsoft.Graph.Models.Message? Message
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Message?>("Message"); }
             set { BackingStore?.Set("Message", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Message Message {
+        public Microsoft.Graph.Models.Message Message
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Message>("Message"); }
             set { BackingStore?.Set("Message", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Cr
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recipient>? ToRecipients {
+        public List<Recipient>? ToRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>?>("ToRecipients"); }
             set { BackingStore?.Set("ToRecipients", value); }
         }
 #nullable restore
 #else
-        public List<Recipient> ToRecipients {
+        public List<Recipient> ToRecipients
+        {
             get { return BackingStore?.Get<List<Recipient>>("ToRecipients"); }
             set { BackingStore?.Set("ToRecipients", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Cr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"Message", n => { Message = n.GetObjectValue<Microsoft.Graph.Models.Message>(Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue); } },
-                {"ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "Comment", n => { Comment = n.GetStringValue(); } },
+                { "Message", n => { Message = n.GetObjectValue<Microsoft.Graph.Models.Message>(Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue); } },
+                { "ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

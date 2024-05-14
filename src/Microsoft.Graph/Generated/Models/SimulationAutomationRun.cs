@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SimulationAutomationRun : Entity, IParsable 
+    public class SimulationAutomationRun : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SimulationId {
+        public string? SimulationId
+        {
             get { return BackingStore?.Get<string?>("simulationId"); }
             set { BackingStore?.Set("simulationId", value); }
         }
 #nullable restore
 #else
-        public string SimulationId {
+        public string SimulationId
+        {
             get { return BackingStore?.Get<string>("simulationId"); }
             set { BackingStore?.Set("simulationId", value); }
         }
 #endif
         /// <summary>Date and time when the run starts in an attack simulation automation.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.</summary>
-        public SimulationAutomationRunStatus? Status {
+        public SimulationAutomationRunStatus? Status
+        {
             get { return BackingStore?.Get<SimulationAutomationRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationId", n => { SimulationId = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<SimulationAutomationRunStatus>(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "simulationId", n => { SimulationId = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<SimulationAutomationRunStatus>(); } },
             };
         }
         /// <summary>

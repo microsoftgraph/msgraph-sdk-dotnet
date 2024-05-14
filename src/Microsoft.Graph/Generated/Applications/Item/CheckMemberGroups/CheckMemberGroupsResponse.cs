@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.CheckMemberGroups {
+namespace Microsoft.Graph.Applications.Item.CheckMemberGroups
+{
     [Obsolete("This class is obsolete. Use CheckMemberGroupsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CheckMemberGroupsResponse : CheckMemberGroupsPostResponse, IParsable 
+    public class CheckMemberGroupsResponse : CheckMemberGroupsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ScoredEmailAddress : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ScoredEmailAddress : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address {
+        public string? Address
+        {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public string Address {
+        public string Address
+        {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The itemId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId {
+        public string? ItemId
+        {
             get { return BackingStore?.Get<string?>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
 #nullable restore
 #else
-        public string ItemId {
+        public string ItemId
+        {
             get { return BackingStore?.Get<string>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
@@ -48,24 +54,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.</summary>
-        public double? RelevanceScore {
+        public double? RelevanceScore
+        {
             get { return BackingStore?.Get<double?>("relevanceScore"); }
             set { BackingStore?.Set("relevanceScore", value); }
         }
         /// <summary>The selectionLikelihood property</summary>
-        public SelectionLikelihoodInfo? SelectionLikelihood {
+        public SelectionLikelihoodInfo? SelectionLikelihood
+        {
             get { return BackingStore?.Get<SelectionLikelihoodInfo?>("selectionLikelihood"); }
             set { BackingStore?.Set("selectionLikelihood", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetStringValue(); } },
-                {"itemId", n => { ItemId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"relevanceScore", n => { RelevanceScore = n.GetDoubleValue(); } },
-                {"selectionLikelihood", n => { SelectionLikelihood = n.GetEnumValue<SelectionLikelihoodInfo>(); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "itemId", n => { ItemId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "relevanceScore", n => { RelevanceScore = n.GetDoubleValue(); } },
+                { "selectionLikelihood", n => { SelectionLikelihood = n.GetEnumValue<SelectionLikelihoodInfo>(); } },
             };
         }
         /// <summary>

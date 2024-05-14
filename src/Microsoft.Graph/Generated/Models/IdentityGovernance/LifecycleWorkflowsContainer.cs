@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class LifecycleWorkflowsContainer : Microsoft.Graph.Models.Entity, IParsable 
+    public class LifecycleWorkflowsContainer : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customTaskExtension instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomTaskExtension>? CustomTaskExtensions {
+        public List<CustomTaskExtension>? CustomTaskExtensions
+        {
             get { return BackingStore?.Get<List<CustomTaskExtension>?>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
 #nullable restore
 #else
-        public List<CustomTaskExtension> CustomTaskExtensions {
+        public List<CustomTaskExtension> CustomTaskExtensions
+        {
             get { return BackingStore?.Get<List<CustomTaskExtension>>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>Deleted workflows in your lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DeletedItemContainer? DeletedItems {
+        public Microsoft.Graph.Models.DeletedItemContainer? DeletedItems
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeletedItemContainer?>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DeletedItemContainer DeletedItems {
+        public Microsoft.Graph.Models.DeletedItemContainer DeletedItems
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DeletedItemContainer>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LifecycleManagementSettings? Settings {
+        public LifecycleManagementSettings? Settings
+        {
             get { return BackingStore?.Get<LifecycleManagementSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public LifecycleManagementSettings Settings {
+        public LifecycleManagementSettings Settings
+        {
             get { return BackingStore?.Get<LifecycleManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaskDefinition>? TaskDefinitions {
+        public List<TaskDefinition>? TaskDefinitions
+        {
             get { return BackingStore?.Get<List<TaskDefinition>?>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<TaskDefinition> TaskDefinitions {
+        public List<TaskDefinition> TaskDefinitions
+        {
             get { return BackingStore?.Get<List<TaskDefinition>>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The workflows in the lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Workflow>? Workflows {
+        public List<Workflow>? Workflows
+        {
             get { return BackingStore?.Get<List<Workflow>?>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
 #nullable restore
 #else
-        public List<Workflow> Workflows {
+        public List<Workflow> Workflows
+        {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The workflow templates in the lifecycle workflow instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkflowTemplate>? WorkflowTemplates {
+        public List<WorkflowTemplate>? WorkflowTemplates
+        {
             get { return BackingStore?.Get<List<WorkflowTemplate>?>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }
         }
 #nullable restore
 #else
-        public List<WorkflowTemplate> WorkflowTemplates {
+        public List<WorkflowTemplate> WorkflowTemplates
+        {
             get { return BackingStore?.Get<List<WorkflowTemplate>>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Models.DeletedItemContainer>(Microsoft.Graph.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
-                {"settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
-                {"taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Models.DeletedItemContainer>(Microsoft.Graph.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
+                { "taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

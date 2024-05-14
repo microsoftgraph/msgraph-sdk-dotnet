@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserTeamwork : Entity, IParsable 
+    public class UserTeamwork : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssociatedTeamInfo>? AssociatedTeams {
+        public List<AssociatedTeamInfo>? AssociatedTeams
+        {
             get { return BackingStore?.Get<List<AssociatedTeamInfo>?>("associatedTeams"); }
             set { BackingStore?.Set("associatedTeams", value); }
         }
 #nullable restore
 #else
-        public List<AssociatedTeamInfo> AssociatedTeams {
+        public List<AssociatedTeamInfo> AssociatedTeams
+        {
             get { return BackingStore?.Get<List<AssociatedTeamInfo>>("associatedTeams"); }
             set { BackingStore?.Set("associatedTeams", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The apps installed in the personal scope of this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserScopeTeamsAppInstallation>? InstalledApps {
+        public List<UserScopeTeamsAppInstallation>? InstalledApps
+        {
             get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>?>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
 #nullable restore
 #else
-        public List<UserScopeTeamsAppInstallation> InstalledApps {
+        public List<UserScopeTeamsAppInstallation> InstalledApps
+        {
             get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The chosen locale of a user in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale {
+        public string? Locale
+        {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public string Locale {
+        public string Locale
+        {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The region of the user in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region {
+        public string? Region
+        {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
 #nullable restore
 #else
-        public string Region {
+        public string Region
+        {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"associatedTeams", n => { AssociatedTeams = n.GetCollectionOfObjectValues<AssociatedTeamInfo>(AssociatedTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<UserScopeTeamsAppInstallation>(UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"region", n => { Region = n.GetStringValue(); } },
+                { "associatedTeams", n => { AssociatedTeams = n.GetCollectionOfObjectValues<AssociatedTeamInfo>(AssociatedTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<UserScopeTeamsAppInstallation>(UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
             };
         }
         /// <summary>

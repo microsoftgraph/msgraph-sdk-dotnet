@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Chat : Entity, IParsable 
+    public class Chat : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The chatType property</summary>
-        public Microsoft.Graph.Models.ChatType? ChatType {
+        public Microsoft.Graph.Models.ChatType? ChatType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChatType?>("chatType"); }
             set { BackingStore?.Set("chatType", value); }
         }
         /// <summary>Date and time at which the chat was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A collection of all the apps in the chat. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsAppInstallation>? InstalledApps {
+        public List<TeamsAppInstallation>? InstalledApps
+        {
             get { return BackingStore?.Get<List<TeamsAppInstallation>?>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
 #nullable restore
 #else
-        public List<TeamsAppInstallation> InstalledApps {
+        public List<TeamsAppInstallation> InstalledApps
+        {
             get { return BackingStore?.Get<List<TeamsAppInstallation>>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
@@ -36,32 +41,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageInfo? LastMessagePreview {
+        public ChatMessageInfo? LastMessagePreview
+        {
             get { return BackingStore?.Get<ChatMessageInfo?>("lastMessagePreview"); }
             set { BackingStore?.Set("lastMessagePreview", value); }
         }
 #nullable restore
 #else
-        public ChatMessageInfo LastMessagePreview {
+        public ChatMessageInfo LastMessagePreview
+        {
             get { return BackingStore?.Get<ChatMessageInfo>("lastMessagePreview"); }
             set { BackingStore?.Set("lastMessagePreview", value); }
         }
 #endif
         /// <summary>Date and time at which the chat was renamed or the list of members was last changed. Read-only.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>A collection of all the members in the chat. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConversationMember>? Members {
+        public List<ConversationMember>? Members
+        {
             get { return BackingStore?.Get<List<ConversationMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<ConversationMember> Members {
+        public List<ConversationMember> Members
+        {
             get { return BackingStore?.Get<List<ConversationMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of all the messages in the chat. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Messages {
+        public List<ChatMessage>? Messages
+        {
             get { return BackingStore?.Get<List<ChatMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Messages {
+        public List<ChatMessage> Messages
+        {
             get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents details about an online meeting. If the chat isn&apos;t associated with an online meeting, the property is empty. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkOnlineMeetingInfo? OnlineMeetingInfo {
+        public TeamworkOnlineMeetingInfo? OnlineMeetingInfo
+        {
             get { return BackingStore?.Get<TeamworkOnlineMeetingInfo?>("onlineMeetingInfo"); }
             set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
 #nullable restore
 #else
-        public TeamworkOnlineMeetingInfo OnlineMeetingInfo {
+        public TeamworkOnlineMeetingInfo OnlineMeetingInfo
+        {
             get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>("onlineMeetingInfo"); }
             set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of permissions granted to apps for the chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceSpecificPermissionGrant>? PermissionGrants {
+        public List<ResourceSpecificPermissionGrant>? PermissionGrants
+        {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
 #nullable restore
 #else
-        public List<ResourceSpecificPermissionGrant> PermissionGrants {
+        public List<ResourceSpecificPermissionGrant> PermissionGrants
+        {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PinnedChatMessageInfo>? PinnedMessages {
+        public List<PinnedChatMessageInfo>? PinnedMessages
+        {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>?>("pinnedMessages"); }
             set { BackingStore?.Set("pinnedMessages", value); }
         }
 #nullable restore
 #else
-        public List<PinnedChatMessageInfo> PinnedMessages {
+        public List<PinnedChatMessageInfo> PinnedMessages
+        {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>>("pinnedMessages"); }
             set { BackingStore?.Set("pinnedMessages", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamsTab>? Tabs {
+        public List<TeamsTab>? Tabs
+        {
             get { return BackingStore?.Get<List<TeamsTab>?>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
 #nullable restore
 #else
-        public List<TeamsTab> Tabs {
+        public List<TeamsTab> Tabs
+        {
             get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>(Optional) Subject or topic for the chat. Only available for group chats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Topic {
+        public string? Topic
+        {
             get { return BackingStore?.Get<string?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #nullable restore
 #else
-        public string Topic {
+        public string Topic
+        {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatViewpoint? Viewpoint {
+        public ChatViewpoint? Viewpoint
+        {
             get { return BackingStore?.Get<ChatViewpoint?>("viewpoint"); }
             set { BackingStore?.Set("viewpoint", value); }
         }
 #nullable restore
 #else
-        public ChatViewpoint Viewpoint {
+        public ChatViewpoint Viewpoint
+        {
             get { return BackingStore?.Get<ChatViewpoint>("viewpoint"); }
             set { BackingStore?.Set("viewpoint", value); }
         }
@@ -181,13 +207,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -210,21 +238,21 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"chatType", n => { ChatType = n.GetEnumValue<ChatType>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastMessagePreview", n => { LastMessagePreview = n.GetObjectValue<ChatMessageInfo>(ChatMessageInfo.CreateFromDiscriminatorValue); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"onlineMeetingInfo", n => { OnlineMeetingInfo = n.GetObjectValue<TeamworkOnlineMeetingInfo>(TeamworkOnlineMeetingInfo.CreateFromDiscriminatorValue); } },
-                {"permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<PinnedChatMessageInfo>(PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"topic", n => { Topic = n.GetStringValue(); } },
-                {"viewpoint", n => { Viewpoint = n.GetObjectValue<ChatViewpoint>(ChatViewpoint.CreateFromDiscriminatorValue); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "chatType", n => { ChatType = n.GetEnumValue<ChatType>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastMessagePreview", n => { LastMessagePreview = n.GetObjectValue<ChatMessageInfo>(ChatMessageInfo.CreateFromDiscriminatorValue); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onlineMeetingInfo", n => { OnlineMeetingInfo = n.GetObjectValue<TeamworkOnlineMeetingInfo>(TeamworkOnlineMeetingInfo.CreateFromDiscriminatorValue); } },
+                { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<PinnedChatMessageInfo>(PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "topic", n => { Topic = n.GetStringValue(); } },
+                { "viewpoint", n => { Viewpoint = n.GetObjectValue<ChatViewpoint>(ChatViewpoint.CreateFromDiscriminatorValue); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

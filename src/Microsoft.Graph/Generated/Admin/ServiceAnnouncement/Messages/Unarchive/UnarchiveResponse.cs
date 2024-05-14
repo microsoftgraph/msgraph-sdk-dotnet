@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive {
+namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive
+{
     [Obsolete("This class is obsolete. Use UnarchivePostResponse instead.")]
     #pragma warning disable CS1591
-    public class UnarchiveResponse : UnarchivePostResponse, IParsable 
+    public class UnarchiveResponse : UnarchivePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

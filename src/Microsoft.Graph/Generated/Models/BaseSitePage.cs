@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BaseSitePage : BaseItem, IParsable 
+    public class BaseSitePage : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.</summary>
-        public PageLayoutType? PageLayout {
+        public PageLayoutType? PageLayout
+        {
             get { return BackingStore?.Get<PageLayoutType?>("pageLayout"); }
             set { BackingStore?.Set("pageLayout", value); }
         }
         /// <summary>The publishing status and the MM.mm version of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicationFacet? PublishingState {
+        public PublicationFacet? PublishingState
+        {
             get { return BackingStore?.Get<PublicationFacet?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
 #nullable restore
 #else
-        public PublicationFacet PublishingState {
+        public PublicationFacet PublishingState
+        {
             get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Title of the sitePage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -72,9 +78,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"pageLayout", n => { PageLayout = n.GetEnumValue<PageLayoutType>(); } },
-                {"publishingState", n => { PublishingState = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "pageLayout", n => { PageLayout = n.GetEnumValue<PageLayoutType>(); } },
+                { "publishingState", n => { PublishingState = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

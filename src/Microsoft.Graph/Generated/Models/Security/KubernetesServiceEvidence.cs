@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class KubernetesServiceEvidence : AlertEvidence, IParsable 
+    public class KubernetesServiceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The service cluster IP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? ClusterIP {
+        public IpEvidence? ClusterIP
+        {
             get { return BackingStore?.Get<IpEvidence?>("clusterIP"); }
             set { BackingStore?.Set("clusterIP", value); }
         }
 #nullable restore
 #else
-        public IpEvidence ClusterIP {
+        public IpEvidence ClusterIP
+        {
             get { return BackingStore?.Get<IpEvidence>("clusterIP"); }
             set { BackingStore?.Set("clusterIP", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The service external IPs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpEvidence>? ExternalIPs {
+        public List<IpEvidence>? ExternalIPs
+        {
             get { return BackingStore?.Get<List<IpEvidence>?>("externalIPs"); }
             set { BackingStore?.Set("externalIPs", value); }
         }
 #nullable restore
 #else
-        public List<IpEvidence> ExternalIPs {
+        public List<IpEvidence> ExternalIPs
+        {
             get { return BackingStore?.Get<List<IpEvidence>>("externalIPs"); }
             set { BackingStore?.Set("externalIPs", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The service labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? Labels {
+        public Dictionary? Labels
+        {
             get { return BackingStore?.Get<Dictionary?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public Dictionary Labels {
+        public Dictionary Labels
+        {
             get { return BackingStore?.Get<Dictionary>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The service name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The service namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KubernetesNamespaceEvidence? Namespace {
+        public KubernetesNamespaceEvidence? Namespace
+        {
             get { return BackingStore?.Get<KubernetesNamespaceEvidence?>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #nullable restore
 #else
-        public KubernetesNamespaceEvidence Namespace {
+        public KubernetesNamespaceEvidence Namespace
+        {
             get { return BackingStore?.Get<KubernetesNamespaceEvidence>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The service selector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Dictionary? Selector {
+        public Dictionary? Selector
+        {
             get { return BackingStore?.Get<Dictionary?>("selector"); }
             set { BackingStore?.Set("selector", value); }
         }
 #nullable restore
 #else
-        public Dictionary Selector {
+        public Dictionary Selector
+        {
             get { return BackingStore?.Get<Dictionary>("selector"); }
             set { BackingStore?.Set("selector", value); }
         }
@@ -96,19 +109,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The list of service ports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KubernetesServicePort>? ServicePorts {
+        public List<KubernetesServicePort>? ServicePorts
+        {
             get { return BackingStore?.Get<List<KubernetesServicePort>?>("servicePorts"); }
             set { BackingStore?.Set("servicePorts", value); }
         }
 #nullable restore
 #else
-        public List<KubernetesServicePort> ServicePorts {
+        public List<KubernetesServicePort> ServicePorts
+        {
             get { return BackingStore?.Get<List<KubernetesServicePort>>("servicePorts"); }
             set { BackingStore?.Set("servicePorts", value); }
         }
 #endif
         /// <summary>The serviceType property</summary>
-        public KubernetesServiceType? ServiceType {
+        public KubernetesServiceType? ServiceType
+        {
             get { return BackingStore?.Get<KubernetesServiceType?>("serviceType"); }
             set { BackingStore?.Set("serviceType", value); }
         }
@@ -137,14 +153,14 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clusterIP", n => { ClusterIP = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"externalIPs", n => { ExternalIPs = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"labels", n => { Labels = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
-                {"selector", n => { Selector = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
-                {"servicePorts", n => { ServicePorts = n.GetCollectionOfObjectValues<KubernetesServicePort>(KubernetesServicePort.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"serviceType", n => { ServiceType = n.GetEnumValue<KubernetesServiceType>(); } },
+                { "clusterIP", n => { ClusterIP = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "externalIPs", n => { ExternalIPs = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labels", n => { Labels = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "namespace", n => { Namespace = n.GetObjectValue<KubernetesNamespaceEvidence>(KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
+                { "selector", n => { Selector = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
+                { "servicePorts", n => { ServicePorts = n.GetCollectionOfObjectValues<KubernetesServicePort>(KubernetesServicePort.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceType", n => { ServiceType = n.GetEnumValue<KubernetesServiceType>(); } },
             };
         }
         /// <summary>

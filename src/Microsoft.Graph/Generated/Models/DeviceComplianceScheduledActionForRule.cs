@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Scheduled Action for Rule
     /// </summary>
-    public class DeviceComplianceScheduledActionForRule : Entity, IParsable 
+    public class DeviceComplianceScheduledActionForRule : Entity, IParsable
     {
         /// <summary>Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleName {
+        public string? RuleName
+        {
             get { return BackingStore?.Get<string?>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
 #nullable restore
 #else
-        public string RuleName {
+        public string RuleName
+        {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceActionItem>? ScheduledActionConfigurations {
+        public List<DeviceComplianceActionItem>? ScheduledActionConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceComplianceActionItem>?>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceActionItem> ScheduledActionConfigurations {
+        public List<DeviceComplianceActionItem> ScheduledActionConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceComplianceActionItem>>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ruleName", n => { RuleName = n.GetStringValue(); } },
-                {"scheduledActionConfigurations", n => { ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceComplianceActionItem>(DeviceComplianceActionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ruleName", n => { RuleName = n.GetStringValue(); } },
+                { "scheduledActionConfigurations", n => { ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceComplianceActionItem>(DeviceComplianceActionItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

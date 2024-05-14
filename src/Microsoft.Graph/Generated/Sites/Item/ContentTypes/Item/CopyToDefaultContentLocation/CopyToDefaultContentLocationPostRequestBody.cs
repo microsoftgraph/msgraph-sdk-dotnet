@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation {
+namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation
+{
     #pragma warning disable CS1591
-    public class CopyToDefaultContentLocationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CopyToDefaultContentLocationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocat
         /// <summary>The destinationFileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationFileName {
+        public string? DestinationFileName
+        {
             get { return BackingStore?.Get<string?>("destinationFileName"); }
             set { BackingStore?.Set("destinationFileName", value); }
         }
 #nullable restore
 #else
-        public string DestinationFileName {
+        public string DestinationFileName
+        {
             get { return BackingStore?.Get<string>("destinationFileName"); }
             set { BackingStore?.Set("destinationFileName", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocat
         /// <summary>The sourceFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? SourceFile {
+        public ItemReference? SourceFile
+        {
             get { return BackingStore?.Get<ItemReference?>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
 #nullable restore
 #else
-        public ItemReference SourceFile {
+        public ItemReference SourceFile
+        {
             get { return BackingStore?.Get<ItemReference>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocat
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"destinationFileName", n => { DestinationFileName = n.GetStringValue(); } },
-                {"sourceFile", n => { SourceFile = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "destinationFileName", n => { DestinationFileName = n.GetStringValue(); } },
+                { "sourceFile", n => { SourceFile = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

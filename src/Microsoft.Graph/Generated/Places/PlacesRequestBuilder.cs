@@ -9,11 +9,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Places {
+namespace Microsoft.Graph.Places
+{
     /// <summary>
     /// Builds and executes requests for operations under \places
     /// </summary>
-    public class PlacesRequestBuilder : BaseRequestBuilder 
+    public class PlacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count

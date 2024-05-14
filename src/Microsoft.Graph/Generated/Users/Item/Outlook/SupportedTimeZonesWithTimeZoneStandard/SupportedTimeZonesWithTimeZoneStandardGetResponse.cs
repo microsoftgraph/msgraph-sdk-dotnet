@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard {
+namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard
+{
     #pragma warning disable CS1591
-    public class SupportedTimeZonesWithTimeZoneStandardGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class SupportedTimeZonesWithTimeZoneStandardGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeZoneInformation>? Value {
+        public List<TimeZoneInformation>? Value
+        {
             get { return BackingStore?.Get<List<TimeZoneInformation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<TimeZoneInformation> Value {
+        public List<TimeZoneInformation> Value
+        {
             get { return BackingStore?.Get<List<TimeZoneInformation>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStand
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<TimeZoneInformation>(TimeZoneInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<TimeZoneInformation>(TimeZoneInformation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

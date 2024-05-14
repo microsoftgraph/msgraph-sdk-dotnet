@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PlannerCategoryDescriptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PlannerCategoryDescriptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category1 {
+        public string? Category1
+        {
             get { return BackingStore?.Get<string?>("category1"); }
             set { BackingStore?.Set("category1", value); }
         }
 #nullable restore
 #else
-        public string Category1 {
+        public string Category1
+        {
             get { return BackingStore?.Get<string>("category1"); }
             set { BackingStore?.Set("category1", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 10</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category10 {
+        public string? Category10
+        {
             get { return BackingStore?.Get<string?>("category10"); }
             set { BackingStore?.Set("category10", value); }
         }
 #nullable restore
 #else
-        public string Category10 {
+        public string Category10
+        {
             get { return BackingStore?.Get<string>("category10"); }
             set { BackingStore?.Set("category10", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 11</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category11 {
+        public string? Category11
+        {
             get { return BackingStore?.Get<string?>("category11"); }
             set { BackingStore?.Set("category11", value); }
         }
 #nullable restore
 #else
-        public string Category11 {
+        public string Category11
+        {
             get { return BackingStore?.Get<string>("category11"); }
             set { BackingStore?.Set("category11", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 12</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category12 {
+        public string? Category12
+        {
             get { return BackingStore?.Get<string?>("category12"); }
             set { BackingStore?.Set("category12", value); }
         }
 #nullable restore
 #else
-        public string Category12 {
+        public string Category12
+        {
             get { return BackingStore?.Get<string>("category12"); }
             set { BackingStore?.Set("category12", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 13</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category13 {
+        public string? Category13
+        {
             get { return BackingStore?.Get<string?>("category13"); }
             set { BackingStore?.Set("category13", value); }
         }
 #nullable restore
 #else
-        public string Category13 {
+        public string Category13
+        {
             get { return BackingStore?.Get<string>("category13"); }
             set { BackingStore?.Set("category13", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 14</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category14 {
+        public string? Category14
+        {
             get { return BackingStore?.Get<string?>("category14"); }
             set { BackingStore?.Set("category14", value); }
         }
 #nullable restore
 #else
-        public string Category14 {
+        public string Category14
+        {
             get { return BackingStore?.Get<string>("category14"); }
             set { BackingStore?.Set("category14", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 15</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category15 {
+        public string? Category15
+        {
             get { return BackingStore?.Get<string?>("category15"); }
             set { BackingStore?.Set("category15", value); }
         }
 #nullable restore
 #else
-        public string Category15 {
+        public string Category15
+        {
             get { return BackingStore?.Get<string>("category15"); }
             set { BackingStore?.Set("category15", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 16</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category16 {
+        public string? Category16
+        {
             get { return BackingStore?.Get<string?>("category16"); }
             set { BackingStore?.Set("category16", value); }
         }
 #nullable restore
 #else
-        public string Category16 {
+        public string Category16
+        {
             get { return BackingStore?.Get<string>("category16"); }
             set { BackingStore?.Set("category16", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 17</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category17 {
+        public string? Category17
+        {
             get { return BackingStore?.Get<string?>("category17"); }
             set { BackingStore?.Set("category17", value); }
         }
 #nullable restore
 #else
-        public string Category17 {
+        public string Category17
+        {
             get { return BackingStore?.Get<string>("category17"); }
             set { BackingStore?.Set("category17", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 18</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category18 {
+        public string? Category18
+        {
             get { return BackingStore?.Get<string?>("category18"); }
             set { BackingStore?.Set("category18", value); }
         }
 #nullable restore
 #else
-        public string Category18 {
+        public string Category18
+        {
             get { return BackingStore?.Get<string>("category18"); }
             set { BackingStore?.Set("category18", value); }
         }
@@ -160,13 +182,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 19</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category19 {
+        public string? Category19
+        {
             get { return BackingStore?.Get<string?>("category19"); }
             set { BackingStore?.Set("category19", value); }
         }
 #nullable restore
 #else
-        public string Category19 {
+        public string Category19
+        {
             get { return BackingStore?.Get<string>("category19"); }
             set { BackingStore?.Set("category19", value); }
         }
@@ -174,13 +198,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category2 {
+        public string? Category2
+        {
             get { return BackingStore?.Get<string?>("category2"); }
             set { BackingStore?.Set("category2", value); }
         }
 #nullable restore
 #else
-        public string Category2 {
+        public string Category2
+        {
             get { return BackingStore?.Get<string>("category2"); }
             set { BackingStore?.Set("category2", value); }
         }
@@ -188,13 +214,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 20</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category20 {
+        public string? Category20
+        {
             get { return BackingStore?.Get<string?>("category20"); }
             set { BackingStore?.Set("category20", value); }
         }
 #nullable restore
 #else
-        public string Category20 {
+        public string Category20
+        {
             get { return BackingStore?.Get<string>("category20"); }
             set { BackingStore?.Set("category20", value); }
         }
@@ -202,13 +230,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 21</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category21 {
+        public string? Category21
+        {
             get { return BackingStore?.Get<string?>("category21"); }
             set { BackingStore?.Set("category21", value); }
         }
 #nullable restore
 #else
-        public string Category21 {
+        public string Category21
+        {
             get { return BackingStore?.Get<string>("category21"); }
             set { BackingStore?.Set("category21", value); }
         }
@@ -216,13 +246,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 22</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category22 {
+        public string? Category22
+        {
             get { return BackingStore?.Get<string?>("category22"); }
             set { BackingStore?.Set("category22", value); }
         }
 #nullable restore
 #else
-        public string Category22 {
+        public string Category22
+        {
             get { return BackingStore?.Get<string>("category22"); }
             set { BackingStore?.Set("category22", value); }
         }
@@ -230,13 +262,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 23</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category23 {
+        public string? Category23
+        {
             get { return BackingStore?.Get<string?>("category23"); }
             set { BackingStore?.Set("category23", value); }
         }
 #nullable restore
 #else
-        public string Category23 {
+        public string Category23
+        {
             get { return BackingStore?.Get<string>("category23"); }
             set { BackingStore?.Set("category23", value); }
         }
@@ -244,13 +278,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 24</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category24 {
+        public string? Category24
+        {
             get { return BackingStore?.Get<string?>("category24"); }
             set { BackingStore?.Set("category24", value); }
         }
 #nullable restore
 #else
-        public string Category24 {
+        public string Category24
+        {
             get { return BackingStore?.Get<string>("category24"); }
             set { BackingStore?.Set("category24", value); }
         }
@@ -258,13 +294,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 25</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category25 {
+        public string? Category25
+        {
             get { return BackingStore?.Get<string?>("category25"); }
             set { BackingStore?.Set("category25", value); }
         }
 #nullable restore
 #else
-        public string Category25 {
+        public string Category25
+        {
             get { return BackingStore?.Get<string>("category25"); }
             set { BackingStore?.Set("category25", value); }
         }
@@ -272,13 +310,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category3 {
+        public string? Category3
+        {
             get { return BackingStore?.Get<string?>("category3"); }
             set { BackingStore?.Set("category3", value); }
         }
 #nullable restore
 #else
-        public string Category3 {
+        public string Category3
+        {
             get { return BackingStore?.Get<string>("category3"); }
             set { BackingStore?.Set("category3", value); }
         }
@@ -286,13 +326,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category4 {
+        public string? Category4
+        {
             get { return BackingStore?.Get<string?>("category4"); }
             set { BackingStore?.Set("category4", value); }
         }
 #nullable restore
 #else
-        public string Category4 {
+        public string Category4
+        {
             get { return BackingStore?.Get<string>("category4"); }
             set { BackingStore?.Set("category4", value); }
         }
@@ -300,13 +342,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 5</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category5 {
+        public string? Category5
+        {
             get { return BackingStore?.Get<string?>("category5"); }
             set { BackingStore?.Set("category5", value); }
         }
 #nullable restore
 #else
-        public string Category5 {
+        public string Category5
+        {
             get { return BackingStore?.Get<string>("category5"); }
             set { BackingStore?.Set("category5", value); }
         }
@@ -314,13 +358,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 6</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category6 {
+        public string? Category6
+        {
             get { return BackingStore?.Get<string?>("category6"); }
             set { BackingStore?.Set("category6", value); }
         }
 #nullable restore
 #else
-        public string Category6 {
+        public string Category6
+        {
             get { return BackingStore?.Get<string>("category6"); }
             set { BackingStore?.Set("category6", value); }
         }
@@ -328,13 +374,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 7</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category7 {
+        public string? Category7
+        {
             get { return BackingStore?.Get<string?>("category7"); }
             set { BackingStore?.Set("category7", value); }
         }
 #nullable restore
 #else
-        public string Category7 {
+        public string Category7
+        {
             get { return BackingStore?.Get<string>("category7"); }
             set { BackingStore?.Set("category7", value); }
         }
@@ -342,13 +390,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 8</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category8 {
+        public string? Category8
+        {
             get { return BackingStore?.Get<string?>("category8"); }
             set { BackingStore?.Set("category8", value); }
         }
 #nullable restore
 #else
-        public string Category8 {
+        public string Category8
+        {
             get { return BackingStore?.Get<string>("category8"); }
             set { BackingStore?.Set("category8", value); }
         }
@@ -356,13 +406,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The label associated with Category 9</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category9 {
+        public string? Category9
+        {
             get { return BackingStore?.Get<string?>("category9"); }
             set { BackingStore?.Set("category9", value); }
         }
 #nullable restore
 #else
-        public string Category9 {
+        public string Category9
+        {
             get { return BackingStore?.Get<string>("category9"); }
             set { BackingStore?.Set("category9", value); }
         }
@@ -370,13 +422,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -407,32 +461,32 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"category1", n => { Category1 = n.GetStringValue(); } },
-                {"category10", n => { Category10 = n.GetStringValue(); } },
-                {"category11", n => { Category11 = n.GetStringValue(); } },
-                {"category12", n => { Category12 = n.GetStringValue(); } },
-                {"category13", n => { Category13 = n.GetStringValue(); } },
-                {"category14", n => { Category14 = n.GetStringValue(); } },
-                {"category15", n => { Category15 = n.GetStringValue(); } },
-                {"category16", n => { Category16 = n.GetStringValue(); } },
-                {"category17", n => { Category17 = n.GetStringValue(); } },
-                {"category18", n => { Category18 = n.GetStringValue(); } },
-                {"category19", n => { Category19 = n.GetStringValue(); } },
-                {"category2", n => { Category2 = n.GetStringValue(); } },
-                {"category20", n => { Category20 = n.GetStringValue(); } },
-                {"category21", n => { Category21 = n.GetStringValue(); } },
-                {"category22", n => { Category22 = n.GetStringValue(); } },
-                {"category23", n => { Category23 = n.GetStringValue(); } },
-                {"category24", n => { Category24 = n.GetStringValue(); } },
-                {"category25", n => { Category25 = n.GetStringValue(); } },
-                {"category3", n => { Category3 = n.GetStringValue(); } },
-                {"category4", n => { Category4 = n.GetStringValue(); } },
-                {"category5", n => { Category5 = n.GetStringValue(); } },
-                {"category6", n => { Category6 = n.GetStringValue(); } },
-                {"category7", n => { Category7 = n.GetStringValue(); } },
-                {"category8", n => { Category8 = n.GetStringValue(); } },
-                {"category9", n => { Category9 = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "category1", n => { Category1 = n.GetStringValue(); } },
+                { "category10", n => { Category10 = n.GetStringValue(); } },
+                { "category11", n => { Category11 = n.GetStringValue(); } },
+                { "category12", n => { Category12 = n.GetStringValue(); } },
+                { "category13", n => { Category13 = n.GetStringValue(); } },
+                { "category14", n => { Category14 = n.GetStringValue(); } },
+                { "category15", n => { Category15 = n.GetStringValue(); } },
+                { "category16", n => { Category16 = n.GetStringValue(); } },
+                { "category17", n => { Category17 = n.GetStringValue(); } },
+                { "category18", n => { Category18 = n.GetStringValue(); } },
+                { "category19", n => { Category19 = n.GetStringValue(); } },
+                { "category2", n => { Category2 = n.GetStringValue(); } },
+                { "category20", n => { Category20 = n.GetStringValue(); } },
+                { "category21", n => { Category21 = n.GetStringValue(); } },
+                { "category22", n => { Category22 = n.GetStringValue(); } },
+                { "category23", n => { Category23 = n.GetStringValue(); } },
+                { "category24", n => { Category24 = n.GetStringValue(); } },
+                { "category25", n => { Category25 = n.GetStringValue(); } },
+                { "category3", n => { Category3 = n.GetStringValue(); } },
+                { "category4", n => { Category4 = n.GetStringValue(); } },
+                { "category5", n => { Category5 = n.GetStringValue(); } },
+                { "category6", n => { Category6 = n.GetStringValue(); } },
+                { "category7", n => { Category7 = n.GetStringValue(); } },
+                { "category8", n => { Category8 = n.GetStringValue(); } },
+                { "category9", n => { Category9 = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationFeedbackOutcome : EducationOutcome, IParsable 
+    public class EducationFeedbackOutcome : EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Teacher&apos;s written feedback to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationFeedback? Feedback {
+        public EducationFeedback? Feedback
+        {
             get { return BackingStore?.Get<EducationFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public EducationFeedback Feedback {
+        public EducationFeedback Feedback
+        {
             get { return BackingStore?.Get<EducationFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A copy of the feedback property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationFeedback? PublishedFeedback {
+        public EducationFeedback? PublishedFeedback
+        {
             get { return BackingStore?.Get<EducationFeedback?>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
 #nullable restore
 #else
-        public EducationFeedback PublishedFeedback {
+        public EducationFeedback PublishedFeedback
+        {
             get { return BackingStore?.Get<EducationFeedback>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"feedback", n => { Feedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
-                {"publishedFeedback", n => { PublishedFeedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
+                { "publishedFeedback", n => { PublishedFeedback = n.GetObjectValue<EducationFeedback>(EducationFeedback.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

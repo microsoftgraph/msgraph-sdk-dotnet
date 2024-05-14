@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink
+{
     #pragma warning disable CS1591
-    public class HyperlinkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HyperlinkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink {
         /// <summary>The friendlyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? FriendlyName {
+        public Json? FriendlyName
+        {
             get { return BackingStore?.Get<Json?>("friendlyName"); }
             set { BackingStore?.Set("friendlyName", value); }
         }
 #nullable restore
 #else
-        public Json FriendlyName {
+        public Json FriendlyName
+        {
             get { return BackingStore?.Get<Json>("friendlyName"); }
             set { BackingStore?.Set("friendlyName", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink {
         /// <summary>The linkLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? LinkLocation {
+        public Json? LinkLocation
+        {
             get { return BackingStore?.Get<Json?>("linkLocation"); }
             set { BackingStore?.Set("linkLocation", value); }
         }
 #nullable restore
 #else
-        public Json LinkLocation {
+        public Json LinkLocation
+        {
             get { return BackingStore?.Get<Json>("linkLocation"); }
             set { BackingStore?.Set("linkLocation", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Hyperlink {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"friendlyName", n => { FriendlyName = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"linkLocation", n => { LinkLocation = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "friendlyName", n => { FriendlyName = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "linkLocation", n => { LinkLocation = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

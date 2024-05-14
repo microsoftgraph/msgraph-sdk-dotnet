@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SmsAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class SmsAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SmsAuthenticationMethodTarget>? IncludeTargets {
+        public List<SmsAuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<SmsAuthenticationMethodTarget> IncludeTargets {
+        public List<SmsAuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<SmsAuthenticationMethodTarget>(SmsAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<SmsAuthenticationMethodTarget>(SmsAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

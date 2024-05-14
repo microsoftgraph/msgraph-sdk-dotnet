@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties, inherited properties and actions for iOS mobile app configurations.
     /// </summary>
-    public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable 
+    public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>mdm app configuration Base64 binary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EncodedSettingXml {
+        public byte[]? EncodedSettingXml
+        {
             get { return BackingStore?.Get<byte[]?>("encodedSettingXml"); }
             set { BackingStore?.Set("encodedSettingXml", value); }
         }
 #nullable restore
 #else
-        public byte[] EncodedSettingXml {
+        public byte[] EncodedSettingXml
+        {
             get { return BackingStore?.Get<byte[]>("encodedSettingXml"); }
             set { BackingStore?.Set("encodedSettingXml", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>app configuration setting items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppConfigurationSettingItem>? Settings {
+        public List<AppConfigurationSettingItem>? Settings
+        {
             get { return BackingStore?.Get<List<AppConfigurationSettingItem>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<AppConfigurationSettingItem> Settings {
+        public List<AppConfigurationSettingItem> Settings
+        {
             get { return BackingStore?.Get<List<AppConfigurationSettingItem>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"encodedSettingXml", n => { EncodedSettingXml = n.GetByteArrayValue(); } },
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<AppConfigurationSettingItem>(AppConfigurationSettingItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "encodedSettingXml", n => { EncodedSettingXml = n.GetByteArrayValue(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<AppConfigurationSettingItem>(AppConfigurationSettingItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
     /// </summary>
-    public class ManagedDeviceMobileAppConfigurationUserStatus : Entity, IParsable 
+    public class ManagedDeviceMobileAppConfigurationUserStatus : Entity, IParsable
     {
         /// <summary>Devices count for that user.</summary>
-        public int? DevicesCount {
+        public int? DevicesCount
+        {
             get { return BackingStore?.Get<int?>("devicesCount"); }
             set { BackingStore?.Set("devicesCount", value); }
         }
         /// <summary>Last modified date time of the policy report.</summary>
-        public DateTimeOffset? LastReportedDateTime {
+        public DateTimeOffset? LastReportedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public ComplianceStatus? Status {
+        public ComplianceStatus? Status
+        {
             get { return BackingStore?.Get<ComplianceStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>User name of the DevicePolicyStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -42,13 +48,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>UserPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"devicesCount", n => { DevicesCount = n.GetIntValue(); } },
-                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "devicesCount", n => { DevicesCount = n.GetIntValue(); } },
+                { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ComplianceStatus>(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

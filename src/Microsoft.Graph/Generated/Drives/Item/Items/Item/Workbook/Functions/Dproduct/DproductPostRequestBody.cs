@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct
+{
     #pragma warning disable CS1591
-    public class DproductPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DproductPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct {
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Criteria {
+        public Json? Criteria
+        {
             get { return BackingStore?.Get<Json?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
 #nullable restore
 #else
-        public Json Criteria {
+        public Json Criteria
+        {
             get { return BackingStore?.Get<Json>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct {
         /// <summary>The database property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Database {
+        public Json? Database
+        {
             get { return BackingStore?.Get<Json?>("database"); }
             set { BackingStore?.Set("database", value); }
         }
 #nullable restore
 #else
-        public Json Database {
+        public Json Database
+        {
             get { return BackingStore?.Get<Json>("database"); }
             set { BackingStore?.Set("database", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct {
         /// <summary>The field property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Field {
+        public Json? Field
+        {
             get { return BackingStore?.Get<Json?>("field"); }
             set { BackingStore?.Set("field", value); }
         }
 #nullable restore
 #else
-        public Json Field {
+        public Json Field
+        {
             get { return BackingStore?.Get<Json>("field"); }
             set { BackingStore?.Set("field", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Dproduct {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"criteria", n => { Criteria = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"database", n => { Database = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"field", n => { Field = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "database", n => { Database = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

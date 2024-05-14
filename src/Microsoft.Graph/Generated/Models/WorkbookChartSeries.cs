@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartSeries : Entity, IParsable 
+    public class WorkbookChartSeries : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartSeriesFormat? Format {
+        public WorkbookChartSeriesFormat? Format
+        {
             get { return BackingStore?.Get<WorkbookChartSeriesFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartSeriesFormat Format {
+        public WorkbookChartSeriesFormat Format
+        {
             get { return BackingStore?.Get<WorkbookChartSeriesFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the name of a series in a chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookChartPoint>? Points {
+        public List<WorkbookChartPoint>? Points
+        {
             get { return BackingStore?.Get<List<WorkbookChartPoint>?>("points"); }
             set { BackingStore?.Set("points", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookChartPoint> Points {
+        public List<WorkbookChartPoint> Points
+        {
             get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }
             set { BackingStore?.Set("points", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"format", n => { Format = n.GetObjectValue<WorkbookChartSeriesFormat>(WorkbookChartSeriesFormat.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"points", n => { Points = n.GetCollectionOfObjectValues<WorkbookChartPoint>(WorkbookChartPoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "format", n => { Format = n.GetObjectValue<WorkbookChartSeriesFormat>(WorkbookChartSeriesFormat.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "points", n => { Points = n.GetCollectionOfObjectValues<WorkbookChartPoint>(WorkbookChartPoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

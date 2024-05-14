@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.GetMailTips {
+namespace Microsoft.Graph.Me.GetMailTips
+{
     #pragma warning disable CS1591
-    public class GetMailTipsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetMailTipsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MailTips>? Value {
+        public List<MailTips>? Value
+        {
             get { return BackingStore?.Get<List<MailTips>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<MailTips> Value {
+        public List<MailTips> Value
+        {
             get { return BackingStore?.Get<List<MailTips>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Me.GetMailTips {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<MailTips>(MailTips.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<MailTips>(MailTips.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

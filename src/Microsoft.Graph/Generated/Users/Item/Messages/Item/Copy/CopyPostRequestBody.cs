@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.Messages.Item.Copy {
+namespace Microsoft.Graph.Users.Item.Messages.Item.Copy
+{
     #pragma warning disable CS1591
-    public class CopyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CopyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Users.Item.Messages.Item.Copy {
         /// <summary>The DestinationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationId {
+        public string? DestinationId
+        {
             get { return BackingStore?.Get<string?>("DestinationId"); }
             set { BackingStore?.Set("DestinationId", value); }
         }
 #nullable restore
 #else
-        public string DestinationId {
+        public string DestinationId
+        {
             get { return BackingStore?.Get<string>("DestinationId"); }
             set { BackingStore?.Set("DestinationId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Users.Item.Messages.Item.Copy {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"DestinationId", n => { DestinationId = n.GetStringValue(); } },
+                { "DestinationId", n => { DestinationId = n.GetStringValue(); } },
             };
         }
         /// <summary>

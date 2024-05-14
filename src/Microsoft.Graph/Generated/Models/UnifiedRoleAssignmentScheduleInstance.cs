@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable 
+    public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleEligibilityScheduleInstance? ActivatedUsing {
+        public UnifiedRoleEligibilityScheduleInstance? ActivatedUsing
+        {
             get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleEligibilityScheduleInstance ActivatedUsing {
+        public UnifiedRoleEligibilityScheduleInstance ActivatedUsing
+        {
             get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentType {
+        public string? AssignmentType
+        {
             get { return BackingStore?.Get<string?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
 #nullable restore
 #else
-        public string AssignmentType {
+        public string AssignmentType
+        {
             get { return BackingStore?.Get<string>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
 #endif
         /// <summary>The end date of the schedule instance.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberType {
+        public string? MemberType
+        {
             get { return BackingStore?.Get<string?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
 #nullable restore
 #else
-        public string MemberType {
+        public string MemberType
+        {
             get { return BackingStore?.Get<string>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleAssignmentOriginId {
+        public string? RoleAssignmentOriginId
+        {
             get { return BackingStore?.Get<string?>("roleAssignmentOriginId"); }
             set { BackingStore?.Set("roleAssignmentOriginId", value); }
         }
 #nullable restore
 #else
-        public string RoleAssignmentOriginId {
+        public string RoleAssignmentOriginId
+        {
             get { return BackingStore?.Get<string>("roleAssignmentOriginId"); }
             set { BackingStore?.Set("roleAssignmentOriginId", value); }
         }
@@ -73,19 +83,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleAssignmentScheduleId {
+        public string? RoleAssignmentScheduleId
+        {
             get { return BackingStore?.Get<string?>("roleAssignmentScheduleId"); }
             set { BackingStore?.Set("roleAssignmentScheduleId", value); }
         }
 #nullable restore
 #else
-        public string RoleAssignmentScheduleId {
+        public string RoleAssignmentScheduleId
+        {
             get { return BackingStore?.Get<string>("roleAssignmentScheduleId"); }
             set { BackingStore?.Set("roleAssignmentScheduleId", value); }
         }
 #endif
         /// <summary>When this instance starts.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
-                {"assignmentType", n => { AssignmentType = n.GetStringValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"memberType", n => { MemberType = n.GetStringValue(); } },
-                {"roleAssignmentOriginId", n => { RoleAssignmentOriginId = n.GetStringValue(); } },
-                {"roleAssignmentScheduleId", n => { RoleAssignmentScheduleId = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue); } },
+                { "assignmentType", n => { AssignmentType = n.GetStringValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "memberType", n => { MemberType = n.GetStringValue(); } },
+                { "roleAssignmentOriginId", n => { RoleAssignmentOriginId = n.GetStringValue(); } },
+                { "roleAssignmentScheduleId", n => { RoleAssignmentScheduleId = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

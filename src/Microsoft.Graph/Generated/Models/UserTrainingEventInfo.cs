@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UserTrainingEventInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserTrainingEventInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
-        public TrainingStatus? LatestTrainingStatus {
+        public TrainingStatus? LatestTrainingStatus
+        {
             get { return BackingStore?.Get<TrainingStatus?>("latestTrainingStatus"); }
             set { BackingStore?.Set("latestTrainingStatus", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Event details of the training when it was assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingAssignedProperties {
+        public UserTrainingContentEventInfo? TrainingAssignedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingAssignedProperties {
+        public UserTrainingContentEventInfo TrainingAssignedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Event details of the training when it was completed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingCompletedProperties {
+        public UserTrainingContentEventInfo? TrainingCompletedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingCompletedProperties {
+        public UserTrainingContentEventInfo TrainingCompletedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserTrainingContentEventInfo? TrainingUpdatedProperties {
+        public UserTrainingContentEventInfo? TrainingUpdatedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
 #nullable restore
 #else
-        public UserTrainingContentEventInfo TrainingUpdatedProperties {
+        public UserTrainingContentEventInfo TrainingUpdatedProperties
+        {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"latestTrainingStatus", n => { LatestTrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"trainingAssignedProperties", n => { TrainingAssignedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
-                {"trainingCompletedProperties", n => { TrainingCompletedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
-                {"trainingUpdatedProperties", n => { TrainingUpdatedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "latestTrainingStatus", n => { LatestTrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "trainingAssignedProperties", n => { TrainingAssignedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "trainingCompletedProperties", n => { TrainingCompletedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                { "trainingUpdatedProperties", n => { TrainingUpdatedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

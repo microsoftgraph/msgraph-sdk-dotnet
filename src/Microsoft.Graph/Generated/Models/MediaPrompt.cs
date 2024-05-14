@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MediaPrompt : Prompt, IParsable 
+    public class MediaPrompt : Prompt, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The mediaInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.MediaInfo? MediaInfo {
+        public Microsoft.Graph.Models.MediaInfo? MediaInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaInfo?>("mediaInfo"); }
             set { BackingStore?.Set("mediaInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.MediaInfo MediaInfo {
+        public Microsoft.Graph.Models.MediaInfo MediaInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaInfo>("mediaInfo"); }
             set { BackingStore?.Set("mediaInfo", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"mediaInfo", n => { MediaInfo = n.GetObjectValue<Microsoft.Graph.Models.MediaInfo>(Microsoft.Graph.Models.MediaInfo.CreateFromDiscriminatorValue); } },
+                { "mediaInfo", n => { MediaInfo = n.GetObjectValue<Microsoft.Graph.Models.MediaInfo>(Microsoft.Graph.Models.MediaInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

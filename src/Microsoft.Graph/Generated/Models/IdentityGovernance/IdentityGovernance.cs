@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessReviews property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AccessReviewSet? AccessReviews {
+        public Microsoft.Graph.Models.AccessReviewSet? AccessReviews
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewSet?>("accessReviews"); }
             set { BackingStore?.Set("accessReviews", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AccessReviewSet AccessReviews {
+        public Microsoft.Graph.Models.AccessReviewSet AccessReviews
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AccessReviewSet>("accessReviews"); }
             set { BackingStore?.Set("accessReviews", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appConsent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AppConsentApprovalRoute? AppConsent {
+        public Microsoft.Graph.Models.AppConsentApprovalRoute? AppConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AppConsentApprovalRoute?>("appConsent"); }
             set { BackingStore?.Set("appConsent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AppConsentApprovalRoute AppConsent {
+        public Microsoft.Graph.Models.AppConsentApprovalRoute AppConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AppConsentApprovalRoute>("appConsent"); }
             set { BackingStore?.Set("appConsent", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The entitlementManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.EntitlementManagement? EntitlementManagement {
+        public Microsoft.Graph.Models.EntitlementManagement? EntitlementManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagement?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.EntitlementManagement EntitlementManagement {
+        public Microsoft.Graph.Models.EntitlementManagement EntitlementManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EntitlementManagement>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The lifecycleWorkflows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LifecycleWorkflowsContainer? LifecycleWorkflows {
+        public LifecycleWorkflowsContainer? LifecycleWorkflows
+        {
             get { return BackingStore?.Get<LifecycleWorkflowsContainer?>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
 #nullable restore
 #else
-        public LifecycleWorkflowsContainer LifecycleWorkflows {
+        public LifecycleWorkflowsContainer LifecycleWorkflows
+        {
             get { return BackingStore?.Get<LifecycleWorkflowsContainer>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The privilegedAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PrivilegedAccessRoot? PrivilegedAccess {
+        public Microsoft.Graph.Models.PrivilegedAccessRoot? PrivilegedAccess
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessRoot?>("privilegedAccess"); }
             set { BackingStore?.Set("privilegedAccess", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PrivilegedAccessRoot PrivilegedAccess {
+        public Microsoft.Graph.Models.PrivilegedAccessRoot PrivilegedAccess
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PrivilegedAccessRoot>("privilegedAccess"); }
             set { BackingStore?.Set("privilegedAccess", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The termsOfUse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TermsOfUseContainer? TermsOfUse {
+        public Microsoft.Graph.Models.TermsOfUseContainer? TermsOfUse
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermsOfUseContainer?>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TermsOfUseContainer TermsOfUse {
+        public Microsoft.Graph.Models.TermsOfUseContainer TermsOfUse
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TermsOfUseContainer>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Models.AccessReviewSet>(Microsoft.Graph.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
-                {"appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Models.AppConsentApprovalRoute>(Microsoft.Graph.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
-                {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagement>(Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
-                {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Models.PrivilegedAccessRoot>(Microsoft.Graph.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
-                {"termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Models.TermsOfUseContainer>(Microsoft.Graph.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
+                { "accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Models.AccessReviewSet>(Microsoft.Graph.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
+                { "appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Models.AppConsentApprovalRoute>(Microsoft.Graph.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
+                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Models.EntitlementManagement>(Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
+                { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Models.PrivilegedAccessRoot>(Microsoft.Graph.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
+                { "termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Models.TermsOfUseContainer>(Microsoft.Graph.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

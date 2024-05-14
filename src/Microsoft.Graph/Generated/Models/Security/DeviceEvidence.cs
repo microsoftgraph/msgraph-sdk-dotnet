@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class DeviceEvidence : AlertEvidence, IParsable 
+    public class DeviceEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureAdDeviceId {
+        public string? AzureAdDeviceId
+        {
             get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #nullable restore
 #else
-        public string AzureAdDeviceId {
+        public string AzureAdDeviceId
+        {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #endif
         /// <summary>State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.DefenderAvStatus? DefenderAvStatus {
+        public Microsoft.Graph.Models.Security.DefenderAvStatus? DefenderAvStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DefenderAvStatus?>("defenderAvStatus"); }
             set { BackingStore?.Set("defenderAvStatus", value); }
         }
         /// <summary>The fully qualified domain name (FQDN) for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDnsName {
+        public string? DeviceDnsName
+        {
             get { return BackingStore?.Get<string?>("deviceDnsName"); }
             set { BackingStore?.Set("deviceDnsName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDnsName {
+        public string DeviceDnsName
+        {
             get { return BackingStore?.Get<string>("deviceDnsName"); }
             set { BackingStore?.Set("deviceDnsName", value); }
         }
 #endif
         /// <summary>The date and time when the device was first seen.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.</summary>
-        public DeviceHealthStatus? HealthStatus {
+        public DeviceHealthStatus? HealthStatus
+        {
             get { return BackingStore?.Get<DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Ip interfaces of the device during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpInterfaces {
+        public List<string>? IpInterfaces
+        {
             get { return BackingStore?.Get<List<string>?>("ipInterfaces"); }
             set { BackingStore?.Set("ipInterfaces", value); }
         }
 #nullable restore
 #else
-        public List<string> IpInterfaces {
+        public List<string> IpInterfaces
+        {
             get { return BackingStore?.Get<List<string>>("ipInterfaces"); }
             set { BackingStore?.Set("ipInterfaces", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The lastExternalIpAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastExternalIpAddress {
+        public string? LastExternalIpAddress
+        {
             get { return BackingStore?.Get<string?>("lastExternalIpAddress"); }
             set { BackingStore?.Set("lastExternalIpAddress", value); }
         }
 #nullable restore
 #else
-        public string LastExternalIpAddress {
+        public string LastExternalIpAddress
+        {
             get { return BackingStore?.Get<string>("lastExternalIpAddress"); }
             set { BackingStore?.Set("lastExternalIpAddress", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The lastIpAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastIpAddress {
+        public string? LastIpAddress
+        {
             get { return BackingStore?.Get<string?>("lastIpAddress"); }
             set { BackingStore?.Set("lastIpAddress", value); }
         }
 #nullable restore
 #else
-        public string LastIpAddress {
+        public string LastIpAddress
+        {
             get { return BackingStore?.Get<string>("lastIpAddress"); }
             set { BackingStore?.Set("lastIpAddress", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Users that were logged on the machine during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LoggedOnUser>? LoggedOnUsers {
+        public List<LoggedOnUser>? LoggedOnUsers
+        {
             get { return BackingStore?.Get<List<LoggedOnUser>?>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
 #nullable restore
 #else
-        public List<LoggedOnUser> LoggedOnUsers {
+        public List<LoggedOnUser> LoggedOnUsers
+        {
             get { return BackingStore?.Get<List<LoggedOnUser>>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
@@ -111,75 +127,87 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MdeDeviceId {
+        public string? MdeDeviceId
+        {
             get { return BackingStore?.Get<string?>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #nullable restore
 #else
-        public string MdeDeviceId {
+        public string MdeDeviceId
+        {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #endif
         /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.OnboardingStatus? OnboardingStatus {
+        public Microsoft.Graph.Models.Security.OnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.OnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>The build version for the operating system the device is running.</summary>
-        public long? OsBuild {
+        public long? OsBuild
+        {
             get { return BackingStore?.Get<long?>("osBuild"); }
             set { BackingStore?.Set("osBuild", value); }
         }
         /// <summary>The operating system platform the device is running.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsPlatform {
+        public string? OsPlatform
+        {
             get { return BackingStore?.Get<string?>("osPlatform"); }
             set { BackingStore?.Set("osPlatform", value); }
         }
 #nullable restore
 #else
-        public string OsPlatform {
+        public string OsPlatform
+        {
             get { return BackingStore?.Get<string>("osPlatform"); }
             set { BackingStore?.Set("osPlatform", value); }
         }
 #endif
         /// <summary>The ID of the role-based access control (RBAC) device group.</summary>
-        public int? RbacGroupId {
+        public int? RbacGroupId
+        {
             get { return BackingStore?.Get<int?>("rbacGroupId"); }
             set { BackingStore?.Set("rbacGroupId", value); }
         }
         /// <summary>The name of the RBAC device group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RbacGroupName {
+        public string? RbacGroupName
+        {
             get { return BackingStore?.Get<string?>("rbacGroupName"); }
             set { BackingStore?.Set("rbacGroupName", value); }
         }
 #nullable restore
 #else
-        public string RbacGroupName {
+        public string RbacGroupName
+        {
             get { return BackingStore?.Get<string>("rbacGroupName"); }
             set { BackingStore?.Set("rbacGroupName", value); }
         }
 #endif
         /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
-        public DeviceRiskScore? RiskScore {
+        public DeviceRiskScore? RiskScore
+        {
             get { return BackingStore?.Get<DeviceRiskScore?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The version of the operating system platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -187,13 +215,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.VmMetadata? VmMetadata {
+        public Microsoft.Graph.Models.Security.VmMetadata? VmMetadata
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.VmMetadata?>("vmMetadata"); }
             set { BackingStore?.Set("vmMetadata", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.VmMetadata VmMetadata {
+        public Microsoft.Graph.Models.Security.VmMetadata VmMetadata
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.VmMetadata>("vmMetadata"); }
             set { BackingStore?.Set("vmMetadata", value); }
         }
@@ -223,24 +253,24 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
-                {"defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<DefenderAvStatus>(); } },
-                {"deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
-                {"ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
-                {"lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
-                {"loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
-                {"osBuild", n => { OsBuild = n.GetLongValue(); } },
-                {"osPlatform", n => { OsPlatform = n.GetStringValue(); } },
-                {"rbacGroupId", n => { RbacGroupId = n.GetIntValue(); } },
-                {"rbacGroupName", n => { RbacGroupName = n.GetStringValue(); } },
-                {"riskScore", n => { RiskScore = n.GetEnumValue<DeviceRiskScore>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
-                {"vmMetadata", n => { VmMetadata = n.GetObjectValue<Microsoft.Graph.Models.Security.VmMetadata>(Microsoft.Graph.Models.Security.VmMetadata.CreateFromDiscriminatorValue); } },
+                { "azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
+                { "defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<DefenderAvStatus>(); } },
+                { "deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
+                { "ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
+                { "lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
+                { "loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "osBuild", n => { OsBuild = n.GetLongValue(); } },
+                { "osPlatform", n => { OsPlatform = n.GetStringValue(); } },
+                { "rbacGroupId", n => { RbacGroupId = n.GetIntValue(); } },
+                { "rbacGroupName", n => { RbacGroupName = n.GetStringValue(); } },
+                { "riskScore", n => { RiskScore = n.GetEnumValue<DeviceRiskScore>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
+                { "vmMetadata", n => { VmMetadata = n.GetObjectValue<Microsoft.Graph.Models.Security.VmMetadata>(Microsoft.Graph.Models.Security.VmMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

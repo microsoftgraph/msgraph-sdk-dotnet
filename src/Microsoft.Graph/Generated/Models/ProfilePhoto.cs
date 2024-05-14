@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProfilePhoto : Entity, IParsable 
+    public class ProfilePhoto : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The height of the photo. Read-only.</summary>
-        public int? Height {
+        public int? Height
+        {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
         /// <summary>The width of the photo. Read-only.</summary>
-        public int? Width {
+        public int? Width
+        {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"height", n => { Height = n.GetIntValue(); } },
-                {"width", n => { Width = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

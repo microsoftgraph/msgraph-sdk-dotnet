@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRbacResourceNamespace : Entity, IParsable 
+    public class UnifiedRbacResourceNamespace : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The resourceActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRbacResourceAction>? ResourceActions {
+        public List<UnifiedRbacResourceAction>? ResourceActions
+        {
             get { return BackingStore?.Get<List<UnifiedRbacResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRbacResourceAction> ResourceActions {
+        public List<UnifiedRbacResourceAction> ResourceActions
+        {
             get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<UnifiedRbacResourceAction>(UnifiedRbacResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<UnifiedRbacResourceAction>(UnifiedRbacResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners.Billing {
+namespace Microsoft.Graph.Models.Partners.Billing
+{
     #pragma warning disable CS1591
-    public class ManifestCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable 
+    public class ManifestCollectionResponse : Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Manifest>? Value {
+        public List<Manifest>? Value
+        {
             get { return BackingStore?.Get<List<Manifest>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Manifest> Value {
+        public List<Manifest> Value
+        {
             get { return BackingStore?.Get<List<Manifest>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Partners.Billing {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

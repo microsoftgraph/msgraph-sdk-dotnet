@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.CreateSession {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.CreateSession
+{
     #pragma warning disable CS1591
-    public class CreateSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The persistChanges property</summary>
-        public bool? PersistChanges {
+        public bool? PersistChanges
+        {
             get { return BackingStore?.Get<bool?>("persistChanges"); }
             set { BackingStore?.Set("persistChanges", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.CreateSession {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"persistChanges", n => { PersistChanges = n.GetBoolValue(); } },
+                { "persistChanges", n => { PersistChanges = n.GetBoolValue(); } },
             };
         }
         /// <summary>

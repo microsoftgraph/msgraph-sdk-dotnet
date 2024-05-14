@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EmailFileAssessmentRequest : ThreatAssessmentRequest, IParsable 
+    public class EmailFileAssessmentRequest : ThreatAssessmentRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Base64 encoded .eml email file content. The file content can&apos;t fetch back because it isn&apos;t stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentData {
+        public string? ContentData
+        {
             get { return BackingStore?.Get<string?>("contentData"); }
             set { BackingStore?.Set("contentData", value); }
         }
 #nullable restore
 #else
-        public string ContentData {
+        public string ContentData
+        {
             get { return BackingStore?.Get<string>("contentData"); }
             set { BackingStore?.Set("contentData", value); }
         }
 #endif
         /// <summary>The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
-        public MailDestinationRoutingReason? DestinationRoutingReason {
+        public MailDestinationRoutingReason? DestinationRoutingReason
+        {
             get { return BackingStore?.Get<MailDestinationRoutingReason?>("destinationRoutingReason"); }
             set { BackingStore?.Set("destinationRoutingReason", value); }
         }
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientEmail {
+        public string? RecipientEmail
+        {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
 #nullable restore
 #else
-        public string RecipientEmail {
+        public string RecipientEmail
+        {
             get { return BackingStore?.Get<string>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentData", n => { ContentData = n.GetStringValue(); } },
-                {"destinationRoutingReason", n => { DestinationRoutingReason = n.GetEnumValue<MailDestinationRoutingReason>(); } },
-                {"recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
+                { "contentData", n => { ContentData = n.GetStringValue(); } },
+                { "destinationRoutingReason", n => { DestinationRoutingReason = n.GetEnumValue<MailDestinationRoutingReason>(); } },
+                { "recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
             };
         }
         /// <summary>

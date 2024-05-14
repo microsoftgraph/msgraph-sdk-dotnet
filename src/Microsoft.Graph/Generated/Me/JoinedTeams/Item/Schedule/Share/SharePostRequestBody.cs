@@ -5,30 +5,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share {
+namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share
+{
     #pragma warning disable CS1591
-    public class SharePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The notifyTeam property</summary>
-        public bool? NotifyTeam {
+        public bool? NotifyTeam
+        {
             get { return BackingStore?.Get<bool?>("notifyTeam"); }
             set { BackingStore?.Set("notifyTeam", value); }
         }
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Schedule.Share {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notifyTeam", n => { NotifyTeam = n.GetBoolValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notifyTeam", n => { NotifyTeam = n.GetBoolValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class NetworkConnection : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NetworkConnection : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Name of the application managing the network connection (for example, Facebook or SMTP).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationName {
+        public string? ApplicationName
+        {
             get { return BackingStore?.Get<string?>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
 #nullable restore
 #else
-        public string ApplicationName {
+        public string ApplicationName
+        {
             get { return BackingStore?.Get<string>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Destination IP address (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAddress {
+        public string? DestinationAddress
+        {
             get { return BackingStore?.Get<string?>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #nullable restore
 #else
-        public string DestinationAddress {
+        public string DestinationAddress
+        {
             get { return BackingStore?.Get<string>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Destination domain portion of the destination URL. (for example &apos;www.contoso.com&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationDomain {
+        public string? DestinationDomain
+        {
             get { return BackingStore?.Get<string?>("destinationDomain"); }
             set { BackingStore?.Set("destinationDomain", value); }
         }
 #nullable restore
 #else
-        public string DestinationDomain {
+        public string DestinationDomain
+        {
             get { return BackingStore?.Get<string>("destinationDomain"); }
             set { BackingStore?.Set("destinationDomain", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Location (by IP address mapping) associated with the destination of a network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationLocation {
+        public string? DestinationLocation
+        {
             get { return BackingStore?.Get<string?>("destinationLocation"); }
             set { BackingStore?.Set("destinationLocation", value); }
         }
 #nullable restore
 #else
-        public string DestinationLocation {
+        public string DestinationLocation
+        {
             get { return BackingStore?.Get<string>("destinationLocation"); }
             set { BackingStore?.Set("destinationLocation", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Destination port (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationPort {
+        public string? DestinationPort
+        {
             get { return BackingStore?.Get<string?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
 #nullable restore
 #else
-        public string DestinationPort {
+        public string DestinationPort
+        {
             get { return BackingStore?.Get<string>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
@@ -90,37 +102,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Network connection URL/URI string - excluding parameters. (for example &apos;www.contoso.com/products/default.html&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationUrl {
+        public string? DestinationUrl
+        {
             get { return BackingStore?.Get<string?>("destinationUrl"); }
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #nullable restore
 #else
-        public string DestinationUrl {
+        public string DestinationUrl
+        {
             get { return BackingStore?.Get<string>("destinationUrl"); }
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #endif
         /// <summary>Network connection direction. Possible values are: unknown, inbound, outbound.</summary>
-        public ConnectionDirection? Direction {
+        public ConnectionDirection? Direction
+        {
             get { return BackingStore?.Get<ConnectionDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? DomainRegisteredDateTime {
+        public DateTimeOffset? DomainRegisteredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("domainRegisteredDateTime"); }
             set { BackingStore?.Set("domainRegisteredDateTime", value); }
         }
         /// <summary>The local DNS name resolution as it appears in the host&apos;s local DNS cache (for example, in case the &apos;hosts&apos; file was tampered with).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalDnsName {
+        public string? LocalDnsName
+        {
             get { return BackingStore?.Get<string?>("localDnsName"); }
             set { BackingStore?.Set("localDnsName", value); }
         }
 #nullable restore
 #else
-        public string LocalDnsName {
+        public string LocalDnsName
+        {
             get { return BackingStore?.Get<string>("localDnsName"); }
             set { BackingStore?.Set("localDnsName", value); }
         }
@@ -128,13 +146,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Network Address Translation destination IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatDestinationAddress {
+        public string? NatDestinationAddress
+        {
             get { return BackingStore?.Get<string?>("natDestinationAddress"); }
             set { BackingStore?.Set("natDestinationAddress", value); }
         }
 #nullable restore
 #else
-        public string NatDestinationAddress {
+        public string NatDestinationAddress
+        {
             get { return BackingStore?.Get<string>("natDestinationAddress"); }
             set { BackingStore?.Set("natDestinationAddress", value); }
         }
@@ -142,13 +162,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Network Address Translation destination port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatDestinationPort {
+        public string? NatDestinationPort
+        {
             get { return BackingStore?.Get<string?>("natDestinationPort"); }
             set { BackingStore?.Set("natDestinationPort", value); }
         }
 #nullable restore
 #else
-        public string NatDestinationPort {
+        public string NatDestinationPort
+        {
             get { return BackingStore?.Get<string>("natDestinationPort"); }
             set { BackingStore?.Set("natDestinationPort", value); }
         }
@@ -156,13 +178,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Network Address Translation source IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatSourceAddress {
+        public string? NatSourceAddress
+        {
             get { return BackingStore?.Get<string?>("natSourceAddress"); }
             set { BackingStore?.Set("natSourceAddress", value); }
         }
 #nullable restore
 #else
-        public string NatSourceAddress {
+        public string NatSourceAddress
+        {
             get { return BackingStore?.Get<string>("natSourceAddress"); }
             set { BackingStore?.Set("natSourceAddress", value); }
         }
@@ -170,13 +194,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Network Address Translation source port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NatSourcePort {
+        public string? NatSourcePort
+        {
             get { return BackingStore?.Get<string?>("natSourcePort"); }
             set { BackingStore?.Set("natSourcePort", value); }
         }
 #nullable restore
 #else
-        public string NatSourcePort {
+        public string NatSourcePort
+        {
             get { return BackingStore?.Get<string>("natSourcePort"); }
             set { BackingStore?.Set("natSourcePort", value); }
         }
@@ -184,32 +210,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.</summary>
-        public SecurityNetworkProtocol? Protocol {
+        public SecurityNetworkProtocol? Protocol
+        {
             get { return BackingStore?.Get<SecurityNetworkProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore {
+        public string? RiskScore
+        {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
 #nullable restore
 #else
-        public string RiskScore {
+        public string RiskScore
+        {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
@@ -217,13 +248,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Source (i.e. origin) IP address (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAddress {
+        public string? SourceAddress
+        {
             get { return BackingStore?.Get<string?>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #nullable restore
 #else
-        public string SourceAddress {
+        public string SourceAddress
+        {
             get { return BackingStore?.Get<string>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
@@ -231,13 +264,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Location (by IP address mapping) associated with the source of a network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLocation {
+        public string? SourceLocation
+        {
             get { return BackingStore?.Get<string?>("sourceLocation"); }
             set { BackingStore?.Set("sourceLocation", value); }
         }
 #nullable restore
 #else
-        public string SourceLocation {
+        public string SourceLocation
+        {
             get { return BackingStore?.Get<string>("sourceLocation"); }
             set { BackingStore?.Set("sourceLocation", value); }
         }
@@ -245,32 +280,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Source (i.e. origin) IP port (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourcePort {
+        public string? SourcePort
+        {
             get { return BackingStore?.Get<string?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
 #nullable restore
 #else
-        public string SourcePort {
+        public string SourcePort
+        {
             get { return BackingStore?.Get<string>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
 #endif
         /// <summary>Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.</summary>
-        public ConnectionStatus? Status {
+        public ConnectionStatus? Status
+        {
             get { return BackingStore?.Get<ConnectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Parameters (suffix) of the destination URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlParameters {
+        public string? UrlParameters
+        {
             get { return BackingStore?.Get<string?>("urlParameters"); }
             set { BackingStore?.Set("urlParameters", value); }
         }
 #nullable restore
 #else
-        public string UrlParameters {
+        public string UrlParameters
+        {
             get { return BackingStore?.Get<string>("urlParameters"); }
             set { BackingStore?.Set("urlParameters", value); }
         }
@@ -301,27 +341,27 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationName", n => { ApplicationName = n.GetStringValue(); } },
-                {"destinationAddress", n => { DestinationAddress = n.GetStringValue(); } },
-                {"destinationDomain", n => { DestinationDomain = n.GetStringValue(); } },
-                {"destinationLocation", n => { DestinationLocation = n.GetStringValue(); } },
-                {"destinationPort", n => { DestinationPort = n.GetStringValue(); } },
-                {"destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
-                {"direction", n => { Direction = n.GetEnumValue<ConnectionDirection>(); } },
-                {"domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"localDnsName", n => { LocalDnsName = n.GetStringValue(); } },
-                {"natDestinationAddress", n => { NatDestinationAddress = n.GetStringValue(); } },
-                {"natDestinationPort", n => { NatDestinationPort = n.GetStringValue(); } },
-                {"natSourceAddress", n => { NatSourceAddress = n.GetStringValue(); } },
-                {"natSourcePort", n => { NatSourcePort = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"protocol", n => { Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
-                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
-                {"sourceAddress", n => { SourceAddress = n.GetStringValue(); } },
-                {"sourceLocation", n => { SourceLocation = n.GetStringValue(); } },
-                {"sourcePort", n => { SourcePort = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ConnectionStatus>(); } },
-                {"urlParameters", n => { UrlParameters = n.GetStringValue(); } },
+                { "applicationName", n => { ApplicationName = n.GetStringValue(); } },
+                { "destinationAddress", n => { DestinationAddress = n.GetStringValue(); } },
+                { "destinationDomain", n => { DestinationDomain = n.GetStringValue(); } },
+                { "destinationLocation", n => { DestinationLocation = n.GetStringValue(); } },
+                { "destinationPort", n => { DestinationPort = n.GetStringValue(); } },
+                { "destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
+                { "direction", n => { Direction = n.GetEnumValue<ConnectionDirection>(); } },
+                { "domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "localDnsName", n => { LocalDnsName = n.GetStringValue(); } },
+                { "natDestinationAddress", n => { NatDestinationAddress = n.GetStringValue(); } },
+                { "natDestinationPort", n => { NatDestinationPort = n.GetStringValue(); } },
+                { "natSourceAddress", n => { NatSourceAddress = n.GetStringValue(); } },
+                { "natSourcePort", n => { NatSourcePort = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<SecurityNetworkProtocol>(); } },
+                { "riskScore", n => { RiskScore = n.GetStringValue(); } },
+                { "sourceAddress", n => { SourceAddress = n.GetStringValue(); } },
+                { "sourceLocation", n => { SourceLocation = n.GetStringValue(); } },
+                { "sourcePort", n => { SourcePort = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ConnectionStatus>(); } },
+                { "urlParameters", n => { UrlParameters = n.GetStringValue(); } },
             };
         }
         /// <summary>

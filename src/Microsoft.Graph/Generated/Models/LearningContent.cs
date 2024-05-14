@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LearningContent : Entity, IParsable 
+    public class LearningContent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalTags {
+        public List<string>? AdditionalTags
+        {
             get { return BackingStore?.Get<List<string>?>("additionalTags"); }
             set { BackingStore?.Set("additionalTags", value); }
         }
 #nullable restore
 #else
-        public List<string> AdditionalTags {
+        public List<string> AdditionalTags
+        {
             get { return BackingStore?.Get<List<string>>("additionalTags"); }
             set { BackingStore?.Set("additionalTags", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The content web URL for the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentWebUrl {
+        public string? ContentWebUrl
+        {
             get { return BackingStore?.Get<string?>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ContentWebUrl {
+        public string ContentWebUrl
+        {
             get { return BackingStore?.Get<string>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
@@ -40,51 +45,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The authors, creators, or contributors of the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Contributors {
+        public List<string>? Contributors
+        {
             get { return BackingStore?.Get<List<string>?>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
 #nullable restore
 #else
-        public List<string> Contributors {
+        public List<string> Contributors
+        {
             get { return BackingStore?.Get<List<string>>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
 #endif
         /// <summary>The date and time when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description or summary for the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.</summary>
-        public TimeSpan? Duration {
+        public TimeSpan? Duration
+        {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>Unique external content ID for the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -92,71 +105,83 @@ namespace Microsoft.Graph.Models {
         /// <summary>The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format {
+        public string? Format
+        {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public string Format {
+        public string Format
+        {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>Indicates whether the content is active or not. Inactive content doesn&apos;t show up in the UI. The default value is true. Optional.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.</summary>
-        public bool? IsPremium {
+        public bool? IsPremium
+        {
             get { return BackingStore?.Get<bool?>("isPremium"); }
             set { BackingStore?.Set("isPremium", value); }
         }
         /// <summary>Indicates whether the learning content is searchable or not. The default value is true. Optional.</summary>
-        public bool? IsSearchable {
+        public bool? IsSearchable
+        {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The language of the learning content, for example, en-us or fr-fr. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageTag {
+        public string? LanguageTag
+        {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #nullable restore
 #else
-        public string LanguageTag {
+        public string LanguageTag
+        {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
         /// <summary>The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.</summary>
-        public Microsoft.Graph.Models.Level? Level {
+        public Microsoft.Graph.Models.Level? Level
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Level?>("level"); }
             set { BackingStore?.Set("level", value); }
         }
         /// <summary>The number of pages of the learning content, for example, 9. Optional.</summary>
-        public int? NumberOfPages {
+        public int? NumberOfPages
+        {
             get { return BackingStore?.Get<int?>("numberOfPages"); }
             set { BackingStore?.Set("numberOfPages", value); }
         }
         /// <summary>The skills tags associated with the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SkillTags {
+        public List<string>? SkillTags
+        {
             get { return BackingStore?.Get<List<string>?>("skillTags"); }
             set { BackingStore?.Set("skillTags", value); }
         }
 #nullable restore
 #else
-        public List<string> SkillTags {
+        public List<string> SkillTags
+        {
             get { return BackingStore?.Get<List<string>>("skillTags"); }
             set { BackingStore?.Set("skillTags", value); }
         }
@@ -164,13 +189,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceName {
+        public string? SourceName
+        {
             get { return BackingStore?.Get<string?>("sourceName"); }
             set { BackingStore?.Set("sourceName", value); }
         }
 #nullable restore
 #else
-        public string SourceName {
+        public string SourceName
+        {
             get { return BackingStore?.Get<string>("sourceName"); }
             set { BackingStore?.Set("sourceName", value); }
         }
@@ -178,13 +205,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL of learning content thumbnail image. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailWebUrl {
+        public string? ThumbnailWebUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailWebUrl {
+        public string ThumbnailWebUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
@@ -192,13 +221,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The title of the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -221,25 +252,25 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"additionalTags", n => { AdditionalTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"contentWebUrl", n => { ContentWebUrl = n.GetStringValue(); } },
-                {"contributors", n => { Contributors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"format", n => { Format = n.GetStringValue(); } },
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"isPremium", n => { IsPremium = n.GetBoolValue(); } },
-                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"level", n => { Level = n.GetEnumValue<Level>(); } },
-                {"numberOfPages", n => { NumberOfPages = n.GetIntValue(); } },
-                {"skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sourceName", n => { SourceName = n.GetStringValue(); } },
-                {"thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "additionalTags", n => { AdditionalTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "contentWebUrl", n => { ContentWebUrl = n.GetStringValue(); } },
+                { "contributors", n => { Contributors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetTimeSpanValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "format", n => { Format = n.GetStringValue(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "isPremium", n => { IsPremium = n.GetBoolValue(); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "level", n => { Level = n.GetEnumValue<Level>(); } },
+                { "numberOfPages", n => { NumberOfPages = n.GetIntValue(); } },
+                { "skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "sourceName", n => { SourceName = n.GetStringValue(); } },
+                { "thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Recent {
+namespace Microsoft.Graph.Drives.Item.Recent
+{
     [Obsolete("This class is obsolete. Use RecentGetResponse instead.")]
     #pragma warning disable CS1591
-    public class RecentResponse : RecentGetResponse, IParsable 
+    public class RecentResponse : RecentGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

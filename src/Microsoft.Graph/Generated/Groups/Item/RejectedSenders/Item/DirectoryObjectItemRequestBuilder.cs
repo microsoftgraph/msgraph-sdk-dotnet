@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Groups.Item.RejectedSenders.Item {
+namespace Microsoft.Graph.Groups.Item.RejectedSenders.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \groups\{group-id}\rejectedSenders\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of group entities.</summary>
         public RefRequestBuilder Ref

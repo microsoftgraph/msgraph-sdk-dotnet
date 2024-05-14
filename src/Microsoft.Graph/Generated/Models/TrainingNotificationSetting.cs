@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TrainingNotificationSetting : EndUserNotificationSetting, IParsable 
+    public class TrainingNotificationSetting : EndUserNotificationSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Training assignment details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BaseEndUserNotification? TrainingAssignment {
+        public BaseEndUserNotification? TrainingAssignment
+        {
             get { return BackingStore?.Get<BaseEndUserNotification?>("trainingAssignment"); }
             set { BackingStore?.Set("trainingAssignment", value); }
         }
 #nullable restore
 #else
-        public BaseEndUserNotification TrainingAssignment {
+        public BaseEndUserNotification TrainingAssignment
+        {
             get { return BackingStore?.Get<BaseEndUserNotification>("trainingAssignment"); }
             set { BackingStore?.Set("trainingAssignment", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Training reminder details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingReminderNotification? TrainingReminder {
+        public TrainingReminderNotification? TrainingReminder
+        {
             get { return BackingStore?.Get<TrainingReminderNotification?>("trainingReminder"); }
             set { BackingStore?.Set("trainingReminder", value); }
         }
 #nullable restore
 #else
-        public TrainingReminderNotification TrainingReminder {
+        public TrainingReminderNotification TrainingReminder
+        {
             get { return BackingStore?.Get<TrainingReminderNotification>("trainingReminder"); }
             set { BackingStore?.Set("trainingReminder", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"trainingAssignment", n => { TrainingAssignment = n.GetObjectValue<BaseEndUserNotification>(BaseEndUserNotification.CreateFromDiscriminatorValue); } },
-                {"trainingReminder", n => { TrainingReminder = n.GetObjectValue<TrainingReminderNotification>(TrainingReminderNotification.CreateFromDiscriminatorValue); } },
+                { "trainingAssignment", n => { TrainingAssignment = n.GetObjectValue<BaseEndUserNotification>(BaseEndUserNotification.CreateFromDiscriminatorValue); } },
+                { "trainingReminder", n => { TrainingReminder = n.GetObjectValue<TrainingReminderNotification>(TrainingReminderNotification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class TopicModelingSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TopicModelingSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.</summary>
-        public bool? DynamicallyAdjustTopicCount {
+        public bool? DynamicallyAdjustTopicCount
+        {
             get { return BackingStore?.Get<bool?>("dynamicallyAdjustTopicCount"); }
             set { BackingStore?.Set("dynamicallyAdjustTopicCount", value); }
         }
         /// <summary>Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.</summary>
-        public bool? IgnoreNumbers {
+        public bool? IgnoreNumbers
+        {
             get { return BackingStore?.Get<bool?>("ignoreNumbers"); }
             set { BackingStore?.Set("ignoreNumbers", value); }
         }
         /// <summary>Indicates whether themes model is enabled for the case.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.</summary>
-        public int? TopicCount {
+        public int? TopicCount
+        {
             get { return BackingStore?.Get<int?>("topicCount"); }
             set { BackingStore?.Set("topicCount", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dynamicallyAdjustTopicCount", n => { DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
-                {"ignoreNumbers", n => { IgnoreNumbers = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"topicCount", n => { TopicCount = n.GetIntValue(); } },
+                { "dynamicallyAdjustTopicCount", n => { DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
+                { "ignoreNumbers", n => { IgnoreNumbers = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "topicCount", n => { TopicCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

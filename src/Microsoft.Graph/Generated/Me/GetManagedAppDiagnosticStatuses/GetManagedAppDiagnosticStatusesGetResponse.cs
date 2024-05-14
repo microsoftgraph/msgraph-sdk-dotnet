@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
+namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
+{
     #pragma warning disable CS1591
-    public class GetManagedAppDiagnosticStatusesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetManagedAppDiagnosticStatusesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppDiagnosticStatus>? Value {
+        public List<ManagedAppDiagnosticStatus>? Value
+        {
             get { return BackingStore?.Get<List<ManagedAppDiagnosticStatus>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppDiagnosticStatus> Value {
+        public List<ManagedAppDiagnosticStatus> Value
+        {
             get { return BackingStore?.Get<List<ManagedAppDiagnosticStatus>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppDiagnosticStatus>(ManagedAppDiagnosticStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagedAppDiagnosticStatus>(ManagedAppDiagnosticStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

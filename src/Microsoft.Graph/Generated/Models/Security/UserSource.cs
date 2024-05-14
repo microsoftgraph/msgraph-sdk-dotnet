@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class UserSource : DataSource, IParsable 
+    public class UserSource : DataSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Email address of the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #endif
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
-        public SourceType? IncludedSources {
+        public SourceType? IncludedSources
+        {
             get { return BackingStore?.Get<SourceType?>("includedSources"); }
             set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>The URL of the user&apos;s OneDrive for Business site. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteWebUrl {
+        public string? SiteWebUrl
+        {
             get { return BackingStore?.Get<string?>("siteWebUrl"); }
             set { BackingStore?.Set("siteWebUrl", value); }
         }
 #nullable restore
 #else
-        public string SiteWebUrl {
+        public string SiteWebUrl
+        {
             get { return BackingStore?.Get<string>("siteWebUrl"); }
             set { BackingStore?.Set("siteWebUrl", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
-                {"siteWebUrl", n => { SiteWebUrl = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
+                { "siteWebUrl", n => { SiteWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

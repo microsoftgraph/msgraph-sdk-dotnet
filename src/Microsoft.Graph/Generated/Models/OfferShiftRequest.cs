@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OfferShiftRequest : ScheduleChangeRequest, IParsable 
+    public class OfferShiftRequest : ScheduleChangeRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? RecipientActionDateTime {
+        public DateTimeOffset? RecipientActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("recipientActionDateTime"); }
             set { BackingStore?.Set("recipientActionDateTime", value); }
         }
         /// <summary>Custom message sent by recipient of the offer shift request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientActionMessage {
+        public string? RecipientActionMessage
+        {
             get { return BackingStore?.Get<string?>("recipientActionMessage"); }
             set { BackingStore?.Set("recipientActionMessage", value); }
         }
 #nullable restore
 #else
-        public string RecipientActionMessage {
+        public string RecipientActionMessage
+        {
             get { return BackingStore?.Get<string>("recipientActionMessage"); }
             set { BackingStore?.Set("recipientActionMessage", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User ID of the recipient of the offer shift request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientUserId {
+        public string? RecipientUserId
+        {
             get { return BackingStore?.Get<string?>("recipientUserId"); }
             set { BackingStore?.Set("recipientUserId", value); }
         }
 #nullable restore
 #else
-        public string RecipientUserId {
+        public string RecipientUserId
+        {
             get { return BackingStore?.Get<string>("recipientUserId"); }
             set { BackingStore?.Set("recipientUserId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User ID of the sender of the offer shift request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderShiftId {
+        public string? SenderShiftId
+        {
             get { return BackingStore?.Get<string?>("senderShiftId"); }
             set { BackingStore?.Set("senderShiftId", value); }
         }
 #nullable restore
 #else
-        public string SenderShiftId {
+        public string SenderShiftId
+        {
             get { return BackingStore?.Get<string>("senderShiftId"); }
             set { BackingStore?.Set("senderShiftId", value); }
         }
@@ -86,10 +94,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"recipientActionDateTime", n => { RecipientActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipientActionMessage", n => { RecipientActionMessage = n.GetStringValue(); } },
-                {"recipientUserId", n => { RecipientUserId = n.GetStringValue(); } },
-                {"senderShiftId", n => { SenderShiftId = n.GetStringValue(); } },
+                { "recipientActionDateTime", n => { RecipientActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "recipientActionMessage", n => { RecipientActionMessage = n.GetStringValue(); } },
+                { "recipientUserId", n => { RecipientUserId = n.GetStringValue(); } },
+                { "senderShiftId", n => { SenderShiftId = n.GetStringValue(); } },
             };
         }
         /// <summary>

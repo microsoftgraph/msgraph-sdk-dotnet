@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter
+{
     #pragma warning disable CS1591
-    public class ApplyIconFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyIconFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookIcon? Icon {
+        public WorkbookIcon? Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
 #nullable restore
 #else
-        public WorkbookIcon Icon {
+        public WorkbookIcon Icon
+        {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

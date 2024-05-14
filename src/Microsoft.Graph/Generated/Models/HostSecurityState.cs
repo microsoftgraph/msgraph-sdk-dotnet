@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class HostSecurityState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HostSecurityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,42 +22,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fqdn {
+        public string? Fqdn
+        {
             get { return BackingStore?.Get<string?>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #nullable restore
 #else
-        public string Fqdn {
+        public string Fqdn
+        {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #endif
         /// <summary>The isAzureAdJoined property</summary>
-        public bool? IsAzureAdJoined {
+        public bool? IsAzureAdJoined
+        {
             get { return BackingStore?.Get<bool?>("isAzureAdJoined"); }
             set { BackingStore?.Set("isAzureAdJoined", value); }
         }
         /// <summary>The isAzureAdRegistered property</summary>
-        public bool? IsAzureAdRegistered {
+        public bool? IsAzureAdRegistered
+        {
             get { return BackingStore?.Get<bool?>("isAzureAdRegistered"); }
             set { BackingStore?.Set("isAzureAdRegistered", value); }
         }
         /// <summary>True if the host is domain joined to an on-premises Active Directory domain.</summary>
-        public bool? IsHybridAzureDomainJoined {
+        public bool? IsHybridAzureDomainJoined
+        {
             get { return BackingStore?.Get<bool?>("isHybridAzureDomainJoined"); }
             set { BackingStore?.Set("isHybridAzureDomainJoined", value); }
         }
         /// <summary>The local host name, without the DNS domain name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetBiosName {
+        public string? NetBiosName
+        {
             get { return BackingStore?.Get<string?>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
 #nullable restore
 #else
-        public string NetBiosName {
+        public string NetBiosName
+        {
             get { return BackingStore?.Get<string>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
@@ -63,13 +72,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,13 +88,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os {
+        public string? Os
+        {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #nullable restore
 #else
-        public string Os {
+        public string Os
+        {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
@@ -91,13 +104,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateIpAddress {
+        public string? PrivateIpAddress
+        {
             get { return BackingStore?.Get<string?>("privateIpAddress"); }
             set { BackingStore?.Set("privateIpAddress", value); }
         }
 #nullable restore
 #else
-        public string PrivateIpAddress {
+        public string PrivateIpAddress
+        {
             get { return BackingStore?.Get<string>("privateIpAddress"); }
             set { BackingStore?.Set("privateIpAddress", value); }
         }
@@ -105,13 +120,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicIpAddress {
+        public string? PublicIpAddress
+        {
             get { return BackingStore?.Get<string?>("publicIpAddress"); }
             set { BackingStore?.Set("publicIpAddress", value); }
         }
 #nullable restore
 #else
-        public string PublicIpAddress {
+        public string PublicIpAddress
+        {
             get { return BackingStore?.Get<string>("publicIpAddress"); }
             set { BackingStore?.Set("publicIpAddress", value); }
         }
@@ -119,13 +136,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore {
+        public string? RiskScore
+        {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
 #nullable restore
 #else
-        public string RiskScore {
+        public string RiskScore
+        {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
@@ -156,16 +175,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
-                {"isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
-                {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
-                {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
-                {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"privateIpAddress", n => { PrivateIpAddress = n.GetStringValue(); } },
-                {"publicIpAddress", n => { PublicIpAddress = n.GetStringValue(); } },
-                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
+                { "fqdn", n => { Fqdn = n.GetStringValue(); } },
+                { "isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
+                { "isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
+                { "isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
+                { "netBiosName", n => { NetBiosName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "privateIpAddress", n => { PrivateIpAddress = n.GetStringValue(); } },
+                { "publicIpAddress", n => { PublicIpAddress = n.GetStringValue(); } },
+                { "riskScore", n => { RiskScore = n.GetStringValue(); } },
             };
         }
         /// <summary>

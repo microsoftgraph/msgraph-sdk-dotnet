@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class DnsEvidence : AlertEvidence, IParsable 
+    public class DnsEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dnsServerIp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? DnsServerIp {
+        public IpEvidence? DnsServerIp
+        {
             get { return BackingStore?.Get<IpEvidence?>("dnsServerIp"); }
             set { BackingStore?.Set("dnsServerIp", value); }
         }
 #nullable restore
 #else
-        public IpEvidence DnsServerIp {
+        public IpEvidence DnsServerIp
+        {
             get { return BackingStore?.Get<IpEvidence>("dnsServerIp"); }
             set { BackingStore?.Set("dnsServerIp", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The domainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainName {
+        public string? DomainName
+        {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
 #nullable restore
 #else
-        public string DomainName {
+        public string DomainName
+        {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The hostIpAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IpEvidence? HostIpAddress {
+        public IpEvidence? HostIpAddress
+        {
             get { return BackingStore?.Get<IpEvidence?>("hostIpAddress"); }
             set { BackingStore?.Set("hostIpAddress", value); }
         }
 #nullable restore
 #else
-        public IpEvidence HostIpAddress {
+        public IpEvidence HostIpAddress
+        {
             get { return BackingStore?.Get<IpEvidence>("hostIpAddress"); }
             set { BackingStore?.Set("hostIpAddress", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ipAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IpEvidence>? IpAddresses {
+        public List<IpEvidence>? IpAddresses
+        {
             get { return BackingStore?.Get<List<IpEvidence>?>("ipAddresses"); }
             set { BackingStore?.Set("ipAddresses", value); }
         }
 #nullable restore
 #else
-        public List<IpEvidence> IpAddresses {
+        public List<IpEvidence> IpAddresses
+        {
             get { return BackingStore?.Get<List<IpEvidence>>("ipAddresses"); }
             set { BackingStore?.Set("ipAddresses", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dnsServerIp", n => { DnsServerIp = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"domainName", n => { DomainName = n.GetStringValue(); } },
-                {"hostIpAddress", n => { HostIpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
-                {"ipAddresses", n => { IpAddresses = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dnsServerIp", n => { DnsServerIp = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "domainName", n => { DomainName = n.GetStringValue(); } },
+                { "hostIpAddress", n => { HostIpAddress = n.GetObjectValue<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue); } },
+                { "ipAddresses", n => { IpAddresses = n.GetCollectionOfObjectValues<IpEvidence>(IpEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

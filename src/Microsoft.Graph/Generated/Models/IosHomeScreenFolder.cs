@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A folder containing pages of apps and web clips on the Home Screen.
     /// </summary>
-    public class IosHomeScreenFolder : IosHomeScreenItem, IParsable 
+    public class IosHomeScreenFolder : IosHomeScreenItem, IParsable
     {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosHomeScreenFolderPage>? Pages {
+        public List<IosHomeScreenFolderPage>? Pages
+        {
             get { return BackingStore?.Get<List<IosHomeScreenFolderPage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #nullable restore
 #else
-        public List<IosHomeScreenFolderPage> Pages {
+        public List<IosHomeScreenFolderPage> Pages
+        {
             get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"pages", n => { Pages = n.GetCollectionOfObjectValues<IosHomeScreenFolderPage>(IosHomeScreenFolderPage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<IosHomeScreenFolderPage>(IosHomeScreenFolderPage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

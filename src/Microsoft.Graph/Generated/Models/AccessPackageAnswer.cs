@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAnswer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageAnswer : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The answeredQuestion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageQuestion? AnsweredQuestion {
+        public AccessPackageQuestion? AnsweredQuestion
+        {
             get { return BackingStore?.Get<AccessPackageQuestion?>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
 #nullable restore
 #else
-        public AccessPackageQuestion AnsweredQuestion {
+        public AccessPackageQuestion AnsweredQuestion
+        {
             get { return BackingStore?.Get<AccessPackageQuestion>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The localized display value shown to the requestor and approvers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayValue {
+        public string? DisplayValue
+        {
             get { return BackingStore?.Get<string?>("displayValue"); }
             set { BackingStore?.Set("displayValue", value); }
         }
 #nullable restore
 #else
-        public string DisplayValue {
+        public string DisplayValue
+        {
             get { return BackingStore?.Get<string>("displayValue"); }
             set { BackingStore?.Set("displayValue", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,9 +98,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"answeredQuestion", n => { AnsweredQuestion = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
-                {"displayValue", n => { DisplayValue = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "answeredQuestion", n => { AnsweredQuestion = n.GetObjectValue<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue); } },
+                { "displayValue", n => { DisplayValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

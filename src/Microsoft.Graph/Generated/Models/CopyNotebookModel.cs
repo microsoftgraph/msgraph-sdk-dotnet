@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CopyNotebookModel : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CopyNotebookModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
@@ -34,56 +38,65 @@ namespace Microsoft.Graph.Models {
         /// <summary>The createdByIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedByIdentity {
+        public IdentitySet? CreatedByIdentity
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdByIdentity"); }
             set { BackingStore?.Set("createdByIdentity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedByIdentity {
+        public IdentitySet CreatedByIdentity
+        {
             get { return BackingStore?.Get<IdentitySet>("createdByIdentity"); }
             set { BackingStore?.Set("createdByIdentity", value); }
         }
 #endif
         /// <summary>The createdTime property</summary>
-        public DateTimeOffset? CreatedTime {
+        public DateTimeOffset? CreatedTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdTime"); }
             set { BackingStore?.Set("createdTime", value); }
         }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #endif
         /// <summary>The isDefault property</summary>
-        public bool? IsDefault {
+        public bool? IsDefault
+        {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The isShared property</summary>
-        public bool? IsShared {
+        public bool? IsShared
+        {
             get { return BackingStore?.Get<bool?>("isShared"); }
             set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModifiedBy {
+        public string? LastModifiedBy
+        {
             get { return BackingStore?.Get<string?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public string LastModifiedBy {
+        public string LastModifiedBy
+        {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
@@ -91,32 +104,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The lastModifiedByIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedByIdentity {
+        public IdentitySet? LastModifiedByIdentity
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedByIdentity"); }
             set { BackingStore?.Set("lastModifiedByIdentity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedByIdentity {
+        public IdentitySet LastModifiedByIdentity
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedByIdentity"); }
             set { BackingStore?.Set("lastModifiedByIdentity", value); }
         }
 #endif
         /// <summary>The lastModifiedTime property</summary>
-        public DateTimeOffset? LastModifiedTime {
+        public DateTimeOffset? LastModifiedTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedTime"); }
             set { BackingStore?.Set("lastModifiedTime", value); }
         }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NotebookLinks? Links {
+        public NotebookLinks? Links
+        {
             get { return BackingStore?.Get<NotebookLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public NotebookLinks Links {
+        public NotebookLinks Links
+        {
             get { return BackingStore?.Get<NotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
@@ -124,13 +142,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -138,13 +158,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -152,13 +174,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sectionGroupsUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectionGroupsUrl {
+        public string? SectionGroupsUrl
+        {
             get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
 #nullable restore
 #else
-        public string SectionGroupsUrl {
+        public string SectionGroupsUrl
+        {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
@@ -166,13 +190,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sectionsUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectionsUrl {
+        public string? SectionsUrl
+        {
             get { return BackingStore?.Get<string?>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
 #nullable restore
 #else
-        public string SectionsUrl {
+        public string SectionsUrl
+        {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
@@ -180,19 +206,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Self {
+        public string? Self
+        {
             get { return BackingStore?.Get<string?>("self"); }
             set { BackingStore?.Set("self", value); }
         }
 #nullable restore
 #else
-        public string Self {
+        public string Self
+        {
             get { return BackingStore?.Get<string>("self"); }
             set { BackingStore?.Set("self", value); }
         }
 #endif
         /// <summary>The userRole property</summary>
-        public OnenoteUserRole? UserRole {
+        public OnenoteUserRole? UserRole
+        {
             get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }
             set { BackingStore?.Set("userRole", value); }
         }
@@ -222,22 +251,22 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdByIdentity", n => { CreatedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdTime", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
-                {"isShared", n => { IsShared = n.GetBoolValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
-                {"lastModifiedByIdentity", n => { LastModifiedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedTime", n => { LastModifiedTime = n.GetDateTimeOffsetValue(); } },
-                {"links", n => { Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
-                {"sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
-                {"self", n => { Self = n.GetStringValue(); } },
-                {"userRole", n => { UserRole = n.GetEnumValue<OnenoteUserRole>(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdByIdentity", n => { CreatedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdTime", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                { "isShared", n => { IsShared = n.GetBoolValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedByIdentity", n => { LastModifiedByIdentity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedTime", n => { LastModifiedTime = n.GetDateTimeOffsetValue(); } },
+                { "links", n => { Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
+                { "sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
+                { "self", n => { Self = n.GetStringValue(); } },
+                { "userRole", n => { UserRole = n.GetEnumValue<OnenoteUserRole>(); } },
             };
         }
         /// <summary>

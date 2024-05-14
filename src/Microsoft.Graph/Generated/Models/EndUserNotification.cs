@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EndUserNotification : Entity, IParsable 
+    public class EndUserNotification : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user who created the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy {
+        public EmailIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy {
+        public EmailIdentity CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the notification as defined by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EndUserNotificationDetail>? Details {
+        public List<EndUserNotificationDetail>? Details
+        {
             get { return BackingStore?.Get<List<EndUserNotificationDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<EndUserNotificationDetail> Details {
+        public List<EndUserNotificationDetail> Details
+        {
             get { return BackingStore?.Get<List<EndUserNotificationDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the notification as defined by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -73,47 +83,55 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity of the user who last modified the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy {
+        public EmailIdentity? LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy {
+        public EmailIdentity LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.</summary>
-        public EndUserNotificationType? NotificationType {
+        public EndUserNotificationType? NotificationType
+        {
             get { return BackingStore?.Get<EndUserNotificationType?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
         /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
-        public SimulationContentSource? Source {
+        public SimulationContentSource? Source
+        {
             get { return BackingStore?.Get<SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
-        public SimulationContentStatus? Status {
+        public SimulationContentStatus? Status
+        {
             get { return BackingStore?.Get<SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Supported locales for endUserNotification content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedLocales {
+        public List<string>? SupportedLocales
+        {
             get { return BackingStore?.Get<List<string>?>("supportedLocales"); }
             set { BackingStore?.Set("supportedLocales", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedLocales {
+        public List<string> SupportedLocales
+        {
             get { return BackingStore?.Get<List<string>>("supportedLocales"); }
             set { BackingStore?.Set("supportedLocales", value); }
         }
@@ -136,17 +154,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetCollectionOfObjectValues<EndUserNotificationDetail>(EndUserNotificationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notificationType", n => { NotificationType = n.GetEnumValue<EndUserNotificationType>(); } },
-                {"source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
-                {"status", n => { Status = n.GetEnumValue<SimulationContentStatus>(); } },
-                {"supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<EndUserNotificationDetail>(EndUserNotificationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notificationType", n => { NotificationType = n.GetEnumValue<EndUserNotificationType>(); } },
+                { "source", n => { Source = n.GetEnumValue<SimulationContentSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<SimulationContentStatus>(); } },
+                { "supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

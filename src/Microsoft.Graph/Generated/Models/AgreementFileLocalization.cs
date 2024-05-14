@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AgreementFileLocalization : AgreementFileProperties, IParsable 
+    public class AgreementFileLocalization : AgreementFileProperties, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementFileVersion>? Versions {
+        public List<AgreementFileVersion>? Versions
+        {
             get { return BackingStore?.Get<List<AgreementFileVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<AgreementFileVersion> Versions {
+        public List<AgreementFileVersion> Versions
+        {
             get { return BackingStore?.Get<List<AgreementFileVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"versions", n => { Versions = n.GetCollectionOfObjectValues<AgreementFileVersion>(AgreementFileVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<AgreementFileVersion>(AgreementFileVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

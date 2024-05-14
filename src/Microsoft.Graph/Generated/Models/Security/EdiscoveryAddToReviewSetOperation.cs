@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable 
+    public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSet? ReviewSet {
+        public EdiscoveryReviewSet? ReviewSet
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSet ReviewSet {
+        public EdiscoveryReviewSet ReviewSet
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>eDiscovery search that gets added to review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoverySearch? Search {
+        public EdiscoverySearch? Search
+        {
             get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public EdiscoverySearch Search {
+        public EdiscoverySearch Search
+        {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
-                {"search", n => { Search = n.GetObjectValue<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue); } },
+                { "reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<EdiscoverySearch>(EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

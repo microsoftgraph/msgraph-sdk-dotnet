@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProvisioningStatusInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ProvisioningStatusInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If status isn&apos;t success/ skipped details for the error are contained in this.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningErrorInfo? ErrorInformation {
+        public ProvisioningErrorInfo? ErrorInformation
+        {
             get { return BackingStore?.Get<ProvisioningErrorInfo?>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
 #nullable restore
 #else
-        public ProvisioningErrorInfo ErrorInformation {
+        public ProvisioningErrorInfo ErrorInformation
+        {
             get { return BackingStore?.Get<ProvisioningErrorInfo>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
-        public ProvisioningResult? Status {
+        public ProvisioningResult? Status
+        {
             get { return BackingStore?.Get<ProvisioningResult?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errorInformation", n => { ErrorInformation = n.GetObjectValue<ProvisioningErrorInfo>(ProvisioningErrorInfo.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
+                { "errorInformation", n => { ErrorInformation = n.GetObjectValue<ProvisioningErrorInfo>(ProvisioningErrorInfo.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
             };
         }
         /// <summary>

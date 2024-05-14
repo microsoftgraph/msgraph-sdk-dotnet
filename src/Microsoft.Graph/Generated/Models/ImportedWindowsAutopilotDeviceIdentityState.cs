@@ -5,52 +5,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ImportedWindowsAutopilotDeviceIdentityState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImportedWindowsAutopilotDeviceIdentityState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device error code reported by Device Directory Service(DDS).</summary>
-        public int? DeviceErrorCode {
+        public int? DeviceErrorCode
+        {
             get { return BackingStore?.Get<int?>("deviceErrorCode"); }
             set { BackingStore?.Set("deviceErrorCode", value); }
         }
         /// <summary>Device error name reported by Device Directory Service(DDS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceErrorName {
+        public string? DeviceErrorName
+        {
             get { return BackingStore?.Get<string?>("deviceErrorName"); }
             set { BackingStore?.Set("deviceErrorName", value); }
         }
 #nullable restore
 #else
-        public string DeviceErrorName {
+        public string DeviceErrorName
+        {
             get { return BackingStore?.Get<string>("deviceErrorName"); }
             set { BackingStore?.Set("deviceErrorName", value); }
         }
 #endif
         /// <summary>The deviceImportStatus property</summary>
-        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus {
+        public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus
+        {
             get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityImportStatus?>("deviceImportStatus"); }
             set { BackingStore?.Set("deviceImportStatus", value); }
         }
         /// <summary>Device Registration ID for successfully added device reported by Device Directory Service(DDS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceRegistrationId {
+        public string? DeviceRegistrationId
+        {
             get { return BackingStore?.Get<string?>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
 #nullable restore
 #else
-        public string DeviceRegistrationId {
+        public string DeviceRegistrationId
+        {
             get { return BackingStore?.Get<string>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceErrorCode", n => { DeviceErrorCode = n.GetIntValue(); } },
-                {"deviceErrorName", n => { DeviceErrorName = n.GetStringValue(); } },
-                {"deviceImportStatus", n => { DeviceImportStatus = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
-                {"deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "deviceErrorCode", n => { DeviceErrorCode = n.GetIntValue(); } },
+                { "deviceErrorName", n => { DeviceErrorName = n.GetStringValue(); } },
+                { "deviceImportStatus", n => { DeviceImportStatus = n.GetEnumValue<ImportedWindowsAutopilotDeviceIdentityImportStatus>(); } },
+                { "deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

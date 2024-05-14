@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Approval : Entity, IParsable 
+    public class Approval : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of stages in the approval decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApprovalStage>? Stages {
+        public List<ApprovalStage>? Stages
+        {
             get { return BackingStore?.Get<List<ApprovalStage>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<ApprovalStage> Stages {
+        public List<ApprovalStage> Stages
+        {
             get { return BackingStore?.Get<List<ApprovalStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"stages", n => { Stages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

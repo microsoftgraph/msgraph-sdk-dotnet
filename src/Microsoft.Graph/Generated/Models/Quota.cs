@@ -5,52 +5,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Quota : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Quota : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Total space consumed by files in the recycle bin, in bytes. Read-only.</summary>
-        public long? Deleted {
+        public long? Deleted
+        {
             get { return BackingStore?.Get<long?>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total space remaining before reaching the quota limit, in bytes. Read-only.</summary>
-        public long? Remaining {
+        public long? Remaining
+        {
             get { return BackingStore?.Get<long?>("remaining"); }
             set { BackingStore?.Set("remaining", value); }
         }
         /// <summary>Enumeration value that indicates the state of the storage space. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -58,24 +66,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about the drive&apos;s storage quota plans. Only in Personal OneDrive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.StoragePlanInformation? StoragePlanInformation {
+        public Microsoft.Graph.Models.StoragePlanInformation? StoragePlanInformation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.StoragePlanInformation?>("storagePlanInformation"); }
             set { BackingStore?.Set("storagePlanInformation", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.StoragePlanInformation StoragePlanInformation {
+        public Microsoft.Graph.Models.StoragePlanInformation StoragePlanInformation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.StoragePlanInformation>("storagePlanInformation"); }
             set { BackingStore?.Set("storagePlanInformation", value); }
         }
 #endif
         /// <summary>Total allowed storage space, in bytes. Read-only.</summary>
-        public long? Total {
+        public long? Total
+        {
             get { return BackingStore?.Get<long?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
         /// <summary>Total space used, in bytes. Read-only.</summary>
-        public long? Used {
+        public long? Used
+        {
             get { return BackingStore?.Get<long?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
@@ -105,13 +117,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deleted", n => { Deleted = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remaining", n => { Remaining = n.GetLongValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"storagePlanInformation", n => { StoragePlanInformation = n.GetObjectValue<Microsoft.Graph.Models.StoragePlanInformation>(Microsoft.Graph.Models.StoragePlanInformation.CreateFromDiscriminatorValue); } },
-                {"total", n => { Total = n.GetLongValue(); } },
-                {"used", n => { Used = n.GetLongValue(); } },
+                { "deleted", n => { Deleted = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remaining", n => { Remaining = n.GetLongValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "storagePlanInformation", n => { StoragePlanInformation = n.GetObjectValue<Microsoft.Graph.Models.StoragePlanInformation>(Microsoft.Graph.Models.StoragePlanInformation.CreateFromDiscriminatorValue); } },
+                { "total", n => { Total = n.GetLongValue(); } },
+                { "used", n => { Used = n.GetLongValue(); } },
             };
         }
         /// <summary>

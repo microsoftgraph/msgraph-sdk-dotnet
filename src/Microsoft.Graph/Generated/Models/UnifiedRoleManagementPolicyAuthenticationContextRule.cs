@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule, IParsable 
+    public class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value of the authentication context claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClaimValue {
+        public string? ClaimValue
+        {
             get { return BackingStore?.Get<string?>("claimValue"); }
             set { BackingStore?.Set("claimValue", value); }
         }
 #nullable restore
 #else
-        public string ClaimValue {
+        public string ClaimValue
+        {
             get { return BackingStore?.Get<string>("claimValue"); }
             set { BackingStore?.Set("claimValue", value); }
         }
 #endif
         /// <summary>Determines whether this rule is enabled.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"claimValue", n => { ClaimValue = n.GetStringValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "claimValue", n => { ClaimValue = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

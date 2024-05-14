@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharingInvitation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharingInvitation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The email address provided for the recipient of the sharing invitation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides information about who sent the invitation that created this permission, if that information is available. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? InvitedBy {
+        public IdentitySet? InvitedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet InvitedBy {
+        public IdentitySet InvitedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The redeemedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedeemedBy {
+        public string? RedeemedBy
+        {
             get { return BackingStore?.Get<string?>("redeemedBy"); }
             set { BackingStore?.Set("redeemedBy", value); }
         }
 #nullable restore
 #else
-        public string RedeemedBy {
+        public string RedeemedBy
+        {
             get { return BackingStore?.Get<string>("redeemedBy"); }
             set { BackingStore?.Set("redeemedBy", value); }
         }
 #endif
         /// <summary>If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.</summary>
-        public bool? SignInRequired {
+        public bool? SignInRequired
+        {
             get { return BackingStore?.Get<bool?>("signInRequired"); }
             set { BackingStore?.Set("signInRequired", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"invitedBy", n => { InvitedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"redeemedBy", n => { RedeemedBy = n.GetStringValue(); } },
-                {"signInRequired", n => { SignInRequired = n.GetBoolValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "invitedBy", n => { InvitedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "redeemedBy", n => { RedeemedBy = n.GetStringValue(); } },
+                { "signInRequired", n => { SignInRequired = n.GetBoolValue(); } },
             };
         }
         /// <summary>

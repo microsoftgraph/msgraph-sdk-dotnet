@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyCustomFilter {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyCustomFilter
+{
     #pragma warning disable CS1591
-    public class ApplyCustomFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyCustomFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>The criteria1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Criteria1 {
+        public string? Criteria1
+        {
             get { return BackingStore?.Get<string?>("criteria1"); }
             set { BackingStore?.Set("criteria1", value); }
         }
 #nullable restore
 #else
-        public string Criteria1 {
+        public string Criteria1
+        {
             get { return BackingStore?.Get<string>("criteria1"); }
             set { BackingStore?.Set("criteria1", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>The criteria2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Criteria2 {
+        public string? Criteria2
+        {
             get { return BackingStore?.Get<string?>("criteria2"); }
             set { BackingStore?.Set("criteria2", value); }
         }
 #nullable restore
 #else
-        public string Criteria2 {
+        public string Criteria2
+        {
             get { return BackingStore?.Get<string>("criteria2"); }
             set { BackingStore?.Set("criteria2", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         /// <summary>The oper property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Oper {
+        public string? Oper
+        {
             get { return BackingStore?.Get<string?>("oper"); }
             set { BackingStore?.Set("oper", value); }
         }
 #nullable restore
 #else
-        public string Oper {
+        public string Oper
+        {
             get { return BackingStore?.Get<string>("oper"); }
             set { BackingStore?.Set("oper", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"criteria1", n => { Criteria1 = n.GetStringValue(); } },
-                {"criteria2", n => { Criteria2 = n.GetStringValue(); } },
-                {"oper", n => { Oper = n.GetStringValue(); } },
+                { "criteria1", n => { Criteria1 = n.GetStringValue(); } },
+                { "criteria2", n => { Criteria2 = n.GetStringValue(); } },
+                { "oper", n => { Oper = n.GetStringValue(); } },
             };
         }
         /// <summary>

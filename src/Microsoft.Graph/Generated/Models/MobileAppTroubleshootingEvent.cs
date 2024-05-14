@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MobileAppTroubleshootingEvent : Entity, IParsable 
+    public class MobileAppTroubleshootingEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates collection of App Log Upload Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppLogCollectionRequest>? AppLogCollectionRequests {
+        public List<AppLogCollectionRequest>? AppLogCollectionRequests
+        {
             get { return BackingStore?.Get<List<AppLogCollectionRequest>?>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<AppLogCollectionRequest> AppLogCollectionRequests {
+        public List<AppLogCollectionRequest> AppLogCollectionRequests
+        {
             get { return BackingStore?.Get<List<AppLogCollectionRequest>>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

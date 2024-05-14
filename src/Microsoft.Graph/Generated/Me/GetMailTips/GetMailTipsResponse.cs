@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.GetMailTips {
+namespace Microsoft.Graph.Me.GetMailTips
+{
     [Obsolete("This class is obsolete. Use GetMailTipsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetMailTipsResponse : GetMailTipsPostResponse, IParsable 
+    public class GetMailTipsResponse : GetMailTipsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class M365AppsInstallationOptions : Entity, IParsable 
+    public class M365AppsInstallationOptions : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appsForMac property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppsInstallationOptionsForMac? AppsForMac {
+        public AppsInstallationOptionsForMac? AppsForMac
+        {
             get { return BackingStore?.Get<AppsInstallationOptionsForMac?>("appsForMac"); }
             set { BackingStore?.Set("appsForMac", value); }
         }
 #nullable restore
 #else
-        public AppsInstallationOptionsForMac AppsForMac {
+        public AppsInstallationOptionsForMac AppsForMac
+        {
             get { return BackingStore?.Get<AppsInstallationOptionsForMac>("appsForMac"); }
             set { BackingStore?.Set("appsForMac", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The appsForWindows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppsInstallationOptionsForWindows? AppsForWindows {
+        public AppsInstallationOptionsForWindows? AppsForWindows
+        {
             get { return BackingStore?.Get<AppsInstallationOptionsForWindows?>("appsForWindows"); }
             set { BackingStore?.Set("appsForWindows", value); }
         }
 #nullable restore
 #else
-        public AppsInstallationOptionsForWindows AppsForWindows {
+        public AppsInstallationOptionsForWindows AppsForWindows
+        {
             get { return BackingStore?.Get<AppsInstallationOptionsForWindows>("appsForWindows"); }
             set { BackingStore?.Set("appsForWindows", value); }
         }
 #endif
         /// <summary>The updateChannel property</summary>
-        public AppsUpdateChannelType? UpdateChannel {
+        public AppsUpdateChannelType? UpdateChannel
+        {
             get { return BackingStore?.Get<AppsUpdateChannelType?>("updateChannel"); }
             set { BackingStore?.Set("updateChannel", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appsForMac", n => { AppsForMac = n.GetObjectValue<AppsInstallationOptionsForMac>(AppsInstallationOptionsForMac.CreateFromDiscriminatorValue); } },
-                {"appsForWindows", n => { AppsForWindows = n.GetObjectValue<AppsInstallationOptionsForWindows>(AppsInstallationOptionsForWindows.CreateFromDiscriminatorValue); } },
-                {"updateChannel", n => { UpdateChannel = n.GetEnumValue<AppsUpdateChannelType>(); } },
+                { "appsForMac", n => { AppsForMac = n.GetObjectValue<AppsInstallationOptionsForMac>(AppsInstallationOptionsForMac.CreateFromDiscriminatorValue); } },
+                { "appsForWindows", n => { AppsForWindows = n.GetObjectValue<AppsInstallationOptionsForWindows>(AppsInstallationOptionsForWindows.CreateFromDiscriminatorValue); } },
+                { "updateChannel", n => { UpdateChannel = n.GetEnumValue<AppsUpdateChannelType>(); } },
             };
         }
         /// <summary>

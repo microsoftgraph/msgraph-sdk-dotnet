@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileEvidence : AlertEvidence, IParsable 
+    public class FileEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.Security.DetectionStatus? DetectionStatus {
+        public Microsoft.Graph.Models.Security.DetectionStatus? DetectionStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DetectionStatus?>("detectionStatus"); }
             set { BackingStore?.Set("detectionStatus", value); }
         }
         /// <summary>The file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.FileDetails? FileDetails {
+        public Microsoft.Graph.Models.Security.FileDetails? FileDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails?>("fileDetails"); }
             set { BackingStore?.Set("fileDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.FileDetails FileDetails {
+        public Microsoft.Graph.Models.Security.FileDetails FileDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.FileDetails>("fileDetails"); }
             set { BackingStore?.Set("fileDetails", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MdeDeviceId {
+        public string? MdeDeviceId
+        {
             get { return BackingStore?.Get<string?>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #nullable restore
 #else
-        public string MdeDeviceId {
+        public string MdeDeviceId
+        {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"detectionStatus", n => { DetectionStatus = n.GetEnumValue<DetectionStatus>(); } },
-                {"fileDetails", n => { FileDetails = n.GetObjectValue<Microsoft.Graph.Models.Security.FileDetails>(Microsoft.Graph.Models.Security.FileDetails.CreateFromDiscriminatorValue); } },
-                {"mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
+                { "detectionStatus", n => { DetectionStatus = n.GetEnumValue<DetectionStatus>(); } },
+                { "fileDetails", n => { FileDetails = n.GetObjectValue<Microsoft.Graph.Models.Security.FileDetails>(Microsoft.Graph.Models.Security.FileDetails.CreateFromDiscriminatorValue); } },
+                { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

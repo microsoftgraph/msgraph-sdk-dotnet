@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftTrainingAssignmentMapping : TrainingSetting, IParsable 
+    public class MicrosoftTrainingAssignmentMapping : TrainingSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrainingAssignedTo?>? AssignedTo {
+        public List<TrainingAssignedTo?>? AssignedTo
+        {
             get { return BackingStore?.Get<List<TrainingAssignedTo?>?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public List<TrainingAssignedTo?> AssignedTo {
+        public List<TrainingAssignedTo?> AssignedTo
+        {
             get { return BackingStore?.Get<List<TrainingAssignedTo?>>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The training property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Training? Training {
+        public Microsoft.Graph.Models.Training? Training
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Training?>("training"); }
             set { BackingStore?.Set("training", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Training Training {
+        public Microsoft.Graph.Models.Training Training
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Training>("training"); }
             set { BackingStore?.Set("training", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<TrainingAssignedTo>()?.ToList(); } },
-                {"training", n => { Training = n.GetObjectValue<Microsoft.Graph.Models.Training>(Microsoft.Graph.Models.Training.CreateFromDiscriminatorValue); } },
+                { "assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<TrainingAssignedTo>()?.ToList(); } },
+                { "training", n => { Training = n.GetObjectValue<Microsoft.Graph.Models.Training>(Microsoft.Graph.Models.Training.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

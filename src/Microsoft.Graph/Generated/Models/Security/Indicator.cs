@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class Indicator : Microsoft.Graph.Models.Entity, IParsable 
+    public class Indicator : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The artifact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.Artifact? Artifact {
+        public Microsoft.Graph.Models.Security.Artifact? Artifact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Artifact?>("artifact"); }
             set { BackingStore?.Set("artifact", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.Artifact Artifact {
+        public Microsoft.Graph.Models.Security.Artifact Artifact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Artifact>("artifact"); }
             set { BackingStore?.Set("artifact", value); }
         }
 #endif
         /// <summary>The source property</summary>
-        public IndicatorSource? Source {
+        public IndicatorSource? Source
+        {
             get { return BackingStore?.Get<IndicatorSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -52,8 +56,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"artifact", n => { Artifact = n.GetObjectValue<Microsoft.Graph.Models.Security.Artifact>(Microsoft.Graph.Models.Security.Artifact.CreateFromDiscriminatorValue); } },
-                {"source", n => { Source = n.GetEnumValue<IndicatorSource>(); } },
+                { "artifact", n => { Artifact = n.GetObjectValue<Microsoft.Graph.Models.Security.Artifact>(Microsoft.Graph.Models.Security.Artifact.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<IndicatorSource>(); } },
             };
         }
         /// <summary>

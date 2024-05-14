@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assign {
+namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
         /// <summary>The enrollmentConfigurationAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EnrollmentConfigurationAssignment>? EnrollmentConfigurationAssignments {
+        public List<EnrollmentConfigurationAssignment>? EnrollmentConfigurationAssignments
+        {
             get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>?>("enrollmentConfigurationAssignments"); }
             set { BackingStore?.Set("enrollmentConfigurationAssignments", value); }
         }
 #nullable restore
 #else
-        public List<EnrollmentConfigurationAssignment> EnrollmentConfigurationAssignments {
+        public List<EnrollmentConfigurationAssignment> EnrollmentConfigurationAssignments
+        {
             get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("enrollmentConfigurationAssignments"); }
             set { BackingStore?.Set("enrollmentConfigurationAssignments", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item.A
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enrollmentConfigurationAssignments", n => { EnrollmentConfigurationAssignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enrollmentConfigurationAssignments", n => { EnrollmentConfigurationAssignments = n.GetCollectionOfObjectValues<EnrollmentConfigurationAssignment>(EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ApprovalStage : Entity, IParsable 
+    public class ApprovalStage : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the stage is assigned to the calling user to review. Read-only.</summary>
-        public bool? AssignedToMe {
+        public bool? AssignedToMe
+        {
             get { return BackingStore?.Get<bool?>("assignedToMe"); }
             set { BackingStore?.Set("assignedToMe", value); }
         }
         /// <summary>The label provided by the policy creator to identify an approval stage. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The justification associated with the approval stage decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -45,32 +51,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? ReviewedBy {
+        public Identity? ReviewedBy
+        {
             get { return BackingStore?.Get<Identity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public Identity ReviewedBy {
+        public Identity ReviewedBy
+        {
             get { return BackingStore?.Get<Identity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
         /// <summary>The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ReviewedDateTime {
+        public DateTimeOffset? ReviewedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
             set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewResult {
+        public string? ReviewResult
+        {
             get { return BackingStore?.Get<string?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
 #nullable restore
 #else
-        public string ReviewResult {
+        public string ReviewResult
+        {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedToMe", n => { AssignedToMe = n.GetBoolValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
-                {"reviewedBy", n => { ReviewedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "assignedToMe", n => { AssignedToMe = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "reviewResult", n => { ReviewResult = n.GetStringValue(); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

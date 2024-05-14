@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUrl {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUrl
+{
     #pragma warning disable CS1591
-    public class GetNotebookFromWebUrlPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetNotebookFromWebUrlPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetNotebookFr
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.GetNotebookFr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

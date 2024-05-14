@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics work from anywhere Windows 10 devices summary.
     /// </summary>
-    public class UserExperienceAnalyticsWindows10DevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceAnalyticsWindows10DevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,19 +23,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The count of Windows 10 devices that have unsupported OS versions. Read-only.</summary>
-        public int? UnsupportedOSversionDeviceCount {
+        public int? UnsupportedOSversionDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unsupportedOSversionDeviceCount"); }
             set { BackingStore?.Set("unsupportedOSversionDeviceCount", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"unsupportedOSversionDeviceCount", n => { UnsupportedOSversionDeviceCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "unsupportedOSversionDeviceCount", n => { UnsupportedOSversionDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

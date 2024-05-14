@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Initiator : Identity, IParsable 
+    public class Initiator : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.InitiatorType? InitiatorType {
+        public Microsoft.Graph.Models.InitiatorType? InitiatorType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.InitiatorType?>("initiatorType"); }
             set { BackingStore?.Set("initiatorType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"initiatorType", n => { InitiatorType = n.GetEnumValue<InitiatorType>(); } },
+                { "initiatorType", n => { InitiatorType = n.GetEnumValue<InitiatorType>(); } },
             };
         }
         /// <summary>

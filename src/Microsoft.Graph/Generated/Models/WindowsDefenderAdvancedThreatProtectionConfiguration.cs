@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Defender AdvancedThreatProtection Configuration.
     /// </summary>
-    public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Windows Defender AdvancedThreatProtection &apos;Allow Sample Sharing&apos; Rule</summary>
-        public bool? AllowSampleSharing {
+        public bool? AllowSampleSharing
+        {
             get { return BackingStore?.Get<bool?>("allowSampleSharing"); }
             set { BackingStore?.Set("allowSampleSharing", value); }
         }
         /// <summary>Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.</summary>
-        public bool? EnableExpeditedTelemetryReporting {
+        public bool? EnableExpeditedTelemetryReporting
+        {
             get { return BackingStore?.Get<bool?>("enableExpeditedTelemetryReporting"); }
             set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowSampleSharing", n => { AllowSampleSharing = n.GetBoolValue(); } },
-                {"enableExpeditedTelemetryReporting", n => { EnableExpeditedTelemetryReporting = n.GetBoolValue(); } },
+                { "allowSampleSharing", n => { AllowSampleSharing = n.GetBoolValue(); } },
+                { "enableExpeditedTelemetryReporting", n => { EnableExpeditedTelemetryReporting = n.GetBoolValue(); } },
             };
         }
         /// <summary>

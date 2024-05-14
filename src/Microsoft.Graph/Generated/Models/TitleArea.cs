@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TitleArea : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TitleArea : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Alternative text on the title area.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternativeText {
+        public string? AlternativeText
+        {
             get { return BackingStore?.Get<string?>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
 #nullable restore
 #else
-        public string AlternativeText {
+        public string AlternativeText
+        {
             get { return BackingStore?.Get<string>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
@@ -32,39 +36,45 @@ namespace Microsoft.Graph.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the title area has a gradient effect enabled.</summary>
-        public bool? EnableGradientEffect {
+        public bool? EnableGradientEffect
+        {
             get { return BackingStore?.Get<bool?>("enableGradientEffect"); }
             set { BackingStore?.Set("enableGradientEffect", value); }
         }
         /// <summary>URL of the image in the title area.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageWebUrl {
+        public string? ImageWebUrl
+        {
             get { return BackingStore?.Get<string?>("imageWebUrl"); }
             set { BackingStore?.Set("imageWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ImageWebUrl {
+        public string ImageWebUrl
+        {
             get { return BackingStore?.Get<string>("imageWebUrl"); }
             set { BackingStore?.Set("imageWebUrl", value); }
         }
 #endif
         /// <summary>Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.</summary>
-        public TitleAreaLayoutType? Layout {
+        public TitleAreaLayoutType? Layout
+        {
             get { return BackingStore?.Get<TitleAreaLayoutType?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,48 +82,56 @@ namespace Microsoft.Graph.Models {
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ServerProcessedContent? ServerProcessedContent {
+        public Microsoft.Graph.Models.ServerProcessedContent? ServerProcessedContent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServerProcessedContent?>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ServerProcessedContent ServerProcessedContent {
+        public Microsoft.Graph.Models.ServerProcessedContent ServerProcessedContent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServerProcessedContent>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
 #endif
         /// <summary>Indicates whether the author should be shown in title area.</summary>
-        public bool? ShowAuthor {
+        public bool? ShowAuthor
+        {
             get { return BackingStore?.Get<bool?>("showAuthor"); }
             set { BackingStore?.Set("showAuthor", value); }
         }
         /// <summary>Indicates whether the published date should be shown in title area.</summary>
-        public bool? ShowPublishedDate {
+        public bool? ShowPublishedDate
+        {
             get { return BackingStore?.Get<bool?>("showPublishedDate"); }
             set { BackingStore?.Set("showPublishedDate", value); }
         }
         /// <summary>Indicates whether the text block above title should be shown in title area.</summary>
-        public bool? ShowTextBlockAboveTitle {
+        public bool? ShowTextBlockAboveTitle
+        {
             get { return BackingStore?.Get<bool?>("showTextBlockAboveTitle"); }
             set { BackingStore?.Set("showTextBlockAboveTitle", value); }
         }
         /// <summary>The text above title line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextAboveTitle {
+        public string? TextAboveTitle
+        {
             get { return BackingStore?.Get<string?>("textAboveTitle"); }
             set { BackingStore?.Set("textAboveTitle", value); }
         }
 #nullable restore
 #else
-        public string TextAboveTitle {
+        public string TextAboveTitle
+        {
             get { return BackingStore?.Get<string>("textAboveTitle"); }
             set { BackingStore?.Set("textAboveTitle", value); }
         }
 #endif
         /// <summary>Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.</summary>
-        public TitleAreaTextAlignmentType? TextAlignment {
+        public TitleAreaTextAlignmentType? TextAlignment
+        {
             get { return BackingStore?.Get<TitleAreaTextAlignmentType?>("textAlignment"); }
             set { BackingStore?.Set("textAlignment", value); }
         }
@@ -143,17 +161,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alternativeText", n => { AlternativeText = n.GetStringValue(); } },
-                {"enableGradientEffect", n => { EnableGradientEffect = n.GetBoolValue(); } },
-                {"imageWebUrl", n => { ImageWebUrl = n.GetStringValue(); } },
-                {"layout", n => { Layout = n.GetEnumValue<TitleAreaLayoutType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
-                {"showAuthor", n => { ShowAuthor = n.GetBoolValue(); } },
-                {"showPublishedDate", n => { ShowPublishedDate = n.GetBoolValue(); } },
-                {"showTextBlockAboveTitle", n => { ShowTextBlockAboveTitle = n.GetBoolValue(); } },
-                {"textAboveTitle", n => { TextAboveTitle = n.GetStringValue(); } },
-                {"textAlignment", n => { TextAlignment = n.GetEnumValue<TitleAreaTextAlignmentType>(); } },
+                { "alternativeText", n => { AlternativeText = n.GetStringValue(); } },
+                { "enableGradientEffect", n => { EnableGradientEffect = n.GetBoolValue(); } },
+                { "imageWebUrl", n => { ImageWebUrl = n.GetStringValue(); } },
+                { "layout", n => { Layout = n.GetEnumValue<TitleAreaLayoutType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
+                { "showAuthor", n => { ShowAuthor = n.GetBoolValue(); } },
+                { "showPublishedDate", n => { ShowPublishedDate = n.GetBoolValue(); } },
+                { "showTextBlockAboveTitle", n => { ShowTextBlockAboveTitle = n.GetBoolValue(); } },
+                { "textAboveTitle", n => { TextAboveTitle = n.GetStringValue(); } },
+                { "textAlignment", n => { TextAlignment = n.GetEnumValue<TitleAreaTextAlignmentType>(); } },
             };
         }
         /// <summary>

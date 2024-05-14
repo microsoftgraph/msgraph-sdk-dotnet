@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class GitHubRepoEvidence : AlertEvidence, IParsable 
+    public class GitHubRepoEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The baseUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseUrl {
+        public string? BaseUrl
+        {
             get { return BackingStore?.Get<string?>("baseUrl"); }
             set { BackingStore?.Set("baseUrl", value); }
         }
 #nullable restore
 #else
-        public string BaseUrl {
+        public string BaseUrl
+        {
             get { return BackingStore?.Get<string>("baseUrl"); }
             set { BackingStore?.Set("baseUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The login property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Login {
+        public string? Login
+        {
             get { return BackingStore?.Get<string?>("login"); }
             set { BackingStore?.Set("login", value); }
         }
 #nullable restore
 #else
-        public string Login {
+        public string Login
+        {
             get { return BackingStore?.Get<string>("login"); }
             set { BackingStore?.Set("login", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner {
+        public string? Owner
+        {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public string Owner {
+        public string Owner
+        {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The ownerType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerType {
+        public string? OwnerType
+        {
             get { return BackingStore?.Get<string?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
 #nullable restore
 #else
-        public string OwnerType {
+        public string OwnerType
+        {
             get { return BackingStore?.Get<string>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The repoId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoId {
+        public string? RepoId
+        {
             get { return BackingStore?.Get<string?>("repoId"); }
             set { BackingStore?.Set("repoId", value); }
         }
 #nullable restore
 #else
-        public string RepoId {
+        public string RepoId
+        {
             get { return BackingStore?.Get<string>("repoId"); }
             set { BackingStore?.Set("repoId", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"baseUrl", n => { BaseUrl = n.GetStringValue(); } },
-                {"login", n => { Login = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"ownerType", n => { OwnerType = n.GetStringValue(); } },
-                {"repoId", n => { RepoId = n.GetStringValue(); } },
+                { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },
+                { "login", n => { Login = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "ownerType", n => { OwnerType = n.GetStringValue(); } },
+                { "repoId", n => { RepoId = n.GetStringValue(); } },
             };
         }
         /// <summary>

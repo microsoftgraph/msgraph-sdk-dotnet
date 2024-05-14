@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags {
+namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags
+{
     #pragma warning disable CS1591
-    public class ApplyTagsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyTagsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <summary>The tagsToAdd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? TagsToAdd {
+        public List<EdiscoveryReviewTag>? TagsToAdd
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> TagsToAdd {
+        public List<EdiscoveryReviewTag> TagsToAdd
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         /// <summary>The tagsToRemove property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? TagsToRemove {
+        public List<EdiscoveryReviewTag>? TagsToRemove
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> TagsToRemove {
+        public List<EdiscoveryReviewTag> TagsToRemove
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Qu
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

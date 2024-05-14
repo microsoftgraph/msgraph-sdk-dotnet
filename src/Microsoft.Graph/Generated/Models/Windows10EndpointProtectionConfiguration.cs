@@ -4,92 +4,109 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
     /// </summary>
-    public class Windows10EndpointProtectionConfiguration : DeviceConfiguration, IParsable 
+    public class Windows10EndpointProtectionConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)</summary>
-        public bool? ApplicationGuardAllowPersistence {
+        public bool? ApplicationGuardAllowPersistence
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardAllowPersistence"); }
             set { BackingStore?.Set("applicationGuardAllowPersistence", value); }
         }
         /// <summary>Allow printing to Local Printers from Container</summary>
-        public bool? ApplicationGuardAllowPrintToLocalPrinters {
+        public bool? ApplicationGuardAllowPrintToLocalPrinters
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToLocalPrinters"); }
             set { BackingStore?.Set("applicationGuardAllowPrintToLocalPrinters", value); }
         }
         /// <summary>Allow printing to Network Printers from Container</summary>
-        public bool? ApplicationGuardAllowPrintToNetworkPrinters {
+        public bool? ApplicationGuardAllowPrintToNetworkPrinters
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToNetworkPrinters"); }
             set { BackingStore?.Set("applicationGuardAllowPrintToNetworkPrinters", value); }
         }
         /// <summary>Allow printing to PDF from Container</summary>
-        public bool? ApplicationGuardAllowPrintToPDF {
+        public bool? ApplicationGuardAllowPrintToPDF
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToPDF"); }
             set { BackingStore?.Set("applicationGuardAllowPrintToPDF", value); }
         }
         /// <summary>Allow printing to XPS from Container</summary>
-        public bool? ApplicationGuardAllowPrintToXPS {
+        public bool? ApplicationGuardAllowPrintToXPS
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardAllowPrintToXPS"); }
             set { BackingStore?.Set("applicationGuardAllowPrintToXPS", value); }
         }
         /// <summary>Possible values for applicationGuardBlockClipboardSharingType</summary>
-        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing {
+        public ApplicationGuardBlockClipboardSharingType? ApplicationGuardBlockClipboardSharing
+        {
             get { return BackingStore?.Get<ApplicationGuardBlockClipboardSharingType?>("applicationGuardBlockClipboardSharing"); }
             set { BackingStore?.Set("applicationGuardBlockClipboardSharing", value); }
         }
         /// <summary>Possible values for applicationGuardBlockFileTransfer</summary>
-        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer {
+        public ApplicationGuardBlockFileTransferType? ApplicationGuardBlockFileTransfer
+        {
             get { return BackingStore?.Get<ApplicationGuardBlockFileTransferType?>("applicationGuardBlockFileTransfer"); }
             set { BackingStore?.Set("applicationGuardBlockFileTransfer", value); }
         }
         /// <summary>Block enterprise sites to load non-enterprise content, such as third party plug-ins</summary>
-        public bool? ApplicationGuardBlockNonEnterpriseContent {
+        public bool? ApplicationGuardBlockNonEnterpriseContent
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardBlockNonEnterpriseContent"); }
             set { BackingStore?.Set("applicationGuardBlockNonEnterpriseContent", value); }
         }
         /// <summary>Enable Windows Defender Application Guard</summary>
-        public bool? ApplicationGuardEnabled {
+        public bool? ApplicationGuardEnabled
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardEnabled"); }
             set { BackingStore?.Set("applicationGuardEnabled", value); }
         }
         /// <summary>Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)</summary>
-        public bool? ApplicationGuardForceAuditing {
+        public bool? ApplicationGuardForceAuditing
+        {
             get { return BackingStore?.Get<bool?>("applicationGuardForceAuditing"); }
             set { BackingStore?.Set("applicationGuardForceAuditing", value); }
         }
         /// <summary>Possible values of AppLocker Application Control Types</summary>
-        public AppLockerApplicationControlType? AppLockerApplicationControl {
+        public AppLockerApplicationControlType? AppLockerApplicationControl
+        {
             get { return BackingStore?.Get<AppLockerApplicationControlType?>("appLockerApplicationControl"); }
             set { BackingStore?.Set("appLockerApplicationControl", value); }
         }
         /// <summary>Allows the Admin to disable the warning prompt for other disk encryption on the user machines.</summary>
-        public bool? BitLockerDisableWarningForOtherDiskEncryption {
+        public bool? BitLockerDisableWarningForOtherDiskEncryption
+        {
             get { return BackingStore?.Get<bool?>("bitLockerDisableWarningForOtherDiskEncryption"); }
             set { BackingStore?.Set("bitLockerDisableWarningForOtherDiskEncryption", value); }
         }
         /// <summary>Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.</summary>
-        public bool? BitLockerEnableStorageCardEncryptionOnMobile {
+        public bool? BitLockerEnableStorageCardEncryptionOnMobile
+        {
             get { return BackingStore?.Get<bool?>("bitLockerEnableStorageCardEncryptionOnMobile"); }
             set { BackingStore?.Set("bitLockerEnableStorageCardEncryptionOnMobile", value); }
         }
         /// <summary>Allows the admin to require encryption to be turned on using BitLocker.</summary>
-        public bool? BitLockerEncryptDevice {
+        public bool? BitLockerEncryptDevice
+        {
             get { return BackingStore?.Get<bool?>("bitLockerEncryptDevice"); }
             set { BackingStore?.Set("bitLockerEncryptDevice", value); }
         }
         /// <summary>BitLocker Removable Drive Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.BitLockerRemovableDrivePolicy? BitLockerRemovableDrivePolicy {
+        public Microsoft.Graph.Models.BitLockerRemovableDrivePolicy? BitLockerRemovableDrivePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy?>("bitLockerRemovableDrivePolicy"); }
             set { BackingStore?.Set("bitLockerRemovableDrivePolicy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy {
+        public Microsoft.Graph.Models.BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy>("bitLockerRemovableDrivePolicy"); }
             set { BackingStore?.Set("bitLockerRemovableDrivePolicy", value); }
         }
@@ -97,13 +114,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of folder paths to be added to the list of protected folders</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DefenderAdditionalGuardedFolders {
+        public List<string>? DefenderAdditionalGuardedFolders
+        {
             get { return BackingStore?.Get<List<string>?>("defenderAdditionalGuardedFolders"); }
             set { BackingStore?.Set("defenderAdditionalGuardedFolders", value); }
         }
 #nullable restore
 #else
-        public List<string> DefenderAdditionalGuardedFolders {
+        public List<string> DefenderAdditionalGuardedFolders
+        {
             get { return BackingStore?.Get<List<string>>("defenderAdditionalGuardedFolders"); }
             set { BackingStore?.Set("defenderAdditionalGuardedFolders", value); }
         }
@@ -111,13 +130,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of exe files and folders to be excluded from attack surface reduction rules</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DefenderAttackSurfaceReductionExcludedPaths {
+        public List<string>? DefenderAttackSurfaceReductionExcludedPaths
+        {
             get { return BackingStore?.Get<List<string>?>("defenderAttackSurfaceReductionExcludedPaths"); }
             set { BackingStore?.Set("defenderAttackSurfaceReductionExcludedPaths", value); }
         }
 #nullable restore
 #else
-        public List<string> DefenderAttackSurfaceReductionExcludedPaths {
+        public List<string> DefenderAttackSurfaceReductionExcludedPaths
+        {
             get { return BackingStore?.Get<List<string>>("defenderAttackSurfaceReductionExcludedPaths"); }
             set { BackingStore?.Set("defenderAttackSurfaceReductionExcludedPaths", value); }
         }
@@ -125,13 +146,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Xml content containing information regarding exploit protection details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? DefenderExploitProtectionXml {
+        public byte[]? DefenderExploitProtectionXml
+        {
             get { return BackingStore?.Get<byte[]?>("defenderExploitProtectionXml"); }
             set { BackingStore?.Set("defenderExploitProtectionXml", value); }
         }
 #nullable restore
 #else
-        public byte[] DefenderExploitProtectionXml {
+        public byte[] DefenderExploitProtectionXml
+        {
             get { return BackingStore?.Get<byte[]>("defenderExploitProtectionXml"); }
             set { BackingStore?.Set("defenderExploitProtectionXml", value); }
         }
@@ -139,13 +162,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the file from which DefenderExploitProtectionXml was obtained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenderExploitProtectionXmlFileName {
+        public string? DefenderExploitProtectionXmlFileName
+        {
             get { return BackingStore?.Get<string?>("defenderExploitProtectionXmlFileName"); }
             set { BackingStore?.Set("defenderExploitProtectionXmlFileName", value); }
         }
 #nullable restore
 #else
-        public string DefenderExploitProtectionXmlFileName {
+        public string DefenderExploitProtectionXmlFileName
+        {
             get { return BackingStore?.Get<string>("defenderExploitProtectionXmlFileName"); }
             set { BackingStore?.Set("defenderExploitProtectionXmlFileName", value); }
         }
@@ -153,82 +178,97 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of paths to exe that are allowed to access protected folders</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DefenderGuardedFoldersAllowedAppPaths {
+        public List<string>? DefenderGuardedFoldersAllowedAppPaths
+        {
             get { return BackingStore?.Get<List<string>?>("defenderGuardedFoldersAllowedAppPaths"); }
             set { BackingStore?.Set("defenderGuardedFoldersAllowedAppPaths", value); }
         }
 #nullable restore
 #else
-        public List<string> DefenderGuardedFoldersAllowedAppPaths {
+        public List<string> DefenderGuardedFoldersAllowedAppPaths
+        {
             get { return BackingStore?.Get<List<string>>("defenderGuardedFoldersAllowedAppPaths"); }
             set { BackingStore?.Set("defenderGuardedFoldersAllowedAppPaths", value); }
         }
 #endif
         /// <summary>Indicates whether or not to block user from overriding Exploit Protection settings.</summary>
-        public bool? DefenderSecurityCenterBlockExploitProtectionOverride {
+        public bool? DefenderSecurityCenterBlockExploitProtectionOverride
+        {
             get { return BackingStore?.Get<bool?>("defenderSecurityCenterBlockExploitProtectionOverride"); }
             set { BackingStore?.Set("defenderSecurityCenterBlockExploitProtectionOverride", value); }
         }
         /// <summary>Blocks stateful FTP connections to the device</summary>
-        public bool? FirewallBlockStatefulFTP {
+        public bool? FirewallBlockStatefulFTP
+        {
             get { return BackingStore?.Get<bool?>("firewallBlockStatefulFTP"); }
             set { BackingStore?.Set("firewallBlockStatefulFTP", value); }
         }
         /// <summary>Possible values for firewallCertificateRevocationListCheckMethod</summary>
-        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod {
+        public FirewallCertificateRevocationListCheckMethodType? FirewallCertificateRevocationListCheckMethod
+        {
             get { return BackingStore?.Get<FirewallCertificateRevocationListCheckMethodType?>("firewallCertificateRevocationListCheckMethod"); }
             set { BackingStore?.Set("firewallCertificateRevocationListCheckMethod", value); }
         }
         /// <summary>Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600</summary>
-        public int? FirewallIdleTimeoutForSecurityAssociationInSeconds {
+        public int? FirewallIdleTimeoutForSecurityAssociationInSeconds
+        {
             get { return BackingStore?.Get<int?>("firewallIdleTimeoutForSecurityAssociationInSeconds"); }
             set { BackingStore?.Set("firewallIdleTimeoutForSecurityAssociationInSeconds", value); }
         }
         /// <summary>Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic</summary>
-        public bool? FirewallIPSecExemptionsAllowDHCP {
+        public bool? FirewallIPSecExemptionsAllowDHCP
+        {
             get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowDHCP"); }
             set { BackingStore?.Set("firewallIPSecExemptionsAllowDHCP", value); }
         }
         /// <summary>Configures IPSec exemptions to allow ICMP</summary>
-        public bool? FirewallIPSecExemptionsAllowICMP {
+        public bool? FirewallIPSecExemptionsAllowICMP
+        {
             get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowICMP"); }
             set { BackingStore?.Set("firewallIPSecExemptionsAllowICMP", value); }
         }
         /// <summary>Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes</summary>
-        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery {
+        public bool? FirewallIPSecExemptionsAllowNeighborDiscovery
+        {
             get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowNeighborDiscovery"); }
             set { BackingStore?.Set("firewallIPSecExemptionsAllowNeighborDiscovery", value); }
         }
         /// <summary>Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes</summary>
-        public bool? FirewallIPSecExemptionsAllowRouterDiscovery {
+        public bool? FirewallIPSecExemptionsAllowRouterDiscovery
+        {
             get { return BackingStore?.Get<bool?>("firewallIPSecExemptionsAllowRouterDiscovery"); }
             set { BackingStore?.Set("firewallIPSecExemptionsAllowRouterDiscovery", value); }
         }
         /// <summary>If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set</summary>
-        public bool? FirewallMergeKeyingModuleSettings {
+        public bool? FirewallMergeKeyingModuleSettings
+        {
             get { return BackingStore?.Get<bool?>("firewallMergeKeyingModuleSettings"); }
             set { BackingStore?.Set("firewallMergeKeyingModuleSettings", value); }
         }
         /// <summary>Possible values for firewallPacketQueueingMethod</summary>
-        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod {
+        public FirewallPacketQueueingMethodType? FirewallPacketQueueingMethod
+        {
             get { return BackingStore?.Get<FirewallPacketQueueingMethodType?>("firewallPacketQueueingMethod"); }
             set { BackingStore?.Set("firewallPacketQueueingMethod", value); }
         }
         /// <summary>Possible values for firewallPreSharedKeyEncodingMethod</summary>
-        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod {
+        public FirewallPreSharedKeyEncodingMethodType? FirewallPreSharedKeyEncodingMethod
+        {
             get { return BackingStore?.Get<FirewallPreSharedKeyEncodingMethodType?>("firewallPreSharedKeyEncodingMethod"); }
             set { BackingStore?.Set("firewallPreSharedKeyEncodingMethod", value); }
         }
         /// <summary>Configures the firewall profile settings for domain networks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsFirewallNetworkProfile? FirewallProfileDomain {
+        public WindowsFirewallNetworkProfile? FirewallProfileDomain
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfileDomain"); }
             set { BackingStore?.Set("firewallProfileDomain", value); }
         }
 #nullable restore
 #else
-        public WindowsFirewallNetworkProfile FirewallProfileDomain {
+        public WindowsFirewallNetworkProfile FirewallProfileDomain
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfileDomain"); }
             set { BackingStore?.Set("firewallProfileDomain", value); }
         }
@@ -236,13 +276,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Configures the firewall profile settings for private networks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsFirewallNetworkProfile? FirewallProfilePrivate {
+        public WindowsFirewallNetworkProfile? FirewallProfilePrivate
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfilePrivate"); }
             set { BackingStore?.Set("firewallProfilePrivate", value); }
         }
 #nullable restore
 #else
-        public WindowsFirewallNetworkProfile FirewallProfilePrivate {
+        public WindowsFirewallNetworkProfile FirewallProfilePrivate
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePrivate"); }
             set { BackingStore?.Set("firewallProfilePrivate", value); }
         }
@@ -250,24 +292,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Configures the firewall profile settings for public networks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsFirewallNetworkProfile? FirewallProfilePublic {
+        public WindowsFirewallNetworkProfile? FirewallProfilePublic
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfilePublic"); }
             set { BackingStore?.Set("firewallProfilePublic", value); }
         }
 #nullable restore
 #else
-        public WindowsFirewallNetworkProfile FirewallProfilePublic {
+        public WindowsFirewallNetworkProfile FirewallProfilePublic
+        {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePublic"); }
             set { BackingStore?.Set("firewallProfilePublic", value); }
         }
 #endif
         /// <summary>Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.</summary>
-        public bool? SmartScreenBlockOverrideForFiles {
+        public bool? SmartScreenBlockOverrideForFiles
+        {
             get { return BackingStore?.Get<bool?>("smartScreenBlockOverrideForFiles"); }
             set { BackingStore?.Set("smartScreenBlockOverrideForFiles", value); }
         }
         /// <summary>Allows IT Admins to configure SmartScreen for Windows.</summary>
-        public bool? SmartScreenEnableInShell {
+        public bool? SmartScreenEnableInShell
+        {
             get { return BackingStore?.Get<bool?>("smartScreenEnableInShell"); }
             set { BackingStore?.Set("smartScreenEnableInShell", value); }
         }
@@ -296,42 +342,42 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appLockerApplicationControl", n => { AppLockerApplicationControl = n.GetEnumValue<AppLockerApplicationControlType>(); } },
-                {"applicationGuardAllowPersistence", n => { ApplicationGuardAllowPersistence = n.GetBoolValue(); } },
-                {"applicationGuardAllowPrintToLocalPrinters", n => { ApplicationGuardAllowPrintToLocalPrinters = n.GetBoolValue(); } },
-                {"applicationGuardAllowPrintToNetworkPrinters", n => { ApplicationGuardAllowPrintToNetworkPrinters = n.GetBoolValue(); } },
-                {"applicationGuardAllowPrintToPDF", n => { ApplicationGuardAllowPrintToPDF = n.GetBoolValue(); } },
-                {"applicationGuardAllowPrintToXPS", n => { ApplicationGuardAllowPrintToXPS = n.GetBoolValue(); } },
-                {"applicationGuardBlockClipboardSharing", n => { ApplicationGuardBlockClipboardSharing = n.GetEnumValue<ApplicationGuardBlockClipboardSharingType>(); } },
-                {"applicationGuardBlockFileTransfer", n => { ApplicationGuardBlockFileTransfer = n.GetEnumValue<ApplicationGuardBlockFileTransferType>(); } },
-                {"applicationGuardBlockNonEnterpriseContent", n => { ApplicationGuardBlockNonEnterpriseContent = n.GetBoolValue(); } },
-                {"applicationGuardEnabled", n => { ApplicationGuardEnabled = n.GetBoolValue(); } },
-                {"applicationGuardForceAuditing", n => { ApplicationGuardForceAuditing = n.GetBoolValue(); } },
-                {"bitLockerDisableWarningForOtherDiskEncryption", n => { BitLockerDisableWarningForOtherDiskEncryption = n.GetBoolValue(); } },
-                {"bitLockerEnableStorageCardEncryptionOnMobile", n => { BitLockerEnableStorageCardEncryptionOnMobile = n.GetBoolValue(); } },
-                {"bitLockerEncryptDevice", n => { BitLockerEncryptDevice = n.GetBoolValue(); } },
-                {"bitLockerRemovableDrivePolicy", n => { BitLockerRemovableDrivePolicy = n.GetObjectValue<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy>(Microsoft.Graph.Models.BitLockerRemovableDrivePolicy.CreateFromDiscriminatorValue); } },
-                {"defenderAdditionalGuardedFolders", n => { DefenderAdditionalGuardedFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defenderAttackSurfaceReductionExcludedPaths", n => { DefenderAttackSurfaceReductionExcludedPaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defenderExploitProtectionXml", n => { DefenderExploitProtectionXml = n.GetByteArrayValue(); } },
-                {"defenderExploitProtectionXmlFileName", n => { DefenderExploitProtectionXmlFileName = n.GetStringValue(); } },
-                {"defenderGuardedFoldersAllowedAppPaths", n => { DefenderGuardedFoldersAllowedAppPaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defenderSecurityCenterBlockExploitProtectionOverride", n => { DefenderSecurityCenterBlockExploitProtectionOverride = n.GetBoolValue(); } },
-                {"firewallBlockStatefulFTP", n => { FirewallBlockStatefulFTP = n.GetBoolValue(); } },
-                {"firewallCertificateRevocationListCheckMethod", n => { FirewallCertificateRevocationListCheckMethod = n.GetEnumValue<FirewallCertificateRevocationListCheckMethodType>(); } },
-                {"firewallIPSecExemptionsAllowDHCP", n => { FirewallIPSecExemptionsAllowDHCP = n.GetBoolValue(); } },
-                {"firewallIPSecExemptionsAllowICMP", n => { FirewallIPSecExemptionsAllowICMP = n.GetBoolValue(); } },
-                {"firewallIPSecExemptionsAllowNeighborDiscovery", n => { FirewallIPSecExemptionsAllowNeighborDiscovery = n.GetBoolValue(); } },
-                {"firewallIPSecExemptionsAllowRouterDiscovery", n => { FirewallIPSecExemptionsAllowRouterDiscovery = n.GetBoolValue(); } },
-                {"firewallIdleTimeoutForSecurityAssociationInSeconds", n => { FirewallIdleTimeoutForSecurityAssociationInSeconds = n.GetIntValue(); } },
-                {"firewallMergeKeyingModuleSettings", n => { FirewallMergeKeyingModuleSettings = n.GetBoolValue(); } },
-                {"firewallPacketQueueingMethod", n => { FirewallPacketQueueingMethod = n.GetEnumValue<FirewallPacketQueueingMethodType>(); } },
-                {"firewallPreSharedKeyEncodingMethod", n => { FirewallPreSharedKeyEncodingMethod = n.GetEnumValue<FirewallPreSharedKeyEncodingMethodType>(); } },
-                {"firewallProfileDomain", n => { FirewallProfileDomain = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
-                {"firewallProfilePrivate", n => { FirewallProfilePrivate = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
-                {"firewallProfilePublic", n => { FirewallProfilePublic = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
-                {"smartScreenBlockOverrideForFiles", n => { SmartScreenBlockOverrideForFiles = n.GetBoolValue(); } },
-                {"smartScreenEnableInShell", n => { SmartScreenEnableInShell = n.GetBoolValue(); } },
+                { "appLockerApplicationControl", n => { AppLockerApplicationControl = n.GetEnumValue<AppLockerApplicationControlType>(); } },
+                { "applicationGuardAllowPersistence", n => { ApplicationGuardAllowPersistence = n.GetBoolValue(); } },
+                { "applicationGuardAllowPrintToLocalPrinters", n => { ApplicationGuardAllowPrintToLocalPrinters = n.GetBoolValue(); } },
+                { "applicationGuardAllowPrintToNetworkPrinters", n => { ApplicationGuardAllowPrintToNetworkPrinters = n.GetBoolValue(); } },
+                { "applicationGuardAllowPrintToPDF", n => { ApplicationGuardAllowPrintToPDF = n.GetBoolValue(); } },
+                { "applicationGuardAllowPrintToXPS", n => { ApplicationGuardAllowPrintToXPS = n.GetBoolValue(); } },
+                { "applicationGuardBlockClipboardSharing", n => { ApplicationGuardBlockClipboardSharing = n.GetEnumValue<ApplicationGuardBlockClipboardSharingType>(); } },
+                { "applicationGuardBlockFileTransfer", n => { ApplicationGuardBlockFileTransfer = n.GetEnumValue<ApplicationGuardBlockFileTransferType>(); } },
+                { "applicationGuardBlockNonEnterpriseContent", n => { ApplicationGuardBlockNonEnterpriseContent = n.GetBoolValue(); } },
+                { "applicationGuardEnabled", n => { ApplicationGuardEnabled = n.GetBoolValue(); } },
+                { "applicationGuardForceAuditing", n => { ApplicationGuardForceAuditing = n.GetBoolValue(); } },
+                { "bitLockerDisableWarningForOtherDiskEncryption", n => { BitLockerDisableWarningForOtherDiskEncryption = n.GetBoolValue(); } },
+                { "bitLockerEnableStorageCardEncryptionOnMobile", n => { BitLockerEnableStorageCardEncryptionOnMobile = n.GetBoolValue(); } },
+                { "bitLockerEncryptDevice", n => { BitLockerEncryptDevice = n.GetBoolValue(); } },
+                { "bitLockerRemovableDrivePolicy", n => { BitLockerRemovableDrivePolicy = n.GetObjectValue<Microsoft.Graph.Models.BitLockerRemovableDrivePolicy>(Microsoft.Graph.Models.BitLockerRemovableDrivePolicy.CreateFromDiscriminatorValue); } },
+                { "defenderAdditionalGuardedFolders", n => { DefenderAdditionalGuardedFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defenderAttackSurfaceReductionExcludedPaths", n => { DefenderAttackSurfaceReductionExcludedPaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defenderExploitProtectionXml", n => { DefenderExploitProtectionXml = n.GetByteArrayValue(); } },
+                { "defenderExploitProtectionXmlFileName", n => { DefenderExploitProtectionXmlFileName = n.GetStringValue(); } },
+                { "defenderGuardedFoldersAllowedAppPaths", n => { DefenderGuardedFoldersAllowedAppPaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defenderSecurityCenterBlockExploitProtectionOverride", n => { DefenderSecurityCenterBlockExploitProtectionOverride = n.GetBoolValue(); } },
+                { "firewallBlockStatefulFTP", n => { FirewallBlockStatefulFTP = n.GetBoolValue(); } },
+                { "firewallCertificateRevocationListCheckMethod", n => { FirewallCertificateRevocationListCheckMethod = n.GetEnumValue<FirewallCertificateRevocationListCheckMethodType>(); } },
+                { "firewallIPSecExemptionsAllowDHCP", n => { FirewallIPSecExemptionsAllowDHCP = n.GetBoolValue(); } },
+                { "firewallIPSecExemptionsAllowICMP", n => { FirewallIPSecExemptionsAllowICMP = n.GetBoolValue(); } },
+                { "firewallIPSecExemptionsAllowNeighborDiscovery", n => { FirewallIPSecExemptionsAllowNeighborDiscovery = n.GetBoolValue(); } },
+                { "firewallIPSecExemptionsAllowRouterDiscovery", n => { FirewallIPSecExemptionsAllowRouterDiscovery = n.GetBoolValue(); } },
+                { "firewallIdleTimeoutForSecurityAssociationInSeconds", n => { FirewallIdleTimeoutForSecurityAssociationInSeconds = n.GetIntValue(); } },
+                { "firewallMergeKeyingModuleSettings", n => { FirewallMergeKeyingModuleSettings = n.GetBoolValue(); } },
+                { "firewallPacketQueueingMethod", n => { FirewallPacketQueueingMethod = n.GetEnumValue<FirewallPacketQueueingMethodType>(); } },
+                { "firewallPreSharedKeyEncodingMethod", n => { FirewallPreSharedKeyEncodingMethod = n.GetEnumValue<FirewallPreSharedKeyEncodingMethodType>(); } },
+                { "firewallProfileDomain", n => { FirewallProfileDomain = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
+                { "firewallProfilePrivate", n => { FirewallProfilePrivate = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
+                { "firewallProfilePublic", n => { FirewallProfilePublic = n.GetObjectValue<WindowsFirewallNetworkProfile>(WindowsFirewallNetworkProfile.CreateFromDiscriminatorValue); } },
+                { "smartScreenBlockOverrideForFiles", n => { SmartScreenBlockOverrideForFiles = n.GetBoolValue(); } },
+                { "smartScreenEnableInShell", n => { SmartScreenEnableInShell = n.GetBoolValue(); } },
             };
         }
         /// <summary>

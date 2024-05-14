@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppLogCollectionDownloadDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AppLogCollectionDownloadDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appLogDecryptionAlgorithm property</summary>
-        public Microsoft.Graph.Models.AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm {
+        public Microsoft.Graph.Models.AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AppLogDecryptionAlgorithm?>("appLogDecryptionAlgorithm"); }
             set { BackingStore?.Set("appLogDecryptionAlgorithm", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Decryption key that used to decrypt the log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DecryptionKey {
+        public string? DecryptionKey
+        {
             get { return BackingStore?.Get<string?>("decryptionKey"); }
             set { BackingStore?.Set("decryptionKey", value); }
         }
 #nullable restore
 #else
-        public string DecryptionKey {
+        public string DecryptionKey
+        {
             get { return BackingStore?.Get<string>("decryptionKey"); }
             set { BackingStore?.Set("decryptionKey", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Download SAS (Shared Access Signature) Url for completed app log request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DownloadUrl {
+        public string? DownloadUrl
+        {
             get { return BackingStore?.Get<string?>("downloadUrl"); }
             set { BackingStore?.Set("downloadUrl", value); }
         }
 #nullable restore
 #else
-        public string DownloadUrl {
+        public string DownloadUrl
+        {
             get { return BackingStore?.Get<string>("downloadUrl"); }
             set { BackingStore?.Set("downloadUrl", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appLogDecryptionAlgorithm", n => { AppLogDecryptionAlgorithm = n.GetEnumValue<AppLogDecryptionAlgorithm>(); } },
-                {"decryptionKey", n => { DecryptionKey = n.GetStringValue(); } },
-                {"downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "appLogDecryptionAlgorithm", n => { AppLogDecryptionAlgorithm = n.GetEnumValue<AppLogDecryptionAlgorithm>(); } },
+                { "decryptionKey", n => { DecryptionKey = n.GetStringValue(); } },
+                { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

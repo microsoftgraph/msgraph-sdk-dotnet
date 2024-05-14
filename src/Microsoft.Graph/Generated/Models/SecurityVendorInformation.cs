@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SecurityVendorInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SecurityVendorInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider {
+        public string? Provider
+        {
             get { return BackingStore?.Get<string?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
 #nullable restore
 #else
-        public string Provider {
+        public string Provider
+        {
             get { return BackingStore?.Get<string>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Version of the provider or subprovider, if it exists, that generated the alert. Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderVersion {
+        public string? ProviderVersion
+        {
             get { return BackingStore?.Get<string?>("providerVersion"); }
             set { BackingStore?.Set("providerVersion", value); }
         }
 #nullable restore
 #else
-        public string ProviderVersion {
+        public string ProviderVersion
+        {
             get { return BackingStore?.Get<string>("providerVersion"); }
             set { BackingStore?.Set("providerVersion", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubProvider {
+        public string? SubProvider
+        {
             get { return BackingStore?.Get<string?>("subProvider"); }
             set { BackingStore?.Set("subProvider", value); }
         }
 #nullable restore
 #else
-        public string SubProvider {
+        public string SubProvider
+        {
             get { return BackingStore?.Get<string>("subProvider"); }
             set { BackingStore?.Set("subProvider", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vendor {
+        public string? Vendor
+        {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #nullable restore
 #else
-        public string Vendor {
+        public string Vendor
+        {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"provider", n => { Provider = n.GetStringValue(); } },
-                {"providerVersion", n => { ProviderVersion = n.GetStringValue(); } },
-                {"subProvider", n => { SubProvider = n.GetStringValue(); } },
-                {"vendor", n => { Vendor = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "providerVersion", n => { ProviderVersion = n.GetStringValue(); } },
+                { "subProvider", n => { SubProvider = n.GetStringValue(); } },
+                { "vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

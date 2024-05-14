@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class CasesRoot : Microsoft.Graph.Models.Entity, IParsable 
+    public class CasesRoot : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ediscoveryCases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryCase>? EdiscoveryCases {
+        public List<EdiscoveryCase>? EdiscoveryCases
+        {
             get { return BackingStore?.Get<List<EdiscoveryCase>?>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryCase> EdiscoveryCases {
+        public List<EdiscoveryCase> EdiscoveryCases
+        {
             get { return BackingStore?.Get<List<EdiscoveryCase>>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ediscoveryCases", n => { EdiscoveryCases = n.GetCollectionOfObjectValues<EdiscoveryCase>(EdiscoveryCase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ediscoveryCases", n => { EdiscoveryCases = n.GetCollectionOfObjectValues<EdiscoveryCase>(EdiscoveryCase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

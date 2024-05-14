@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageAssignmentApprovalSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If false, then approval isn&apos;t required for new requests in this policy.</summary>
-        public bool? IsApprovalRequiredForAdd {
+        public bool? IsApprovalRequiredForAdd
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForAdd"); }
             set { BackingStore?.Set("isApprovalRequiredForAdd", value); }
         }
         /// <summary>If false, then approval isn&apos;t required for updates to requests in this policy.</summary>
-        public bool? IsApprovalRequiredForUpdate {
+        public bool? IsApprovalRequiredForUpdate
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
             set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageApprovalStage>? Stages {
+        public List<AccessPackageApprovalStage>? Stages
+        {
             get { return BackingStore?.Get<List<AccessPackageApprovalStage>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageApprovalStage> Stages {
+        public List<AccessPackageApprovalStage> Stages
+        {
             get { return BackingStore?.Get<List<AccessPackageApprovalStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isApprovalRequiredForAdd", n => { IsApprovalRequiredForAdd = n.GetBoolValue(); } },
-                {"isApprovalRequiredForUpdate", n => { IsApprovalRequiredForUpdate = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"stages", n => { Stages = n.GetCollectionOfObjectValues<AccessPackageApprovalStage>(AccessPackageApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isApprovalRequiredForAdd", n => { IsApprovalRequiredForAdd = n.GetBoolValue(); } },
+                { "isApprovalRequiredForUpdate", n => { IsApprovalRequiredForUpdate = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<AccessPackageApprovalStage>(AccessPackageApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharePointIdentitySet : IdentitySet, IParsable 
+    public class SharePointIdentitySet : IdentitySet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Group {
+        public Identity? Group
+        {
             get { return BackingStore?.Get<Identity?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public Identity Group {
+        public Identity Group
+        {
             get { return BackingStore?.Get<Identity>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharePointIdentity? SiteGroup {
+        public SharePointIdentity? SiteGroup
+        {
             get { return BackingStore?.Get<SharePointIdentity?>("siteGroup"); }
             set { BackingStore?.Set("siteGroup", value); }
         }
 #nullable restore
 #else
-        public SharePointIdentity SiteGroup {
+        public SharePointIdentity SiteGroup
+        {
             get { return BackingStore?.Get<SharePointIdentity>("siteGroup"); }
             set { BackingStore?.Set("siteGroup", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharePointIdentity? SiteUser {
+        public SharePointIdentity? SiteUser
+        {
             get { return BackingStore?.Get<SharePointIdentity?>("siteUser"); }
             set { BackingStore?.Set("siteUser", value); }
         }
 #nullable restore
 #else
-        public SharePointIdentity SiteUser {
+        public SharePointIdentity SiteUser
+        {
             get { return BackingStore?.Get<SharePointIdentity>("siteUser"); }
             set { BackingStore?.Set("siteUser", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"group", n => { Group = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"siteGroup", n => { SiteGroup = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
-                {"siteUser", n => { SiteUser = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "siteGroup", n => { SiteGroup = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
+                { "siteUser", n => { SiteUser = n.GetObjectValue<SharePointIdentity>(SharePointIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

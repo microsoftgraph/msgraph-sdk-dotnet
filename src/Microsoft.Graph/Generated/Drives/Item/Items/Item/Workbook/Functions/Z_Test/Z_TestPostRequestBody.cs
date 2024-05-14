@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test
+{
     #pragma warning disable CS1591
-    public class Z_TestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Z_TestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The array property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Array {
+        public Json? Array
+        {
             get { return BackingStore?.Get<Json?>("array"); }
             set { BackingStore?.Set("array", value); }
         }
 #nullable restore
 #else
-        public Json Array {
+        public Json Array
+        {
             get { return BackingStore?.Get<Json>("array"); }
             set { BackingStore?.Set("array", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// <summary>The sigma property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Sigma {
+        public Json? Sigma
+        {
             get { return BackingStore?.Get<Json?>("sigma"); }
             set { BackingStore?.Set("sigma", value); }
         }
 #nullable restore
 #else
-        public Json Sigma {
+        public Json Sigma
+        {
             get { return BackingStore?.Get<Json>("sigma"); }
             set { BackingStore?.Set("sigma", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         /// <summary>The x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? X {
+        public Json? X
+        {
             get { return BackingStore?.Get<Json?>("x"); }
             set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
-        public Json X {
+        public Json X
+        {
             get { return BackingStore?.Get<Json>("x"); }
             set { BackingStore?.Set("x", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Z_Test {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"sigma", n => { Sigma = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "array", n => { Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "sigma", n => { Sigma = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

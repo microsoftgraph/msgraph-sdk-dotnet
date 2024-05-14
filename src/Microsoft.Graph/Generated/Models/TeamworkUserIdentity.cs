@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkUserIdentity : Identity, IParsable 
+    public class TeamworkUserIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
-        public TeamworkUserIdentityType? UserIdentityType {
+        public TeamworkUserIdentityType? UserIdentityType
+        {
             get { return BackingStore?.Get<TeamworkUserIdentityType?>("userIdentityType"); }
             set { BackingStore?.Set("userIdentityType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userIdentityType", n => { UserIdentityType = n.GetEnumValue<TeamworkUserIdentityType>(); } },
+                { "userIdentityType", n => { UserIdentityType = n.GetEnumValue<TeamworkUserIdentityType>(); } },
             };
         }
         /// <summary>

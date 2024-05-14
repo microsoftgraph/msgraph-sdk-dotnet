@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class CategoryTemplate : FilePlanDescriptorTemplate, IParsable 
+    public class CategoryTemplate : FilePlanDescriptorTemplate, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents all subcategories under a particular category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubcategoryTemplate>? Subcategories {
+        public List<SubcategoryTemplate>? Subcategories
+        {
             get { return BackingStore?.Get<List<SubcategoryTemplate>?>("subcategories"); }
             set { BackingStore?.Set("subcategories", value); }
         }
 #nullable restore
 #else
-        public List<SubcategoryTemplate> Subcategories {
+        public List<SubcategoryTemplate> Subcategories
+        {
             get { return BackingStore?.Get<List<SubcategoryTemplate>>("subcategories"); }
             set { BackingStore?.Set("subcategories", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"subcategories", n => { Subcategories = n.GetCollectionOfObjectValues<SubcategoryTemplate>(SubcategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subcategories", n => { Subcategories = n.GetCollectionOfObjectValues<SubcategoryTemplate>(SubcategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

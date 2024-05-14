@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessToken {
+namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessToken
+{
     #pragma warning disable CS1591
-    public class AcquireAccessTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AcquireAccessTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessTo
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationSecretKeyStringValuePair>? Credentials {
+        public List<SynchronizationSecretKeyStringValuePair>? Credentials
+        {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationSecretKeyStringValuePair> Credentials {
+        public List<SynchronizationSecretKeyStringValuePair> Credentials
+        {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.AcquireAccessTo
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

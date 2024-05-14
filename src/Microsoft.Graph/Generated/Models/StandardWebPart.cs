@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class StandardWebPart : WebPart, IParsable 
+    public class StandardWebPart : WebPart, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerTextWebPartId {
+        public string? ContainerTextWebPartId
+        {
             get { return BackingStore?.Get<string?>("containerTextWebPartId"); }
             set { BackingStore?.Set("containerTextWebPartId", value); }
         }
 #nullable restore
 #else
-        public string ContainerTextWebPartId {
+        public string ContainerTextWebPartId
+        {
             get { return BackingStore?.Get<string>("containerTextWebPartId"); }
             set { BackingStore?.Set("containerTextWebPartId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data of the webPart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WebPartData? Data {
+        public WebPartData? Data
+        {
             get { return BackingStore?.Get<WebPartData?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #nullable restore
 #else
-        public WebPartData Data {
+        public WebPartData Data
+        {
             get { return BackingStore?.Get<WebPartData>("data"); }
             set { BackingStore?.Set("data", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A Guid that indicates the webPart type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebPartType {
+        public string? WebPartType
+        {
             get { return BackingStore?.Get<string?>("webPartType"); }
             set { BackingStore?.Set("webPartType", value); }
         }
 #nullable restore
 #else
-        public string WebPartType {
+        public string WebPartType
+        {
             get { return BackingStore?.Get<string>("webPartType"); }
             set { BackingStore?.Set("webPartType", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"containerTextWebPartId", n => { ContainerTextWebPartId = n.GetStringValue(); } },
-                {"data", n => { Data = n.GetObjectValue<WebPartData>(WebPartData.CreateFromDiscriminatorValue); } },
-                {"webPartType", n => { WebPartType = n.GetStringValue(); } },
+                { "containerTextWebPartId", n => { ContainerTextWebPartId = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetObjectValue<WebPartData>(WebPartData.CreateFromDiscriminatorValue); } },
+                { "webPartType", n => { WebPartType = n.GetStringValue(); } },
             };
         }
         /// <summary>

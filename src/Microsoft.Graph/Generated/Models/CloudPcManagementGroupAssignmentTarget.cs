@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget, IParsable 
+    public class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the target group for the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the service plan that indicates which size of the Cloud PC to provision for the user. Use a null value, when the provisioningType is dedicated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanId {
+        public string? ServicePlanId
+        {
             get { return BackingStore?.Get<string?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanId {
+        public string ServicePlanId
+        {
             get { return BackingStore?.Get<string>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

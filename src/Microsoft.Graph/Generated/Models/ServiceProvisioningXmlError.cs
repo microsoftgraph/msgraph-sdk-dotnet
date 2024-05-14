@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ServiceProvisioningXmlError : ServiceProvisioningError, IParsable 
+    public class ServiceProvisioningXmlError : ServiceProvisioningError, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Error Information published by the Federated Service as an xml string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDetail {
+        public string? ErrorDetail
+        {
             get { return BackingStore?.Get<string?>("errorDetail"); }
             set { BackingStore?.Set("errorDetail", value); }
         }
 #nullable restore
 #else
-        public string ErrorDetail {
+        public string ErrorDetail
+        {
             get { return BackingStore?.Get<string>("errorDetail"); }
             set { BackingStore?.Set("errorDetail", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorDetail", n => { ErrorDetail = n.GetStringValue(); } },
+                { "errorDetail", n => { ErrorDetail = n.GetStringValue(); } },
             };
         }
         /// <summary>

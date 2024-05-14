@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OpenShift : ChangeTrackedEntity, IParsable 
+    public class OpenShift : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An unpublished open shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? DraftOpenShift {
+        public OpenShiftItem? DraftOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem?>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem DraftOpenShift {
+        public OpenShiftItem DraftOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulingGroupId {
+        public string? SchedulingGroupId
+        {
             get { return BackingStore?.Get<string?>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #nullable restore
 #else
-        public string SchedulingGroupId {
+        public string SchedulingGroupId
+        {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A published open shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? SharedOpenShift {
+        public OpenShiftItem? SharedOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem?>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem SharedOpenShift {
+        public OpenShiftItem SharedOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
-                {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
-                {"sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                { "sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

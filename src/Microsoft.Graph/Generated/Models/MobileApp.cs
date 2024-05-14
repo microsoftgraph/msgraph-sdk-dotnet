@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     /// </summary>
-    public class MobileApp : Entity, IParsable 
+    public class MobileApp : Entity, IParsable
     {
         /// <summary>The list of group assignments for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppAssignment>? Assignments {
+        public List<MobileAppAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<MobileAppAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppAssignment> Assignments {
+        public List<MobileAppAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of categories for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppCategory>? Categories {
+        public List<MobileAppCategory>? Categories
+        {
             get { return BackingStore?.Get<List<MobileAppCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppCategory> Categories {
+        public List<MobileAppCategory> Categories
+        {
             get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #endif
         /// <summary>The date and time the app was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The developer of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Developer {
+        public string? Developer
+        {
             get { return BackingStore?.Get<string?>("developer"); }
             set { BackingStore?.Set("developer", value); }
         }
 #nullable restore
 #else
-        public string Developer {
+        public string Developer
+        {
             get { return BackingStore?.Get<string>("developer"); }
             set { BackingStore?.Set("developer", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The admin provided or imported title of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -88,51 +100,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>The more information Url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InformationUrl {
+        public string? InformationUrl
+        {
             get { return BackingStore?.Get<string?>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
         }
 #nullable restore
 #else
-        public string InformationUrl {
+        public string InformationUrl
+        {
             get { return BackingStore?.Get<string>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
         }
 #endif
         /// <summary>The value indicating whether the app is marked as featured by the admin.</summary>
-        public bool? IsFeatured {
+        public bool? IsFeatured
+        {
             get { return BackingStore?.Get<bool?>("isFeatured"); }
             set { BackingStore?.Set("isFeatured", value); }
         }
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? LargeIcon {
+        public MimeContent? LargeIcon
+        {
             get { return BackingStore?.Get<MimeContent?>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
 #nullable restore
 #else
-        public MimeContent LargeIcon {
+        public MimeContent LargeIcon
+        {
             get { return BackingStore?.Get<MimeContent>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
 #endif
         /// <summary>The date and time the app was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Notes for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes {
+        public string? Notes
+        {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public string Notes {
+        public string Notes
+        {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -140,13 +160,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The owner of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner {
+        public string? Owner
+        {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public string Owner {
+        public string Owner
+        {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -154,13 +176,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The privacy statement Url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyInformationUrl {
+        public string? PrivacyInformationUrl
+        {
             get { return BackingStore?.Get<string?>("privacyInformationUrl"); }
             set { BackingStore?.Set("privacyInformationUrl", value); }
         }
 #nullable restore
 #else
-        public string PrivacyInformationUrl {
+        public string PrivacyInformationUrl
+        {
             get { return BackingStore?.Get<string>("privacyInformationUrl"); }
             set { BackingStore?.Set("privacyInformationUrl", value); }
         }
@@ -168,19 +192,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The publisher of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
         /// <summary>Indicates the publishing state of an app.</summary>
-        public MobileAppPublishingState? PublishingState {
+        public MobileAppPublishingState? PublishingState
+        {
             get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
@@ -232,21 +259,21 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"developer", n => { Developer = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"informationUrl", n => { InformationUrl = n.GetStringValue(); } },
-                {"isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
-                {"largeIcon", n => { LargeIcon = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notes", n => { Notes = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"publishingState", n => { PublishingState = n.GetEnumValue<MobileAppPublishingState>(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "developer", n => { Developer = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "informationUrl", n => { InformationUrl = n.GetStringValue(); } },
+                { "isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
+                { "largeIcon", n => { LargeIcon = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "publishingState", n => { PublishingState = n.GetEnumValue<MobileAppPublishingState>(); } },
             };
         }
         /// <summary>

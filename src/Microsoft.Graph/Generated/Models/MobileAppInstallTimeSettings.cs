@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties used to determine when to offer an app to devices and when to install the app on devices.
     /// </summary>
-    public class MobileAppInstallTimeSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MobileAppInstallTimeSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time at which the app should be installed.</summary>
-        public DateTimeOffset? DeadlineDateTime {
+        public DateTimeOffset? DeadlineDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deadlineDateTime"); }
             set { BackingStore?.Set("deadlineDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The time at which the app should be available for installation.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Whether the local device time or UTC time should be used when determining the available and deadline times.</summary>
-        public bool? UseLocalTime {
+        public bool? UseLocalTime
+        {
             get { return BackingStore?.Get<bool?>("useLocalTime"); }
             set { BackingStore?.Set("useLocalTime", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deadlineDateTime", n => { DeadlineDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"useLocalTime", n => { UseLocalTime = n.GetBoolValue(); } },
+                { "deadlineDateTime", n => { DeadlineDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "useLocalTime", n => { UseLocalTime = n.GetBoolValue(); } },
             };
         }
         /// <summary>

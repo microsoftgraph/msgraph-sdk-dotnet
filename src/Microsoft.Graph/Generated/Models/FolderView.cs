@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FolderView : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FolderView : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The method by which the folder should be sorted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SortBy {
+        public string? SortBy
+        {
             get { return BackingStore?.Get<string?>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
 #nullable restore
 #else
-        public string SortBy {
+        public string SortBy
+        {
             get { return BackingStore?.Get<string>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SortOrder {
+        public string? SortOrder
+        {
             get { return BackingStore?.Get<string?>("sortOrder"); }
             set { BackingStore?.Set("sortOrder", value); }
         }
 #nullable restore
 #else
-        public string SortOrder {
+        public string SortOrder
+        {
             get { return BackingStore?.Get<string>("sortOrder"); }
             set { BackingStore?.Set("sortOrder", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The type of view that should be used to represent the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ViewType {
+        public string? ViewType
+        {
             get { return BackingStore?.Get<string?>("viewType"); }
             set { BackingStore?.Set("viewType", value); }
         }
 #nullable restore
 #else
-        public string ViewType {
+        public string ViewType
+        {
             get { return BackingStore?.Get<string>("viewType"); }
             set { BackingStore?.Set("viewType", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sortBy", n => { SortBy = n.GetStringValue(); } },
-                {"sortOrder", n => { SortOrder = n.GetStringValue(); } },
-                {"viewType", n => { ViewType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sortBy", n => { SortBy = n.GetStringValue(); } },
+                { "sortOrder", n => { SortOrder = n.GetStringValue(); } },
+                { "viewType", n => { ViewType = n.GetStringValue(); } },
             };
         }
         /// <summary>

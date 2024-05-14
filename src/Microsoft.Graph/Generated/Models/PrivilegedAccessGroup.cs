@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedAccessGroup : Entity, IParsable 
+    public class PrivilegedAccessGroup : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignmentApprovals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Approval>? AssignmentApprovals {
+        public List<Approval>? AssignmentApprovals
+        {
             get { return BackingStore?.Get<List<Approval>?>("assignmentApprovals"); }
             set { BackingStore?.Set("assignmentApprovals", value); }
         }
 #nullable restore
 #else
-        public List<Approval> AssignmentApprovals {
+        public List<Approval> AssignmentApprovals
+        {
             get { return BackingStore?.Get<List<Approval>>("assignmentApprovals"); }
             set { BackingStore?.Set("assignmentApprovals", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The instances of assignment schedules to activate a just-in-time access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupAssignmentScheduleInstance>? AssignmentScheduleInstances {
+        public List<PrivilegedAccessGroupAssignmentScheduleInstance>? AssignmentScheduleInstances
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>?>("assignmentScheduleInstances"); }
             set { BackingStore?.Set("assignmentScheduleInstances", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupAssignmentScheduleInstance> AssignmentScheduleInstances {
+        public List<PrivilegedAccessGroupAssignmentScheduleInstance> AssignmentScheduleInstances
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>>("assignmentScheduleInstances"); }
             set { BackingStore?.Set("assignmentScheduleInstances", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The schedule requests for operations to create, update, delete, extend, and renew an assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupAssignmentScheduleRequest>? AssignmentScheduleRequests {
+        public List<PrivilegedAccessGroupAssignmentScheduleRequest>? AssignmentScheduleRequests
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleRequest>?>("assignmentScheduleRequests"); }
             set { BackingStore?.Set("assignmentScheduleRequests", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupAssignmentScheduleRequest> AssignmentScheduleRequests {
+        public List<PrivilegedAccessGroupAssignmentScheduleRequest> AssignmentScheduleRequests
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleRequest>>("assignmentScheduleRequests"); }
             set { BackingStore?.Set("assignmentScheduleRequests", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The assignment schedules to activate a just-in-time access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupAssignmentSchedule>? AssignmentSchedules {
+        public List<PrivilegedAccessGroupAssignmentSchedule>? AssignmentSchedules
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentSchedule>?>("assignmentSchedules"); }
             set { BackingStore?.Set("assignmentSchedules", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupAssignmentSchedule> AssignmentSchedules {
+        public List<PrivilegedAccessGroupAssignmentSchedule> AssignmentSchedules
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentSchedule>>("assignmentSchedules"); }
             set { BackingStore?.Set("assignmentSchedules", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The instances of eligibility schedules to activate a just-in-time access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupEligibilityScheduleInstance>? EligibilityScheduleInstances {
+        public List<PrivilegedAccessGroupEligibilityScheduleInstance>? EligibilityScheduleInstances
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleInstance>?>("eligibilityScheduleInstances"); }
             set { BackingStore?.Set("eligibilityScheduleInstances", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupEligibilityScheduleInstance> EligibilityScheduleInstances {
+        public List<PrivilegedAccessGroupEligibilityScheduleInstance> EligibilityScheduleInstances
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleInstance>>("eligibilityScheduleInstances"); }
             set { BackingStore?.Set("eligibilityScheduleInstances", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The schedule requests for operations to create, update, delete, extend, and renew an eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupEligibilityScheduleRequest>? EligibilityScheduleRequests {
+        public List<PrivilegedAccessGroupEligibilityScheduleRequest>? EligibilityScheduleRequests
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>?>("eligibilityScheduleRequests"); }
             set { BackingStore?.Set("eligibilityScheduleRequests", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupEligibilityScheduleRequest> EligibilityScheduleRequests {
+        public List<PrivilegedAccessGroupEligibilityScheduleRequest> EligibilityScheduleRequests
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>>("eligibilityScheduleRequests"); }
             set { BackingStore?.Set("eligibilityScheduleRequests", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The eligibility schedules to activate a just-in-time access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupEligibilitySchedule>? EligibilitySchedules {
+        public List<PrivilegedAccessGroupEligibilitySchedule>? EligibilitySchedules
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilitySchedule>?>("eligibilitySchedules"); }
             set { BackingStore?.Set("eligibilitySchedules", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupEligibilitySchedule> EligibilitySchedules {
+        public List<PrivilegedAccessGroupEligibilitySchedule> EligibilitySchedules
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilitySchedule>>("eligibilitySchedules"); }
             set { BackingStore?.Set("eligibilitySchedules", value); }
         }
@@ -125,13 +140,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentApprovals", n => { AssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignmentScheduleInstances", n => { AssignmentScheduleInstances = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleInstance>(PrivilegedAccessGroupAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignmentScheduleRequests", n => { AssignmentScheduleRequests = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleRequest>(PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignmentSchedules", n => { AssignmentSchedules = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentSchedule>(PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"eligibilityScheduleInstances", n => { EligibilityScheduleInstances = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleInstance>(PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"eligibilityScheduleRequests", n => { EligibilityScheduleRequests = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleRequest>(PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"eligibilitySchedules", n => { EligibilitySchedules = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilitySchedule>(PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentApprovals", n => { AssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentScheduleInstances", n => { AssignmentScheduleInstances = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleInstance>(PrivilegedAccessGroupAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentScheduleRequests", n => { AssignmentScheduleRequests = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleRequest>(PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentSchedules", n => { AssignmentSchedules = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentSchedule>(PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "eligibilityScheduleInstances", n => { EligibilityScheduleInstances = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleInstance>(PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "eligibilityScheduleRequests", n => { EligibilityScheduleRequests = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleRequest>(PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "eligibilitySchedules", n => { EligibilitySchedules = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilitySchedule>(PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

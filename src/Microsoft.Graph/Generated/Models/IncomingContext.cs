@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class IncomingContext : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IncomingContext : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the participant that is under observation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObservedParticipantId {
+        public string? ObservedParticipantId
+        {
             get { return BackingStore?.Get<string?>("observedParticipantId"); }
             set { BackingStore?.Set("observedParticipantId", value); }
         }
 #nullable restore
 #else
-        public string ObservedParticipantId {
+        public string ObservedParticipantId
+        {
             get { return BackingStore?.Get<string>("observedParticipantId"); }
             set { BackingStore?.Set("observedParticipantId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity that the call is happening on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? OnBehalfOf {
+        public IdentitySet? OnBehalfOf
+        {
             get { return BackingStore?.Get<IdentitySet?>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
 #nullable restore
 #else
-        public IdentitySet OnBehalfOf {
+        public IdentitySet OnBehalfOf
+        {
             get { return BackingStore?.Get<IdentitySet>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the participant that triggered the incoming call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceParticipantId {
+        public string? SourceParticipantId
+        {
             get { return BackingStore?.Get<string?>("sourceParticipantId"); }
             set { BackingStore?.Set("sourceParticipantId", value); }
         }
 #nullable restore
 #else
-        public string SourceParticipantId {
+        public string SourceParticipantId
+        {
             get { return BackingStore?.Get<string>("sourceParticipantId"); }
             set { BackingStore?.Set("sourceParticipantId", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity that transferred the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Transferor {
+        public IdentitySet? Transferor
+        {
             get { return BackingStore?.Get<IdentitySet?>("transferor"); }
             set { BackingStore?.Set("transferor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Transferor {
+        public IdentitySet Transferor
+        {
             get { return BackingStore?.Get<IdentitySet>("transferor"); }
             set { BackingStore?.Set("transferor", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"observedParticipantId", n => { ObservedParticipantId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"sourceParticipantId", n => { SourceParticipantId = n.GetStringValue(); } },
-                {"transferor", n => { Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "observedParticipantId", n => { ObservedParticipantId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "sourceParticipantId", n => { SourceParticipantId = n.GetStringValue(); } },
+                { "transferor", n => { Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

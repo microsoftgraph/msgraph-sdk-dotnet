@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChannelSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChannelSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of guests in a channel.</summary>
-        public int? GuestsCount {
+        public int? GuestsCount
+        {
             get { return BackingStore?.Get<int?>("guestsCount"); }
             set { BackingStore?.Set("guestsCount", value); }
         }
         /// <summary>Indicates whether external members are included on the channel.</summary>
-        public bool? HasMembersFromOtherTenants {
+        public bool? HasMembersFromOtherTenants
+        {
             get { return BackingStore?.Get<bool?>("hasMembersFromOtherTenants"); }
             set { BackingStore?.Set("hasMembersFromOtherTenants", value); }
         }
         /// <summary>Count of members in a channel.</summary>
-        public int? MembersCount {
+        public int? MembersCount
+        {
             get { return BackingStore?.Get<int?>("membersCount"); }
             set { BackingStore?.Set("membersCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Count of owners in a channel.</summary>
-        public int? OwnersCount {
+        public int? OwnersCount
+        {
             get { return BackingStore?.Get<int?>("ownersCount"); }
             set { BackingStore?.Set("ownersCount", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"guestsCount", n => { GuestsCount = n.GetIntValue(); } },
-                {"hasMembersFromOtherTenants", n => { HasMembersFromOtherTenants = n.GetBoolValue(); } },
-                {"membersCount", n => { MembersCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ownersCount", n => { OwnersCount = n.GetIntValue(); } },
+                { "guestsCount", n => { GuestsCount = n.GetIntValue(); } },
+                { "hasMembersFromOtherTenants", n => { HasMembersFromOtherTenants = n.GetBoolValue(); } },
+                { "membersCount", n => { MembersCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ownersCount", n => { OwnersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

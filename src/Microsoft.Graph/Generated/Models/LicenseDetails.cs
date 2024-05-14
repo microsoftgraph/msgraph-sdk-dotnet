@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class LicenseDetails : Entity, IParsable 
+    public class LicenseDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about the service plans assigned with the license. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePlanInfo>? ServicePlans {
+        public List<ServicePlanInfo>? ServicePlans
+        {
             get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #nullable restore
 #else
-        public List<ServicePlanInfo> ServicePlans {
+        public List<ServicePlanInfo> ServicePlans
+        {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
         /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.</summary>
-        public Guid? SkuId {
+        public Guid? SkuId
+        {
             get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkuPartNumber {
+        public string? SkuPartNumber
+        {
             get { return BackingStore?.Get<string?>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #nullable restore
 #else
-        public string SkuPartNumber {
+        public string SkuPartNumber
+        {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"skuId", n => { SkuId = n.GetGuidValue(); } },
-                {"skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
+                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "skuId", n => { SkuId = n.GetGuidValue(); } },
+                { "skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

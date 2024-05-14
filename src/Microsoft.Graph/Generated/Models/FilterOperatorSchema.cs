@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class FilterOperatorSchema : Entity, IParsable 
+    public class FilterOperatorSchema : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The arity property</summary>
-        public ScopeOperatorType? Arity {
+        public ScopeOperatorType? Arity
+        {
             get { return BackingStore?.Get<ScopeOperatorType?>("arity"); }
             set { BackingStore?.Set("arity", value); }
         }
         /// <summary>The multivaluedComparisonType property</summary>
-        public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType {
+        public ScopeOperatorMultiValuedComparisonType? MultivaluedComparisonType
+        {
             get { return BackingStore?.Get<ScopeOperatorMultiValuedComparisonType?>("multivaluedComparisonType"); }
             set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeType?>? SupportedAttributeTypes {
+        public List<AttributeType?>? SupportedAttributeTypes
+        {
             get { return BackingStore?.Get<List<AttributeType?>?>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
 #nullable restore
 #else
-        public List<AttributeType?> SupportedAttributeTypes {
+        public List<AttributeType?> SupportedAttributeTypes
+        {
             get { return BackingStore?.Get<List<AttributeType?>>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
-                {"multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>()?.ToList(); } },
+                { "arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
+                { "multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
+                { "supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>()?.ToList(); } },
             };
         }
         /// <summary>

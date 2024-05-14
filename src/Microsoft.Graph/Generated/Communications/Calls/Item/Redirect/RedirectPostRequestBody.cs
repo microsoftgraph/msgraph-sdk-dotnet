@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.Redirect {
+namespace Microsoft.Graph.Communications.Calls.Item.Redirect
+{
     #pragma warning disable CS1591
-    public class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Redirect {
         /// <summary>The callbackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallbackUri {
+        public string? CallbackUri
+        {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
 #nullable restore
 #else
-        public string CallbackUri {
+        public string CallbackUri
+        {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Communications.Calls.Item.Redirect {
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Targets {
+        public List<InvitationParticipantInfo>? Targets
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Targets {
+        public List<InvitationParticipantInfo> Targets
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #endif
         /// <summary>The timeout property</summary>
-        public int? Timeout {
+        public int? Timeout
+        {
             get { return BackingStore?.Get<int?>("timeout"); }
             set { BackingStore?.Set("timeout", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Communications.Calls.Item.Redirect {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
-                {"targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"timeout", n => { Timeout = n.GetIntValue(); } },
+                { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
         }
         /// <summary>

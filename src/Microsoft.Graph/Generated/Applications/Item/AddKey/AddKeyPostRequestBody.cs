@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Applications.Item.AddKey {
+namespace Microsoft.Graph.Applications.Item.AddKey
+{
     #pragma warning disable CS1591
-    public class AddKeyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddKeyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Applications.Item.AddKey {
         /// <summary>The keyCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.KeyCredential? KeyCredential {
+        public Microsoft.Graph.Models.KeyCredential? KeyCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.KeyCredential?>("keyCredential"); }
             set { BackingStore?.Set("keyCredential", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.KeyCredential KeyCredential {
+        public Microsoft.Graph.Models.KeyCredential KeyCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.KeyCredential>("keyCredential"); }
             set { BackingStore?.Set("keyCredential", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Applications.Item.AddKey {
         /// <summary>The passwordCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.PasswordCredential? PasswordCredential {
+        public Microsoft.Graph.Models.PasswordCredential? PasswordCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential?>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.PasswordCredential PasswordCredential {
+        public Microsoft.Graph.Models.PasswordCredential PasswordCredential
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.PasswordCredential>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Applications.Item.AddKey {
         /// <summary>The proof property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Proof {
+        public string? Proof
+        {
             get { return BackingStore?.Get<string?>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
 #nullable restore
 #else
-        public string Proof {
+        public string Proof
+        {
             get { return BackingStore?.Get<string>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Applications.Item.AddKey {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keyCredential", n => { KeyCredential = n.GetObjectValue<Microsoft.Graph.Models.KeyCredential>(Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue); } },
-                {"passwordCredential", n => { PasswordCredential = n.GetObjectValue<Microsoft.Graph.Models.PasswordCredential>(Microsoft.Graph.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
-                {"proof", n => { Proof = n.GetStringValue(); } },
+                { "keyCredential", n => { KeyCredential = n.GetObjectValue<Microsoft.Graph.Models.KeyCredential>(Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue); } },
+                { "passwordCredential", n => { PasswordCredential = n.GetObjectValue<Microsoft.Graph.Models.PasswordCredential>(Microsoft.Graph.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
+                { "proof", n => { Proof = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProvisionedIdentity : Identity, IParsable 
+    public class ProvisionedIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details of the identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DetailsInfo? Details {
+        public DetailsInfo? Details
+        {
             get { return BackingStore?.Get<DetailsInfo?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public DetailsInfo Details {
+        public DetailsInfo Details
+        {
             get { return BackingStore?.Get<DetailsInfo>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group&apos;. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityType {
+        public string? IdentityType
+        {
             get { return BackingStore?.Get<string?>("identityType"); }
             set { BackingStore?.Set("identityType", value); }
         }
 #nullable restore
 #else
-        public string IdentityType {
+        public string IdentityType
+        {
             get { return BackingStore?.Get<string>("identityType"); }
             set { BackingStore?.Set("identityType", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"details", n => { Details = n.GetObjectValue<DetailsInfo>(DetailsInfo.CreateFromDiscriminatorValue); } },
-                {"identityType", n => { IdentityType = n.GetStringValue(); } },
+                { "details", n => { Details = n.GetObjectValue<DetailsInfo>(DetailsInfo.CreateFromDiscriminatorValue); } },
+                { "identityType", n => { IdentityType = n.GetStringValue(); } },
             };
         }
         /// <summary>

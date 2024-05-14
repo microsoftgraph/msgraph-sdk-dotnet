@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class WhoisBaseRecord : Microsoft.Graph.Models.Entity, IParsable 
+    public class WhoisBaseRecord : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contact information for the abuse contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Abuse {
+        public WhoisContact? Abuse
+        {
             get { return BackingStore?.Get<WhoisContact?>("abuse"); }
             set { BackingStore?.Set("abuse", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Abuse {
+        public WhoisContact Abuse
+        {
             get { return BackingStore?.Get<WhoisContact>("abuse"); }
             set { BackingStore?.Set("abuse", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the admin contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Admin {
+        public WhoisContact? Admin
+        {
             get { return BackingStore?.Get<WhoisContact?>("admin"); }
             set { BackingStore?.Set("admin", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Admin {
+        public WhoisContact Admin
+        {
             get { return BackingStore?.Get<WhoisContact>("admin"); }
             set { BackingStore?.Set("admin", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the billing contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Billing {
+        public WhoisContact? Billing
+        {
             get { return BackingStore?.Get<WhoisContact?>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Billing {
+        public WhoisContact Billing
+        {
             get { return BackingStore?.Get<WhoisContact>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
@@ -54,61 +61,71 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The domain status for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainStatus {
+        public string? DomainStatus
+        {
             get { return BackingStore?.Get<string?>("domainStatus"); }
             set { BackingStore?.Set("domainStatus", value); }
         }
 #nullable restore
 #else
-        public string DomainStatus {
+        public string DomainStatus
+        {
             get { return BackingStore?.Get<string>("domainStatus"); }
             set { BackingStore?.Set("domainStatus", value); }
         }
 #endif
         /// <summary>The date and time when this WHOIS record expires with the registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The first seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Security.Host? Host {
+        public Microsoft.Graph.Models.Security.Host? Host
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Security.Host Host {
+        public Microsoft.Graph.Models.Security.Host Host
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.Host>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #endif
         /// <summary>The last seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The date and time when this WHOIS record was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastUpdateDateTime {
+        public DateTimeOffset? LastUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>The nameservers for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WhoisNameserver>? Nameservers {
+        public List<WhoisNameserver>? Nameservers
+        {
             get { return BackingStore?.Get<List<WhoisNameserver>?>("nameservers"); }
             set { BackingStore?.Set("nameservers", value); }
         }
 #nullable restore
 #else
-        public List<WhoisNameserver> Nameservers {
+        public List<WhoisNameserver> Nameservers
+        {
             get { return BackingStore?.Get<List<WhoisNameserver>>("nameservers"); }
             set { BackingStore?.Set("nameservers", value); }
         }
@@ -116,13 +133,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the noc contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Noc {
+        public WhoisContact? Noc
+        {
             get { return BackingStore?.Get<WhoisContact?>("noc"); }
             set { BackingStore?.Set("noc", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Noc {
+        public WhoisContact Noc
+        {
             get { return BackingStore?.Get<WhoisContact>("noc"); }
             set { BackingStore?.Set("noc", value); }
         }
@@ -130,13 +149,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The raw WHOIS details for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawWhoisText {
+        public string? RawWhoisText
+        {
             get { return BackingStore?.Get<string?>("rawWhoisText"); }
             set { BackingStore?.Set("rawWhoisText", value); }
         }
 #nullable restore
 #else
-        public string RawWhoisText {
+        public string RawWhoisText
+        {
             get { return BackingStore?.Get<string>("rawWhoisText"); }
             set { BackingStore?.Set("rawWhoisText", value); }
         }
@@ -144,13 +165,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the registrant contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Registrant {
+        public WhoisContact? Registrant
+        {
             get { return BackingStore?.Get<WhoisContact?>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Registrant {
+        public WhoisContact Registrant
+        {
             get { return BackingStore?.Get<WhoisContact>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
@@ -158,32 +181,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the registrar contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Registrar {
+        public WhoisContact? Registrar
+        {
             get { return BackingStore?.Get<WhoisContact?>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Registrar {
+        public WhoisContact Registrar
+        {
             get { return BackingStore?.Get<WhoisContact>("registrar"); }
             set { BackingStore?.Set("registrar", value); }
         }
 #endif
         /// <summary>The date and time when this WHOIS record was registered with a registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? RegistrationDateTime {
+        public DateTimeOffset? RegistrationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
         /// <summary>The contact information for the technical contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Technical {
+        public WhoisContact? Technical
+        {
             get { return BackingStore?.Get<WhoisContact?>("technical"); }
             set { BackingStore?.Set("technical", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Technical {
+        public WhoisContact Technical
+        {
             get { return BackingStore?.Get<WhoisContact>("technical"); }
             set { BackingStore?.Set("technical", value); }
         }
@@ -191,13 +219,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The WHOIS server that provides the details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhoisServer {
+        public string? WhoisServer
+        {
             get { return BackingStore?.Get<string?>("whoisServer"); }
             set { BackingStore?.Set("whoisServer", value); }
         }
 #nullable restore
 #else
-        public string WhoisServer {
+        public string WhoisServer
+        {
             get { return BackingStore?.Get<string>("whoisServer"); }
             set { BackingStore?.Set("whoisServer", value); }
         }
@@ -205,13 +235,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The contact information for the zone contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WhoisContact? Zone {
+        public WhoisContact? Zone
+        {
             get { return BackingStore?.Get<WhoisContact?>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
 #nullable restore
 #else
-        public WhoisContact Zone {
+        public WhoisContact Zone
+        {
             get { return BackingStore?.Get<WhoisContact>("zone"); }
             set { BackingStore?.Set("zone", value); }
         }
@@ -240,24 +272,24 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"abuse", n => { Abuse = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"admin", n => { Admin = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"billing", n => { Billing = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"domainStatus", n => { DomainStatus = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"nameservers", n => { Nameservers = n.GetCollectionOfObjectValues<WhoisNameserver>(WhoisNameserver.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"noc", n => { Noc = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"rawWhoisText", n => { RawWhoisText = n.GetStringValue(); } },
-                {"registrant", n => { Registrant = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"registrar", n => { Registrar = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"technical", n => { Technical = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
-                {"whoisServer", n => { WhoisServer = n.GetStringValue(); } },
-                {"zone", n => { Zone = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "abuse", n => { Abuse = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "admin", n => { Admin = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "billing", n => { Billing = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "domainStatus", n => { DomainStatus = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "host", n => { Host = n.GetObjectValue<Microsoft.Graph.Models.Security.Host>(Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "nameservers", n => { Nameservers = n.GetCollectionOfObjectValues<WhoisNameserver>(WhoisNameserver.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noc", n => { Noc = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "rawWhoisText", n => { RawWhoisText = n.GetStringValue(); } },
+                { "registrant", n => { Registrant = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "registrar", n => { Registrar = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "technical", n => { Technical = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
+                { "whoisServer", n => { WhoisServer = n.GetStringValue(); } },
+                { "zone", n => { Zone = n.GetObjectValue<WhoisContact>(WhoisContact.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

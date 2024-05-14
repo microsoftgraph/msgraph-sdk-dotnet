@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class GitHubOrganizationEvidence : AlertEvidence, IParsable 
+    public class GitHubOrganizationEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Company {
+        public string? Company
+        {
             get { return BackingStore?.Get<string?>("company"); }
             set { BackingStore?.Set("company", value); }
         }
 #nullable restore
 #else
-        public string Company {
+        public string Company
+        {
             get { return BackingStore?.Get<string>("company"); }
             set { BackingStore?.Set("company", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The login property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Login {
+        public string? Login
+        {
             get { return BackingStore?.Get<string?>("login"); }
             set { BackingStore?.Set("login", value); }
         }
 #nullable restore
 #else
-        public string Login {
+        public string Login
+        {
             get { return BackingStore?.Get<string>("login"); }
             set { BackingStore?.Set("login", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The orgId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgId {
+        public string? OrgId
+        {
             get { return BackingStore?.Get<string?>("orgId"); }
             set { BackingStore?.Set("orgId", value); }
         }
 #nullable restore
 #else
-        public string OrgId {
+        public string OrgId
+        {
             get { return BackingStore?.Get<string>("orgId"); }
             set { BackingStore?.Set("orgId", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"company", n => { Company = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"login", n => { Login = n.GetStringValue(); } },
-                {"orgId", n => { OrgId = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "company", n => { Company = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "login", n => { Login = n.GetStringValue(); } },
+                { "orgId", n => { OrgId = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

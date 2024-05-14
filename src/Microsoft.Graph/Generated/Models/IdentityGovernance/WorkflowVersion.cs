@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class WorkflowVersion : WorkflowBase, IParsable 
+    public class WorkflowVersion : WorkflowBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public int? VersionNumber {
+        public int? VersionNumber
+        {
             get { return BackingStore?.Get<int?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"versionNumber", n => { VersionNumber = n.GetIntValue(); } },
+                { "versionNumber", n => { VersionNumber = n.GetIntValue(); } },
             };
         }
         /// <summary>

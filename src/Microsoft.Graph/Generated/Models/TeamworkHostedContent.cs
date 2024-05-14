@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkHostedContent : Entity, IParsable 
+    public class TeamworkHostedContent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ContentBytes {
+        public byte[]? ContentBytes
+        {
             get { return BackingStore?.Get<byte[]?>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
 #nullable restore
 #else
-        public byte[] ContentBytes {
+        public byte[] ContentBytes
+        {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Write only. Content type. such as image/png, image/jpg.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
@@ -60,8 +65,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                { "contentBytes", n => { ContentBytes = n.GetByteArrayValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
             };
         }
         /// <summary>

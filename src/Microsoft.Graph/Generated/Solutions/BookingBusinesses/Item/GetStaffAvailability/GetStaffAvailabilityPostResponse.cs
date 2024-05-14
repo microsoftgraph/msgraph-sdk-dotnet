@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability {
+namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
+{
     #pragma warning disable CS1591
-    public class GetStaffAvailabilityPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetStaffAvailabilityPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<StaffAvailabilityItem>? Value {
+        public List<StaffAvailabilityItem>? Value
+        {
             get { return BackingStore?.Get<List<StaffAvailabilityItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<StaffAvailabilityItem> Value {
+        public List<StaffAvailabilityItem> Value
+        {
             get { return BackingStore?.Get<List<StaffAvailabilityItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability 
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<StaffAvailabilityItem>(StaffAvailabilityItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<StaffAvailabilityItem>(StaffAvailabilityItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

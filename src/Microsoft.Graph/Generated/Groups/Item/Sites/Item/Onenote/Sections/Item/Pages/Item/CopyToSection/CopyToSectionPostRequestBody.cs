@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.CopyToSection {
+namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Item.CopyToSection
+{
     #pragma warning disable CS1591
-    public class CopyToSectionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CopyToSectionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <summary>The siteCollectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteCollectionId {
+        public string? SiteCollectionId
+        {
             get { return BackingStore?.Get<string?>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
 #nullable restore
 #else
-        public string SiteCollectionId {
+        public string SiteCollectionId
+        {
             get { return BackingStore?.Get<string>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         /// <summary>The siteId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId {
+        public string? SiteId
+        {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
 #nullable restore
 #else
-        public string SiteId {
+        public string SiteId
+        {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Sections.Item.Pages.Ite
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
-                {"siteId", n => { SiteId = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
+                { "siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

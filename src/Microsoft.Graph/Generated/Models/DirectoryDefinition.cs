@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DirectoryDefinition : Entity, IParsable 
+    public class DirectoryDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The discoverabilities property</summary>
-        public DirectoryDefinitionDiscoverabilities? Discoverabilities {
+        public DirectoryDefinitionDiscoverabilities? Discoverabilities
+        {
             get { return BackingStore?.Get<DirectoryDefinitionDiscoverabilities?>("discoverabilities"); }
             set { BackingStore?.Set("discoverabilities", value); }
         }
         /// <summary>Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? DiscoveryDateTime {
+        public DateTimeOffset? DiscoveryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("discoveryDateTime"); }
             set { BackingStore?.Set("discoveryDateTime", value); }
         }
         /// <summary>Name of the directory. Must be unique within the synchronization schema. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -36,32 +41,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of objects supported by the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ObjectDefinition>? Objects {
+        public List<ObjectDefinition>? Objects
+        {
             get { return BackingStore?.Get<List<ObjectDefinition>?>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
 #nullable restore
 #else
-        public List<ObjectDefinition> Objects {
+        public List<ObjectDefinition> Objects
+        {
             get { return BackingStore?.Get<List<ObjectDefinition>>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
 #endif
         /// <summary>Whether this object is read-only.</summary>
-        public bool? ReadOnly {
+        public bool? ReadOnly
+        {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }
         }
         /// <summary>Read only value that indicates version discovered. null if discovery hasn&apos;t yet occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"discoverabilities", n => { Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
-                {"discoveryDateTime", n => { DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"readOnly", n => { ReadOnly = n.GetBoolValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "discoverabilities", n => { Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
+                { "discoveryDateTime", n => { DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "readOnly", n => { ReadOnly = n.GetBoolValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

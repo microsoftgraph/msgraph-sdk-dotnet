@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
+namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
+{
     /// <summary>
     /// Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DeviceEnrollmentConfigurationsRequestBuilder : BaseRequestBuilder 
+    public class DeviceEnrollmentConfigurationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count
@@ -51,8 +52,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,13 +71,13 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -96,12 +97,12 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+        /// Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
             return new DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
+        /// List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
         /// </summary>
         public class DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters 
         {
@@ -219,14 +220,14 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters> 
+        public class DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

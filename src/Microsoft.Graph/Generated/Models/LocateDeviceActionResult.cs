@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Locate device action result
     /// </summary>
-    public class LocateDeviceActionResult : DeviceActionResult, IParsable 
+    public class LocateDeviceActionResult : DeviceActionResult, IParsable
     {
         /// <summary>device location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceGeoLocation? DeviceLocation {
+        public DeviceGeoLocation? DeviceLocation
+        {
             get { return BackingStore?.Get<DeviceGeoLocation?>("deviceLocation"); }
             set { BackingStore?.Set("deviceLocation", value); }
         }
 #nullable restore
 #else
-        public DeviceGeoLocation DeviceLocation {
+        public DeviceGeoLocation DeviceLocation
+        {
             get { return BackingStore?.Get<DeviceGeoLocation>("deviceLocation"); }
             set { BackingStore?.Set("deviceLocation", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceLocation", n => { DeviceLocation = n.GetObjectValue<DeviceGeoLocation>(DeviceGeoLocation.CreateFromDiscriminatorValue); } },
+                { "deviceLocation", n => { DeviceLocation = n.GetObjectValue<DeviceGeoLocation>(DeviceGeoLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

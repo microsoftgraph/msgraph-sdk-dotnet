@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist
+{
     #pragma warning disable CS1591
-    public class Norm_S_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Norm_S_DistPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist 
         /// <summary>The cumulative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cumulative {
+        public Json? Cumulative
+        {
             get { return BackingStore?.Get<Json?>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
 #nullable restore
 #else
-        public Json Cumulative {
+        public Json Cumulative
+        {
             get { return BackingStore?.Get<Json>("cumulative"); }
             set { BackingStore?.Set("cumulative", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist 
         /// <summary>The z property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Z {
+        public Json? Z
+        {
             get { return BackingStore?.Get<Json?>("z"); }
             set { BackingStore?.Set("z", value); }
         }
 #nullable restore
 #else
-        public Json Z {
+        public Json Z
+        {
             get { return BackingStore?.Get<Json>("z"); }
             set { BackingStore?.Set("z", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Norm_S_Dist 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"z", n => { Z = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "z", n => { Z = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

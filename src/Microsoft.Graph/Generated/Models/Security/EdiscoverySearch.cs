@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoverySearch : Search, IParsable 
+    public class EdiscoverySearch : Search, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Adds an additional source to the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataSource>? AdditionalSources {
+        public List<DataSource>? AdditionalSources
+        {
             get { return BackingStore?.Get<List<DataSource>?>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
 #nullable restore
 #else
-        public List<DataSource> AdditionalSources {
+        public List<DataSource> AdditionalSources
+        {
             get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Adds the results of the eDiscovery search to the specified reviewSet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryAddToReviewSetOperation? AddToReviewSetOperation {
+        public EdiscoveryAddToReviewSetOperation? AddToReviewSetOperation
+        {
             get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation?>("addToReviewSetOperation"); }
             set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation {
+        public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation
+        {
             get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>("addToReviewSetOperation"); }
             set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Custodian sources that are included in the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataSource>? CustodianSources {
+        public List<DataSource>? CustodianSources
+        {
             get { return BackingStore?.Get<List<DataSource>?>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
 #nullable restore
 #else
-        public List<DataSource> CustodianSources {
+        public List<DataSource> CustodianSources
+        {
             get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
 #endif
         /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
-        public Microsoft.Graph.Models.Security.DataSourceScopes? DataSourceScopes {
+        public Microsoft.Graph.Models.Security.DataSourceScopes? DataSourceScopes
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Security.DataSourceScopes?>("dataSourceScopes"); }
             set { BackingStore?.Set("dataSourceScopes", value); }
         }
         /// <summary>The last estimate operation associated with the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryEstimateOperation? LastEstimateStatisticsOperation {
+        public EdiscoveryEstimateOperation? LastEstimateStatisticsOperation
+        {
             get { return BackingStore?.Get<EdiscoveryEstimateOperation?>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryEstimateOperation LastEstimateStatisticsOperation {
+        public EdiscoveryEstimateOperation LastEstimateStatisticsOperation
+        {
             get { return BackingStore?.Get<EdiscoveryEstimateOperation>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>noncustodialDataSource sources that are included in the eDiscovery search</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryNoncustodialDataSource>? NoncustodialSources {
+        public List<EdiscoveryNoncustodialDataSource>? NoncustodialSources
+        {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryNoncustodialDataSource> NoncustodialSources {
+        public List<EdiscoveryNoncustodialDataSource> NoncustodialSources
+        {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addToReviewSetOperation", n => { AddToReviewSetOperation = n.GetObjectValue<EdiscoveryAddToReviewSetOperation>(EdiscoveryAddToReviewSetOperation.CreateFromDiscriminatorValue); } },
-                {"additionalSources", n => { AdditionalSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"custodianSources", n => { CustodianSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dataSourceScopes", n => { DataSourceScopes = n.GetEnumValue<DataSourceScopes>(); } },
-                {"lastEstimateStatisticsOperation", n => { LastEstimateStatisticsOperation = n.GetObjectValue<EdiscoveryEstimateOperation>(EdiscoveryEstimateOperation.CreateFromDiscriminatorValue); } },
-                {"noncustodialSources", n => { NoncustodialSources = n.GetCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>(EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addToReviewSetOperation", n => { AddToReviewSetOperation = n.GetObjectValue<EdiscoveryAddToReviewSetOperation>(EdiscoveryAddToReviewSetOperation.CreateFromDiscriminatorValue); } },
+                { "additionalSources", n => { AdditionalSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "custodianSources", n => { CustodianSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dataSourceScopes", n => { DataSourceScopes = n.GetEnumValue<DataSourceScopes>(); } },
+                { "lastEstimateStatisticsOperation", n => { LastEstimateStatisticsOperation = n.GetObjectValue<EdiscoveryEstimateOperation>(EdiscoveryEstimateOperation.CreateFromDiscriminatorValue); } },
+                { "noncustodialSources", n => { NoncustodialSources = n.GetCollectionOfObjectValues<EdiscoveryNoncustodialDataSource>(EdiscoveryNoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

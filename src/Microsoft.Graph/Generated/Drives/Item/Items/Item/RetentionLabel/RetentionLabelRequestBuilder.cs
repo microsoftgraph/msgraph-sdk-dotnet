@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
+namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
+{
     /// <summary>
     /// Provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.
     /// </summary>
-    public class RetentionLabelRequestBuilder : BaseRequestBuilder 
+    public class RetentionLabelRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RetentionLabelRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -73,13 +74,13 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0" />
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ItemRetentionLabel"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
             return requestInfo;
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -176,7 +177,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RetentionLabelRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class RetentionLabelRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
@@ -209,14 +210,14 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RetentionLabelRequestBuilderGetRequestConfiguration : RequestConfiguration<RetentionLabelRequestBuilderGetQueryParameters> 
+        public class RetentionLabelRequestBuilderGetRequestConfiguration : RequestConfiguration<RetentionLabelRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RetentionLabelRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class RetentionLabelRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

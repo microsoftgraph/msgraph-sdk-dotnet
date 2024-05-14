@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.ExportPersonalData {
+namespace Microsoft.Graph.Users.Item.ExportPersonalData
+{
     #pragma warning disable CS1591
-    public class ExportPersonalDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExportPersonalDataPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Users.Item.ExportPersonalData {
         /// <summary>The storageLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageLocation {
+        public string? StorageLocation
+        {
             get { return BackingStore?.Get<string?>("storageLocation"); }
             set { BackingStore?.Set("storageLocation", value); }
         }
 #nullable restore
 #else
-        public string StorageLocation {
+        public string StorageLocation
+        {
             get { return BackingStore?.Get<string>("storageLocation"); }
             set { BackingStore?.Set("storageLocation", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Users.Item.ExportPersonalData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"storageLocation", n => { StorageLocation = n.GetStringValue(); } },
+                { "storageLocation", n => { StorageLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>

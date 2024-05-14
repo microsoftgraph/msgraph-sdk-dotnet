@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class InvitationRedemptionIdentityProviderConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InvitationRedemptionIdentityProviderConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fallback identity provider to be used in case no primary identity provider can be used for guest invitation redemption. Possible values are: defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.</summary>
-        public B2bIdentityProvidersType? FallbackIdentityProvider {
+        public B2bIdentityProvidersType? FallbackIdentityProvider
+        {
             get { return BackingStore?.Get<B2bIdentityProvidersType?>("fallbackIdentityProvider"); }
             set { BackingStore?.Set("fallbackIdentityProvider", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of identity providers in priority order of preference to be used for guest invitation redemption. Possible values are: azureActiveDirectory, externalFederation, or socialIdentityProviders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<B2bIdentityProvidersType?>? PrimaryIdentityProviderPrecedenceOrder {
+        public List<B2bIdentityProvidersType?>? PrimaryIdentityProviderPrecedenceOrder
+        {
             get { return BackingStore?.Get<List<B2bIdentityProvidersType?>?>("primaryIdentityProviderPrecedenceOrder"); }
             set { BackingStore?.Set("primaryIdentityProviderPrecedenceOrder", value); }
         }
 #nullable restore
 #else
-        public List<B2bIdentityProvidersType?> PrimaryIdentityProviderPrecedenceOrder {
+        public List<B2bIdentityProvidersType?> PrimaryIdentityProviderPrecedenceOrder
+        {
             get { return BackingStore?.Get<List<B2bIdentityProvidersType?>>("primaryIdentityProviderPrecedenceOrder"); }
             set { BackingStore?.Set("primaryIdentityProviderPrecedenceOrder", value); }
         }
@@ -81,9 +88,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fallbackIdentityProvider", n => { FallbackIdentityProvider = n.GetEnumValue<B2bIdentityProvidersType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"primaryIdentityProviderPrecedenceOrder", n => { PrimaryIdentityProviderPrecedenceOrder = n.GetCollectionOfEnumValues<B2bIdentityProvidersType>()?.ToList(); } },
+                { "fallbackIdentityProvider", n => { FallbackIdentityProvider = n.GetEnumValue<B2bIdentityProvidersType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "primaryIdentityProviderPrecedenceOrder", n => { PrimaryIdentityProviderPrecedenceOrder = n.GetCollectionOfEnumValues<B2bIdentityProvidersType>()?.ToList(); } },
             };
         }
         /// <summary>

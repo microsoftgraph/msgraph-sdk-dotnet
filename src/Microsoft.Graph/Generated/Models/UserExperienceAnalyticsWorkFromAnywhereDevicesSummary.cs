@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics Work From Anywhere metrics devices summary.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceAnalyticsWorkFromAnywhereDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The user experience analytics work from anywhere Autopilot devices summary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsAutopilotDevicesSummary? AutopilotDevicesSummary {
+        public UserExperienceAnalyticsAutopilotDevicesSummary? AutopilotDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary?>("autopilotDevicesSummary"); }
             set { BackingStore?.Set("autopilotDevicesSummary", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary {
+        public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary>("autopilotDevicesSummary"); }
             set { BackingStore?.Set("autopilotDevicesSummary", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user experience analytics work from anywhere Cloud Identity devices summary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCloudIdentityDevicesSummary? CloudIdentityDevicesSummary {
+        public UserExperienceAnalyticsCloudIdentityDevicesSummary? CloudIdentityDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary?>("cloudIdentityDevicesSummary"); }
             set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary {
+        public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary>("cloudIdentityDevicesSummary"); }
             set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
         }
@@ -49,92 +55,108 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user experience analytics work from anywhere Cloud management devices summary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsCloudManagementDevicesSummary? CloudManagementDevicesSummary {
+        public UserExperienceAnalyticsCloudManagementDevicesSummary? CloudManagementDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary?>("cloudManagementDevicesSummary"); }
             set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary {
+        public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary>("cloudManagementDevicesSummary"); }
             set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
         }
 #endif
         /// <summary>Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? CoManagedDevices {
+        public int? CoManagedDevices
+        {
             get { return BackingStore?.Get<int?>("coManagedDevices"); }
             set { BackingStore?.Set("coManagedDevices", value); }
         }
         /// <summary>The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? DevicesNotAutopilotRegistered {
+        public int? DevicesNotAutopilotRegistered
+        {
             get { return BackingStore?.Get<int?>("devicesNotAutopilotRegistered"); }
             set { BackingStore?.Set("devicesNotAutopilotRegistered", value); }
         }
         /// <summary>The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? DevicesWithoutAutopilotProfileAssigned {
+        public int? DevicesWithoutAutopilotProfileAssigned
+        {
             get { return BackingStore?.Get<int?>("devicesWithoutAutopilotProfileAssigned"); }
             set { BackingStore?.Set("devicesWithoutAutopilotProfileAssigned", value); }
         }
         /// <summary>The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? DevicesWithoutCloudIdentity {
+        public int? DevicesWithoutCloudIdentity
+        {
             get { return BackingStore?.Get<int?>("devicesWithoutCloudIdentity"); }
             set { BackingStore?.Set("devicesWithoutCloudIdentity", value); }
         }
         /// <summary>The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? IntuneDevices {
+        public int? IntuneDevices
+        {
             get { return BackingStore?.Get<int?>("intuneDevices"); }
             set { BackingStore?.Set("intuneDevices", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? TenantAttachDevices {
+        public int? TenantAttachDevices
+        {
             get { return BackingStore?.Get<int?>("tenantAttachDevices"); }
             set { BackingStore?.Set("tenantAttachDevices", value); }
         }
         /// <summary>The total count of devices. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? TotalDevices {
+        public int? TotalDevices
+        {
             get { return BackingStore?.Get<int?>("totalDevices"); }
             set { BackingStore?.Set("totalDevices", value); }
         }
         /// <summary>The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? UnsupportedOSversionDevices {
+        public int? UnsupportedOSversionDevices
+        {
             get { return BackingStore?.Get<int?>("unsupportedOSversionDevices"); }
             set { BackingStore?.Set("unsupportedOSversionDevices", value); }
         }
         /// <summary>The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? Windows10Devices {
+        public int? Windows10Devices
+        {
             get { return BackingStore?.Get<int?>("windows10Devices"); }
             set { BackingStore?.Set("windows10Devices", value); }
         }
         /// <summary>The user experience analytics work from anywhere Windows 10 devices summary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceAnalyticsWindows10DevicesSummary? Windows10DevicesSummary {
+        public UserExperienceAnalyticsWindows10DevicesSummary? Windows10DevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary?>("windows10DevicesSummary"); }
             set { BackingStore?.Set("windows10DevicesSummary", value); }
         }
 #nullable restore
 #else
-        public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary {
+        public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary>("windows10DevicesSummary"); }
             set { BackingStore?.Set("windows10DevicesSummary", value); }
         }
 #endif
         /// <summary>The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? Windows10DevicesWithoutTenantAttach {
+        public int? Windows10DevicesWithoutTenantAttach
+        {
             get { return BackingStore?.Get<int?>("windows10DevicesWithoutTenantAttach"); }
             set { BackingStore?.Set("windows10DevicesWithoutTenantAttach", value); }
         }
@@ -164,21 +186,21 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"autopilotDevicesSummary", n => { AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(UserExperienceAnalyticsAutopilotDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"cloudIdentityDevicesSummary", n => { CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(UserExperienceAnalyticsCloudIdentityDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"cloudManagementDevicesSummary", n => { CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(UserExperienceAnalyticsCloudManagementDevicesSummary.CreateFromDiscriminatorValue); } },
-                {"coManagedDevices", n => { CoManagedDevices = n.GetIntValue(); } },
-                {"devicesNotAutopilotRegistered", n => { DevicesNotAutopilotRegistered = n.GetIntValue(); } },
-                {"devicesWithoutAutopilotProfileAssigned", n => { DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
-                {"devicesWithoutCloudIdentity", n => { DevicesWithoutCloudIdentity = n.GetIntValue(); } },
-                {"intuneDevices", n => { IntuneDevices = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"tenantAttachDevices", n => { TenantAttachDevices = n.GetIntValue(); } },
-                {"totalDevices", n => { TotalDevices = n.GetIntValue(); } },
-                {"unsupportedOSversionDevices", n => { UnsupportedOSversionDevices = n.GetIntValue(); } },
-                {"windows10Devices", n => { Windows10Devices = n.GetIntValue(); } },
-                {"windows10DevicesSummary", n => { Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(UserExperienceAnalyticsWindows10DevicesSummary.CreateFromDiscriminatorValue); } },
-                {"windows10DevicesWithoutTenantAttach", n => { Windows10DevicesWithoutTenantAttach = n.GetIntValue(); } },
+                { "autopilotDevicesSummary", n => { AutopilotDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsAutopilotDevicesSummary>(UserExperienceAnalyticsAutopilotDevicesSummary.CreateFromDiscriminatorValue); } },
+                { "cloudIdentityDevicesSummary", n => { CloudIdentityDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudIdentityDevicesSummary>(UserExperienceAnalyticsCloudIdentityDevicesSummary.CreateFromDiscriminatorValue); } },
+                { "cloudManagementDevicesSummary", n => { CloudManagementDevicesSummary = n.GetObjectValue<UserExperienceAnalyticsCloudManagementDevicesSummary>(UserExperienceAnalyticsCloudManagementDevicesSummary.CreateFromDiscriminatorValue); } },
+                { "coManagedDevices", n => { CoManagedDevices = n.GetIntValue(); } },
+                { "devicesNotAutopilotRegistered", n => { DevicesNotAutopilotRegistered = n.GetIntValue(); } },
+                { "devicesWithoutAutopilotProfileAssigned", n => { DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
+                { "devicesWithoutCloudIdentity", n => { DevicesWithoutCloudIdentity = n.GetIntValue(); } },
+                { "intuneDevices", n => { IntuneDevices = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "tenantAttachDevices", n => { TenantAttachDevices = n.GetIntValue(); } },
+                { "totalDevices", n => { TotalDevices = n.GetIntValue(); } },
+                { "unsupportedOSversionDevices", n => { UnsupportedOSversionDevices = n.GetIntValue(); } },
+                { "windows10Devices", n => { Windows10Devices = n.GetIntValue(); } },
+                { "windows10DevicesSummary", n => { Windows10DevicesSummary = n.GetObjectValue<UserExperienceAnalyticsWindows10DevicesSummary>(UserExperienceAnalyticsWindows10DevicesSummary.CreateFromDiscriminatorValue); } },
+                { "windows10DevicesWithoutTenantAttach", n => { Windows10DevicesWithoutTenantAttach = n.GetIntValue(); } },
             };
         }
         /// <summary>

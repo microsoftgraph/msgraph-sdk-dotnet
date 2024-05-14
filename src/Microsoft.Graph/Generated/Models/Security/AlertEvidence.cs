@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class AlertEvidence : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertEvidence : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Detailed description of the entity role/s in an alert. Values are free-form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DetailedRoles {
+        public List<string>? DetailedRoles
+        {
             get { return BackingStore?.Get<List<string>?>("detailedRoles"); }
             set { BackingStore?.Set("detailedRoles", value); }
         }
 #nullable restore
 #else
-        public List<string> DetailedRoles {
+        public List<string> DetailedRoles
+        {
             get { return BackingStore?.Get<List<string>>("detailedRoles"); }
             set { BackingStore?.Set("detailedRoles", value); }
         }
@@ -39,32 +44,37 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The remediationStatus property</summary>
-        public EvidenceRemediationStatus? RemediationStatus {
+        public EvidenceRemediationStatus? RemediationStatus
+        {
             get { return BackingStore?.Get<EvidenceRemediationStatus?>("remediationStatus"); }
             set { BackingStore?.Set("remediationStatus", value); }
         }
         /// <summary>Details about the remediation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemediationStatusDetails {
+        public string? RemediationStatusDetails
+        {
             get { return BackingStore?.Get<string?>("remediationStatusDetails"); }
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
 #nullable restore
 #else
-        public string RemediationStatusDetails {
+        public string RemediationStatusDetails
+        {
             get { return BackingStore?.Get<string>("remediationStatusDetails"); }
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EvidenceRole?>? Roles {
+        public List<EvidenceRole?>? Roles
+        {
             get { return BackingStore?.Get<List<EvidenceRole?>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<EvidenceRole?> Roles {
+        public List<EvidenceRole?> Roles
+        {
             get { return BackingStore?.Get<List<EvidenceRole?>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -86,19 +98,22 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>The verdict property</summary>
-        public EvidenceVerdict? Verdict {
+        public EvidenceVerdict? Verdict
+        {
             get { return BackingStore?.Get<EvidenceVerdict?>("verdict"); }
             set { BackingStore?.Set("verdict", value); }
         }
@@ -175,14 +190,14 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"detailedRoles", n => { DetailedRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
-                {"remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfEnumValues<EvidenceRole>()?.ToList(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "detailedRoles", n => { DetailedRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
+                { "remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfEnumValues<EvidenceRole>()?.ToList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
             };
         }
         /// <summary>

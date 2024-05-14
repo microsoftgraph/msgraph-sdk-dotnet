@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable 
+    public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId {
+        public string? CallId
+        {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
 #nullable restore
 #else
-        public string CallId {
+        public string CallId
+        {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name for the call recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallRecordingDisplayName {
+        public string? CallRecordingDisplayName
+        {
             get { return BackingStore?.Get<string?>("callRecordingDisplayName"); }
             set { BackingStore?.Set("callRecordingDisplayName", value); }
         }
 #nullable restore
 #else
-        public string CallRecordingDisplayName {
+        public string CallRecordingDisplayName
+        {
             get { return BackingStore?.Get<string>("callRecordingDisplayName"); }
             set { BackingStore?.Set("callRecordingDisplayName", value); }
         }
 #endif
         /// <summary>Duration of the call recording.</summary>
-        public TimeSpan? CallRecordingDuration {
+        public TimeSpan? CallRecordingDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("callRecordingDuration"); }
             set { BackingStore?.Set("callRecordingDuration", value); }
         }
         /// <summary>Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.CallRecordingStatus? CallRecordingStatus {
+        public Microsoft.Graph.Models.CallRecordingStatus? CallRecordingStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecordingStatus?>("callRecordingStatus"); }
             set { BackingStore?.Set("callRecordingStatus", value); }
         }
         /// <summary>Call recording URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallRecordingUrl {
+        public string? CallRecordingUrl
+        {
             get { return BackingStore?.Get<string?>("callRecordingUrl"); }
             set { BackingStore?.Set("callRecordingUrl", value); }
         }
 #nullable restore
 #else
-        public string CallRecordingUrl {
+        public string CallRecordingUrl
+        {
             get { return BackingStore?.Get<string>("callRecordingUrl"); }
             set { BackingStore?.Set("callRecordingUrl", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer {
+        public IdentitySet? MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer {
+        public IdentitySet MeetingOrganizer
+        {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callId", n => { CallId = n.GetStringValue(); } },
-                {"callRecordingDisplayName", n => { CallRecordingDisplayName = n.GetStringValue(); } },
-                {"callRecordingDuration", n => { CallRecordingDuration = n.GetTimeSpanValue(); } },
-                {"callRecordingStatus", n => { CallRecordingStatus = n.GetEnumValue<CallRecordingStatus>(); } },
-                {"callRecordingUrl", n => { CallRecordingUrl = n.GetStringValue(); } },
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "callId", n => { CallId = n.GetStringValue(); } },
+                { "callRecordingDisplayName", n => { CallRecordingDisplayName = n.GetStringValue(); } },
+                { "callRecordingDuration", n => { CallRecordingDuration = n.GetTimeSpanValue(); } },
+                { "callRecordingStatus", n => { CallRecordingStatus = n.GetEnumValue<CallRecordingStatus>(); } },
+                { "callRecordingUrl", n => { CallRecordingUrl = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

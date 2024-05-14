@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class SecurityGroupEvidence : AlertEvidence, IParsable 
+    public class SecurityGroupEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Unique identifier of the security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityGroupId {
+        public string? SecurityGroupId
+        {
             get { return BackingStore?.Get<string?>("securityGroupId"); }
             set { BackingStore?.Set("securityGroupId", value); }
         }
 #nullable restore
 #else
-        public string SecurityGroupId {
+        public string SecurityGroupId
+        {
             get { return BackingStore?.Get<string>("securityGroupId"); }
             set { BackingStore?.Set("securityGroupId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"securityGroupId", n => { SecurityGroupId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "securityGroupId", n => { SecurityGroupId = n.GetStringValue(); } },
             };
         }
         /// <summary>

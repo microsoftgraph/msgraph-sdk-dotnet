@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A container for Microsoft Edge resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Edge? Edge {
+        public Microsoft.Graph.Models.Edge? Edge
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Edge?>("edge"); }
             set { BackingStore?.Set("edge", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Edge Edge {
+        public Microsoft.Graph.Models.Edge Edge
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Edge>("edge"); }
             set { BackingStore?.Set("edge", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminMicrosoft365Apps? Microsoft365Apps {
+        public AdminMicrosoft365Apps? Microsoft365Apps
+        {
             get { return BackingStore?.Get<AdminMicrosoft365Apps?>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
 #nullable restore
 #else
-        public AdminMicrosoft365Apps Microsoft365Apps {
+        public AdminMicrosoft365Apps Microsoft365Apps
+        {
             get { return BackingStore?.Get<AdminMicrosoft365Apps>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a setting to control people-related admin settings in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PeopleAdminSettings? People {
+        public PeopleAdminSettings? People
+        {
             get { return BackingStore?.Get<PeopleAdminSettings?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #nullable restore
 #else
-        public PeopleAdminSettings People {
+        public PeopleAdminSettings People
+        {
             get { return BackingStore?.Get<PeopleAdminSettings>("people"); }
             set { BackingStore?.Set("people", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A container for service communications resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ServiceAnnouncement? ServiceAnnouncement {
+        public Microsoft.Graph.Models.ServiceAnnouncement? ServiceAnnouncement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServiceAnnouncement?>("serviceAnnouncement"); }
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ServiceAnnouncement ServiceAnnouncement {
+        public Microsoft.Graph.Models.ServiceAnnouncement ServiceAnnouncement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServiceAnnouncement>("serviceAnnouncement"); }
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sharepoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Sharepoint? Sharepoint {
+        public Microsoft.Graph.Models.Sharepoint? Sharepoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Sharepoint?>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Sharepoint Sharepoint {
+        public Microsoft.Graph.Models.Sharepoint Sharepoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Sharepoint>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Models.Edge>(Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
-                {"microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
-                {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>(Microsoft.Graph.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
-                {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Models.Sharepoint>(Microsoft.Graph.Models.Sharepoint.CreateFromDiscriminatorValue); } },
+                { "edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Models.Edge>(Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
+                { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
+                { "serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Models.ServiceAnnouncement>(Microsoft.Graph.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
+                { "sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Models.Sharepoint>(Microsoft.Graph.Models.Sharepoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

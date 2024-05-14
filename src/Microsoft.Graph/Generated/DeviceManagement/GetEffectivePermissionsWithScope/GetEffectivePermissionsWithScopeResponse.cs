@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope {
+namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
+{
     [Obsolete("This class is obsolete. Use GetEffectivePermissionsWithScopeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetEffectivePermissionsWithScopeResponse : GetEffectivePermissionsWithScopeGetResponse, IParsable 
+    public class GetEffectivePermissionsWithScopeResponse : GetEffectivePermissionsWithScopeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

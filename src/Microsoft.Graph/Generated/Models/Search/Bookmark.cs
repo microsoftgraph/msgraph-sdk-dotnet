@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Search {
+namespace Microsoft.Graph.Models.Search
+{
     #pragma warning disable CS1591
-    public class Bookmark : SearchAnswer, IParsable 
+    public class Bookmark : SearchAnswer, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? AvailabilityEndDateTime {
+        public DateTimeOffset? AvailabilityEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityEndDateTime"); }
             set { BackingStore?.Set("availabilityEndDateTime", value); }
         }
         /// <summary>Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? AvailabilityStartDateTime {
+        public DateTimeOffset? AvailabilityStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityStartDateTime"); }
             set { BackingStore?.Set("availabilityStartDateTime", value); }
         }
         /// <summary>Categories commonly used to describe this bookmark. For example, IT and HR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories {
+        public List<string>? Categories
+        {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<string> Categories {
+        public List<string> Categories
+        {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -36,32 +41,37 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>The list of security groups that are able to view this bookmark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds {
+        public List<string>? GroupIds
+        {
             get { return BackingStore?.Get<List<string>?>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
 #nullable restore
 #else
-        public List<string> GroupIds {
+        public List<string> GroupIds
+        {
             get { return BackingStore?.Get<List<string>>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
 #endif
         /// <summary>True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.</summary>
-        public bool? IsSuggested {
+        public bool? IsSuggested
+        {
             get { return BackingStore?.Get<bool?>("isSuggested"); }
             set { BackingStore?.Set("isSuggested", value); }
         }
         /// <summary>Keywords that trigger this bookmark to appear in search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AnswerKeyword? Keywords {
+        public AnswerKeyword? Keywords
+        {
             get { return BackingStore?.Get<AnswerKeyword?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #nullable restore
 #else
-        public AnswerKeyword Keywords {
+        public AnswerKeyword Keywords
+        {
             get { return BackingStore?.Get<AnswerKeyword>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LanguageTags {
+        public List<string>? LanguageTags
+        {
             get { return BackingStore?.Get<List<string>?>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
 #nullable restore
 #else
-        public List<string> LanguageTags {
+        public List<string> LanguageTags
+        {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DevicePlatformType?>? Platforms {
+        public List<DevicePlatformType?>? Platforms
+        {
             get { return BackingStore?.Get<List<DevicePlatformType?>?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
 #nullable restore
 #else
-        public List<DevicePlatformType?> Platforms {
+        public List<DevicePlatformType?> Platforms
+        {
             get { return BackingStore?.Get<List<DevicePlatformType?>>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
@@ -97,32 +111,37 @@ namespace Microsoft.Graph.Models.Search {
         /// <summary>List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PowerAppIds {
+        public List<string>? PowerAppIds
+        {
             get { return BackingStore?.Get<List<string>?>("powerAppIds"); }
             set { BackingStore?.Set("powerAppIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PowerAppIds {
+        public List<string> PowerAppIds
+        {
             get { return BackingStore?.Get<List<string>>("powerAppIds"); }
             set { BackingStore?.Set("powerAppIds", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public AnswerState? State {
+        public AnswerState? State
+        {
             get { return BackingStore?.Get<AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnswerVariant>? TargetedVariations {
+        public List<AnswerVariant>? TargetedVariations
+        {
             get { return BackingStore?.Get<List<AnswerVariant>?>("targetedVariations"); }
             set { BackingStore?.Set("targetedVariations", value); }
         }
 #nullable restore
 #else
-        public List<AnswerVariant> TargetedVariations {
+        public List<AnswerVariant> TargetedVariations
+        {
             get { return BackingStore?.Get<List<AnswerVariant>>("targetedVariations"); }
             set { BackingStore?.Set("targetedVariations", value); }
         }
@@ -145,17 +164,17 @@ namespace Microsoft.Graph.Models.Search {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"availabilityEndDateTime", n => { AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"availabilityStartDateTime", n => { AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
-                {"keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
-                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"platforms", n => { Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>()?.ToList(); } },
-                {"powerAppIds", n => { PowerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
-                {"targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "availabilityEndDateTime", n => { AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "availabilityStartDateTime", n => { AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
+                { "keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
+                { "languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "platforms", n => { Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>()?.ToList(); } },
+                { "powerAppIds", n => { PowerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<AnswerState>(); } },
+                { "targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

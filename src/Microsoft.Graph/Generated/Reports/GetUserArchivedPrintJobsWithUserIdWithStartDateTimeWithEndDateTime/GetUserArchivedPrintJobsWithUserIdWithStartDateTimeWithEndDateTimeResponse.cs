@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime
+{
     [Obsolete("This class is obsolete. Use GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    public class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse : GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

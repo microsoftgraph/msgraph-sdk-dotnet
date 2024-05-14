@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class HorizontalSection : Entity, IParsable 
+    public class HorizontalSection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The set of vertical columns in this section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HorizontalSectionColumn>? Columns {
+        public List<HorizontalSectionColumn>? Columns
+        {
             get { return BackingStore?.Get<List<HorizontalSectionColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<HorizontalSectionColumn> Columns {
+        public List<HorizontalSectionColumn> Columns
+        {
             get { return BackingStore?.Get<List<HorizontalSectionColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
         /// <summary>Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.</summary>
-        public SectionEmphasisType? Emphasis {
+        public SectionEmphasisType? Emphasis
+        {
             get { return BackingStore?.Get<SectionEmphasisType?>("emphasis"); }
             set { BackingStore?.Set("emphasis", value); }
         }
         /// <summary>Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.</summary>
-        public HorizontalSectionLayoutType? Layout {
+        public HorizontalSectionLayoutType? Layout
+        {
             get { return BackingStore?.Get<HorizontalSectionLayoutType?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"columns", n => { Columns = n.GetCollectionOfObjectValues<HorizontalSectionColumn>(HorizontalSectionColumn.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"emphasis", n => { Emphasis = n.GetEnumValue<SectionEmphasisType>(); } },
-                {"layout", n => { Layout = n.GetEnumValue<HorizontalSectionLayoutType>(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<HorizontalSectionColumn>(HorizontalSectionColumn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emphasis", n => { Emphasis = n.GetEnumValue<SectionEmphasisType>(); } },
+                { "layout", n => { Layout = n.GetEnumValue<HorizontalSectionLayoutType>(); } },
             };
         }
         /// <summary>

@@ -4,95 +4,111 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics device startup history entity contains device boot performance history details.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable 
+    public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable
     {
         /// <summary>The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? CoreBootTimeInMs {
+        public int? CoreBootTimeInMs
+        {
             get { return BackingStore?.Get<int?>("coreBootTimeInMs"); }
             set { BackingStore?.Set("coreBootTimeInMs", value); }
         }
         /// <summary>The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? CoreLoginTimeInMs {
+        public int? CoreLoginTimeInMs
+        {
             get { return BackingStore?.Get<int?>("coreLoginTimeInMs"); }
             set { BackingStore?.Set("coreLoginTimeInMs", value); }
         }
         /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
         /// <summary>The impact of device feature updates on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? FeatureUpdateBootTimeInMs {
+        public int? FeatureUpdateBootTimeInMs
+        {
             get { return BackingStore?.Get<int?>("featureUpdateBootTimeInMs"); }
             set { BackingStore?.Set("featureUpdateBootTimeInMs", value); }
         }
         /// <summary>The impact of device group policy client on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? GroupPolicyBootTimeInMs {
+        public int? GroupPolicyBootTimeInMs
+        {
             get { return BackingStore?.Get<int?>("groupPolicyBootTimeInMs"); }
             set { BackingStore?.Set("groupPolicyBootTimeInMs", value); }
         }
         /// <summary>The impact of device group policy client on login time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? GroupPolicyLoginTimeInMs {
+        public int? GroupPolicyLoginTimeInMs
+        {
             get { return BackingStore?.Get<int?>("groupPolicyLoginTimeInMs"); }
             set { BackingStore?.Set("groupPolicyLoginTimeInMs", value); }
         }
         /// <summary>When TRUE, indicates the device boot record is associated with feature updates. When FALSE, indicates the device boot record is not associated with feature updates. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? IsFeatureUpdate {
+        public bool? IsFeatureUpdate
+        {
             get { return BackingStore?.Get<bool?>("isFeatureUpdate"); }
             set { BackingStore?.Set("isFeatureUpdate", value); }
         }
         /// <summary>When TRUE, indicates the device login is the first login after a reboot. When FALSE, indicates the device login is not the first login after a reboot. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? IsFirstLogin {
+        public bool? IsFirstLogin
+        {
             get { return BackingStore?.Get<bool?>("isFirstLogin"); }
             set { BackingStore?.Set("isFirstLogin", value); }
         }
         /// <summary>The user experience analytics device boot record&apos;s operating system version. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystemVersion {
+        public string? OperatingSystemVersion
+        {
             get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystemVersion {
+        public string OperatingSystemVersion
+        {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
 #endif
         /// <summary>The time for desktop to become responsive during login process in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? ResponsiveDesktopTimeInMs {
+        public int? ResponsiveDesktopTimeInMs
+        {
             get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }
             set { BackingStore?.Set("responsiveDesktopTimeInMs", value); }
         }
         /// <summary>Operating System restart category.</summary>
-        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory {
+        public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsOperatingSystemRestartCategory?>("restartCategory"); }
             set { BackingStore?.Set("restartCategory", value); }
         }
         /// <summary>OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestartFaultBucket {
+        public string? RestartFaultBucket
+        {
             get { return BackingStore?.Get<string?>("restartFaultBucket"); }
             set { BackingStore?.Set("restartFaultBucket", value); }
         }
 #nullable restore
 #else
-        public string RestartFaultBucket {
+        public string RestartFaultBucket
+        {
             get { return BackingStore?.Get<string>("restartFaultBucket"); }
             set { BackingStore?.Set("restartFaultBucket", value); }
         }
@@ -100,29 +116,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestartStopCode {
+        public string? RestartStopCode
+        {
             get { return BackingStore?.Get<string?>("restartStopCode"); }
             set { BackingStore?.Set("restartStopCode", value); }
         }
 #nullable restore
 #else
-        public string RestartStopCode {
+        public string RestartStopCode
+        {
             get { return BackingStore?.Get<string>("restartStopCode"); }
             set { BackingStore?.Set("restartStopCode", value); }
         }
 #endif
         /// <summary>The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: &apos;2022-01-01T00:00:00Z&apos;. Returned by default. Read-only.</summary>
-        public DateTimeOffset? StartTime {
+        public DateTimeOffset? StartTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>The device total boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? TotalBootTimeInMs {
+        public int? TotalBootTimeInMs
+        {
             get { return BackingStore?.Get<int?>("totalBootTimeInMs"); }
             set { BackingStore?.Set("totalBootTimeInMs", value); }
         }
         /// <summary>The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
-        public int? TotalLoginTimeInMs {
+        public int? TotalLoginTimeInMs
+        {
             get { return BackingStore?.Get<int?>("totalLoginTimeInMs"); }
             set { BackingStore?.Set("totalLoginTimeInMs", value); }
         }
@@ -144,22 +165,22 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"coreBootTimeInMs", n => { CoreBootTimeInMs = n.GetIntValue(); } },
-                {"coreLoginTimeInMs", n => { CoreLoginTimeInMs = n.GetIntValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"featureUpdateBootTimeInMs", n => { FeatureUpdateBootTimeInMs = n.GetIntValue(); } },
-                {"groupPolicyBootTimeInMs", n => { GroupPolicyBootTimeInMs = n.GetIntValue(); } },
-                {"groupPolicyLoginTimeInMs", n => { GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
-                {"isFeatureUpdate", n => { IsFeatureUpdate = n.GetBoolValue(); } },
-                {"isFirstLogin", n => { IsFirstLogin = n.GetBoolValue(); } },
-                {"operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
-                {"responsiveDesktopTimeInMs", n => { ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
-                {"restartCategory", n => { RestartCategory = n.GetEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
-                {"restartFaultBucket", n => { RestartFaultBucket = n.GetStringValue(); } },
-                {"restartStopCode", n => { RestartStopCode = n.GetStringValue(); } },
-                {"startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
-                {"totalBootTimeInMs", n => { TotalBootTimeInMs = n.GetIntValue(); } },
-                {"totalLoginTimeInMs", n => { TotalLoginTimeInMs = n.GetIntValue(); } },
+                { "coreBootTimeInMs", n => { CoreBootTimeInMs = n.GetIntValue(); } },
+                { "coreLoginTimeInMs", n => { CoreLoginTimeInMs = n.GetIntValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "featureUpdateBootTimeInMs", n => { FeatureUpdateBootTimeInMs = n.GetIntValue(); } },
+                { "groupPolicyBootTimeInMs", n => { GroupPolicyBootTimeInMs = n.GetIntValue(); } },
+                { "groupPolicyLoginTimeInMs", n => { GroupPolicyLoginTimeInMs = n.GetIntValue(); } },
+                { "isFeatureUpdate", n => { IsFeatureUpdate = n.GetBoolValue(); } },
+                { "isFirstLogin", n => { IsFirstLogin = n.GetBoolValue(); } },
+                { "operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
+                { "responsiveDesktopTimeInMs", n => { ResponsiveDesktopTimeInMs = n.GetIntValue(); } },
+                { "restartCategory", n => { RestartCategory = n.GetEnumValue<UserExperienceAnalyticsOperatingSystemRestartCategory>(); } },
+                { "restartFaultBucket", n => { RestartFaultBucket = n.GetStringValue(); } },
+                { "restartStopCode", n => { RestartStopCode = n.GetStringValue(); } },
+                { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "totalBootTimeInMs", n => { TotalBootTimeInMs = n.GetIntValue(); } },
+                { "totalLoginTimeInMs", n => { TotalLoginTimeInMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

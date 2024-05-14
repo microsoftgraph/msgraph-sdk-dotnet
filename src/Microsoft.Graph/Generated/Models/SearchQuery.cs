@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SearchQuery : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SearchQuery : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The search query containing the search terms. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryString {
+        public string? QueryString
+        {
             get { return BackingStore?.Get<string?>("queryString"); }
             set { BackingStore?.Set("queryString", value); }
         }
 #nullable restore
 #else
-        public string QueryString {
+        public string QueryString
+        {
             get { return BackingStore?.Get<string>("queryString"); }
             set { BackingStore?.Set("queryString", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Provides a way to decorate the query string. Supports both KQL and query variables. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryTemplate {
+        public string? QueryTemplate
+        {
             get { return BackingStore?.Get<string?>("queryTemplate"); }
             set { BackingStore?.Set("queryTemplate", value); }
         }
 #nullable restore
 #else
-        public string QueryTemplate {
+        public string QueryTemplate
+        {
             get { return BackingStore?.Get<string>("queryTemplate"); }
             set { BackingStore?.Set("queryTemplate", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"queryString", n => { QueryString = n.GetStringValue(); } },
-                {"queryTemplate", n => { QueryTemplate = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "queryString", n => { QueryString = n.GetStringValue(); } },
+                { "queryTemplate", n => { QueryTemplate = n.GetStringValue(); } },
             };
         }
         /// <summary>

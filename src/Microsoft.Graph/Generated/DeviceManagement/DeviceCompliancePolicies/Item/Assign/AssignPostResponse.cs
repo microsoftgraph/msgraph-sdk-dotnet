@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign {
+namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class AssignPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicyAssignment>? Value {
+        public List<DeviceCompliancePolicyAssignment>? Value
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicyAssignment> Value {
+        public List<DeviceCompliancePolicyAssignment> Value
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign 
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicyAssignment>(DeviceCompliancePolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicyAssignment>(DeviceCompliancePolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

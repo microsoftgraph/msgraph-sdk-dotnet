@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid
+{
     #pragma warning disable CS1591
-    public class MidPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MidPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid {
         /// <summary>The numChars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumChars {
+        public Json? NumChars
+        {
             get { return BackingStore?.Get<Json?>("numChars"); }
             set { BackingStore?.Set("numChars", value); }
         }
 #nullable restore
 #else
-        public Json NumChars {
+        public Json NumChars
+        {
             get { return BackingStore?.Get<Json>("numChars"); }
             set { BackingStore?.Set("numChars", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid {
         /// <summary>The startNum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? StartNum {
+        public Json? StartNum
+        {
             get { return BackingStore?.Get<Json?>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
 #nullable restore
 #else
-        public Json StartNum {
+        public Json StartNum
+        {
             get { return BackingStore?.Get<Json>("startNum"); }
             set { BackingStore?.Set("startNum", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid {
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Text {
+        public Json? Text
+        {
             get { return BackingStore?.Get<Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public Json Text {
+        public Json Text
+        {
             get { return BackingStore?.Get<Json>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Mid {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"numChars", n => { NumChars = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numChars", n => { NumChars = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "startNum", n => { StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

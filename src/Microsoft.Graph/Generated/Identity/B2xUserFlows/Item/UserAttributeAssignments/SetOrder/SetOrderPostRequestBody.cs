@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder {
+namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder
+{
     #pragma warning disable CS1591
-    public class SetOrderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetOrderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         /// <summary>The newAssignmentOrder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AssignmentOrder? NewAssignmentOrder {
+        public AssignmentOrder? NewAssignmentOrder
+        {
             get { return BackingStore?.Get<AssignmentOrder?>("newAssignmentOrder"); }
             set { BackingStore?.Set("newAssignmentOrder", value); }
         }
 #nullable restore
 #else
-        public AssignmentOrder NewAssignmentOrder {
+        public AssignmentOrder NewAssignmentOrder
+        {
             get { return BackingStore?.Get<AssignmentOrder>("newAssignmentOrder"); }
             set { BackingStore?.Set("newAssignmentOrder", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"newAssignmentOrder", n => { NewAssignmentOrder = n.GetObjectValue<AssignmentOrder>(AssignmentOrder.CreateFromDiscriminatorValue); } },
+                { "newAssignmentOrder", n => { NewAssignmentOrder = n.GetObjectValue<AssignmentOrder>(AssignmentOrder.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

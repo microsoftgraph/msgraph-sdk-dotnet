@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class RegistryKeyEvidence : AlertEvidence, IParsable 
+    public class RegistryKeyEvidence : AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Registry hive of the key that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistryHive {
+        public string? RegistryHive
+        {
             get { return BackingStore?.Get<string?>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
 #nullable restore
 #else
-        public string RegistryHive {
+        public string RegistryHive
+        {
             get { return BackingStore?.Get<string>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>Registry key that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistryKey {
+        public string? RegistryKey
+        {
             get { return BackingStore?.Get<string?>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }
         }
 #nullable restore
 #else
-        public string RegistryKey {
+        public string RegistryKey
+        {
             get { return BackingStore?.Get<string>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"registryHive", n => { RegistryHive = n.GetStringValue(); } },
-                {"registryKey", n => { RegistryKey = n.GetStringValue(); } },
+                { "registryHive", n => { RegistryHive = n.GetStringValue(); } },
+                { "registryKey", n => { RegistryKey = n.GetStringValue(); } },
             };
         }
         /// <summary>

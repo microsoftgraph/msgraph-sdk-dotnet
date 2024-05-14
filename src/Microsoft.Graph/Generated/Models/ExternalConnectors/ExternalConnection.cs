@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class ExternalConnection : Microsoft.Graph.Models.Entity, IParsable 
+    public class ExternalConnection : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ExternalConnectors.ActivitySettings? ActivitySettings {
+        public Microsoft.Graph.Models.ExternalConnectors.ActivitySettings? ActivitySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings?>("activitySettings"); }
             set { BackingStore?.Set("activitySettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ExternalConnectors.ActivitySettings ActivitySettings {
+        public Microsoft.Graph.Models.ExternalConnectors.ActivitySettings ActivitySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>("activitySettings"); }
             set { BackingStore?.Set("activitySettings", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ExternalConnectors.Configuration? Configuration {
+        public Microsoft.Graph.Models.ExternalConnectors.Configuration? Configuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Configuration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ExternalConnectors.Configuration Configuration {
+        public Microsoft.Graph.Models.ExternalConnectors.Configuration Configuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Configuration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The Teams app ID. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId {
+        public string? ConnectorId
+        {
             get { return BackingStore?.Get<string?>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
 #nullable restore
 #else
-        public string ConnectorId {
+        public string ConnectorId
+        {
             get { return BackingStore?.Get<string>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalGroup>? Groups {
+        public List<ExternalGroup>? Groups
+        {
             get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<ExternalGroup> Groups {
+        public List<ExternalGroup> Groups
+        {
             get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalItem>? Items {
+        public List<ExternalItem>? Items
+        {
             get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ExternalItem> Items {
+        public List<ExternalItem> Items
+        {
             get { return BackingStore?.Get<List<ExternalItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectionOperation>? Operations {
+        public List<ConnectionOperation>? Operations
+        {
             get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ConnectionOperation> Operations {
+        public List<ConnectionOperation> Operations
+        {
             get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ExternalConnectors.Schema? Schema {
+        public Microsoft.Graph.Models.ExternalConnectors.Schema? Schema
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Schema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ExternalConnectors.Schema Schema {
+        public Microsoft.Graph.Models.ExternalConnectors.Schema Schema
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.Schema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
@@ -138,19 +157,22 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         /// <summary>The settings configuring the search experience for content in this connection, such as the display templates for search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ExternalConnectors.SearchSettings? SearchSettings {
+        public Microsoft.Graph.Models.ExternalConnectors.SearchSettings? SearchSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.SearchSettings?>("searchSettings"); }
             set { BackingStore?.Set("searchSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ExternalConnectors.SearchSettings SearchSettings {
+        public Microsoft.Graph.Models.ExternalConnectors.SearchSettings SearchSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ExternalConnectors.SearchSettings>("searchSettings"); }
             set { BackingStore?.Set("searchSettings", value); }
         }
 #endif
         /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
-        public ConnectionState? State {
+        public ConnectionState? State
+        {
             get { return BackingStore?.Get<ConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -172,17 +194,17 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
-                {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
-                {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Schema>(Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue); } },
-                {"searchSettings", n => { SearchSettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.SearchSettings>(Microsoft.Graph.Models.ExternalConnectors.SearchSettings.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<ConnectionState>(); } },
+                { "activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
+                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.Schema>(Microsoft.Graph.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue); } },
+                { "searchSettings", n => { SearchSettings = n.GetObjectValue<Microsoft.Graph.Models.ExternalConnectors.SearchSettings>(Microsoft.Graph.Models.ExternalConnectors.SearchSettings.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<ConnectionState>(); } },
             };
         }
         /// <summary>

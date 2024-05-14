@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Workbook : Entity, IParsable 
+    public class Workbook : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookApplication? Application {
+        public WorkbookApplication? Application
+        {
             get { return BackingStore?.Get<WorkbookApplication?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public WorkbookApplication Application {
+        public WorkbookApplication Application
+        {
             get { return BackingStore?.Get<WorkbookApplication>("application"); }
             set { BackingStore?.Set("application", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a collection of comments in a workbook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookComment>? Comments {
+        public List<WorkbookComment>? Comments
+        {
             get { return BackingStore?.Get<List<WorkbookComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookComment> Comments {
+        public List<WorkbookComment> Comments
+        {
             get { return BackingStore?.Get<List<WorkbookComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookFunctions? Functions {
+        public WorkbookFunctions? Functions
+        {
             get { return BackingStore?.Get<WorkbookFunctions?>("functions"); }
             set { BackingStore?.Set("functions", value); }
         }
 #nullable restore
 #else
-        public WorkbookFunctions Functions {
+        public WorkbookFunctions Functions
+        {
             get { return BackingStore?.Get<WorkbookFunctions>("functions"); }
             set { BackingStore?.Set("functions", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookNamedItem>? Names {
+        public List<WorkbookNamedItem>? Names
+        {
             get { return BackingStore?.Get<List<WorkbookNamedItem>?>("names"); }
             set { BackingStore?.Set("names", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookNamedItem> Names {
+        public List<WorkbookNamedItem> Names
+        {
             get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
             set { BackingStore?.Set("names", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookOperation>? Operations {
+        public List<WorkbookOperation>? Operations
+        {
             get { return BackingStore?.Get<List<WorkbookOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookOperation> Operations {
+        public List<WorkbookOperation> Operations
+        {
             get { return BackingStore?.Get<List<WorkbookOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a collection of tables associated with the workbook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookTable>? Tables {
+        public List<WorkbookTable>? Tables
+        {
             get { return BackingStore?.Get<List<WorkbookTable>?>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookTable> Tables {
+        public List<WorkbookTable> Tables
+        {
             get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents a collection of worksheets associated with the workbook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookWorksheet>? Worksheets {
+        public List<WorkbookWorksheet>? Worksheets
+        {
             get { return BackingStore?.Get<List<WorkbookWorksheet>?>("worksheets"); }
             set { BackingStore?.Set("worksheets", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookWorksheet> Worksheets {
+        public List<WorkbookWorksheet> Worksheets
+        {
             get { return BackingStore?.Get<List<WorkbookWorksheet>>("worksheets"); }
             set { BackingStore?.Set("worksheets", value); }
         }
@@ -125,13 +140,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"application", n => { Application = n.GetObjectValue<WorkbookApplication>(WorkbookApplication.CreateFromDiscriminatorValue); } },
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<WorkbookComment>(WorkbookComment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"functions", n => { Functions = n.GetObjectValue<WorkbookFunctions>(WorkbookFunctions.CreateFromDiscriminatorValue); } },
-                {"names", n => { Names = n.GetCollectionOfObjectValues<WorkbookNamedItem>(WorkbookNamedItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<WorkbookOperation>(WorkbookOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tables", n => { Tables = n.GetCollectionOfObjectValues<WorkbookTable>(WorkbookTable.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"worksheets", n => { Worksheets = n.GetCollectionOfObjectValues<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "application", n => { Application = n.GetObjectValue<WorkbookApplication>(WorkbookApplication.CreateFromDiscriminatorValue); } },
+                { "comments", n => { Comments = n.GetCollectionOfObjectValues<WorkbookComment>(WorkbookComment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "functions", n => { Functions = n.GetObjectValue<WorkbookFunctions>(WorkbookFunctions.CreateFromDiscriminatorValue); } },
+                { "names", n => { Names = n.GetCollectionOfObjectValues<WorkbookNamedItem>(WorkbookNamedItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<WorkbookOperation>(WorkbookOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tables", n => { Tables = n.GetCollectionOfObjectValues<WorkbookTable>(WorkbookTable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "worksheets", n => { Worksheets = n.GetCollectionOfObjectValues<WorkbookWorksheet>(WorkbookWorksheet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

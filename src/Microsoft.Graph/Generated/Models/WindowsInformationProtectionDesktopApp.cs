@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Desktop App for Windows information protection
     /// </summary>
-    public class WindowsInformationProtectionDesktopApp : WindowsInformationProtectionApp, IParsable 
+    public class WindowsInformationProtectionDesktopApp : WindowsInformationProtectionApp, IParsable
     {
         /// <summary>The binary name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BinaryName {
+        public string? BinaryName
+        {
             get { return BackingStore?.Get<string?>("binaryName"); }
             set { BackingStore?.Set("binaryName", value); }
         }
 #nullable restore
 #else
-        public string BinaryName {
+        public string BinaryName
+        {
             get { return BackingStore?.Get<string>("binaryName"); }
             set { BackingStore?.Set("binaryName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The high binary version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BinaryVersionHigh {
+        public string? BinaryVersionHigh
+        {
             get { return BackingStore?.Get<string?>("binaryVersionHigh"); }
             set { BackingStore?.Set("binaryVersionHigh", value); }
         }
 #nullable restore
 #else
-        public string BinaryVersionHigh {
+        public string BinaryVersionHigh
+        {
             get { return BackingStore?.Get<string>("binaryVersionHigh"); }
             set { BackingStore?.Set("binaryVersionHigh", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The lower binary version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BinaryVersionLow {
+        public string? BinaryVersionLow
+        {
             get { return BackingStore?.Get<string?>("binaryVersionLow"); }
             set { BackingStore?.Set("binaryVersionLow", value); }
         }
 #nullable restore
 #else
-        public string BinaryVersionLow {
+        public string BinaryVersionLow
+        {
             get { return BackingStore?.Get<string>("binaryVersionLow"); }
             set { BackingStore?.Set("binaryVersionLow", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"binaryName", n => { BinaryName = n.GetStringValue(); } },
-                {"binaryVersionHigh", n => { BinaryVersionHigh = n.GetStringValue(); } },
-                {"binaryVersionLow", n => { BinaryVersionLow = n.GetStringValue(); } },
+                { "binaryName", n => { BinaryName = n.GetStringValue(); } },
+                { "binaryVersionHigh", n => { BinaryVersionHigh = n.GetStringValue(); } },
+                { "binaryVersionLow", n => { BinaryVersionLow = n.GetStringValue(); } },
             };
         }
         /// <summary>

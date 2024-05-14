@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookFormatProtection : Entity, IParsable 
+    public class WorkbookFormatProtection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn&apos;t have uniform formula hidden setting.</summary>
-        public bool? FormulaHidden {
+        public bool? FormulaHidden
+        {
             get { return BackingStore?.Get<bool?>("formulaHidden"); }
             set { BackingStore?.Set("formulaHidden", value); }
         }
         /// <summary>Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn&apos;t have uniform lock setting.</summary>
-        public bool? Locked {
+        public bool? Locked
+        {
             get { return BackingStore?.Get<bool?>("locked"); }
             set { BackingStore?.Set("locked", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"formulaHidden", n => { FormulaHidden = n.GetBoolValue(); } },
-                {"locked", n => { Locked = n.GetBoolValue(); } },
+                { "formulaHidden", n => { FormulaHidden = n.GetBoolValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

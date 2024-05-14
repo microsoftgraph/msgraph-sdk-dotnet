@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Represents the synchronization details of an ios app, with management capabilities, for a specific user.
     /// </summary>
-    public class IosManagedAppRegistration : ManagedAppRegistration, IParsable 
+    public class IosManagedAppRegistration : ManagedAppRegistration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="IosManagedAppRegistration"/> and sets the default values.

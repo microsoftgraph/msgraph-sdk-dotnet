@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConnectedOrganizationMembers : SubjectSet, IParsable 
+    public class ConnectedOrganizationMembers : SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the connected organization in entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectedOrganizationId {
+        public string? ConnectedOrganizationId
+        {
             get { return BackingStore?.Get<string?>("connectedOrganizationId"); }
             set { BackingStore?.Set("connectedOrganizationId", value); }
         }
 #nullable restore
 #else
-        public string ConnectedOrganizationId {
+        public string ConnectedOrganizationId
+        {
             get { return BackingStore?.Get<string>("connectedOrganizationId"); }
             set { BackingStore?.Set("connectedOrganizationId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the connected organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectedOrganizationId", n => { ConnectedOrganizationId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
+                { "connectedOrganizationId", n => { ConnectedOrganizationId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
             };
         }
         /// <summary>

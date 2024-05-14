@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.UploadClientCertificate {
+namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.UploadClientCertificate
+{
     #pragma warning disable CS1591
-    public class UploadClientCertificatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UploadClientCertificatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password {
+        public string? Password
+        {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #nullable restore
 #else
-        public string Password {
+        public string Password
+        {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// <summary>The pkcs12Value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pkcs12Value {
+        public string? Pkcs12Value
+        {
             get { return BackingStore?.Get<string?>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
 #nullable restore
 #else
-        public string Pkcs12Value {
+        public string Pkcs12Value
+        {
             get { return BackingStore?.Get<string>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"pkcs12Value", n => { Pkcs12Value = n.GetStringValue(); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "pkcs12Value", n => { Pkcs12Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

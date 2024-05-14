@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb
+{
     #pragma warning disable CS1591
-    public class DdbPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DdbPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         /// <summary>The cost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Cost {
+        public Json? Cost
+        {
             get { return BackingStore?.Get<Json?>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
 #nullable restore
 #else
-        public Json Cost {
+        public Json Cost
+        {
             get { return BackingStore?.Get<Json>("cost"); }
             set { BackingStore?.Set("cost", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         /// <summary>The factor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Factor {
+        public Json? Factor
+        {
             get { return BackingStore?.Get<Json?>("factor"); }
             set { BackingStore?.Set("factor", value); }
         }
 #nullable restore
 #else
-        public Json Factor {
+        public Json Factor
+        {
             get { return BackingStore?.Get<Json>("factor"); }
             set { BackingStore?.Set("factor", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         /// <summary>The life property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Life {
+        public Json? Life
+        {
             get { return BackingStore?.Get<Json?>("life"); }
             set { BackingStore?.Set("life", value); }
         }
 #nullable restore
 #else
-        public Json Life {
+        public Json Life
+        {
             get { return BackingStore?.Get<Json>("life"); }
             set { BackingStore?.Set("life", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Period {
+        public Json? Period
+        {
             get { return BackingStore?.Get<Json?>("period"); }
             set { BackingStore?.Set("period", value); }
         }
 #nullable restore
 #else
-        public Json Period {
+        public Json Period
+        {
             get { return BackingStore?.Get<Json>("period"); }
             set { BackingStore?.Set("period", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         /// <summary>The salvage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Salvage {
+        public Json? Salvage
+        {
             get { return BackingStore?.Get<Json?>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
 #nullable restore
 #else
-        public Json Salvage {
+        public Json Salvage
+        {
             get { return BackingStore?.Get<Json>("salvage"); }
             set { BackingStore?.Set("salvage", value); }
         }
@@ -114,11 +126,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Ddb {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cost", n => { Cost = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"factor", n => { Factor = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"life", n => { Life = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"period", n => { Period = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"salvage", n => { Salvage = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "factor", n => { Factor = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "life", n => { Life = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "salvage", n => { Salvage = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

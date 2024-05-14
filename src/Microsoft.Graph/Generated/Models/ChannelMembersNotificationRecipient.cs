@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable 
+    public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the channel whose members should receive the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChannelId {
+        public string? ChannelId
+        {
             get { return BackingStore?.Get<string?>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
 #nullable restore
 #else
-        public string ChannelId {
+        public string ChannelId
+        {
             get { return BackingStore?.Get<string>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique identifier for the team under which the channel resides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId {
+        public string? TeamId
+        {
             get { return BackingStore?.Get<string?>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
 #nullable restore
 #else
-        public string TeamId {
+        public string TeamId
+        {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"channelId", n => { ChannelId = n.GetStringValue(); } },
-                {"teamId", n => { TeamId = n.GetStringValue(); } },
+                { "channelId", n => { ChannelId = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetStringValue(); } },
             };
         }
         /// <summary>

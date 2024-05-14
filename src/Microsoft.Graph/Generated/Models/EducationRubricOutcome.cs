@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationRubricOutcome : EducationOutcome, IParsable 
+    public class EducationRubricOutcome : EducationOutcome, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A copy of the rubricQualityFeedback property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RubricQualityFeedbackModel>? PublishedRubricQualityFeedback {
+        public List<RubricQualityFeedbackModel>? PublishedRubricQualityFeedback
+        {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>?>("publishedRubricQualityFeedback"); }
             set { BackingStore?.Set("publishedRubricQualityFeedback", value); }
         }
 #nullable restore
 #else
-        public List<RubricQualityFeedbackModel> PublishedRubricQualityFeedback {
+        public List<RubricQualityFeedbackModel> PublishedRubricQualityFeedback
+        {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("publishedRubricQualityFeedback"); }
             set { BackingStore?.Set("publishedRubricQualityFeedback", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RubricQualitySelectedColumnModel>? PublishedRubricQualitySelectedLevels {
+        public List<RubricQualitySelectedColumnModel>? PublishedRubricQualitySelectedLevels
+        {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>?>("publishedRubricQualitySelectedLevels"); }
             set { BackingStore?.Set("publishedRubricQualitySelectedLevels", value); }
         }
 #nullable restore
 #else
-        public List<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels {
+        public List<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels
+        {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("publishedRubricQualitySelectedLevels"); }
             set { BackingStore?.Set("publishedRubricQualitySelectedLevels", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A collection of specific feedback for each quality of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RubricQualityFeedbackModel>? RubricQualityFeedback {
+        public List<RubricQualityFeedbackModel>? RubricQualityFeedback
+        {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>?>("rubricQualityFeedback"); }
             set { BackingStore?.Set("rubricQualityFeedback", value); }
         }
 #nullable restore
 #else
-        public List<RubricQualityFeedbackModel> RubricQualityFeedback {
+        public List<RubricQualityFeedbackModel> RubricQualityFeedback
+        {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("rubricQualityFeedback"); }
             set { BackingStore?.Set("rubricQualityFeedback", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The level that the teacher has selected for each quality while grading this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RubricQualitySelectedColumnModel>? RubricQualitySelectedLevels {
+        public List<RubricQualitySelectedColumnModel>? RubricQualitySelectedLevels
+        {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>?>("rubricQualitySelectedLevels"); }
             set { BackingStore?.Set("rubricQualitySelectedLevels", value); }
         }
 #nullable restore
 #else
-        public List<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels {
+        public List<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels
+        {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("rubricQualitySelectedLevels"); }
             set { BackingStore?.Set("rubricQualitySelectedLevels", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"publishedRubricQualityFeedback", n => { PublishedRubricQualityFeedback = n.GetCollectionOfObjectValues<RubricQualityFeedbackModel>(RubricQualityFeedbackModel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"publishedRubricQualitySelectedLevels", n => { PublishedRubricQualitySelectedLevels = n.GetCollectionOfObjectValues<RubricQualitySelectedColumnModel>(RubricQualitySelectedColumnModel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rubricQualityFeedback", n => { RubricQualityFeedback = n.GetCollectionOfObjectValues<RubricQualityFeedbackModel>(RubricQualityFeedbackModel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rubricQualitySelectedLevels", n => { RubricQualitySelectedLevels = n.GetCollectionOfObjectValues<RubricQualitySelectedColumnModel>(RubricQualitySelectedColumnModel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publishedRubricQualityFeedback", n => { PublishedRubricQualityFeedback = n.GetCollectionOfObjectValues<RubricQualityFeedbackModel>(RubricQualityFeedbackModel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publishedRubricQualitySelectedLevels", n => { PublishedRubricQualitySelectedLevels = n.GetCollectionOfObjectValues<RubricQualitySelectedColumnModel>(RubricQualitySelectedColumnModel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rubricQualityFeedback", n => { RubricQualityFeedback = n.GetCollectionOfObjectValues<RubricQualityFeedbackModel>(RubricQualityFeedbackModel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rubricQualitySelectedLevels", n => { RubricQualitySelectedLevels = n.GetCollectionOfObjectValues<RubricQualitySelectedColumnModel>(RubricQualitySelectedColumnModel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

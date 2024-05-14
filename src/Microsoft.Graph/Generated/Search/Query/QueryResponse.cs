@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Search.Query {
+namespace Microsoft.Graph.Search.Query
+{
     [Obsolete("This class is obsolete. Use QueryPostResponse instead.")]
     #pragma warning disable CS1591
-    public class QueryResponse : QueryPostResponse, IParsable 
+    public class QueryResponse : QueryPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

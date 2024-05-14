@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_Range {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_Range
+{
     #pragma warning disable CS1591
-    public class Binom_Dist_RangePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Binom_Dist_RangePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>The numberS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumberS {
+        public Json? NumberS
+        {
             get { return BackingStore?.Get<Json?>("numberS"); }
             set { BackingStore?.Set("numberS", value); }
         }
 #nullable restore
 #else
-        public Json NumberS {
+        public Json NumberS
+        {
             get { return BackingStore?.Get<Json>("numberS"); }
             set { BackingStore?.Set("numberS", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>The numberS2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? NumberS2 {
+        public Json? NumberS2
+        {
             get { return BackingStore?.Get<Json?>("numberS2"); }
             set { BackingStore?.Set("numberS2", value); }
         }
 #nullable restore
 #else
-        public Json NumberS2 {
+        public Json NumberS2
+        {
             get { return BackingStore?.Get<Json>("numberS2"); }
             set { BackingStore?.Set("numberS2", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>The probabilityS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ProbabilityS {
+        public Json? ProbabilityS
+        {
             get { return BackingStore?.Get<Json?>("probabilityS"); }
             set { BackingStore?.Set("probabilityS", value); }
         }
 #nullable restore
 #else
-        public Json ProbabilityS {
+        public Json ProbabilityS
+        {
             get { return BackingStore?.Get<Json>("probabilityS"); }
             set { BackingStore?.Set("probabilityS", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         /// <summary>The trials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Trials {
+        public Json? Trials
+        {
             get { return BackingStore?.Get<Json?>("trials"); }
             set { BackingStore?.Set("trials", value); }
         }
 #nullable restore
 #else
-        public Json Trials {
+        public Json Trials
+        {
             get { return BackingStore?.Get<Json>("trials"); }
             set { BackingStore?.Set("trials", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Dist_R
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"numberS", n => { NumberS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"numberS2", n => { NumberS2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"probabilityS", n => { ProbabilityS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"trials", n => { Trials = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numberS", n => { NumberS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "numberS2", n => { NumberS2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "probabilityS", n => { ProbabilityS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "trials", n => { Trials = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

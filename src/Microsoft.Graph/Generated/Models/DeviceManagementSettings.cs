@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days a device is allowed to go without checking in to remain compliant.</summary>
-        public int? DeviceComplianceCheckinThresholdDays {
+        public int? DeviceComplianceCheckinThresholdDays
+        {
             get { return BackingStore?.Get<int?>("deviceComplianceCheckinThresholdDays"); }
             set { BackingStore?.Set("deviceComplianceCheckinThresholdDays", value); }
         }
         /// <summary>Is feature enabled or not for scheduled action for rule.</summary>
-        public bool? IsScheduledActionEnabled {
+        public bool? IsScheduledActionEnabled
+        {
             get { return BackingStore?.Get<bool?>("isScheduledActionEnabled"); }
             set { BackingStore?.Set("isScheduledActionEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Device should be noncompliant when there is no compliance policy targeted when this is true</summary>
-        public bool? SecureByDefault {
+        public bool? SecureByDefault
+        {
             get { return BackingStore?.Get<bool?>("secureByDefault"); }
             set { BackingStore?.Set("secureByDefault", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceComplianceCheckinThresholdDays", n => { DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
-                {"isScheduledActionEnabled", n => { IsScheduledActionEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"secureByDefault", n => { SecureByDefault = n.GetBoolValue(); } },
+                { "deviceComplianceCheckinThresholdDays", n => { DeviceComplianceCheckinThresholdDays = n.GetIntValue(); } },
+                { "isScheduledActionEnabled", n => { IsScheduledActionEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "secureByDefault", n => { SecureByDefault = n.GetBoolValue(); } },
             };
         }
         /// <summary>

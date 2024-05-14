@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class BasicAuthentication : ApiAuthenticationConfigurationBase, IParsable 
+    public class BasicAuthentication : ApiAuthenticationConfigurationBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The password. It isn&apos;t returned in the responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password {
+        public string? Password
+        {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #nullable restore
 #else
-        public string Password {
+        public string Password
+        {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username {
+        public string? Username
+        {
             get { return BackingStore?.Get<string?>("username"); }
             set { BackingStore?.Set("username", value); }
         }
 #nullable restore
 #else
-        public string Username {
+        public string Username
+        {
             get { return BackingStore?.Get<string>("username"); }
             set { BackingStore?.Set("username", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"username", n => { Username = n.GetStringValue(); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>

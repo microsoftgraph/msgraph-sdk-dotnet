@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CommunicationsApplicationIdentity : Identity, IParsable 
+    public class CommunicationsApplicationIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>First-party Microsoft application that presents this identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationType {
+        public string? ApplicationType
+        {
             get { return BackingStore?.Get<string?>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
 #nullable restore
 #else
-        public string ApplicationType {
+        public string ApplicationType
+        {
             get { return BackingStore?.Get<string>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
 #endif
         /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
-        public bool? Hidden {
+        public bool? Hidden
+        {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationType", n => { ApplicationType = n.GetStringValue(); } },
-                {"hidden", n => { Hidden = n.GetBoolValue(); } },
+                { "applicationType", n => { ApplicationType = n.GetStringValue(); } },
+                { "hidden", n => { Hidden = n.GetBoolValue(); } },
             };
         }
         /// <summary>

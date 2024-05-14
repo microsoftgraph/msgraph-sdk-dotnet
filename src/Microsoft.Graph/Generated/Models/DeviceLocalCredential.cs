@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DeviceLocalCredential : Entity, IParsable 
+    public class DeviceLocalCredential : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the local admin account for which LAPS is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName {
+        public string? AccountName
+        {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
 #nullable restore
 #else
-        public string AccountName {
+        public string AccountName
+        {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SID of the local admin account for which LAPS is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountSid {
+        public string? AccountSid
+        {
             get { return BackingStore?.Get<string?>("accountSid"); }
             set { BackingStore?.Set("accountSid", value); }
         }
 #nullable restore
 #else
-        public string AccountSid {
+        public string AccountSid
+        {
             get { return BackingStore?.Get<string>("accountSid"); }
             set { BackingStore?.Set("accountSid", value); }
         }
 #endif
         /// <summary>When the local administrator account credential for the device object was backed up to Azure Active Directory.</summary>
-        public DateTimeOffset? BackupDateTime {
+        public DateTimeOffset? BackupDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("backupDateTime"); }
             set { BackingStore?.Set("backupDateTime", value); }
         }
         /// <summary>The password for the local administrator account that is backed up to Azure Active Directory and returned as a Base64 encoded value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PasswordBase64 {
+        public string? PasswordBase64
+        {
             get { return BackingStore?.Get<string?>("passwordBase64"); }
             set { BackingStore?.Set("passwordBase64", value); }
         }
 #nullable restore
 #else
-        public string PasswordBase64 {
+        public string PasswordBase64
+        {
             get { return BackingStore?.Get<string>("passwordBase64"); }
             set { BackingStore?.Set("passwordBase64", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountName", n => { AccountName = n.GetStringValue(); } },
-                {"accountSid", n => { AccountSid = n.GetStringValue(); } },
-                {"backupDateTime", n => { BackupDateTime = n.GetDateTimeOffsetValue(); } },
-                {"passwordBase64", n => { PasswordBase64 = n.GetStringValue(); } },
+                { "accountName", n => { AccountName = n.GetStringValue(); } },
+                { "accountSid", n => { AccountSid = n.GetStringValue(); } },
+                { "backupDateTime", n => { BackupDateTime = n.GetDateTimeOffsetValue(); } },
+                { "passwordBase64", n => { PasswordBase64 = n.GetStringValue(); } },
             };
         }
         /// <summary>

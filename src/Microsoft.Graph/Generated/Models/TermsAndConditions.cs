@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&amp;C) policy. T&amp;C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
     /// </summary>
-    public class TermsAndConditions : Entity, IParsable 
+    public class TermsAndConditions : Entity, IParsable
     {
         /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptanceStatement {
+        public string? AcceptanceStatement
+        {
             get { return BackingStore?.Get<string?>("acceptanceStatement"); }
             set { BackingStore?.Set("acceptanceStatement", value); }
         }
 #nullable restore
 #else
-        public string AcceptanceStatement {
+        public string AcceptanceStatement
+        {
             get { return BackingStore?.Get<string>("acceptanceStatement"); }
             set { BackingStore?.Set("acceptanceStatement", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of acceptance statuses for this T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TermsAndConditionsAcceptanceStatus>? AcceptanceStatuses {
+        public List<TermsAndConditionsAcceptanceStatus>? AcceptanceStatuses
+        {
             get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>?>("acceptanceStatuses"); }
             set { BackingStore?.Set("acceptanceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses {
+        public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses
+        {
             get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>>("acceptanceStatuses"); }
             set { BackingStore?.Set("acceptanceStatuses", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of assignments for this T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TermsAndConditionsAssignment>? Assignments {
+        public List<TermsAndConditionsAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<TermsAndConditionsAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TermsAndConditionsAssignment> Assignments {
+        public List<TermsAndConditionsAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<TermsAndConditionsAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -55,32 +62,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BodyText {
+        public string? BodyText
+        {
             get { return BackingStore?.Get<string?>("bodyText"); }
             set { BackingStore?.Set("bodyText", value); }
         }
 #nullable restore
 #else
-        public string BodyText {
+        public string BodyText
+        {
             get { return BackingStore?.Get<string>("bodyText"); }
             set { BackingStore?.Set("bodyText", value); }
         }
 #endif
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Administrator-supplied description of the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -88,38 +100,44 @@ namespace Microsoft.Graph.Models {
         /// <summary>Administrator-supplied name for the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #endif
         /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&amp;C policy.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -141,16 +159,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acceptanceStatement", n => { AcceptanceStatement = n.GetStringValue(); } },
-                {"acceptanceStatuses", n => { AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>(TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>(TermsAndConditionsAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bodyText", n => { BodyText = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "acceptanceStatement", n => { AcceptanceStatement = n.GetStringValue(); } },
+                { "acceptanceStatuses", n => { AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>(TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>(TermsAndConditionsAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bodyText", n => { BodyText = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

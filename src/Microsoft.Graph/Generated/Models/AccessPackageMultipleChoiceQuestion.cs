@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable 
+    public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of answer choices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAnswerChoice>? Choices {
+        public List<AccessPackageAnswerChoice>? Choices
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>?>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAnswerChoice> Choices {
+        public List<AccessPackageAnswerChoice> Choices
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
 #endif
         /// <summary>Indicates whether requestor can select multiple choices as their answer.</summary>
-        public bool? IsMultipleSelectionAllowed {
+        public bool? IsMultipleSelectionAllowed
+        {
             get { return BackingStore?.Get<bool?>("isMultipleSelectionAllowed"); }
             set { BackingStore?.Set("isMultipleSelectionAllowed", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"choices", n => { Choices = n.GetCollectionOfObjectValues<AccessPackageAnswerChoice>(AccessPackageAnswerChoice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isMultipleSelectionAllowed", n => { IsMultipleSelectionAllowed = n.GetBoolValue(); } },
+                { "choices", n => { Choices = n.GetCollectionOfObjectValues<AccessPackageAnswerChoice>(AccessPackageAnswerChoice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isMultipleSelectionAllowed", n => { IsMultipleSelectionAllowed = n.GetBoolValue(); } },
             };
         }
         /// <summary>

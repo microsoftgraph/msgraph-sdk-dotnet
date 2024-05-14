@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartGridlines : Entity, IParsable 
+    public class WorkbookChartGridlines : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the formatting of chart gridlines. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartGridlinesFormat? Format {
+        public WorkbookChartGridlinesFormat? Format
+        {
             get { return BackingStore?.Get<WorkbookChartGridlinesFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartGridlinesFormat Format {
+        public WorkbookChartGridlinesFormat Format
+        {
             get { return BackingStore?.Get<WorkbookChartGridlinesFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>Boolean value representing if the axis gridlines are visible or not.</summary>
-        public bool? Visible {
+        public bool? Visible
+        {
             get { return BackingStore?.Get<bool?>("visible"); }
             set { BackingStore?.Set("visible", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"format", n => { Format = n.GetObjectValue<WorkbookChartGridlinesFormat>(WorkbookChartGridlinesFormat.CreateFromDiscriminatorValue); } },
-                {"visible", n => { Visible = n.GetBoolValue(); } },
+                { "format", n => { Format = n.GetObjectValue<WorkbookChartGridlinesFormat>(WorkbookChartGridlinesFormat.CreateFromDiscriminatorValue); } },
+                { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>

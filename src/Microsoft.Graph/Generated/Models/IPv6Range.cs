@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// IPv6 Range definition.
     /// </summary>
-    public class IPv6Range : IpRange, IParsable 
+    public class IPv6Range : IpRange, IParsable
     {
         /// <summary>Lower address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LowerAddress {
+        public string? LowerAddress
+        {
             get { return BackingStore?.Get<string?>("lowerAddress"); }
             set { BackingStore?.Set("lowerAddress", value); }
         }
 #nullable restore
 #else
-        public string LowerAddress {
+        public string LowerAddress
+        {
             get { return BackingStore?.Get<string>("lowerAddress"); }
             set { BackingStore?.Set("lowerAddress", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Upper address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpperAddress {
+        public string? UpperAddress
+        {
             get { return BackingStore?.Get<string?>("upperAddress"); }
             set { BackingStore?.Set("upperAddress", value); }
         }
 #nullable restore
 #else
-        public string UpperAddress {
+        public string UpperAddress
+        {
             get { return BackingStore?.Get<string>("upperAddress"); }
             set { BackingStore?.Set("upperAddress", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lowerAddress", n => { LowerAddress = n.GetStringValue(); } },
-                {"upperAddress", n => { UpperAddress = n.GetStringValue(); } },
+                { "lowerAddress", n => { LowerAddress = n.GetStringValue(); } },
+                { "upperAddress", n => { UpperAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

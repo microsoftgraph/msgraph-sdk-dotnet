@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedPermissionClassification : Entity, IParsable 
+    public class DelegatedPermissionClassification : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classification value. Possible values: low, medium (preview), high (preview). Doesn&apos;t support $filter.</summary>
-        public PermissionClassificationType? Classification {
+        public PermissionClassificationType? Classification
+        {
             get { return BackingStore?.Get<PermissionClassificationType?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn&apos;t support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionId {
+        public string? PermissionId
+        {
             get { return BackingStore?.Get<string?>("permissionId"); }
             set { BackingStore?.Set("permissionId", value); }
         }
 #nullable restore
 #else
-        public string PermissionId {
+        public string PermissionId
+        {
             get { return BackingStore?.Get<string>("permissionId"); }
             set { BackingStore?.Set("permissionId", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn&apos;t support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionName {
+        public string? PermissionName
+        {
             get { return BackingStore?.Get<string?>("permissionName"); }
             set { BackingStore?.Set("permissionName", value); }
         }
 #nullable restore
 #else
-        public string PermissionName {
+        public string PermissionName
+        {
             get { return BackingStore?.Get<string>("permissionName"); }
             set { BackingStore?.Set("permissionName", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classification", n => { Classification = n.GetEnumValue<PermissionClassificationType>(); } },
-                {"permissionId", n => { PermissionId = n.GetStringValue(); } },
-                {"permissionName", n => { PermissionName = n.GetStringValue(); } },
+                { "classification", n => { Classification = n.GetEnumValue<PermissionClassificationType>(); } },
+                { "permissionId", n => { PermissionId = n.GetStringValue(); } },
+                { "permissionName", n => { PermissionName = n.GetStringValue(); } },
             };
         }
         /// <summary>

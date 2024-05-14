@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationEventListener : Entity, IParsable 
+    public class AuthenticationEventListener : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authenticationEventsFlowId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationEventsFlowId {
+        public string? AuthenticationEventsFlowId
+        {
             get { return BackingStore?.Get<string?>("authenticationEventsFlowId"); }
             set { BackingStore?.Set("authenticationEventsFlowId", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationEventsFlowId {
+        public string AuthenticationEventsFlowId
+        {
             get { return BackingStore?.Get<string>("authenticationEventsFlowId"); }
             set { BackingStore?.Set("authenticationEventsFlowId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The conditions on which this authenticationEventListener should trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationConditions? Conditions {
+        public AuthenticationConditions? Conditions
+        {
             get { return BackingStore?.Get<AuthenticationConditions?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public AuthenticationConditions Conditions {
+        public AuthenticationConditions Conditions
+        {
             get { return BackingStore?.Get<AuthenticationConditions>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
@@ -60,8 +65,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
-                {"conditions", n => { Conditions = n.GetObjectValue<AuthenticationConditions>(AuthenticationConditions.CreateFromDiscriminatorValue); } },
+                { "authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<AuthenticationConditions>(AuthenticationConditions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

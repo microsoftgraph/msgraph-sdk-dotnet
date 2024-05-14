@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage {
+namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCoverage
+{
     #pragma warning disable CS1591
-    public class GetAttackSimulationTrainingUserCoverageGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetAttackSimulationTrainingUserCoverageGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttackSimulationTrainingUserCoverage>? Value {
+        public List<AttackSimulationTrainingUserCoverage>? Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AttackSimulationTrainingUserCoverage> Value {
+        public List<AttackSimulationTrainingUserCoverage> Value
+        {
             get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationTrainingUserCovera
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>(AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>(AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

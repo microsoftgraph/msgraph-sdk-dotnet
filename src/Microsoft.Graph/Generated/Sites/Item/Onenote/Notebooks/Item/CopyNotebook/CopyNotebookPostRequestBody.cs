@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
+namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook
+{
     #pragma warning disable CS1591
-    public class CopyNotebookPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CopyNotebookPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>The notebookFolder property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotebookFolder {
+        public string? NotebookFolder
+        {
             get { return BackingStore?.Get<string?>("notebookFolder"); }
             set { BackingStore?.Set("notebookFolder", value); }
         }
 #nullable restore
 #else
-        public string NotebookFolder {
+        public string NotebookFolder
+        {
             get { return BackingStore?.Get<string>("notebookFolder"); }
             set { BackingStore?.Set("notebookFolder", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>The renameAs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenameAs {
+        public string? RenameAs
+        {
             get { return BackingStore?.Get<string?>("renameAs"); }
             set { BackingStore?.Set("renameAs", value); }
         }
 #nullable restore
 #else
-        public string RenameAs {
+        public string RenameAs
+        {
             get { return BackingStore?.Get<string>("renameAs"); }
             set { BackingStore?.Set("renameAs", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>The siteCollectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteCollectionId {
+        public string? SiteCollectionId
+        {
             get { return BackingStore?.Get<string?>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
 #nullable restore
 #else
-        public string SiteCollectionId {
+        public string SiteCollectionId
+        {
             get { return BackingStore?.Get<string>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         /// <summary>The siteId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SiteId {
+        public string? SiteId
+        {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
 #nullable restore
 #else
-        public string SiteId {
+        public string SiteId
+        {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.CopyNotebook {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"notebookFolder", n => { NotebookFolder = n.GetStringValue(); } },
-                {"renameAs", n => { RenameAs = n.GetStringValue(); } },
-                {"siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
-                {"siteId", n => { SiteId = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "notebookFolder", n => { NotebookFolder = n.GetStringValue(); } },
+                { "renameAs", n => { RenameAs = n.GetStringValue(); } },
+                { "siteCollectionId", n => { SiteCollectionId = n.GetStringValue(); } },
+                { "siteId", n => { SiteId = n.GetStringValue(); } },
             };
         }
         /// <summary>

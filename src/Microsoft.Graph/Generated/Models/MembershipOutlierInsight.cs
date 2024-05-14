@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MembershipOutlierInsight : GovernanceInsight, IParsable 
+    public class MembershipOutlierInsight : GovernanceInsight, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Container {
+        public DirectoryObject? Container
+        {
             get { return BackingStore?.Get<DirectoryObject?>("container"); }
             set { BackingStore?.Set("container", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Container {
+        public DirectoryObject Container
+        {
             get { return BackingStore?.Get<DirectoryObject>("container"); }
             set { BackingStore?.Set("container", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the identifier of the container, for example, a group ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainerId {
+        public string? ContainerId
+        {
             get { return BackingStore?.Get<string?>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
 #nullable restore
 #else
-        public string ContainerId {
+        public string ContainerId
+        {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Navigation link to a member object who modified the record. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public User? LastModifiedBy {
+        public User? LastModifiedBy
+        {
             get { return BackingStore?.Get<User?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public User LastModifiedBy {
+        public User LastModifiedBy
+        {
             get { return BackingStore?.Get<User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Navigation link to a member object. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Member {
+        public DirectoryObject? Member
+        {
             get { return BackingStore?.Get<DirectoryObject?>("member"); }
             set { BackingStore?.Set("member", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Member {
+        public DirectoryObject Member
+        {
             get { return BackingStore?.Get<DirectoryObject>("member"); }
             set { BackingStore?.Set("member", value); }
         }
@@ -68,24 +77,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the identifier of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberId {
+        public string? MemberId
+        {
             get { return BackingStore?.Get<string?>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
 #nullable restore
 #else
-        public string MemberId {
+        public string MemberId
+        {
             get { return BackingStore?.Get<string>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
 #endif
         /// <summary>The outlierContainerType property</summary>
-        public Microsoft.Graph.Models.OutlierContainerType? OutlierContainerType {
+        public Microsoft.Graph.Models.OutlierContainerType? OutlierContainerType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.OutlierContainerType?>("outlierContainerType"); }
             set { BackingStore?.Set("outlierContainerType", value); }
         }
         /// <summary>The outlierMemberType property</summary>
-        public Microsoft.Graph.Models.OutlierMemberType? OutlierMemberType {
+        public Microsoft.Graph.Models.OutlierMemberType? OutlierMemberType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.OutlierMemberType?>("outlierMemberType"); }
             set { BackingStore?.Set("outlierMemberType", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"container", n => { Container = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"containerId", n => { ContainerId = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
-                {"member", n => { Member = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"memberId", n => { MemberId = n.GetStringValue(); } },
-                {"outlierContainerType", n => { OutlierContainerType = n.GetEnumValue<OutlierContainerType>(); } },
-                {"outlierMemberType", n => { OutlierMemberType = n.GetEnumValue<OutlierMemberType>(); } },
+                { "container", n => { Container = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "containerId", n => { ContainerId = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
+                { "member", n => { Member = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "memberId", n => { MemberId = n.GetStringValue(); } },
+                { "outlierContainerType", n => { OutlierContainerType = n.GetEnumValue<OutlierContainerType>(); } },
+                { "outlierMemberType", n => { OutlierMemberType = n.GetEnumValue<OutlierMemberType>(); } },
             };
         }
         /// <summary>

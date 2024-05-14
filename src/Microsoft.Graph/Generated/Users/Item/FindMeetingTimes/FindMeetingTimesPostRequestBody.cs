@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
+namespace Microsoft.Graph.Users.Item.FindMeetingTimes
+{
     #pragma warning disable CS1591
-    public class FindMeetingTimesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FindMeetingTimesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttendeeBase>? Attendees {
+        public List<AttendeeBase>? Attendees
+        {
             get { return BackingStore?.Get<List<AttendeeBase>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<AttendeeBase> Attendees {
+        public List<AttendeeBase> Attendees
+        {
             get { return BackingStore?.Get<List<AttendeeBase>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
@@ -33,54 +37,63 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isOrganizerOptional property</summary>
-        public bool? IsOrganizerOptional {
+        public bool? IsOrganizerOptional
+        {
             get { return BackingStore?.Get<bool?>("isOrganizerOptional"); }
             set { BackingStore?.Set("isOrganizerOptional", value); }
         }
         /// <summary>The locationConstraint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.LocationConstraint? LocationConstraint {
+        public Microsoft.Graph.Models.LocationConstraint? LocationConstraint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.LocationConstraint?>("locationConstraint"); }
             set { BackingStore?.Set("locationConstraint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.LocationConstraint LocationConstraint {
+        public Microsoft.Graph.Models.LocationConstraint LocationConstraint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.LocationConstraint>("locationConstraint"); }
             set { BackingStore?.Set("locationConstraint", value); }
         }
 #endif
         /// <summary>The maxCandidates property</summary>
-        public int? MaxCandidates {
+        public int? MaxCandidates
+        {
             get { return BackingStore?.Get<int?>("maxCandidates"); }
             set { BackingStore?.Set("maxCandidates", value); }
         }
         /// <summary>The meetingDuration property</summary>
-        public TimeSpan? MeetingDuration {
+        public TimeSpan? MeetingDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("meetingDuration"); }
             set { BackingStore?.Set("meetingDuration", value); }
         }
         /// <summary>The minimumAttendeePercentage property</summary>
-        public double? MinimumAttendeePercentage {
+        public double? MinimumAttendeePercentage
+        {
             get { return BackingStore?.Get<double?>("minimumAttendeePercentage"); }
             set { BackingStore?.Set("minimumAttendeePercentage", value); }
         }
         /// <summary>The returnSuggestionReasons property</summary>
-        public bool? ReturnSuggestionReasons {
+        public bool? ReturnSuggestionReasons
+        {
             get { return BackingStore?.Get<bool?>("returnSuggestionReasons"); }
             set { BackingStore?.Set("returnSuggestionReasons", value); }
         }
         /// <summary>The timeConstraint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.TimeConstraint? TimeConstraint {
+        public Microsoft.Graph.Models.TimeConstraint? TimeConstraint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TimeConstraint?>("timeConstraint"); }
             set { BackingStore?.Set("timeConstraint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.TimeConstraint TimeConstraint {
+        public Microsoft.Graph.Models.TimeConstraint TimeConstraint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.TimeConstraint>("timeConstraint"); }
             set { BackingStore?.Set("timeConstraint", value); }
         }
@@ -111,14 +124,14 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isOrganizerOptional", n => { IsOrganizerOptional = n.GetBoolValue(); } },
-                {"locationConstraint", n => { LocationConstraint = n.GetObjectValue<Microsoft.Graph.Models.LocationConstraint>(Microsoft.Graph.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
-                {"maxCandidates", n => { MaxCandidates = n.GetIntValue(); } },
-                {"meetingDuration", n => { MeetingDuration = n.GetTimeSpanValue(); } },
-                {"minimumAttendeePercentage", n => { MinimumAttendeePercentage = n.GetDoubleValue(); } },
-                {"returnSuggestionReasons", n => { ReturnSuggestionReasons = n.GetBoolValue(); } },
-                {"timeConstraint", n => { TimeConstraint = n.GetObjectValue<Microsoft.Graph.Models.TimeConstraint>(Microsoft.Graph.Models.TimeConstraint.CreateFromDiscriminatorValue); } },
+                { "attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeBase>(AttendeeBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isOrganizerOptional", n => { IsOrganizerOptional = n.GetBoolValue(); } },
+                { "locationConstraint", n => { LocationConstraint = n.GetObjectValue<Microsoft.Graph.Models.LocationConstraint>(Microsoft.Graph.Models.LocationConstraint.CreateFromDiscriminatorValue); } },
+                { "maxCandidates", n => { MaxCandidates = n.GetIntValue(); } },
+                { "meetingDuration", n => { MeetingDuration = n.GetTimeSpanValue(); } },
+                { "minimumAttendeePercentage", n => { MinimumAttendeePercentage = n.GetDoubleValue(); } },
+                { "returnSuggestionReasons", n => { ReturnSuggestionReasons = n.GetBoolValue(); } },
+                { "timeConstraint", n => { TimeConstraint = n.GetObjectValue<Microsoft.Graph.Models.TimeConstraint>(Microsoft.Graph.Models.TimeConstraint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

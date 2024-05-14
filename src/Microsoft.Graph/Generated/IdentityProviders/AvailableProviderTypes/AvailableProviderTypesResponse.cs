@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes {
+namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
+{
     [Obsolete("This class is obsolete. Use AvailableProviderTypesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AvailableProviderTypesResponse : AvailableProviderTypesGetResponse, IParsable 
+    public class AvailableProviderTypesResponse : AvailableProviderTypesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class Session : Microsoft.Graph.Models.Entity, IParsable 
+    public class Session : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Endpoint that answered the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Callee {
+        public Endpoint? Callee
+        {
             get { return BackingStore?.Get<Endpoint?>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
 #nullable restore
 #else
-        public Endpoint Callee {
+        public Endpoint Callee
+        {
             get { return BackingStore?.Get<Endpoint>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
@@ -26,51 +29,59 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>Endpoint that initiated the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Endpoint? Caller {
+        public Endpoint? Caller
+        {
             get { return BackingStore?.Get<Endpoint?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #nullable restore
 #else
-        public Endpoint Caller {
+        public Endpoint Caller
+        {
             get { return BackingStore?.Get<Endpoint>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
 #endif
         /// <summary>UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Failure information associated with the session if the session failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.CallRecords.FailureInfo? FailureInfo {
+        public Microsoft.Graph.Models.CallRecords.FailureInfo? FailureInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo?>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo {
+        public Microsoft.Graph.Models.CallRecords.FailureInfo FailureInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.CallRecords.FailureInfo>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
 #endif
         /// <summary>Specifies whether the session is a test.</summary>
-        public bool? IsTest {
+        public bool? IsTest
+        {
             get { return BackingStore?.Get<bool?>("isTest"); }
             set { BackingStore?.Set("isTest", value); }
         }
         /// <summary>List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? Modalities {
+        public List<Modality?>? Modalities
+        {
             get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> Modalities {
+        public List<Modality?> Modalities
+        {
             get { return BackingStore?.Get<List<Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
@@ -78,19 +89,22 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The list of segments involved in the session. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Segment>? Segments {
+        public List<Segment>? Segments
+        {
             get { return BackingStore?.Get<List<Segment>?>("segments"); }
             set { BackingStore?.Set("segments", value); }
         }
 #nullable restore
 #else
-        public List<Segment> Segments {
+        public List<Segment> Segments
+        {
             get { return BackingStore?.Get<List<Segment>>("segments"); }
             set { BackingStore?.Set("segments", value); }
         }
 #endif
         /// <summary>UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>(Microsoft.Graph.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
-                {"isTest", n => { IsTest = n.GetBoolValue(); } },
-                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "callee", n => { Callee = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                { "caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Models.CallRecords.FailureInfo>(Microsoft.Graph.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
+                { "isTest", n => { IsTest = n.GetBoolValue(); } },
+                { "modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

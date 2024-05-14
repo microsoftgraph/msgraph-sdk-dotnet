@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.Transfer {
+namespace Microsoft.Graph.Communications.Calls.Item.Transfer
+{
     #pragma warning disable CS1591
-    public class TransferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TransferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Transfer {
         /// <summary>The transferee property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? Transferee {
+        public ParticipantInfo? Transferee
+        {
             get { return BackingStore?.Get<ParticipantInfo?>("transferee"); }
             set { BackingStore?.Set("transferee", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo Transferee {
+        public ParticipantInfo Transferee
+        {
             get { return BackingStore?.Get<ParticipantInfo>("transferee"); }
             set { BackingStore?.Set("transferee", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Transfer {
         /// <summary>The transferTarget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InvitationParticipantInfo? TransferTarget {
+        public InvitationParticipantInfo? TransferTarget
+        {
             get { return BackingStore?.Get<InvitationParticipantInfo?>("transferTarget"); }
             set { BackingStore?.Set("transferTarget", value); }
         }
 #nullable restore
 #else
-        public InvitationParticipantInfo TransferTarget {
+        public InvitationParticipantInfo TransferTarget
+        {
             get { return BackingStore?.Get<InvitationParticipantInfo>("transferTarget"); }
             set { BackingStore?.Set("transferTarget", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Transfer {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"transferTarget", n => { TransferTarget = n.GetObjectValue<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue); } },
-                {"transferee", n => { Transferee = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "transferTarget", n => { TransferTarget = n.GetObjectValue<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "transferee", n => { Transferee = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

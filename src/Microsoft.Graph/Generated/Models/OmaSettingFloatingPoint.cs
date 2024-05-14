@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// OMA Settings Floating Point definition.
     /// </summary>
-    public class OmaSettingFloatingPoint : OmaSetting, IParsable 
+    public class OmaSettingFloatingPoint : OmaSetting, IParsable
     {
         /// <summary>Value.</summary>
-        public float? Value {
+        public float? Value
+        {
             get { return BackingStore?.Get<float?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetFloatValue(); } },
+                { "value", n => { Value = n.GetFloatValue(); } },
             };
         }
         /// <summary>

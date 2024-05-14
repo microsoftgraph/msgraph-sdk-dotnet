@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessUsers : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessUsers : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Group IDs excluded from scope of policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeGroups {
+        public List<string>? ExcludeGroups
+        {
             get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeGroups {
+        public List<string> ExcludeGroups
+        {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Internal guests or external users excluded from the policy scope. Optionally populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessGuestsOrExternalUsers? ExcludeGuestsOrExternalUsers {
+        public ConditionalAccessGuestsOrExternalUsers? ExcludeGuestsOrExternalUsers
+        {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers?>("excludeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers {
+        public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers
+        {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("excludeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Role IDs excluded from scope of policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeRoles {
+        public List<string>? ExcludeRoles
+        {
             get { return BackingStore?.Get<List<string>?>("excludeRoles"); }
             set { BackingStore?.Set("excludeRoles", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeRoles {
+        public List<string> ExcludeRoles
+        {
             get { return BackingStore?.Get<List<string>>("excludeRoles"); }
             set { BackingStore?.Set("excludeRoles", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User IDs excluded from scope of policy and/or GuestsOrExternalUsers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeUsers {
+        public List<string>? ExcludeUsers
+        {
             get { return BackingStore?.Get<List<string>?>("excludeUsers"); }
             set { BackingStore?.Set("excludeUsers", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeUsers {
+        public List<string> ExcludeUsers
+        {
             get { return BackingStore?.Get<List<string>>("excludeUsers"); }
             set { BackingStore?.Set("excludeUsers", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Group IDs in scope of policy unless explicitly excluded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeGroups {
+        public List<string>? IncludeGroups
+        {
             get { return BackingStore?.Get<List<string>?>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeGroups {
+        public List<string> IncludeGroups
+        {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Internal guests or external users included in the policy scope. Optionally populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessGuestsOrExternalUsers? IncludeGuestsOrExternalUsers {
+        public ConditionalAccessGuestsOrExternalUsers? IncludeGuestsOrExternalUsers
+        {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers?>("includeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers {
+        public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers
+        {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("includeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Role IDs in scope of policy unless explicitly excluded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeRoles {
+        public List<string>? IncludeRoles
+        {
             get { return BackingStore?.Get<List<string>?>("includeRoles"); }
             set { BackingStore?.Set("includeRoles", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeRoles {
+        public List<string> IncludeRoles
+        {
             get { return BackingStore?.Get<List<string>>("includeRoles"); }
             set { BackingStore?.Set("includeRoles", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeUsers {
+        public List<string>? IncludeUsers
+        {
             get { return BackingStore?.Get<List<string>?>("includeUsers"); }
             set { BackingStore?.Set("includeUsers", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeUsers {
+        public List<string> IncludeUsers
+        {
             get { return BackingStore?.Get<List<string>>("includeUsers"); }
             set { BackingStore?.Set("includeUsers", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"excludeGuestsOrExternalUsers", n => { ExcludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
-                {"excludeRoles", n => { ExcludeRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"excludeUsers", n => { ExcludeUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeGuestsOrExternalUsers", n => { IncludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
-                {"includeRoles", n => { IncludeRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeUsers", n => { IncludeUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "excludeGuestsOrExternalUsers", n => { ExcludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
+                { "excludeRoles", n => { ExcludeRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "excludeUsers", n => { ExcludeUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeGuestsOrExternalUsers", n => { IncludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
+                { "includeRoles", n => { IncludeRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeUsers", n => { IncludeUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

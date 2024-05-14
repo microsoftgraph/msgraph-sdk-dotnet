@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv
+{
     #pragma warning disable CS1591
-    public class Binom_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Binom_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha {
+        public Json? Alpha
+        {
             get { return BackingStore?.Get<Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha {
+        public Json Alpha
+        {
             get { return BackingStore?.Get<Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv {
         /// <summary>The probabilityS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? ProbabilityS {
+        public Json? ProbabilityS
+        {
             get { return BackingStore?.Get<Json?>("probabilityS"); }
             set { BackingStore?.Set("probabilityS", value); }
         }
 #nullable restore
 #else
-        public Json ProbabilityS {
+        public Json ProbabilityS
+        {
             get { return BackingStore?.Get<Json>("probabilityS"); }
             set { BackingStore?.Set("probabilityS", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv {
         /// <summary>The trials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Trials {
+        public Json? Trials
+        {
             get { return BackingStore?.Get<Json?>("trials"); }
             set { BackingStore?.Set("trials", value); }
         }
 #nullable restore
 #else
-        public Json Trials {
+        public Json Trials
+        {
             get { return BackingStore?.Get<Json>("trials"); }
             set { BackingStore?.Set("trials", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Binom_Inv {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"probabilityS", n => { ProbabilityS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"trials", n => { Trials = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "probabilityS", n => { ProbabilityS = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "trials", n => { Trials = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

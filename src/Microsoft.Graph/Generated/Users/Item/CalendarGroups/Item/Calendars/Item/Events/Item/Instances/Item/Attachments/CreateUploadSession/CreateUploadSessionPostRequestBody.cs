@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Attachments.CreateUploadSession {
+namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Attachments.CreateUploadSession
+{
     #pragma warning disable CS1591
-    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The AttachmentItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AttachmentItem? AttachmentItem {
+        public Microsoft.Graph.Models.AttachmentItem? AttachmentItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttachmentItem?>("AttachmentItem"); }
             set { BackingStore?.Set("AttachmentItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AttachmentItem AttachmentItem {
+        public Microsoft.Graph.Models.AttachmentItem AttachmentItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AttachmentItem>("AttachmentItem"); }
             set { BackingStore?.Set("AttachmentItem", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.I
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"AttachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Models.AttachmentItem>(Microsoft.Graph.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
+                { "AttachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Models.AttachmentItem>(Microsoft.Graph.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

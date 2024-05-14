@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessPlatforms : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessPlatforms : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessDevicePlatform?>? ExcludePlatforms {
+        public List<ConditionalAccessDevicePlatform?>? ExcludePlatforms
+        {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("excludePlatforms"); }
             set { BackingStore?.Set("excludePlatforms", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessDevicePlatform?> ExcludePlatforms {
+        public List<ConditionalAccessDevicePlatform?> ExcludePlatforms
+        {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("excludePlatforms"); }
             set { BackingStore?.Set("excludePlatforms", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessDevicePlatform?>? IncludePlatforms {
+        public List<ConditionalAccessDevicePlatform?>? IncludePlatforms
+        {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("includePlatforms"); }
             set { BackingStore?.Set("includePlatforms", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessDevicePlatform?> IncludePlatforms {
+        public List<ConditionalAccessDevicePlatform?> IncludePlatforms
+        {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("includePlatforms"); }
             set { BackingStore?.Set("includePlatforms", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
-                {"includePlatforms", n => { IncludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "excludePlatforms", n => { ExcludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
+                { "includePlatforms", n => { IncludePlatforms = n.GetCollectionOfEnumValues<ConditionalAccessDevicePlatform>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

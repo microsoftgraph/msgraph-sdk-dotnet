@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceRoleScope : Entity, IParsable 
+    public class AccessPackageResourceRoleScope : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceRole? Role {
+        public AccessPackageResourceRole? Role
+        {
             get { return BackingStore?.Get<AccessPackageResourceRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceRole Role {
+        public AccessPackageResourceRole Role
+        {
             get { return BackingStore?.Get<AccessPackageResourceRole>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageResourceScope? Scope {
+        public AccessPackageResourceScope? Scope
+        {
             get { return BackingStore?.Get<AccessPackageResourceScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public AccessPackageResourceScope Scope {
+        public AccessPackageResourceScope Scope
+        {
             get { return BackingStore?.Get<AccessPackageResourceScope>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"role", n => { Role = n.GetObjectValue<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue); } },
-                {"scope", n => { Scope = n.GetObjectValue<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "role", n => { Role = n.GetObjectValue<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WebPartData : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WebPartData : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataVersion {
+        public string? DataVersion
+        {
             get { return BackingStore?.Get<string?>("dataVersion"); }
             set { BackingStore?.Set("dataVersion", value); }
         }
 #nullable restore
 #else
-        public string DataVersion {
+        public string DataVersion
+        {
             get { return BackingStore?.Get<string>("dataVersion"); }
             set { BackingStore?.Set("dataVersion", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Description of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Properties bag of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Properties {
+        public Json? Properties
+        {
             get { return BackingStore?.Get<Json?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public Json Properties {
+        public Json Properties
+        {
             get { return BackingStore?.Get<Json>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ServerProcessedContent? ServerProcessedContent {
+        public Microsoft.Graph.Models.ServerProcessedContent? ServerProcessedContent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServerProcessedContent?>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ServerProcessedContent ServerProcessedContent {
+        public Microsoft.Graph.Models.ServerProcessedContent ServerProcessedContent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ServerProcessedContent>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Title of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dataVersion", n => { DataVersion = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"properties", n => { Properties = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "dataVersion", n => { DataVersion = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "properties", n => { Properties = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Models.ServerProcessedContent>(Microsoft.Graph.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

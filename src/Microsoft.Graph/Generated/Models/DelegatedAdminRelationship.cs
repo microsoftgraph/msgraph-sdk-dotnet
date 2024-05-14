@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedAdminRelationship : Entity, IParsable 
+    public class DelegatedAdminRelationship : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminAccessAssignment>? AccessAssignments {
+        public List<DelegatedAdminAccessAssignment>? AccessAssignments
+        {
             get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>?>("accessAssignments"); }
             set { BackingStore?.Set("accessAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminAccessAssignment> AccessAssignments {
+        public List<DelegatedAdminAccessAssignment> AccessAssignments
+        {
             get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>>("accessAssignments"); }
             set { BackingStore?.Set("accessAssignments", value); }
         }
@@ -26,42 +29,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>The accessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminAccessDetails? AccessDetails {
+        public DelegatedAdminAccessDetails? AccessDetails
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminAccessDetails AccessDetails {
+        public DelegatedAdminAccessDetails AccessDetails
+        {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
 #endif
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.</summary>
-        public DateTimeOffset? ActivatedDateTime {
+        public DateTimeOffset? ActivatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activatedDateTime"); }
             set { BackingStore?.Set("activatedDateTime", value); }
         }
         /// <summary>The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn&apos;t automatically extended.</summary>
-        public TimeSpan? AutoExtendDuration {
+        public TimeSpan? AutoExtendDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("autoExtendDuration"); }
             set { BackingStore?.Set("autoExtendDuration", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can&apos;t be changed by the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DelegatedAdminRelationshipCustomerParticipant? Customer {
+        public DelegatedAdminRelationshipCustomerParticipant? Customer
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant?>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
 #nullable restore
 #else
-        public DelegatedAdminRelationshipCustomerParticipant Customer {
+        public DelegatedAdminRelationshipCustomerParticipant Customer
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
@@ -69,42 +79,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can&apos;t be changed by the customer. Maximum length is 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can&apos;t be changed by the customer.</summary>
-        public TimeSpan? Duration {
+        public TimeSpan? Duration
+        {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The long running operations associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminRelationshipOperation>? Operations {
+        public List<DelegatedAdminRelationshipOperation>? Operations
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminRelationshipOperation> Operations {
+        public List<DelegatedAdminRelationshipOperation> Operations
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -112,19 +129,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The requests associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DelegatedAdminRelationshipRequest>? Requests {
+        public List<DelegatedAdminRelationshipRequest>? Requests
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #nullable restore
 #else
-        public List<DelegatedAdminRelationshipRequest> Requests {
+        public List<DelegatedAdminRelationshipRequest> Requests
+        {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #endif
         /// <summary>The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.</summary>
-        public DelegatedAdminRelationshipStatus? Status {
+        public DelegatedAdminRelationshipStatus? Status
+        {
             get { return BackingStore?.Get<DelegatedAdminRelationshipStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -151,19 +171,19 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
-                {"activatedDateTime", n => { ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"autoExtendDuration", n => { AutoExtendDuration = n.GetTimeSpanValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customer", n => { Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requests", n => { Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
+                { "accessAssignments", n => { AccessAssignments = n.GetCollectionOfObjectValues<DelegatedAdminAccessAssignment>(DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessDetails", n => { AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
+                { "activatedDateTime", n => { ActivatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "autoExtendDuration", n => { AutoExtendDuration = n.GetTimeSpanValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customer", n => { Customer = n.GetObjectValue<DelegatedAdminRelationshipCustomerParticipant>(DelegatedAdminRelationshipCustomerParticipant.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetTimeSpanValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipOperation>(DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<DelegatedAdminRelationshipRequest>(DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<DelegatedAdminRelationshipStatus>(); } },
             };
         }
         /// <summary>

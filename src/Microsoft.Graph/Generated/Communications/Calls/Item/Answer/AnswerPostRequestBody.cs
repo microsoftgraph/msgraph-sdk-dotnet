@@ -6,27 +6,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.Answer {
+namespace Microsoft.Graph.Communications.Calls.Item.Answer
+{
     #pragma warning disable CS1591
-    public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acceptedModalities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? AcceptedModalities {
+        public List<Modality?>? AcceptedModalities
+        {
             get { return BackingStore?.Get<List<Modality?>?>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> AcceptedModalities {
+        public List<Modality?> AcceptedModalities
+        {
             get { return BackingStore?.Get<List<Modality?>>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
         /// <summary>The callbackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallbackUri {
+        public string? CallbackUri
+        {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
 #nullable restore
 #else
-        public string CallbackUri {
+        public string CallbackUri
+        {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
         /// <summary>The callOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IncomingCallOptions? CallOptions {
+        public IncomingCallOptions? CallOptions
+        {
             get { return BackingStore?.Get<IncomingCallOptions?>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
 #nullable restore
 #else
-        public IncomingCallOptions CallOptions {
+        public IncomingCallOptions CallOptions
+        {
             get { return BackingStore?.Get<IncomingCallOptions>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
@@ -63,19 +71,22 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
         /// <summary>The mediaConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.MediaConfig? MediaConfig {
+        public Microsoft.Graph.Models.MediaConfig? MediaConfig
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig?>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.MediaConfig MediaConfig {
+        public Microsoft.Graph.Models.MediaConfig MediaConfig
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.MediaConfig>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
 #endif
         /// <summary>The participantCapacity property</summary>
-        public int? ParticipantCapacity {
+        public int? ParticipantCapacity
+        {
             get { return BackingStore?.Get<int?>("participantCapacity"); }
             set { BackingStore?.Set("participantCapacity", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"callOptions", n => { CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
-                {"mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Models.MediaConfig>(Microsoft.Graph.Models.MediaConfig.CreateFromDiscriminatorValue); } },
-                {"participantCapacity", n => { ParticipantCapacity = n.GetIntValue(); } },
+                { "acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "callOptions", n => { CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
+                { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                { "mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Models.MediaConfig>(Microsoft.Graph.Models.MediaConfig.CreateFromDiscriminatorValue); } },
+                { "participantCapacity", n => { ParticipantCapacity = n.GetIntValue(); } },
             };
         }
         /// <summary>

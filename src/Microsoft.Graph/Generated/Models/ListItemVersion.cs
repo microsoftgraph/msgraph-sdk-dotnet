@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ListItemVersion : BaseItemVersion, IParsable 
+    public class ListItemVersion : BaseItemVersion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FieldValueSet? Fields {
+        public FieldValueSet? Fields
+        {
             get { return BackingStore?.Get<FieldValueSet?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public FieldValueSet Fields {
+        public FieldValueSet Fields
+        {
             get { return BackingStore?.Get<FieldValueSet>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
@@ -53,7 +56,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fields", n => { Fields = n.GetObjectValue<FieldValueSet>(FieldValueSet.CreateFromDiscriminatorValue); } },
+                { "fields", n => { Fields = n.GetObjectValue<FieldValueSet>(FieldValueSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn {
+namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.FilterByCurrentUserWithOn
+{
     #pragma warning disable CS1591
-    public class FilterByCurrentUserWithOnGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class FilterByCurrentUserWithOnGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedAccessGroupEligibilityScheduleRequest>? Value {
+        public List<PrivilegedAccessGroupEligibilityScheduleRequest>? Value
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedAccessGroupEligibilityScheduleRequest> Value {
+        public List<PrivilegedAccessGroupEligibilityScheduleRequest> Value
+        {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleRequest>(PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<PrivilegedAccessGroupEligibilityScheduleRequest>(PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

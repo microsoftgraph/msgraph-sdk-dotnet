@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ISO 3166-1 Alpha-2 country code of the participant&apos;s best estimated physical location at the start of the call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode {
+        public string? CountryCode
+        {
             get { return BackingStore?.Get<string?>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
 #nullable restore
 #else
-        public string CountryCode {
+        public string CountryCode
+        {
             get { return BackingStore?.Get<string>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
 #endif
         /// <summary>The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.</summary>
-        public Microsoft.Graph.Models.EndpointType? EndpointType {
+        public Microsoft.Graph.Models.EndpointType? EndpointType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Identity {
+        public IdentitySet? Identity
+        {
             get { return BackingStore?.Get<IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Identity {
+        public IdentitySet Identity
+        {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The language culture string. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageId {
+        public string? LanguageId
+        {
             get { return BackingStore?.Get<string?>("languageId"); }
             set { BackingStore?.Set("languageId", value); }
         }
 #nullable restore
 #else
-        public string LanguageId {
+        public string LanguageId
+        {
             get { return BackingStore?.Get<string>("languageId"); }
             set { BackingStore?.Set("languageId", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The participant ID of the participant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParticipantId {
+        public string? ParticipantId
+        {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
 #nullable restore
 #else
-        public string ParticipantId {
+        public string ParticipantId
+        {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn&apos;t change based on the participant&apos;s current physical location. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region {
+        public string? Region
+        {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
 #nullable restore
 #else
-        public string Region {
+        public string Region
+        {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"countryCode", n => { CountryCode = n.GetStringValue(); } },
-                {"endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
-                {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"languageId", n => { LanguageId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"participantId", n => { ParticipantId = n.GetStringValue(); } },
-                {"region", n => { Region = n.GetStringValue(); } },
+                { "countryCode", n => { CountryCode = n.GetStringValue(); } },
+                { "endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
+                { "identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "languageId", n => { LanguageId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "participantId", n => { ParticipantId = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
             };
         }
         /// <summary>

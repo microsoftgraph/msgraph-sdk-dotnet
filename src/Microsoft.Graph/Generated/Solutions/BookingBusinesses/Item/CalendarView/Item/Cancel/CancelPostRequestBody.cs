@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Cancel {
+namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Cancel
+{
     #pragma warning disable CS1591
-    public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Can
         /// <summary>The cancellationMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CancellationMessage {
+        public string? CancellationMessage
+        {
             get { return BackingStore?.Get<string?>("cancellationMessage"); }
             set { BackingStore?.Set("cancellationMessage", value); }
         }
 #nullable restore
 #else
-        public string CancellationMessage {
+        public string CancellationMessage
+        {
             get { return BackingStore?.Get<string>("cancellationMessage"); }
             set { BackingStore?.Set("cancellationMessage", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item.Can
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cancellationMessage", n => { CancellationMessage = n.GetStringValue(); } },
+                { "cancellationMessage", n => { CancellationMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class TriggerAndScopeBasedConditions : WorkflowExecutionConditions, IParsable 
+    public class TriggerAndScopeBasedConditions : WorkflowExecutionConditions, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines who the workflow runs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.SubjectSet? Scope {
+        public Microsoft.Graph.Models.SubjectSet? Scope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.SubjectSet?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.SubjectSet Scope {
+        public Microsoft.Graph.Models.SubjectSet Scope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.SubjectSet>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>What triggers a workflow to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkflowExecutionTrigger? Trigger {
+        public WorkflowExecutionTrigger? Trigger
+        {
             get { return BackingStore?.Get<WorkflowExecutionTrigger?>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
 #nullable restore
 #else
-        public WorkflowExecutionTrigger Trigger {
+        public WorkflowExecutionTrigger Trigger
+        {
             get { return BackingStore?.Get<WorkflowExecutionTrigger>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"scope", n => { Scope = n.GetObjectValue<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue); } },
-                {"trigger", n => { Trigger = n.GetObjectValue<WorkflowExecutionTrigger>(WorkflowExecutionTrigger.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<Microsoft.Graph.Models.SubjectSet>(Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue); } },
+                { "trigger", n => { Trigger = n.GetObjectValue<WorkflowExecutionTrigger>(WorkflowExecutionTrigger.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

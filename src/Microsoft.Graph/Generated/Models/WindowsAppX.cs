@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Windows AppX Line Of Business apps.
     /// </summary>
-    public class WindowsAppX : MobileLobApp, IParsable 
+    public class WindowsAppX : MobileLobApp, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures {
+        public WindowsArchitecture? ApplicableArchitectures
+        {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The identity name of the uploaded app package. For example: &apos;Contoso.DemoApp&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityName {
+        public string? IdentityName
+        {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
 #nullable restore
 #else
-        public string IdentityName {
+        public string IdentityName
+        {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: &apos;AB82CD0XYZ&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublisherHash {
+        public string? IdentityPublisherHash
+        {
             get { return BackingStore?.Get<string?>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
 #nullable restore
 #else
-        public string IdentityPublisherHash {
+        public string IdentityPublisherHash
+        {
             get { return BackingStore?.Get<string>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity resource identifier of the uploaded app package. For example: &apos;TestResourceId&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityResourceIdentifier {
+        public string? IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IdentityResourceIdentifier {
+        public string IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
@@ -60,32 +68,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The identity version of the uploaded app package. For example: &apos;1.0.0.0&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityVersion {
+        public string? IdentityVersion
+        {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
 #nullable restore
 #else
-        public string IdentityVersion {
+        public string IdentityVersion
+        {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
 #endif
         /// <summary>When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.</summary>
-        public bool? IsBundle {
+        public bool? IsBundle
+        {
             get { return BackingStore?.Get<bool?>("isBundle"); }
             set { BackingStore?.Set("isBundle", value); }
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -115,13 +128,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
-                {"identityName", n => { IdentityName = n.GetStringValue(); } },
-                {"identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
-                {"identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
-                {"isBundle", n => { IsBundle = n.GetBoolValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "identityName", n => { IdentityName = n.GetStringValue(); } },
+                { "identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
+                { "identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
+                { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
+                { "isBundle", n => { IsBundle = n.GetBoolValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

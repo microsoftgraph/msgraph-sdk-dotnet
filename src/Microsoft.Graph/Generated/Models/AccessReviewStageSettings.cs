@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewStageSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessReviewStageSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DecisionsThatWillMoveToNextStage {
+        public List<string>? DecisionsThatWillMoveToNextStage
+        {
             get { return BackingStore?.Get<List<string>?>("decisionsThatWillMoveToNextStage"); }
             set { BackingStore?.Set("decisionsThatWillMoveToNextStage", value); }
         }
 #nullable restore
 #else
-        public List<string> DecisionsThatWillMoveToNextStage {
+        public List<string> DecisionsThatWillMoveToNextStage
+        {
             get { return BackingStore?.Get<List<string>>("decisionsThatWillMoveToNextStage"); }
             set { BackingStore?.Set("decisionsThatWillMoveToNextStage", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don&apos;t specify dependsOn. Required if stageId isn&apos;t 1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DependsOn {
+        public List<string>? DependsOn
+        {
             get { return BackingStore?.Get<List<string>?>("dependsOn"); }
             set { BackingStore?.Set("dependsOn", value); }
         }
 #nullable restore
 #else
-        public List<string> DependsOn {
+        public List<string> DependsOn
+        {
             get { return BackingStore?.Get<List<string>>("dependsOn"); }
             set { BackingStore?.Set("dependsOn", value); }
         }
 #endif
         /// <summary>The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can&apos;t exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can&apos;t exceed 7.</summary>
-        public int? DurationInDays {
+        public int? DurationInDays
+        {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers don&apos;t exist. For example, if managers are selected as reviewers and a principal under review doesn&apos;t have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? FallbackReviewers {
+        public List<AccessReviewReviewerScope>? FallbackReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> FallbackReviewers {
+        public List<AccessReviewReviewerScope> FallbackReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,32 +92,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The recommendationInsightSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings {
+        public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings
+        {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings {
+        public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings
+        {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #endif
         /// <summary>Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
-        public bool? RecommendationsEnabled {
+        public bool? RecommendationsEnabled
+        {
             get { return BackingStore?.Get<bool?>("recommendationsEnabled"); }
             set { BackingStore?.Set("recommendationsEnabled", value); }
         }
         /// <summary>Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers {
+        public List<AccessReviewReviewerScope>? Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers {
+        public List<AccessReviewReviewerScope> Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Unique identifier of the accessReviewStageSettings object. The stageId is used by the dependsOn property to indicate the order of the stages. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StageId {
+        public string? StageId
+        {
             get { return BackingStore?.Get<string?>("stageId"); }
             set { BackingStore?.Set("stageId", value); }
         }
 #nullable restore
 #else
-        public string StageId {
+        public string StageId
+        {
             get { return BackingStore?.Get<string>("stageId"); }
             set { BackingStore?.Set("stageId", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"decisionsThatWillMoveToNextStage", n => { DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
-                {"fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"recommendationsEnabled", n => { RecommendationsEnabled = n.GetBoolValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"stageId", n => { StageId = n.GetStringValue(); } },
+                { "decisionsThatWillMoveToNextStage", n => { DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recommendationInsightSettings", n => { RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendationsEnabled", n => { RecommendationsEnabled = n.GetBoolValue(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "stageId", n => { StageId = n.GetStringValue(); } },
             };
         }
         /// <summary>

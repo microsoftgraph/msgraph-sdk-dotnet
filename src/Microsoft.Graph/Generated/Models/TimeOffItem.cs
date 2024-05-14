@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TimeOffItem : ScheduleEntity, IParsable 
+    public class TimeOffItem : ScheduleEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the timeOffReason for this timeOffItem. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeOffReasonId {
+        public string? TimeOffReasonId
+        {
             get { return BackingStore?.Get<string?>("timeOffReasonId"); }
             set { BackingStore?.Set("timeOffReasonId", value); }
         }
 #nullable restore
 #else
-        public string TimeOffReasonId {
+        public string TimeOffReasonId
+        {
             get { return BackingStore?.Get<string>("timeOffReasonId"); }
             set { BackingStore?.Set("timeOffReasonId", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"timeOffReasonId", n => { TimeOffReasonId = n.GetStringValue(); } },
+                { "timeOffReasonId", n => { TimeOffReasonId = n.GetStringValue(); } },
             };
         }
         /// <summary>

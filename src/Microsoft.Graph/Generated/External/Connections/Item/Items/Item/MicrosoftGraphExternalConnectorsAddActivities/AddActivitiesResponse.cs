@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities {
+namespace Microsoft.Graph.External.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities
+{
     [Obsolete("This class is obsolete. Use AddActivitiesPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AddActivitiesResponse : AddActivitiesPostResponse, IParsable 
+    public class AddActivitiesResponse : AddActivitiesPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

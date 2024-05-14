@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RiskyUserHistoryItem : RiskyUser, IParsable 
+    public class RiskyUserHistoryItem : RiskyUser, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity related to user risk level change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskUserActivity? Activity {
+        public RiskUserActivity? Activity
+        {
             get { return BackingStore?.Get<RiskUserActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public RiskUserActivity Activity {
+        public RiskUserActivity Activity
+        {
             get { return BackingStore?.Get<RiskUserActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of actor that does the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedBy {
+        public string? InitiatedBy
+        {
             get { return BackingStore?.Get<string?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public string InitiatedBy {
+        public string InitiatedBy
+        {
             get { return BackingStore?.Get<string>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetObjectValue<RiskUserActivity>(RiskUserActivity.CreateFromDiscriminatorValue); } },
-                {"initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "activity", n => { Activity = n.GetObjectValue<RiskUserActivity>(RiskUserActivity.CreateFromDiscriminatorValue); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

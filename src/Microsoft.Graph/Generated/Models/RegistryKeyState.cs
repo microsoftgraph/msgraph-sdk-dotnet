@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RegistryKeyState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RegistryKeyState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.</summary>
-        public RegistryHive? Hive {
+        public RegistryHive? Hive
+        {
             get { return BackingStore?.Get<RegistryHive?>("hive"); }
             set { BackingStore?.Set("hive", value); }
         }
         /// <summary>Current (i.e. changed) registry key (excludes HIVE).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key {
+        public string? Key
+        {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
 #nullable restore
 #else
-        public string Key {
+        public string Key
+        {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Previous (i.e. before changed) registry key (excludes HIVE).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldKey {
+        public string? OldKey
+        {
             get { return BackingStore?.Get<string?>("oldKey"); }
             set { BackingStore?.Set("oldKey", value); }
         }
 #nullable restore
 #else
-        public string OldKey {
+        public string OldKey
+        {
             get { return BackingStore?.Get<string>("oldKey"); }
             set { BackingStore?.Set("oldKey", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Previous (i.e. before changed) registry key value data (contents).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldValueData {
+        public string? OldValueData
+        {
             get { return BackingStore?.Get<string?>("oldValueData"); }
             set { BackingStore?.Set("oldValueData", value); }
         }
 #nullable restore
 #else
-        public string OldValueData {
+        public string OldValueData
+        {
             get { return BackingStore?.Get<string>("oldValueData"); }
             set { BackingStore?.Set("oldValueData", value); }
         }
@@ -81,37 +92,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>Previous (i.e. before changed) registry key value name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldValueName {
+        public string? OldValueName
+        {
             get { return BackingStore?.Get<string?>("oldValueName"); }
             set { BackingStore?.Set("oldValueName", value); }
         }
 #nullable restore
 #else
-        public string OldValueName {
+        public string OldValueName
+        {
             get { return BackingStore?.Get<string>("oldValueName"); }
             set { BackingStore?.Set("oldValueName", value); }
         }
 #endif
         /// <summary>Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.</summary>
-        public RegistryOperation? Operation {
+        public RegistryOperation? Operation
+        {
             get { return BackingStore?.Get<RegistryOperation?>("operation"); }
             set { BackingStore?.Set("operation", value); }
         }
         /// <summary>Process ID (PID) of the process that modified the registry key (process details will appear in the alert &apos;processes&apos; collection).</summary>
-        public int? ProcessId {
+        public int? ProcessId
+        {
             get { return BackingStore?.Get<int?>("processId"); }
             set { BackingStore?.Set("processId", value); }
         }
         /// <summary>Current (i.e. changed) registry key value data (contents).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueData {
+        public string? ValueData
+        {
             get { return BackingStore?.Get<string?>("valueData"); }
             set { BackingStore?.Set("valueData", value); }
         }
 #nullable restore
 #else
-        public string ValueData {
+        public string ValueData
+        {
             get { return BackingStore?.Get<string>("valueData"); }
             set { BackingStore?.Set("valueData", value); }
         }
@@ -119,19 +136,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>Current (i.e. changed) registry key value name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueName {
+        public string? ValueName
+        {
             get { return BackingStore?.Get<string?>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
 #nullable restore
 #else
-        public string ValueName {
+        public string ValueName
+        {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
 #endif
         /// <summary>Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.</summary>
-        public RegistryValueType? ValueType {
+        public RegistryValueType? ValueType
+        {
             get { return BackingStore?.Get<RegistryValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
@@ -161,17 +181,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hive", n => { Hive = n.GetEnumValue<RegistryHive>(); } },
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"oldKey", n => { OldKey = n.GetStringValue(); } },
-                {"oldValueData", n => { OldValueData = n.GetStringValue(); } },
-                {"oldValueName", n => { OldValueName = n.GetStringValue(); } },
-                {"operation", n => { Operation = n.GetEnumValue<RegistryOperation>(); } },
-                {"processId", n => { ProcessId = n.GetIntValue(); } },
-                {"valueData", n => { ValueData = n.GetStringValue(); } },
-                {"valueName", n => { ValueName = n.GetStringValue(); } },
-                {"valueType", n => { ValueType = n.GetEnumValue<RegistryValueType>(); } },
+                { "hive", n => { Hive = n.GetEnumValue<RegistryHive>(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "oldKey", n => { OldKey = n.GetStringValue(); } },
+                { "oldValueData", n => { OldValueData = n.GetStringValue(); } },
+                { "oldValueName", n => { OldValueName = n.GetStringValue(); } },
+                { "operation", n => { Operation = n.GetEnumValue<RegistryOperation>(); } },
+                { "processId", n => { ProcessId = n.GetIntValue(); } },
+                { "valueData", n => { ValueData = n.GetStringValue(); } },
+                { "valueName", n => { ValueName = n.GetStringValue(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<RegistryValueType>(); } },
             };
         }
         /// <summary>

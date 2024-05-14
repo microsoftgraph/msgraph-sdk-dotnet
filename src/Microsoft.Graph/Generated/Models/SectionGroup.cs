@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SectionGroup : OnenoteEntityHierarchyModel, IParsable 
+    public class SectionGroup : OnenoteEntityHierarchyModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The notebook that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Notebook? ParentNotebook {
+        public Notebook? ParentNotebook
+        {
             get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #nullable restore
 #else
-        public Notebook ParentNotebook {
+        public Notebook ParentNotebook
+        {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The section group that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SectionGroup? ParentSectionGroup {
+        public SectionGroup? ParentSectionGroup
+        {
             get { return BackingStore?.Get<SectionGroup?>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
 #nullable restore
 #else
-        public SectionGroup ParentSectionGroup {
+        public SectionGroup ParentSectionGroup
+        {
             get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The section groups in the section. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionGroup>? SectionGroups {
+        public List<SectionGroup>? SectionGroups
+        {
             get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #nullable restore
 #else
-        public List<SectionGroup> SectionGroups {
+        public List<SectionGroup> SectionGroups
+        {
             get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectionGroupsUrl {
+        public string? SectionGroupsUrl
+        {
             get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
 #nullable restore
 #else
-        public string SectionGroupsUrl {
+        public string SectionGroupsUrl
+        {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The sections in the section group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteSection>? Sections {
+        public List<OnenoteSection>? Sections
+        {
             get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteSection> Sections {
+        public List<OnenoteSection> Sections
+        {
             get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL for the sections navigation property, which returns all the sections in the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SectionsUrl {
+        public string? SectionsUrl
+        {
             get { return BackingStore?.Get<string?>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
 #nullable restore
 #else
-        public string SectionsUrl {
+        public string SectionsUrl
+        {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
-                {"parentSectionGroup", n => { ParentSectionGroup = n.GetObjectValue<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue); } },
-                {"sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
-                {"sections", n => { Sections = n.GetCollectionOfObjectValues<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
+                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
+                { "parentSectionGroup", n => { ParentSectionGroup = n.GetObjectValue<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue); } },
+                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
+                { "sections", n => { Sections = n.GetCollectionOfObjectValues<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

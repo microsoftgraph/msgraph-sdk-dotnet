@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Reminder : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Reminder : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangeKey {
+        public string? ChangeKey
+        {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
 #nullable restore
 #else
-        public string ChangeKey {
+        public string ChangeKey
+        {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time and time zone that the event ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EventEndTime {
+        public DateTimeTimeZone? EventEndTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("eventEndTime"); }
             set { BackingStore?.Set("eventEndTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EventEndTime {
+        public DateTimeTimeZone EventEndTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("eventEndTime"); }
             set { BackingStore?.Set("eventEndTime", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The unique ID of the event. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId {
+        public string? EventId
+        {
             get { return BackingStore?.Get<string?>("eventId"); }
             set { BackingStore?.Set("eventId", value); }
         }
 #nullable restore
 #else
-        public string EventId {
+        public string EventId
+        {
             get { return BackingStore?.Get<string>("eventId"); }
             set { BackingStore?.Set("eventId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The location of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? EventLocation {
+        public Location? EventLocation
+        {
             get { return BackingStore?.Get<Location?>("eventLocation"); }
             set { BackingStore?.Set("eventLocation", value); }
         }
 #nullable restore
 #else
-        public Location EventLocation {
+        public Location EventLocation
+        {
             get { return BackingStore?.Get<Location>("eventLocation"); }
             set { BackingStore?.Set("eventLocation", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time, and time zone that the event starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EventStartTime {
+        public DateTimeTimeZone? EventStartTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("eventStartTime"); }
             set { BackingStore?.Set("eventStartTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EventStartTime {
+        public DateTimeTimeZone EventStartTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("eventStartTime"); }
             set { BackingStore?.Set("eventStartTime", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The text of the event&apos;s subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventSubject {
+        public string? EventSubject
+        {
             get { return BackingStore?.Get<string?>("eventSubject"); }
             set { BackingStore?.Set("eventSubject", value); }
         }
 #nullable restore
 #else
-        public string EventSubject {
+        public string EventSubject
+        {
             get { return BackingStore?.Get<string>("eventSubject"); }
             set { BackingStore?.Set("eventSubject", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The URL to open the event in Outlook on the web.The event opens in the browser if you&apos;re logged in to your mailbox via Outlook on the web. You&apos;re prompted to log in if you aren&apos;t already logged in with the browser.This URL can&apos;t be accessed from within an iFrame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventWebLink {
+        public string? EventWebLink
+        {
             get { return BackingStore?.Get<string?>("eventWebLink"); }
             set { BackingStore?.Set("eventWebLink", value); }
         }
 #nullable restore
 #else
-        public string EventWebLink {
+        public string EventWebLink
+        {
             get { return BackingStore?.Get<string>("eventWebLink"); }
             set { BackingStore?.Set("eventWebLink", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ReminderFireTime {
+        public DateTimeTimeZone? ReminderFireTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("reminderFireTime"); }
             set { BackingStore?.Set("reminderFireTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ReminderFireTime {
+        public DateTimeTimeZone ReminderFireTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderFireTime"); }
             set { BackingStore?.Set("reminderFireTime", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                {"eventEndTime", n => { EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"eventId", n => { EventId = n.GetStringValue(); } },
-                {"eventLocation", n => { EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
-                {"eventStartTime", n => { EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"eventSubject", n => { EventSubject = n.GetStringValue(); } },
-                {"eventWebLink", n => { EventWebLink = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                { "eventEndTime", n => { EventEndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "eventId", n => { EventId = n.GetStringValue(); } },
+                { "eventLocation", n => { EventLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "eventStartTime", n => { EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "eventSubject", n => { EventSubject = n.GetStringValue(); } },
+                { "eventWebLink", n => { EventWebLink = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

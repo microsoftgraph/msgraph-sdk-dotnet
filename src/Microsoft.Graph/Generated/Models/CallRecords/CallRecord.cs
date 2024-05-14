@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.CallRecords {
+namespace Microsoft.Graph.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class CallRecord : Microsoft.Graph.Models.Entity, IParsable 
+    public class CallRecord : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Meeting URL associated to the call. May not be available for a peerToPeer call record type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinWebUrl {
+        public string? JoinWebUrl
+        {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #nullable restore
 #else
-        public string JoinWebUrl {
+        public string JoinWebUrl
+        {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #endif
         /// <summary>UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? Modalities {
+        public List<Modality?>? Modalities
+        {
             get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> Modalities {
+        public List<Modality?> Modalities
+        {
             get { return BackingStore?.Get<List<Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>The organizing party&apos;s identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.IdentitySet? Organizer {
+        public Microsoft.Graph.Models.IdentitySet? Organizer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.IdentitySet Organizer {
+        public Microsoft.Graph.Models.IdentitySet Organizer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.IdentitySet>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>List of distinct identities involved in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.IdentitySet>? Participants {
+        public List<Microsoft.Graph.Models.IdentitySet>? Participants
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentitySet>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.IdentitySet> Participants {
+        public List<Microsoft.Graph.Models.IdentitySet> Participants
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.IdentitySet>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -78,29 +89,34 @@ namespace Microsoft.Graph.Models.CallRecords {
         /// <summary>List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Session>? Sessions {
+        public List<Session>? Sessions
+        {
             get { return BackingStore?.Get<List<Session>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<Session> Sessions {
+        public List<Session> Sessions
+        {
             get { return BackingStore?.Get<List<Session>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
         /// <summary>UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The type property</summary>
-        public CallType? Type {
+        public CallType? Type
+        {
             get { return BackingStore?.Get<CallType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.</summary>
-        public long? Version {
+        public long? Version
+        {
             get { return BackingStore?.Get<long?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -122,16 +138,16 @@ namespace Microsoft.Graph.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"type", n => { Type = n.GetEnumValue<CallType>(); } },
-                {"version", n => { Version = n.GetLongValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.IdentitySet>(Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "type", n => { Type = n.GetEnumValue<CallType>(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>

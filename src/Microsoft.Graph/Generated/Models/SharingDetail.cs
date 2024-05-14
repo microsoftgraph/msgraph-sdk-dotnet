@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SharingDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharingDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The user who shared the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightIdentity? SharedBy {
+        public InsightIdentity? SharedBy
+        {
             get { return BackingStore?.Get<InsightIdentity?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #nullable restore
 #else
-        public InsightIdentity SharedBy {
+        public InsightIdentity SharedBy
+        {
             get { return BackingStore?.Get<InsightIdentity>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #endif
         /// <summary>The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? SharedDateTime {
+        public DateTimeOffset? SharedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }
             set { BackingStore?.Set("sharedDateTime", value); }
         }
         /// <summary>The sharingReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResourceReference? SharingReference {
+        public ResourceReference? SharingReference
+        {
             get { return BackingStore?.Get<ResourceReference?>("sharingReference"); }
             set { BackingStore?.Set("sharingReference", value); }
         }
 #nullable restore
 #else
-        public ResourceReference SharingReference {
+        public ResourceReference SharingReference
+        {
             get { return BackingStore?.Get<ResourceReference>("sharingReference"); }
             set { BackingStore?.Set("sharingReference", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subject with which the document was shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharingSubject {
+        public string? SharingSubject
+        {
             get { return BackingStore?.Get<string?>("sharingSubject"); }
             set { BackingStore?.Set("sharingSubject", value); }
         }
 #nullable restore
 #else
-        public string SharingSubject {
+        public string SharingSubject
+        {
             get { return BackingStore?.Get<string>("sharingSubject"); }
             set { BackingStore?.Set("sharingSubject", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Determines the way the document was shared, can be by a &apos;Link&apos;, &apos;Attachment&apos;, &apos;Group&apos;, &apos;Site&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharingType {
+        public string? SharingType
+        {
             get { return BackingStore?.Get<string?>("sharingType"); }
             set { BackingStore?.Set("sharingType", value); }
         }
 #nullable restore
 #else
-        public string SharingType {
+        public string SharingType
+        {
             get { return BackingStore?.Get<string>("sharingType"); }
             set { BackingStore?.Set("sharingType", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sharedBy", n => { SharedBy = n.GetObjectValue<InsightIdentity>(InsightIdentity.CreateFromDiscriminatorValue); } },
-                {"sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sharingReference", n => { SharingReference = n.GetObjectValue<ResourceReference>(ResourceReference.CreateFromDiscriminatorValue); } },
-                {"sharingSubject", n => { SharingSubject = n.GetStringValue(); } },
-                {"sharingType", n => { SharingType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sharedBy", n => { SharedBy = n.GetObjectValue<InsightIdentity>(InsightIdentity.CreateFromDiscriminatorValue); } },
+                { "sharedDateTime", n => { SharedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "sharingReference", n => { SharingReference = n.GetObjectValue<ResourceReference>(ResourceReference.CreateFromDiscriminatorValue); } },
+                { "sharingSubject", n => { SharingSubject = n.GetStringValue(); } },
+                { "sharingType", n => { SharingType = n.GetStringValue(); } },
             };
         }
         /// <summary>

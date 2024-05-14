@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookOperation : Entity, IParsable 
+    public class WorkbookOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error returned by the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookOperationError? Error {
+        public WorkbookOperationError? Error
+        {
             get { return BackingStore?.Get<WorkbookOperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public WorkbookOperationError Error {
+        public WorkbookOperationError Error
+        {
             get { return BackingStore?.Get<WorkbookOperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Models {
         /// <summary>The resource URI for the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceLocation {
+        public string? ResourceLocation
+        {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #nullable restore
 #else
-        public string ResourceLocation {
+        public string ResourceLocation
+        {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public WorkbookOperationStatus? Status {
+        public WorkbookOperationStatus? Status
+        {
             get { return BackingStore?.Get<WorkbookOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<WorkbookOperationError>(WorkbookOperationError.CreateFromDiscriminatorValue); } },
-                {"resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<WorkbookOperationStatus>(); } },
+                { "error", n => { Error = n.GetObjectValue<WorkbookOperationError>(WorkbookOperationError.CreateFromDiscriminatorValue); } },
+                { "resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<WorkbookOperationStatus>(); } },
             };
         }
         /// <summary>

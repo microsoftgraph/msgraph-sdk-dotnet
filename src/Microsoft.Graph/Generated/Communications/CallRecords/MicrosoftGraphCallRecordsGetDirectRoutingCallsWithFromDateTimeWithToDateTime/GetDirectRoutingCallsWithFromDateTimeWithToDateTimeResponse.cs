@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime {
+namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime
+{
     [Obsolete("This class is obsolete. Use GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable 
+    public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : GetDirectRoutingCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

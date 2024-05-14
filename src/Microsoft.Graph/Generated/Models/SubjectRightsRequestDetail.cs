@@ -5,57 +5,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SubjectRightsRequestDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SubjectRightsRequestDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of items that are excluded from the request.</summary>
-        public long? ExcludedItemCount {
+        public long? ExcludedItemCount
+        {
             get { return BackingStore?.Get<long?>("excludedItemCount"); }
             set { BackingStore?.Set("excludedItemCount", value); }
         }
         /// <summary>Count of items per insight.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? InsightCounts {
+        public List<KeyValuePair>? InsightCounts
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> InsightCounts {
+        public List<KeyValuePair> InsightCounts
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
 #endif
         /// <summary>Count of items found.</summary>
-        public long? ItemCount {
+        public long? ItemCount
+        {
             get { return BackingStore?.Get<long?>("itemCount"); }
             set { BackingStore?.Set("itemCount", value); }
         }
         /// <summary>Count of item that need review.</summary>
-        public long? ItemNeedReview {
+        public long? ItemNeedReview
+        {
             get { return BackingStore?.Get<long?>("itemNeedReview"); }
             set { BackingStore?.Set("itemNeedReview", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -63,24 +72,28 @@ namespace Microsoft.Graph.Models {
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ProductItemCounts {
+        public List<KeyValuePair>? ProductItemCounts
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ProductItemCounts {
+        public List<KeyValuePair> ProductItemCounts
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
 #endif
         /// <summary>Count of items signed off by the administrator.</summary>
-        public long? SignedOffItemCount {
+        public long? SignedOffItemCount
+        {
             get { return BackingStore?.Get<long?>("signedOffItemCount"); }
             set { BackingStore?.Set("signedOffItemCount", value); }
         }
         /// <summary>Total item size in bytes.</summary>
-        public long? TotalItemSize {
+        public long? TotalItemSize
+        {
             get { return BackingStore?.Get<long?>("totalItemSize"); }
             set { BackingStore?.Set("totalItemSize", value); }
         }
@@ -110,14 +123,14 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludedItemCount", n => { ExcludedItemCount = n.GetLongValue(); } },
-                {"insightCounts", n => { InsightCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"itemCount", n => { ItemCount = n.GetLongValue(); } },
-                {"itemNeedReview", n => { ItemNeedReview = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"productItemCounts", n => { ProductItemCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"signedOffItemCount", n => { SignedOffItemCount = n.GetLongValue(); } },
-                {"totalItemSize", n => { TotalItemSize = n.GetLongValue(); } },
+                { "excludedItemCount", n => { ExcludedItemCount = n.GetLongValue(); } },
+                { "insightCounts", n => { InsightCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "itemCount", n => { ItemCount = n.GetLongValue(); } },
+                { "itemNeedReview", n => { ItemNeedReview = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "productItemCounts", n => { ProductItemCounts = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signedOffItemCount", n => { SignedOffItemCount = n.GetLongValue(); } },
+                { "totalItemSize", n => { TotalItemSize = n.GetLongValue(); } },
             };
         }
         /// <summary>

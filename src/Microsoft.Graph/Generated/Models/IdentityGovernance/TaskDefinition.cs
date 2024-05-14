@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.IdentityGovernance {
+namespace Microsoft.Graph.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class TaskDefinition : Microsoft.Graph.Models.Entity, IParsable 
+    public class TaskDefinition : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The category property</summary>
-        public LifecycleTaskCategory? Category {
+        public LifecycleTaskCategory? Category
+        {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The continueOnError property</summary>
-        public bool? ContinueOnError {
+        public bool? ContinueOnError
+        {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }
         }
         /// <summary>The description of the taskDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -50,19 +57,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         /// <summary>The parameters that must be supplied when creating a workflow task object.Supports $filter(any).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Parameter>? Parameters {
+        public List<Parameter>? Parameters
+        {
             get { return BackingStore?.Get<List<Parameter>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<Parameter> Parameters {
+        public List<Parameter> Parameters
+        {
             get { return BackingStore?.Get<List<Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
         /// <summary>The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"category", n => { Category = n.GetEnumValue<LifecycleTaskCategory>(); } },
-                {"continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<Parameter>(Parameter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "category", n => { Category = n.GetEnumValue<LifecycleTaskCategory>(); } },
+                { "continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<Parameter>(Parameter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

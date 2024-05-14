@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class InformationalUrl : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InformationalUrl : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>CDN URL to the application&apos;s logo, Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl {
+        public string? LogoUrl
+        {
             get { return BackingStore?.Get<string?>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
 #nullable restore
 #else
-        public string LogoUrl {
+        public string LogoUrl
+        {
             get { return BackingStore?.Get<string>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Link to the application&apos;s marketing page. For example, https://www.contoso.com/app/marketing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MarketingUrl {
+        public string? MarketingUrl
+        {
             get { return BackingStore?.Get<string?>("marketingUrl"); }
             set { BackingStore?.Set("marketingUrl", value); }
         }
 #nullable restore
 #else
-        public string MarketingUrl {
+        public string MarketingUrl
+        {
             get { return BackingStore?.Get<string>("marketingUrl"); }
             set { BackingStore?.Set("marketingUrl", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyStatementUrl {
+        public string? PrivacyStatementUrl
+        {
             get { return BackingStore?.Get<string?>("privacyStatementUrl"); }
             set { BackingStore?.Set("privacyStatementUrl", value); }
         }
 #nullable restore
 #else
-        public string PrivacyStatementUrl {
+        public string PrivacyStatementUrl
+        {
             get { return BackingStore?.Get<string>("privacyStatementUrl"); }
             set { BackingStore?.Set("privacyStatementUrl", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Link to the application&apos;s support page. For example, https://www.contoso.com/app/support</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportUrl {
+        public string? SupportUrl
+        {
             get { return BackingStore?.Get<string?>("supportUrl"); }
             set { BackingStore?.Set("supportUrl", value); }
         }
 #nullable restore
 #else
-        public string SupportUrl {
+        public string SupportUrl
+        {
             get { return BackingStore?.Get<string>("supportUrl"); }
             set { BackingStore?.Set("supportUrl", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Link to the application&apos;s terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsOfServiceUrl {
+        public string? TermsOfServiceUrl
+        {
             get { return BackingStore?.Get<string?>("termsOfServiceUrl"); }
             set { BackingStore?.Set("termsOfServiceUrl", value); }
         }
 #nullable restore
 #else
-        public string TermsOfServiceUrl {
+        public string TermsOfServiceUrl
+        {
             get { return BackingStore?.Get<string>("termsOfServiceUrl"); }
             set { BackingStore?.Set("termsOfServiceUrl", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
-                {"marketingUrl", n => { MarketingUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"privacyStatementUrl", n => { PrivacyStatementUrl = n.GetStringValue(); } },
-                {"supportUrl", n => { SupportUrl = n.GetStringValue(); } },
-                {"termsOfServiceUrl", n => { TermsOfServiceUrl = n.GetStringValue(); } },
+                { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
+                { "marketingUrl", n => { MarketingUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "privacyStatementUrl", n => { PrivacyStatementUrl = n.GetStringValue(); } },
+                { "supportUrl", n => { SupportUrl = n.GetStringValue(); } },
+                { "termsOfServiceUrl", n => { TermsOfServiceUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

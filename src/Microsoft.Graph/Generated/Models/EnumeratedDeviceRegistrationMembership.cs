@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EnumeratedDeviceRegistrationMembership : DeviceRegistrationMembership, IParsable 
+    public class EnumeratedDeviceRegistrationMembership : DeviceRegistrationMembership, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Groups {
+        public List<string>? Groups
+        {
             get { return BackingStore?.Get<List<string>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<string> Groups {
+        public List<string> Groups
+        {
             get { return BackingStore?.Get<List<string>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Users {
+        public List<string>? Users
+        {
             get { return BackingStore?.Get<List<string>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<string> Users {
+        public List<string> Users
+        {
             get { return BackingStore?.Get<List<string>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

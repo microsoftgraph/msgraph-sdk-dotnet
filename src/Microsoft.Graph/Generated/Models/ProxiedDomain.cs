@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Proxied Domain
     /// </summary>
-    public class ProxiedDomain : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ProxiedDomain : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The IP address or FQDN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddressOrFQDN {
+        public string? IpAddressOrFQDN
+        {
             get { return BackingStore?.Get<string?>("ipAddressOrFQDN"); }
             set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
 #nullable restore
 #else
-        public string IpAddressOrFQDN {
+        public string IpAddressOrFQDN
+        {
             get { return BackingStore?.Get<string>("ipAddressOrFQDN"); }
             set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Proxy IP or FQDN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Proxy {
+        public string? Proxy
+        {
             get { return BackingStore?.Get<string?>("proxy"); }
             set { BackingStore?.Set("proxy", value); }
         }
 #nullable restore
 #else
-        public string Proxy {
+        public string Proxy
+        {
             get { return BackingStore?.Get<string>("proxy"); }
             set { BackingStore?.Set("proxy", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ipAddressOrFQDN", n => { IpAddressOrFQDN = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"proxy", n => { Proxy = n.GetStringValue(); } },
+                { "ipAddressOrFQDN", n => { IpAddressOrFQDN = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "proxy", n => { Proxy = n.GetStringValue(); } },
             };
         }
         /// <summary>

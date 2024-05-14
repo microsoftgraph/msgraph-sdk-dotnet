@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Windows Information Protection DataRecoveryCertificate
     /// </summary>
-    public class WindowsInformationProtectionDataRecoveryCertificate : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsInformationProtectionDataRecoveryCertificate : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data recovery Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Certificate {
+        public byte[]? Certificate
+        {
             get { return BackingStore?.Get<byte[]?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #nullable restore
 #else
-        public byte[] Certificate {
+        public byte[] Certificate
+        {
             get { return BackingStore?.Get<byte[]>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data recovery Certificate description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Data recovery Certificate expiration datetime</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Data recovery Certificate subject name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectName {
+        public string? SubjectName
+        {
             get { return BackingStore?.Get<string?>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
 #nullable restore
 #else
-        public string SubjectName {
+        public string SubjectName
+        {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
+                { "certificate", n => { Certificate = n.GetByteArrayValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "subjectName", n => { SubjectName = n.GetStringValue(); } },
             };
         }
         /// <summary>

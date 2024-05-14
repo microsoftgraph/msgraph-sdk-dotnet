@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AppManagementPolicy : PolicyBase, IParsable 
+    public class AppManagementPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of applications and service principals to which the policy is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? AppliesTo {
+        public List<DirectoryObject>? AppliesTo
+        {
             get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> AppliesTo {
+        public List<DirectoryObject> AppliesTo
+        {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
 #endif
         /// <summary>Denotes whether the policy is enabled.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Restrictions that apply to an application or service principal object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppManagementConfiguration? Restrictions {
+        public AppManagementConfiguration? Restrictions
+        {
             get { return BackingStore?.Get<AppManagementConfiguration?>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
 #nullable restore
 #else
-        public AppManagementConfiguration Restrictions {
+        public AppManagementConfiguration Restrictions
+        {
             get { return BackingStore?.Get<AppManagementConfiguration>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"restrictions", n => { Restrictions = n.GetObjectValue<AppManagementConfiguration>(AppManagementConfiguration.CreateFromDiscriminatorValue); } },
+                { "appliesTo", n => { AppliesTo = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<AppManagementConfiguration>(AppManagementConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

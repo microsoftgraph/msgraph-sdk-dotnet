@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class MailboxSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MailboxSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Folder ID of an archive folder for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ArchiveFolder {
+        public string? ArchiveFolder
+        {
             get { return BackingStore?.Get<string?>("archiveFolder"); }
             set { BackingStore?.Set("archiveFolder", value); }
         }
 #nullable restore
 #else
-        public string ArchiveFolder {
+        public string ArchiveFolder
+        {
             get { return BackingStore?.Get<string>("archiveFolder"); }
             set { BackingStore?.Set("archiveFolder", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.AutomaticRepliesSetting? AutomaticRepliesSetting {
+        public Microsoft.Graph.Models.AutomaticRepliesSetting? AutomaticRepliesSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesSetting?>("automaticRepliesSetting"); }
             set { BackingStore?.Set("automaticRepliesSetting", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.AutomaticRepliesSetting AutomaticRepliesSetting {
+        public Microsoft.Graph.Models.AutomaticRepliesSetting AutomaticRepliesSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.AutomaticRepliesSetting>("automaticRepliesSetting"); }
             set { BackingStore?.Set("automaticRepliesSetting", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The date format for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateFormat {
+        public string? DateFormat
+        {
             get { return BackingStore?.Get<string?>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
 #nullable restore
 #else
-        public string DateFormat {
+        public string DateFormat
+        {
             get { return BackingStore?.Get<string>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
 #endif
         /// <summary>If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.</summary>
-        public Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions {
+        public Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DelegateMeetingMessageDeliveryOptions?>("delegateMeetingMessageDeliveryOptions"); }
             set { BackingStore?.Set("delegateMeetingMessageDeliveryOptions", value); }
         }
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? Language {
+        public LocaleInfo? Language
+        {
             get { return BackingStore?.Get<LocaleInfo?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo Language {
+        public LocaleInfo Language
+        {
             get { return BackingStore?.Get<LocaleInfo>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The time format for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeFormat {
+        public string? TimeFormat
+        {
             get { return BackingStore?.Get<string?>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
 #nullable restore
 #else
-        public string TimeFormat {
+        public string TimeFormat
+        {
             get { return BackingStore?.Get<string>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
@@ -109,32 +124,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The default time zone for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
         /// <summary>The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.</summary>
-        public Microsoft.Graph.Models.UserPurpose? UserPurpose {
+        public Microsoft.Graph.Models.UserPurpose? UserPurpose
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.UserPurpose?>("userPurpose"); }
             set { BackingStore?.Set("userPurpose", value); }
         }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.WorkingHours? WorkingHours {
+        public Microsoft.Graph.Models.WorkingHours? WorkingHours
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.WorkingHours?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.WorkingHours WorkingHours {
+        public Microsoft.Graph.Models.WorkingHours WorkingHours
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.WorkingHours>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
@@ -165,16 +185,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archiveFolder", n => { ArchiveFolder = n.GetStringValue(); } },
-                {"automaticRepliesSetting", n => { AutomaticRepliesSetting = n.GetObjectValue<Microsoft.Graph.Models.AutomaticRepliesSetting>(Microsoft.Graph.Models.AutomaticRepliesSetting.CreateFromDiscriminatorValue); } },
-                {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
-                {"delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
-                {"language", n => { Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
-                {"userPurpose", n => { UserPurpose = n.GetEnumValue<UserPurpose>(); } },
-                {"workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Models.WorkingHours>(Microsoft.Graph.Models.WorkingHours.CreateFromDiscriminatorValue); } },
+                { "archiveFolder", n => { ArchiveFolder = n.GetStringValue(); } },
+                { "automaticRepliesSetting", n => { AutomaticRepliesSetting = n.GetObjectValue<Microsoft.Graph.Models.AutomaticRepliesSetting>(Microsoft.Graph.Models.AutomaticRepliesSetting.CreateFromDiscriminatorValue); } },
+                { "dateFormat", n => { DateFormat = n.GetStringValue(); } },
+                { "delegateMeetingMessageDeliveryOptions", n => { DelegateMeetingMessageDeliveryOptions = n.GetEnumValue<DelegateMeetingMessageDeliveryOptions>(); } },
+                { "language", n => { Language = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "timeFormat", n => { TimeFormat = n.GetStringValue(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "userPurpose", n => { UserPurpose = n.GetEnumValue<UserPurpose>(); } },
+                { "workingHours", n => { WorkingHours = n.GetObjectValue<Microsoft.Graph.Models.WorkingHours>(Microsoft.Graph.Models.WorkingHours.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

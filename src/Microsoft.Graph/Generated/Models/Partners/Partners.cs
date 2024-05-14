@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Partners {
+namespace Microsoft.Graph.Models.Partners
+{
     #pragma warning disable CS1591
-    public class Partners : Microsoft.Graph.Models.Entity, IParsable 
+    public class Partners : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents billing details for billed and unbilled data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Partners.Billing.Billing? Billing {
+        public Microsoft.Graph.Models.Partners.Billing.Billing? Billing
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.Billing?>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Partners.Billing.Billing Billing {
+        public Microsoft.Graph.Models.Partners.Billing.Billing Billing
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Partners.Billing.Billing>("billing"); }
             set { BackingStore?.Set("billing", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Models.Partners {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"billing", n => { Billing = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.Billing>(Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue); } },
+                { "billing", n => { Billing = n.GetObjectValue<Microsoft.Graph.Models.Partners.Billing.Billing>(Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

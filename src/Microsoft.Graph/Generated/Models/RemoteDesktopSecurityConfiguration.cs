@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class RemoteDesktopSecurityConfiguration : Entity, IParsable 
+    public class RemoteDesktopSecurityConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.</summary>
-        public bool? IsRemoteDesktopProtocolEnabled {
+        public bool? IsRemoteDesktopProtocolEnabled
+        {
             get { return BackingStore?.Get<bool?>("isRemoteDesktopProtocolEnabled"); }
             set { BackingStore?.Set("isRemoteDesktopProtocolEnabled", value); }
         }
         /// <summary>The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetDeviceGroup>? TargetDeviceGroups {
+        public List<TargetDeviceGroup>? TargetDeviceGroups
+        {
             get { return BackingStore?.Get<List<TargetDeviceGroup>?>("targetDeviceGroups"); }
             set { BackingStore?.Set("targetDeviceGroups", value); }
         }
 #nullable restore
 #else
-        public List<TargetDeviceGroup> TargetDeviceGroups {
+        public List<TargetDeviceGroup> TargetDeviceGroups
+        {
             get { return BackingStore?.Get<List<TargetDeviceGroup>>("targetDeviceGroups"); }
             set { BackingStore?.Set("targetDeviceGroups", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isRemoteDesktopProtocolEnabled", n => { IsRemoteDesktopProtocolEnabled = n.GetBoolValue(); } },
-                {"targetDeviceGroups", n => { TargetDeviceGroups = n.GetCollectionOfObjectValues<TargetDeviceGroup>(TargetDeviceGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isRemoteDesktopProtocolEnabled", n => { IsRemoteDesktopProtocolEnabled = n.GetBoolValue(); } },
+                { "targetDeviceGroups", n => { TargetDeviceGroups = n.GetCollectionOfObjectValues<TargetDeviceGroup>(TargetDeviceGroup.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

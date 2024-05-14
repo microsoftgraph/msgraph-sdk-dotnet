@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl {
+namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl
+{
     [Obsolete("This class is obsolete. Use GetVirtualAppointmentJoinWebUrlGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetVirtualAppointmentJoinWebUrlResponse : GetVirtualAppointmentJoinWebUrlGetResponse, IParsable 
+    public class GetVirtualAppointmentJoinWebUrlResponse : GetVirtualAppointmentJoinWebUrlGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

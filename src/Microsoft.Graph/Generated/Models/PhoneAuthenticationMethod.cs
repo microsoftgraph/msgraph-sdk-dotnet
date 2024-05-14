@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable 
+    public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don&apos;t match the required format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
         /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
-        public AuthenticationPhoneType? PhoneType {
+        public AuthenticationPhoneType? PhoneType
+        {
             get { return BackingStore?.Get<AuthenticationPhoneType?>("phoneType"); }
             set { BackingStore?.Set("phoneType", value); }
         }
         /// <summary>Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
-        public AuthenticationMethodSignInState? SmsSignInState {
+        public AuthenticationMethodSignInState? SmsSignInState
+        {
             get { return BackingStore?.Get<AuthenticationMethodSignInState?>("smsSignInState"); }
             set { BackingStore?.Set("smsSignInState", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"phoneType", n => { PhoneType = n.GetEnumValue<AuthenticationPhoneType>(); } },
-                {"smsSignInState", n => { SmsSignInState = n.GetEnumValue<AuthenticationMethodSignInState>(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "phoneType", n => { PhoneType = n.GetEnumValue<AuthenticationPhoneType>(); } },
+                { "smsSignInState", n => { SmsSignInState = n.GetEnumValue<AuthenticationMethodSignInState>(); } },
             };
         }
         /// <summary>

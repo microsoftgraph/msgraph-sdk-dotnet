@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatMessageMention : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChatMessageMention : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding &lt;at id=&apos;{index}&apos;&gt; tag in the message body.</summary>
-        public int? Id {
+        public int? Id
+        {
             get { return BackingStore?.Get<int?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageMentionedIdentitySet? Mentioned {
+        public ChatMessageMentionedIdentitySet? Mentioned
+        {
             get { return BackingStore?.Get<ChatMessageMentionedIdentitySet?>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #nullable restore
 #else
-        public ChatMessageMentionedIdentitySet Mentioned {
+        public ChatMessageMentionedIdentitySet Mentioned
+        {
             get { return BackingStore?.Get<ChatMessageMentionedIdentitySet>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>String used to represent the mention. For example, a user&apos;s display name, a team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MentionText {
+        public string? MentionText
+        {
             get { return BackingStore?.Get<string?>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
 #nullable restore
 #else
-        public string MentionText {
+        public string MentionText
+        {
             get { return BackingStore?.Get<string>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"mentionText", n => { MentionText = n.GetStringValue(); } },
-                {"mentioned", n => { Mentioned = n.GetObjectValue<ChatMessageMentionedIdentitySet>(ChatMessageMentionedIdentitySet.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "mentionText", n => { MentionText = n.GetStringValue(); } },
+                { "mentioned", n => { Mentioned = n.GetObjectValue<ChatMessageMentionedIdentitySet>(ChatMessageMentionedIdentitySet.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.ExternalConnectors {
+namespace Microsoft.Graph.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class Identity : Microsoft.Graph.Models.Entity, IParsable 
+    public class Identity : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
-        public IdentityType? Type {
+        public IdentityType? Type
+        {
             get { return BackingStore?.Get<IdentityType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"type", n => { Type = n.GetEnumValue<IdentityType>(); } },
+                { "type", n => { Type = n.GetEnumValue<IdentityType>(); } },
             };
         }
         /// <summary>

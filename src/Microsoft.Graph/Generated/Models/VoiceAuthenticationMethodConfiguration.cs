@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VoiceAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class VoiceAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of groups that are enabled to use the authentication method. Expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets {
+        public List<AuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets {
+        public List<AuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
         /// <summary>true if users can register office phones, otherwise, false.</summary>
-        public bool? IsOfficePhoneAllowed {
+        public bool? IsOfficePhoneAllowed
+        {
             get { return BackingStore?.Get<bool?>("isOfficePhoneAllowed"); }
             set { BackingStore?.Set("isOfficePhoneAllowed", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isOfficePhoneAllowed", n => { IsOfficePhoneAllowed = n.GetBoolValue(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isOfficePhoneAllowed", n => { IsOfficePhoneAllowed = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime {
+namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime
+{
     [Obsolete("This class is obsolete. Use GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable 
+    public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Sites.GetAllSites {
+namespace Microsoft.Graph.Sites.GetAllSites
+{
     [Obsolete("This class is obsolete. Use GetAllSitesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAllSitesResponse : GetAllSitesGetResponse, IParsable 
+    public class GetAllSitesResponse : GetAllSitesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

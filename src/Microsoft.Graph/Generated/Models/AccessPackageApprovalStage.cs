@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days that a request can be pending a response before it is automatically denied.</summary>
-        public TimeSpan? DurationBeforeAutomaticDenial {
+        public TimeSpan? DurationBeforeAutomaticDenial
+        {
             get { return BackingStore?.Get<TimeSpan?>("durationBeforeAutomaticDenial"); }
             set { BackingStore?.Set("durationBeforeAutomaticDenial", value); }
         }
         /// <summary>If escalation is required, the time a request can be pending a response from a primary approver.</summary>
-        public TimeSpan? DurationBeforeEscalation {
+        public TimeSpan? DurationBeforeEscalation
+        {
             get { return BackingStore?.Get<TimeSpan?>("durationBeforeEscalation"); }
             set { BackingStore?.Set("durationBeforeEscalation", value); }
         }
         /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? EscalationApprovers {
+        public List<SubjectSet>? EscalationApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>?>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> EscalationApprovers {
+        public List<SubjectSet> EscalationApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subjects, typically users, who are the fallback escalation approvers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? FallbackEscalationApprovers {
+        public List<SubjectSet>? FallbackEscalationApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>?>("fallbackEscalationApprovers"); }
             set { BackingStore?.Set("fallbackEscalationApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> FallbackEscalationApprovers {
+        public List<SubjectSet> FallbackEscalationApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>>("fallbackEscalationApprovers"); }
             set { BackingStore?.Set("fallbackEscalationApprovers", value); }
         }
@@ -58,37 +66,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subjects, typically users, who are the fallback primary approvers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? FallbackPrimaryApprovers {
+        public List<SubjectSet>? FallbackPrimaryApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>?>("fallbackPrimaryApprovers"); }
             set { BackingStore?.Set("fallbackPrimaryApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> FallbackPrimaryApprovers {
+        public List<SubjectSet> FallbackPrimaryApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>>("fallbackPrimaryApprovers"); }
             set { BackingStore?.Set("fallbackPrimaryApprovers", value); }
         }
 #endif
         /// <summary>Indicates whether the approver is required to provide a justification for approving a request.</summary>
-        public bool? IsApproverJustificationRequired {
+        public bool? IsApproverJustificationRequired
+        {
             get { return BackingStore?.Get<bool?>("isApproverJustificationRequired"); }
             set { BackingStore?.Set("isApproverJustificationRequired", value); }
         }
         /// <summary>If true, then one or more escalationApprovers are configured in this approval stage.</summary>
-        public bool? IsEscalationEnabled {
+        public bool? IsEscalationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEscalationEnabled"); }
             set { BackingStore?.Set("isEscalationEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -96,13 +110,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectSet>? PrimaryApprovers {
+        public List<SubjectSet>? PrimaryApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>?>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
 #nullable restore
 #else
-        public List<SubjectSet> PrimaryApprovers {
+        public List<SubjectSet> PrimaryApprovers
+        {
             get { return BackingStore?.Get<List<SubjectSet>>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
@@ -133,15 +149,15 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"durationBeforeAutomaticDenial", n => { DurationBeforeAutomaticDenial = n.GetTimeSpanValue(); } },
-                {"durationBeforeEscalation", n => { DurationBeforeEscalation = n.GetTimeSpanValue(); } },
-                {"escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"fallbackEscalationApprovers", n => { FallbackEscalationApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"fallbackPrimaryApprovers", n => { FallbackPrimaryApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
-                {"isEscalationEnabled", n => { IsEscalationEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "durationBeforeAutomaticDenial", n => { DurationBeforeAutomaticDenial = n.GetTimeSpanValue(); } },
+                { "durationBeforeEscalation", n => { DurationBeforeEscalation = n.GetTimeSpanValue(); } },
+                { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackEscalationApprovers", n => { FallbackEscalationApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackPrimaryApprovers", n => { FallbackPrimaryApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
+                { "isEscalationEnabled", n => { IsEscalationEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<SubjectSet>(SubjectSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

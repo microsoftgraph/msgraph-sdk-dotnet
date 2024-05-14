@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
+namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
+{
     #pragma warning disable CS1591
-    public class InvitePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InvitePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Participants {
+        public List<InvitationParticipantInfo>? Participants
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Participants {
+        public List<InvitationParticipantInfo> Participants
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"participants", n => { Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

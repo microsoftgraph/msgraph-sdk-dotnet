@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Search.Query {
+namespace Microsoft.Graph.Search.Query
+{
     #pragma warning disable CS1591
-    public class QueryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class QueryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Search.Query {
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SearchRequest>? Requests {
+        public List<SearchRequest>? Requests
+        {
             get { return BackingStore?.Get<List<SearchRequest>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #nullable restore
 #else
-        public List<SearchRequest> Requests {
+        public List<SearchRequest> Requests
+        {
             get { return BackingStore?.Get<List<SearchRequest>>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Search.Query {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"requests", n => { Requests = n.GetCollectionOfObjectValues<SearchRequest>(SearchRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<SearchRequest>(SearchRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

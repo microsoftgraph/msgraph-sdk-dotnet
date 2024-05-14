@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SimulationAutomation : Entity, IParsable 
+    public class SimulationAutomation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity of the user who created the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy {
+        public EmailIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy {
+        public EmailIdentity CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Date and time when the attack simulation automation was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Display name of the attack simulation automation. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -59,48 +67,56 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy {
+        public EmailIdentity? LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy {
+        public EmailIdentity LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Date and time when the attack simulation automation was most recently modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Date and time of the latest run of the attack simulation automation.</summary>
-        public DateTimeOffset? LastRunDateTime {
+        public DateTimeOffset? LastRunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>Date and time of the upcoming run of the attack simulation automation.</summary>
-        public DateTimeOffset? NextRunDateTime {
+        public DateTimeOffset? NextRunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("nextRunDateTime"); }
             set { BackingStore?.Set("nextRunDateTime", value); }
         }
         /// <summary>A collection of simulation automation runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SimulationAutomationRun>? Runs {
+        public List<SimulationAutomationRun>? Runs
+        {
             get { return BackingStore?.Get<List<SimulationAutomationRun>?>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #nullable restore
 #else
-        public List<SimulationAutomationRun> Runs {
+        public List<SimulationAutomationRun> Runs
+        {
             get { return BackingStore?.Get<List<SimulationAutomationRun>>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
 #endif
         /// <summary>Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.</summary>
-        public SimulationAutomationStatus? Status {
+        public SimulationAutomationStatus? Status
+        {
             get { return BackingStore?.Get<SimulationAutomationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -122,16 +138,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
             };
         }
         /// <summary>

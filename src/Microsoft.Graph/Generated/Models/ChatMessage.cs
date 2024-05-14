@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ChatMessage : Entity, IParsable 
+    public class ChatMessage : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>References to attached objects like files, tabs, meetings etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessageAttachment>? Attachments {
+        public List<ChatMessageAttachment>? Attachments
+        {
             get { return BackingStore?.Get<List<ChatMessageAttachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessageAttachment> Attachments {
+        public List<ChatMessageAttachment> Attachments
+        {
             get { return BackingStore?.Get<List<ChatMessageAttachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body {
+        public ItemBody? Body
+        {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body {
+        public ItemBody Body
+        {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the message was sent in a channel, represents identity of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.ChannelIdentity? ChannelIdentity {
+        public Microsoft.Graph.Models.ChannelIdentity? ChannelIdentity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChannelIdentity?>("channelIdentity"); }
             set { BackingStore?.Set("channelIdentity", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.ChannelIdentity ChannelIdentity {
+        public Microsoft.Graph.Models.ChannelIdentity ChannelIdentity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.ChannelIdentity>("channelIdentity"); }
             set { BackingStore?.Set("channelIdentity", value); }
         }
@@ -54,37 +61,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>If the message was sent in a chat, represents the identity of the chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChatId {
+        public string? ChatId
+        {
             get { return BackingStore?.Get<string?>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
 #nullable restore
 #else
-        public string ChatId {
+        public string ChatId
+        {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
 #endif
         /// <summary>Timestamp of when the chat message was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Read only. Timestamp at which the chat message was deleted, or null if not deleted.</summary>
-        public DateTimeOffset? DeletedDateTime {
+        public DateTimeOffset? DeletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>Read-only. Version number of the chat message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag {
+        public string? Etag
+        {
             get { return BackingStore?.Get<string?>("etag"); }
             set { BackingStore?.Set("etag", value); }
         }
 #nullable restore
 #else
-        public string Etag {
+        public string Etag
+        {
             get { return BackingStore?.Get<string>("etag"); }
             set { BackingStore?.Set("etag", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EventMessageDetail? EventDetail {
+        public EventMessageDetail? EventDetail
+        {
             get { return BackingStore?.Get<EventMessageDetail?>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
 #nullable restore
 #else
-        public EventMessageDetail EventDetail {
+        public EventMessageDetail EventDetail
+        {
             get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Details of the sender of the chat message. Can only be set during migration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageFromIdentitySet? From {
+        public ChatMessageFromIdentitySet? From
+        {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
 #nullable restore
 #else
-        public ChatMessageFromIdentitySet From {
+        public ChatMessageFromIdentitySet From
+        {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }
             set { BackingStore?.Set("from", value); }
         }
@@ -120,42 +137,49 @@ namespace Microsoft.Graph.Models {
         /// <summary>Content in a message hosted by Microsoft Teams - for example, images or code snippets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessageHostedContent>? HostedContents {
+        public List<ChatMessageHostedContent>? HostedContents
+        {
             get { return BackingStore?.Get<List<ChatMessageHostedContent>?>("hostedContents"); }
             set { BackingStore?.Set("hostedContents", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessageHostedContent> HostedContents {
+        public List<ChatMessageHostedContent> HostedContents
+        {
             get { return BackingStore?.Get<List<ChatMessageHostedContent>>("hostedContents"); }
             set { BackingStore?.Set("hostedContents", value); }
         }
 #endif
         /// <summary>The importance property</summary>
-        public ChatMessageImportance? Importance {
+        public ChatMessageImportance? Importance
+        {
             get { return BackingStore?.Get<ChatMessageImportance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>Read only. Timestamp when edits to the chat message were made. Triggers an &apos;Edited&apos; flag in the Teams UI. If no edits are made the value is null.</summary>
-        public DateTimeOffset? LastEditedDateTime {
+        public DateTimeOffset? LastEditedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastEditedDateTime"); }
             set { BackingStore?.Set("lastEditedDateTime", value); }
         }
         /// <summary>Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Locale of the chat message set by the client. Always set to en-us.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale {
+        public string? Locale
+        {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public string Locale {
+        public string Locale
+        {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
@@ -163,13 +187,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessageMention>? Mentions {
+        public List<ChatMessageMention>? Mentions
+        {
             get { return BackingStore?.Get<List<ChatMessageMention>?>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessageMention> Mentions {
+        public List<ChatMessageMention> Mentions
+        {
             get { return BackingStore?.Get<List<ChatMessageMention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
@@ -177,32 +203,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessageHistoryItem>? MessageHistory {
+        public List<ChatMessageHistoryItem>? MessageHistory
+        {
             get { return BackingStore?.Get<List<ChatMessageHistoryItem>?>("messageHistory"); }
             set { BackingStore?.Set("messageHistory", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessageHistoryItem> MessageHistory {
+        public List<ChatMessageHistoryItem> MessageHistory
+        {
             get { return BackingStore?.Get<List<ChatMessageHistoryItem>>("messageHistory"); }
             set { BackingStore?.Set("messageHistory", value); }
         }
 #endif
         /// <summary>The messageType property</summary>
-        public ChatMessageType? MessageType {
+        public ChatMessageType? MessageType
+        {
             get { return BackingStore?.Get<ChatMessageType?>("messageType"); }
             set { BackingStore?.Set("messageType", value); }
         }
         /// <summary>Defines the properties of a policy violation set by a data loss prevention (DLP) application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessagePolicyViolation? PolicyViolation {
+        public ChatMessagePolicyViolation? PolicyViolation
+        {
             get { return BackingStore?.Get<ChatMessagePolicyViolation?>("policyViolation"); }
             set { BackingStore?.Set("policyViolation", value); }
         }
 #nullable restore
 #else
-        public ChatMessagePolicyViolation PolicyViolation {
+        public ChatMessagePolicyViolation PolicyViolation
+        {
             get { return BackingStore?.Get<ChatMessagePolicyViolation>("policyViolation"); }
             set { BackingStore?.Set("policyViolation", value); }
         }
@@ -210,13 +241,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Reactions for this chat message (for example, Like).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessageReaction>? Reactions {
+        public List<ChatMessageReaction>? Reactions
+        {
             get { return BackingStore?.Get<List<ChatMessageReaction>?>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessageReaction> Reactions {
+        public List<ChatMessageReaction> Reactions
+        {
             get { return BackingStore?.Get<List<ChatMessageReaction>>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
@@ -224,13 +257,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Replies for a specified message. Supports $expand for channel messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Replies {
+        public List<ChatMessage>? Replies
+        {
             get { return BackingStore?.Get<List<ChatMessage>?>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Replies {
+        public List<ChatMessage> Replies
+        {
             get { return BackingStore?.Get<List<ChatMessage>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
@@ -238,13 +273,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplyToId {
+        public string? ReplyToId
+        {
             get { return BackingStore?.Get<string?>("replyToId"); }
             set { BackingStore?.Set("replyToId", value); }
         }
 #nullable restore
 #else
-        public string ReplyToId {
+        public string ReplyToId
+        {
             get { return BackingStore?.Get<string>("replyToId"); }
             set { BackingStore?.Set("replyToId", value); }
         }
@@ -252,13 +289,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The subject of the chat message, in plaintext.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -266,13 +305,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary {
+        public string? Summary
+        {
             get { return BackingStore?.Get<string?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public string Summary {
+        public string Summary
+        {
             get { return BackingStore?.Get<string>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
@@ -280,13 +321,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Read-only. Link to the message in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -309,30 +352,30 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<ChatMessageAttachment>(ChatMessageAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"channelIdentity", n => { ChannelIdentity = n.GetObjectValue<Microsoft.Graph.Models.ChannelIdentity>(Microsoft.Graph.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
-                {"chatId", n => { ChatId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"etag", n => { Etag = n.GetStringValue(); } },
-                {"eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
-                {"from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                {"hostedContents", n => { HostedContents = n.GetCollectionOfObjectValues<ChatMessageHostedContent>(ChatMessageHostedContent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"importance", n => { Importance = n.GetEnumValue<ChatMessageImportance>(); } },
-                {"lastEditedDateTime", n => { LastEditedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"mentions", n => { Mentions = n.GetCollectionOfObjectValues<ChatMessageMention>(ChatMessageMention.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messageHistory", n => { MessageHistory = n.GetCollectionOfObjectValues<ChatMessageHistoryItem>(ChatMessageHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
-                {"policyViolation", n => { PolicyViolation = n.GetObjectValue<ChatMessagePolicyViolation>(ChatMessagePolicyViolation.CreateFromDiscriminatorValue); } },
-                {"reactions", n => { Reactions = n.GetCollectionOfObjectValues<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"replies", n => { Replies = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"replyToId", n => { ReplyToId = n.GetStringValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"summary", n => { Summary = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<ChatMessageAttachment>(ChatMessageAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "channelIdentity", n => { ChannelIdentity = n.GetObjectValue<Microsoft.Graph.Models.ChannelIdentity>(Microsoft.Graph.Models.ChannelIdentity.CreateFromDiscriminatorValue); } },
+                { "chatId", n => { ChatId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "etag", n => { Etag = n.GetStringValue(); } },
+                { "eventDetail", n => { EventDetail = n.GetObjectValue<EventMessageDetail>(EventMessageDetail.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<ChatMessageFromIdentitySet>(ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
+                { "hostedContents", n => { HostedContents = n.GetCollectionOfObjectValues<ChatMessageHostedContent>(ChatMessageHostedContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importance", n => { Importance = n.GetEnumValue<ChatMessageImportance>(); } },
+                { "lastEditedDateTime", n => { LastEditedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<ChatMessageMention>(ChatMessageMention.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageHistory", n => { MessageHistory = n.GetCollectionOfObjectValues<ChatMessageHistoryItem>(ChatMessageHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messageType", n => { MessageType = n.GetEnumValue<ChatMessageType>(); } },
+                { "policyViolation", n => { PolicyViolation = n.GetObjectValue<ChatMessagePolicyViolation>(ChatMessagePolicyViolation.CreateFromDiscriminatorValue); } },
+                { "reactions", n => { Reactions = n.GetCollectionOfObjectValues<ChatMessageReaction>(ChatMessageReaction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "replies", n => { Replies = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "replyToId", n => { ReplyToId = n.GetStringValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

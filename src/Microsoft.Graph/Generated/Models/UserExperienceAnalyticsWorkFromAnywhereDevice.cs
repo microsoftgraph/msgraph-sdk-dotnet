@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// The user experience analytics device for work from anywhere report.
     /// </summary>
-    public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable 
+    public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable
     {
         /// <summary>When TRUE, indicates the intune device&apos;s autopilot profile is assigned. When FALSE, indicates it&apos;s not Assigned. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? AutoPilotProfileAssigned {
+        public bool? AutoPilotProfileAssigned
+        {
             get { return BackingStore?.Get<bool?>("autoPilotProfileAssigned"); }
             set { BackingStore?.Set("autoPilotProfileAssigned", value); }
         }
         /// <summary>When TRUE, indicates the intune device&apos;s autopilot is registered. When FALSE, indicates it&apos;s not registered. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? AutoPilotRegistered {
+        public bool? AutoPilotRegistered
+        {
             get { return BackingStore?.Get<bool?>("autoPilotRegistered"); }
             set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureAdDeviceId {
+        public string? AzureAdDeviceId
+        {
             get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #nullable restore
 #else
-        public string AzureAdDeviceId {
+        public string AzureAdDeviceId
+        {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
@@ -37,52 +42,61 @@ namespace Microsoft.Graph.Models {
         /// <summary>The work from anywhere device&apos;s Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureAdJoinType {
+        public string? AzureAdJoinType
+        {
             get { return BackingStore?.Get<string?>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
 #nullable restore
 #else
-        public string AzureAdJoinType {
+        public string AzureAdJoinType
+        {
             get { return BackingStore?.Get<string>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
 #endif
         /// <summary>When TRUE, indicates the device&apos;s Azure Active Directory (Azure AD) is registered. When False, indicates it&apos;s not registered. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? AzureAdRegistered {
+        public bool? AzureAdRegistered
+        {
             get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
             set { BackingStore?.Set("azureAdRegistered", value); }
         }
         /// <summary>Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudIdentityScore {
+        public double? CloudIdentityScore
+        {
             get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
             set { BackingStore?.Set("cloudIdentityScore", value); }
         }
         /// <summary>Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudManagementScore {
+        public double? CloudManagementScore
+        {
             get { return BackingStore?.Get<double?>("cloudManagementScore"); }
             set { BackingStore?.Set("cloudManagementScore", value); }
         }
         /// <summary>Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? CloudProvisioningScore {
+        public double? CloudProvisioningScore
+        {
             get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
             set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
         /// <summary>When TRUE, indicates the device&apos;s compliance policy is set to intune. When FALSE, indicates it&apos;s not set to intune. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? CompliancePolicySetToIntune {
+        public bool? CompliancePolicySetToIntune
+        {
             get { return BackingStore?.Get<bool?>("compliancePolicySetToIntune"); }
             set { BackingStore?.Set("compliancePolicySetToIntune", value); }
         }
         /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -90,37 +104,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus {
+        public UserExperienceAnalyticsHealthState? HealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>When TRUE, indicates the device&apos;s Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it&apos;s not enabled. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? IsCloudManagedGatewayEnabled {
+        public bool? IsCloudManagedGatewayEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCloudManagedGatewayEnabled"); }
             set { BackingStore?.Set("isCloudManagedGatewayEnabled", value); }
         }
         /// <summary>The management agent of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy {
+        public string? ManagedBy
+        {
             get { return BackingStore?.Get<string?>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
 #nullable restore
 #else
-        public string ManagedBy {
+        public string ManagedBy
+        {
             get { return BackingStore?.Get<string>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
@@ -128,13 +148,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -142,32 +164,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #endif
         /// <summary>When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? OsCheckFailed {
+        public bool? OsCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("osCheckFailed"); }
             set { BackingStore?.Set("osCheckFailed", value); }
         }
         /// <summary>The OS description of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDescription {
+        public string? OsDescription
+        {
             get { return BackingStore?.Get<string?>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
 #nullable restore
 #else
-        public string OsDescription {
+        public string OsDescription
+        {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
@@ -175,107 +202,126 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OS version of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
         /// <summary>When TRUE, indicates the device&apos;s other workloads is set to intune. When FALSE, indicates it&apos;s not set to intune. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? OtherWorkloadsSetToIntune {
+        public bool? OtherWorkloadsSetToIntune
+        {
             get { return BackingStore?.Get<bool?>("otherWorkloadsSetToIntune"); }
             set { BackingStore?.Set("otherWorkloadsSetToIntune", value); }
         }
         /// <summary>Ownership of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ownership {
+        public string? Ownership
+        {
             get { return BackingStore?.Get<string?>("ownership"); }
             set { BackingStore?.Set("ownership", value); }
         }
 #nullable restore
 #else
-        public string Ownership {
+        public string Ownership
+        {
             get { return BackingStore?.Get<string>("ownership"); }
             set { BackingStore?.Set("ownership", value); }
         }
 #endif
         /// <summary>When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? Processor64BitCheckFailed {
+        public bool? Processor64BitCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("processor64BitCheckFailed"); }
             set { BackingStore?.Set("processor64BitCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? ProcessorCoreCountCheckFailed {
+        public bool? ProcessorCoreCountCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("processorCoreCountCheckFailed"); }
             set { BackingStore?.Set("processorCoreCountCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? ProcessorFamilyCheckFailed {
+        public bool? ProcessorFamilyCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("processorFamilyCheckFailed"); }
             set { BackingStore?.Set("processorFamilyCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? ProcessorSpeedCheckFailed {
+        public bool? ProcessorSpeedCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("processorSpeedCheckFailed"); }
             set { BackingStore?.Set("processorSpeedCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? RamCheckFailed {
+        public bool? RamCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("ramCheckFailed"); }
             set { BackingStore?.Set("ramCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? SecureBootCheckFailed {
+        public bool? SecureBootCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("secureBootCheckFailed"); }
             set { BackingStore?.Set("secureBootCheckFailed", value); }
         }
         /// <summary>The serial number of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
         /// <summary>When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? StorageCheckFailed {
+        public bool? StorageCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("storageCheckFailed"); }
             set { BackingStore?.Set("storageCheckFailed", value); }
         }
         /// <summary>When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it&apos;s not Tenant Attached. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? TenantAttached {
+        public bool? TenantAttached
+        {
             get { return BackingStore?.Get<bool?>("tenantAttached"); }
             set { BackingStore?.Set("tenantAttached", value); }
         }
         /// <summary>When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
-        public bool? TpmCheckFailed {
+        public bool? TpmCheckFailed
+        {
             get { return BackingStore?.Get<bool?>("tpmCheckFailed"); }
             set { BackingStore?.Set("tpmCheckFailed", value); }
         }
         /// <summary>Work From Anywhere windows device upgrade eligibility status.</summary>
-        public OperatingSystemUpgradeEligibility? UpgradeEligibility {
+        public OperatingSystemUpgradeEligibility? UpgradeEligibility
+        {
             get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
             set { BackingStore?.Set("upgradeEligibility", value); }
         }
         /// <summary>Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WindowsScore {
+        public double? WindowsScore
+        {
             get { return BackingStore?.Get<double?>("windowsScore"); }
             set { BackingStore?.Set("windowsScore", value); }
         }
         /// <summary>Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
-        public double? WorkFromAnywhereScore {
+        public double? WorkFromAnywhereScore
+        {
             get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
             set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
@@ -297,40 +343,40 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"autoPilotProfileAssigned", n => { AutoPilotProfileAssigned = n.GetBoolValue(); } },
-                {"autoPilotRegistered", n => { AutoPilotRegistered = n.GetBoolValue(); } },
-                {"azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
-                {"azureAdJoinType", n => { AzureAdJoinType = n.GetStringValue(); } },
-                {"azureAdRegistered", n => { AzureAdRegistered = n.GetBoolValue(); } },
-                {"cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
-                {"cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
-                {"cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
-                {"compliancePolicySetToIntune", n => { CompliancePolicySetToIntune = n.GetBoolValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"isCloudManagedGatewayEnabled", n => { IsCloudManagedGatewayEnabled = n.GetBoolValue(); } },
-                {"managedBy", n => { ManagedBy = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"osCheckFailed", n => { OsCheckFailed = n.GetBoolValue(); } },
-                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"otherWorkloadsSetToIntune", n => { OtherWorkloadsSetToIntune = n.GetBoolValue(); } },
-                {"ownership", n => { Ownership = n.GetStringValue(); } },
-                {"processor64BitCheckFailed", n => { Processor64BitCheckFailed = n.GetBoolValue(); } },
-                {"processorCoreCountCheckFailed", n => { ProcessorCoreCountCheckFailed = n.GetBoolValue(); } },
-                {"processorFamilyCheckFailed", n => { ProcessorFamilyCheckFailed = n.GetBoolValue(); } },
-                {"processorSpeedCheckFailed", n => { ProcessorSpeedCheckFailed = n.GetBoolValue(); } },
-                {"ramCheckFailed", n => { RamCheckFailed = n.GetBoolValue(); } },
-                {"secureBootCheckFailed", n => { SecureBootCheckFailed = n.GetBoolValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"storageCheckFailed", n => { StorageCheckFailed = n.GetBoolValue(); } },
-                {"tenantAttached", n => { TenantAttached = n.GetBoolValue(); } },
-                {"tpmCheckFailed", n => { TpmCheckFailed = n.GetBoolValue(); } },
-                {"upgradeEligibility", n => { UpgradeEligibility = n.GetEnumValue<OperatingSystemUpgradeEligibility>(); } },
-                {"windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
-                {"workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
+                { "autoPilotProfileAssigned", n => { AutoPilotProfileAssigned = n.GetBoolValue(); } },
+                { "autoPilotRegistered", n => { AutoPilotRegistered = n.GetBoolValue(); } },
+                { "azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
+                { "azureAdJoinType", n => { AzureAdJoinType = n.GetStringValue(); } },
+                { "azureAdRegistered", n => { AzureAdRegistered = n.GetBoolValue(); } },
+                { "cloudIdentityScore", n => { CloudIdentityScore = n.GetDoubleValue(); } },
+                { "cloudManagementScore", n => { CloudManagementScore = n.GetDoubleValue(); } },
+                { "cloudProvisioningScore", n => { CloudProvisioningScore = n.GetDoubleValue(); } },
+                { "compliancePolicySetToIntune", n => { CompliancePolicySetToIntune = n.GetBoolValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "isCloudManagedGatewayEnabled", n => { IsCloudManagedGatewayEnabled = n.GetBoolValue(); } },
+                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "osCheckFailed", n => { OsCheckFailed = n.GetBoolValue(); } },
+                { "osDescription", n => { OsDescription = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "otherWorkloadsSetToIntune", n => { OtherWorkloadsSetToIntune = n.GetBoolValue(); } },
+                { "ownership", n => { Ownership = n.GetStringValue(); } },
+                { "processor64BitCheckFailed", n => { Processor64BitCheckFailed = n.GetBoolValue(); } },
+                { "processorCoreCountCheckFailed", n => { ProcessorCoreCountCheckFailed = n.GetBoolValue(); } },
+                { "processorFamilyCheckFailed", n => { ProcessorFamilyCheckFailed = n.GetBoolValue(); } },
+                { "processorSpeedCheckFailed", n => { ProcessorSpeedCheckFailed = n.GetBoolValue(); } },
+                { "ramCheckFailed", n => { RamCheckFailed = n.GetBoolValue(); } },
+                { "secureBootCheckFailed", n => { SecureBootCheckFailed = n.GetBoolValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "storageCheckFailed", n => { StorageCheckFailed = n.GetBoolValue(); } },
+                { "tenantAttached", n => { TenantAttached = n.GetBoolValue(); } },
+                { "tpmCheckFailed", n => { TpmCheckFailed = n.GetBoolValue(); } },
+                { "upgradeEligibility", n => { UpgradeEligibility = n.GetEnumValue<OperatingSystemUpgradeEligibility>(); } },
+                { "windowsScore", n => { WindowsScore = n.GetDoubleValue(); } },
+                { "workFromAnywhereScore", n => { WorkFromAnywhereScore = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

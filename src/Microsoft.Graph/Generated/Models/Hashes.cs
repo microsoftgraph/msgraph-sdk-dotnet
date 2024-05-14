@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Hashes : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Hashes : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The CRC32 value of the file in little endian (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Crc32Hash {
+        public string? Crc32Hash
+        {
             get { return BackingStore?.Get<string?>("crc32Hash"); }
             set { BackingStore?.Set("crc32Hash", value); }
         }
 #nullable restore
 #else
-        public string Crc32Hash {
+        public string Crc32Hash
+        {
             get { return BackingStore?.Get<string>("crc32Hash"); }
             set { BackingStore?.Set("crc32Hash", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuickXorHash {
+        public string? QuickXorHash
+        {
             get { return BackingStore?.Get<string?>("quickXorHash"); }
             set { BackingStore?.Set("quickXorHash", value); }
         }
 #nullable restore
 #else
-        public string QuickXorHash {
+        public string QuickXorHash
+        {
             get { return BackingStore?.Get<string>("quickXorHash"); }
             set { BackingStore?.Set("quickXorHash", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>SHA1 hash for the contents of the file (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1Hash {
+        public string? Sha1Hash
+        {
             get { return BackingStore?.Get<string?>("sha1Hash"); }
             set { BackingStore?.Set("sha1Hash", value); }
         }
 #nullable restore
 #else
-        public string Sha1Hash {
+        public string Sha1Hash
+        {
             get { return BackingStore?.Get<string>("sha1Hash"); }
             set { BackingStore?.Set("sha1Hash", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>SHA256 hash for the contents of the file (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256Hash {
+        public string? Sha256Hash
+        {
             get { return BackingStore?.Get<string?>("sha256Hash"); }
             set { BackingStore?.Set("sha256Hash", value); }
         }
 #nullable restore
 #else
-        public string Sha256Hash {
+        public string Sha256Hash
+        {
             get { return BackingStore?.Get<string>("sha256Hash"); }
             set { BackingStore?.Set("sha256Hash", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"crc32Hash", n => { Crc32Hash = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"quickXorHash", n => { QuickXorHash = n.GetStringValue(); } },
-                {"sha1Hash", n => { Sha1Hash = n.GetStringValue(); } },
-                {"sha256Hash", n => { Sha256Hash = n.GetStringValue(); } },
+                { "crc32Hash", n => { Crc32Hash = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "quickXorHash", n => { QuickXorHash = n.GetStringValue(); } },
+                { "sha1Hash", n => { Sha1Hash = n.GetStringValue(); } },
+                { "sha256Hash", n => { Sha256Hash = n.GetStringValue(); } },
             };
         }
         /// <summary>

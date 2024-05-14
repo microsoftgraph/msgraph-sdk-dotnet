@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class VisualInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VisualInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Optional. JSON object used to represent an icon which represents the application used to generate the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ImageInfo? Attribution {
+        public ImageInfo? Attribution
+        {
             get { return BackingStore?.Get<ImageInfo?>("attribution"); }
             set { BackingStore?.Set("attribution", value); }
         }
 #nullable restore
 #else
-        public ImageInfo Attribution {
+        public ImageInfo Attribution
+        {
             get { return BackingStore?.Get<ImageInfo>("attribution"); }
             set { BackingStore?.Set("attribution", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor {
+        public string? BackgroundColor
+        {
             get { return BackingStore?.Get<string?>("backgroundColor"); }
             set { BackingStore?.Set("backgroundColor", value); }
         }
 #nullable restore
 #else
-        public string BackgroundColor {
+        public string BackgroundColor
+        {
             get { return BackingStore?.Get<string>("backgroundColor"); }
             set { BackingStore?.Set("backgroundColor", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Content {
+        public Json? Content
+        {
             get { return BackingStore?.Get<Json?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public Json Content {
+        public Json Content
+        {
             get { return BackingStore?.Get<Json>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Optional. Longer text description of the user&apos;s unique activity (example: document name, first sentence, and/or metadata)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Required. Short text description of the user&apos;s unique activity (for example, document name in cases where an activity refers to document creation)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayText {
+        public string? DisplayText
+        {
             get { return BackingStore?.Get<string?>("displayText"); }
             set { BackingStore?.Set("displayText", value); }
         }
 #nullable restore
 #else
-        public string DisplayText {
+        public string DisplayText
+        {
             get { return BackingStore?.Get<string>("displayText"); }
             set { BackingStore?.Set("displayText", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attribution", n => { Attribution = n.GetObjectValue<ImageInfo>(ImageInfo.CreateFromDiscriminatorValue); } },
-                {"backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
-                {"content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayText", n => { DisplayText = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "attribution", n => { Attribution = n.GetObjectValue<ImageInfo>(ImageInfo.CreateFromDiscriminatorValue); } },
+                { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayText", n => { DisplayText = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

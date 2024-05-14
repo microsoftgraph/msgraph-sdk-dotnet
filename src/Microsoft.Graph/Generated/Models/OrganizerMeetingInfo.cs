@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OrganizerMeetingInfo : MeetingInfo, IParsable 
+    public class OrganizerMeetingInfo : MeetingInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The organizer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Organizer {
+        public IdentitySet? Organizer
+        {
             get { return BackingStore?.Get<IdentitySet?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Organizer {
+        public IdentitySet Organizer
+        {
             get { return BackingStore?.Get<IdentitySet>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"organizer", n => { Organizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "organizer", n => { Organizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

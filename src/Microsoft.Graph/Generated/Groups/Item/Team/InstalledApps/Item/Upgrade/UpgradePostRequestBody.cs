@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Groups.Item.Team.InstalledApps.Item.Upgrade {
+namespace Microsoft.Graph.Groups.Item.Team.InstalledApps.Item.Upgrade
+{
     #pragma warning disable CS1591
-    public class UpgradePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpgradePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Groups.Item.Team.InstalledApps.Item.Upgrade {
         /// <summary>The consentedPermissionSet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppPermissionSet? ConsentedPermissionSet {
+        public TeamsAppPermissionSet? ConsentedPermissionSet
+        {
             get { return BackingStore?.Get<TeamsAppPermissionSet?>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #nullable restore
 #else
-        public TeamsAppPermissionSet ConsentedPermissionSet {
+        public TeamsAppPermissionSet ConsentedPermissionSet
+        {
             get { return BackingStore?.Get<TeamsAppPermissionSet>("consentedPermissionSet"); }
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Team.InstalledApps.Item.Upgrade {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
+                { "consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookChartAxes : Entity, IParsable 
+    public class WorkbookChartAxes : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? CategoryAxis {
+        public WorkbookChartAxis? CategoryAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis?>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis CategoryAxis {
+        public WorkbookChartAxis CategoryAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? SeriesAxis {
+        public WorkbookChartAxis? SeriesAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis?>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis SeriesAxis {
+        public WorkbookChartAxis SeriesAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Represents the value axis in an axis. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookChartAxis? ValueAxis {
+        public WorkbookChartAxis? ValueAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis?>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
 #nullable restore
 #else
-        public WorkbookChartAxis ValueAxis {
+        public WorkbookChartAxis ValueAxis
+        {
             get { return BackingStore?.Get<WorkbookChartAxis>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categoryAxis", n => { CategoryAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                {"seriesAxis", n => { SeriesAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                {"valueAxis", n => { ValueAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "categoryAxis", n => { CategoryAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "seriesAxis", n => { SeriesAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
+                { "valueAxis", n => { ValueAxis = n.GetObjectValue<WorkbookChartAxis>(WorkbookChartAxis.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

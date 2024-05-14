@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item {
+namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies\{claimsMappingPolicy-id}
     /// </summary>
-    public class ClaimsMappingPolicyItemRequestBuilder : BaseRequestBuilder 
+    public class ClaimsMappingPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
         public RefRequestBuilder Ref

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcAuditActor : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcAuditActor : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationDisplayName {
+        public string? ApplicationDisplayName
+        {
             get { return BackingStore?.Get<string?>("applicationDisplayName"); }
             set { BackingStore?.Set("applicationDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ApplicationDisplayName {
+        public string ApplicationDisplayName
+        {
             get { return BackingStore?.Get<string>("applicationDisplayName"); }
             set { BackingStore?.Set("applicationDisplayName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Microsoft Entra application ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId {
+        public string? ApplicationId
+        {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #nullable restore
 #else
-        public string ApplicationId {
+        public string ApplicationId
+        {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The delegated partner tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteTenantId {
+        public string? RemoteTenantId
+        {
             get { return BackingStore?.Get<string?>("remoteTenantId"); }
             set { BackingStore?.Set("remoteTenantId", value); }
         }
 #nullable restore
 #else
-        public string RemoteTenantId {
+        public string RemoteTenantId
+        {
             get { return BackingStore?.Get<string>("remoteTenantId"); }
             set { BackingStore?.Set("remoteTenantId", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The delegated partner user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteUserId {
+        public string? RemoteUserId
+        {
             get { return BackingStore?.Get<string?>("remoteUserId"); }
             set { BackingStore?.Set("remoteUserId", value); }
         }
 #nullable restore
 #else
-        public string RemoteUserId {
+        public string RemoteUserId
+        {
             get { return BackingStore?.Get<string>("remoteUserId"); }
             set { BackingStore?.Set("remoteUserId", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Service Principal Name (SPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalName {
+        public string? ServicePrincipalName
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalName {
+        public string ServicePrincipalName
+        {
             get { return BackingStore?.Get<string>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Microsoft Entra user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of user permissions and application permissions when the audit event was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserPermissions {
+        public List<string>? UserPermissions
+        {
             get { return BackingStore?.Get<List<string>?>("userPermissions"); }
             set { BackingStore?.Set("userPermissions", value); }
         }
 #nullable restore
 #else
-        public List<string> UserPermissions {
+        public List<string> UserPermissions
+        {
             get { return BackingStore?.Get<List<string>>("userPermissions"); }
             set { BackingStore?.Set("userPermissions", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>User Principal Name (UPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -160,13 +182,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of role scope tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags {
+        public List<CloudPcUserRoleScopeTagInfo>? UserRoleScopeTags
+        {
             get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>?>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserRoleScopeTagInfo> UserRoleScopeTags {
+        public List<CloudPcUserRoleScopeTagInfo> UserRoleScopeTags
+        {
             get { return BackingStore?.Get<List<CloudPcUserRoleScopeTagInfo>>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
@@ -197,17 +221,17 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationDisplayName", n => { ApplicationDisplayName = n.GetStringValue(); } },
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remoteTenantId", n => { RemoteTenantId = n.GetStringValue(); } },
-                {"remoteUserId", n => { RemoteUserId = n.GetStringValue(); } },
-                {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>(CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicationDisplayName", n => { ApplicationDisplayName = n.GetStringValue(); } },
+                { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remoteTenantId", n => { RemoteTenantId = n.GetStringValue(); } },
+                { "remoteUserId", n => { RemoteUserId = n.GetStringValue(); } },
+                { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<CloudPcUserRoleScopeTagInfo>(CloudPcUserRoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

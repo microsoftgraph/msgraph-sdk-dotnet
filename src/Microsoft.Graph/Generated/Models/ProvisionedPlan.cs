@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class ProvisionedPlan : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ProvisionedPlan : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>For example, &apos;Enabled&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CapabilityStatus {
+        public string? CapabilityStatus
+        {
             get { return BackingStore?.Get<string?>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
 #nullable restore
 #else
-        public string CapabilityStatus {
+        public string CapabilityStatus
+        {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>For example, &apos;Success&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningStatus {
+        public string? ProvisioningStatus
+        {
             get { return BackingStore?.Get<string?>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
 #nullable restore
 #else
-        public string ProvisioningStatus {
+        public string ProvisioningStatus
+        {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the service; for example, &apos;AccessControlS2S&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
+        public string? Service
+        {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public string Service {
+        public string Service
+        {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"provisioningStatus", n => { ProvisioningStatus = n.GetStringValue(); } },
-                {"service", n => { Service = n.GetStringValue(); } },
+                { "capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "provisioningStatus", n => { ProvisioningStatus = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
             };
         }
         /// <summary>

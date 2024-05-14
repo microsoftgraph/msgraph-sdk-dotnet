@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class Schedule : Entity, IParsable 
+    public class Schedule : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The offer requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OfferShiftRequest>? OfferShiftRequests {
+        public List<OfferShiftRequest>? OfferShiftRequests
+        {
             get { return BackingStore?.Get<List<OfferShiftRequest>?>("offerShiftRequests"); }
             set { BackingStore?.Set("offerShiftRequests", value); }
         }
 #nullable restore
 #else
-        public List<OfferShiftRequest> OfferShiftRequests {
+        public List<OfferShiftRequest> OfferShiftRequests
+        {
             get { return BackingStore?.Get<List<OfferShiftRequest>>("offerShiftRequests"); }
             set { BackingStore?.Set("offerShiftRequests", value); }
         }
 #endif
         /// <summary>Indicates whether offer shift requests are enabled for the schedule.</summary>
-        public bool? OfferShiftRequestsEnabled {
+        public bool? OfferShiftRequestsEnabled
+        {
             get { return BackingStore?.Get<bool?>("offerShiftRequestsEnabled"); }
             set { BackingStore?.Set("offerShiftRequestsEnabled", value); }
         }
         /// <summary>The open shift requests in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OpenShiftChangeRequest>? OpenShiftChangeRequests {
+        public List<OpenShiftChangeRequest>? OpenShiftChangeRequests
+        {
             get { return BackingStore?.Get<List<OpenShiftChangeRequest>?>("openShiftChangeRequests"); }
             set { BackingStore?.Set("openShiftChangeRequests", value); }
         }
 #nullable restore
 #else
-        public List<OpenShiftChangeRequest> OpenShiftChangeRequests {
+        public List<OpenShiftChangeRequest> OpenShiftChangeRequests
+        {
             get { return BackingStore?.Get<List<OpenShiftChangeRequest>>("openShiftChangeRequests"); }
             set { BackingStore?.Set("openShiftChangeRequests", value); }
         }
@@ -50,37 +57,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The set of open shifts in a scheduling group in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OpenShift>? OpenShifts {
+        public List<OpenShift>? OpenShifts
+        {
             get { return BackingStore?.Get<List<OpenShift>?>("openShifts"); }
             set { BackingStore?.Set("openShifts", value); }
         }
 #nullable restore
 #else
-        public List<OpenShift> OpenShifts {
+        public List<OpenShift> OpenShifts
+        {
             get { return BackingStore?.Get<List<OpenShift>>("openShifts"); }
             set { BackingStore?.Set("openShifts", value); }
         }
 #endif
         /// <summary>Indicates whether open shifts are enabled for the schedule.</summary>
-        public bool? OpenShiftsEnabled {
+        public bool? OpenShiftsEnabled
+        {
             get { return BackingStore?.Get<bool?>("openShiftsEnabled"); }
             set { BackingStore?.Set("openShiftsEnabled", value); }
         }
         /// <summary>The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.</summary>
-        public OperationStatus? ProvisionStatus {
+        public OperationStatus? ProvisionStatus
+        {
             get { return BackingStore?.Get<OperationStatus?>("provisionStatus"); }
             set { BackingStore?.Set("provisionStatus", value); }
         }
         /// <summary>Additional information about why schedule provisioning failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisionStatusCode {
+        public string? ProvisionStatusCode
+        {
             get { return BackingStore?.Get<string?>("provisionStatusCode"); }
             set { BackingStore?.Set("provisionStatusCode", value); }
         }
 #nullable restore
 #else
-        public string ProvisionStatusCode {
+        public string ProvisionStatusCode
+        {
             get { return BackingStore?.Get<string>("provisionStatusCode"); }
             set { BackingStore?.Set("provisionStatusCode", value); }
         }
@@ -88,13 +101,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The logical grouping of users in the schedule (usually by role).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SchedulingGroup>? SchedulingGroups {
+        public List<SchedulingGroup>? SchedulingGroups
+        {
             get { return BackingStore?.Get<List<SchedulingGroup>?>("schedulingGroups"); }
             set { BackingStore?.Set("schedulingGroups", value); }
         }
 #nullable restore
 #else
-        public List<SchedulingGroup> SchedulingGroups {
+        public List<SchedulingGroup> SchedulingGroups
+        {
             get { return BackingStore?.Get<List<SchedulingGroup>>("schedulingGroups"); }
             set { BackingStore?.Set("schedulingGroups", value); }
         }
@@ -102,13 +117,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Shift>? Shifts {
+        public List<Shift>? Shifts
+        {
             get { return BackingStore?.Get<List<Shift>?>("shifts"); }
             set { BackingStore?.Set("shifts", value); }
         }
 #nullable restore
 #else
-        public List<Shift> Shifts {
+        public List<Shift> Shifts
+        {
             get { return BackingStore?.Get<List<Shift>>("shifts"); }
             set { BackingStore?.Set("shifts", value); }
         }
@@ -116,37 +133,43 @@ namespace Microsoft.Graph.Models {
         /// <summary>The swap requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SwapShiftsChangeRequest>? SwapShiftsChangeRequests {
+        public List<SwapShiftsChangeRequest>? SwapShiftsChangeRequests
+        {
             get { return BackingStore?.Get<List<SwapShiftsChangeRequest>?>("swapShiftsChangeRequests"); }
             set { BackingStore?.Set("swapShiftsChangeRequests", value); }
         }
 #nullable restore
 #else
-        public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests {
+        public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests
+        {
             get { return BackingStore?.Get<List<SwapShiftsChangeRequest>>("swapShiftsChangeRequests"); }
             set { BackingStore?.Set("swapShiftsChangeRequests", value); }
         }
 #endif
         /// <summary>Indicates whether swap shifts requests are enabled for the schedule.</summary>
-        public bool? SwapShiftsRequestsEnabled {
+        public bool? SwapShiftsRequestsEnabled
+        {
             get { return BackingStore?.Get<bool?>("swapShiftsRequestsEnabled"); }
             set { BackingStore?.Set("swapShiftsRequestsEnabled", value); }
         }
         /// <summary>Indicates whether time clock is enabled for the schedule.</summary>
-        public bool? TimeClockEnabled {
+        public bool? TimeClockEnabled
+        {
             get { return BackingStore?.Get<bool?>("timeClockEnabled"); }
             set { BackingStore?.Set("timeClockEnabled", value); }
         }
         /// <summary>The set of reasons for a time off in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOffReason>? TimeOffReasons {
+        public List<TimeOffReason>? TimeOffReasons
+        {
             get { return BackingStore?.Get<List<TimeOffReason>?>("timeOffReasons"); }
             set { BackingStore?.Set("timeOffReasons", value); }
         }
 #nullable restore
 #else
-        public List<TimeOffReason> TimeOffReasons {
+        public List<TimeOffReason> TimeOffReasons
+        {
             get { return BackingStore?.Get<List<TimeOffReason>>("timeOffReasons"); }
             set { BackingStore?.Set("timeOffReasons", value); }
         }
@@ -154,32 +177,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>The time off requests in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOffRequest>? TimeOffRequests {
+        public List<TimeOffRequest>? TimeOffRequests
+        {
             get { return BackingStore?.Get<List<TimeOffRequest>?>("timeOffRequests"); }
             set { BackingStore?.Set("timeOffRequests", value); }
         }
 #nullable restore
 #else
-        public List<TimeOffRequest> TimeOffRequests {
+        public List<TimeOffRequest> TimeOffRequests
+        {
             get { return BackingStore?.Get<List<TimeOffRequest>>("timeOffRequests"); }
             set { BackingStore?.Set("timeOffRequests", value); }
         }
 #endif
         /// <summary>Indicates whether time off requests are enabled for the schedule.</summary>
-        public bool? TimeOffRequestsEnabled {
+        public bool? TimeOffRequestsEnabled
+        {
             get { return BackingStore?.Get<bool?>("timeOffRequestsEnabled"); }
             set { BackingStore?.Set("timeOffRequestsEnabled", value); }
         }
         /// <summary>The instances of times off in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOff>? TimesOff {
+        public List<TimeOff>? TimesOff
+        {
             get { return BackingStore?.Get<List<TimeOff>?>("timesOff"); }
             set { BackingStore?.Set("timesOff", value); }
         }
 #nullable restore
 #else
-        public List<TimeOff> TimesOff {
+        public List<TimeOff> TimesOff
+        {
             get { return BackingStore?.Get<List<TimeOff>>("timesOff"); }
             set { BackingStore?.Set("timesOff", value); }
         }
@@ -187,13 +215,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Indicates the time zone of the schedule team using tz database format. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
@@ -201,13 +231,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The workforceIntegrationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkforceIntegrationIds {
+        public List<string>? WorkforceIntegrationIds
+        {
             get { return BackingStore?.Get<List<string>?>("workforceIntegrationIds"); }
             set { BackingStore?.Set("workforceIntegrationIds", value); }
         }
 #nullable restore
 #else
-        public List<string> WorkforceIntegrationIds {
+        public List<string> WorkforceIntegrationIds
+        {
             get { return BackingStore?.Get<List<string>>("workforceIntegrationIds"); }
             set { BackingStore?.Set("workforceIntegrationIds", value); }
         }
@@ -230,25 +262,25 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
-                {"openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"openShifts", n => { OpenShifts = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"openShiftsEnabled", n => { OpenShiftsEnabled = n.GetBoolValue(); } },
-                {"provisionStatus", n => { ProvisionStatus = n.GetEnumValue<OperationStatus>(); } },
-                {"provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
-                {"schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
-                {"timeClockEnabled", n => { TimeClockEnabled = n.GetBoolValue(); } },
-                {"timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<TimeOffRequest>(TimeOffRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"timeOffRequestsEnabled", n => { TimeOffRequestsEnabled = n.GetBoolValue(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
-                {"timesOff", n => { TimesOff = n.GetCollectionOfObjectValues<TimeOff>(TimeOff.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workforceIntegrationIds", n => { WorkforceIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
+                { "openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "openShifts", n => { OpenShifts = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "openShiftsEnabled", n => { OpenShiftsEnabled = n.GetBoolValue(); } },
+                { "provisionStatus", n => { ProvisionStatus = n.GetEnumValue<OperationStatus>(); } },
+                { "provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
+                { "schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
+                { "timeClockEnabled", n => { TimeClockEnabled = n.GetBoolValue(); } },
+                { "timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<TimeOffRequest>(TimeOffRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeOffRequestsEnabled", n => { TimeOffRequestsEnabled = n.GetBoolValue(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "timesOff", n => { TimesOff = n.GetCollectionOfObjectValues<TimeOff>(TimeOff.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workforceIntegrationIds", n => { WorkforceIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

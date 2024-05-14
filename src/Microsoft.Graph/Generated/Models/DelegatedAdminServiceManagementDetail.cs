@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class DelegatedAdminServiceManagementDetail : Entity, IParsable 
+    public class DelegatedAdminServiceManagementDetail : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceManagementUrl {
+        public string? ServiceManagementUrl
+        {
             get { return BackingStore?.Get<string?>("serviceManagementUrl"); }
             set { BackingStore?.Set("serviceManagementUrl", value); }
         }
 #nullable restore
 #else
-        public string ServiceManagementUrl {
+        public string ServiceManagementUrl
+        {
             get { return BackingStore?.Get<string>("serviceManagementUrl"); }
             set { BackingStore?.Set("serviceManagementUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of a managed service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceName {
+        public string? ServiceName
+        {
             get { return BackingStore?.Get<string?>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
 #nullable restore
 #else
-        public string ServiceName {
+        public string ServiceName
+        {
             get { return BackingStore?.Get<string>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"serviceManagementUrl", n => { ServiceManagementUrl = n.GetStringValue(); } },
-                {"serviceName", n => { ServiceName = n.GetStringValue(); } },
+                { "serviceManagementUrl", n => { ServiceManagementUrl = n.GetStringValue(); } },
+                { "serviceName", n => { ServiceName = n.GetStringValue(); } },
             };
         }
         /// <summary>

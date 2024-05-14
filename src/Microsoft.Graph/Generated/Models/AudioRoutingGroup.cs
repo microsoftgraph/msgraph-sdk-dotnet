@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class AudioRoutingGroup : Entity, IParsable 
+    public class AudioRoutingGroup : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of receiving participant ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Receivers {
+        public List<string>? Receivers
+        {
             get { return BackingStore?.Get<List<string>?>("receivers"); }
             set { BackingStore?.Set("receivers", value); }
         }
 #nullable restore
 #else
-        public List<string> Receivers {
+        public List<string> Receivers
+        {
             get { return BackingStore?.Get<List<string>>("receivers"); }
             set { BackingStore?.Set("receivers", value); }
         }
 #endif
         /// <summary>The routingMode property</summary>
-        public Microsoft.Graph.Models.RoutingMode? RoutingMode {
+        public Microsoft.Graph.Models.RoutingMode? RoutingMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.RoutingMode?>("routingMode"); }
             set { BackingStore?.Set("routingMode", value); }
         }
         /// <summary>List of source participant ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sources {
+        public List<string>? Sources
+        {
             get { return BackingStore?.Get<List<string>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #nullable restore
 #else
-        public List<string> Sources {
+        public List<string> Sources
+        {
             get { return BackingStore?.Get<List<string>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"routingMode", n => { RoutingMode = n.GetEnumValue<RoutingMode>(); } },
-                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "routingMode", n => { RoutingMode = n.GetEnumValue<RoutingMode>(); } },
+                { "sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class SubjectRightsRequest : Entity, IParsable 
+    public class SubjectRightsRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of users who can approve the request. Currently only supported for requests of type delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Approvers {
+        public List<User>? Approvers
+        {
             get { return BackingStore?.Get<List<User>?>("approvers"); }
             set { BackingStore?.Set("approvers", value); }
         }
 #nullable restore
 #else
-        public List<User> Approvers {
+        public List<User> Approvers
+        {
             get { return BackingStore?.Get<List<User>>("approvers"); }
             set { BackingStore?.Set("approvers", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity that the request is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? AssignedTo {
+        public Identity? AssignedTo
+        {
             get { return BackingStore?.Get<Identity?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public Identity AssignedTo {
+        public Identity AssignedTo
+        {
             get { return BackingStore?.Get<Identity>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
         /// <summary>The date and time when the request was closed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ClosedDateTime {
+        public DateTimeOffset? ClosedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>Collection of users who can collaborate on the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Collaborators {
+        public List<User>? Collaborators
+        {
             get { return BackingStore?.Get<List<User>?>("collaborators"); }
             set { BackingStore?.Set("collaborators", value); }
         }
 #nullable restore
 #else
-        public List<User> Collaborators {
+        public List<User> Collaborators
+        {
             get { return BackingStore?.Get<List<User>>("collaborators"); }
             set { BackingStore?.Set("collaborators", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentQuery {
+        public string? ContentQuery
+        {
             get { return BackingStore?.Get<string?>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
 #nullable restore
 #else
-        public string ContentQuery {
+        public string ContentQuery
+        {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
@@ -73,51 +83,59 @@ namespace Microsoft.Graph.Models {
         /// <summary>Identity information for the entity that created the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Information about the data subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.DataSubject? DataSubject {
+        public Microsoft.Graph.Models.DataSubject? DataSubject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DataSubject?>("dataSubject"); }
             set { BackingStore?.Set("dataSubject", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.DataSubject DataSubject {
+        public Microsoft.Graph.Models.DataSubject DataSubject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DataSubject>("dataSubject"); }
             set { BackingStore?.Set("dataSubject", value); }
         }
 #endif
         /// <summary>The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
-        public Microsoft.Graph.Models.DataSubjectType? DataSubjectType {
+        public Microsoft.Graph.Models.DataSubjectType? DataSubjectType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.DataSubjectType?>("dataSubjectType"); }
             set { BackingStore?.Set("dataSubjectType", value); }
         }
         /// <summary>Description for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The name of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -153,75 +175,87 @@ namespace Microsoft.Graph.Models {
         /// <summary>Collection of history change events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectRightsRequestHistory>? History {
+        public List<SubjectRightsRequestHistory>? History
+        {
             get { return BackingStore?.Get<List<SubjectRightsRequestHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<SubjectRightsRequestHistory> History {
+        public List<SubjectRightsRequestHistory> History
+        {
             get { return BackingStore?.Get<List<SubjectRightsRequestHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #endif
         /// <summary>Include all versions of the documents. By default, the current copies of the documents are returned. If SharePoint sites have versioning enabled, including all versions includes the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
-        public bool? IncludeAllVersions {
+        public bool? IncludeAllVersions
+        {
             get { return BackingStore?.Get<bool?>("includeAllVersions"); }
             set { BackingStore?.Set("includeAllVersions", value); }
         }
         /// <summary>Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
-        public bool? IncludeAuthoredContent {
+        public bool? IncludeAuthoredContent
+        {
             get { return BackingStore?.Get<bool?>("includeAuthoredContent"); }
             set { BackingStore?.Set("includeAuthoredContent", value); }
         }
         /// <summary>Insight about the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestDetail? Insight {
+        public SubjectRightsRequestDetail? Insight
+        {
             get { return BackingStore?.Get<SubjectRightsRequestDetail?>("insight"); }
             set { BackingStore?.Set("insight", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestDetail Insight {
+        public SubjectRightsRequestDetail Insight
+        {
             get { return BackingStore?.Get<SubjectRightsRequestDetail>("insight"); }
             set { BackingStore?.Set("insight", value); }
         }
 #endif
         /// <summary>The date and time when the request is internally due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? InternalDueDateTime {
+        public DateTimeOffset? InternalDueDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("internalDueDateTime"); }
             set { BackingStore?.Set("internalDueDateTime", value); }
         }
         /// <summary>Identity information for the entity that last modified the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The date and time when the request was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestMailboxLocation? MailboxLocations {
+        public SubjectRightsRequestMailboxLocation? MailboxLocations
+        {
             get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxLocations"); }
             set { BackingStore?.Set("mailboxLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestMailboxLocation MailboxLocations {
+        public SubjectRightsRequestMailboxLocation MailboxLocations
+        {
             get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxLocations"); }
             set { BackingStore?.Set("mailboxLocations", value); }
         }
@@ -229,32 +263,37 @@ namespace Microsoft.Graph.Models {
         /// <summary>List of notes associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthoredNote>? Notes {
+        public List<AuthoredNote>? Notes
+        {
             get { return BackingStore?.Get<List<AuthoredNote>?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public List<AuthoredNote> Notes {
+        public List<AuthoredNote> Notes
+        {
             get { return BackingStore?.Get<List<AuthoredNote>>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
         /// <summary>Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
-        public bool? PauseAfterEstimate {
+        public bool? PauseAfterEstimate
+        {
             get { return BackingStore?.Get<bool?>("pauseAfterEstimate"); }
             set { BackingStore?.Set("pauseAfterEstimate", value); }
         }
         /// <summary>List of regulations that this request fulfill.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Regulations {
+        public List<string>? Regulations
+        {
             get { return BackingStore?.Get<List<string>?>("regulations"); }
             set { BackingStore?.Set("regulations", value); }
         }
 #nullable restore
 #else
-        public List<string> Regulations {
+        public List<string> Regulations
+        {
             get { return BackingStore?.Get<List<string>>("regulations"); }
             set { BackingStore?.Set("regulations", value); }
         }
@@ -262,13 +301,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestSiteLocation? SiteLocations {
+        public SubjectRightsRequestSiteLocation? SiteLocations
+        {
             get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("siteLocations"); }
             set { BackingStore?.Set("siteLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestSiteLocation SiteLocations {
+        public SubjectRightsRequestSiteLocation SiteLocations
+        {
             get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("siteLocations"); }
             set { BackingStore?.Set("siteLocations", value); }
         }
@@ -276,38 +317,44 @@ namespace Microsoft.Graph.Models {
         /// <summary>Information about the different stages for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubjectRightsRequestStageDetail>? Stages {
+        public List<SubjectRightsRequestStageDetail>? Stages
+        {
             get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<SubjectRightsRequestStageDetail> Stages {
+        public List<SubjectRightsRequestStageDetail> Stages
+        {
             get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #endif
         /// <summary>The status of the request. Possible values are: active, closed, unknownFutureValue.</summary>
-        public SubjectRightsRequestStatus? Status {
+        public SubjectRightsRequestStatus? Status
+        {
             get { return BackingStore?.Get<SubjectRightsRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Information about the Microsoft Teams team that was created for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Models.Team? Team {
+        public Microsoft.Graph.Models.Team? Team
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Team?>("team"); }
             set { BackingStore?.Set("team", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Models.Team Team {
+        public Microsoft.Graph.Models.Team Team
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Models.Team>("team"); }
             set { BackingStore?.Set("team", value); }
         }
 #endif
         /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
-        public SubjectRightsRequestType? Type {
+        public SubjectRightsRequestType? Type
+        {
             get { return BackingStore?.Get<SubjectRightsRequestType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -329,34 +376,34 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"approvers", n => { Approvers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignedTo", n => { AssignedTo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"collaborators", n => { Collaborators = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"contentQuery", n => { ContentQuery = n.GetStringValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"dataSubject", n => { DataSubject = n.GetObjectValue<Microsoft.Graph.Models.DataSubject>(Microsoft.Graph.Models.DataSubject.CreateFromDiscriminatorValue); } },
-                {"dataSubjectType", n => { DataSubjectType = n.GetEnumValue<DataSubjectType>(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"history", n => { History = n.GetCollectionOfObjectValues<SubjectRightsRequestHistory>(SubjectRightsRequestHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includeAllVersions", n => { IncludeAllVersions = n.GetBoolValue(); } },
-                {"includeAuthoredContent", n => { IncludeAuthoredContent = n.GetBoolValue(); } },
-                {"insight", n => { Insight = n.GetObjectValue<SubjectRightsRequestDetail>(SubjectRightsRequestDetail.CreateFromDiscriminatorValue); } },
-                {"internalDueDateTime", n => { InternalDueDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mailboxLocations", n => { MailboxLocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
-                {"notes", n => { Notes = n.GetCollectionOfObjectValues<AuthoredNote>(AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"pauseAfterEstimate", n => { PauseAfterEstimate = n.GetBoolValue(); } },
-                {"regulations", n => { Regulations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"siteLocations", n => { SiteLocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
-                {"stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
-                {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Models.Team>(Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
+                { "approvers", n => { Approvers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedTo", n => { AssignedTo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "collaborators", n => { Collaborators = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "dataSubject", n => { DataSubject = n.GetObjectValue<Microsoft.Graph.Models.DataSubject>(Microsoft.Graph.Models.DataSubject.CreateFromDiscriminatorValue); } },
+                { "dataSubjectType", n => { DataSubjectType = n.GetEnumValue<DataSubjectType>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<SubjectRightsRequestHistory>(SubjectRightsRequestHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeAllVersions", n => { IncludeAllVersions = n.GetBoolValue(); } },
+                { "includeAuthoredContent", n => { IncludeAuthoredContent = n.GetBoolValue(); } },
+                { "insight", n => { Insight = n.GetObjectValue<SubjectRightsRequestDetail>(SubjectRightsRequestDetail.CreateFromDiscriminatorValue); } },
+                { "internalDueDateTime", n => { InternalDueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mailboxLocations", n => { MailboxLocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
+                { "notes", n => { Notes = n.GetCollectionOfObjectValues<AuthoredNote>(AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pauseAfterEstimate", n => { PauseAfterEstimate = n.GetBoolValue(); } },
+                { "regulations", n => { Regulations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "siteLocations", n => { SiteLocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
+                { "team", n => { Team = n.GetObjectValue<Microsoft.Graph.Models.Team>(Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
             };
         }
         /// <summary>

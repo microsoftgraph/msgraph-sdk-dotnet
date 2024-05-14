@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials {
+namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials
+{
     #pragma warning disable CS1591
-    public class ValidateCredentialsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ValidateCredentialsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The applicationIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationIdentifier {
+        public string? ApplicationIdentifier
+        {
             get { return BackingStore?.Get<string?>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ApplicationIdentifier {
+        public string ApplicationIdentifier
+        {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCr
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SynchronizationSecretKeyStringValuePair>? Credentials {
+        public List<SynchronizationSecretKeyStringValuePair>? Credentials
+        {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
 #nullable restore
 #else
-        public List<SynchronizationSecretKeyStringValuePair> Credentials {
+        public List<SynchronizationSecretKeyStringValuePair> Credentials
+        {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
@@ -49,19 +55,22 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCr
         /// <summary>The templateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #endif
         /// <summary>The useSavedCredentials property</summary>
-        public bool? UseSavedCredentials {
+        public bool? UseSavedCredentials
+        {
             get { return BackingStore?.Get<bool?>("useSavedCredentials"); }
             set { BackingStore?.Set("useSavedCredentials", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
-                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
-                {"useSavedCredentials", n => { UseSavedCredentials = n.GetBoolValue(); } },
+                { "applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<SynchronizationSecretKeyStringValuePair>(SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "useSavedCredentials", n => { UseSavedCredentials = n.GetBoolValue(); } },
             };
         }
         /// <summary>

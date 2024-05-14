@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality, IParsable 
+    public class TeleconferenceDeviceVideoQuality : TeleconferenceDeviceMediaQuality, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The average inbound stream video bit rate per second.</summary>
-        public double? AverageInboundBitRate {
+        public double? AverageInboundBitRate
+        {
             get { return BackingStore?.Get<double?>("averageInboundBitRate"); }
             set { BackingStore?.Set("averageInboundBitRate", value); }
         }
         /// <summary>The average inbound stream video frame rate per second.</summary>
-        public double? AverageInboundFrameRate {
+        public double? AverageInboundFrameRate
+        {
             get { return BackingStore?.Get<double?>("averageInboundFrameRate"); }
             set { BackingStore?.Set("averageInboundFrameRate", value); }
         }
         /// <summary>The average outbound stream video bit rate per second.</summary>
-        public double? AverageOutboundBitRate {
+        public double? AverageOutboundBitRate
+        {
             get { return BackingStore?.Get<double?>("averageOutboundBitRate"); }
             set { BackingStore?.Set("averageOutboundBitRate", value); }
         }
         /// <summary>The average outbound stream video frame rate per second.</summary>
-        public double? AverageOutboundFrameRate {
+        public double? AverageOutboundFrameRate
+        {
             get { return BackingStore?.Get<double?>("averageOutboundFrameRate"); }
             set { BackingStore?.Set("averageOutboundFrameRate", value); }
         }
@@ -59,10 +64,10 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"averageInboundBitRate", n => { AverageInboundBitRate = n.GetDoubleValue(); } },
-                {"averageInboundFrameRate", n => { AverageInboundFrameRate = n.GetDoubleValue(); } },
-                {"averageOutboundBitRate", n => { AverageOutboundBitRate = n.GetDoubleValue(); } },
-                {"averageOutboundFrameRate", n => { AverageOutboundFrameRate = n.GetDoubleValue(); } },
+                { "averageInboundBitRate", n => { AverageInboundBitRate = n.GetDoubleValue(); } },
+                { "averageInboundFrameRate", n => { AverageInboundFrameRate = n.GetDoubleValue(); } },
+                { "averageOutboundBitRate", n => { AverageOutboundBitRate = n.GetDoubleValue(); } },
+                { "averageOutboundFrameRate", n => { AverageOutboundFrameRate = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

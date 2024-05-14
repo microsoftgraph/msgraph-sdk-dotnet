@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
     /// </summary>
-    public class MobileAppContent : Entity, IParsable 
+    public class MobileAppContent : Entity, IParsable
     {
         /// <summary>The collection of contained apps in a MobileLobApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileContainedApp>? ContainedApps {
+        public List<MobileContainedApp>? ContainedApps
+        {
             get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileContainedApp> ContainedApps {
+        public List<MobileContainedApp> ContainedApps
+        {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The list of files for this app content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppContentFile>? Files {
+        public List<MobileAppContentFile>? Files
+        {
             get { return BackingStore?.Get<List<MobileAppContentFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppContentFile> Files {
+        public List<MobileAppContentFile> Files
+        {
             get { return BackingStore?.Get<List<MobileAppContentFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"files", n => { Files = n.GetCollectionOfObjectValues<MobileAppContentFile>(MobileAppContentFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<MobileAppContentFile>(MobileAppContentFile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

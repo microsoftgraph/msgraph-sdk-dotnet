@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class WebPartPosition : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WebPartPosition : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the identifier of the column where the web part is located.</summary>
-        public double? ColumnId {
+        public double? ColumnId
+        {
             get { return BackingStore?.Get<double?>("columnId"); }
             set { BackingStore?.Set("columnId", value); }
         }
         /// <summary>Indicates the horizontal section where the web part is located.</summary>
-        public double? HorizontalSectionId {
+        public double? HorizontalSectionId
+        {
             get { return BackingStore?.Get<double?>("horizontalSectionId"); }
             set { BackingStore?.Set("horizontalSectionId", value); }
         }
         /// <summary>Indicates whether the web part is located in the vertical section.</summary>
-        public bool? IsInVerticalSection {
+        public bool? IsInVerticalSection
+        {
             get { return BackingStore?.Get<bool?>("isInVerticalSection"); }
             set { BackingStore?.Set("isInVerticalSection", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Index of the current web part. Represents the order of the web part in this column or section.</summary>
-        public double? WebPartIndex {
+        public double? WebPartIndex
+        {
             get { return BackingStore?.Get<double?>("webPartIndex"); }
             set { BackingStore?.Set("webPartIndex", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"columnId", n => { ColumnId = n.GetDoubleValue(); } },
-                {"horizontalSectionId", n => { HorizontalSectionId = n.GetDoubleValue(); } },
-                {"isInVerticalSection", n => { IsInVerticalSection = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"webPartIndex", n => { WebPartIndex = n.GetDoubleValue(); } },
+                { "columnId", n => { ColumnId = n.GetDoubleValue(); } },
+                { "horizontalSectionId", n => { HorizontalSectionId = n.GetDoubleValue(); } },
+                { "isInVerticalSection", n => { IsInVerticalSection = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "webPartIndex", n => { WebPartIndex = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

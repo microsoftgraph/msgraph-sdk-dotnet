@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule
+{
     #pragma warning disable CS1591
-    public class FvschedulePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FvschedulePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule {
         /// <summary>The principal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Principal {
+        public Json? Principal
+        {
             get { return BackingStore?.Get<Json?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public Json Principal {
+        public Json Principal
+        {
             get { return BackingStore?.Get<Json>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule {
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Schedule {
+        public Json? Schedule
+        {
             get { return BackingStore?.Get<Json?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public Json Schedule {
+        public Json Schedule
+        {
             get { return BackingStore?.Get<Json>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Fvschedule {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"principal", n => { Principal = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

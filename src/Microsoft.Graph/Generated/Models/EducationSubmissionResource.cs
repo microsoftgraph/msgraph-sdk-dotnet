@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class EducationSubmissionResource : Entity, IParsable 
+    public class EducationSubmissionResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentResourceUrl {
+        public string? AssignmentResourceUrl
+        {
             get { return BackingStore?.Get<string?>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
 #nullable restore
 #else
-        public string AssignmentResourceUrl {
+        public string AssignmentResourceUrl
+        {
             get { return BackingStore?.Get<string>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>Resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? Resource {
+        public EducationResource? Resource
+        {
             get { return BackingStore?.Get<EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public EducationResource Resource {
+        public EducationResource Resource
+        {
             get { return BackingStore?.Get<EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
+                { "assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

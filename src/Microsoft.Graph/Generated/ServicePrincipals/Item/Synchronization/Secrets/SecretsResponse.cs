@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets {
+namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Secrets
+{
     [Obsolete("This class is obsolete. Use SecretsPutResponse instead.")]
     #pragma warning disable CS1591
-    public class SecretsResponse : SecretsPutResponse, IParsable 
+    public class SecretsResponse : SecretsPutResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

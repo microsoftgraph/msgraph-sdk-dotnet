@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementPolicyExpirationRule : UnifiedRoleManagementPolicyRule, IParsable 
+    public class UnifiedRoleManagementPolicyExpirationRule : UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether expiration is required or if it&apos;s a permanently active assignment or eligibility.</summary>
-        public bool? IsExpirationRequired {
+        public bool? IsExpirationRequired
+        {
             get { return BackingStore?.Get<bool?>("isExpirationRequired"); }
             set { BackingStore?.Set("isExpirationRequired", value); }
         }
         /// <summary>The maximum duration allowed for eligibility or assignment that isn&apos;t permanent. Required when isExpirationRequired is true.</summary>
-        public TimeSpan? MaximumDuration {
+        public TimeSpan? MaximumDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("maximumDuration"); }
             set { BackingStore?.Set("maximumDuration", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isExpirationRequired", n => { IsExpirationRequired = n.GetBoolValue(); } },
-                {"maximumDuration", n => { MaximumDuration = n.GetTimeSpanValue(); } },
+                { "isExpirationRequired", n => { IsExpirationRequired = n.GetBoolValue(); } },
+                { "maximumDuration", n => { MaximumDuration = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

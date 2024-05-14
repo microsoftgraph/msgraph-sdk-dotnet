@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Item {
+namespace Microsoft.Graph.Applications.Item.AppManagementPolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\appManagementPolicies\{appManagementPolicy-id}
     /// </summary>
-    public class AppManagementPolicyItemRequestBuilder : BaseRequestBuilder 
+    public class AppManagementPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of application entities.</summary>
         public RefRequestBuilder Ref

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     #pragma warning disable CS1591
-    public class OnlineMeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnlineMeetingInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The ID of the conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConferenceId {
+        public string? ConferenceId
+        {
             get { return BackingStore?.Get<string?>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
 #nullable restore
 #else
-        public string ConferenceId {
+        public string ConferenceId
+        {
             get { return BackingStore?.Get<string>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinUrl {
+        public string? JoinUrl
+        {
             get { return BackingStore?.Get<string?>("joinUrl"); }
             set { BackingStore?.Set("joinUrl", value); }
         }
 #nullable restore
 #else
-        public string JoinUrl {
+        public string JoinUrl
+        {
             get { return BackingStore?.Get<string>("joinUrl"); }
             set { BackingStore?.Set("joinUrl", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>All of the phone numbers associated with this conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones {
+        public List<Phone>? Phones
+        {
             get { return BackingStore?.Get<List<Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones {
+        public List<Phone> Phones
+        {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The preformatted quick dial for this call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuickDial {
+        public string? QuickDial
+        {
             get { return BackingStore?.Get<string?>("quickDial"); }
             set { BackingStore?.Set("quickDial", value); }
         }
 #nullable restore
 #else
-        public string QuickDial {
+        public string QuickDial
+        {
             get { return BackingStore?.Get<string>("quickDial"); }
             set { BackingStore?.Set("quickDial", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The toll free numbers that can be used to join the conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TollFreeNumbers {
+        public List<string>? TollFreeNumbers
+        {
             get { return BackingStore?.Get<List<string>?>("tollFreeNumbers"); }
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
 #nullable restore
 #else
-        public List<string> TollFreeNumbers {
+        public List<string> TollFreeNumbers
+        {
             get { return BackingStore?.Get<List<string>>("tollFreeNumbers"); }
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Models {
         /// <summary>The toll number that can be used to join the conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TollNumber {
+        public string? TollNumber
+        {
             get { return BackingStore?.Get<string?>("tollNumber"); }
             set { BackingStore?.Set("tollNumber", value); }
         }
 #nullable restore
 #else
-        public string TollNumber {
+        public string TollNumber
+        {
             get { return BackingStore?.Get<string>("tollNumber"); }
             set { BackingStore?.Set("tollNumber", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
-                {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"quickDial", n => { QuickDial = n.GetStringValue(); } },
-                {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"tollNumber", n => { TollNumber = n.GetStringValue(); } },
+                { "conferenceId", n => { ConferenceId = n.GetStringValue(); } },
+                { "joinUrl", n => { JoinUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "quickDial", n => { QuickDial = n.GetStringValue(); } },
+                { "tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "tollNumber", n => { TollNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

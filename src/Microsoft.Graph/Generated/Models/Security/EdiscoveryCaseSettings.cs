@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models.Security {
+namespace Microsoft.Graph.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryCaseSettings : Microsoft.Graph.Models.Entity, IParsable 
+    public class EdiscoveryCaseSettings : Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OcrSettings? Ocr {
+        public OcrSettings? Ocr
+        {
             get { return BackingStore?.Get<OcrSettings?>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
 #nullable restore
 #else
-        public OcrSettings Ocr {
+        public OcrSettings Ocr
+        {
             get { return BackingStore?.Get<OcrSettings>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The redundancy (near duplicate and email threading) detection settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RedundancyDetectionSettings? RedundancyDetection {
+        public RedundancyDetectionSettings? RedundancyDetection
+        {
             get { return BackingStore?.Get<RedundancyDetectionSettings?>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #nullable restore
 #else
-        public RedundancyDetectionSettings RedundancyDetection {
+        public RedundancyDetectionSettings RedundancyDetection
+        {
             get { return BackingStore?.Get<RedundancyDetectionSettings>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Models.Security {
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TopicModelingSettings? TopicModeling {
+        public TopicModelingSettings? TopicModeling
+        {
             get { return BackingStore?.Get<TopicModelingSettings?>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
 #nullable restore
 #else
-        public TopicModelingSettings TopicModeling {
+        public TopicModelingSettings TopicModeling
+        {
             get { return BackingStore?.Get<TopicModelingSettings>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ocr", n => { Ocr = n.GetObjectValue<OcrSettings>(OcrSettings.CreateFromDiscriminatorValue); } },
-                {"redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<RedundancyDetectionSettings>(RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
-                {"topicModeling", n => { TopicModeling = n.GetObjectValue<TopicModelingSettings>(TopicModelingSettings.CreateFromDiscriminatorValue); } },
+                { "ocr", n => { Ocr = n.GetObjectValue<OcrSettings>(OcrSettings.CreateFromDiscriminatorValue); } },
+                { "redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<RedundancyDetectionSettings>(RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
+                { "topicModeling", n => { TopicModeling = n.GetObjectValue<TopicModelingSettings>(TopicModelingSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

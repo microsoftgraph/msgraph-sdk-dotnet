@@ -6,47 +6,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
+namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification
+{
     #pragma warning disable CS1591
-    public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityType {
+        public string? ActivityType
+        {
             get { return BackingStore?.Get<string?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
 #nullable restore
 #else
-        public string ActivityType {
+        public string ActivityType
+        {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The chainId property</summary>
-        public long? ChainId {
+        public long? ChainId
+        {
             get { return BackingStore?.Get<long?>("chainId"); }
             set { BackingStore?.Set("chainId", value); }
         }
         /// <summary>The previewText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? PreviewText {
+        public ItemBody? PreviewText
+        {
             get { return BackingStore?.Get<ItemBody?>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
 #nullable restore
 #else
-        public ItemBody PreviewText {
+        public ItemBody PreviewText
+        {
             get { return BackingStore?.Get<ItemBody>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
         /// <summary>The recipient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkNotificationRecipient? Recipient {
+        public TeamworkNotificationRecipient? Recipient
+        {
             get { return BackingStore?.Get<TeamworkNotificationRecipient?>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
 #nullable restore
 #else
-        public TeamworkNotificationRecipient Recipient {
+        public TeamworkNotificationRecipient Recipient
+        {
             get { return BackingStore?.Get<TeamworkNotificationRecipient>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
         /// <summary>The teamsAppId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsAppId {
+        public string? TeamsAppId
+        {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
 #nullable restore
 #else
-        public string TeamsAppId {
+        public string TeamsAppId
+        {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
         /// <summary>The templateParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Models.KeyValuePair>? TemplateParameters {
+        public List<Microsoft.Graph.Models.KeyValuePair>? TemplateParameters
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>?>("templateParameters"); }
             set { BackingStore?.Set("templateParameters", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Models.KeyValuePair> TemplateParameters {
+        public List<Microsoft.Graph.Models.KeyValuePair> TemplateParameters
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Models.KeyValuePair>>("templateParameters"); }
             set { BackingStore?.Set("templateParameters", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
         /// <summary>The topic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkActivityTopic? Topic {
+        public TeamworkActivityTopic? Topic
+        {
             get { return BackingStore?.Get<TeamworkActivityTopic?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
 #nullable restore
 #else
-        public TeamworkActivityTopic Topic {
+        public TeamworkActivityTopic Topic
+        {
             get { return BackingStore?.Get<TeamworkActivityTopic>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
@@ -133,13 +148,13 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activityType", n => { ActivityType = n.GetStringValue(); } },
-                {"chainId", n => { ChainId = n.GetLongValue(); } },
-                {"previewText", n => { PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"recipient", n => { Recipient = n.GetObjectValue<TeamworkNotificationRecipient>(TeamworkNotificationRecipient.CreateFromDiscriminatorValue); } },
-                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
-                {"templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"topic", n => { Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
+                { "activityType", n => { ActivityType = n.GetStringValue(); } },
+                { "chainId", n => { ChainId = n.GetLongValue(); } },
+                { "previewText", n => { PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "recipient", n => { Recipient = n.GetObjectValue<TeamworkNotificationRecipient>(TeamworkNotificationRecipient.CreateFromDiscriminatorValue); } },
+                { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                { "templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Models.KeyValuePair>(Microsoft.Graph.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "topic", n => { Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

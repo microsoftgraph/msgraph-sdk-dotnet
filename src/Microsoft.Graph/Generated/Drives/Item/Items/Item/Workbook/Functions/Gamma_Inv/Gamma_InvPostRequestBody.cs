@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv {
+namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv
+{
     #pragma warning disable CS1591
-    public class Gamma_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Gamma_InvPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Alpha {
+        public Json? Alpha
+        {
             get { return BackingStore?.Get<Json?>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
 #nullable restore
 #else
-        public Json Alpha {
+        public Json Alpha
+        {
             get { return BackingStore?.Get<Json>("alpha"); }
             set { BackingStore?.Set("alpha", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv {
         /// <summary>The beta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Beta {
+        public Json? Beta
+        {
             get { return BackingStore?.Get<Json?>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
 #nullable restore
 #else
-        public Json Beta {
+        public Json Beta
+        {
             get { return BackingStore?.Get<Json>("beta"); }
             set { BackingStore?.Set("beta", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv {
         /// <summary>The probability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Probability {
+        public Json? Probability
+        {
             get { return BackingStore?.Get<Json?>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
 #nullable restore
 #else
-        public Json Probability {
+        public Json Probability
+        {
             get { return BackingStore?.Get<Json>("probability"); }
             set { BackingStore?.Set("probability", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.Gamma_Inv {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

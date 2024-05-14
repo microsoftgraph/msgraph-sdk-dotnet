@@ -4,56 +4,65 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Models {
+namespace Microsoft.Graph.Models
+{
     /// <summary>
     /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
     /// </summary>
-    public class MobileAppContentFile : Entity, IParsable 
+    public class MobileAppContentFile : Entity, IParsable
     {
         /// <summary>The Azure Storage URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureStorageUri {
+        public string? AzureStorageUri
+        {
             get { return BackingStore?.Get<string?>("azureStorageUri"); }
             set { BackingStore?.Set("azureStorageUri", value); }
         }
 #nullable restore
 #else
-        public string AzureStorageUri {
+        public string AzureStorageUri
+        {
             get { return BackingStore?.Get<string>("azureStorageUri"); }
             set { BackingStore?.Set("azureStorageUri", value); }
         }
 #endif
         /// <summary>The time the Azure storage Uri expires.</summary>
-        public DateTimeOffset? AzureStorageUriExpirationDateTime {
+        public DateTimeOffset? AzureStorageUriExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("azureStorageUriExpirationDateTime"); }
             set { BackingStore?.Set("azureStorageUriExpirationDateTime", value); }
         }
         /// <summary>The time the file was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A value indicating whether the file is committed.</summary>
-        public bool? IsCommitted {
+        public bool? IsCommitted
+        {
             get { return BackingStore?.Get<bool?>("isCommitted"); }
             set { BackingStore?.Set("isCommitted", value); }
         }
         /// <summary>Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.</summary>
-        public bool? IsDependency {
+        public bool? IsDependency
+        {
             get { return BackingStore?.Get<bool?>("isDependency"); }
             set { BackingStore?.Set("isDependency", value); }
         }
         /// <summary>The manifest information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Manifest {
+        public byte[]? Manifest
+        {
             get { return BackingStore?.Get<byte[]?>("manifest"); }
             set { BackingStore?.Set("manifest", value); }
         }
 #nullable restore
 #else
-        public byte[] Manifest {
+        public byte[] Manifest
+        {
             get { return BackingStore?.Get<byte[]>("manifest"); }
             set { BackingStore?.Set("manifest", value); }
         }
@@ -61,29 +70,34 @@ namespace Microsoft.Graph.Models {
         /// <summary>the file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #endif
         /// <summary>The size of the file prior to encryption.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>The size of the file after encryption.</summary>
-        public long? SizeEncrypted {
+        public long? SizeEncrypted
+        {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
         /// <summary>Contains properties for upload request states.</summary>
-        public MobileAppContentFileUploadState? UploadState {
+        public MobileAppContentFileUploadState? UploadState
+        {
             get { return BackingStore?.Get<MobileAppContentFileUploadState?>("uploadState"); }
             set { BackingStore?.Set("uploadState", value); }
         }
@@ -105,16 +119,16 @@ namespace Microsoft.Graph.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureStorageUri", n => { AzureStorageUri = n.GetStringValue(); } },
-                {"azureStorageUriExpirationDateTime", n => { AzureStorageUriExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isCommitted", n => { IsCommitted = n.GetBoolValue(); } },
-                {"isDependency", n => { IsDependency = n.GetBoolValue(); } },
-                {"manifest", n => { Manifest = n.GetByteArrayValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
-                {"sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
-                {"uploadState", n => { UploadState = n.GetEnumValue<MobileAppContentFileUploadState>(); } },
+                { "azureStorageUri", n => { AzureStorageUri = n.GetStringValue(); } },
+                { "azureStorageUriExpirationDateTime", n => { AzureStorageUriExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isCommitted", n => { IsCommitted = n.GetBoolValue(); } },
+                { "isDependency", n => { IsDependency = n.GetBoolValue(); } },
+                { "manifest", n => { Manifest = n.GetByteArrayValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
+                { "sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
+                { "uploadState", n => { UploadState = n.GetEnumValue<MobileAppContentFileUploadState>(); } },
             };
         }
         /// <summary>
